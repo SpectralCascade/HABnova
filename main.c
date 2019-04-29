@@ -88,7 +88,7 @@ void AppendCRC(char* data, unsigned short crc)
 		// Ignore data indices greater than max message length
 		len = MAX_MESSAGE_LENGTH - 2;
 	}
-	data[len] = (char)(crc << 8);
+	data[len] = (char)(crc >> 8);
 	data[len + 1] = (char)(crc);
 	data[len + 2] = '\n';
 	data[len + 3] = '\0';
