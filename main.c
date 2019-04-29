@@ -17,7 +17,6 @@ unsigned short crc16(const char* message, unsigned short polynomial) {
 	unsigned int crc;
 
 	crc = 0xFFFF;
-
 	if (strlen(message) == 0)
 	{
 		return (~crc);
@@ -47,55 +46,52 @@ int transmission_time = 0;
 
 void TransmitBit(bool b)
 {
-    if (b)
-    {
-        TX_PIN_SetHigh();
-    }
-    else
-    {
-        TX_PIN_SetLow();
-    }
-    __delay_ms(BAUD_DELAY);
-    transmission_time += BAUD_DELAY;
+	if (b)
+	{
+		//printf("1");
+		TX_PIN_SetHigh();
+	}
+	else
+	{
+		//printf("0");
+		TX_PIN_SetLow();
+	}
+	__delay_ms(BAUD_DELAY);
+	transmission_time += BAUD_DELAY;
 }
 
 void TransmitByte(char byte)
 {
-    for (int i = 0; i < 8; i++)
-    {
-        if (byte & 1)
-        {
-            TransmitBit(true);
-        }
-        else
-        {
-            TransmitBit(false);
-        }
-        byte = byte >> 1;
-    }
+	for (int i = 0; i < 8; i++)
+	{
+		TransmitBit((byte >> i) & 1);
+	}
+	printf(" [%c] ", byte);
 }
 
 void TransmitString(char* message)
 {
-    for (int i = 0, counti = strlen(message); i < counti; i++)
-    {
-        TransmitByte(message[i]);
-    }
+	//printf("Attempting to transmit message \"%s\"...\n", message);
+	for (int i = 0, counti = strlen(message); i < counti; i++)
+	{
+		TransmitByte(message[i]);
+	}
+	//printf("\n");
 }
 
 // Appends CRC and a newline character to a string
 void AppendCRC(char* data, unsigned short crc)
 {
-    int len = strlen(data);
-    if (len >= MAX_MESSAGE_LENGTH - 1)
-    {
-        // Ignore data indices greater than max message length
-        len = MAX_MESSAGE_LENGTH - 2;
-    }
-    data[len] = (char)(crc << 8);
-    data[len + 1] = (char)(crc);
-    data[len + 2] = '\n';
-    data[len + 3] = '\0';
+	int len = strlen(data);
+	if (len >= MAX_MESSAGE_LENGTH - 1)
+	{
+		// Ignore data indices greater than max message length
+		len = MAX_MESSAGE_LENGTH - 2;
+	}
+	data[len] = (char)(crc << 8);
+	data[len + 1] = (char)(crc);
+	data[len + 2] = '\n';
+	data[len + 3] = '\0';
 }
 
 void main(void)
