@@ -66,7 +66,7 @@ void TransmitByte(char byte)
 	{
 		TransmitBit((byte >> i) & 1);
 	}
-	printf(" [%c] ", byte);
+	//printf(" [%c] ", byte);
 }
 
 void TransmitString(char* message)
