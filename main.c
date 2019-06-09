@@ -1,16 +1,24 @@
+#ifndef DEBUG_CONSOLE
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
+#else
+#include "stdbool.h"
+#define __delay_us(us)
+#define __delay_ms(ms)
+#endif
 #include <string.h>
 #include <stdio.h>
 
-// Baud rate delay between bit changes
-const int BAUD_DELAY = 20;
+// Baud rate (bits per second).
+const int BAUD_RATE = 50;
+// Half the delay time required to match the baud rate in MICRO seconds
+const int HALF_BAUD_DELAY = (1000000 / BAUD_RATE) / 2;
 // How often a message should be sent in seconds
-#define MESSAGE_INTERVAL 5
+const int MESSAGE_INTERVAL = 5;
 // Maximum length of a message, not including appended CRC
-#define MAX_MESSAGE_LENGTH 40
-// Multiplier necessary for getting large delay times
-#define DELAY_MULT 1000
+const int MAX_MESSAGE_LENGTH = 40;
+// Interval multiplier
+const int DELAY_MULT = 1000;
 
 // Creates a CRC16 hash
 unsigned short crc16(const char* message, unsigned short polynomial) {
@@ -21,7 +29,6 @@ unsigned short crc16(const char* message, unsigned short polynomial) {
 	{
 		return (~crc);
 	}
-	char append = 0x00;
 	const unsigned short FRONT_BIT = 0x8000;
 	for (unsigned int i = 0, counti = strlen(message); i < counti; i++) {
 		char byte = message[i];
@@ -48,35 +55,67 @@ void TransmitBit(bool b)
 {
 	if (b)
 	{
-		//printf("1");
+#ifdef DEBUG_CONSOLE
+		printf("1");
+#else
 		TX_PIN_SetHigh();
+#endif // DEBUG_CONSOLE
 	}
 	else
 	{
-		//printf("0");
+#ifdef DEBUG_CONSOLE
+		printf("0");
+#else
 		TX_PIN_SetLow();
+#endif // DEBUG_CONSOLE
 	}
-	__delay_ms(BAUD_DELAY);
-	transmission_time += BAUD_DELAY;
+	__delay_us(HALF_BAUD_DELAY);
+	__delay_us(HALF_BAUD_DELAY);
 }
 
 void TransmitByte(char byte)
 {
-	for (int i = 0; i < 8; i++)
+    /// Here's the breakdown of the serial protocol used for transmitting the bytes:
+    /// - Order of bits in a byte when transmitting is always LSB first, MSB last.
+    /// - We always send a 1 bit (start bit) before the byte.
+    /// - We always send two 0 bits after the byte (these are called stop bits).
+    /// We can send either 7 or 8 bit characters, but we'll stick to 7-character codes
+    /// so we'll actually be transmitting a bit less than a byte of data... pun intended :P
+    /// The protocol used is basically RS-232 (apparently).
+
+    /// We always send a single high bit as our start bit so the receiver software can sync up.
+    TransmitBit(true);
+#ifdef DEBUG_CONSOLE
+    printf("-");
+#endif
+    /// ASCII-7 encoding for our string characters.
+	for (int i = 0; i < 7; i++)
 	{
 		TransmitBit((byte >> i) & 1);
 	}
-	//printf(" [%c] ", byte);
+#ifdef DEBUG_CONSOLE
+    printf("-");
+#endif
+	/// Two stop bits to ensure the receiver software can sync up with the next start bit.
+	TransmitBit(false);
+	TransmitBit(false);
+#ifdef DEBUG_CONSOLE
+	printf(" [%c], ", byte);
+#endif // DEBUG_CONSOLE
 }
 
 void TransmitString(char* message)
 {
-	//printf("Attempting to transmit message \"%s\"...\n", message);
+#ifdef DEBUG_CONSOLE
+	printf("Attempting to transmit message:\n%s\n", message);
+#endif
 	for (int i = 0, counti = strlen(message); i < counti; i++)
 	{
 		TransmitByte(message[i]);
 	}
-	//printf("\n");
+#ifdef DEBUG_CONSOLE
+	printf("\n");
+#endif // DEBUG_CONSOLE
 }
 
 // Appends CRC and a newline character to a string
@@ -94,27 +133,37 @@ void AppendCRC(char* data, unsigned short crc)
 	data[len + 3] = '\0';
 }
 
+#ifdef DEBUG_CONSOLE
+int main()
+#else
 void main(void)
+#endif // DEBUG_CONSOLE
 {
+#ifndef DEBUG_CONSOLE
     SYSTEM_Initialize();
     PIN_MANAGER_Initialize();
-    
+#endif // DEBUG_CONSOLE
+
     char message[MAX_MESSAGE_LENGTH + 3];
-    
+
     int id = 0;
     while (1)
     {
-        sprintf(message, "RTTY Transmission Test, Hello World! ID: %d \0", id);
+        sprintf(message, "Hi!");
         id++;
-        AppendCRC(message, crc16(message, 0x8408));
+        AppendCRC(message, crc16(message, 0x1021));
         TransmitString(message);
-        // Set output low
-        TransmitBit(false);
         // Be aware that this doesn't account for transmission time
         for (int i = 0; i < DELAY_MULT; i++)
         {
             __delay_ms(MESSAGE_INTERVAL);
         }
         transmission_time = 0;
+#ifdef DEBUG_CONSOLE
+        break;
+#endif // DEBUG_CONSOLE
     }
+#ifdef DEBUG_CONSOLE
+    return 0;
+#endif // DEBUG_CONSOLE
 }

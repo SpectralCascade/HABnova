@@ -11,42 +11,42 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\2013b\AppData\Local\Temp\s6u0.o
-reset_vec CODE 0 0 0 2 2
-end_init CODE 0 2 2 2 2
-config CONFIG 0 8007 8007 3 2
 $dist/default/production\HABnova.production.o
 cinit CODE 0 7EA 7EA 16 2
-text1 CODE 0 1A0 1A0 23 2
-text2 CODE 0 236 236 2F 2
+text1 CODE 0 19D 19D 23 2
+text2 CODE 0 233 233 2F 2
 text3 CODE 0 405 405 D0 2
 text4 CODE 0 6A4 6A4 146 2
 text5 CODE 0 2EE 2EE 50 2
-text6 CODE 0 1E7 1E7 26 2
-text7 CODE 0 2A9 2A9 45 2
-text8 CODE 0 12D 12D 1 2
-text9 CODE 0 16F 16F 17 2
+text6 CODE 0 1E4 1E4 26 2
+text7 CODE 0 262 262 45 2
+text8 CODE 0 129 129 1 2
+text9 CODE 0 16B 16B 17 2
 text10 CODE 0 4D5 4D5 DC 2
 text11 CODE 0 5B1 5B1 F3 2
 text12 CODE 0 396 396 6F 2
-text13 CODE 0 20D 20D 29 2
-text14 CODE 0 186 186 1A 2
-text15 CODE 0 158 158 17 2
-text16 CODE 0 12E 12E 6 2
-text17 CODE 0 1C3 1C3 24 2
-text18 CODE 0 13A 13A 7 2
-text19 CODE 0 265 265 44 2
-text20 CODE 0 141 141 17 2
+text13 CODE 0 20A 20A 29 2
+text14 CODE 0 182 182 1B 2
+text15 CODE 0 154 154 17 2
+text16 CODE 0 12A 12A 6 2
+text17 CODE 0 1C0 1C0 24 2
+text18 CODE 0 136 136 7 2
+text19 CODE 0 2A7 2A7 47 2
+text20 CODE 0 13D 13D 17 2
 maintext CODE 0 33E 33E 58 2
 cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK0 BANK0 1 20 20 4B 1
 cstackBANK1 BANK1 1 A0 A0 38 1
-stringtext1 STRCODE 0 830 830 2 2
-stringtext2 STRCODE 0 800 800 30 2
+stringtext1 STRCODE 0 821 821 2 2
+stringtext2 STRCODE 0 800 800 21 2
 bssBANK0 BANK0 1 6B 6B 4 1
 bssBANK1 BANK1 1 D8 D8 6 1
 bssBANK2 BANK2 1 120 120 20 1
-clrtext CODE 0 134 134 6 2
+clrtext CODE 0 130 130 6 2
+$C:\Users\2013b\AppData\Local\Temp\scf8.o
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 2 2 2 2
+config CONFIG 0 8007 8007 3 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -76,10 +76,10 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 4-12C 2
-CONST 832-1FFF 2
-ENTRY 4-12C 2
-ENTRY 832-1FFF 2
+CONST 4-128 2
+CONST 823-1FFF 2
+ENTRY 4-128 2
+ENTRY 823-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -104,8 +104,8 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 20C0-23EF 1
-CODE 4-12C 2
-CODE 832-1FFF 2
+CODE 4-128 2
+CODE 823-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -120,10 +120,10 @@ BANK10 520-56F 1
 BANK11 5A0-5EF 1
 BANK12 620-64F 1
 BIGRAM 2000-23EF 1
-STRCODE 4-12C 2
-STRCODE 832-1FFF 2
-STRING 4-12C 2
-STRING 832-1FFF 2
+STRCODE 4-128 2
+STRCODE 823-1FFF 2
+STRING 4-128 2
+STRING 823-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -138,110 +138,108 @@ STRING 832-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\HABnova.production.o
-7EA cinit CODE >2944:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7EA cinit CODE >2947:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7EA cinit CODE >2992:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7EB cinit CODE >2993:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7EC cinit CODE >2994:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7ED cinit CODE >2995:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7EE cinit CODE >2996:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7EF cinit CODE >3000:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F0 cinit CODE >3001:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F1 cinit CODE >3002:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F2 cinit CODE >3003:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F3 cinit CODE >3004:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F4 cinit CODE >3005:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F5 cinit CODE >3006:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F6 cinit CODE >3010:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F7 cinit CODE >3011:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F8 cinit CODE >3012:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7F9 cinit CODE >3013:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7FA cinit CODE >3014:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7FB cinit CODE >3015:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7FD cinit CODE >3021:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7FD cinit CODE >3023:C:\Users\2013b\AppData\Local\Temp\s6u0.
-7FE cinit CODE >3024:C:\Users\2013b\AppData\Local\Temp\s6u0.
-141 text20 CODE >12:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-141 text20 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-145 text20 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-14C text20 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-150 text20 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-151 text20 CODE >25:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-157 text20 CODE >26:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-265 text19 CODE >87:C:\Users\2013b\Git\HABnova\main.c
-267 text19 CODE >89:C:\Users\2013b\Git\HABnova\main.c
-273 text19 CODE >90:C:\Users\2013b\Git\HABnova\main.c
-27E text19 CODE >93:C:\Users\2013b\Git\HABnova\main.c
-283 text19 CODE >95:C:\Users\2013b\Git\HABnova\main.c
-28B text19 CODE >96:C:\Users\2013b\Git\HABnova\main.c
-295 text19 CODE >97:C:\Users\2013b\Git\HABnova\main.c
-2A0 text19 CODE >98:C:\Users\2013b\Git\HABnova\main.c
-2A8 text19 CODE >99:C:\Users\2013b\Git\HABnova\main.c
-13A text18 CODE >56:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-13A text18 CODE >59:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-13D text18 CODE >61:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-13E text18 CODE >63:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-140 text18 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-1C3 text17 CODE >57:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1C3 text17 CODE >62:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1C5 text17 CODE >63:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1C6 text17 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1C7 text17 CODE >69:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1CA text17 CODE >70:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1CC text17 CODE >71:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1CE text17 CODE >76:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1D1 text17 CODE >77:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1D3 text17 CODE >78:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1D5 text17 CODE >83:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1D7 text17 CODE >84:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1D8 text17 CODE >85:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1D9 text17 CODE >86:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1DB text17 CODE >91:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1DD text17 CODE >92:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1DE text17 CODE >93:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1DF text17 CODE >98:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1E2 text17 CODE >99:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1E4 text17 CODE >100:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-1E6 text17 CODE >108:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-12E text16 CODE >50:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-12E text16 CODE >52:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-131 text16 CODE >53:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-133 text16 CODE >54:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-158 text15 CODE >48:C:\Users\2013b\Git\HABnova\main.c
-159 text15 CODE >50:C:\Users\2013b\Git\HABnova\main.c
-15C text15 CODE >52:C:\Users\2013b\Git\HABnova\main.c
-15F text15 CODE >56:C:\Users\2013b\Git\HABnova\main.c
-161 text15 CODE >58:C:\Users\2013b\Git\HABnova\main.c
-169 text15 CODE >7:C:\Users\2013b\Git\HABnova\main.c
-16E text15 CODE >60:C:\Users\2013b\Git\HABnova\main.c
-186 text14 CODE >62:C:\Users\2013b\Git\HABnova\main.c
-187 text14 CODE >64:C:\Users\2013b\Git\HABnova\main.c
-189 text14 CODE >66:C:\Users\2013b\Git\HABnova\main.c
-18B text14 CODE >68:C:\Users\2013b\Git\HABnova\main.c
-18D text14 CODE >72:C:\Users\2013b\Git\HABnova\main.c
-191 text14 CODE >75:C:\Users\2013b\Git\HABnova\main.c
-20D text13 CODE >78:C:\Users\2013b\Git\HABnova\main.c
-20E text13 CODE >80:C:\Users\2013b\Git\HABnova\main.c
-21B text13 CODE >83:C:\Users\2013b\Git\HABnova\main.c
-227 text13 CODE >82:C:\Users\2013b\Git\HABnova\main.c
-231 text13 CODE >83:C:\Users\2013b\Git\HABnova\main.c
+7EA cinit CODE >2929:C:\Users\2013b\AppData\Local\Temp\scf8.
+7EA cinit CODE >2932:C:\Users\2013b\AppData\Local\Temp\scf8.
+7EA cinit CODE >2977:C:\Users\2013b\AppData\Local\Temp\scf8.
+7EB cinit CODE >2978:C:\Users\2013b\AppData\Local\Temp\scf8.
+7EC cinit CODE >2979:C:\Users\2013b\AppData\Local\Temp\scf8.
+7ED cinit CODE >2980:C:\Users\2013b\AppData\Local\Temp\scf8.
+7EE cinit CODE >2981:C:\Users\2013b\AppData\Local\Temp\scf8.
+7EF cinit CODE >2985:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F0 cinit CODE >2986:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F1 cinit CODE >2987:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F2 cinit CODE >2988:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F3 cinit CODE >2989:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F4 cinit CODE >2990:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F5 cinit CODE >2991:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F6 cinit CODE >2995:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F7 cinit CODE >2996:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F8 cinit CODE >2997:C:\Users\2013b\AppData\Local\Temp\scf8.
+7F9 cinit CODE >2998:C:\Users\2013b\AppData\Local\Temp\scf8.
+7FA cinit CODE >2999:C:\Users\2013b\AppData\Local\Temp\scf8.
+7FB cinit CODE >3000:C:\Users\2013b\AppData\Local\Temp\scf8.
+7FD cinit CODE >3006:C:\Users\2013b\AppData\Local\Temp\scf8.
+7FD cinit CODE >3008:C:\Users\2013b\AppData\Local\Temp\scf8.
+7FE cinit CODE >3009:C:\Users\2013b\AppData\Local\Temp\scf8.
+13D text20 CODE >12:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+13D text20 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+141 text20 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+148 text20 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+14C text20 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+14D text20 CODE >25:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+153 text20 CODE >26:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+2A7 text19 CODE >83:C:\Users\2013b\Git\HABnova\main.c
+2A9 text19 CODE >85:C:\Users\2013b\Git\HABnova\main.c
+2B5 text19 CODE >86:C:\Users\2013b\Git\HABnova\main.c
+2C0 text19 CODE >89:C:\Users\2013b\Git\HABnova\main.c
+2C5 text19 CODE >91:C:\Users\2013b\Git\HABnova\main.c
+2D0 text19 CODE >92:C:\Users\2013b\Git\HABnova\main.c
+2DA text19 CODE >93:C:\Users\2013b\Git\HABnova\main.c
+2E5 text19 CODE >94:C:\Users\2013b\Git\HABnova\main.c
+2ED text19 CODE >95:C:\Users\2013b\Git\HABnova\main.c
+136 text18 CODE >56:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+136 text18 CODE >59:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+139 text18 CODE >61:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+13A text18 CODE >63:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+13C text18 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1C0 text17 CODE >57:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1C0 text17 CODE >62:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1C2 text17 CODE >63:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1C3 text17 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1C4 text17 CODE >69:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1C7 text17 CODE >70:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1C9 text17 CODE >71:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1CB text17 CODE >76:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1CE text17 CODE >77:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1D0 text17 CODE >78:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1D2 text17 CODE >83:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1D4 text17 CODE >84:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1D5 text17 CODE >85:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1D6 text17 CODE >86:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1D8 text17 CODE >91:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1DA text17 CODE >92:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1DB text17 CODE >93:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1DC text17 CODE >98:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1DF text17 CODE >99:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1E1 text17 CODE >100:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1E3 text17 CODE >108:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+12A text16 CODE >50:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+12A text16 CODE >52:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+12D text16 CODE >53:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+12F text16 CODE >54:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+154 text15 CODE >47:C:\Users\2013b\Git\HABnova\main.c
+155 text15 CODE >49:C:\Users\2013b\Git\HABnova\main.c
+158 text15 CODE >52:C:\Users\2013b\Git\HABnova\main.c
+15B text15 CODE >57:C:\Users\2013b\Git\HABnova\main.c
+15D text15 CODE >59:C:\Users\2013b\Git\HABnova\main.c
+165 text15 CODE >7:C:\Users\2013b\Git\HABnova\main.c
+16A text15 CODE >61:C:\Users\2013b\Git\HABnova\main.c
+182 text14 CODE >63:C:\Users\2013b\Git\HABnova\main.c
+183 text14 CODE >65:C:\Users\2013b\Git\HABnova\main.c
+187 text14 CODE >67:C:\Users\2013b\Git\HABnova\main.c
+196 text14 CODE >68:C:\Users\2013b\Git\HABnova\main.c
+20A text13 CODE >72:C:\Users\2013b\Git\HABnova\main.c
+20B text13 CODE >75:C:\Users\2013b\Git\HABnova\main.c
+218 text13 CODE >78:C:\Users\2013b\Git\HABnova\main.c
+224 text13 CODE >77:C:\Users\2013b\Git\HABnova\main.c
+22E text13 CODE >78:C:\Users\2013b\Git\HABnova\main.c
 396 text12 CODE >16:C:\Users\2013b\Git\HABnova\main.c
 398 text12 CODE >19:C:\Users\2013b\Git\HABnova\main.c
-39C text12 CODE >21:C:\Users\2013b\Git\HABnova\main.c
-3A7 text12 CODE >23:C:\Users\2013b\Git\HABnova\main.c
-3AA text12 CODE >25:C:\Users\2013b\Git\HABnova\main.c
-3AA text12 CODE >27:C:\Users\2013b\Git\HABnova\main.c
-3B9 text12 CODE >41:C:\Users\2013b\Git\HABnova\main.c
-3C1 text12 CODE >28:C:\Users\2013b\Git\HABnova\main.c
-3CB text12 CODE >30:C:\Users\2013b\Git\HABnova\main.c
-3D7 text12 CODE >32:C:\Users\2013b\Git\HABnova\main.c
-3D9 text12 CODE >33:C:\Users\2013b\Git\HABnova\main.c
-3DC text12 CODE >34:C:\Users\2013b\Git\HABnova\main.c
-3E8 text12 CODE >38:C:\Users\2013b\Git\HABnova\main.c
-3EC text12 CODE >40:C:\Users\2013b\Git\HABnova\main.c
-3FA text12 CODE >41:C:\Users\2013b\Git\HABnova\main.c
-400 text12 CODE >43:C:\Users\2013b\Git\HABnova\main.c
-404 text12 CODE >44:C:\Users\2013b\Git\HABnova\main.c
+39C text12 CODE >20:C:\Users\2013b\Git\HABnova\main.c
+3A7 text12 CODE >22:C:\Users\2013b\Git\HABnova\main.c
+3AA text12 CODE >24:C:\Users\2013b\Git\HABnova\main.c
+3AA text12 CODE >26:C:\Users\2013b\Git\HABnova\main.c
+3B9 text12 CODE >40:C:\Users\2013b\Git\HABnova\main.c
+3C1 text12 CODE >27:C:\Users\2013b\Git\HABnova\main.c
+3CB text12 CODE >29:C:\Users\2013b\Git\HABnova\main.c
+3D7 text12 CODE >31:C:\Users\2013b\Git\HABnova\main.c
+3D9 text12 CODE >32:C:\Users\2013b\Git\HABnova\main.c
+3DC text12 CODE >33:C:\Users\2013b\Git\HABnova\main.c
+3E8 text12 CODE >37:C:\Users\2013b\Git\HABnova\main.c
+3EC text12 CODE >39:C:\Users\2013b\Git\HABnova\main.c
+3FA text12 CODE >40:C:\Users\2013b\Git\HABnova\main.c
+400 text12 CODE >42:C:\Users\2013b\Git\HABnova\main.c
+404 text12 CODE >43:C:\Users\2013b\Git\HABnova\main.c
 5B1 text11 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
 5B1 text11 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
 5B2 text11 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
@@ -288,24 +286,24 @@ $dist/default/production\HABnova.production.o
 581 text10 CODE >34:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
 59F text10 CODE >35:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
 5B0 text10 CODE >36:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-16F text9 CODE >1:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\abs.c
-16F text9 CODE >3:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\abs.c
-12D text8 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\putch.c
-12D text8 CODE >9:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\putch.c
-2A9 text7 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-2A9 text7 CODE >12:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-2AE text7 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-2B1 text7 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-2B2 text7 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-2D5 text7 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-2E5 text7 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-2ED text7 CODE >21:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-1E7 text6 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-1E9 text6 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-1EB text6 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-1F9 text6 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-207 text6 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-20C text6 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
+16B text9 CODE >1:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\abs.c
+16B text9 CODE >3:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\abs.c
+129 text8 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\putch.c
+129 text8 CODE >9:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\putch.c
+262 text7 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
+262 text7 CODE >12:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
+267 text7 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
+26A text7 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
+26B text7 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
+28E text7 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
+29E text7 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
+2A6 text7 CODE >21:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
+1E4 text6 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
+1E6 text6 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
+1E8 text6 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
+1F6 text6 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
+204 text6 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
+209 text6 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
 2EE text5 CODE >72:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
 2F0 text5 CODE >77:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
 2F2 text5 CODE >78:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
@@ -365,43 +363,43 @@ $dist/default/production\HABnova.production.o
 4AF text3 CODE >1358:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
 4B2 text3 CODE >1362:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
 4CB text3 CODE >1363:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-236 text2 CODE >1368:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-238 text2 CODE >1373:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-23C text2 CODE >1374:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-23F text2 CODE >1375:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-247 text2 CODE >1376:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-25B text2 CODE >1375:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-25C text2 CODE >1378:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-264 text2 CODE >1382:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-1A0 text1 CODE >9:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-1A2 text1 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-1A6 text1 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-1AA text1 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-1AC text1 CODE >18:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-1AE text1 CODE >19:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-1BA text1 CODE >20:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-1C2 text1 CODE >23:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-33E maintext CODE >101:C:\Users\2013b\Git\HABnova\main.c
-33E maintext CODE >103:C:\Users\2013b\Git\HABnova\main.c
-341 maintext CODE >104:C:\Users\2013b\Git\HABnova\main.c
-344 maintext CODE >108:C:\Users\2013b\Git\HABnova\main.c
-347 maintext CODE >111:C:\Users\2013b\Git\HABnova\main.c
-358 maintext CODE >112:C:\Users\2013b\Git\HABnova\main.c
-35D maintext CODE >113:C:\Users\2013b\Git\HABnova\main.c
-36D maintext CODE >114:C:\Users\2013b\Git\HABnova\main.c
-371 maintext CODE >116:C:\Users\2013b\Git\HABnova\main.c
-375 maintext CODE >118:C:\Users\2013b\Git\HABnova\main.c
-378 maintext CODE >120:C:\Users\2013b\Git\HABnova\main.c
-380 maintext CODE >121:C:\Users\2013b\Git\HABnova\main.c
-392 maintext CODE >122:C:\Users\2013b\Git\HABnova\main.c
-134 clrtext CODE >2981:C:\Users\2013b\AppData\Local\Temp\s6u0.
-134 clrtext CODE >2982:C:\Users\2013b\AppData\Local\Temp\s6u0.
-135 clrtext CODE >2983:C:\Users\2013b\AppData\Local\Temp\s6u0.
-135 clrtext CODE >2984:C:\Users\2013b\AppData\Local\Temp\s6u0.
-136 clrtext CODE >2985:C:\Users\2013b\AppData\Local\Temp\s6u0.
-137 clrtext CODE >2986:C:\Users\2013b\AppData\Local\Temp\s6u0.
-138 clrtext CODE >2987:C:\Users\2013b\AppData\Local\Temp\s6u0.
-139 clrtext CODE >2988:C:\Users\2013b\AppData\Local\Temp\s6u0.
+233 text2 CODE >1368:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
+235 text2 CODE >1373:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
+239 text2 CODE >1374:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
+23C text2 CODE >1375:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
+244 text2 CODE >1376:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
+258 text2 CODE >1375:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
+259 text2 CODE >1378:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
+261 text2 CODE >1382:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
+19D text1 CODE >9:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
+19F text1 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
+1A3 text1 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
+1A7 text1 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
+1A9 text1 CODE >18:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
+1AB text1 CODE >19:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
+1B7 text1 CODE >20:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
+1BF text1 CODE >23:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
+33E maintext CODE >97:C:\Users\2013b\Git\HABnova\main.c
+33E maintext CODE >99:C:\Users\2013b\Git\HABnova\main.c
+341 maintext CODE >100:C:\Users\2013b\Git\HABnova\main.c
+344 maintext CODE >104:C:\Users\2013b\Git\HABnova\main.c
+347 maintext CODE >107:C:\Users\2013b\Git\HABnova\main.c
+358 maintext CODE >108:C:\Users\2013b\Git\HABnova\main.c
+35D maintext CODE >109:C:\Users\2013b\Git\HABnova\main.c
+36D maintext CODE >110:C:\Users\2013b\Git\HABnova\main.c
+371 maintext CODE >112:C:\Users\2013b\Git\HABnova\main.c
+375 maintext CODE >114:C:\Users\2013b\Git\HABnova\main.c
+378 maintext CODE >116:C:\Users\2013b\Git\HABnova\main.c
+380 maintext CODE >117:C:\Users\2013b\Git\HABnova\main.c
+392 maintext CODE >118:C:\Users\2013b\Git\HABnova\main.c
+130 clrtext CODE >2966:C:\Users\2013b\AppData\Local\Temp\scf8.
+130 clrtext CODE >2967:C:\Users\2013b\AppData\Local\Temp\scf8.
+131 clrtext CODE >2968:C:\Users\2013b\AppData\Local\Temp\scf8.
+131 clrtext CODE >2969:C:\Users\2013b\AppData\Local\Temp\scf8.
+132 clrtext CODE >2970:C:\Users\2013b\AppData\Local\Temp\scf8.
+133 clrtext CODE >2971:C:\Users\2013b\AppData\Local\Temp\scf8.
+134 clrtext CODE >2972:C:\Users\2013b\AppData\Local\Temp\scf8.
+135 clrtext CODE >2973:C:\Users\2013b\AppData\Local\Temp\scf8.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -432,7 +430,7 @@ _LATC 10E 0 ABS 0 - dist/default/production\HABnova.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\HABnova.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\HABnova.production.o
 _WPUC 20E 0 ABS 0 - dist/default/production\HABnova.production.o
-___sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\s6u0.o
+___sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\scf8.o
 _dbuf 120 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
 _dtoa D48 0 CODE 0 text4 dist/default/production\HABnova.production.o
 _main 67C 0 CODE 0 maintext dist/default/production\HABnova.production.o
@@ -443,7 +441,7 @@ btemp 7E 0 ABS 0 - dist/default/production\HABnova.production.o
 pad@i 27 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 pad@p 25 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 pad@w 29 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-start 4 0 CODE 0 init C:\Users\2013b\AppData\Local\Temp\s6u0.o
+start 4 0 CODE 0 init C:\Users\2013b\AppData\Local\Temp\scf8.o
 ___aomod@counter 71 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 __size_of___aodiv 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __size_of___aomod 0 0 ABS 0 - dist/default/production\HABnova.production.o
@@ -456,12 +454,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 __end_of_vfpfcnvrt 9AA 0 CODE 0 text3 dist/default/production\HABnova.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production\HABnova.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s6u0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s6u0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s6u0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s6u0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s6u0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s6u0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\scf8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\scf8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\scf8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\scf8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\scf8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\scf8.o
 wtemp0 7E 0 ABS 0 - dist/default/production\HABnova.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
@@ -474,7 +472,7 @@ _ANSELB 18D 0 ABS 0 - dist/default/production\HABnova.production.o
 _ANSELC 18E 0 ABS 0 - dist/default/production\HABnova.production.o
 _BORCON 116 0 ABS 0 - dist/default/production\HABnova.production.o
 AppendCRC@data 2B 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__end_of_AppendCRC 552 0 CODE 0 text19 dist/default/production\HABnova.production.o
+__end_of_AppendCRC 5DC 0 CODE 0 text19 dist/default/production\HABnova.production.o
 main@message A9 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
 __size_of_AppendCRC 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Lmaintext 0 0 ABS 0 maintext -
@@ -484,32 +482,32 @@ __end_of___aomod B62 0 CODE 0 text10 dist/default/production\HABnova.production.
 crc16@byte 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 ___aodiv@quotient 73 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 ?_strlen 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\s6u0.o
-___stacklo 20C0 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\s6u0.o
-_AppendCRC 4CA 0 CODE 0 text19 dist/default/production\HABnova.production.o
+___stackhi 23EF 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\scf8.o
+___stacklo 20C0 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\scf8.o
+_AppendCRC 54E 0 CODE 0 text19 dist/default/production\HABnova.production.o
 ___aomod@dividend 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __size_of_crc16 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __size_of_fputc 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __size_of_fputs 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __size_of_putch 0 0 ABS 0 - dist/default/production\HABnova.production.o
 crc16@polynomial 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_PIN_MANAGER_Initialize 386 0 CODE 0 text17 dist/default/production\HABnova.production.o
+_PIN_MANAGER_Initialize 380 0 CODE 0 text17 dist/default/production\HABnova.production.o
 ___aomod@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 start_initialization FD4 0 CODE 0 cinit dist/default/production\HABnova.production.o
 _ODCONA 28C 0 ABS 0 - dist/default/production\HABnova.production.o
 _ODCONB 28D 0 ABS 0 - dist/default/production\HABnova.production.o
 _ODCONC 28E 0 ABS 0 - dist/default/production\HABnova.production.o
 _OSCCON 99 0 ABS 0 - dist/default/production\HABnova.production.o
-_TransmitBit 2B0 0 CODE 0 text15 dist/default/production\HABnova.production.o
-__end_of_SYSTEM_Initialize 268 0 CODE 0 text16 dist/default/production\HABnova.production.o
-clear_ram0 268 0 CODE 0 clrtext dist/default/production\HABnova.production.o
+_TransmitBit 2A8 0 CODE 0 text15 dist/default/production\HABnova.production.o
+__end_of_SYSTEM_Initialize 260 0 CODE 0 text16 dist/default/production\HABnova.production.o
+clear_ram0 260 0 CODE 0 clrtext dist/default/production\HABnova.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
 __size_of_TransmitString 0 0 ABS 0 - dist/default/production\HABnova.production.o
 _dtoa$250 3C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 fputc@fp 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 fputs@fp 78 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\s6u0.o
+___int_sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\scf8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -521,7 +519,7 @@ __Hbank7 0 0 ABS 0 bank7 -
 __Hbank8 0 0 ABS 0 bank8 -
 __Hbank9 0 0 ABS 0 bank9 -
 __Hcinit 1000 0 CODE 0 cinit -
-__end_of_strlen 2B0 0 CODE 0 text20 dist/default/production\HABnova.production.o
+__end_of_strlen 2A8 0 CODE 0 text20 dist/default/production\HABnova.production.o
 __Hidloc 0 0 IDLOC 0 idloc -
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Hsfr10 0 0 ABS 0 sfr10 -
@@ -573,7 +571,7 @@ __Hbank31 0 0 BANK31 1 bank31 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
 TransmitString@counti 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__end_of_sprintf 386 0 CODE 0 text1 dist/default/production\HABnova.production.o
+__end_of_sprintf 380 0 CODE 0 text1 dist/default/production\HABnova.production.o
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10014 0 CONFIG 0 config -
@@ -613,7 +611,7 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-__end_ofcrc16@FRONT_BIT 1064 0 STRCODE 0 stringtext1 dist/default/production\HABnova.production.o
+__end_ofcrc16@FRONT_BIT 1046 0 STRCODE 0 stringtext1 dist/default/production\HABnova.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 4 0 CODE 0 init -
@@ -642,7 +640,7 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 1060 0 STRCODE 0 stringtext1 dist/default/production\HABnova.production.o
+__pstringtext1 1042 0 STRCODE 0 stringtext1 dist/default/production\HABnova.production.o
 __pstringtext2 1000 0 STRCODE 0 stringtext2 dist/default/production\HABnova.production.o
 __pstringtext3 0 0 STRCODE 0 stringtext3 dist/default/production\HABnova.production.o
 ___aodiv@counter 71 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
@@ -654,18 +652,18 @@ __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800A 0 ABS 0 - -
 __S1 140 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
-_abs 2DE 0 CODE 0 text9 dist/default/production\HABnova.production.o
+_abs 2D6 0 CODE 0 text9 dist/default/production\HABnova.production.o
 _pad 5DC 0 CODE 0 text5 dist/default/production\HABnova.production.o
 TransmitByte@i 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 ___aodiv@sign 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 sprintf@fmt 66 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_SYSTEM_Initialize 25C 0 CODE 0 text16 dist/default/production\HABnova.production.o
+_SYSTEM_Initialize 254 0 CODE 0 text16 dist/default/production\HABnova.production.o
 crc16@counti 21 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__end_of_abs 30C 0 CODE 0 text9 dist/default/production\HABnova.production.o
+__end_of_abs 304 0 CODE 0 text9 dist/default/production\HABnova.production.o
 __end_of_pad 67C 0 CODE 0 text5 dist/default/production\HABnova.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\2013b\AppData\Local\Temp\s6u0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\2013b\AppData\Local\Temp\scf8.o
 strlen@a 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 strlen@s 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
@@ -680,15 +678,15 @@ pad@buf 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __ptext10 9AA 0 CODE 0 text10 dist/default/production\HABnova.production.o
 __ptext11 B62 0 CODE 0 text11 dist/default/production\HABnova.production.o
 __ptext12 72C 0 CODE 0 text12 dist/default/production\HABnova.production.o
-__ptext13 41A 0 CODE 0 text13 dist/default/production\HABnova.production.o
-__ptext14 30C 0 CODE 0 text14 dist/default/production\HABnova.production.o
-__ptext15 2B0 0 CODE 0 text15 dist/default/production\HABnova.production.o
-__ptext16 25C 0 CODE 0 text16 dist/default/production\HABnova.production.o
-__ptext17 386 0 CODE 0 text17 dist/default/production\HABnova.production.o
-__ptext18 274 0 CODE 0 text18 dist/default/production\HABnova.production.o
-__ptext19 4CA 0 CODE 0 text19 dist/default/production\HABnova.production.o
-__ptext20 282 0 CODE 0 text20 dist/default/production\HABnova.production.o
-__end_of_PIN_MANAGER_Initialize 3CE 0 CODE 0 text17 dist/default/production\HABnova.production.o
+__ptext13 414 0 CODE 0 text13 dist/default/production\HABnova.production.o
+__ptext14 304 0 CODE 0 text14 dist/default/production\HABnova.production.o
+__ptext15 2A8 0 CODE 0 text15 dist/default/production\HABnova.production.o
+__ptext16 254 0 CODE 0 text16 dist/default/production\HABnova.production.o
+__ptext17 380 0 CODE 0 text17 dist/default/production\HABnova.production.o
+__ptext18 26C 0 CODE 0 text18 dist/default/production\HABnova.production.o
+__ptext19 54E 0 CODE 0 text19 dist/default/production\HABnova.production.o
+__ptext20 27A 0 CODE 0 text20 dist/default/production\HABnova.production.o
+__end_of_PIN_MANAGER_Initialize 3C8 0 CODE 0 text17 dist/default/production\HABnova.production.o
 ___aodiv B62 0 CODE 0 text11 dist/default/production\HABnova.production.o
 ___aomod 9AA 0 CODE 0 text10 dist/default/production\HABnova.production.o
 __Lbank10 0 0 ABS 0 bank10 -
@@ -724,7 +722,7 @@ __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
 _LATAbits 10C 0 ABS 0 - dist/default/production\HABnova.production.o
-_strlen 282 0 CODE 0 text20 dist/default/production\HABnova.production.o
+_strlen 27A 0 CODE 0 text20 dist/default/production\HABnova.production.o
 __size_of_vfprintf 0 0 ABS 0 - dist/default/production\HABnova.production.o
 _transmission_time DC 0 BANK1 1 bssBANK1 dist/default/production\HABnova.production.o
 _OSCTUNE 98 0 ABS 0 - dist/default/production\HABnova.production.o
@@ -742,7 +740,7 @@ ___aodiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.produc
 ___aodiv@dividend 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __CFG_ZCD$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_TransmitBit 2DE 0 CODE 0 text15 dist/default/production\HABnova.production.o
+__end_of_TransmitBit 2D6 0 CODE 0 text15 dist/default/production\HABnova.production.o
 end_of_initialization FFA 0 CODE 0 cinit dist/default/production\HABnova.production.o
 __Hintentry 4 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
@@ -764,31 +762,31 @@ TransmitString@i 7A 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.prod
 vfpfcnvrt@ap 4F 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 vfpfcnvrt@fp 5D 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 vfpfcnvrt@ll 55 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__ptext1 340 0 CODE 0 text1 dist/default/production\HABnova.production.o
-__ptext2 46C 0 CODE 0 text2 dist/default/production\HABnova.production.o
+__ptext1 33A 0 CODE 0 text1 dist/default/production\HABnova.production.o
+__ptext2 466 0 CODE 0 text2 dist/default/production\HABnova.production.o
 __ptext3 80A 0 CODE 0 text3 dist/default/production\HABnova.production.o
 __ptext4 D48 0 CODE 0 text4 dist/default/production\HABnova.production.o
 __ptext5 5DC 0 CODE 0 text5 dist/default/production\HABnova.production.o
-__ptext6 3CE 0 CODE 0 text6 dist/default/production\HABnova.production.o
-__ptext7 552 0 CODE 0 text7 dist/default/production\HABnova.production.o
-__ptext8 25A 0 CODE 0 text8 dist/default/production\HABnova.production.o
-__ptext9 2DE 0 CODE 0 text9 dist/default/production\HABnova.production.o
+__ptext6 3C8 0 CODE 0 text6 dist/default/production\HABnova.production.o
+__ptext7 4C4 0 CODE 0 text7 dist/default/production\HABnova.production.o
+__ptext8 252 0 CODE 0 text8 dist/default/production\HABnova.production.o
+__ptext9 2D6 0 CODE 0 text9 dist/default/production\HABnova.production.o
 vfprintf@ap 60 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 vfprintf@fp 63 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 vfprintf@cfmt 64 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_sprintf 340 0 CODE 0 text1 dist/default/production\HABnova.production.o
-_vfprintf 46C 0 CODE 0 text2 dist/default/production\HABnova.production.o
+_sprintf 33A 0 CODE 0 text1 dist/default/production\HABnova.production.o
+_vfprintf 466 0 CODE 0 text2 dist/default/production\HABnova.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 sprintf@ap A2 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-_TransmitByte 30C 0 CODE 0 text14 dist/default/production\HABnova.production.o
-_TransmitString 41A 0 CODE 0 text13 dist/default/production\HABnova.production.o
+_TransmitByte 304 0 CODE 0 text14 dist/default/production\HABnova.production.o
+_TransmitString 414 0 CODE 0 text13 dist/default/production\HABnova.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
 __Hstringtext2 0 0 ABS 0 stringtext2 -
 __Hstringtext3 0 0 ABS 0 stringtext3 -
 __CFG_LPBOR$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_vfprintf 4CA 0 CODE 0 text2 dist/default/production\HABnova.production.o
+__end_of_vfprintf 4C4 0 CODE 0 text2 dist/default/production\HABnova.production.o
 __CFG_WDTCPS$WDTCPS1F 0 0 ABS 0 - dist/default/production\HABnova.production.o
 _SLRCONA 30C 0 ABS 0 - dist/default/production\HABnova.production.o
 _SLRCONB 30D 0 ABS 0 - dist/default/production\HABnova.production.o
@@ -809,27 +807,27 @@ __end_of_dtoa FD4 0 CODE 0 text4 dist/default/production\HABnova.production.o
 __end_of_main 72C 0 CODE 0 maintext dist/default/production\HABnova.production.o
 __end_of_crc16 80A 0 CODE 0 text12 dist/default/production\HABnova.production.o
 TransmitString@message 79 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__end_of_fputc 5DC 0 CODE 0 text7 dist/default/production\HABnova.production.o
-__end_of_fputs 41A 0 CODE 0 text6 dist/default/production\HABnova.production.o
+__end_of_fputc 54E 0 CODE 0 text7 dist/default/production\HABnova.production.o
+__end_of_fputs 414 0 CODE 0 text6 dist/default/production\HABnova.production.o
 ?_sprintf 66 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 _TRISA 8C 0 ABS 0 - dist/default/production\HABnova.production.o
 _TRISB 8D 0 ABS 0 - dist/default/production\HABnova.production.o
 _TRISC 8E 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_putch 25C 0 CODE 0 text8 dist/default/production\HABnova.production.o
+__end_of_putch 254 0 CODE 0 text8 dist/default/production\HABnova.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 _crc16 72C 0 CODE 0 text12 dist/default/production\HABnova.production.o
 _flags 6D 0 BANK0 1 bssBANK0 dist/default/production\HABnova.production.o
-_fputc 552 0 CODE 0 text7 dist/default/production\HABnova.production.o
-_fputs 3CE 0 CODE 0 text6 dist/default/production\HABnova.production.o
-_putch 25A 0 CODE 0 text8 dist/default/production\HABnova.production.o
+_fputc 4C4 0 CODE 0 text7 dist/default/production\HABnova.production.o
+_fputs 3C8 0 CODE 0 text6 dist/default/production\HABnova.production.o
+_putch 252 0 CODE 0 text8 dist/default/production\HABnova.production.o
 _width DA 0 BANK1 1 bssBANK1 dist/default/production\HABnova.production.o
-__end_of_TransmitString 46C 0 CODE 0 text13 dist/default/production\HABnova.production.o
+__end_of_TransmitString 466 0 CODE 0 text13 dist/default/production\HABnova.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __end_of_BAUD_DELAY 1004 0 STRCODE 0 stringtext2 dist/default/production\HABnova.production.o
 __size_of_abs 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __size_of_pad 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_OSCILLATOR_Initialize 282 0 CODE 0 text18 dist/default/production\HABnova.production.o
+__end_of_OSCILLATOR_Initialize 27A 0 CODE 0 text18 dist/default/production\HABnova.production.o
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __initialization FD4 0 CODE 0 cinit dist/default/production\HABnova.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
@@ -838,7 +836,7 @@ __pbssBANK1 D8 0 BANK1 1 bssBANK1 dist/default/production\HABnova.production.o
 __pbssBANK2 120 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
 TransmitByte@byte 73 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_TransmitByte 340 0 CODE 0 text14 dist/default/production\HABnova.production.o
+__end_of_TransmitByte 33A 0 CODE 0 text14 dist/default/production\HABnova.production.o
 dtoa@d 30 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 dtoa@i 4C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 dtoa@n 44 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
@@ -846,7 +844,7 @@ dtoa@p 3E 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 dtoa@s 42 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 dtoa@w 40 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __size_of_TransmitBit 0 0 ABS 0 - dist/default/production\HABnova.production.o
-_OSCILLATOR_Initialize 274 0 CODE 0 text18 dist/default/production\HABnova.production.o
+_OSCILLATOR_Initialize 26C 0 CODE 0 text18 dist/default/production\HABnova.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -873,32 +871,32 @@ _OSCILLATOR_Initialize 274 0 CODE 0 text18 dist/default/production\HABnova.produ
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7EA FD4 16 2
-text1 0 1A0 340 23 2
-text2 0 236 46C 2F 2
+text1 0 19D 33A 23 2
+text2 0 233 466 2F 2
 text3 0 405 80A D0 2
 text4 0 6A4 D48 146 2
 text5 0 2EE 5DC 50 2
-text6 0 1E7 3CE 26 2
-text7 0 2A9 552 45 2
-text8 0 12D 25A 1 2
-text9 0 16F 2DE 17 2
+text6 0 1E4 3C8 26 2
+text7 0 262 4C4 45 2
+text8 0 129 252 1 2
+text9 0 16B 2D6 17 2
 text10 0 4D5 9AA DC 2
 text11 0 5B1 B62 F3 2
 text12 0 396 72C 6F 2
-text13 0 20D 41A 29 2
-text14 0 186 30C 1A 2
-text15 0 158 2B0 17 2
-text16 0 12E 25C 6 2
-text17 0 1C3 386 24 2
-text18 0 13A 274 7 2
-text19 0 265 4CA 44 2
-text20 0 141 282 17 2
+text13 0 20A 414 29 2
+text14 0 182 304 1B 2
+text15 0 154 2A8 17 2
+text16 0 12A 254 6 2
+text17 0 1C0 380 24 2
+text18 0 136 26C 7 2
+text19 0 2A7 54E 47 2
+text20 0 13D 27A 17 2
 maintext 0 33E 67C 58 2
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 20 20 4F 1
 cstackBANK1 1 A0 A0 3E 1
-stringtext2 0 800 1000 32 2
+stringtext2 0 800 1000 23 2
 reset_vec 0 0 0 4 2
 bssBANK2 1 120 120 20 1
-clrtext 0 134 268 6 2
+clrtext 0 130 260 6 2
 config 0 8007 1000E 3 2

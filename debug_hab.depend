@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1547318384 source:c:\users\2013b\git\habnova\mcc_generated_files\device_config.c
+
+1560108166 source:c:\users\2013b\git\habnova\debug_hab\main.c
+	"mcc_generated_files/mcc.h"
+	"mcc_generated_files/pin_manager.h"
+	"stdbool.h"
+	<string.h>
+	<stdio.h>
+

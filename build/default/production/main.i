@@ -17235,7 +17235,6 @@ unsigned short crc16(const char* message, unsigned short polynomial) {
  unsigned int crc;
 
  crc = 0xFFFF;
-
  if (strlen(message) == 0)
  {
   return (~crc);
@@ -17265,55 +17264,52 @@ int transmission_time = 0;
 
 void TransmitBit(_Bool b)
 {
-    if (b)
-    {
-        do { LATAbits.LATA4 = 1; } while(0);
-    }
-    else
-    {
-        do { LATAbits.LATA4 = 0; } while(0);
-    }
-    _delay((unsigned long)((BAUD_DELAY)*(4000000/4000.0)));
-    transmission_time += BAUD_DELAY;
+ if (b)
+ {
+
+  do { LATAbits.LATA4 = 1; } while(0);
+ }
+ else
+ {
+
+  do { LATAbits.LATA4 = 0; } while(0);
+ }
+ _delay((unsigned long)((BAUD_DELAY)*(4000000/4000.0)));
+ transmission_time += BAUD_DELAY;
 }
 
 void TransmitByte(char byte)
 {
-    for (int i = 0; i < 8; i++)
-    {
-        if (byte & 1)
-        {
-            TransmitBit(1);
-        }
-        else
-        {
-            TransmitBit(0);
-        }
-        byte >> 1;
-    }
+ for (int i = 7; i >=0; i--)
+ {
+  TransmitBit((byte >> i) & 1);
+ }
+
 }
 
 void TransmitString(char* message)
 {
-    for (int i = 0, counti = strlen(message); i < counti; i++)
-    {
-        TransmitByte(message[i]);
-    }
+
+ for (int i = 0, counti = strlen(message); i < counti; i++)
+ {
+  TransmitByte(message[i]);
+ }
+
 }
 
 
 void AppendCRC(char* data, unsigned short crc)
 {
-    int len = strlen(data);
-    if (len >= 40 - 1)
-    {
+ int len = strlen(data);
+ if (len >= 40 - 1)
+ {
 
-        len = 40 - 2;
-    }
-    data[len] = (char)(crc << 8);
-    data[len + 1] = (char)(crc);
-    data[len + 2] = '\n';
-    data[len + 3] = '\0';
+  len = 40 - 2;
+ }
+ data[len] = (char)(crc >> 8);
+ data[len + 1] = (char)(crc);
+ data[len + 2] = '\n';
+ data[len + 3] = '\0';
 }
 
 void main(void)
@@ -17326,7 +17322,7 @@ void main(void)
     int id = 0;
     while (1)
     {
-        sprintf(message, "RTTY Transmission Test, Hello World! ID: %d \0", id);
+        sprintf(message, "RTTY Test, Hello World! ID: %d", id);
         id++;
         AppendCRC(message, crc16(message, 0x8408));
         TransmitString(message);
