@@ -9,7 +9,7 @@
 # 1 "mcc_generated_files/mcc.c" 2
 # 47 "mcc_generated_files/mcc.c"
 # 1 "mcc_generated_files/mcc.h" 1
-# 49 "mcc_generated_files/mcc.h"
+# 50 "mcc_generated_files/mcc.h"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 1 3
 # 18 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -16927,17 +16927,17 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 2 3
-# 49 "mcc_generated_files/mcc.h" 2
+# 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/device_config.h" 1
-# 50 "mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
 # 92 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 # 104 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 51 "mcc_generated_files/mcc.h" 2
+# 52 "mcc_generated_files/mcc.h" 2
 
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
@@ -17022,13 +17022,13 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "mcc_generated_files/mcc.h" 2
+# 53 "mcc_generated_files/mcc.h" 2
 
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "mcc_generated_files/mcc.h" 2
-# 68 "mcc_generated_files/mcc.h"
+# 54 "mcc_generated_files/mcc.h" 2
+# 69 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 81 "mcc_generated_files/mcc.h"
+# 82 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 

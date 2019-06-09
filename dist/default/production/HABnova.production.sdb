@@ -31,17 +31,17 @@
 [v _strlen strlen `(ui  1 e 2 0 ]
 "4 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"16 C:\Users\2013b\Git\HABnova\main.c
+"25 C:\Users\2013b\Git\HABnova\main.c
 [v _crc16 crc16 `(us  1 e 2 0 ]
-"47
+"55
 [v _TransmitBit TransmitBit `(v  1 e 1 0 ]
-"63
+"77
 [v _TransmitByte TransmitByte `(v  1 e 1 0 ]
-"72
+"108
 [v _TransmitString TransmitString `(v  1 e 1 0 ]
-"83
+"123
 [v _AppendCRC AppendCRC `(v  1 e 1 0 ]
-"97
+"140
 [v _main main `(v  1 e 1 0 ]
 "50 C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -126,26 +126,26 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"45 C:\Users\2013b\Git\HABnova\main.c
+"53 C:\Users\2013b\Git\HABnova\main.c
 [v _transmission_time transmission_time `i  1 e 2 0 ]
-"97
+"140
 [v _main main `(v  1 e 1 0 ]
 {
-"114
+"158
 [v main@i i `i  1 a 2 54 ]
-"102
+"148
 [v main@message message `[43]uc  1 a 43 9 ]
-"104
+"150
 [v main@id id `i  1 a 2 52 ]
-"120
+"170
 } 0
 "9 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@s s `*.4uc  1 a 1 wreg ]
-[s S549 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S550 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
 "13
-[v sprintf@f f `S549  1 a 5 4 ]
+[v sprintf@f f `S550  1 a 5 4 ]
 "12
 [v sprintf@ap ap `[1]*.4v  1 a 1 2 ]
 "9
@@ -158,40 +158,40 @@
 "1368 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S207 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S207  1 a 1 wreg ]
+[s S208 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S208  1 a 1 wreg ]
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 68 ]
 "1368
-[v vfprintf@fp fp `*.4S207  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S208  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 62 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 64 ]
 "1373
 "1368
-[v vfprintf@fp fp `*.4S207  1 a 1 67 ]
+[v vfprintf@fp fp `*.4S208  1 a 1 67 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S207 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S207  1 a 1 wreg ]
+[s S208 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S208  1 a 1 wreg ]
 "674
 [v vfpfcnvrt@ll ll `o  1 a 8 53 ]
 "670
-[v vfpfcnvrt@fp fp `*.4S207  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S208  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 46 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 47 ]
 "680
 "670
-[v vfpfcnvrt@fp fp `*.4S207  1 a 1 61 ]
+[v vfpfcnvrt@fp fp `*.4S208  1 a 1 61 ]
 "1365
 } 0
 "274
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S207 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S207  1 a 1 wreg ]
+[s S208 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S208  1 a 1 wreg ]
 "277
 [v dtoa@n n `o  1 a 8 36 ]
 "276
@@ -200,28 +200,28 @@
 [v dtoa@w w `i  1 a 2 32 ]
 [v dtoa@p p `i  1 a 2 30 ]
 "274
-[v dtoa@fp fp `*.4S207  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S208  1 a 1 wreg ]
 [v dtoa@d d `o  1 p 8 16 ]
 "280
 "274
-[v dtoa@fp fp `*.4S207  1 a 1 27 ]
+[v dtoa@fp fp `*.4S208  1 a 1 27 ]
 "315
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S207 _IO_FILE 0 ]
-[v pad@fp fp `*.4S207  1 a 1 wreg ]
+[s S208 _IO_FILE 0 ]
+[v pad@fp fp `*.4S208  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 9 ]
 [v pad@i i `i  1 a 2 7 ]
 "72
-[v pad@fp fp `*.4S207  1 a 1 wreg ]
+[v pad@fp fp `*.4S208  1 a 1 wreg ]
 [v pad@buf buf `*.5uc  1 p 1 4 ]
 [v pad@p p `i  1 p 2 5 ]
 "77
 "72
-[v pad@fp fp `*.4S207  1 a 1 11 ]
+[v pad@fp fp `*.4S208  1 a 1 11 ]
 "95
 } 0
 "8 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
@@ -234,8 +234,8 @@
 [v fputs@c c `uc  1 a 1 0 ]
 "8
 [v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S549 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S549  1 p 1 8 ]
+[s S550 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.4S550  1 p 1 8 ]
 "13
 [v fputs@s s `*.5DCuc  1 a 1 3 ]
 "19
@@ -244,8 +244,8 @@
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S549 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S549  1 p 1 2 ]
+[s S550 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.4S550  1 p 1 2 ]
 "21
 } 0
 "7 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\putch.c
@@ -283,59 +283,59 @@
 [v ___aodiv@dividend dividend `o  1 p 8 8 ]
 "43
 } 0
-"16 C:\Users\2013b\Git\HABnova\main.c
+"25 C:\Users\2013b\Git\HABnova\main.c
 [v _crc16 crc16 `(us  1 e 2 0 ]
 {
 [v crc16@message message `*.4DCuc  1 a 1 wreg ]
-"31
-[v crc16@i_139 i `i  1 a 2 6 ]
-"27
-[v crc16@byte byte `uc  1 a 1 3 ]
+"39
+[v crc16@i_140 i `i  1 a 2 5 ]
+"35
+[v crc16@byte byte `uc  1 a 1 2 ]
+"34
+[v crc16@i i `ui  1 a 2 3 ]
+[v crc16@counti counti `ui  1 a 2 0 ]
 "26
-[v crc16@i i `ui  1 a 2 4 ]
-[v crc16@counti counti `ui  1 a 2 1 ]
-"17
-[v crc16@crc crc `ui  1 a 2 9 ]
-"16
+[v crc16@crc crc `ui  1 a 2 8 ]
+"25
 [v crc16@message message `*.4DCuc  1 a 1 wreg ]
 [v crc16@polynomial polynomial `us  1 p 2 4 ]
-"19
-[v crc16@message message `*.4DCuc  1 a 1 8 ]
-"43
+"28
+[v crc16@message message `*.4DCuc  1 a 1 7 ]
+"51
 } 0
-"72
+"108
 [v _TransmitString TransmitString `(v  1 e 1 0 ]
 {
 [v TransmitString@message message `*.4uc  1 a 1 wreg ]
-"75
+"113
 [v TransmitString@i i `i  1 a 2 10 ]
 [v TransmitString@counti counti `i  1 a 2 7 ]
-"72
+"108
 [v TransmitString@message message `*.4uc  1 a 1 wreg ]
-"75
+"113
 [v TransmitString@message message `*.4uc  1 a 1 9 ]
-"80
+"120
 } 0
-"63
+"77
 [v _TransmitByte TransmitByte `(v  1 e 1 0 ]
 {
 [v TransmitByte@byte byte `uc  1 a 1 wreg ]
-"65
+"93
 [v TransmitByte@i i `i  1 a 2 4 ]
-"63
+"77
 [v TransmitByte@byte byte `uc  1 a 1 wreg ]
-"65
+"88
 [v TransmitByte@byte byte `uc  1 a 1 3 ]
-"70
+"106
 } 0
-"47
+"55
 [v _TransmitBit TransmitBit `(v  1 e 1 0 ]
 {
 [v TransmitBit@b b `a  1 a 1 wreg ]
 [v TransmitBit@b b `a  1 a 1 wreg ]
-"49
+"57
 [v TransmitBit@b b `a  1 a 1 1 ]
-"61
+"75
 } 0
 "50 C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -352,18 +352,18 @@
 {
 "64
 } 0
-"83 C:\Users\2013b\Git\HABnova\main.c
+"123 C:\Users\2013b\Git\HABnova\main.c
 [v _AppendCRC AppendCRC `(v  1 e 1 0 ]
 {
 [v AppendCRC@data data `*.4uc  1 a 1 wreg ]
-"85
-[v AppendCRC@len len `i  1 a 2 12 ]
-"83
+"125
+[v AppendCRC@len len `i  1 a 2 11 ]
+"123
 [v AppendCRC@data data `*.4uc  1 a 1 wreg ]
 [v AppendCRC@crc crc `us  1 p 2 9 ]
-"85
-[v AppendCRC@data data `*.4uc  1 a 1 11 ]
-"95
+"125
+[v AppendCRC@data data `*.4uc  1 a 1 10 ]
+"135
 } 0
 "12 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]

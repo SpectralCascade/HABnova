@@ -7,8 +7,9 @@
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
+
 # 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 50 "./mcc_generated_files/mcc.h"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 1 3
 # 18 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -16926,17 +16927,17 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
+# 51 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
 # 92 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 # 104 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 52 "./mcc_generated_files/mcc.h" 2
 
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
@@ -17021,15 +17022,21 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
+# 53 "./mcc_generated_files/mcc.h" 2
 
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-# 68 "./mcc_generated_files/mcc.h"
+# 54 "./mcc_generated_files/mcc.h" 2
+# 69 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 81 "./mcc_generated_files/mcc.h"
+# 82 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 1 "main.c" 2
+# 2 "main.c" 2
+
+
+
+
+
+
 
 
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 1 3
@@ -17087,7 +17094,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 3 "main.c" 2
+# 10 "main.c" 2
 
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 3
@@ -17225,12 +17232,21 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 4 "main.c" 2
+# 11 "main.c" 2
 
 
 
-const int BAUD_DELAY = 20;
-# 16 "main.c"
+const int BAUD_RATE = 50;
+
+
+
+const int MESSAGE_INTERVAL = 1;
+
+
+
+const int DELAY_MULT = 1000;
+
+
 unsigned short crc16(const char* message, unsigned short polynomial) {
  unsigned int crc;
 
@@ -17239,7 +17255,6 @@ unsigned short crc16(const char* message, unsigned short polynomial) {
  {
   return (~crc);
  }
- char append = 0x00;
  const unsigned short FRONT_BIT = 0x8000;
  for (unsigned int i = 0, counti = strlen(message); i < counti; i++) {
   char byte = message[i];
@@ -17267,33 +17282,57 @@ void TransmitBit(_Bool b)
  if (b)
  {
 
+
+
   do { LATAbits.LATA4 = 1; } while(0);
+
  }
  else
  {
 
+
+
   do { LATAbits.LATA4 = 0; } while(0);
+
  }
- _delay((unsigned long)((BAUD_DELAY)*(4000000/4000.0)));
- transmission_time += BAUD_DELAY;
+ _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
+ _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
 }
 
 void TransmitByte(char byte)
 {
- for (int i = 7; i >=0; i--)
+# 88 "main.c"
+    TransmitBit(0);
+
+
+
+
+ for (int i = 0; i < 7; i++)
  {
   TransmitBit((byte >> i) & 1);
  }
+
+
+
+
+ TransmitBit(1);
+ TransmitBit(1);
+
+
 
 }
 
 void TransmitString(char* message)
 {
 
+
+
  for (int i = 0, counti = strlen(message); i < counti; i++)
  {
   TransmitByte(message[i]);
  }
+
+
 
 }
 
@@ -17312,27 +17351,37 @@ void AppendCRC(char* data, unsigned short crc)
  data[len + 3] = '\0';
 }
 
+
+
+
 void main(void)
+
 {
+
     SYSTEM_Initialize();
     PIN_MANAGER_Initialize();
+
 
     char message[40 + 3];
 
     int id = 0;
     while (1)
     {
-        sprintf(message, "RTTY Test, Hello World! ID: %d", id);
+        sprintf(message, "NOVA TEST TRANSMISSION, ID: %d", id);
         id++;
-        AppendCRC(message, crc16(message, 0x8408));
+        AppendCRC(message, crc16(message, 0x1021));
         TransmitString(message);
 
-        TransmitBit(0);
-
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < DELAY_MULT; i++)
         {
-            _delay((unsigned long)((5)*(4000000/4000.0)));
+            _delay((unsigned long)((MESSAGE_INTERVAL)*(4000000/4000.0)));
         }
         transmission_time = 0;
+
+
+
     }
+
+
+
 }

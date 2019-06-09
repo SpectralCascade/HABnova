@@ -3,6 +3,7 @@
 #include "mcc_generated_files/pin_manager.h"
 #else
 #include "stdbool.h"
+
 #define __delay_us(us)
 #define __delay_ms(ms)
 #endif
@@ -12,11 +13,11 @@
 // Baud rate (bits per second).
 const int BAUD_RATE = 50;
 // Half the delay time required to match the baud rate in MICRO seconds
-const int HALF_BAUD_DELAY = (1000000 / BAUD_RATE) / 2;
+#define HALF_BAUD_DELAY ((1000 / BAUD_RATE) / 2) * 1000
 // How often a message should be sent in seconds
-const int MESSAGE_INTERVAL = 5;
+const int MESSAGE_INTERVAL = 1;
 // Maximum length of a message, not including appended CRC
-const int MAX_MESSAGE_LENGTH = 40;
+#define MAX_MESSAGE_LENGTH 40
 // Interval multiplier
 const int DELAY_MULT = 1000;
 
@@ -83,8 +84,8 @@ void TransmitByte(char byte)
     /// so we'll actually be transmitting a bit less than a byte of data... pun intended :P
     /// The protocol used is basically RS-232 (apparently).
 
-    /// We always send a single high bit as our start bit so the receiver software can sync up.
-    TransmitBit(true);
+    /// We always send a single LOW bit as our start bit so the receiver software can sync up.
+    TransmitBit(0);
 #ifdef DEBUG_CONSOLE
     printf("-");
 #endif
@@ -97,8 +98,8 @@ void TransmitByte(char byte)
     printf("-");
 #endif
 	/// Two stop bits to ensure the receiver software can sync up with the next start bit.
-	TransmitBit(false);
-	TransmitBit(false);
+	TransmitBit(1);
+	TransmitBit(1);
 #ifdef DEBUG_CONSOLE
 	printf(" [%c], ", byte);
 #endif // DEBUG_CONSOLE
@@ -149,7 +150,7 @@ void main(void)
     int id = 0;
     while (1)
     {
-        sprintf(message, "Hi!");
+        sprintf(message, "NOVA TEST TRANSMISSION, ID: %d", id);
         id++;
         AppendCRC(message, crc16(message, 0x1021));
         TransmitString(message);

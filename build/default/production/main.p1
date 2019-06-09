@@ -18,8 +18,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v __delay `JF9589 ~T0 @X0 0 e ]
 [p i __delay ]
 [p mainexit ]
-"68 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 68: void SYSTEM_Initialize(void);
+"69 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "92 ./mcc_generated_files/pin_manager.h
 [; ;./mcc_generated_files/pin_manager.h: 92: void PIN_MANAGER_Initialize (void);
@@ -1352,52 +1352,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27877
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 27877: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"7 main.c
-[; ;main.c: 7: const int BAUD_DELAY = 20;
-[v _BAUD_DELAY `Ci ~T0 @X0 1 e ]
-[i _BAUD_DELAY
--> 20 `i
+"14 main.c
+[; ;main.c: 14: const int BAUD_RATE = 50;
+[v _BAUD_RATE `Ci ~T0 @X0 1 e ]
+[i _BAUD_RATE
+-> 50 `i
 ]
-"16
-[; ;main.c: 16: unsigned short crc16(const char* message, unsigned short polynomial) {
+"18
+[; ;main.c: 18: const int MESSAGE_INTERVAL = 1;
+[v _MESSAGE_INTERVAL `Ci ~T0 @X0 1 e ]
+[i _MESSAGE_INTERVAL
+-> 1 `i
+]
+"22
+[; ;main.c: 22: const int DELAY_MULT = 1000;
+[v _DELAY_MULT `Ci ~T0 @X0 1 e ]
+[i _DELAY_MULT
+-> 1000 `i
+]
+"25
+[; ;main.c: 25: unsigned short crc16(const char* message, unsigned short polynomial) {
 [v _crc16 `(us ~T0 @X0 1 ef2`*Cuc`us ]
 {
 [e :U _crc16 ]
 [v _message `*Cuc ~T0 @X0 1 r1 ]
 [v _polynomial `us ~T0 @X0 1 r2 ]
 [f ]
-"17
-[; ;main.c: 17:  unsigned int crc;
+"26
+[; ;main.c: 26:  unsigned int crc;
 [v _crc `ui ~T0 @X0 1 a ]
-"19
-[; ;main.c: 19:  crc = 0xFFFF;
+"28
+[; ;main.c: 28:  crc = 0xFFFF;
 [e = _crc -> 65535 `ui ]
-"20
-[; ;main.c: 20:  if (strlen(message) == 0)
+"29
+[; ;main.c: 29:  if (strlen(message) == 0)
 [e $ ! == ( _strlen (1 _message -> -> 0 `i `ui 1220  ]
-"21
-[; ;main.c: 21:  {
+"30
+[; ;main.c: 30:  {
 {
-"22
-[; ;main.c: 22:   return (~crc);
+"31
+[; ;main.c: 31:   return (~crc);
 [e ) -> ~ _crc `us ]
 [e $UE 1219  ]
-"23
-[; ;main.c: 23:  }
+"32
+[; ;main.c: 32:  }
 }
 [e :U 1220 ]
-"24
-[; ;main.c: 24:  char append = 0x00;
-[v _append `uc ~T0 @X0 1 a ]
-[e = _append -> -> 0 `i `uc ]
-"25
-[; ;main.c: 25:  const unsigned short FRONT_BIT = 0x8000;
-[v F10125 `Cus ~T0 @X0 1 s FRONT_BIT ]
-[i F10125
+"33
+[; ;main.c: 33:  const unsigned short FRONT_BIT = 0x8000;
+[v F10126 `Cus ~T0 @X0 1 s FRONT_BIT ]
+[i F10126
 -> -> 32768 `ui `us
 ]
-"26
-[; ;main.c: 26:  for (unsigned int i = 0, counti = strlen(message); i < counti; i++) {
+"34
+[; ;main.c: 34:  for (unsigned int i = 0, counti = strlen(message); i < counti; i++) {
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
@@ -1406,15 +1414,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1224  ]
 [e :U 1221 ]
 {
-"27
-[; ;main.c: 27:   char byte = message[i];
+"35
+[; ;main.c: 35:   char byte = message[i];
 [v _byte `uc ~T0 @X0 1 a ]
 [e = _byte *U + _message * -> _i `ux -> -> # *U _message `ui `ux ]
-"29
-[; ;main.c: 29:   crc = crc ^ ((unsigned short)(byte << 8));
+"37
+[; ;main.c: 37:   crc = crc ^ ((unsigned short)(byte << 8));
 [e = _crc ^ _crc -> -> << -> _byte `i -> 8 `i `us `ui ]
-"31
-[; ;main.c: 31:   for (int i = 0; i < 8; i++) {
+"39
+[; ;main.c: 39:   for (int i = 0; i < 8; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1422,167 +1430,176 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1226  ]
 [e :U 1225 ]
 {
-"32
-[; ;main.c: 32:    if ((crc & FRONT_BIT) != 0) {
-[e $ ! != & _crc -> F10125 `ui -> -> 0 `i `ui 1228  ]
+"40
+[; ;main.c: 40:    if ((crc & FRONT_BIT) != 0) {
+[e $ ! != & _crc -> F10126 `ui -> -> 0 `i `ui 1228  ]
 {
-"33
-[; ;main.c: 33:     crc = ((unsigned short)(crc << 1)) ^ polynomial;
+"41
+[; ;main.c: 41:     crc = ((unsigned short)(crc << 1)) ^ polynomial;
 [e = _crc ^ -> -> << _crc -> 1 `i `us `ui -> _polynomial `ui ]
-"34
-[; ;main.c: 34:    }
+"42
+[; ;main.c: 42:    }
 }
 [e $U 1229  ]
-"35
-[; ;main.c: 35:    else {
+"43
+[; ;main.c: 43:    else {
 [e :U 1228 ]
 {
-"37
-[; ;main.c: 37:     crc = crc << 1;
+"45
+[; ;main.c: 45:     crc = crc << 1;
 [e = _crc << _crc -> 1 `i ]
-"38
-[; ;main.c: 38:    }
+"46
+[; ;main.c: 46:    }
 }
 [e :U 1229 ]
-"39
-[; ;main.c: 39:   }
+"47
+[; ;main.c: 47:   }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 1225  ]
 [e :U 1226 ]
 }
-"40
-[; ;main.c: 40:  }
+"48
+[; ;main.c: 48:  }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 1224 ]
 [e $ < _i _counti 1221  ]
 [e :U 1222 ]
 }
-"42
-[; ;main.c: 42:  return crc;
+"50
+[; ;main.c: 50:  return crc;
 [e ) -> _crc `us ]
 [e $UE 1219  ]
-"43
-[; ;main.c: 43: }
+"51
+[; ;main.c: 51: }
 [e :UE 1219 ]
 }
-"45
-[; ;main.c: 45: int transmission_time = 0;
+"53
+[; ;main.c: 53: int transmission_time = 0;
 [v _transmission_time `i ~T0 @X0 1 e ]
 [i _transmission_time
 -> 0 `i
 ]
-"47
-[; ;main.c: 47: void TransmitBit(_Bool b)
+"55
+[; ;main.c: 55: void TransmitBit(_Bool b)
 [v _TransmitBit `(v ~T0 @X0 1 ef1`a ]
-"48
-[; ;main.c: 48: {
+"56
+[; ;main.c: 56: {
 {
 [e :U _TransmitBit ]
-"47
-[; ;main.c: 47: void TransmitBit(_Bool b)
+"55
+[; ;main.c: 55: void TransmitBit(_Bool b)
 [v _b `a ~T0 @X0 1 r1 ]
-"48
-[; ;main.c: 48: {
+"56
+[; ;main.c: 56: {
 [f ]
-"49
-[; ;main.c: 49:  if (b)
+"57
+[; ;main.c: 57:  if (b)
 [e $ ! != -> _b `i -> 0 `i 1231  ]
-"50
-[; ;main.c: 50:  {
+"58
+[; ;main.c: 58:  {
 {
-"52
-[; ;main.c: 52:   do { LATAbits.LATA4 = 1; } while(0);
+"62
+[; ;main.c: 62:   do { LATAbits.LATA4 = 1; } while(0);
 [e :U 1234 ]
 {
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 1233 ]
-"53
-[; ;main.c: 53:  }
+"64
+[; ;main.c: 64:  }
 }
 [e $U 1235  ]
-"54
-[; ;main.c: 54:  else
+"65
+[; ;main.c: 65:  else
 [e :U 1231 ]
-"55
-[; ;main.c: 55:  {
+"66
+[; ;main.c: 66:  {
 {
-"57
-[; ;main.c: 57:   do { LATAbits.LATA4 = 0; } while(0);
+"70
+[; ;main.c: 70:   do { LATAbits.LATA4 = 0; } while(0);
 [e :U 1238 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
 [e :U 1237 ]
-"58
-[; ;main.c: 58:  }
+"72
+[; ;main.c: 72:  }
 }
 [e :U 1235 ]
-"59
-[; ;main.c: 59:  _delay((unsigned long)((BAUD_DELAY)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> _BAUD_DELAY `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"60
-[; ;main.c: 60:  transmission_time += BAUD_DELAY;
-[e =+ _transmission_time _BAUD_DELAY ]
-"61
-[; ;main.c: 61: }
+"73
+[; ;main.c: 73:  _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> * / / -> 1000 `i _BAUD_RATE -> 2 `i -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"74
+[; ;main.c: 74:  _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> * / / -> 1000 `i _BAUD_RATE -> 2 `i -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"75
+[; ;main.c: 75: }
 [e :UE 1230 ]
 }
-"63
-[; ;main.c: 63: void TransmitByte(char byte)
+"77
+[; ;main.c: 77: void TransmitByte(char byte)
 [v _TransmitByte `(v ~T0 @X0 1 ef1`uc ]
-"64
-[; ;main.c: 64: {
+"78
+[; ;main.c: 78: {
 {
 [e :U _TransmitByte ]
-"63
-[; ;main.c: 63: void TransmitByte(char byte)
+"77
+[; ;main.c: 77: void TransmitByte(char byte)
 [v _byte `uc ~T0 @X0 1 r1 ]
-"64
-[; ;main.c: 64: {
+"78
+[; ;main.c: 78: {
 [f ]
-"65
-[; ;main.c: 65:  for (int i = 7; i >=0; i--)
+"88
+[; ;main.c: 88:     TransmitBit(0);
+[e ( _TransmitBit (1 -> -> 0 `i `a ]
+"93
+[; ;main.c: 93:  for (int i = 0; i < 7; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
-[e = _i -> 7 `i ]
-[e $ >= _i -> 0 `i 1240  ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 7 `i 1240  ]
 [e $U 1241  ]
 [e :U 1240 ]
-"66
-[; ;main.c: 66:  {
+"94
+[; ;main.c: 94:  {
 {
-"67
-[; ;main.c: 67:   TransmitBit((byte >> i) & 1);
+"95
+[; ;main.c: 95:   TransmitBit((byte >> i) & 1);
 [e ( _TransmitBit (1 -> & >> -> _byte `i _i -> 1 `i `a ]
-"68
-[; ;main.c: 68:  }
+"96
+[; ;main.c: 96:  }
 }
-[e -- _i -> 1 `i ]
-[e $ >= _i -> 0 `i 1240  ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 7 `i 1240  ]
 [e :U 1241 ]
 }
-"70
-[; ;main.c: 70: }
+"101
+[; ;main.c: 101:  TransmitBit(1);
+[e ( _TransmitBit (1 -> -> 1 `i `a ]
+"102
+[; ;main.c: 102:  TransmitBit(1);
+[e ( _TransmitBit (1 -> -> 1 `i `a ]
+"106
+[; ;main.c: 106: }
 [e :UE 1239 ]
 }
-"72
-[; ;main.c: 72: void TransmitString(char* message)
+"108
+[; ;main.c: 108: void TransmitString(char* message)
 [v _TransmitString `(v ~T0 @X0 1 ef1`*uc ]
-"73
-[; ;main.c: 73: {
+"109
+[; ;main.c: 109: {
 {
 [e :U _TransmitString ]
-"72
-[; ;main.c: 72: void TransmitString(char* message)
+"108
+[; ;main.c: 108: void TransmitString(char* message)
 [v _message `*uc ~T0 @X0 1 r1 ]
-"73
-[; ;main.c: 73: {
+"109
+[; ;main.c: 109: {
 [f ]
-"75
-[; ;main.c: 75:  for (int i = 0, counti = strlen(message); i < counti; i++)
+"113
+[; ;main.c: 113:  for (int i = 0, counti = strlen(message); i < counti; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1590,147 +1607,144 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _counti -> ( _strlen (1 -> _message `*Cuc `i ]
 [e $U 1247  ]
 [e :U 1244 ]
-"76
-[; ;main.c: 76:  {
+"114
+[; ;main.c: 114:  {
 {
-"77
-[; ;main.c: 77:   TransmitByte(message[i]);
+"115
+[; ;main.c: 115:   TransmitByte(message[i]);
 [e ( _TransmitByte (1 *U + _message * -> _i `x -> -> # *U _message `i `x ]
-"78
-[; ;main.c: 78:  }
+"116
+[; ;main.c: 116:  }
 }
 [e ++ _i -> 1 `i ]
 [e :U 1247 ]
 [e $ < _i _counti 1244  ]
 [e :U 1245 ]
 }
-"80
-[; ;main.c: 80: }
+"120
+[; ;main.c: 120: }
 [e :UE 1243 ]
 }
-"83
-[; ;main.c: 83: void AppendCRC(char* data, unsigned short crc)
+"123
+[; ;main.c: 123: void AppendCRC(char* data, unsigned short crc)
 [v _AppendCRC `(v ~T0 @X0 1 ef2`*uc`us ]
-"84
-[; ;main.c: 84: {
+"124
+[; ;main.c: 124: {
 {
 [e :U _AppendCRC ]
-"83
-[; ;main.c: 83: void AppendCRC(char* data, unsigned short crc)
+"123
+[; ;main.c: 123: void AppendCRC(char* data, unsigned short crc)
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _crc `us ~T0 @X0 1 r2 ]
-"84
-[; ;main.c: 84: {
+"124
+[; ;main.c: 124: {
 [f ]
-"85
-[; ;main.c: 85:  int len = strlen(data);
+"125
+[; ;main.c: 125:  int len = strlen(data);
 [v _len `i ~T0 @X0 1 a ]
 [e = _len -> ( _strlen (1 -> _data `*Cuc `i ]
-"86
-[; ;main.c: 86:  if (len >= 40 - 1)
+"126
+[; ;main.c: 126:  if (len >= 40 - 1)
 [e $ ! >= _len - -> 40 `i -> 1 `i 1249  ]
-"87
-[; ;main.c: 87:  {
+"127
+[; ;main.c: 127:  {
 {
-"89
-[; ;main.c: 89:   len = 40 - 2;
+"129
+[; ;main.c: 129:   len = 40 - 2;
 [e = _len - -> 40 `i -> 2 `i ]
-"90
-[; ;main.c: 90:  }
+"130
+[; ;main.c: 130:  }
 }
 [e :U 1249 ]
-"91
-[; ;main.c: 91:  data[len] = (char)(crc >> 8);
+"131
+[; ;main.c: 131:  data[len] = (char)(crc >> 8);
 [e = *U + _data * -> _len `x -> -> # *U _data `i `x -> >> -> _crc `ui -> 8 `i `uc ]
-"92
-[; ;main.c: 92:  data[len + 1] = (char)(crc);
+"132
+[; ;main.c: 132:  data[len + 1] = (char)(crc);
 [e = *U + _data * -> + _len -> 1 `i `x -> -> # *U _data `i `x -> _crc `uc ]
-"93
-[; ;main.c: 93:  data[len + 2] = '\n';
+"133
+[; ;main.c: 133:  data[len + 2] = '\n';
 [e = *U + _data * -> + _len -> 2 `i `x -> -> # *U _data `i `x -> -> 10 `ui `uc ]
-"94
-[; ;main.c: 94:  data[len + 3] = '\0';
+"134
+[; ;main.c: 134:  data[len + 3] = '\0';
 [e = *U + _data * -> + _len -> 3 `i `x -> -> # *U _data `i `x -> -> 0 `ui `uc ]
-"95
-[; ;main.c: 95: }
+"135
+[; ;main.c: 135: }
 [e :UE 1248 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"97
-[; ;main.c: 97: void main(void)
+"140
+[; ;main.c: 140: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"98
-[; ;main.c: 98: {
+"142
+[; ;main.c: 142: {
 {
 [e :U _main ]
 [f ]
-"99
-[; ;main.c: 99:     SYSTEM_Initialize();
+"144
+[; ;main.c: 144:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"100
-[; ;main.c: 100:     PIN_MANAGER_Initialize();
+"145
+[; ;main.c: 145:     PIN_MANAGER_Initialize();
 [e ( _PIN_MANAGER_Initialize ..  ]
-"102
-[; ;main.c: 102:     char message[40 + 3];
+"148
+[; ;main.c: 148:     char message[40 + 3];
 [v _message `uc ~T0 @X0 -> 43 `i a ]
-"104
-[; ;main.c: 104:     int id = 0;
+"150
+[; ;main.c: 150:     int id = 0;
 [v _id `i ~T0 @X0 1 a ]
 [e = _id -> 0 `i ]
-"105
-[; ;main.c: 105:     while (1)
+"151
+[; ;main.c: 151:     while (1)
 [e :U 1252 ]
-"106
-[; ;main.c: 106:     {
+"152
+[; ;main.c: 152:     {
 {
-"107
-[; ;main.c: 107:         sprintf(message, "RTTY Test, Hello World! ID: %d", id);
+"153
+[; ;main.c: 153:         sprintf(message, "NOVA TEST TRANSMISSION, ID: %d", id);
 [e ( _sprintf (1 , (. , &U _message :s 1C _id ]
-"108
-[; ;main.c: 108:         id++;
+"154
+[; ;main.c: 154:         id++;
 [e ++ _id -> 1 `i ]
-"109
-[; ;main.c: 109:         AppendCRC(message, crc16(message, 0x8408));
-[e ( _AppendCRC (2 , &U _message ( _crc16 (2 , -> &U _message `*Cuc -> -> 33800 `ui `us ]
-"110
-[; ;main.c: 110:         TransmitString(message);
+"155
+[; ;main.c: 155:         AppendCRC(message, crc16(message, 0x1021));
+[e ( _AppendCRC (2 , &U _message ( _crc16 (2 , -> &U _message `*Cuc -> -> 4129 `i `us ]
+"156
+[; ;main.c: 156:         TransmitString(message);
 [e ( _TransmitString (1 &U _message ]
-"112
-[; ;main.c: 112:         TransmitBit(0);
-[e ( _TransmitBit (1 -> -> 0 `i `a ]
-"114
-[; ;main.c: 114:         for (int i = 0; i < 1000; i++)
+"158
+[; ;main.c: 158:         for (int i = 0; i < DELAY_MULT; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 1000 `i 1254  ]
+[e $ < _i _DELAY_MULT 1254  ]
 [e $U 1255  ]
 [e :U 1254 ]
-"115
-[; ;main.c: 115:         {
+"159
+[; ;main.c: 159:         {
 {
-"116
-[; ;main.c: 116:             _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"117
-[; ;main.c: 117:         }
+"160
+[; ;main.c: 160:             _delay((unsigned long)((MESSAGE_INTERVAL)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> _MESSAGE_INTERVAL `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"161
+[; ;main.c: 161:         }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 1000 `i 1254  ]
+[e $ < _i _DELAY_MULT 1254  ]
 [e :U 1255 ]
 }
-"118
-[; ;main.c: 118:         transmission_time = 0;
+"162
+[; ;main.c: 162:         transmission_time = 0;
 [e = _transmission_time -> 0 `i ]
-"119
-[; ;main.c: 119:     }
+"166
+[; ;main.c: 166:     }
 }
 [e :U 1251 ]
 [e $U 1252  ]
 [e :U 1253 ]
-"120
-[; ;main.c: 120: }
+"170
+[; ;main.c: 170: }
 [e :UE 1250 ]
 }
 [p f _sprintf 8388736 ]
-[a 1C 82 84 84 89 32 84 101 115 116 44 32 72 101 108 108 111 32 87 111 114 108 100 33 32 73 68 58 32 37 100 0 ]
+[a 1C 78 79 86 65 32 84 69 83 84 32 84 82 65 78 83 77 73 83 83 73 79 78 44 32 73 68 58 32 37 100 0 ]

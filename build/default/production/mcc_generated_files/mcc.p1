@@ -2,8 +2,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 mcc_generated_files/pin_manager.h
 [; ;mcc_generated_files/pin_manager.h: 92: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"81 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 81: void OSCILLATOR_Initialize(void);
+"82 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 82: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
 "2256 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2256: extern volatile unsigned char OSCCON __attribute__((address(0x099)));

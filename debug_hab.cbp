@@ -18,6 +18,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-DDEBUG_CONSOLE" />
 		</Compiler>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
