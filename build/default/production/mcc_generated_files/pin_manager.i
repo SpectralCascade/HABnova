@@ -16928,9 +16928,9 @@ extern __bank0 __bit __timeout;
 # 49 "mcc_generated_files/pin_manager.c" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 92 "mcc_generated_files/pin_manager.h"
+# 150 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 104 "mcc_generated_files/pin_manager.h"
+# 162 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 50 "mcc_generated_files/pin_manager.c" 2
 
@@ -16954,15 +16954,15 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    TRISA = 0x27;
-    TRISB = 0xF0;
-    TRISC = 0xFF;
+    TRISA = 0x07;
+    TRISB = 0x70;
+    TRISC = 0xDF;
 
 
 
 
-    ANSELC = 0xCF;
-    ANSELB = 0xF0;
+    ANSELC = 0x4F;
+    ANSELB = 0xB0;
     ANSELA = 0x07;
 
 
@@ -16986,13 +16986,9 @@ void PIN_MANAGER_Initialize(void)
     SLRCONA = 0x37;
     SLRCONB = 0xF0;
     SLRCONC = 0xFF;
-
-
-
-
-
-
-
+# 109 "mcc_generated_files/pin_manager.c"
+    RXPPS = 0x0E;
+    RB7PPS = 0x12;
 }
 
 void PIN_MANAGER_IOC(void)

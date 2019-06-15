@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "mcc_generated_files/tmr1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/tmr1.c" 2
+# 51 "mcc_generated_files/tmr1.c"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 1 3
 # 18 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -16927,17 +16925,12 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/tmr1.c" 2
 
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 150 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 162 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/tmr1.h" 1
+# 54 "mcc_generated_files/tmr1.h"
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
+# 54 "mcc_generated_files/tmr1.h" 2
 
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
@@ -17022,711 +17015,165 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
-
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 54 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr1.h" 1
-# 101 "./mcc_generated_files/tmr1.h"
+# 55 "mcc_generated_files/tmr1.h" 2
+# 101 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
-# 130 "./mcc_generated_files/tmr1.h"
+# 130 "mcc_generated_files/tmr1.h"
 void TMR1_StartTimer(void);
-# 162 "./mcc_generated_files/tmr1.h"
+# 162 "mcc_generated_files/tmr1.h"
 void TMR1_StopTimer(void);
-# 197 "./mcc_generated_files/tmr1.h"
+# 197 "mcc_generated_files/tmr1.h"
 uint16_t TMR1_ReadTimer(void);
-# 236 "./mcc_generated_files/tmr1.h"
+# 236 "mcc_generated_files/tmr1.h"
 void TMR1_WriteTimer(uint16_t timerVal);
-# 272 "./mcc_generated_files/tmr1.h"
+# 272 "mcc_generated_files/tmr1.h"
 void TMR1_Reload(void);
-# 311 "./mcc_generated_files/tmr1.h"
+# 311 "mcc_generated_files/tmr1.h"
 void TMR1_StartSinglePulseAcquisition(void);
-# 350 "./mcc_generated_files/tmr1.h"
+# 350 "mcc_generated_files/tmr1.h"
 uint8_t TMR1_CheckGateValueStatus(void);
-# 368 "./mcc_generated_files/tmr1.h"
+# 368 "mcc_generated_files/tmr1.h"
 void TMR1_ISR(void);
-# 385 "./mcc_generated_files/tmr1.h"
+# 385 "mcc_generated_files/tmr1.h"
 void TMR1_CallBack(void);
-# 403 "./mcc_generated_files/tmr1.h"
+# 403 "mcc_generated_files/tmr1.h"
  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 421 "./mcc_generated_files/tmr1.h"
+# 421 "mcc_generated_files/tmr1.h"
 extern void (*TMR1_InterruptHandler)(void);
-# 439 "./mcc_generated_files/tmr1.h"
+# 439 "mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
-# 55 "./mcc_generated_files/mcc.h" 2
+# 52 "mcc_generated_files/tmr1.c" 2
 
-# 1 "./mcc_generated_files/eusart.h" 1
-# 57 "./mcc_generated_files/eusart.h"
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 10 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
 
 
 
 
-typedef void * __isoc_va_list[1];
-# 145 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 254 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 407 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
+volatile uint16_t timer1ReloadVal;
+void (*TMR1_InterruptHandler)(void);
 
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
 
 
 
 
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 57 "./mcc_generated_files/eusart.h" 2
-# 98 "./mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-# 146 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 194 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_rx_ready(void);
-# 241 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_done(void);
-# 261 "./mcc_generated_files/eusart.h"
-uint8_t EUSART_Read(void);
-# 281 "./mcc_generated_files/eusart.h"
-void EUSART_Write(uint8_t txData);
-# 56 "./mcc_generated_files/mcc.h" 2
-# 71 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 84 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 2 "main.c" 2
-
-
-
-
-
-
-
-
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 1 3
-# 25 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 419 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 10 "main.c" 2
-# 21 "main.c"
-void TIMER1_Initialize()
-{
-
-    TMR1IF = 0;
-    TMR1IE = 1;
-
-    PEIE = 1;
-
-    GIE = 1;
-    TMR1ON = 1;
-    TMR1_StartTimer();
-}
-
-
-
-
-
-
-
-const int BAUD_RATE = 50;
-
-
-
-
-
-const int MESSAGE_INTERVAL = 5;
-
-
-
-
-
-const int DELAY_MULT = 1000;
-
-
-unsigned short crc16(const char* message, unsigned short polynomial) {
- unsigned int crc;
-
- crc = 0xFFFF;
- if (strlen(message) == 0)
- {
-  return (~crc);
- }
- const unsigned short FRONT_BIT = 0x8000;
- for (unsigned int i = 0, counti = strlen(message); i < counti; i++) {
-  char byte = message[i];
-
-  crc = crc ^ ((unsigned short)(byte << 8));
-
-  for (int i = 0; i < 8; i++) {
-   if ((crc & FRONT_BIT) != 0) {
-    crc = ((unsigned short)(crc << 1)) ^ polynomial;
-   }
-   else {
-
-    crc = crc << 1;
-   }
-  }
- }
-
- return crc;
-}
-
-void TransmitBit(_Bool b)
-{
- if (b)
- {
-
-
-
-  do { LATAbits.LATA4 = 1; } while(0);
-
- }
- else
- {
-
-
-
-  do { LATAbits.LATA4 = 0; } while(0);
-
- }
- _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
- _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
-}
-
-void TransmitByte(char byte)
-{
-# 116 "main.c"
-    TransmitBit(0);
-
-
-
-
- for (int i = 0; i < 7; i++)
- {
-  TransmitBit((byte >> i) & 1);
- }
-
-
-
-
- TransmitBit(1);
- TransmitBit(1);
-
-
-
-}
-
-void TransmitString(char* message)
+void TMR1_Initialize(void)
 {
 
 
 
- for (int i = 0, counti = strlen(message); i < counti; i++)
- {
-  TransmitByte(message[i]);
- }
+    T1GCON = 0x00;
 
 
+    TMR1H = 0xFF;
 
+
+    TMR1L = 0x06;
+
+
+    timer1ReloadVal=(uint16_t)((TMR1H << 8) | TMR1L);
+
+
+    PIR1bits.TMR1IF = 0;
+
+
+    PIE1bits.TMR1IE = 1;
+
+
+    TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
+
+
+    T1CON = 0x21;
 }
 
-
-void AppendCRC(char* data, unsigned short crc)
+void TMR1_StartTimer(void)
 {
- int len = strlen(data);
- if (len >= 40 - 1)
- {
 
-  len = 40 - 2;
- }
- data[len] = (char)(crc >> 8);
- data[len + 1] = (char)(crc);
- data[len + 2] = '\n';
- data[len + 3] = '\0';
+    T1CONbits.TMR1ON = 1;
 }
 
-
-
-
-
-
-
-uint8_t setNavFlightMode[] = {
-
-    0xB5, 0x62,
-
-    0x06,
-
-    0x24,
-
-    0x24, 0x00,
-
-    0xFF, 0xFF, 0x06, 0x03, 0x00, 0x00, 0x00, 0x00, 0x10, 0x27, 0x00, 0x00,
-    0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00, 0x64, 0x00, 0x2C, 0x01, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-
-    0x16, 0xDC
-};
-
-
-size_t GetLengthUBX(uint8_t* data)
+void TMR1_StopTimer(void)
 {
-    return 8 + (short)((short)(data[4] << 8) + (short)data[5]);
+
+    T1CONbits.TMR1ON = 0;
 }
 
-
-void GPS_SendUBX(uint8_t* data)
+uint16_t TMR1_ReadTimer(void)
 {
-    for (int i = 0, length = GetLengthUBX(data); i < length; i++)
+    uint16_t readVal;
+    uint8_t readValHigh;
+    uint8_t readValLow;
+
+
+    readValLow = TMR1L;
+    readValHigh = TMR1H;
+
+    readVal = ((uint16_t)readValHigh << 8) | readValLow;
+
+    return readVal;
+}
+
+void TMR1_WriteTimer(uint16_t timerVal)
+{
+    if (T1CONbits.nT1SYNC == 1)
     {
-        EUSART_Write(data[i]);
+
+        T1CONbits.TMR1ON = 0;
+
+
+        TMR1H = (timerVal >> 8);
+        TMR1L = timerVal;
+
+
+        T1CONbits.TMR1ON =1;
+    }
+    else
+    {
+
+        TMR1H = (timerVal >> 8);
+        TMR1L = timerVal;
     }
 }
 
-
-
-
-
-_Bool GPS_HasAcknowledged(uint8_t* data)
+void TMR1_Reload(void)
 {
-    uint8_t ackPacket[10];
-    unsigned long startTime = TMR1_ReadTimer();
+    TMR1_WriteTimer(timer1ReloadVal);
+}
+
+void TMR1_StartSinglePulseAcquisition(void)
+{
+    T1GCONbits.T1GGO_nDONE = 1;
+}
+
+uint8_t TMR1_CheckGateValueStatus(void)
+{
+    return (T1GCONbits.T1GVAL);
+}
+
+void TMR1_ISR(void)
+{
 
 
-    ackPacket[0] = 0xB5;
-    ackPacket[1] = 0x62;
-    ackPacket[2] = 0x05;
-    ackPacket[3] = 0x01;
-    ackPacket[4] = 0x02;
-    ackPacket[5] = 0x00;
-    ackPacket[6] = data[2];
-    ackPacket[7] = data[3];
-    ackPacket[8] = 0;
-    ackPacket[9] = 0;
+    PIR1bits.TMR1IF = 0;
+    TMR1_WriteTimer(timer1ReloadVal);
 
 
-    for (uint8_t i = 2; i < 8; i++)
+
+    TMR1_CallBack();
+}
+
+void TMR1_CallBack(void)
+{
+
+    if(TMR1_InterruptHandler)
     {
-        ackPacket[8] = ackPacket[8] + ackPacket[i];
-        ackPacket[9] = ackPacket[9] + ackPacket[8];
-    }
-
-
-    uint8_t ackByte;
-
-
-    uint8_t ackByteID = 0;
-
-
-    while (1)
-    {
-
-
-        if (ackByteID > 9)
-        {
-
-
-            return 1;
-        }
-
-
-        if (TMR1_ReadTimer() - startTime > 3000)
-        {
-            return 0;
-        }
-
-
-        if (EUSART_is_rx_ready())
-        {
-            ackByte = EUSART_Read();
-
-
-            if (ackByte == ackPacket[ackByteID]) {
-                ackByteID++;
-            }
-            else {
-                ackByteID = 0;
-
-            }
-
-        }
+        TMR1_InterruptHandler();
     }
 }
 
-_Bool gps_configured = 0;
-
-void SetupGPS()
-{
-    while (!gps_configured)
-    {
-        do { LATAbits.LATA5 = 0; } while(0);
-        GPS_SendUBX(setNavFlightMode);
-        gps_configured = GPS_HasAcknowledged(setNavFlightMode);
-
-        do { LATAbits.LATA5 = 1; } while(0);
-        _delay((unsigned long)((500)*(4000000/4000.0)));
-    }
-    gps_configured = 0;
-
-
-    printf("$PUBX,40,GLL,0,0,0,0*5C\r\n");
-    printf("$PUBX,40,GGA,0,0,0,0*44\r\n");
-    printf("$PUBX,40,VTG,0,0,0,0*5E\r\n");
-    printf("$PUBX,40,GSV,0,0,0,0*59\r\n");
-    printf("$PUBX,40,GSA,0,0,0,0*4E\r\n");
-    printf("$PUBX,40,RMC,0,0,0,0*47\r\n");
+void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR1_InterruptHandler = InterruptHandler;
 }
 
-enum FieldTypesPUBX {
-    PUBX_HEADER = 0,
-    PUBX_ID,
-    PUBX_TIME,
-    PUBX_LAT,
-    PUBX_NS,
-    PUBX_LONG,
-    PUBX_EW,
-    PUBX_ALT,
-    PUBX_NAVSTAT,
-
-
-    PUBX_SOG = 11,
-    PUBX_COG,
-    PUBX_VVEL
-};
-
-
-char gps_time[16] = {'\0'};
-
-char gps_latitude[16] = {'\0'};
-
-char gps_longitude[16] = {'\0'};
-
-char gps_altitude[16] = {'\0'};
-
-char gps_nav_status[4] = {'\0'};
-
-char gps_speed_over_ground[12] = {'\0'};
-
-char gps_course_over_ground[12] = {'\0'};
-
-char gps_vertical_velocity[12] = {'\0'};
-
-
-
-_Bool GetNavData()
-{
-    _Bool success = 0;
-    do { LATCbits.LATC5 = 1; } while(0);
-
-    unsigned long startTime = TMR1_ReadTimer();
-
-
-    int dataIndex = 0;
-
-    int dataFieldType = PUBX_HEADER;
-
-    while (!success)
-    {
-        char byte = EUSART_Read();
-
-
-        if (TMR1_ReadTimer() - startTime > 3000)
-        {
-            break;
-        }
-
-
-        if (EUSART_is_rx_ready())
-        {
-            byte = EUSART_Read();
-
-            _Bool skip = 1;
-            switch (byte)
-            {
-            case ',':
-                dataFieldType++;
-                dataIndex = 0;
-                break;
-            case '\n':
-                success = dataFieldType > 13;
-                break;
-            default:
-                skip = 0;
-                break;
-            }
-
-            if (!skip)
-            {
-                switch (dataFieldType)
-                {
-                case PUBX_TIME:
-
-                    gps_time[dataIndex] = byte;
-                    break;
-                case PUBX_LAT:
-                    gps_latitude[dataIndex + 1] = byte;
-                    break;
-                case PUBX_NS:
-
-                    gps_latitude[0] = byte == 'N' ? '+' : '-';
-                    break;
-                case PUBX_LONG:
-                    gps_longitude[dataIndex + 1] = byte;
-                    break;
-                case PUBX_EW:
-
-                    gps_longitude[0] = byte == 'E' ? '+' : '-';
-                    break;
-                case PUBX_ALT:
-                    gps_altitude[dataIndex] = byte;
-                    break;
-                case PUBX_NAVSTAT:
-                    gps_nav_status[dataIndex] = byte;
-                    break;
-                case PUBX_SOG:
-                    gps_speed_over_ground[dataIndex] = byte;
-                    break;
-                case PUBX_COG:
-                    gps_course_over_ground[dataIndex] = byte;
-                    break;
-                case PUBX_VVEL:
-                    gps_vertical_velocity[dataIndex] = byte;
-                    break;
-                default:
-                    dataIndex = -1;
-                }
-                dataIndex++;
-            }
-
-        }
-
-    }
-
-    if (!success)
-    {
-
-        for (int i = 0; i < 4; i++)
-        {
-            _delay((unsigned long)((250)*(4000000/4000.0)));
-            do { LATCbits.LATC5 = 0; } while(0);
-            _delay((unsigned long)((250)*(4000000/4000.0)));
-            do { LATCbits.LATC5 = 1; } while(0);
-        }
-    }
-    do { LATCbits.LATC5 = 0; } while(0);
-    return success;
-}
-
-
-
-
-
-
-void main(void)
-
-{
-
-    SYSTEM_Initialize();
-    TIMER1_Initialize();
-
-
-    SetupGPS();
-
-    char message[40 + 3];
-
-    int id = 0;
-    while (1)
-    {
-        GetNavData();
-        sprintf(message, "$$HABnova,%d,%s,%s,%s,%s,%s,%s,%s*",
-                id, gps_time, gps_latitude, gps_longitude,
-                gps_altitude, gps_speed_over_ground, gps_course_over_ground,
-                gps_vertical_velocity
-        );
-        id++;
-        AppendCRC(message, crc16(message, 0x1021));
-        TransmitString(message);
-        for (int i = 0; i < DELAY_MULT; i++)
-        {
-            _delay((unsigned long)((MESSAGE_INTERVAL)*(4000000/4000.0)));
-        }
-
-
-
-    }
-
+void TMR1_DefaultInterruptHandler(void){
 
 
 }

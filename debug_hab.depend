@@ -8,3 +8,36 @@
 	<string.h>
 	<stdio.h>
 
+1560603961 source:c:\users\2013b\git\habnova\main.c
+	"mcc_generated_files/mcc.h"
+	"mcc_generated_files/pin_manager.h"
+	"stdbool.h"
+	<string.h>
+	<stdio.h>
+
+1560552194 c:\users\2013b\git\habnova\mcc_generated_files\mcc.h
+	<xc.h>
+	"device_config.h"
+	"pin_manager.h"
+	<stdint.h>
+	<stdbool.h>
+	"interrupt_manager.h"
+	"tmr1.h"
+	"eusart.h"
+
+1560530284 c:\users\2013b\git\habnova\mcc_generated_files\device_config.h
+
+1560554020 c:\users\2013b\git\habnova\mcc_generated_files\pin_manager.h
+
+1560552194 c:\users\2013b\git\habnova\mcc_generated_files\interrupt_manager.h
+
+1560552194 c:\users\2013b\git\habnova\mcc_generated_files\tmr1.h
+	<stdbool.h>
+	<stdint.h>
+
+1560530284 c:\users\2013b\git\habnova\mcc_generated_files\eusart.h
+	<xc.h>
+	<stdbool.h>
+	<stdint.h>
+	<stdio.h>
+
