@@ -15,6 +15,7 @@ unsigned long ticks = 0;
 #define millis() (++ticks)
 
 typedef unsigned char uint8_t;
+typedef unsigned short uint16_t;
 
 #endif
 #include <string.h>
@@ -55,14 +56,58 @@ const int MESSAGE_INTERVAL = 5;
 
 #ifndef DEBUG_CONSOLE
 // Maximum length of a message, not including appended CRC
-#define MAX_MESSAGE_LENGTH 40
+#define MAX_MESSAGE_LENGTH 70
 #else
-#define MAX_MESSAGE_LENGTH 120
+#define MAX_MESSAGE_LENGTH 70
 #endif
 
 // Interval multiplier
 const int DELAY_MULT = 1000;
 
+// Adds a byte to the CRC checksum we're calculating
+unsigned short crc_append_byte(uint16_t crc, uint8_t data)
+{
+    int i;
+    crc = crc ^ ((uint16_t)data << 8);
+    for (i = 0; i < 8; i++)
+    {
+        if (crc & 0x8000)
+        {
+            crc = (crc << 1) ^ 0x1021;
+        }
+        else
+        {
+            crc <<= 1;
+        }
+    }
+
+    return crc;
+}
+
+// Takes any number of strings in array form and computes the CRC.
+unsigned short crc16(char** data, int segments)
+{
+    size_t i;
+	uint16_t crc;
+	uint8_t c;
+
+	crc = 0xFFFF;
+
+    for (int str = 0; str < segments; str++)
+    {
+        char* string = data[str];
+        // Calculate checksum ignoring the first two $s
+        for (i = 2; i < strlen(string); i++)
+        {
+            c = string[i];
+            crc = crc_append_byte(crc, c);
+        }
+    }
+	return crc;
+}
+
+/// Replaced by above code
+/*
 // Creates a CRC16 hash (CCITT algorithm?)
 unsigned short crc16(const char* message, unsigned short polynomial) {
 	unsigned int crc;
@@ -91,6 +136,7 @@ unsigned short crc16(const char* message, unsigned short polynomial) {
 
 	return crc;
 }
+*/
 
 void TransmitBit(bool b)
 {
@@ -504,20 +550,29 @@ void main(void)
 
     SetupGPS();
 
-    char message[MAX_MESSAGE_LENGTH + 3];
+    // Transmission is split into two messages so we have enough memory
+    char message_start[MAX_MESSAGE_LENGTH];
+    char message_end[MAX_MESSAGE_LENGTH + 3];
+
+    char* messages[2] = {message_start, message_end};
 
     int id = 0;
     while (1)
     {
         GetNavData();
-        sprintf(message, "$$HABnova,%d,%s,%s,%s,%s,%s,%s,%s*",
-                id, gps_time, gps_latitude, gps_longitude,
+        sprintf(messages[0], "$$HABnova,%d,%s,%s,%s,",
+                id, gps_time, gps_latitude, gps_longitude
+        );
+        sprintf(messages[1], "%s,%s,%s,%s*",
                 gps_altitude, gps_speed_over_ground, gps_course_over_ground,
                 gps_vertical_velocity
         );
         id++;
-        AppendCRC(message, crc16(message, 0x1021));
-        TransmitString(message);
+        AppendCRC(messages[1], crc16(messages, 2));
+
+        TransmitString(messages[0]);
+        TransmitString(messages[1]);
+
         for (int i = 0; i < DELAY_MULT; i++)
         {
             __delay_ms(MESSAGE_INTERVAL);

@@ -3,10 +3,8 @@
 [d edition pro ]
 [d chip 16F1619 ]
 [d frameptr 6 ]
-"343 C:\Users\2013b\Git\HABnova\main.c
-[e E10186 FieldTypesPUBX `uc
-PUBX_HEADER 0
-PUBX_ID 1
+"513 C:\Users\2013b\Git\HABnova\main.c
+[e E10189 FieldTypesPUBX `uc
 PUBX_TIME 2
 PUBX_LAT 3
 PUBX_NS 4
@@ -48,29 +46,31 @@ PUBX_VVEL 13
 [v _strlen strlen `(ui  1 e 2 0 ]
 "4 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"21 C:\Users\2013b\Git\HABnova\main.c
+"29 C:\Users\2013b\Git\HABnova\main.c
 [v _TIMER1_Initialize TIMER1_Initialize `(v  1 e 1 0 ]
-"55
+"67
+[v _crc_append_byte crc_append_byte `(us  1 e 2 0 ]
+"87
 [v _crc16 crc16 `(us  1 e 2 0 ]
-"83
+"140
 [v _TransmitBit TransmitBit `(v  1 e 1 0 ]
-"105
+"162
 [v _TransmitByte TransmitByte `(v  1 e 1 0 ]
-"136
+"193
 [v _TransmitString TransmitString `(v  1 e 1 0 ]
-"151
+"208
 [v _AppendCRC AppendCRC `(v  1 e 1 0 ]
-"189
+"246
 [v _GetLengthUBX GetLengthUBX `(ui  1 e 2 0 ]
-"195
+"256
 [v _GPS_SendUBX GPS_SendUBX `(v  1 e 1 0 ]
-"207
+"278
 [v _GPS_HasAcknowledged GPS_HasAcknowledged `(a  1 e 1 0 ]
-"275
+"351
 [v _SetupGPS SetupGPS `(v  1 e 1 0 ]
-"333
+"428
 [v _GetNavData GetNavData `(a  1 e 1 0 ]
-"442
+"542
 [v _main main `(v  1 e 1 0 ]
 "56 C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -326,125 +326,140 @@ PUBX_VVEL 13
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"171 C:\Users\2013b\Git\HABnova\main.c
+"228 C:\Users\2013b\Git\HABnova\main.c
 [v _setNavFlightMode setNavFlightMode `[44]uc  1 e 44 0 ]
-"273
+"349
 [v _gps_configured gps_configured `a  1 e 1 0 ]
-"315
-[v _gps_time gps_time `[16]uc  1 e 16 0 ]
-"317
+"393
+[v _gps_time gps_time `[10]uc  1 e 10 0 ]
+"395
 [v _gps_latitude gps_latitude `[16]uc  1 e 16 0 ]
-"319
+"397
 [v _gps_longitude gps_longitude `[16]uc  1 e 16 0 ]
-"321
-[v _gps_altitude gps_altitude `[16]uc  1 e 16 0 ]
-"323
+"399
+[v _gps_altitude gps_altitude `[12]uc  1 e 12 0 ]
+"401
 [v _gps_nav_status gps_nav_status `[4]uc  1 e 4 0 ]
-"325
-[v _gps_speed_over_ground gps_speed_over_ground `[12]uc  1 e 12 0 ]
-"327
-[v _gps_course_over_ground gps_course_over_ground `[12]uc  1 e 12 0 ]
-"329
-[v _gps_vertical_velocity gps_vertical_velocity `[12]uc  1 e 12 0 ]
+"403
+[v _gps_speed_over_ground gps_speed_over_ground `[8]uc  1 e 8 0 ]
+"405
+[v _gps_course_over_ground gps_course_over_ground `[8]uc  1 e 8 0 ]
+"407
+[v _gps_vertical_velocity gps_vertical_velocity `[8]uc  1 e 8 0 ]
 "57 C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "58
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"442 C:\Users\2013b\Git\HABnova\main.c
+"542 C:\Users\2013b\Git\HABnova\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"466
-[v main@i i `i  1 a 2 45 ]
-"452
-[v main@message message `[43]uc  1 a 43 0 ]
-"454
-[v main@id id `i  1 a 2 43 ]
-"477
+"575
+[v main@i i `i  1 a 2 25 ]
+"554
+[v main@message_end message_end `[73]uc  1 a 73 0 ]
+"553
+[v main@message_start message_start `[70]uc  1 a 70 0 ]
+"556
+[v main@messages messages `[2]*.5uc  1 a 2 27 ]
+"558
+[v main@id id `i  1 a 2 23 ]
+"586
 } 0
 "9 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[v sprintf@s s `*.6uc  1 a 1 wreg ]
-[s S1012 _IO_FILE 5 `*.6uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v sprintf@s s `*.5uc  1 a 1 wreg ]
+[s S1018 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
 "13
-[v sprintf@f f `S1012  1 a 5 25 ]
+[v sprintf@f f `S1018  1 a 5 17 ]
 "12
-[v sprintf@ap ap `[1]*.4v  1 a 1 24 ]
+[v sprintf@ap ap `[1]*.4v  1 a 1 15 ]
 "9
-[v sprintf@s s `*.6uc  1 a 1 wreg ]
+[v sprintf@s s `*.5uc  1 a 1 wreg ]
 [v sprintf@fmt fmt `*.25DCuc  1 p 2 3 ]
 "15
-[v sprintf@s s `*.6uc  1 a 1 23 ]
+[v sprintf@s s `*.5uc  1 a 1 16 ]
 "23
 } 0
-"55 C:\Users\2013b\Git\HABnova\main.c
+"87 C:\Users\2013b\Git\HABnova\main.c
 [v _crc16 crc16 `(us  1 e 2 0 ]
 {
-[v crc16@message message `*.6DCuc  1 a 1 wreg ]
-"69
-[v crc16@i_535 i `i  1 a 2 8 ]
-"65
-[v crc16@byte byte `uc  1 a 1 5 ]
-"64
-[v crc16@i i `ui  1 a 2 6 ]
-[v crc16@counti counti `ui  1 a 2 3 ]
-"56
-[v crc16@crc crc `ui  1 a 2 11 ]
-"55
-[v crc16@message message `*.6DCuc  1 a 1 wreg ]
-[v crc16@polynomial polynomial `us  1 p 2 6 ]
-"58
-[v crc16@message message `*.6DCuc  1 a 1 10 ]
-"81
+[v crc16@data data `*.4*.5uc  1 a 1 wreg ]
+"97
+[v crc16@string string `*.5uc  1 a 1 6 ]
+"95
+[v crc16@str str `i  1 a 2 11 ]
+"90
+[v crc16@crc crc `us  1 a 2 9 ]
+"89
+[v crc16@i i `ui  1 a 2 7 ]
+"91
+[v crc16@c c `uc  1 a 1 5 ]
+"87
+[v crc16@data data `*.4*.5uc  1 a 1 wreg ]
+[v crc16@segments segments `i  1 p 2 0 ]
+"93
+[v crc16@data data `*.4*.5uc  1 a 1 4 ]
+"106
 } 0
-"136
+"67
+[v _crc_append_byte crc_append_byte `(us  1 e 2 0 ]
+{
+"69
+[v crc_append_byte@i i `i  1 a 2 8 ]
+"67
+[v crc_append_byte@crc crc `us  1 p 2 2 ]
+[v crc_append_byte@data data `uc  1 p 1 4 ]
+"84
+} 0
+"193
 [v _TransmitString TransmitString `(v  1 e 1 0 ]
 {
-[v TransmitString@message message `*.6uc  1 a 1 wreg ]
-"141
-[v TransmitString@i i `i  1 a 2 3 ]
+[v TransmitString@message message `*.5uc  1 a 1 wreg ]
+"198
+[v TransmitString@i i `i  1 a 2 2 ]
 [v TransmitString@counti counti `i  1 a 2 0 ]
-"136
-[v TransmitString@message message `*.6uc  1 a 1 wreg ]
-"141
-[v TransmitString@message message `*.6uc  1 a 1 2 ]
-"148
+"193
+[v TransmitString@message message `*.5uc  1 a 1 wreg ]
+"198
+[v TransmitString@message message `*.5uc  1 a 1 4 ]
+"205
 } 0
-"105
+"162
 [v _TransmitByte TransmitByte `(v  1 e 1 0 ]
 {
 [v TransmitByte@byte byte `uc  1 a 1 wreg ]
-"121
+"178
 [v TransmitByte@i i `i  1 a 2 6 ]
-"105
+"162
 [v TransmitByte@byte byte `uc  1 a 1 wreg ]
-"116
+"173
 [v TransmitByte@byte byte `uc  1 a 1 5 ]
-"134
+"191
 } 0
-"83
+"140
 [v _TransmitBit TransmitBit `(v  1 e 1 0 ]
 {
 [v TransmitBit@b b `a  1 a 1 wreg ]
 [v TransmitBit@b b `a  1 a 1 wreg ]
-"85
+"142
 [v TransmitBit@b b `a  1 a 1 3 ]
-"103
+"160
 } 0
-"21
+"29
 [v _TIMER1_Initialize TIMER1_Initialize `(v  1 e 1 0 ]
 {
-"32
+"40
 } 0
 "93 C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr1.c
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
 {
 "97
 } 0
-"275 C:\Users\2013b\Git\HABnova\main.c
+"351 C:\Users\2013b\Git\HABnova\main.c
 [v _SetupGPS SetupGPS `(v  1 e 1 0 ]
 {
-"295
+"375
 } 0
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -458,42 +473,42 @@ PUBX_VVEL 13
 "1368 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S658 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S658  1 a 1 wreg ]
+[s S665 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S665  1 a 1 wreg ]
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 1 ]
 "1368
-[v vfprintf@fp fp `*.4S658  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S665  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 74 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 76 ]
 "1373
 "1368
-[v vfprintf@fp fp `*.4S658  1 a 1 0 ]
+[v vfprintf@fp fp `*.4S665  1 a 1 0 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S658 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S658  1 a 1 wreg ]
+[s S665 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S665  1 a 1 wreg ]
 "674
 [v vfpfcnvrt@ll ll `o  1 a 8 63 ]
 "672
 [v vfpfcnvrt@cp cp `*.39uc  1 a 2 71 ]
 "670
-[v vfpfcnvrt@fp fp `*.4S658  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S665  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 56 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 57 ]
 "680
 "670
-[v vfpfcnvrt@fp fp `*.4S658  1 a 1 73 ]
+[v vfpfcnvrt@fp fp `*.4S665  1 a 1 73 ]
 "1365
 } 0
 "546
 [v _stoa stoa `(i  1 s 2 stoa ]
 {
-[s S658 _IO_FILE 0 ]
-[v stoa@fp fp `*.4S658  1 a 1 wreg ]
+[s S665 _IO_FILE 0 ]
+[v stoa@fp fp `*.4S665  1 a 1 wreg ]
 "548
 [v stoa@nuls nuls `[7]uc  1 a 7 7 ]
 "549
@@ -505,19 +520,19 @@ PUBX_VVEL 13
 [v stoa@w w `i  1 a 2 16 ]
 [v stoa@i i `i  1 a 2 14 ]
 "546
-[v stoa@fp fp `*.4S658  1 a 1 wreg ]
+[v stoa@fp fp `*.4S665  1 a 1 wreg ]
 [v stoa@s s `*.39uc  1 p 2 5 ]
 "548
 [v stoa@F1139 F1139 `[7]uc  1 s 7 F1139 ]
 "546
-[v stoa@fp fp `*.4S658  1 a 1 18 ]
+[v stoa@fp fp `*.4S665  1 a 1 18 ]
 "589
 } 0
 "274
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S658 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S658  1 a 1 wreg ]
+[s S665 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S665  1 a 1 wreg ]
 "277
 [v dtoa@n n `o  1 a 8 46 ]
 "276
@@ -526,52 +541,52 @@ PUBX_VVEL 13
 [v dtoa@w w `i  1 a 2 42 ]
 [v dtoa@p p `i  1 a 2 40 ]
 "274
-[v dtoa@fp fp `*.4S658  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S665  1 a 1 wreg ]
 [v dtoa@d d `o  1 p 8 26 ]
 "280
 "274
-[v dtoa@fp fp `*.4S658  1 a 1 37 ]
+[v dtoa@fp fp `*.4S665  1 a 1 37 ]
 "315
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S658 _IO_FILE 0 ]
-[v pad@fp fp `*.4S658  1 a 1 wreg ]
+[s S665 _IO_FILE 0 ]
+[v pad@fp fp `*.4S665  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 16 ]
 [v pad@i i `i  1 a 2 14 ]
 "72
-[v pad@fp fp `*.4S658  1 a 1 wreg ]
-[v pad@buf buf `*.5uc  1 p 1 10 ]
+[v pad@fp fp `*.4S665  1 a 1 wreg ]
+[v pad@buf buf `*.6uc  1 p 1 10 ]
 [v pad@p p `i  1 p 2 11 ]
 "77
 "72
-[v pad@fp fp `*.4S658  1 a 1 18 ]
+[v pad@fp fp `*.4S665  1 a 1 18 ]
 "95
 } 0
 "8 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
 {
-[v fputs@s s `*.5DCuc  1 a 1 wreg ]
+[v fputs@s s `*.6DCuc  1 a 1 wreg ]
 "11
 [v fputs@i i `i  1 a 2 7 ]
 "10
 [v fputs@c c `uc  1 a 1 6 ]
 "8
-[v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S1012 _IO_FILE 5 `*.6uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S1012  1 p 1 5 ]
+[v fputs@s s `*.6DCuc  1 a 1 wreg ]
+[s S1018 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.4S1018  1 p 1 5 ]
 "13
-[v fputs@s s `*.5DCuc  1 a 1 9 ]
+[v fputs@s s `*.6DCuc  1 a 1 9 ]
 "19
 } 0
 "8 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 4 ]
-[s S1012 _IO_FILE 5 `*.6uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S1012  1 p 1 6 ]
+[s S1018 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.4S1018  1 p 1 6 ]
 "21
 } 0
 "125 C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
@@ -613,27 +628,27 @@ PUBX_VVEL 13
 [v ___aodiv@dividend dividend `o  1 p 8 8 ]
 "43
 } 0
-"195 C:\Users\2013b\Git\HABnova\main.c
+"256 C:\Users\2013b\Git\HABnova\main.c
 [v _GPS_SendUBX GPS_SendUBX `(v  1 e 1 0 ]
 {
 [v GPS_SendUBX@data data `*.6uc  1 a 1 wreg ]
-"197
+"261
 [v GPS_SendUBX@i i `i  1 a 2 3 ]
 [v GPS_SendUBX@length length `i  1 a 2 0 ]
-"195
+"256
 [v GPS_SendUBX@data data `*.6uc  1 a 1 wreg ]
-"197
+"261
 [v GPS_SendUBX@data data `*.6uc  1 a 1 2 ]
-"201
+"272
 } 0
-"189
+"246
 [v _GetLengthUBX GetLengthUBX `(ui  1 e 2 0 ]
 {
 [v GetLengthUBX@data data `*.6uc  1 a 1 wreg ]
 [v GetLengthUBX@data data `*.6uc  1 a 1 wreg ]
-"191
+"251
 [v GetLengthUBX@data data `*.6uc  1 a 1 5 ]
-"192
+"253
 } 0
 "111 C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
@@ -643,25 +658,25 @@ PUBX_VVEL 13
 [v EUSART_Write@txData txData `uc  1 a 1 2 ]
 "118
 } 0
-"207 C:\Users\2013b\Git\HABnova\main.c
+"278 C:\Users\2013b\Git\HABnova\main.c
 [v _GPS_HasAcknowledged GPS_HasAcknowledged `(a  1 e 1 0 ]
 {
 [v GPS_HasAcknowledged@data data `*.6uc  1 a 1 wreg ]
-"225
+"300
 [v GPS_HasAcknowledged@i i `uc  1 a 1 25 ]
-"209
+"284
 [v GPS_HasAcknowledged@ackPacket ackPacket `[10]uc  1 a 10 13 ]
-"210
+"285
 [v GPS_HasAcknowledged@startTime startTime `ul  1 a 4 8 ]
-"235
+"310
 [v GPS_HasAcknowledged@ackByteID ackByteID `uc  1 a 1 24 ]
-"232
+"307
 [v GPS_HasAcknowledged@ackByte ackByte `uc  1 a 1 12 ]
-"207
+"278
 [v GPS_HasAcknowledged@data data `*.6uc  1 a 1 wreg ]
-"210
+"285
 [v GPS_HasAcknowledged@data data `*.6uc  1 a 1 23 ]
-"271
+"347
 } 0
 "50 C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -694,24 +709,24 @@ PUBX_VVEL 13
 {
 "76
 } 0
-"333 C:\Users\2013b\Git\HABnova\main.c
+"428 C:\Users\2013b\Git\HABnova\main.c
 [v _GetNavData GetNavData `(a  1 e 1 0 ]
 {
-"425
+"524
 [v GetNavData@i i `i  1 a 2 19 ]
-"360
+"459
 [v GetNavData@skip skip `a  1 a 1 16 ]
-"347
+"446
 [v GetNavData@byte byte `uc  1 a 1 24 ]
-"338
+"437
 [v GetNavData@startTime startTime `ul  1 a 4 8 ]
-"341
+"440
 [v GetNavData@dataIndex dataIndex `i  1 a 2 22 ]
-"343
+"442
 [v GetNavData@dataFieldType dataFieldType `i  1 a 2 17 ]
-"335
+"430
 [v GetNavData@success success `a  1 a 1 21 ]
-"435
+"535
 } 0
 "105 C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr1.c
 [v _TMR1_ReadTimer TMR1_ReadTimer `(us  1 e 2 0 ]
@@ -734,18 +749,18 @@ PUBX_VVEL 13
 {
 "109
 } 0
-"151 C:\Users\2013b\Git\HABnova\main.c
+"208 C:\Users\2013b\Git\HABnova\main.c
 [v _AppendCRC AppendCRC `(v  1 e 1 0 ]
 {
-[v AppendCRC@data data `*.6uc  1 a 1 wreg ]
-"153
-[v AppendCRC@len len `i  1 a 2 16 ]
-"151
-[v AppendCRC@data data `*.6uc  1 a 1 wreg ]
+[v AppendCRC@data data `*.5uc  1 a 1 wreg ]
+"210
+[v AppendCRC@len len `i  1 a 2 17 ]
+"208
+[v AppendCRC@data data `*.5uc  1 a 1 wreg ]
 [v AppendCRC@crc crc `us  1 p 2 13 ]
-"153
-[v AppendCRC@data data `*.6uc  1 a 1 15 ]
-"163
+"210
+[v AppendCRC@data data `*.5uc  1 a 1 19 ]
+"220
 } 0
 "12 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]

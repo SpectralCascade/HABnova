@@ -17216,14 +17216,7 @@ void SYSTEM_Initialize(void);
 # 84 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 2 "main.c" 2
-
-
-
-
-
-
-
-
+# 20 "main.c"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 1 3
 # 25 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 3
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -17279,8 +17272,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 10 "main.c" 2
-# 21 "main.c"
+# 20 "main.c" 2
+# 29 "main.c"
 void TIMER1_Initialize()
 {
 
@@ -17307,42 +17300,51 @@ const int BAUD_RATE = 50;
 
 
 const int MESSAGE_INTERVAL = 5;
-
-
-
-
-
+# 64 "main.c"
 const int DELAY_MULT = 1000;
 
 
-unsigned short crc16(const char* message, unsigned short polynomial) {
- unsigned int crc;
+unsigned short crc_append_byte(uint16_t crc, uint8_t data)
+{
+    int i;
+    crc = crc ^ ((uint16_t)data << 8);
+    for (i = 0; i < 8; i++)
+    {
+        if (crc & 0x8000)
+        {
+            crc = (crc << 1) ^ 0x1021;
+        }
+        else
+        {
+            crc <<= 1;
+        }
+    }
 
- crc = 0xFFFF;
- if (strlen(message) == 0)
- {
-  return (~crc);
- }
- const unsigned short FRONT_BIT = 0x8000;
- for (unsigned int i = 0, counti = strlen(message); i < counti; i++) {
-  char byte = message[i];
-
-  crc = crc ^ ((unsigned short)(byte << 8));
-
-  for (int i = 0; i < 8; i++) {
-   if ((crc & FRONT_BIT) != 0) {
-    crc = ((unsigned short)(crc << 1)) ^ polynomial;
-   }
-   else {
-
-    crc = crc << 1;
-   }
-  }
- }
-
- return crc;
+    return crc;
 }
 
+
+unsigned short crc16(char** data, int segments)
+{
+    size_t i;
+ uint16_t crc;
+ uint8_t c;
+
+ crc = 0xFFFF;
+
+    for (int str = 0; str < segments; str++)
+    {
+        char* string = data[str];
+
+        for (i = 2; i < strlen(string); i++)
+        {
+            c = string[i];
+            crc = crc_append_byte(crc, c);
+        }
+    }
+ return crc;
+}
+# 140 "main.c"
 void TransmitBit(_Bool b)
 {
  if (b)
@@ -17367,7 +17369,7 @@ void TransmitBit(_Bool b)
 
 void TransmitByte(char byte)
 {
-# 116 "main.c"
+# 173 "main.c"
     TransmitBit(0);
 
 
@@ -17406,10 +17408,10 @@ void TransmitString(char* message)
 void AppendCRC(char* data, unsigned short crc)
 {
  int len = strlen(data);
- if (len >= 40 - 1)
+ if (len >= 70 - 1)
  {
 
-  len = 40 - 2;
+  len = 70 - 2;
  }
  data[len] = (char)(crc >> 8);
  data[len + 1] = (char)(crc);
@@ -17443,16 +17445,30 @@ uint8_t setNavFlightMode[] = {
 
 size_t GetLengthUBX(uint8_t* data)
 {
-    return 8 + (short)((short)(data[4] << 8) + (short)data[5]);
+
+
+
+    return (short)(8 + (short)((short)data[4] + (short)(data[5] << 8)));
+
 }
 
 
 void GPS_SendUBX(uint8_t* data)
 {
+
+
+
     for (int i = 0, length = GetLengthUBX(data); i < length; i++)
     {
+
         EUSART_Write(data[i]);
+
+
+
     }
+
+
+
 }
 
 
@@ -17461,6 +17477,10 @@ void GPS_SendUBX(uint8_t* data)
 
 _Bool GPS_HasAcknowledged(uint8_t* data)
 {
+
+
+
+
     uint8_t ackPacket[10];
     unsigned long startTime = TMR1_ReadTimer();
 
@@ -17523,6 +17543,7 @@ _Bool GPS_HasAcknowledged(uint8_t* data)
 
         }
     }
+
 }
 
 _Bool gps_configured = 0;
@@ -17531,12 +17552,16 @@ void SetupGPS()
 {
     while (!gps_configured)
     {
+
         do { LATAbits.LATA5 = 0; } while(0);
+
         GPS_SendUBX(setNavFlightMode);
         gps_configured = GPS_HasAcknowledged(setNavFlightMode);
 
+
         do { LATAbits.LATA5 = 1; } while(0);
         _delay((unsigned long)((500)*(4000000/4000.0)));
+
     }
     gps_configured = 0;
 
@@ -17550,9 +17575,7 @@ void SetupGPS()
 }
 
 enum FieldTypesPUBX {
-    PUBX_HEADER = 0,
-    PUBX_ID,
-    PUBX_TIME,
+    PUBX_TIME = 2,
     PUBX_LAT,
     PUBX_NS,
     PUBX_LONG,
@@ -17567,39 +17590,41 @@ enum FieldTypesPUBX {
 };
 
 
-char gps_time[16] = {'\0'};
+char gps_time[10] = {'\0'};
 
 char gps_latitude[16] = {'\0'};
 
 char gps_longitude[16] = {'\0'};
 
-char gps_altitude[16] = {'\0'};
+char gps_altitude[12] = {'\0'};
 
 char gps_nav_status[4] = {'\0'};
 
-char gps_speed_over_ground[12] = {'\0'};
+char gps_speed_over_ground[8] = {'\0'};
 
-char gps_course_over_ground[12] = {'\0'};
+char gps_course_over_ground[8] = {'\0'};
 
-char gps_vertical_velocity[12] = {'\0'};
-
-
-
+char gps_vertical_velocity[8] = {'\0'};
+# 428 "main.c"
 _Bool GetNavData()
 {
     _Bool success = 0;
+
     do { LATCbits.LATC5 = 1; } while(0);
+
+
+
 
     unsigned long startTime = TMR1_ReadTimer();
 
 
     int dataIndex = 0;
 
-    int dataFieldType = PUBX_HEADER;
+    int dataFieldType = 0;
 
     while (!success)
     {
-        char byte = EUSART_Read();
+        char byte;
 
 
         if (TMR1_ReadTimer() - startTime > 3000)
@@ -17665,7 +17690,7 @@ _Bool GetNavData()
                     gps_vertical_velocity[dataIndex] = byte;
                     break;
                 default:
-                    dataIndex = -1;
+                    break;
                 }
                 dataIndex++;
             }
@@ -17686,6 +17711,7 @@ _Bool GetNavData()
         }
     }
     do { LATCbits.LATC5 = 0; } while(0);
+
     return success;
 }
 
@@ -17704,20 +17730,29 @@ void main(void)
 
     SetupGPS();
 
-    char message[40 + 3];
+
+    char message_start[70];
+    char message_end[70 + 3];
+
+    char* messages[2] = {message_start, message_end};
 
     int id = 0;
     while (1)
     {
         GetNavData();
-        sprintf(message, "$$HABnova,%d,%s,%s,%s,%s,%s,%s,%s*",
-                id, gps_time, gps_latitude, gps_longitude,
+        sprintf(messages[0], "$$HABnova,%d,%s,%s,%s,",
+                id, gps_time, gps_latitude, gps_longitude
+        );
+        sprintf(messages[1], "%s,%s,%s,%s*",
                 gps_altitude, gps_speed_over_ground, gps_course_over_ground,
                 gps_vertical_velocity
         );
         id++;
-        AppendCRC(message, crc16(message, 0x1021));
-        TransmitString(message);
+        AppendCRC(messages[1], crc16(messages, 2));
+
+        TransmitString(messages[0]);
+        TransmitString(messages[1]);
+
         for (int i = 0; i < DELAY_MULT; i++)
         {
             _delay((unsigned long)((MESSAGE_INTERVAL)*(4000000/4000.0)));
