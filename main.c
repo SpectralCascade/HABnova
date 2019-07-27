@@ -2,7 +2,14 @@
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
 
-#define millis() TMR1_ReadTimer()
+unsigned long ticks = 0;
+
+void TimerISR()
+{
+    ticks++;
+}
+
+#define millis() ticks
 
 #else
 #include "stdbool.h"
@@ -25,22 +32,6 @@ typedef unsigned short uint16_t;
 // in VS C# but mostly because I'm too lazy to split the project into more files
 #define RADIO_TRANSMISSION
 #define GPS_MODULE
-
-#ifndef DEBUG_CONSOLE
-void TIMER1_Initialize()
-{
-    // Clear the timer interrupt register
-    TMR1IF = 0;
-    TMR1IE = 1;
-    // Peripheral interrupt enable
-    PEIE = 1;
-    // Global interrupt enable
-    GIE = 1;
-    TMR1ON = 1;
-    TMR1_StartTimer();
-}
-
-#endif // DEBUG_CONSOLE
 
 #ifdef RADIO_TRANSMISSION
 // Constants for transmission code follow.
@@ -453,7 +444,7 @@ bool GetNavData()
         }
 
         // Make sure data is available to read
-        if (EUSART_is_rx_ready())
+        if (EUSART_Read() == '$')
         {
             byte = EUSART_Read();
 
@@ -545,7 +536,8 @@ void main(void)
 {
 #ifndef DEBUG_CONSOLE
     SYSTEM_Initialize();
-    TIMER1_Initialize();
+    INTERRUPT_GlobalInterruptEnable();
+    TMR0_SetInterruptHandler(TimerISR);
 #endif // DEBUG_CONSOLE
 
     SetupGPS();
@@ -559,24 +551,31 @@ void main(void)
     int id = 0;
     while (1)
     {
-        GetNavData();
-        sprintf(messages[0], "$$HABnova,%d,%s,%s,%s,",
+        if (GetNavData())
+        {
+            sprintf(messages[0], "$$HABnova,%d,%s,%s,%s,",
                 id, gps_time, gps_latitude, gps_longitude
-        );
-        sprintf(messages[1], "%s,%s,%s,%s*",
-                gps_altitude, gps_speed_over_ground, gps_course_over_ground,
-                gps_vertical_velocity
-        );
-        id++;
-        AppendCRC(messages[1], crc16(messages, 2));
+            );
+            sprintf(messages[1], "%s,%s,%s,%s*",
+                    gps_altitude, gps_speed_over_ground, gps_course_over_ground,
+                    gps_vertical_velocity
+            );
+            id++;
+            AppendCRC(messages[1], crc16(messages, 2));
 
-        TransmitString(messages[0]);
-        TransmitString(messages[1]);
-
+            TransmitString(messages[0]);
+            TransmitString(messages[1]);
+        }
+        else
+        {
+            /// Failed to get GPS data
+        }
+        
         for (int i = 0; i < DELAY_MULT; i++)
         {
             __delay_ms(MESSAGE_INTERVAL);
         }
+        
 #ifdef DEBUG_CONSOLE
         break;
 #endif // DEBUG_CONSOLE

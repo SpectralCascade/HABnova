@@ -17030,33 +17030,23 @@ typedef uint32_t uint_fast32_t;
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
 # 54 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/tmr1.h" 1
-# 101 "./mcc_generated_files/tmr1.h"
-void TMR1_Initialize(void);
-# 130 "./mcc_generated_files/tmr1.h"
-void TMR1_StartTimer(void);
-# 162 "./mcc_generated_files/tmr1.h"
-void TMR1_StopTimer(void);
-# 197 "./mcc_generated_files/tmr1.h"
-uint16_t TMR1_ReadTimer(void);
-# 236 "./mcc_generated_files/tmr1.h"
-void TMR1_WriteTimer(uint16_t timerVal);
-# 272 "./mcc_generated_files/tmr1.h"
-void TMR1_Reload(void);
-# 311 "./mcc_generated_files/tmr1.h"
-void TMR1_StartSinglePulseAcquisition(void);
-# 350 "./mcc_generated_files/tmr1.h"
-uint8_t TMR1_CheckGateValueStatus(void);
-# 368 "./mcc_generated_files/tmr1.h"
-void TMR1_ISR(void);
-# 385 "./mcc_generated_files/tmr1.h"
-void TMR1_CallBack(void);
-# 403 "./mcc_generated_files/tmr1.h"
- void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 421 "./mcc_generated_files/tmr1.h"
-extern void (*TMR1_InterruptHandler)(void);
-# 439 "./mcc_generated_files/tmr1.h"
-void TMR1_DefaultInterruptHandler(void);
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 98 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 168 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 219 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 238 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 274 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
 # 55 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart.h" 1
@@ -17216,7 +17206,16 @@ void SYSTEM_Initialize(void);
 # 84 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 2 "main.c" 2
-# 20 "main.c"
+
+
+
+unsigned long ticks = 0;
+
+void TimerISR()
+{
+    ticks++;
+}
+# 28 "main.c"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 1 3
 # 25 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 3
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -17272,27 +17271,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 20 "main.c" 2
-# 29 "main.c"
-void TIMER1_Initialize()
-{
-
-    TMR1IF = 0;
-    TMR1IE = 1;
-
-    PEIE = 1;
-
-    GIE = 1;
-    TMR1ON = 1;
-    TMR1_StartTimer();
-}
-
-
-
-
-
-
-
+# 28 "main.c" 2
+# 40 "main.c"
 const int BAUD_RATE = 50;
 
 
@@ -17300,7 +17280,7 @@ const int BAUD_RATE = 50;
 
 
 const int MESSAGE_INTERVAL = 5;
-# 64 "main.c"
+# 56 "main.c"
 const int DELAY_MULT = 1000;
 
 
@@ -17344,7 +17324,7 @@ unsigned short crc16(char** data, int segments)
     }
  return crc;
 }
-# 140 "main.c"
+# 132 "main.c"
 void TransmitBit(_Bool b)
 {
  if (b)
@@ -17369,7 +17349,7 @@ void TransmitBit(_Bool b)
 
 void TransmitByte(char byte)
 {
-# 173 "main.c"
+# 165 "main.c"
     TransmitBit(0);
 
 
@@ -17482,7 +17462,7 @@ _Bool GPS_HasAcknowledged(uint8_t* data)
 
 
     uint8_t ackPacket[10];
-    unsigned long startTime = TMR1_ReadTimer();
+    unsigned long startTime = ticks;
 
 
     ackPacket[0] = 0xB5;
@@ -17522,7 +17502,7 @@ _Bool GPS_HasAcknowledged(uint8_t* data)
         }
 
 
-        if (TMR1_ReadTimer() - startTime > 3000)
+        if (ticks - startTime > 3000)
         {
             return 0;
         }
@@ -17605,7 +17585,7 @@ char gps_speed_over_ground[8] = {'\0'};
 char gps_course_over_ground[8] = {'\0'};
 
 char gps_vertical_velocity[8] = {'\0'};
-# 428 "main.c"
+# 420 "main.c"
 _Bool GetNavData()
 {
     _Bool success = 0;
@@ -17615,7 +17595,7 @@ _Bool GetNavData()
 
 
 
-    unsigned long startTime = TMR1_ReadTimer();
+    unsigned long startTime = ticks;
 
 
     int dataIndex = 0;
@@ -17627,13 +17607,13 @@ _Bool GetNavData()
         char byte;
 
 
-        if (TMR1_ReadTimer() - startTime > 3000)
+        if (ticks - startTime > 3000)
         {
             break;
         }
 
 
-        if (EUSART_is_rx_ready())
+        if (EUSART_Read() == '$')
         {
             byte = EUSART_Read();
 
@@ -17725,7 +17705,8 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-    TIMER1_Initialize();
+    (INTCONbits.GIE = 1);
+    TMR0_SetInterruptHandler(TimerISR);
 
 
     SetupGPS();

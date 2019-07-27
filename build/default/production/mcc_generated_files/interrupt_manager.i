@@ -17031,33 +17031,23 @@ typedef uint32_t uint_fast32_t;
 # 53 "mcc_generated_files/mcc.h" 2
 
 
-# 1 "mcc_generated_files/tmr1.h" 1
-# 101 "mcc_generated_files/tmr1.h"
-void TMR1_Initialize(void);
-# 130 "mcc_generated_files/tmr1.h"
-void TMR1_StartTimer(void);
-# 162 "mcc_generated_files/tmr1.h"
-void TMR1_StopTimer(void);
-# 197 "mcc_generated_files/tmr1.h"
-uint16_t TMR1_ReadTimer(void);
-# 236 "mcc_generated_files/tmr1.h"
-void TMR1_WriteTimer(uint16_t timerVal);
-# 272 "mcc_generated_files/tmr1.h"
-void TMR1_Reload(void);
-# 311 "mcc_generated_files/tmr1.h"
-void TMR1_StartSinglePulseAcquisition(void);
-# 350 "mcc_generated_files/tmr1.h"
-uint8_t TMR1_CheckGateValueStatus(void);
-# 368 "mcc_generated_files/tmr1.h"
-void TMR1_ISR(void);
-# 385 "mcc_generated_files/tmr1.h"
-void TMR1_CallBack(void);
-# 403 "mcc_generated_files/tmr1.h"
- void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 421 "mcc_generated_files/tmr1.h"
-extern void (*TMR1_InterruptHandler)(void);
-# 439 "mcc_generated_files/tmr1.h"
-void TMR1_DefaultInterruptHandler(void);
+# 1 "mcc_generated_files/tmr0.h" 1
+# 98 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 168 "mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 219 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 238 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 274 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
 # 55 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart.h" 1
@@ -17222,16 +17212,9 @@ void OSCILLATOR_Initialize(void);
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
 
-    if(INTCONbits.PEIE == 1)
+    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
     {
-        if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
-        {
-            TMR1_ISR();
-        }
-        else
-        {
-
-        }
+        TMR0_ISR();
     }
     else
     {

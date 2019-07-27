@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/tmr1.c"
+# 1 "mcc_generated_files/tmr0.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/tmr1.c" 2
-# 51 "mcc_generated_files/tmr1.c"
+# 1 "mcc_generated_files/tmr0.c" 2
+# 51 "mcc_generated_files/tmr0.c"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 1 3
 # 18 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -16925,13 +16925,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 2 3
-# 51 "mcc_generated_files/tmr1.c" 2
+# 51 "mcc_generated_files/tmr0.c" 2
 
-# 1 "mcc_generated_files/tmr1.h" 1
-# 54 "mcc_generated_files/tmr1.h"
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
-# 54 "mcc_generated_files/tmr1.h" 2
-
+# 1 "mcc_generated_files/tmr0.h" 1
+# 54 "mcc_generated_files/tmr0.h"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -17015,165 +17012,105 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-# 55 "mcc_generated_files/tmr1.h" 2
-# 101 "mcc_generated_files/tmr1.h"
-void TMR1_Initialize(void);
-# 130 "mcc_generated_files/tmr1.h"
-void TMR1_StartTimer(void);
-# 162 "mcc_generated_files/tmr1.h"
-void TMR1_StopTimer(void);
-# 197 "mcc_generated_files/tmr1.h"
-uint16_t TMR1_ReadTimer(void);
-# 236 "mcc_generated_files/tmr1.h"
-void TMR1_WriteTimer(uint16_t timerVal);
-# 272 "mcc_generated_files/tmr1.h"
-void TMR1_Reload(void);
-# 311 "mcc_generated_files/tmr1.h"
-void TMR1_StartSinglePulseAcquisition(void);
-# 350 "mcc_generated_files/tmr1.h"
-uint8_t TMR1_CheckGateValueStatus(void);
-# 368 "mcc_generated_files/tmr1.h"
-void TMR1_ISR(void);
-# 385 "mcc_generated_files/tmr1.h"
-void TMR1_CallBack(void);
-# 403 "mcc_generated_files/tmr1.h"
- void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 421 "mcc_generated_files/tmr1.h"
-extern void (*TMR1_InterruptHandler)(void);
-# 439 "mcc_generated_files/tmr1.h"
-void TMR1_DefaultInterruptHandler(void);
-# 52 "mcc_generated_files/tmr1.c" 2
+# 54 "mcc_generated_files/tmr0.h" 2
+
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
+# 55 "mcc_generated_files/tmr0.h" 2
+# 98 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 168 "mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 219 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 238 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 274 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 52 "mcc_generated_files/tmr0.c" 2
 
 
 
 
 
-volatile uint16_t timer1ReloadVal;
-void (*TMR1_InterruptHandler)(void);
+
+volatile uint8_t timer0ReloadVal;
+void (*TMR0_InterruptHandler)(void);
 
 
 
 
-
-void TMR1_Initialize(void)
+void TMR0_Initialize(void)
 {
 
 
 
-    T1GCON = 0x00;
+    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD2 & 0x3F));
 
 
-    TMR1H = 0xFF;
+    TMR0 = 0x83;
 
 
-    TMR1L = 0x06;
+    timer0ReloadVal= 131;
 
 
-    timer1ReloadVal=(uint16_t)((TMR1H << 8) | TMR1L);
+    INTCONbits.TMR0IF = 0;
 
 
-    PIR1bits.TMR1IF = 0;
+    INTCONbits.TMR0IE = 1;
 
 
-    PIE1bits.TMR1IE = 1;
-
-
-    TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
-
-
-    T1CON = 0x21;
+    TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
 }
 
-void TMR1_StartTimer(void)
+uint8_t TMR0_ReadTimer(void)
 {
+    uint8_t readVal;
 
-    T1CONbits.TMR1ON = 1;
-}
-
-void TMR1_StopTimer(void)
-{
-
-    T1CONbits.TMR1ON = 0;
-}
-
-uint16_t TMR1_ReadTimer(void)
-{
-    uint16_t readVal;
-    uint8_t readValHigh;
-    uint8_t readValLow;
-
-
-    readValLow = TMR1L;
-    readValHigh = TMR1H;
-
-    readVal = ((uint16_t)readValHigh << 8) | readValLow;
+    readVal = TMR0;
 
     return readVal;
 }
 
-void TMR1_WriteTimer(uint16_t timerVal)
+void TMR0_WriteTimer(uint8_t timerVal)
 {
-    if (T1CONbits.nT1SYNC == 1)
+
+    TMR0 = timerVal;
+}
+
+void TMR0_Reload(void)
+{
+
+    TMR0 = timer0ReloadVal;
+}
+
+void TMR0_ISR(void)
+{
+
+
+    INTCONbits.TMR0IF = 0;
+
+    TMR0 = timer0ReloadVal;
+
+    if(TMR0_InterruptHandler)
     {
-
-        T1CONbits.TMR1ON = 0;
-
-
-        TMR1H = (timerVal >> 8);
-        TMR1L = timerVal;
-
-
-        T1CONbits.TMR1ON =1;
+        TMR0_InterruptHandler();
     }
-    else
-    {
 
-        TMR1H = (timerVal >> 8);
-        TMR1L = timerVal;
-    }
+
 }
 
-void TMR1_Reload(void)
-{
-    TMR1_WriteTimer(timer1ReloadVal);
+
+void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR0_InterruptHandler = InterruptHandler;
 }
 
-void TMR1_StartSinglePulseAcquisition(void)
-{
-    T1GCONbits.T1GGO_nDONE = 1;
-}
-
-uint8_t TMR1_CheckGateValueStatus(void)
-{
-    return (T1GCONbits.T1GVAL);
-}
-
-void TMR1_ISR(void)
-{
-
-
-    PIR1bits.TMR1IF = 0;
-    TMR1_WriteTimer(timer1ReloadVal);
-
-
-
-    TMR1_CallBack();
-}
-
-void TMR1_CallBack(void)
-{
-
-    if(TMR1_InterruptHandler)
-    {
-        TMR1_InterruptHandler();
-    }
-}
-
-void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){
-    TMR1_InterruptHandler = InterruptHandler;
-}
-
-void TMR1_DefaultInterruptHandler(void){
+void TMR0_DefaultInterruptHandler(void){
 
 
 }

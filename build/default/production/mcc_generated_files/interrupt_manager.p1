@@ -16,31 +16,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"1771
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 1771:     struct {
-[s S100 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S100 . TMR1IE TMR2IE CCP1IE SSP1IE TXIE RCIE ADIE TMR1GIE ]
-"1770
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 1770: typedef union {
-[u S99 `S100 1 ]
-[n S99 . . ]
-"1782
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 1782: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x090)));
-[v _PIE1bits `VS99 ~T0 @X0 0 e@144 ]
-"586
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 586:     struct {
-[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S40 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
-"585
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 585: typedef union {
-[u S39 `S40 1 ]
-[n S39 . . ]
-"597
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 597: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x010)));
-[v _PIR1bits `VS39 ~T0 @X0 0 e@16 ]
-"368 mcc_generated_files/tmr1.h
-[; ;mcc_generated_files/tmr1.h: 368: void TMR1_ISR(void);
-[v _TMR1_ISR `(v ~T0 @X0 0 ef ]
+"219 mcc_generated_files/tmr0.h
+[; ;mcc_generated_files/tmr0.h: 219: void TMR0_ISR(void);
+[v _TMR0_ISR `(v ~T0 @X0 0 ef ]
 "54 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1377,49 +1355,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _INTERRUPT_InterruptManager ]
 [f ]
 "55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.PEIE == 1)
-[e $ ! == -> . . _INTCONbits 0 6 `i -> 1 `i 1219  ]
+[; ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 1219  ]
 "56
 [; ;mcc_generated_files/interrupt_manager.c: 56:     {
 {
 "57
-[; ;mcc_generated_files/interrupt_manager.c: 57:         if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
-[e $ ! && == -> . . _PIE1bits 0 0 `i -> 1 `i == -> . . _PIR1bits 0 0 `i -> 1 `i 1220  ]
+[; ;mcc_generated_files/interrupt_manager.c: 57:         TMR0_ISR();
+[e ( _TMR0_ISR ..  ]
 "58
-[; ;mcc_generated_files/interrupt_manager.c: 58:         {
-{
+[; ;mcc_generated_files/interrupt_manager.c: 58:     }
+}
+[e $U 1220  ]
 "59
-[; ;mcc_generated_files/interrupt_manager.c: 59:             TMR1_ISR();
-[e ( _TMR1_ISR ..  ]
-"60
-[; ;mcc_generated_files/interrupt_manager.c: 60:         }
-}
-[e $U 1221  ]
-"61
-[; ;mcc_generated_files/interrupt_manager.c: 61:         else
-[e :U 1220 ]
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:         {
-{
-"64
-[; ;mcc_generated_files/interrupt_manager.c: 64:         }
-}
-[e :U 1221 ]
-"65
-[; ;mcc_generated_files/interrupt_manager.c: 65:     }
-}
-[e $U 1222  ]
-"66
-[; ;mcc_generated_files/interrupt_manager.c: 66:     else
+[; ;mcc_generated_files/interrupt_manager.c: 59:     else
 [e :U 1219 ]
-"67
-[; ;mcc_generated_files/interrupt_manager.c: 67:     {
+"60
+[; ;mcc_generated_files/interrupt_manager.c: 60:     {
 {
-"69
-[; ;mcc_generated_files/interrupt_manager.c: 69:     }
+"62
+[; ;mcc_generated_files/interrupt_manager.c: 62:     }
 }
-[e :U 1222 ]
-"70
-[; ;mcc_generated_files/interrupt_manager.c: 70: }
+[e :U 1220 ]
+"63
+[; ;mcc_generated_files/interrupt_manager.c: 63: }
 [e :UE 1218 ]
 }

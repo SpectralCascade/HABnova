@@ -51,7 +51,7 @@ void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    TMR1_Initialize();
+    TMR0_Initialize();
     EUSART_Initialize();
 }
 
