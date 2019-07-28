@@ -1,6 +1,8 @@
-#ifndef DEBUG_CONSOLE
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
+
+#include <string.h>
+#include <stdio.h>
 
 unsigned long ticks = 0;
 
@@ -11,27 +13,21 @@ void TimerISR()
 
 #define millis() ticks
 
-#else
-#include "stdbool.h"
-
-#define __delay_us(us)
-#define __delay_ms(ms)
-
-unsigned long ticks = 0;
-
-#define millis() (++ticks)
-
-typedef unsigned char uint8_t;
-typedef unsigned short uint16_t;
-
-#endif
-#include <string.h>
-#include <stdio.h>
-
 // I did this to make the code more readable in MPLABx, kinda like #region
 // in VS C# but mostly because I'm too lazy to split the project into more files
 #define RADIO_TRANSMISSION
 #define GPS_MODULE
+
+void FlashError()
+{
+    for (int i = 0; i < 3; i++)
+    {
+        LED_NAV_SetHigh();
+        __delay_ms(250);
+        LED_NAV_SetLow();
+        __delay_ms(250);
+    }
+}
 
 #ifdef RADIO_TRANSMISSION
 // Constants for transmission code follow.
@@ -51,6 +47,14 @@ const int MESSAGE_INTERVAL = 5;
 #else
 #define MAX_MESSAGE_LENGTH 70
 #endif
+
+// Transmission is split into two messages because the PIC16F1619
+// microcontroller has limited contiguous memory.
+char message_start[MAX_MESSAGE_LENGTH];
+char message_end[MAX_MESSAGE_LENGTH + 3];
+
+/// Array of message block pointers.
+char* messages[2] = {message_start, message_end};
 
 // Interval multiplier
 const int DELAY_MULT = 1000;
@@ -87,8 +91,9 @@ unsigned short crc16(char** data, int segments)
     for (int str = 0; str < segments; str++)
     {
         char* string = data[str];
+        size_t len = strlen(string);
         // Calculate checksum ignoring the first two $s
-        for (i = 2; i < strlen(string); i++)
+        for (i = (string[i] == '$' ? 2 : 0); i < len; i++)
         {
             c = string[i];
             crc = crc_append_byte(crc, c);
@@ -97,55 +102,15 @@ unsigned short crc16(char** data, int segments)
 	return crc;
 }
 
-/// Replaced by above code
-/*
-// Creates a CRC16 hash (CCITT algorithm?)
-unsigned short crc16(const char* message, unsigned short polynomial) {
-	unsigned int crc;
-
-	crc = 0xFFFF;
-	if (strlen(message) == 0)
-	{
-		return (~crc);
-	}
-	const unsigned short FRONT_BIT = 0x8000;
-	for (unsigned int i = 0, counti = strlen(message); i < counti; i++) {
-		char byte = message[i];
-		// Move byte to MSB and XOR with the crc
-		crc = crc ^ ((unsigned short)(byte << 8));
-		// Run through the current byte
-		for (int i = 0; i < 8; i++) {
-			if ((crc & FRONT_BIT) != 0) {
-				crc = ((unsigned short)(crc << 1)) ^ polynomial;
-			}
-			else {
-				// If MSB is not a 1, we can simply skip ahead with XORing
-				crc = crc << 1;
-			}
-		}
-	}
-
-	return crc;
-}
-*/
-
 void TransmitBit(bool b)
 {
 	if (b)
 	{
-#ifdef DEBUG_CONSOLE
-		printf("1");
-#else
 		TX_PIN_SetHigh();
-#endif // DEBUG_CONSOLE
 	}
 	else
 	{
-#ifdef DEBUG_CONSOLE
-		printf("0");
-#else
 		TX_PIN_SetLow();
-#endif // DEBUG_CONSOLE
 	}
 	__delay_us(HALF_BAUD_DELAY);
 	__delay_us(HALF_BAUD_DELAY);
@@ -163,23 +128,14 @@ void TransmitByte(char byte)
 
     /// We always send a single LOW bit as our start bit so the receiver software can sync up.
     TransmitBit(0);
-#ifdef DEBUG_CONSOLE
-    printf("-");
-#endif
     /// ASCII-7 encoding for our string characters.
 	for (int i = 0; i < 7; i++)
 	{
 		TransmitBit((byte >> i) & 1);
 	}
-#ifdef DEBUG_CONSOLE
-    printf("-");
-#endif
 	/// Two stop bits to ensure the receiver software can sync up with the next start bit.
 	TransmitBit(1);
 	TransmitBit(1);
-#ifdef DEBUG_CONSOLE
-	printf(" [%c], ", byte);
-#endif // DEBUG_CONSOLE
 }
 
 void TransmitString(char* message)
@@ -194,21 +150,6 @@ void TransmitString(char* message)
 #ifdef DEBUG_CONSOLE
 	printf("\n");
 #endif // DEBUG_CONSOLE
-}
-
-// Appends CRC and a newline character to a string
-void AppendCRC(char* data, unsigned short crc)
-{
-	int len = strlen(data);
-	if (len >= MAX_MESSAGE_LENGTH - 1)
-	{
-		// Ignore data indices greater than max message length
-		len = MAX_MESSAGE_LENGTH - 2;
-	}
-	data[len] = (char)(crc >> 8);
-	data[len + 1] = (char)(crc);
-	data[len + 2] = '\n';
-	data[len + 3] = '\0';
 }
 
 #endif // RADIO_TRANSMISSION
@@ -237,30 +178,16 @@ uint8_t setNavFlightMode[] = {
 // Computes the length of a UBX data packet in bytes.
 size_t GetLengthUBX(uint8_t* data)
 {
-#ifdef DEBUG_CONSOLE
-    printf("GetLengthUBX outputs %d\n", 8 + (short)((short)data[4] + (short)(data[5] << 8)));
-#else
     return (short)(8 + (short)((short)data[4] + (short)(data[5] << 8)));
-#endif // DEBUG_CONSOLE
 }
 
 // Send commands in the UBX format to the GPS module.
 void GPS_SendUBX(uint8_t* data)
 {
-#ifdef DEBUG_CONSOLE
-    printf("Sending UBX command to GPS module:\n");
-#endif // DEBUG_CONSOLE
     for (int i = 0, length = GetLengthUBX(data); i < length; i++)
     {
-#ifndef DEBUG_CONSOLE
         EUSART_Write(data[i]);
-#else
-        printf("%c", data[i]);
-#endif // DEBUG_CONSOLE
     }
-#ifdef DEBUG_CONSOLE
-    printf("\n");
-#endif
 }
 
 // Computes the expected ACK response from the GPS module for the given command
@@ -269,10 +196,6 @@ void GPS_SendUBX(uint8_t* data)
 // https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)
 bool GPS_HasAcknowledged(uint8_t* data)
 {
-#ifdef DEBUG_CONSOLE
-    /// Pretend GPS acknowledgement worked
-    return true;
-#else
     uint8_t ackPacket[10];
     unsigned long startTime = millis();
 
@@ -335,7 +258,6 @@ bool GPS_HasAcknowledged(uint8_t* data)
 
         }
     }
-#endif // DEBUG_CONSOLE
 }
 
 bool gps_configured = false;
@@ -344,22 +266,18 @@ void SetupGPS()
 {
     while (!gps_configured)
     {
-#ifndef DEBUG_CONSOLE
         LED_ACK_SetLow();
-#endif // DEBUG_CONSOLE
         GPS_SendUBX(setNavFlightMode);
         gps_configured = GPS_HasAcknowledged(setNavFlightMode);
         // Flash the LED on retry, leave it on upon success
-#ifndef DEBUG_CONSOLE
         LED_ACK_SetHigh();
         __delay_ms(500);
-#endif // DEBUG_CONSOLE
     }
     gps_configured = false;
     // Disable all sentences, we will poll the GPS module as necessary.
     // printf() is rerouted to EUSART so we can use that to send NMEA commands.
     printf("$PUBX,40,GLL,0,0,0,0*5C\r\n");
-    printf("$PUBX,40,GGA,0,0,0,0*44\r\n");
+    printf("$PUBX,40,ZDA,0,0,0,0*44\r\n");
     printf("$PUBX,40,VTG,0,0,0,0*5E\r\n");
     printf("$PUBX,40,GSV,0,0,0,0*59\r\n");
     printf("$PUBX,40,GSA,0,0,0,0*4E\r\n");
@@ -415,6 +333,9 @@ uint8_t EUSART_Read()
 }
 #endif // DEBUG_CONSOLE
 
+// Enable this to transmit the first 70 bits of GPS data received.
+//#define TEST_GPS_NAVDATA
+
 // Polls the GPS module and stores received data. Returns false if there is no
 // response after 3 seconds.
 bool GetNavData()
@@ -432,11 +353,15 @@ bool GetNavData()
     int dataIndex = 0;
     // The current data type (e.g. latitude, time, vertical velocity etc.)
     int dataFieldType = 0;
+    
+    /// Poll the GPS module
+    printf("$PUBX,00*33\r\n");
 
+    char byte;
+    
+    int index = 0;
     while (!success)
     {
-        char byte;
-
         // Timeout if no valid response in 3 seconds
         if (millis() - startTime > 3000)
         {
@@ -444,10 +369,22 @@ bool GetNavData()
         }
 
         // Make sure data is available to read
-        if (EUSART_Read() == '$')
+        if (EUSART_is_rx_ready())
         {
             byte = EUSART_Read();
-
+#ifdef TEST_GPS_NAVDATA
+            if (index < MAX_MESSAGE_LENGTH - 1)
+            {
+                message_start[index] = byte;
+            }
+            else
+            {
+                message_end[0] = '\n';
+                return true;
+            }
+            
+            index++;
+#else
             bool skip = true;
             switch (byte)
             {
@@ -505,82 +442,58 @@ bool GetNavData()
                 }
                 dataIndex++;
             }
-
+#endif
         }
 
     }
-#ifndef DEBUG_CONSOLE
-    if (!success)
-    {
-        // Flash error indicator
-        for (int i = 0; i < 4; i++)
-        {
-            __delay_ms(250);
-            LED_NAV_SetLow();
-            __delay_ms(250);
-            LED_NAV_SetHigh();
-        }
-    }
-    LED_NAV_SetLow();
-#endif // DEBUG_CONSOLE
     return success;
 }
 
 #endif // GPS_MODULE
 
-#ifdef DEBUG_CONSOLE
-int main()
-#else
+char checksum[6] = {'\0'};
+
 void main(void)
-#endif // DEBUG_CONSOLE
 {
-#ifndef DEBUG_CONSOLE
     SYSTEM_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     TMR0_SetInterruptHandler(TimerISR);
-#endif // DEBUG_CONSOLE
 
     SetupGPS();
-
-    // Transmission is split into two messages so we have enough memory
-    char message_start[MAX_MESSAGE_LENGTH];
-    char message_end[MAX_MESSAGE_LENGTH + 3];
-
-    char* messages[2] = {message_start, message_end};
 
     int id = 0;
     while (1)
     {
         if (GetNavData())
         {
-            sprintf(messages[0], "$$HABnova,%d,%s,%s,%s,",
+            /// Half the data goes in the first message block
+            sprintf(messages[0], "$$TEST,%d,%s,%s,%s,",
                 id, gps_time, gps_latitude, gps_longitude
             );
-            sprintf(messages[1], "%s,%s,%s,%s*",
+            /// The other half goes in the second block
+            sprintf(messages[1], "%s,%s,%s,%s",
                     gps_altitude, gps_speed_over_ground, gps_course_over_ground,
                     gps_vertical_velocity
             );
+            /// Calculate and append the CRC16 checksum to the message segments.
+            sprintf(checksum, "*%04X\n", crc16(messages, 2));
+            strcat(messages[1], checksum);
             id++;
-            AppendCRC(messages[1], crc16(messages, 2));
 
+            TX_LED_SetHigh();
             TransmitString(messages[0]);
             TransmitString(messages[1]);
+            TX_LED_SetLow();
         }
         else
         {
             /// Failed to get GPS data
+            FlashError();
         }
         
         for (int i = 0; i < DELAY_MULT; i++)
         {
             __delay_ms(MESSAGE_INTERVAL);
         }
-        
-#ifdef DEBUG_CONSOLE
-        break;
-#endif // DEBUG_CONSOLE
     }
-#ifdef DEBUG_CONSOLE
-    return 0;
-#endif // DEBUG_CONSOLE
 }

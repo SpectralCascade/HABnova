@@ -1,4 +1,19 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"2720 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2720:     struct {
+[s S141 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S141 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"2719
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2719: typedef union {
+[u S140 `S141 1 ]
+[n S140 . . ]
+"2731
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2731: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
+[v _LATCbits `VS140 ~T0 @X0 0 e@270 ]
+[v F9589 `(v ~T0 @X0 1 tf1`ul ]
+"92 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic.h
+[v __delay `JF9589 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 K:\Programs\MPLABX\XC8 Compiler\pic\include\c99\string.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\c99\string.h: 54: size_t strlen (const char *);
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
@@ -13,10 +28,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2640
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2640: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
 [v _LATAbits `VS136 ~T0 @X0 0 e@268 ]
-[v F9589 `(v ~T0 @X0 1 tf1`ul ]
-"92 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic.h
-[v __delay `JF9589 ~T0 @X0 0 e ]
-[p i __delay ]
 "281 ./mcc_generated_files/eusart.h
 [; ;./mcc_generated_files/eusart.h: 281: void EUSART_Write(uint8_t txData);
 [v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
@@ -28,21 +39,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
 "113 K:\Programs\MPLABX\XC8 Compiler\pic\include\c99\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"2720 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2720:     struct {
-[s S141 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S141 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"2719
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2719: typedef union {
-[u S140 `S141 1 ]
-[n S140 . . ]
-"2731
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2731: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
-[v _LATCbits `VS140 ~T0 @X0 0 e@270 ]
-"505 main.c
-[; ;main.c: 505:                 }
-[c E10185 2 3 4 5 6 7 8 11 12 13 .. ]
-[n E10185 FieldTypesPUBX PUBX_TIME PUBX_LAT PUBX_NS PUBX_LONG PUBX_EW PUBX_ALT PUBX_NAVSTAT PUBX_SOG PUBX_COG PUBX_VVEL  ]
+"442 main.c
+[; ;main.c: 442:                 }
+[c E10187 2 3 4 5 6 7 8 11 12 13 .. ]
+[n E10187 FieldTypesPUBX PUBX_TIME PUBX_LAT PUBX_NS PUBX_LONG PUBX_EW PUBX_ALT PUBX_NAVSTAT PUBX_SOG PUBX_COG PUBX_VVEL  ]
 [p mainexit ]
 "71 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
@@ -66,9 +66,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "238 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 238:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F9639 ]
-[v F10213 `(v ~T0 @X0 0 tf ]
+[v F10216 `(v ~T0 @X0 0 tf ]
 "115 K:\Programs\MPLABX\XC8 Compiler\pic\include\c99\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"36 K:\Programs\MPLABX\XC8 Compiler\pic\include\c99\string.h
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\c99\string.h: 36: char *strcat (char *restrict, const char *restrict);
+[v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
 "54 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1395,388 +1398,410 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27877
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 27877: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"5 main.c
-[; ;main.c: 5: unsigned long ticks = 0;
+"7 main.c
+[; ;main.c: 7: unsigned long ticks = 0;
 [v _ticks `ul ~T0 @X0 1 e ]
 [i _ticks
 -> -> -> 0 `i `l `ul
 ]
-"7
-[; ;main.c: 7: void TimerISR()
+"9
+[; ;main.c: 9: void TimerISR()
 [v _TimerISR `(v ~T0 @X0 1 ef ]
-"8
-[; ;main.c: 8: {
+"10
+[; ;main.c: 10: {
 {
 [e :U _TimerISR ]
 [f ]
-"9
-[; ;main.c: 9:     ticks++;
+"11
+[; ;main.c: 11:     ticks++;
 [e ++ _ticks -> -> -> 1 `i `l `ul ]
-"10
-[; ;main.c: 10: }
-[e :UE 1218 ]
+"12
+[; ;main.c: 12: }
+[e :UE 1219 ]
 }
-"40
-[; ;main.c: 40: const int BAUD_RATE = 50;
+"21
+[; ;main.c: 21: void FlashError()
+[v _FlashError `(v ~T0 @X0 1 ef ]
+"22
+[; ;main.c: 22: {
+{
+[e :U _FlashError ]
+[f ]
+"23
+[; ;main.c: 23:     for (int i = 0; i < 3; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 3 `i 1221  ]
+[e $U 1222  ]
+[e :U 1221 ]
+"24
+[; ;main.c: 24:     {
+{
+"25
+[; ;main.c: 25:         do { LATCbits.LATC5 = 1; } while(0);
+[e :U 1226 ]
+{
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 1225 ]
+"26
+[; ;main.c: 26:         _delay((unsigned long)((250)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"27
+[; ;main.c: 27:         do { LATCbits.LATC5 = 0; } while(0);
+[e :U 1229 ]
+{
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 1228 ]
+"28
+[; ;main.c: 28:         _delay((unsigned long)((250)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"29
+[; ;main.c: 29:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 3 `i 1221  ]
+[e :U 1222 ]
+}
+"30
+[; ;main.c: 30: }
+[e :UE 1220 ]
+}
+"36
+[; ;main.c: 36: const int BAUD_RATE = 50;
 [v _BAUD_RATE `Ci ~T0 @X0 1 e ]
 [i _BAUD_RATE
 -> 50 `i
 ]
-"46
-[; ;main.c: 46: const int MESSAGE_INTERVAL = 5;
+"42
+[; ;main.c: 42: const int MESSAGE_INTERVAL = 5;
 [v _MESSAGE_INTERVAL `Ci ~T0 @X0 1 e ]
 [i _MESSAGE_INTERVAL
 -> 5 `i
 ]
-"56
-[; ;main.c: 56: const int DELAY_MULT = 1000;
+"53
+[; ;main.c: 53: char message_start[70];
+[v _message_start `uc ~T0 @X0 -> 70 `i e ]
+"54
+[; ;main.c: 54: char message_end[70 + 3];
+[v _message_end `uc ~T0 @X0 -> 73 `i e ]
+"57
+[; ;main.c: 57: char* messages[2] = {message_start, message_end};
+[v _messages `*uc ~T0 @X0 -> 2 `i e ]
+[i _messages
+:U ..
+&U _message_start
+&U _message_end
+..
+]
+"60
+[; ;main.c: 60: const int DELAY_MULT = 1000;
 [v _DELAY_MULT `Ci ~T0 @X0 1 e ]
 [i _DELAY_MULT
 -> 1000 `i
 ]
-"59
-[; ;main.c: 59: unsigned short crc_append_byte(uint16_t crc, uint8_t data)
+"63
+[; ;main.c: 63: unsigned short crc_append_byte(uint16_t crc, uint8_t data)
 [v _crc_append_byte `(us ~T0 @X0 1 ef2`us`uc ]
-"60
-[; ;main.c: 60: {
+"64
+[; ;main.c: 64: {
 {
 [e :U _crc_append_byte ]
-"59
-[; ;main.c: 59: unsigned short crc_append_byte(uint16_t crc, uint8_t data)
+"63
+[; ;main.c: 63: unsigned short crc_append_byte(uint16_t crc, uint8_t data)
 [v _crc `us ~T0 @X0 1 r1 ]
 [v _data `uc ~T0 @X0 1 r2 ]
-"60
-[; ;main.c: 60: {
+"64
+[; ;main.c: 64: {
 [f ]
-"61
-[; ;main.c: 61:     int i;
+"65
+[; ;main.c: 65:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"62
-[; ;main.c: 62:     crc = crc ^ ((uint16_t)data << 8);
+"66
+[; ;main.c: 66:     crc = crc ^ ((uint16_t)data << 8);
 [e = _crc -> ^ -> _crc `ui << -> -> _data `us `ui -> 8 `i `us ]
-"63
-[; ;main.c: 63:     for (i = 0; i < 8; i++)
+"67
+[; ;main.c: 67:     for (i = 0; i < 8; i++)
 {
 [e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 1221  ]
-[e $U 1222  ]
-[e :U 1221 ]
-"64
-[; ;main.c: 64:     {
-{
-"65
-[; ;main.c: 65:         if (crc & 0x8000)
-[e $ ! != & -> _crc `ui -> 32768 `ui -> -> 0 `i `ui 1224  ]
-"66
-[; ;main.c: 66:         {
-{
-"67
-[; ;main.c: 67:             crc = (crc << 1) ^ 0x1021;
-[e = _crc -> ^ << -> _crc `ui -> 1 `i -> -> 4129 `i `ui `us ]
+[e $ < _i -> 8 `i 1231  ]
+[e $U 1232  ]
+[e :U 1231 ]
 "68
-[; ;main.c: 68:         }
-}
-[e $U 1225  ]
+[; ;main.c: 68:     {
+{
 "69
-[; ;main.c: 69:         else
-[e :U 1224 ]
+[; ;main.c: 69:         if (crc & 0x8000)
+[e $ ! != & -> _crc `ui -> 32768 `ui -> -> 0 `i `ui 1234  ]
 "70
 [; ;main.c: 70:         {
 {
 "71
-[; ;main.c: 71:             crc <<= 1;
-[e =<< _crc -> -> 1 `i `us ]
+[; ;main.c: 71:             crc = (crc << 1) ^ 0x1021;
+[e = _crc -> ^ << -> _crc `ui -> 1 `i -> -> 4129 `i `ui `us ]
 "72
 [; ;main.c: 72:         }
 }
-[e :U 1225 ]
+[e $U 1235  ]
 "73
-[; ;main.c: 73:     }
+[; ;main.c: 73:         else
+[e :U 1234 ]
+"74
+[; ;main.c: 74:         {
+{
+"75
+[; ;main.c: 75:             crc <<= 1;
+[e =<< _crc -> -> 1 `i `us ]
+"76
+[; ;main.c: 76:         }
+}
+[e :U 1235 ]
+"77
+[; ;main.c: 77:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 1221  ]
-[e :U 1222 ]
-}
-"75
-[; ;main.c: 75:     return crc;
-[e ) _crc ]
-[e $UE 1220  ]
-"76
-[; ;main.c: 76: }
-[e :UE 1220 ]
+[e $ < _i -> 8 `i 1231  ]
+[e :U 1232 ]
 }
 "79
-[; ;main.c: 79: unsigned short crc16(char** data, int segments)
-[v _crc16 `(us ~T0 @X0 1 ef2`**uc`i ]
+[; ;main.c: 79:     return crc;
+[e ) _crc ]
+[e $UE 1230  ]
 "80
-[; ;main.c: 80: {
+[; ;main.c: 80: }
+[e :UE 1230 ]
+}
+"83
+[; ;main.c: 83: unsigned short crc16(char** data, int segments)
+[v _crc16 `(us ~T0 @X0 1 ef2`**uc`i ]
+"84
+[; ;main.c: 84: {
 {
 [e :U _crc16 ]
-"79
-[; ;main.c: 79: unsigned short crc16(char** data, int segments)
+"83
+[; ;main.c: 83: unsigned short crc16(char** data, int segments)
 [v _data `**uc ~T0 @X0 1 r1 ]
 [v _segments `i ~T0 @X0 1 r2 ]
-"80
-[; ;main.c: 80: {
+"84
+[; ;main.c: 84: {
 [f ]
-"81
-[; ;main.c: 81:     size_t i;
-[v _i `ui ~T0 @X0 1 a ]
-"82
-[; ;main.c: 82:  uint16_t crc;
-[v _crc `us ~T0 @X0 1 a ]
-"83
-[; ;main.c: 83:  uint8_t c;
-[v _c `uc ~T0 @X0 1 a ]
 "85
-[; ;main.c: 85:  crc = 0xFFFF;
-[e = _crc -> -> 65535 `ui `us ]
+[; ;main.c: 85:     size_t i;
+[v _i `ui ~T0 @X0 1 a ]
+"86
+[; ;main.c: 86:  uint16_t crc;
+[v _crc `us ~T0 @X0 1 a ]
 "87
-[; ;main.c: 87:     for (int str = 0; str < segments; str++)
+[; ;main.c: 87:  uint8_t c;
+[v _c `uc ~T0 @X0 1 a ]
+"89
+[; ;main.c: 89:  crc = 0xFFFF;
+[e = _crc -> -> 65535 `ui `us ]
+"91
+[; ;main.c: 91:     for (int str = 0; str < segments; str++)
 {
 [v _str `i ~T0 @X0 1 a ]
 [e = _str -> 0 `i ]
-[e $U 1230  ]
-[e :U 1227 ]
-"88
-[; ;main.c: 88:     {
-{
-"89
-[; ;main.c: 89:         char* string = data[str];
-[v _string `*uc ~T0 @X0 1 a ]
-[e = _string *U + _data * -> _str `x -> -> # *U _data `i `x ]
-"91
-[; ;main.c: 91:         for (i = 2; i < strlen(string); i++)
-{
-[e = _i -> -> 2 `i `ui ]
-[e $U 1234  ]
-[e :U 1231 ]
+[e $U 1240  ]
+[e :U 1237 ]
 "92
-[; ;main.c: 92:         {
+[; ;main.c: 92:     {
 {
 "93
-[; ;main.c: 93:             c = string[i];
-[e = _c -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `uc ]
+[; ;main.c: 93:         char* string = data[str];
+[v _string `*uc ~T0 @X0 1 a ]
+[e = _string *U + _data * -> _str `x -> -> # *U _data `i `x ]
 "94
-[; ;main.c: 94:             crc = crc_append_byte(crc, c);
+[; ;main.c: 94:         size_t len = strlen(string);
+[v _len `ui ~T0 @X0 1 a ]
+[e = _len ( _strlen (1 -> _string `*Cuc ]
+"96
+[; ;main.c: 96:         for (i = (string[i] == '$' ? 2 : 0); i < len; i++)
+{
+[e = _i -> ? == -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `ui -> 36 `ui : -> 2 `i -> 0 `i `ui ]
+[e $U 1244  ]
+[e :U 1241 ]
+"97
+[; ;main.c: 97:         {
+{
+"98
+[; ;main.c: 98:             c = string[i];
+[e = _c -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `uc ]
+"99
+[; ;main.c: 99:             crc = crc_append_byte(crc, c);
 [e = _crc ( _crc_append_byte (2 , _crc _c ]
-"95
-[; ;main.c: 95:         }
+"100
+[; ;main.c: 100:         }
 }
 [e ++ _i -> -> 1 `i `ui ]
-[e :U 1234 ]
-[e $ < _i ( _strlen (1 -> _string `*Cuc 1231  ]
-[e :U 1232 ]
+[e :U 1244 ]
+[e $ < _i _len 1241  ]
+[e :U 1242 ]
 }
-"96
-[; ;main.c: 96:     }
+"101
+[; ;main.c: 101:     }
 }
 [e ++ _str -> 1 `i ]
-[e :U 1230 ]
-[e $ < _str _segments 1227  ]
-[e :U 1228 ]
+[e :U 1240 ]
+[e $ < _str _segments 1237  ]
+[e :U 1238 ]
 }
-"97
-[; ;main.c: 97:  return crc;
+"102
+[; ;main.c: 102:  return crc;
 [e ) _crc ]
-[e $UE 1226  ]
-"98
-[; ;main.c: 98: }
-[e :UE 1226 ]
+[e $UE 1236  ]
+"103
+[; ;main.c: 103: }
+[e :UE 1236 ]
 }
-"132
-[; ;main.c: 132: void TransmitBit(_Bool b)
+"105
+[; ;main.c: 105: void TransmitBit(_Bool b)
 [v _TransmitBit `(v ~T0 @X0 1 ef1`a ]
-"133
-[; ;main.c: 133: {
+"106
+[; ;main.c: 106: {
 {
 [e :U _TransmitBit ]
-"132
-[; ;main.c: 132: void TransmitBit(_Bool b)
+"105
+[; ;main.c: 105: void TransmitBit(_Bool b)
 [v _b `a ~T0 @X0 1 r1 ]
-"133
-[; ;main.c: 133: {
+"106
+[; ;main.c: 106: {
 [f ]
-"134
-[; ;main.c: 134:  if (b)
-[e $ ! != -> _b `i -> 0 `i 1236  ]
-"135
-[; ;main.c: 135:  {
+"107
+[; ;main.c: 107:  if (b)
+[e $ ! != -> _b `i -> 0 `i 1246  ]
+"108
+[; ;main.c: 108:  {
 {
-"139
-[; ;main.c: 139:   do { LATAbits.LATA4 = 1; } while(0);
-[e :U 1239 ]
+"109
+[; ;main.c: 109:   do { LATAbits.LATA4 = 1; } while(0);
+[e :U 1249 ]
 {
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
-[e :U 1238 ]
-"141
-[; ;main.c: 141:  }
+[e :U 1248 ]
+"110
+[; ;main.c: 110:  }
 }
-[e $U 1240  ]
-"142
-[; ;main.c: 142:  else
-[e :U 1236 ]
-"143
-[; ;main.c: 143:  {
+[e $U 1250  ]
+"111
+[; ;main.c: 111:  else
+[e :U 1246 ]
+"112
+[; ;main.c: 112:  {
 {
-"147
-[; ;main.c: 147:   do { LATAbits.LATA4 = 0; } while(0);
-[e :U 1243 ]
+"113
+[; ;main.c: 113:   do { LATAbits.LATA4 = 0; } while(0);
+[e :U 1253 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 1242 ]
-"149
-[; ;main.c: 149:  }
+[e :U 1252 ]
+"114
+[; ;main.c: 114:  }
 }
-[e :U 1240 ]
-"150
-[; ;main.c: 150:  _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
+[e :U 1250 ]
+"115
+[; ;main.c: 115:  _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> * / / -> 1000 `i _BAUD_RATE -> 2 `i -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"151
-[; ;main.c: 151:  _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
+"116
+[; ;main.c: 116:  _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> * / / -> 1000 `i _BAUD_RATE -> 2 `i -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"152
-[; ;main.c: 152: }
-[e :UE 1235 ]
+"117
+[; ;main.c: 117: }
+[e :UE 1245 ]
 }
-"154
-[; ;main.c: 154: void TransmitByte(char byte)
+"119
+[; ;main.c: 119: void TransmitByte(char byte)
 [v _TransmitByte `(v ~T0 @X0 1 ef1`uc ]
-"155
-[; ;main.c: 155: {
+"120
+[; ;main.c: 120: {
 {
 [e :U _TransmitByte ]
-"154
-[; ;main.c: 154: void TransmitByte(char byte)
+"119
+[; ;main.c: 119: void TransmitByte(char byte)
 [v _byte `uc ~T0 @X0 1 r1 ]
-"155
-[; ;main.c: 155: {
+"120
+[; ;main.c: 120: {
 [f ]
-"165
-[; ;main.c: 165:     TransmitBit(0);
+"130
+[; ;main.c: 130:     TransmitBit(0);
 [e ( _TransmitBit (1 -> -> 0 `i `a ]
-"170
-[; ;main.c: 170:  for (int i = 0; i < 7; i++)
+"132
+[; ;main.c: 132:  for (int i = 0; i < 7; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 7 `i 1245  ]
-[e $U 1246  ]
-[e :U 1245 ]
-"171
-[; ;main.c: 171:  {
+[e $ < _i -> 7 `i 1255  ]
+[e $U 1256  ]
+[e :U 1255 ]
+"133
+[; ;main.c: 133:  {
 {
-"172
-[; ;main.c: 172:   TransmitBit((byte >> i) & 1);
+"134
+[; ;main.c: 134:   TransmitBit((byte >> i) & 1);
 [e ( _TransmitBit (1 -> & >> -> _byte `i _i -> 1 `i `a ]
-"173
-[; ;main.c: 173:  }
+"135
+[; ;main.c: 135:  }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 7 `i 1245  ]
-[e :U 1246 ]
+[e $ < _i -> 7 `i 1255  ]
+[e :U 1256 ]
 }
-"178
-[; ;main.c: 178:  TransmitBit(1);
+"137
+[; ;main.c: 137:  TransmitBit(1);
 [e ( _TransmitBit (1 -> -> 1 `i `a ]
-"179
-[; ;main.c: 179:  TransmitBit(1);
+"138
+[; ;main.c: 138:  TransmitBit(1);
 [e ( _TransmitBit (1 -> -> 1 `i `a ]
-"183
-[; ;main.c: 183: }
-[e :UE 1244 ]
+"139
+[; ;main.c: 139: }
+[e :UE 1254 ]
 }
-"185
-[; ;main.c: 185: void TransmitString(char* message)
+"141
+[; ;main.c: 141: void TransmitString(char* message)
 [v _TransmitString `(v ~T0 @X0 1 ef1`*uc ]
-"186
-[; ;main.c: 186: {
+"142
+[; ;main.c: 142: {
 {
 [e :U _TransmitString ]
-"185
-[; ;main.c: 185: void TransmitString(char* message)
+"141
+[; ;main.c: 141: void TransmitString(char* message)
 [v _message `*uc ~T0 @X0 1 r1 ]
-"186
-[; ;main.c: 186: {
+"142
+[; ;main.c: 142: {
 [f ]
-"190
-[; ;main.c: 190:  for (int i = 0, counti = strlen(message); i < counti; i++)
+"146
+[; ;main.c: 146:  for (int i = 0, counti = strlen(message); i < counti; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [v _counti `i ~T0 @X0 1 a ]
 [e = _counti -> ( _strlen (1 -> _message `*Cuc `i ]
-[e $U 1252  ]
-[e :U 1249 ]
-"191
-[; ;main.c: 191:  {
+[e $U 1262  ]
+[e :U 1259 ]
+"147
+[; ;main.c: 147:  {
 {
-"192
-[; ;main.c: 192:   TransmitByte(message[i]);
+"148
+[; ;main.c: 148:   TransmitByte(message[i]);
 [e ( _TransmitByte (1 *U + _message * -> _i `x -> -> # *U _message `i `x ]
-"193
-[; ;main.c: 193:  }
+"149
+[; ;main.c: 149:  }
 }
 [e ++ _i -> 1 `i ]
-[e :U 1252 ]
-[e $ < _i _counti 1249  ]
-[e :U 1250 ]
+[e :U 1262 ]
+[e $ < _i _counti 1259  ]
+[e :U 1260 ]
 }
-"197
-[; ;main.c: 197: }
-[e :UE 1248 ]
+"153
+[; ;main.c: 153: }
+[e :UE 1258 ]
 }
-"200
-[; ;main.c: 200: void AppendCRC(char* data, unsigned short crc)
-[v _AppendCRC `(v ~T0 @X0 1 ef2`*uc`us ]
-"201
-[; ;main.c: 201: {
-{
-[e :U _AppendCRC ]
-"200
-[; ;main.c: 200: void AppendCRC(char* data, unsigned short crc)
-[v _data `*uc ~T0 @X0 1 r1 ]
-[v _crc `us ~T0 @X0 1 r2 ]
-"201
-[; ;main.c: 201: {
-[f ]
-"202
-[; ;main.c: 202:  int len = strlen(data);
-[v _len `i ~T0 @X0 1 a ]
-[e = _len -> ( _strlen (1 -> _data `*Cuc `i ]
-"203
-[; ;main.c: 203:  if (len >= 70 - 1)
-[e $ ! >= _len - -> 70 `i -> 1 `i 1254  ]
-"204
-[; ;main.c: 204:  {
-{
-"206
-[; ;main.c: 206:   len = 70 - 2;
-[e = _len - -> 70 `i -> 2 `i ]
-"207
-[; ;main.c: 207:  }
-}
-[e :U 1254 ]
-"208
-[; ;main.c: 208:  data[len] = (char)(crc >> 8);
-[e = *U + _data * -> _len `x -> -> # *U _data `i `x -> >> -> _crc `ui -> 8 `i `uc ]
-"209
-[; ;main.c: 209:  data[len + 1] = (char)(crc);
-[e = *U + _data * -> + _len -> 1 `i `x -> -> # *U _data `i `x -> _crc `uc ]
-"210
-[; ;main.c: 210:  data[len + 2] = '\n';
-[e = *U + _data * -> + _len -> 2 `i `x -> -> # *U _data `i `x -> -> 10 `ui `uc ]
-"211
-[; ;main.c: 211:  data[len + 3] = '\0';
-[e = *U + _data * -> + _len -> 3 `i `x -> -> # *U _data `i `x -> -> 0 `ui `uc ]
-"212
-[; ;main.c: 212: }
-[e :UE 1253 ]
-}
-"220
-[; ;main.c: 220: uint8_t setNavFlightMode[] = {
+"161
+[; ;main.c: 161: uint8_t setNavFlightMode[] = {
 [v _setNavFlightMode `uc ~T0 @X0 -> 44 `i e ]
 [i _setNavFlightMode
 :U ..
@@ -1826,795 +1851,776 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 220 `i `uc
 ..
 ]
-"238
-[; ;main.c: 238: size_t GetLengthUBX(uint8_t* data)
+"179
+[; ;main.c: 179: size_t GetLengthUBX(uint8_t* data)
 [v _GetLengthUBX `(ui ~T0 @X0 1 ef1`*uc ]
-"239
-[; ;main.c: 239: {
+"180
+[; ;main.c: 180: {
 {
 [e :U _GetLengthUBX ]
-"238
-[; ;main.c: 238: size_t GetLengthUBX(uint8_t* data)
+"179
+[; ;main.c: 179: size_t GetLengthUBX(uint8_t* data)
 [v _data `*uc ~T0 @X0 1 r1 ]
-"239
-[; ;main.c: 239: {
+"180
+[; ;main.c: 180: {
 [f ]
-"243
-[; ;main.c: 243:     return (short)(8 + (short)((short)data[4] + (short)(data[5] << 8)));
+"181
+[; ;main.c: 181:     return (short)(8 + (short)((short)data[4] + (short)(data[5] << 8)));
 [e ) -> -> + -> 8 `i -> -> + -> -> *U + _data * -> -> 4 `i `x -> -> # *U _data `i `x `s `i -> -> << -> *U + _data * -> -> 5 `i `x -> -> # *U _data `i `x `i -> 8 `i `s `i `s `i `s `ui ]
-[e $UE 1255  ]
-"245
-[; ;main.c: 245: }
-[e :UE 1255 ]
+[e $UE 1263  ]
+"182
+[; ;main.c: 182: }
+[e :UE 1263 ]
 }
-"248
-[; ;main.c: 248: void GPS_SendUBX(uint8_t* data)
+"185
+[; ;main.c: 185: void GPS_SendUBX(uint8_t* data)
 [v _GPS_SendUBX `(v ~T0 @X0 1 ef1`*uc ]
-"249
-[; ;main.c: 249: {
+"186
+[; ;main.c: 186: {
 {
 [e :U _GPS_SendUBX ]
-"248
-[; ;main.c: 248: void GPS_SendUBX(uint8_t* data)
+"185
+[; ;main.c: 185: void GPS_SendUBX(uint8_t* data)
 [v _data `*uc ~T0 @X0 1 r1 ]
-"249
-[; ;main.c: 249: {
+"186
+[; ;main.c: 186: {
 [f ]
-"253
-[; ;main.c: 253:     for (int i = 0, length = GetLengthUBX(data); i < length; i++)
+"187
+[; ;main.c: 187:     for (int i = 0, length = GetLengthUBX(data); i < length; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [v _length `i ~T0 @X0 1 a ]
 [e = _length -> ( _GetLengthUBX (1 _data `i ]
-[e $U 1260  ]
-[e :U 1257 ]
-"254
-[; ;main.c: 254:     {
+[e $U 1268  ]
+[e :U 1265 ]
+"188
+[; ;main.c: 188:     {
 {
-"256
-[; ;main.c: 256:         EUSART_Write(data[i]);
+"189
+[; ;main.c: 189:         EUSART_Write(data[i]);
 [e ( _EUSART_Write (1 *U + _data * -> _i `x -> -> # *U _data `i `x ]
-"260
-[; ;main.c: 260:     }
+"190
+[; ;main.c: 190:     }
 }
 [e ++ _i -> 1 `i ]
-[e :U 1260 ]
-[e $ < _i _length 1257  ]
-[e :U 1258 ]
+[e :U 1268 ]
+[e $ < _i _length 1265  ]
+[e :U 1266 ]
 }
-"264
-[; ;main.c: 264: }
-[e :UE 1256 ]
+"191
+[; ;main.c: 191: }
+[e :UE 1264 ]
 }
-"270
-[; ;main.c: 270: _Bool GPS_HasAcknowledged(uint8_t* data)
+"197
+[; ;main.c: 197: _Bool GPS_HasAcknowledged(uint8_t* data)
 [v _GPS_HasAcknowledged `(a ~T0 @X0 1 ef1`*uc ]
-"271
-[; ;main.c: 271: {
+"198
+[; ;main.c: 198: {
 {
 [e :U _GPS_HasAcknowledged ]
-"270
-[; ;main.c: 270: _Bool GPS_HasAcknowledged(uint8_t* data)
+"197
+[; ;main.c: 197: _Bool GPS_HasAcknowledged(uint8_t* data)
 [v _data `*uc ~T0 @X0 1 r1 ]
-"271
-[; ;main.c: 271: {
+"198
+[; ;main.c: 198: {
 [f ]
-"276
-[; ;main.c: 276:     uint8_t ackPacket[10];
+"199
+[; ;main.c: 199:     uint8_t ackPacket[10];
 [v _ackPacket `uc ~T0 @X0 -> 10 `i a ]
-"277
-[; ;main.c: 277:     unsigned long startTime = ticks;
+"200
+[; ;main.c: 200:     unsigned long startTime = ticks;
 [v _startTime `ul ~T0 @X0 1 a ]
 [e = _startTime _ticks ]
-"280
-[; ;main.c: 280:     ackPacket[0] = 0xB5;
+"203
+[; ;main.c: 203:     ackPacket[0] = 0xB5;
 [e = *U + &U _ackPacket * -> -> -> 0 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> -> 181 `i `uc ]
-"281
-[; ;main.c: 281:     ackPacket[1] = 0x62;
+"204
+[; ;main.c: 204:     ackPacket[1] = 0x62;
 [e = *U + &U _ackPacket * -> -> -> 1 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> -> 98 `i `uc ]
-"282
-[; ;main.c: 282:     ackPacket[2] = 0x05;
+"205
+[; ;main.c: 205:     ackPacket[2] = 0x05;
 [e = *U + &U _ackPacket * -> -> -> 2 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> -> 5 `i `uc ]
-"283
-[; ;main.c: 283:     ackPacket[3] = 0x01;
+"206
+[; ;main.c: 206:     ackPacket[3] = 0x01;
 [e = *U + &U _ackPacket * -> -> -> 3 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> -> 1 `i `uc ]
-"284
-[; ;main.c: 284:     ackPacket[4] = 0x02;
+"207
+[; ;main.c: 207:     ackPacket[4] = 0x02;
 [e = *U + &U _ackPacket * -> -> -> 4 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> -> 2 `i `uc ]
-"285
-[; ;main.c: 285:     ackPacket[5] = 0x00;
+"208
+[; ;main.c: 208:     ackPacket[5] = 0x00;
 [e = *U + &U _ackPacket * -> -> -> 5 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> -> 0 `i `uc ]
-"286
-[; ;main.c: 286:     ackPacket[6] = data[2];
+"209
+[; ;main.c: 209:     ackPacket[6] = data[2];
 [e = *U + &U _ackPacket * -> -> -> 6 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux *U + _data * -> -> 2 `i `x -> -> # *U _data `i `x ]
-"287
-[; ;main.c: 287:     ackPacket[7] = data[3];
+"210
+[; ;main.c: 210:     ackPacket[7] = data[3];
 [e = *U + &U _ackPacket * -> -> -> 7 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux *U + _data * -> -> 3 `i `x -> -> # *U _data `i `x ]
-"288
-[; ;main.c: 288:     ackPacket[8] = 0;
+"211
+[; ;main.c: 211:     ackPacket[8] = 0;
 [e = *U + &U _ackPacket * -> -> -> 8 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> -> 0 `i `uc ]
-"289
-[; ;main.c: 289:     ackPacket[9] = 0;
+"212
+[; ;main.c: 212:     ackPacket[9] = 0;
 [e = *U + &U _ackPacket * -> -> -> 9 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> -> 0 `i `uc ]
-"292
-[; ;main.c: 292:     for (uint8_t i = 2; i < 8; i++)
+"215
+[; ;main.c: 215:     for (uint8_t i = 2; i < 8; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 2 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1262  ]
-[e $U 1263  ]
-[e :U 1262 ]
-"293
-[; ;main.c: 293:     {
+[e $ < -> _i `i -> 8 `i 1270  ]
+[e $U 1271  ]
+[e :U 1270 ]
+"216
+[; ;main.c: 216:     {
 {
-"294
-[; ;main.c: 294:         ackPacket[8] = ackPacket[8] + ackPacket[i];
+"217
+[; ;main.c: 217:         ackPacket[8] = ackPacket[8] + ackPacket[i];
 [e = *U + &U _ackPacket * -> -> -> 8 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> + -> *U + &U _ackPacket * -> -> -> 8 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux `i -> *U + &U _ackPacket * -> _i `ux -> -> # *U &U _ackPacket `ui `ux `i `uc ]
-"295
-[; ;main.c: 295:         ackPacket[9] = ackPacket[9] + ackPacket[8];
+"218
+[; ;main.c: 218:         ackPacket[9] = ackPacket[9] + ackPacket[8];
 [e = *U + &U _ackPacket * -> -> -> 9 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux -> + -> *U + &U _ackPacket * -> -> -> 9 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux `i -> *U + &U _ackPacket * -> -> -> 8 `i `ui `ux -> -> # *U &U _ackPacket `ui `ux `i `uc ]
-"296
-[; ;main.c: 296:     }
+"219
+[; ;main.c: 219:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1262  ]
-[e :U 1263 ]
+[e $ < -> _i `i -> 8 `i 1270  ]
+[e :U 1271 ]
 }
-"299
-[; ;main.c: 299:     uint8_t ackByte;
+"222
+[; ;main.c: 222:     uint8_t ackByte;
 [v _ackByte `uc ~T0 @X0 1 a ]
-"302
-[; ;main.c: 302:     uint8_t ackByteID = 0;
+"225
+[; ;main.c: 225:     uint8_t ackByteID = 0;
 [v _ackByteID `uc ~T0 @X0 1 a ]
 [e = _ackByteID -> -> 0 `i `uc ]
-"305
-[; ;main.c: 305:     while (1)
-[e :U 1266 ]
-"306
-[; ;main.c: 306:     {
+"228
+[; ;main.c: 228:     while (1)
+[e :U 1274 ]
+"229
+[; ;main.c: 229:     {
 {
-"309
-[; ;main.c: 309:         if (ackByteID > 9)
-[e $ ! > -> _ackByteID `i -> 9 `i 1268  ]
-"310
-[; ;main.c: 310:         {
+"232
+[; ;main.c: 232:         if (ackByteID > 9)
+[e $ ! > -> _ackByteID `i -> 9 `i 1276  ]
+"233
+[; ;main.c: 233:         {
 {
-"313
-[; ;main.c: 313:             return 1;
+"236
+[; ;main.c: 236:             return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1261  ]
-"314
-[; ;main.c: 314:         }
+[e $UE 1269  ]
+"237
+[; ;main.c: 237:         }
 }
-[e :U 1268 ]
-"317
-[; ;main.c: 317:         if (ticks - startTime > 3000)
-[e $ ! > - _ticks _startTime -> -> -> 3000 `i `l `ul 1269  ]
-"318
-[; ;main.c: 318:         {
+[e :U 1276 ]
+"240
+[; ;main.c: 240:         if (ticks - startTime > 3000)
+[e $ ! > - _ticks _startTime -> -> -> 3000 `i `l `ul 1277  ]
+"241
+[; ;main.c: 241:         {
 {
-"319
-[; ;main.c: 319:             return 0;
+"242
+[; ;main.c: 242:             return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1261  ]
-"320
-[; ;main.c: 320:         }
+[e $UE 1269  ]
+"243
+[; ;main.c: 243:         }
 }
-[e :U 1269 ]
-"323
-[; ;main.c: 323:         if (EUSART_is_rx_ready())
-[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 1270  ]
-"324
-[; ;main.c: 324:         {
+[e :U 1277 ]
+"246
+[; ;main.c: 246:         if (EUSART_is_rx_ready())
+[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 1278  ]
+"247
+[; ;main.c: 247:         {
 {
-"325
-[; ;main.c: 325:             ackByte = EUSART_Read();
+"248
+[; ;main.c: 248:             ackByte = EUSART_Read();
 [e = _ackByte ( _EUSART_Read ..  ]
-"328
-[; ;main.c: 328:             if (ackByte == ackPacket[ackByteID]) {
-[e $ ! == -> _ackByte `i -> *U + &U _ackPacket * -> _ackByteID `ux -> -> # *U &U _ackPacket `ui `ux `i 1271  ]
+"251
+[; ;main.c: 251:             if (ackByte == ackPacket[ackByteID]) {
+[e $ ! == -> _ackByte `i -> *U + &U _ackPacket * -> _ackByteID `ux -> -> # *U &U _ackPacket `ui `ux `i 1279  ]
 {
-"329
-[; ;main.c: 329:                 ackByteID++;
+"252
+[; ;main.c: 252:                 ackByteID++;
 [e ++ _ackByteID -> -> 1 `i `uc ]
-"330
-[; ;main.c: 330:             }
+"253
+[; ;main.c: 253:             }
 }
-[e $U 1272  ]
-"331
-[; ;main.c: 331:             else {
-[e :U 1271 ]
+[e $U 1280  ]
+"254
+[; ;main.c: 254:             else {
+[e :U 1279 ]
 {
-"332
-[; ;main.c: 332:                 ackByteID = 0;
+"255
+[; ;main.c: 255:                 ackByteID = 0;
 [e = _ackByteID -> -> 0 `i `uc ]
-"334
-[; ;main.c: 334:             }
+"257
+[; ;main.c: 257:             }
 }
-[e :U 1272 ]
-"336
-[; ;main.c: 336:         }
+[e :U 1280 ]
+"259
+[; ;main.c: 259:         }
 }
-[e :U 1270 ]
-"337
-[; ;main.c: 337:     }
+[e :U 1278 ]
+"260
+[; ;main.c: 260:     }
 }
-[e :U 1265 ]
-[e $U 1266  ]
-[e :U 1267 ]
-"339
-[; ;main.c: 339: }
-[e :UE 1261 ]
+[e :U 1273 ]
+[e $U 1274  ]
+[e :U 1275 ]
+"261
+[; ;main.c: 261: }
+[e :UE 1269 ]
 }
-"341
-[; ;main.c: 341: _Bool gps_configured = 0;
+"263
+[; ;main.c: 263: _Bool gps_configured = 0;
 [v _gps_configured `a ~T0 @X0 1 e ]
 [i _gps_configured
 -> -> 0 `i `a
 ]
-"343
-[; ;main.c: 343: void SetupGPS()
+"265
+[; ;main.c: 265: void SetupGPS()
 [v _SetupGPS `(v ~T0 @X0 1 ef ]
-"344
-[; ;main.c: 344: {
+"266
+[; ;main.c: 266: {
 {
 [e :U _SetupGPS ]
 [f ]
-"345
-[; ;main.c: 345:     while (!gps_configured)
-[e $U 1274  ]
-[e :U 1275 ]
-"346
-[; ;main.c: 346:     {
+"267
+[; ;main.c: 267:     while (!gps_configured)
+[e $U 1282  ]
+[e :U 1283 ]
+"268
+[; ;main.c: 268:     {
 {
-"348
-[; ;main.c: 348:         do { LATAbits.LATA5 = 0; } while(0);
-[e :U 1279 ]
+"269
+[; ;main.c: 269:         do { LATAbits.LATA5 = 0; } while(0);
+[e :U 1287 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 1278 ]
-"350
-[; ;main.c: 350:         GPS_SendUBX(setNavFlightMode);
+[e :U 1286 ]
+"270
+[; ;main.c: 270:         GPS_SendUBX(setNavFlightMode);
 [e ( _GPS_SendUBX (1 &U _setNavFlightMode ]
-"351
-[; ;main.c: 351:         gps_configured = GPS_HasAcknowledged(setNavFlightMode);
+"271
+[; ;main.c: 271:         gps_configured = GPS_HasAcknowledged(setNavFlightMode);
 [e = _gps_configured ( _GPS_HasAcknowledged (1 &U _setNavFlightMode ]
-"354
-[; ;main.c: 354:         do { LATAbits.LATA5 = 1; } while(0);
-[e :U 1282 ]
+"273
+[; ;main.c: 273:         do { LATAbits.LATA5 = 1; } while(0);
+[e :U 1290 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 1281 ]
-"355
-[; ;main.c: 355:         _delay((unsigned long)((500)*(4000000/4000.0)));
+[e :U 1289 ]
+"274
+[; ;main.c: 274:         _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"357
-[; ;main.c: 357:     }
+"275
+[; ;main.c: 275:     }
 }
-[e :U 1274 ]
-"345
-[; ;main.c: 345:     while (!gps_configured)
-[e $ ! != -> _gps_configured `i -> 0 `i 1275  ]
-[e :U 1276 ]
-"358
-[; ;main.c: 358:     gps_configured = 0;
+[e :U 1282 ]
+"267
+[; ;main.c: 267:     while (!gps_configured)
+[e $ ! != -> _gps_configured `i -> 0 `i 1283  ]
+[e :U 1284 ]
+"276
+[; ;main.c: 276:     gps_configured = 0;
 [e = _gps_configured -> -> 0 `i `a ]
-"361
-[; ;main.c: 361:     printf("$PUBX,40,GLL,0,0,0,0*5C\r\n");
+"279
+[; ;main.c: 279:     printf("$PUBX,40,GLL,0,0,0,0*5C\r\n");
 [e ( _printf :s 1C ]
-"362
-[; ;main.c: 362:     printf("$PUBX,40,GGA,0,0,0,0*44\r\n");
+"280
+[; ;main.c: 280:     printf("$PUBX,40,ZDA,0,0,0,0*44\r\n");
 [e ( _printf :s 2C ]
-"363
-[; ;main.c: 363:     printf("$PUBX,40,VTG,0,0,0,0*5E\r\n");
+"281
+[; ;main.c: 281:     printf("$PUBX,40,VTG,0,0,0,0*5E\r\n");
 [e ( _printf :s 3C ]
-"364
-[; ;main.c: 364:     printf("$PUBX,40,GSV,0,0,0,0*59\r\n");
+"282
+[; ;main.c: 282:     printf("$PUBX,40,GSV,0,0,0,0*59\r\n");
 [e ( _printf :s 4C ]
-"365
-[; ;main.c: 365:     printf("$PUBX,40,GSA,0,0,0,0*4E\r\n");
+"283
+[; ;main.c: 283:     printf("$PUBX,40,GSA,0,0,0,0*4E\r\n");
 [e ( _printf :s 5C ]
-"366
-[; ;main.c: 366:     printf("$PUBX,40,RMC,0,0,0,0*47\r\n");
+"284
+[; ;main.c: 284:     printf("$PUBX,40,RMC,0,0,0,0*47\r\n");
 [e ( _printf :s 6C ]
-"367
-[; ;main.c: 367: }
-[e :UE 1273 ]
+"285
+[; ;main.c: 285: }
+[e :UE 1281 ]
 }
-"385
-[; ;main.c: 385: char gps_time[10] = {'\0'};
+"303
+[; ;main.c: 303: char gps_time[10] = {'\0'};
 [v _gps_time `uc ~T0 @X0 -> 10 `i e ]
 [i _gps_time
 :U ..
 -> -> 0 `ui `uc
 ..
 ]
-"387
-[; ;main.c: 387: char gps_latitude[16] = {'\0'};
+"305
+[; ;main.c: 305: char gps_latitude[16] = {'\0'};
 [v _gps_latitude `uc ~T0 @X0 -> 16 `i e ]
 [i _gps_latitude
 :U ..
 -> -> 0 `ui `uc
 ..
 ]
-"389
-[; ;main.c: 389: char gps_longitude[16] = {'\0'};
+"307
+[; ;main.c: 307: char gps_longitude[16] = {'\0'};
 [v _gps_longitude `uc ~T0 @X0 -> 16 `i e ]
 [i _gps_longitude
 :U ..
 -> -> 0 `ui `uc
 ..
 ]
-"391
-[; ;main.c: 391: char gps_altitude[12] = {'\0'};
+"309
+[; ;main.c: 309: char gps_altitude[12] = {'\0'};
 [v _gps_altitude `uc ~T0 @X0 -> 12 `i e ]
 [i _gps_altitude
 :U ..
 -> -> 0 `ui `uc
 ..
 ]
-"393
-[; ;main.c: 393: char gps_nav_status[4] = {'\0'};
+"311
+[; ;main.c: 311: char gps_nav_status[4] = {'\0'};
 [v _gps_nav_status `uc ~T0 @X0 -> 4 `i e ]
 [i _gps_nav_status
 :U ..
 -> -> 0 `ui `uc
 ..
 ]
-"395
-[; ;main.c: 395: char gps_speed_over_ground[8] = {'\0'};
+"313
+[; ;main.c: 313: char gps_speed_over_ground[8] = {'\0'};
 [v _gps_speed_over_ground `uc ~T0 @X0 -> 8 `i e ]
 [i _gps_speed_over_ground
 :U ..
 -> -> 0 `ui `uc
 ..
 ]
-"397
-[; ;main.c: 397: char gps_course_over_ground[8] = {'\0'};
+"315
+[; ;main.c: 315: char gps_course_over_ground[8] = {'\0'};
 [v _gps_course_over_ground `uc ~T0 @X0 -> 8 `i e ]
 [i _gps_course_over_ground
 :U ..
 -> -> 0 `ui `uc
 ..
 ]
-"399
-[; ;main.c: 399: char gps_vertical_velocity[8] = {'\0'};
+"317
+[; ;main.c: 317: char gps_vertical_velocity[8] = {'\0'};
 [v _gps_vertical_velocity `uc ~T0 @X0 -> 8 `i e ]
 [i _gps_vertical_velocity
 :U ..
 -> -> 0 `ui `uc
 ..
 ]
-"420
-[; ;main.c: 420: _Bool GetNavData()
+"341
+[; ;main.c: 341: _Bool GetNavData()
 [v _GetNavData `(a ~T0 @X0 1 ef ]
-"421
-[; ;main.c: 421: {
+"342
+[; ;main.c: 342: {
 {
 [e :U _GetNavData ]
 [f ]
-"422
-[; ;main.c: 422:     _Bool success = 0;
+"343
+[; ;main.c: 343:     _Bool success = 0;
 [v _success `a ~T0 @X0 1 a ]
 [e = _success -> -> 0 `i `a ]
-"424
-[; ;main.c: 424:     do { LATCbits.LATC5 = 1; } while(0);
-[e :U 1286 ]
+"345
+[; ;main.c: 345:     do { LATCbits.LATC5 = 1; } while(0);
+[e :U 1294 ]
 {
 [e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 1285 ]
-"429
-[; ;main.c: 429:     unsigned long startTime = ticks;
+[e :U 1293 ]
+"350
+[; ;main.c: 350:     unsigned long startTime = ticks;
 [v _startTime `ul ~T0 @X0 1 a ]
 [e = _startTime _ticks ]
-"432
-[; ;main.c: 432:     int dataIndex = 0;
+"353
+[; ;main.c: 353:     int dataIndex = 0;
 [v _dataIndex `i ~T0 @X0 1 a ]
 [e = _dataIndex -> 0 `i ]
-"434
-[; ;main.c: 434:     int dataFieldType = 0;
+"355
+[; ;main.c: 355:     int dataFieldType = 0;
 [v _dataFieldType `i ~T0 @X0 1 a ]
 [e = _dataFieldType -> 0 `i ]
-"436
-[; ;main.c: 436:     while (!success)
-[e $U 1287  ]
-[e :U 1288 ]
-"437
-[; ;main.c: 437:     {
-{
-"438
-[; ;main.c: 438:         char byte;
+"358
+[; ;main.c: 358:     printf("$PUBX,00*33\r\n");
+[e ( _printf :s 7C ]
+"360
+[; ;main.c: 360:     char byte;
 [v _byte `uc ~T0 @X0 1 a ]
-"441
-[; ;main.c: 441:         if (ticks - startTime > 3000)
-[e $ ! > - _ticks _startTime -> -> -> 3000 `i `l `ul 1290  ]
-"442
-[; ;main.c: 442:         {
+"362
+[; ;main.c: 362:     int index = 0;
+[v _index `i ~T0 @X0 1 a ]
+[e = _index -> 0 `i ]
+"363
+[; ;main.c: 363:     while (!success)
+[e $U 1295  ]
+[e :U 1296 ]
+"364
+[; ;main.c: 364:     {
 {
-"443
-[; ;main.c: 443:             break;
-[e $U 1289  ]
-"444
-[; ;main.c: 444:         }
+"366
+[; ;main.c: 366:         if (ticks - startTime > 3000)
+[e $ ! > - _ticks _startTime -> -> -> 3000 `i `l `ul 1298  ]
+"367
+[; ;main.c: 367:         {
+{
+"368
+[; ;main.c: 368:             break;
+[e $U 1297  ]
+"369
+[; ;main.c: 369:         }
 }
-[e :U 1290 ]
-"447
-[; ;main.c: 447:         if (EUSART_Read() == '$')
-[e $ ! == -> ( _EUSART_Read ..  `ui -> 36 `ui 1291  ]
-"448
-[; ;main.c: 448:         {
+[e :U 1298 ]
+"372
+[; ;main.c: 372:         if (EUSART_is_rx_ready())
+[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 1299  ]
+"373
+[; ;main.c: 373:         {
 {
-"449
-[; ;main.c: 449:             byte = EUSART_Read();
+"374
+[; ;main.c: 374:             byte = EUSART_Read();
 [e = _byte -> ( _EUSART_Read ..  `uc ]
-"451
-[; ;main.c: 451:             _Bool skip = 1;
+"388
+[; ;main.c: 388:             _Bool skip = 1;
 [v _skip `a ~T0 @X0 1 a ]
 [e = _skip -> -> 1 `i `a ]
-"452
-[; ;main.c: 452:             switch (byte)
-[e $U 1293  ]
-"453
-[; ;main.c: 453:             {
+"389
+[; ;main.c: 389:             switch (byte)
+[e $U 1301  ]
+"390
+[; ;main.c: 390:             {
 {
-"454
-[; ;main.c: 454:             case ',':
-[e :U 1294 ]
-"455
-[; ;main.c: 455:                 dataFieldType++;
-[e ++ _dataFieldType -> 1 `i ]
-"456
-[; ;main.c: 456:                 dataIndex = 0;
-[e = _dataIndex -> 0 `i ]
-"457
-[; ;main.c: 457:                 break;
-[e $U 1292  ]
-"458
-[; ;main.c: 458:             case '\n':
-[e :U 1295 ]
-"459
-[; ;main.c: 459:                 success = dataFieldType > 13;
-[e = _success -> -> > _dataFieldType -> 13 `i `i `a ]
-"460
-[; ;main.c: 460:                 break;
-[e $U 1292  ]
-"461
-[; ;main.c: 461:             default:
-[e :U 1296 ]
-"462
-[; ;main.c: 462:                 skip = 0;
-[e = _skip -> -> 0 `i `a ]
-"463
-[; ;main.c: 463:                 break;
-[e $U 1292  ]
-"464
-[; ;main.c: 464:             }
-}
-[e $U 1292  ]
-[e :U 1293 ]
-[e [\ -> _byte `i , $ -> -> 44 `ui `i 1294
- , $ -> -> 10 `ui `i 1295
- 1296 ]
-[e :U 1292 ]
-"466
-[; ;main.c: 466:             if (!skip)
-[e $ ! ! != -> _skip `i -> 0 `i 1297  ]
-"467
-[; ;main.c: 467:             {
-{
-"468
-[; ;main.c: 468:                 switch (dataFieldType)
-[e $U 1299  ]
-"469
-[; ;main.c: 469:                 {
-{
-"470
-[; ;main.c: 470:                 case PUBX_TIME:
-[e :U 1300 ]
-"472
-[; ;main.c: 472:                     gps_time[dataIndex] = byte;
-[e = *U + &U _gps_time * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_time `ui `ux _byte ]
-"473
-[; ;main.c: 473:                     break;
-[e $U 1298  ]
-"474
-[; ;main.c: 474:                 case PUBX_LAT:
-[e :U 1301 ]
-"475
-[; ;main.c: 475:                     gps_latitude[dataIndex + 1] = byte;
-[e = *U + &U _gps_latitude * -> -> + _dataIndex -> 1 `i `ui `ux -> -> # *U &U _gps_latitude `ui `ux _byte ]
-"476
-[; ;main.c: 476:                     break;
-[e $U 1298  ]
-"477
-[; ;main.c: 477:                 case PUBX_NS:
+"391
+[; ;main.c: 391:             case ',':
 [e :U 1302 ]
-"479
-[; ;main.c: 479:                     gps_latitude[0] = byte == 'N' ? '+' : '-';
-[e = *U + &U _gps_latitude * -> -> -> 0 `i `ui `ux -> -> # *U &U _gps_latitude `ui `ux -> ? == -> _byte `ui -> 78 `ui : -> 43 `ui -> 45 `ui `uc ]
-"480
-[; ;main.c: 480:                     break;
-[e $U 1298  ]
-"481
-[; ;main.c: 481:                 case PUBX_LONG:
+"392
+[; ;main.c: 392:                 dataFieldType++;
+[e ++ _dataFieldType -> 1 `i ]
+"393
+[; ;main.c: 393:                 dataIndex = 0;
+[e = _dataIndex -> 0 `i ]
+"394
+[; ;main.c: 394:                 break;
+[e $U 1300  ]
+"395
+[; ;main.c: 395:             case '\n':
 [e :U 1303 ]
-"482
-[; ;main.c: 482:                     gps_longitude[dataIndex + 1] = byte;
-[e = *U + &U _gps_longitude * -> -> + _dataIndex -> 1 `i `ui `ux -> -> # *U &U _gps_longitude `ui `ux _byte ]
-"483
-[; ;main.c: 483:                     break;
-[e $U 1298  ]
-"484
-[; ;main.c: 484:                 case PUBX_EW:
+"396
+[; ;main.c: 396:                 success = dataFieldType > 13;
+[e = _success -> -> > _dataFieldType -> 13 `i `i `a ]
+"397
+[; ;main.c: 397:                 break;
+[e $U 1300  ]
+"398
+[; ;main.c: 398:             default:
 [e :U 1304 ]
-"486
-[; ;main.c: 486:                     gps_longitude[0] = byte == 'E' ? '+' : '-';
-[e = *U + &U _gps_longitude * -> -> -> 0 `i `ui `ux -> -> # *U &U _gps_longitude `ui `ux -> ? == -> _byte `ui -> 69 `ui : -> 43 `ui -> 45 `ui `uc ]
-"487
-[; ;main.c: 487:                     break;
-[e $U 1298  ]
-"488
-[; ;main.c: 488:                 case PUBX_ALT:
-[e :U 1305 ]
-"489
-[; ;main.c: 489:                     gps_altitude[dataIndex] = byte;
-[e = *U + &U _gps_altitude * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_altitude `ui `ux _byte ]
-"490
-[; ;main.c: 490:                     break;
-[e $U 1298  ]
-"491
-[; ;main.c: 491:                 case PUBX_NAVSTAT:
-[e :U 1306 ]
-"492
-[; ;main.c: 492:                     gps_nav_status[dataIndex] = byte;
-[e = *U + &U _gps_nav_status * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_nav_status `ui `ux _byte ]
-"493
-[; ;main.c: 493:                     break;
-[e $U 1298  ]
-"494
-[; ;main.c: 494:                 case PUBX_SOG:
-[e :U 1307 ]
-"495
-[; ;main.c: 495:                     gps_speed_over_ground[dataIndex] = byte;
-[e = *U + &U _gps_speed_over_ground * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_speed_over_ground `ui `ux _byte ]
-"496
-[; ;main.c: 496:                     break;
-[e $U 1298  ]
-"497
-[; ;main.c: 497:                 case PUBX_COG:
+"399
+[; ;main.c: 399:                 skip = 0;
+[e = _skip -> -> 0 `i `a ]
+"400
+[; ;main.c: 400:                 break;
+[e $U 1300  ]
+"401
+[; ;main.c: 401:             }
+}
+[e $U 1300  ]
+[e :U 1301 ]
+[e [\ -> _byte `i , $ -> -> 44 `ui `i 1302
+ , $ -> -> 10 `ui `i 1303
+ 1304 ]
+[e :U 1300 ]
+"403
+[; ;main.c: 403:             if (!skip)
+[e $ ! ! != -> _skip `i -> 0 `i 1305  ]
+"404
+[; ;main.c: 404:             {
+{
+"405
+[; ;main.c: 405:                 switch (dataFieldType)
+[e $U 1307  ]
+"406
+[; ;main.c: 406:                 {
+{
+"407
+[; ;main.c: 407:                 case PUBX_TIME:
 [e :U 1308 ]
-"498
-[; ;main.c: 498:                     gps_course_over_ground[dataIndex] = byte;
-[e = *U + &U _gps_course_over_ground * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_course_over_ground `ui `ux _byte ]
-"499
-[; ;main.c: 499:                     break;
-[e $U 1298  ]
-"500
-[; ;main.c: 500:                 case PUBX_VVEL:
+"409
+[; ;main.c: 409:                     gps_time[dataIndex] = byte;
+[e = *U + &U _gps_time * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_time `ui `ux _byte ]
+"410
+[; ;main.c: 410:                     break;
+[e $U 1306  ]
+"411
+[; ;main.c: 411:                 case PUBX_LAT:
 [e :U 1309 ]
-"501
-[; ;main.c: 501:                     gps_vertical_velocity[dataIndex] = byte;
-[e = *U + &U _gps_vertical_velocity * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_vertical_velocity `ui `ux _byte ]
-"502
-[; ;main.c: 502:                     break;
-[e $U 1298  ]
-"503
-[; ;main.c: 503:                 default:
+"412
+[; ;main.c: 412:                     gps_latitude[dataIndex + 1] = byte;
+[e = *U + &U _gps_latitude * -> -> + _dataIndex -> 1 `i `ui `ux -> -> # *U &U _gps_latitude `ui `ux _byte ]
+"413
+[; ;main.c: 413:                     break;
+[e $U 1306  ]
+"414
+[; ;main.c: 414:                 case PUBX_NS:
 [e :U 1310 ]
-"504
-[; ;main.c: 504:                     break;
-[e $U 1298  ]
-"505
-[; ;main.c: 505:                 }
-}
-[e $U 1298  ]
-[e :U 1299 ]
-[e [\ _dataFieldType , $ . `E10185 0 1300
- , $ . `E10185 1 1301
- , $ . `E10185 2 1302
- , $ . `E10185 3 1303
- , $ . `E10185 4 1304
- , $ . `E10185 5 1305
- , $ . `E10185 6 1306
- , $ . `E10185 7 1307
- , $ . `E10185 8 1308
- , $ . `E10185 9 1309
- 1310 ]
-[e :U 1298 ]
-"506
-[; ;main.c: 506:                 dataIndex++;
-[e ++ _dataIndex -> 1 `i ]
-"507
-[; ;main.c: 507:             }
-}
-[e :U 1297 ]
-"509
-[; ;main.c: 509:         }
-}
-[e :U 1291 ]
-"511
-[; ;main.c: 511:     }
-}
-[e :U 1287 ]
-"436
-[; ;main.c: 436:     while (!success)
-[e $ ! != -> _success `i -> 0 `i 1288  ]
-[e :U 1289 ]
-"513
-[; ;main.c: 513:     if (!success)
-[e $ ! ! != -> _success `i -> 0 `i 1311  ]
-"514
-[; ;main.c: 514:     {
-{
-"516
-[; ;main.c: 516:         for (int i = 0; i < 4; i++)
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 1312  ]
-[e $U 1313  ]
-[e :U 1312 ]
-"517
-[; ;main.c: 517:         {
-{
-"518
-[; ;main.c: 518:             _delay((unsigned long)((250)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"519
-[; ;main.c: 519:             do { LATCbits.LATC5 = 0; } while(0);
-[e :U 1317 ]
-{
-[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
-}
-[e :U 1316 ]
-"520
-[; ;main.c: 520:             _delay((unsigned long)((250)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"521
-[; ;main.c: 521:             do { LATCbits.LATC5 = 1; } while(0);
-[e :U 1320 ]
-{
-[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 1319 ]
-"522
-[; ;main.c: 522:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 1312  ]
-[e :U 1313 ]
-}
-"523
-[; ;main.c: 523:     }
-}
+"416
+[; ;main.c: 416:                     gps_latitude[0] = byte == 'N' ? '+' : '-';
+[e = *U + &U _gps_latitude * -> -> -> 0 `i `ui `ux -> -> # *U &U _gps_latitude `ui `ux -> ? == -> _byte `ui -> 78 `ui : -> 43 `ui -> 45 `ui `uc ]
+"417
+[; ;main.c: 417:                     break;
+[e $U 1306  ]
+"418
+[; ;main.c: 418:                 case PUBX_LONG:
 [e :U 1311 ]
-"524
-[; ;main.c: 524:     do { LATCbits.LATC5 = 0; } while(0);
-[e :U 1323 ]
-{
-[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+"419
+[; ;main.c: 419:                     gps_longitude[dataIndex + 1] = byte;
+[e = *U + &U _gps_longitude * -> -> + _dataIndex -> 1 `i `ui `ux -> -> # *U &U _gps_longitude `ui `ux _byte ]
+"420
+[; ;main.c: 420:                     break;
+[e $U 1306  ]
+"421
+[; ;main.c: 421:                 case PUBX_EW:
+[e :U 1312 ]
+"423
+[; ;main.c: 423:                     gps_longitude[0] = byte == 'E' ? '+' : '-';
+[e = *U + &U _gps_longitude * -> -> -> 0 `i `ui `ux -> -> # *U &U _gps_longitude `ui `ux -> ? == -> _byte `ui -> 69 `ui : -> 43 `ui -> 45 `ui `uc ]
+"424
+[; ;main.c: 424:                     break;
+[e $U 1306  ]
+"425
+[; ;main.c: 425:                 case PUBX_ALT:
+[e :U 1313 ]
+"426
+[; ;main.c: 426:                     gps_altitude[dataIndex] = byte;
+[e = *U + &U _gps_altitude * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_altitude `ui `ux _byte ]
+"427
+[; ;main.c: 427:                     break;
+[e $U 1306  ]
+"428
+[; ;main.c: 428:                 case PUBX_NAVSTAT:
+[e :U 1314 ]
+"429
+[; ;main.c: 429:                     gps_nav_status[dataIndex] = byte;
+[e = *U + &U _gps_nav_status * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_nav_status `ui `ux _byte ]
+"430
+[; ;main.c: 430:                     break;
+[e $U 1306  ]
+"431
+[; ;main.c: 431:                 case PUBX_SOG:
+[e :U 1315 ]
+"432
+[; ;main.c: 432:                     gps_speed_over_ground[dataIndex] = byte;
+[e = *U + &U _gps_speed_over_ground * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_speed_over_ground `ui `ux _byte ]
+"433
+[; ;main.c: 433:                     break;
+[e $U 1306  ]
+"434
+[; ;main.c: 434:                 case PUBX_COG:
+[e :U 1316 ]
+"435
+[; ;main.c: 435:                     gps_course_over_ground[dataIndex] = byte;
+[e = *U + &U _gps_course_over_ground * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_course_over_ground `ui `ux _byte ]
+"436
+[; ;main.c: 436:                     break;
+[e $U 1306  ]
+"437
+[; ;main.c: 437:                 case PUBX_VVEL:
+[e :U 1317 ]
+"438
+[; ;main.c: 438:                     gps_vertical_velocity[dataIndex] = byte;
+[e = *U + &U _gps_vertical_velocity * -> -> _dataIndex `ui `ux -> -> # *U &U _gps_vertical_velocity `ui `ux _byte ]
+"439
+[; ;main.c: 439:                     break;
+[e $U 1306  ]
+"440
+[; ;main.c: 440:                 default:
+[e :U 1318 ]
+"441
+[; ;main.c: 441:                     break;
+[e $U 1306  ]
+"442
+[; ;main.c: 442:                 }
 }
-[e :U 1322 ]
-"526
-[; ;main.c: 526:     return success;
+[e $U 1306  ]
+[e :U 1307 ]
+[e [\ _dataFieldType , $ . `E10187 0 1308
+ , $ . `E10187 1 1309
+ , $ . `E10187 2 1310
+ , $ . `E10187 3 1311
+ , $ . `E10187 4 1312
+ , $ . `E10187 5 1313
+ , $ . `E10187 6 1314
+ , $ . `E10187 7 1315
+ , $ . `E10187 8 1316
+ , $ . `E10187 9 1317
+ 1318 ]
+[e :U 1306 ]
+"443
+[; ;main.c: 443:                 dataIndex++;
+[e ++ _dataIndex -> 1 `i ]
+"444
+[; ;main.c: 444:             }
+}
+[e :U 1305 ]
+"446
+[; ;main.c: 446:         }
+}
+[e :U 1299 ]
+"448
+[; ;main.c: 448:     }
+}
+[e :U 1295 ]
+"363
+[; ;main.c: 363:     while (!success)
+[e $ ! != -> _success `i -> 0 `i 1296  ]
+[e :U 1297 ]
+"449
+[; ;main.c: 449:     return success;
 [e ) _success ]
-[e $UE 1283  ]
-"527
-[; ;main.c: 527: }
-[e :UE 1283 ]
+[e $UE 1291  ]
+"450
+[; ;main.c: 450: }
+[e :UE 1291 ]
 }
+"454
+[; ;main.c: 454: char checksum[6] = {'\0'};
+[v _checksum `uc ~T0 @X0 -> 6 `i e ]
+[i _checksum
+:U ..
+-> -> 0 `ui `uc
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"534
-[; ;main.c: 534: void main(void)
+"456
+[; ;main.c: 456: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"536
-[; ;main.c: 536: {
+"457
+[; ;main.c: 457: {
 {
 [e :U _main ]
 [f ]
-"538
-[; ;main.c: 538:     SYSTEM_Initialize();
+"458
+[; ;main.c: 458:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"539
-[; ;main.c: 539:     (INTCONbits.GIE = 1);
+"459
+[; ;main.c: 459:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"540
-[; ;main.c: 540:     TMR0_SetInterruptHandler(TimerISR);
-[e ( _TMR0_SetInterruptHandler (1 -> &U _TimerISR `*F10213 ]
-"543
-[; ;main.c: 543:     SetupGPS();
+"460
+[; ;main.c: 460:     TMR0_SetInterruptHandler(TimerISR);
+[e ( _TMR0_SetInterruptHandler (1 -> &U _TimerISR `*F10216 ]
+"462
+[; ;main.c: 462:     SetupGPS();
 [e ( _SetupGPS ..  ]
-"546
-[; ;main.c: 546:     char message_start[70];
-[v _message_start `uc ~T0 @X0 -> 70 `i a ]
-"547
-[; ;main.c: 547:     char message_end[70 + 3];
-[v _message_end `uc ~T0 @X0 -> 73 `i a ]
-[v F10217 `*uc ~T0 @X0 -> 2 `i s ]
-[i F10217
-:U ..
-"549
-[; ;main.c: 549:     char* messages[2] = {message_start, message_end};
--> -> 0 `i `*uc
--> -> 0 `i `*uc
-..
-]
-[v _messages `*uc ~T0 @X0 -> 2 `i a ]
-[e = _messages F10217 ]
-[e ; = *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _message_start = *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _message_end ]
-"551
-[; ;main.c: 551:     int id = 0;
+"464
+[; ;main.c: 464:     int id = 0;
 [v _id `i ~T0 @X0 1 a ]
 [e = _id -> 0 `i ]
-"552
-[; ;main.c: 552:     while (1)
-[e :U 1326 ]
-"553
-[; ;main.c: 553:     {
+"465
+[; ;main.c: 465:     while (1)
+[e :U 1321 ]
+"466
+[; ;main.c: 466:     {
 {
-"554
-[; ;main.c: 554:         GetNavData();
-[e ( _GetNavData ..  ]
-"555
-[; ;main.c: 555:         sprintf(messages[0], "$$HABnova,%d,%s,%s,%s,",
-[e ( _sprintf (1 , , , , (. , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 7C _id &U _gps_time &U _gps_latitude &U _gps_longitude ]
-"558
-[; ;main.c: 558:         sprintf(messages[1], "%s,%s,%s,%s*",
-[e ( _sprintf (1 , , , , (. , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 8C &U _gps_altitude &U _gps_speed_over_ground &U _gps_course_over_ground &U _gps_vertical_velocity ]
-"562
-[; ;main.c: 562:         id++;
+"467
+[; ;main.c: 467:         if (GetNavData())
+[e $ ! != -> ( _GetNavData ..  `i -> 0 `i 1323  ]
+"468
+[; ;main.c: 468:         {
+{
+"470
+[; ;main.c: 470:             sprintf(messages[0], "$$TEST,%d,%s,%s,%s,",
+[e ( _sprintf (1 , , , , (. , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 8C _id &U _gps_time &U _gps_latitude &U _gps_longitude ]
+"474
+[; ;main.c: 474:             sprintf(messages[1], "%s,%s,%s,%s",
+[e ( _sprintf (1 , , , , (. , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 9C &U _gps_altitude &U _gps_speed_over_ground &U _gps_course_over_ground &U _gps_vertical_velocity ]
+"479
+[; ;main.c: 479:             sprintf(checksum, "*%04X\n", crc16(messages, 2));
+[e ( _sprintf (1 , (. , &U _checksum :s 10C -> ( _crc16 (2 , &U _messages -> 2 `i `ui ]
+"480
+[; ;main.c: 480:             strcat(messages[1], checksum);
+[e ( _strcat (2 , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> &U _checksum `*Cuc ]
+"481
+[; ;main.c: 481:             id++;
 [e ++ _id -> 1 `i ]
-"563
-[; ;main.c: 563:         AppendCRC(messages[1], crc16(messages, 2));
-[e ( _AppendCRC (2 , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux ( _crc16 (2 , &U _messages -> 2 `i ]
-"565
-[; ;main.c: 565:         TransmitString(messages[0]);
+"483
+[; ;main.c: 483:             do { LATAbits.LATA2 = 1; } while(0);
+[e :U 1326 ]
+{
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 1325 ]
+"484
+[; ;main.c: 484:             TransmitString(messages[0]);
 [e ( _TransmitString (1 *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-"566
-[; ;main.c: 566:         TransmitString(messages[1]);
+"485
+[; ;main.c: 485:             TransmitString(messages[1]);
 [e ( _TransmitString (1 *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-"568
-[; ;main.c: 568:         for (int i = 0; i < DELAY_MULT; i++)
+"486
+[; ;main.c: 486:             do { LATAbits.LATA2 = 0; } while(0);
+[e :U 1329 ]
+{
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 1328 ]
+"487
+[; ;main.c: 487:         }
+}
+[e $U 1330  ]
+"488
+[; ;main.c: 488:         else
+[e :U 1323 ]
+"489
+[; ;main.c: 489:         {
+{
+"491
+[; ;main.c: 491:             FlashError();
+[e ( _FlashError ..  ]
+"492
+[; ;main.c: 492:         }
+}
+[e :U 1330 ]
+"494
+[; ;main.c: 494:         for (int i = 0; i < DELAY_MULT; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i _DELAY_MULT 1328  ]
-[e $U 1329  ]
-[e :U 1328 ]
-"569
-[; ;main.c: 569:         {
+[e $ < _i _DELAY_MULT 1331  ]
+[e $U 1332  ]
+[e :U 1331 ]
+"495
+[; ;main.c: 495:         {
 {
-"570
-[; ;main.c: 570:             _delay((unsigned long)((MESSAGE_INTERVAL)*(4000000/4000.0)));
+"496
+[; ;main.c: 496:             _delay((unsigned long)((MESSAGE_INTERVAL)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> _MESSAGE_INTERVAL `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"571
-[; ;main.c: 571:         }
+"497
+[; ;main.c: 497:         }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i _DELAY_MULT 1328  ]
-[e :U 1329 ]
+[e $ < _i _DELAY_MULT 1331  ]
+[e :U 1332 ]
 }
-"575
-[; ;main.c: 575:     }
+"498
+[; ;main.c: 498:     }
 }
-[e :U 1325 ]
-[e $U 1326  ]
-[e :U 1327 ]
-"579
-[; ;main.c: 579: }
-[e :UE 1324 ]
+[e :U 1320 ]
+[e $U 1321  ]
+[e :U 1322 ]
+"499
+[; ;main.c: 499: }
+[e :UE 1319 ]
 }
+[p f _sprintf 10780804 ]
 [p f _printf 8388608 ]
-[p f _sprintf 8650880 ]
-[a 7C 36 36 72 65 66 110 111 118 97 44 37 100 44 37 115 44 37 115 44 37 115 44 0 ]
-[a 8C 37 115 44 37 115 44 37 115 44 37 115 42 0 ]
+[a 9C 37 115 44 37 115 44 37 115 44 37 115 0 ]
+[a 8C 36 36 84 69 83 84 44 37 100 44 37 115 44 37 115 44 37 115 44 0 ]
+[a 10C 42 37 48 52 88 10 0 ]
 [a 3C 36 80 85 66 88 44 52 48 44 86 84 71 44 48 44 48 44 48 44 48 42 53 69 13 10 0 ]
 [a 5C 36 80 85 66 88 44 52 48 44 71 83 65 44 48 44 48 44 48 44 48 42 52 69 13 10 0 ]
 [a 1C 36 80 85 66 88 44 52 48 44 71 76 76 44 48 44 48 44 48 44 48 42 53 67 13 10 0 ]
 [a 4C 36 80 85 66 88 44 52 48 44 71 83 86 44 48 44 48 44 48 44 48 42 53 57 13 10 0 ]
 [a 6C 36 80 85 66 88 44 52 48 44 82 77 67 44 48 44 48 44 48 44 48 42 52 55 13 10 0 ]
-[a 2C 36 80 85 66 88 44 52 48 44 71 71 65 44 48 44 48 44 48 44 48 42 52 52 13 10 0 ]
+[a 2C 36 80 85 66 88 44 52 48 44 90 68 65 44 48 44 48 44 48 44 48 42 52 52 13 10 0 ]
+[a 7C 36 80 85 66 88 44 48 48 42 51 51 13 10 0 ]

@@ -7,7 +7,6 @@
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 1 3
@@ -16933,9 +16932,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 150 "./mcc_generated_files/pin_manager.h"
+# 170 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 162 "./mcc_generated_files/pin_manager.h"
+# 182 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -17205,17 +17204,10 @@ void EUSART_Write(uint8_t txData);
 void SYSTEM_Initialize(void);
 # 84 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 2 "main.c" 2
+# 1 "main.c" 2
 
 
 
-unsigned long ticks = 0;
-
-void TimerISR()
-{
-    ticks++;
-}
-# 28 "main.c"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 1 3
 # 25 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 3
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -17271,8 +17263,32 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 28 "main.c" 2
-# 40 "main.c"
+# 4 "main.c" 2
+
+
+
+unsigned long ticks = 0;
+
+void TimerISR()
+{
+    ticks++;
+}
+# 21 "main.c"
+void FlashError()
+{
+    for (int i = 0; i < 3; i++)
+    {
+        do { LATCbits.LATC5 = 1; } while(0);
+        _delay((unsigned long)((250)*(4000000/4000.0)));
+        do { LATCbits.LATC5 = 0; } while(0);
+        _delay((unsigned long)((250)*(4000000/4000.0)));
+    }
+}
+
+
+
+
+
 const int BAUD_RATE = 50;
 
 
@@ -17280,7 +17296,14 @@ const int BAUD_RATE = 50;
 
 
 const int MESSAGE_INTERVAL = 5;
-# 56 "main.c"
+# 53 "main.c"
+char message_start[70];
+char message_end[70 + 3];
+
+
+char* messages[2] = {message_start, message_end};
+
+
 const int DELAY_MULT = 1000;
 
 
@@ -17315,8 +17338,9 @@ unsigned short crc16(char** data, int segments)
     for (int str = 0; str < segments; str++)
     {
         char* string = data[str];
+        size_t len = strlen(string);
 
-        for (i = 2; i < strlen(string); i++)
+        for (i = (string[i] == '$' ? 2 : 0); i < len; i++)
         {
             c = string[i];
             crc = crc_append_byte(crc, c);
@@ -17324,24 +17348,16 @@ unsigned short crc16(char** data, int segments)
     }
  return crc;
 }
-# 132 "main.c"
+
 void TransmitBit(_Bool b)
 {
  if (b)
  {
-
-
-
   do { LATAbits.LATA4 = 1; } while(0);
-
  }
  else
  {
-
-
-
   do { LATAbits.LATA4 = 0; } while(0);
-
  }
  _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
  _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
@@ -17349,25 +17365,16 @@ void TransmitBit(_Bool b)
 
 void TransmitByte(char byte)
 {
-# 165 "main.c"
+# 130 "main.c"
     TransmitBit(0);
-
-
-
 
  for (int i = 0; i < 7; i++)
  {
   TransmitBit((byte >> i) & 1);
  }
 
-
-
-
  TransmitBit(1);
  TransmitBit(1);
-
-
-
 }
 
 void TransmitString(char* message)
@@ -17382,21 +17389,6 @@ void TransmitString(char* message)
 
 
 
-}
-
-
-void AppendCRC(char* data, unsigned short crc)
-{
- int len = strlen(data);
- if (len >= 70 - 1)
- {
-
-  len = 70 - 2;
- }
- data[len] = (char)(crc >> 8);
- data[len + 1] = (char)(crc);
- data[len + 2] = '\n';
- data[len + 3] = '\0';
 }
 
 
@@ -17425,30 +17417,16 @@ uint8_t setNavFlightMode[] = {
 
 size_t GetLengthUBX(uint8_t* data)
 {
-
-
-
     return (short)(8 + (short)((short)data[4] + (short)(data[5] << 8)));
-
 }
 
 
 void GPS_SendUBX(uint8_t* data)
 {
-
-
-
     for (int i = 0, length = GetLengthUBX(data); i < length; i++)
     {
-
         EUSART_Write(data[i]);
-
-
-
     }
-
-
-
 }
 
 
@@ -17457,10 +17435,6 @@ void GPS_SendUBX(uint8_t* data)
 
 _Bool GPS_HasAcknowledged(uint8_t* data)
 {
-
-
-
-
     uint8_t ackPacket[10];
     unsigned long startTime = ticks;
 
@@ -17523,7 +17497,6 @@ _Bool GPS_HasAcknowledged(uint8_t* data)
 
         }
     }
-
 }
 
 _Bool gps_configured = 0;
@@ -17532,22 +17505,18 @@ void SetupGPS()
 {
     while (!gps_configured)
     {
-
         do { LATAbits.LATA5 = 0; } while(0);
-
         GPS_SendUBX(setNavFlightMode);
         gps_configured = GPS_HasAcknowledged(setNavFlightMode);
 
-
         do { LATAbits.LATA5 = 1; } while(0);
         _delay((unsigned long)((500)*(4000000/4000.0)));
-
     }
     gps_configured = 0;
 
 
     printf("$PUBX,40,GLL,0,0,0,0*5C\r\n");
-    printf("$PUBX,40,GGA,0,0,0,0*44\r\n");
+    printf("$PUBX,40,ZDA,0,0,0,0*44\r\n");
     printf("$PUBX,40,VTG,0,0,0,0*5E\r\n");
     printf("$PUBX,40,GSV,0,0,0,0*59\r\n");
     printf("$PUBX,40,GSA,0,0,0,0*4E\r\n");
@@ -17585,7 +17554,7 @@ char gps_speed_over_ground[8] = {'\0'};
 char gps_course_over_ground[8] = {'\0'};
 
 char gps_vertical_velocity[8] = {'\0'};
-# 420 "main.c"
+# 341 "main.c"
 _Bool GetNavData()
 {
     _Bool success = 0;
@@ -17602,10 +17571,14 @@ _Bool GetNavData()
 
     int dataFieldType = 0;
 
+
+    printf("$PUBX,00*33\r\n");
+
+    char byte;
+
+    int index = 0;
     while (!success)
     {
-        char byte;
-
 
         if (ticks - startTime > 3000)
         {
@@ -17613,10 +17586,10 @@ _Bool GetNavData()
         }
 
 
-        if (EUSART_Read() == '$')
+        if (EUSART_is_rx_ready())
         {
             byte = EUSART_Read();
-
+# 388 "main.c"
             _Bool skip = 1;
             switch (byte)
             {
@@ -17678,71 +17651,54 @@ _Bool GetNavData()
         }
 
     }
-
-    if (!success)
-    {
-
-        for (int i = 0; i < 4; i++)
-        {
-            _delay((unsigned long)((250)*(4000000/4000.0)));
-            do { LATCbits.LATC5 = 0; } while(0);
-            _delay((unsigned long)((250)*(4000000/4000.0)));
-            do { LATCbits.LATC5 = 1; } while(0);
-        }
-    }
-    do { LATCbits.LATC5 = 0; } while(0);
-
     return success;
 }
 
 
 
-
-
+char checksum[6] = {'\0'};
 
 void main(void)
-
 {
-
     SYSTEM_Initialize();
     (INTCONbits.GIE = 1);
     TMR0_SetInterruptHandler(TimerISR);
 
-
     SetupGPS();
-
-
-    char message_start[70];
-    char message_end[70 + 3];
-
-    char* messages[2] = {message_start, message_end};
 
     int id = 0;
     while (1)
     {
-        GetNavData();
-        sprintf(messages[0], "$$HABnova,%d,%s,%s,%s,",
-                id, gps_time, gps_latitude, gps_longitude
-        );
-        sprintf(messages[1], "%s,%s,%s,%s*",
-                gps_altitude, gps_speed_over_ground, gps_course_over_ground,
-                gps_vertical_velocity
-        );
-        id++;
-        AppendCRC(messages[1], crc16(messages, 2));
+        if (GetNavData())
+        {
 
-        TransmitString(messages[0]);
-        TransmitString(messages[1]);
+            sprintf(messages[0], "$$TEST,%d,%s,%s,%s,",
+                id, gps_time, gps_latitude, gps_longitude
+            );
+
+            sprintf(messages[1], "%s,%s,%s,%s",
+                    gps_altitude, gps_speed_over_ground, gps_course_over_ground,
+                    gps_vertical_velocity
+            );
+
+            sprintf(checksum, "*%04X\n", crc16(messages, 2));
+            strcat(messages[1], checksum);
+            id++;
+
+            do { LATAbits.LATA2 = 1; } while(0);
+            TransmitString(messages[0]);
+            TransmitString(messages[1]);
+            do { LATAbits.LATA2 = 0; } while(0);
+        }
+        else
+        {
+
+            FlashError();
+        }
 
         for (int i = 0; i < DELAY_MULT; i++)
         {
             _delay((unsigned long)((MESSAGE_INTERVAL)*(4000000/4000.0)));
         }
-
-
-
     }
-
-
-
 }

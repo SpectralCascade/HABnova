@@ -59,6 +59,26 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set TX_LED aliases
+#define TX_LED_TRIS                 TRISAbits.TRISA2
+#define TX_LED_LAT                  LATAbits.LATA2
+#define TX_LED_PORT                 PORTAbits.RA2
+#define TX_LED_WPU                  WPUAbits.WPUA2
+#define TX_LED_OD                   ODCONAbits.ODA2
+#define TX_LED_ANS                  ANSELAbits.ANSA2
+#define TX_LED_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define TX_LED_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define TX_LED_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define TX_LED_GetValue()           PORTAbits.RA2
+#define TX_LED_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define TX_LED_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define TX_LED_SetPullup()          do { WPUAbits.WPUA2 = 1; } while(0)
+#define TX_LED_ResetPullup()        do { WPUAbits.WPUA2 = 0; } while(0)
+#define TX_LED_SetPushPull()        do { ODCONAbits.ODA2 = 0; } while(0)
+#define TX_LED_SetOpenDrain()       do { ODCONAbits.ODA2 = 1; } while(0)
+#define TX_LED_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
+#define TX_LED_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
+
 // get/set TX_PIN aliases
 #define TX_PIN_TRIS                 TRISAbits.TRISA4
 #define TX_PIN_LAT                  LATAbits.LATA4
