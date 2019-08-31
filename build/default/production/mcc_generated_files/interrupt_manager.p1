@@ -19,6 +19,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 "219 mcc_generated_files/tmr0.h
 [; ;mcc_generated_files/tmr0.h: 219: void TMR0_ISR(void);
 [v _TMR0_ISR `(v ~T0 @X0 0 ef ]
+"1833 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 1833:     struct {
+[s S102 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S102 . CCP2IE TMR4IE TMR6IE BCL1IE . C1IE C2IE OSCFIE ]
+"1832
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 1832: typedef union {
+[u S101 `S102 1 ]
+[n S101 . . ]
+"1844
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 1844: extern volatile PIE2bits_t PIE2bits __attribute__((address(0x091)));
+[v _PIE2bits `VS101 ~T0 @X0 0 e@145 ]
+"648
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 648:     struct {
+[s S42 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S42 . CCP2IF TMR4IF TMR6IF BCL1IF . C1IF C2IF OSFIF ]
+"647
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 647: typedef union {
+[u S41 `S42 1 ]
+[n S41 . . ]
+"659
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 659: extern volatile PIR2bits_t PIR2bits __attribute__((address(0x011)));
+[v _PIR2bits `VS41 ~T0 @X0 0 e@17 ]
+"690 mcc_generated_files/i2c.h
+[; ;mcc_generated_files/i2c.h: 690: void I2C_BusCollisionISR( void );
+[v _I2C_BusCollisionISR `(v ~T0 @X0 0 ef ]
+"1771 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 1771:     struct {
+[s S100 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S100 . TMR1IE TMR2IE CCP1IE SSP1IE TXIE RCIE ADIE TMR1GIE ]
+"1770
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 1770: typedef union {
+[u S99 `S100 1 ]
+[n S99 . . ]
+"1782
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 1782: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x090)));
+[v _PIE1bits `VS99 ~T0 @X0 0 e@144 ]
+"586
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 586:     struct {
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
+"585
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 585: typedef union {
+[u S39 `S40 1 ]
+[n S39 . . ]
+"597
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 597: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x010)));
+[v _PIR1bits `VS39 ~T0 @X0 0 e@16 ]
+"691 mcc_generated_files/i2c.h
+[; ;mcc_generated_files/i2c.h: 691: void I2C_ISR ( void );
+[v _I2C_ISR `(v ~T0 @X0 0 ef ]
 "54 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1356,7 +1406,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "55
 [; ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
-[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 1219  ]
+[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 1220  ]
 "56
 [; ;mcc_generated_files/interrupt_manager.c: 56:     {
 {
@@ -1366,18 +1416,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58
 [; ;mcc_generated_files/interrupt_manager.c: 58:     }
 }
-[e $U 1220  ]
+[e $U 1221  ]
 "59
-[; ;mcc_generated_files/interrupt_manager.c: 59:     else
-[e :U 1219 ]
+[; ;mcc_generated_files/interrupt_manager.c: 59:     else if(INTCONbits.PEIE == 1)
+[e :U 1220 ]
+[e $ ! == -> . . _INTCONbits 0 6 `i -> 1 `i 1222  ]
 "60
 [; ;mcc_generated_files/interrupt_manager.c: 60:     {
 {
+"61
+[; ;mcc_generated_files/interrupt_manager.c: 61:         if(PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
+[e $ ! && == -> . . _PIE2bits 0 3 `i -> 1 `i == -> . . _PIR2bits 0 3 `i -> 1 `i 1223  ]
 "62
-[; ;mcc_generated_files/interrupt_manager.c: 62:     }
-}
-[e :U 1220 ]
+[; ;mcc_generated_files/interrupt_manager.c: 62:         {
+{
 "63
-[; ;mcc_generated_files/interrupt_manager.c: 63: }
-[e :UE 1218 ]
+[; ;mcc_generated_files/interrupt_manager.c: 63:             I2C_BusCollisionISR();
+[e ( _I2C_BusCollisionISR ..  ]
+"64
+[; ;mcc_generated_files/interrupt_manager.c: 64:         }
+}
+[e $U 1224  ]
+"65
+[; ;mcc_generated_files/interrupt_manager.c: 65:         else if(PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
+[e :U 1223 ]
+[e $ ! && == -> . . _PIE1bits 0 3 `i -> 1 `i == -> . . _PIR1bits 0 3 `i -> 1 `i 1225  ]
+"66
+[; ;mcc_generated_files/interrupt_manager.c: 66:         {
+{
+"67
+[; ;mcc_generated_files/interrupt_manager.c: 67:             I2C_ISR();
+[e ( _I2C_ISR ..  ]
+"68
+[; ;mcc_generated_files/interrupt_manager.c: 68:         }
+}
+[e $U 1226  ]
+"69
+[; ;mcc_generated_files/interrupt_manager.c: 69:         else
+[e :U 1225 ]
+"70
+[; ;mcc_generated_files/interrupt_manager.c: 70:         {
+{
+"72
+[; ;mcc_generated_files/interrupt_manager.c: 72:         }
+}
+[e :U 1226 ]
+[e :U 1224 ]
+"73
+[; ;mcc_generated_files/interrupt_manager.c: 73:     }
+}
+[e $U 1227  ]
+"74
+[; ;mcc_generated_files/interrupt_manager.c: 74:     else
+[e :U 1222 ]
+"75
+[; ;mcc_generated_files/interrupt_manager.c: 75:     {
+{
+"77
+[; ;mcc_generated_files/interrupt_manager.c: 77:     }
+}
+[e :U 1227 ]
+[e :U 1221 ]
+"78
+[; ;mcc_generated_files/interrupt_manager.c: 78: }
+[e :UE 1219 ]
 }

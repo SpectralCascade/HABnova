@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "mcc_generated_files/i2c.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,131 @@
 # 1 "<built-in>" 2
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/i2c.c" 2
+# 51 "mcc_generated_files/i2c.c"
+# 1 "mcc_generated_files/i2c.h" 1
+# 53 "mcc_generated_files/i2c.h"
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 135 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 150 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 166 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 196 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 237 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
+# 53 "mcc_generated_files/i2c.h" 2
+
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
+# 54 "mcc_generated_files/i2c.h" 2
+
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stddef.h" 3
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int wchar_t;
+# 127 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 140 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ptrdiff_t;
+# 19 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stddef.h" 2 3
+# 55 "mcc_generated_files/i2c.h" 2
+
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 1 3
 # 18 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -22,29 +144,11 @@ extern double __fpnormalize(double);
 
 
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-
+# 10 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdlib.h" 3
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\features.h" 1 3
 # 10 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdlib.h" 3
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int wchar_t;
-# 127 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 176 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 212 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 21 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -16926,119 +17030,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 210 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 222 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
-
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-# 181 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 196 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 217 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 237 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
-
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 54 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/i2c.h" 1
-# 55 "./mcc_generated_files/i2c.h"
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stddef.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 140 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ptrdiff_t;
-# 19 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stddef.h" 2 3
-# 55 "./mcc_generated_files/i2c.h" 2
-# 86 "./mcc_generated_files/i2c.h"
+# 56 "mcc_generated_files/i2c.h" 2
+# 86 "mcc_generated_files/i2c.h"
 typedef enum
 {
     I2C_MESSAGE_COMPLETE,
@@ -17049,7 +17042,7 @@ typedef enum
     I2C_DATA_NO_ACK,
     I2C_LOST_STATE
 } I2C_MESSAGE_STATUS;
-# 111 "./mcc_generated_files/i2c.h"
+# 111 "mcc_generated_files/i2c.h"
 typedef struct
 {
     uint16_t address;
@@ -17058,696 +17051,651 @@ typedef struct
     uint8_t length;
     uint8_t *pbuffer;
 } I2C_TRANSACTION_REQUEST_BLOCK;
-# 223 "./mcc_generated_files/i2c.h"
+# 223 "mcc_generated_files/i2c.h"
 void I2C_Initialize(void);
-# 262 "./mcc_generated_files/i2c.h"
+# 262 "mcc_generated_files/i2c.h"
 void I2C_MasterWrite(
                                 uint8_t *pdata,
                                 uint8_t length,
                                 uint16_t address,
                                 I2C_MESSAGE_STATUS *pstatus);
-# 409 "./mcc_generated_files/i2c.h"
+# 409 "mcc_generated_files/i2c.h"
 void I2C_MasterRead(
                                 uint8_t *pdata,
                                 uint8_t length,
                                 uint16_t address,
                                 I2C_MESSAGE_STATUS *pstatus);
-# 519 "./mcc_generated_files/i2c.h"
+# 519 "mcc_generated_files/i2c.h"
 void I2C_MasterTRBInsert(
                                 uint8_t count,
                                 I2C_TRANSACTION_REQUEST_BLOCK *ptrb_list,
                                 I2C_MESSAGE_STATUS *pflag);
-# 563 "./mcc_generated_files/i2c.h"
+# 563 "mcc_generated_files/i2c.h"
 void I2C_MasterReadTRBBuild(
                                 I2C_TRANSACTION_REQUEST_BLOCK *ptrb,
                                 uint8_t *pdata,
                                 uint8_t length,
                                 uint16_t address);
-# 608 "./mcc_generated_files/i2c.h"
+# 608 "mcc_generated_files/i2c.h"
 void I2C_MasterWriteTRBBuild(
                                 I2C_TRANSACTION_REQUEST_BLOCK *ptrb,
                                 uint8_t *pdata,
                                 uint8_t length,
                                 uint16_t address);
-# 650 "./mcc_generated_files/i2c.h"
+# 650 "mcc_generated_files/i2c.h"
 _Bool I2C_MasterQueueIsEmpty(void);
-# 688 "./mcc_generated_files/i2c.h"
+# 688 "mcc_generated_files/i2c.h"
 _Bool I2C_MasterQueueIsFull(void);
 
 void I2C_BusCollisionISR( void );
 void I2C_ISR ( void );
-# 55 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 98 "./mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "./mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 168 "./mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 204 "./mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 219 "./mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 238 "./mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 256 "./mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 274 "./mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 56 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/eusart.h" 1
-# 57 "./mcc_generated_files/eusart.h"
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 10 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 145 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 254 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 407 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 57 "./mcc_generated_files/eusart.h" 2
-# 98 "./mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-# 146 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 194 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_rx_ready(void);
-# 241 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_done(void);
-# 261 "./mcc_generated_files/eusart.h"
-uint8_t EUSART_Read(void);
-# 281 "./mcc_generated_files/eusart.h"
-void EUSART_Write(uint8_t txData);
-# 57 "./mcc_generated_files/mcc.h" 2
-# 72 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 85 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 1 "main.c" 2
-
-
-# 1 "./BME280_driver/bme280.h" 1
-# 65 "./BME280_driver/bme280.h"
-# 1 "./BME280_driver/bme280_defs.h" 1
-# 243 "./BME280_driver/bme280_defs.h"
-enum bme280_intf {
-
-    BME280_SPI_INTF,
-
-
-    BME280_I2C_INTF
-};
-
-
-
-
-typedef int8_t (*bme280_com_fptr_t)(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len);
-typedef void (*bme280_delay_fptr_t)(uint32_t period);
-
-
-
-
-struct bme280_calib_data
+# 51 "mcc_generated_files/i2c.c" 2
+# 63 "mcc_generated_files/i2c.c"
+typedef union
 {
-
-
-
-
-
-    uint16_t dig_T1;
-    int16_t dig_T2;
-    int16_t dig_T3;
-    uint16_t dig_P1;
-    int16_t dig_P2;
-    int16_t dig_P3;
-    int16_t dig_P4;
-    int16_t dig_P5;
-    int16_t dig_P6;
-    int16_t dig_P7;
-    int16_t dig_P8;
-    int16_t dig_P9;
-    uint8_t dig_H1;
-    int16_t dig_H2;
-    uint8_t dig_H3;
-    int16_t dig_H4;
-    int16_t dig_H5;
-    int8_t dig_H6;
-    int32_t t_fine;
-
-
-};
-# 307 "./BME280_driver/bme280_defs.h"
-struct bme280_data
-{
-
-    uint32_t pressure;
-
-
-    int32_t temperature;
-
-
-    uint32_t humidity;
-};
-
-
-
-
-
-
-struct bme280_uncomp_data
-{
-
-    uint32_t pressure;
-
-
-    uint32_t temperature;
-
-
-    uint32_t humidity;
-};
-
-
-
-
-
-struct bme280_settings
-{
-
-    uint8_t osr_p;
-
-
-    uint8_t osr_t;
-
-
-    uint8_t osr_h;
-
-
-    uint8_t filter;
-
-
-    uint8_t standby_time;
-};
-
-
-
-
-struct bme280_dev
-{
-
-    uint8_t chip_id;
-
-
-    uint8_t dev_id;
-
-
-    enum bme280_intf intf;
-
-
-    bme280_com_fptr_t read;
-
-
-    bme280_com_fptr_t write;
-
-
-    bme280_delay_fptr_t delay_ms;
-
-
-    struct bme280_calib_data calib_data;
-
-
-    struct bme280_settings settings;
-};
-# 65 "./BME280_driver/bme280.h" 2
-# 76 "./BME280_driver/bme280.h"
-int8_t bme280_init(struct bme280_dev *dev);
-# 91 "./BME280_driver/bme280.h"
-int8_t bme280_set_regs(uint8_t *reg_addr, const uint8_t *reg_data, uint8_t len, const struct bme280_dev *dev);
-# 104 "./BME280_driver/bme280.h"
-int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint16_t len, const struct bme280_dev *dev);
-# 129 "./BME280_driver/bme280.h"
-int8_t bme280_set_sensor_settings(uint8_t desired_settings, const struct bme280_dev *dev);
-# 140 "./BME280_driver/bme280.h"
-int8_t bme280_get_sensor_settings(struct bme280_dev *dev);
-# 157 "./BME280_driver/bme280.h"
-int8_t bme280_set_sensor_mode(uint8_t sensor_mode, const struct bme280_dev *dev);
-# 174 "./BME280_driver/bme280.h"
-int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, const struct bme280_dev *dev);
-# 184 "./BME280_driver/bme280.h"
-int8_t bme280_soft_reset(const struct bme280_dev *dev);
-# 207 "./BME280_driver/bme280.h"
-int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
-# 217 "./BME280_driver/bme280.h"
-void bme280_parse_sensor_data(const uint8_t *reg_data, struct bme280_uncomp_data *uncomp_data);
-# 235 "./BME280_driver/bme280.h"
-int8_t bme280_compensate_data(uint8_t sensor_comp,
-                              const struct bme280_uncomp_data *uncomp_data,
-                              struct bme280_data *comp_data,
-                              struct bme280_calib_data *calib_data);
-# 3 "main.c" 2
-
-
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 1 3
-# 25 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 419 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 5 "main.c" 2
-
-
-
-unsigned long ticks = 0;
-
-void TimerISR()
-{
-    ticks++;
-}
-# 27 "main.c"
-void FlashError()
-{
-    for (int i = 0; i < 3; i++)
+    struct
     {
-        do { LATCbits.LATC5 = 1; } while(0);
-        _delay((unsigned long)((250)*(4000000/4000.0)));
-        do { LATCbits.LATC5 = 0; } while(0);
-        _delay((unsigned long)((250)*(4000000/4000.0)));
+            uint8_t full:1;
+            uint8_t empty:1;
+            uint8_t reserved:6;
+    }s;
+    uint8_t status;
+}I2C_TR_QUEUE_STATUS;
+# 85 "mcc_generated_files/i2c.c"
+typedef struct
+{
+    uint8_t count;
+    I2C_TRANSACTION_REQUEST_BLOCK *ptrb_list;
+    I2C_MESSAGE_STATUS *pTrFlag;
+
+
+} I2C_TR_QUEUE_ENTRY;
+# 105 "mcc_generated_files/i2c.c"
+typedef struct
+{
+
+    I2C_TR_QUEUE_ENTRY *pTrTail;
+    I2C_TR_QUEUE_ENTRY *pTrHead;
+    I2C_TR_QUEUE_STATUS trStatus;
+    uint8_t i2cDoneFlag;
+
+    uint8_t i2cErrors;
+
+
+} I2C_OBJECT ;
+# 129 "mcc_generated_files/i2c.c"
+typedef enum
+{
+    S_MASTER_IDLE,
+    S_MASTER_RESTART,
+    S_MASTER_SEND_ADDR,
+    S_MASTER_SEND_DATA,
+    S_MASTER_SEND_STOP,
+    S_MASTER_ACK_ADDR,
+    S_MASTER_RCV_DATA,
+    S_MASTER_RCV_STOP,
+    S_MASTER_ACK_RCV_DATA,
+    S_MASTER_NOACK_STOP,
+    S_MASTER_SEND_ADDR_10BIT_LSB,
+    S_MASTER_10BIT_RESTART,
+
+} I2C_MASTER_STATES;
+# 178 "mcc_generated_files/i2c.c"
+void I2C_FunctionComplete(void);
+void I2C_Stop(I2C_MESSAGE_STATUS completion_code);
+
+
+
+
+
+static I2C_TR_QUEUE_ENTRY i2c_tr_queue[1];
+static I2C_OBJECT i2c_object;
+static I2C_MASTER_STATES i2c_state = S_MASTER_IDLE;
+static uint8_t i2c_trb_count = 0;
+
+static I2C_TRANSACTION_REQUEST_BLOCK *p_i2c_trb_current = ((void*)0);
+static volatile I2C_TR_QUEUE_ENTRY *p_i2c_current = ((void*)0);
+
+
+
+
+
+
+void I2C_Initialize(void)
+{
+    i2c_object.pTrHead = i2c_tr_queue;
+    i2c_object.pTrTail = i2c_tr_queue;
+    i2c_object.trStatus.s.empty = 1;
+    i2c_object.trStatus.s.full = 0;
+
+    i2c_object.i2cErrors = 0;
+
+
+    SSP1STAT = 0x00;
+
+    SSP1CON1 = 0x28;
+
+    SSP1CON3 = 0x00;
+
+    SSP1ADD = 0x03;
+
+
+    PIR1bits.SSP1IF = 0;
+    PIR2bits.BCL1IF = 0;
+
+
+    PIE1bits.SSP1IE = 1;
+    PIE2bits.BCL1IE = 1;
+
+}
+
+
+uint8_t I2C_ErrorCountGet(void)
+{
+    uint8_t ret;
+
+    ret = i2c_object.i2cErrors;
+    return ret;
+}
+
+void I2C_ISR ( void )
+{
+
+    static uint8_t *pi2c_buf_ptr;
+    static uint16_t i2c_address = 0;
+    static uint8_t i2c_bytes_left = 0;
+    static uint8_t i2c_10bit_address_restart = 0;
+
+    PIR1bits.SSP1IF = 0;
+
+
+
+    if(SSP1CON1bits.WCOL)
+    {
+
+        SSP1CON1bits.WCOL = 0;
+        i2c_state = S_MASTER_IDLE;
+        *(p_i2c_current->pTrFlag) = I2C_MESSAGE_FAIL;
+
+
+        p_i2c_current = ((void*)0);
+
+        return;
     }
-}
 
 
-void ClearString(char* str)
-{
-    for (int i = 0, counti = strlen(str); i < counti; i++)
+    switch(i2c_state)
     {
-        str[i] = '\0';
-    }
-}
+        case S_MASTER_IDLE:
 
-
-_Bool FindString(char* src, int srcLen, char* target, int targetLen)
-{
-    int matching = 0;
-    for (int i = 0; i < srcLen; i++)
-    {
-        if (src[i] == target[matching])
-        {
-            matching++;
-            if (matching == targetLen)
+            if(i2c_object.trStatus.s.empty != 1)
             {
-                return 1;
+
+                p_i2c_current = i2c_object.pTrHead;
+                i2c_trb_count = i2c_object.pTrHead->count;
+                p_i2c_trb_current = i2c_object.pTrHead->ptrb_list;
+
+                i2c_object.pTrHead++;
+
+
+                if(i2c_object.pTrHead == (i2c_tr_queue + 1))
+                {
+
+                    i2c_object.pTrHead = i2c_tr_queue;
+                }
+
+
+
+                i2c_object.trStatus.s.full = 0;
+
+
+                if(i2c_object.pTrHead == i2c_object.pTrTail)
+                {
+
+                    i2c_object.trStatus.s.empty = 1;
+                }
+
+
+                SSP1CON2bits.SEN = 1;
+
+
+                i2c_state = S_MASTER_SEND_ADDR;
             }
-        }
-        else
-        {
-            matching = 0;
-        }
+
+            break;
+
+        case S_MASTER_RESTART:
+
+
+
+
+            SSP1CON2bits.RSEN = 1;
+
+
+            i2c_state = S_MASTER_SEND_ADDR;
+
+            break;
+
+        case S_MASTER_SEND_ADDR_10BIT_LSB:
+
+            if(SSP1CON2bits.ACKSTAT)
+            {
+                i2c_object.i2cErrors++;
+                I2C_Stop(I2C_MESSAGE_ADDRESS_NO_ACK);
+            }
+            else
+            {
+
+                SSP1BUF = (i2c_address >> 1) & 0x00FF;
+
+
+                if(i2c_address & 0x01)
+                {
+
+
+                    i2c_state = S_MASTER_10BIT_RESTART;
+                }
+                else
+                {
+
+                    i2c_state = S_MASTER_SEND_DATA;
+                }
+            }
+
+            break;
+
+        case S_MASTER_10BIT_RESTART:
+
+            if(SSP1CON2bits.ACKSTAT)
+            {
+                i2c_object.i2cErrors++;
+                I2C_Stop(I2C_MESSAGE_ADDRESS_NO_ACK);
+            }
+            else
+            {
+
+
+                SSP1CON2bits.RSEN = 1;
+
+
+
+                i2c_address = 0x00F0 | ((i2c_address >> 8) & 0x0006);
+
+
+                i2c_address |= 0x0001;
+
+
+                i2c_10bit_address_restart = 1;
+
+
+                i2c_state = S_MASTER_SEND_ADDR;
+            }
+
+            break;
+
+        case S_MASTER_SEND_ADDR:
+# 383 "mcc_generated_files/i2c.c"
+            if(i2c_10bit_address_restart != 1)
+            {
+
+                i2c_address = p_i2c_trb_current->address;
+                pi2c_buf_ptr = p_i2c_trb_current->pbuffer;
+                i2c_bytes_left = p_i2c_trb_current->length;
+            }
+
+
+            if(!1 && (0x0 != i2c_address))
+            {
+                if (0 == i2c_10bit_address_restart)
+                {
+
+
+
+                    SSP1BUF = 0xF0 | ((i2c_address >> 8) & 0x0006);
+                    i2c_state = S_MASTER_SEND_ADDR_10BIT_LSB;
+                }
+                else
+                {
+
+                    SSP1BUF = i2c_address;
+                    i2c_state = S_MASTER_ACK_ADDR;
+
+                    i2c_10bit_address_restart = 0;
+                }
+            }
+            else
+            {
+
+                SSP1BUF = i2c_address;
+                if(i2c_address & 0x01)
+                {
+
+                    i2c_state = S_MASTER_ACK_ADDR;
+                }
+                else
+                {
+
+                    i2c_state = S_MASTER_SEND_DATA;
+                }
+            }
+            break;
+
+        case S_MASTER_SEND_DATA:
+
+
+            if(SSP1CON2bits.ACKSTAT)
+            {
+
+                i2c_object.i2cErrors++;
+
+
+                SSP1CON2bits.ACKSTAT = 0;
+
+
+                I2C_Stop(I2C_DATA_NO_ACK);
+
+            }
+            else
+            {
+
+                if(i2c_bytes_left-- == 0U)
+                {
+
+
+
+                    p_i2c_trb_current++;
+
+
+                    if(--i2c_trb_count == 0)
+                    {
+                        I2C_Stop(I2C_MESSAGE_COMPLETE);
+                    }
+                    else
+                    {
+
+
+
+
+
+
+                        SSP1CON2bits.RSEN = 1;
+
+
+                        i2c_state = S_MASTER_SEND_ADDR;
+
+                    }
+                }
+                else
+                {
+
+                    SSP1BUF = *pi2c_buf_ptr++;
+                }
+            }
+            break;
+
+        case S_MASTER_ACK_ADDR:
+
+
+            if(SSP1CON2bits.ACKSTAT)
+            {
+
+
+                i2c_object.i2cErrors++;
+
+
+                I2C_Stop(I2C_MESSAGE_ADDRESS_NO_ACK);
+
+
+                SSP1CON2bits.ACKSTAT = 0;
+            }
+            else
+            {
+                SSP1CON2bits.RCEN = 1;
+                i2c_state = S_MASTER_ACK_RCV_DATA;
+            }
+            break;
+
+        case S_MASTER_RCV_DATA:
+
+
+
+
+            i2c_state = S_MASTER_ACK_RCV_DATA;
+
+
+            SSP1CON2bits.RCEN = 1;
+
+            break;
+
+        case S_MASTER_ACK_RCV_DATA:
+
+
+            *pi2c_buf_ptr++ = SSP1BUF;
+
+
+            if(--i2c_bytes_left)
+            {
+
+
+
+
+
+                SSP1CON2bits.ACKDT = 0;
+
+
+                i2c_state = S_MASTER_RCV_DATA;
+            }
+            else
+            {
+
+
+
+                SSP1CON2bits.ACKDT = 1;
+
+                I2C_FunctionComplete();
+            }
+
+
+            SSP1CON2bits.ACKEN = 1;
+            break;
+
+        case S_MASTER_RCV_STOP:
+        case S_MASTER_SEND_STOP:
+
+
+            I2C_Stop(I2C_MESSAGE_COMPLETE);
+            break;
+
+        default:
+
+
+
+            i2c_object.i2cErrors++;
+            I2C_Stop(I2C_LOST_STATE);
+            break;
+
     }
-    return 0;
 }
 
-
-void Sleep(uint32_t ms)
+void I2C_FunctionComplete(void)
 {
-    unsigned long start = ticks;
-    while (ticks - start < ms)
+
+
+    p_i2c_trb_current++;
+
+
+    if(--i2c_trb_count == 0)
     {
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-    }
-}
-# 106 "main.c"
-char message_start[70];
-char message_end[70 + 3];
-
-
-char* messages[2] = {message_start, message_end};
-
-
-unsigned short crc_append_byte(uint16_t crc, uint8_t data)
-{
-    int i;
-    crc = crc ^ ((uint16_t)data << 8);
-    for (i = 0; i < 8; i++)
-    {
-        if (crc & 0x8000)
-        {
-            crc = (crc << 1) ^ 0x1021;
-        }
-        else
-        {
-            crc <<= 1;
-        }
-    }
-
-    return crc;
-}
-
-
-unsigned short crc16(char** data, int segments)
-{
-    size_t i;
- uint16_t crc;
- uint8_t c;
-
- crc = 0xFFFF;
-
-    for (int str = 0; str < segments; str++)
-    {
-        char* string = data[str];
-        size_t len = strlen(string);
-
-        for (i = (string[i] == '$' ? 2 : 0); i < len; i++)
-        {
-            c = string[i];
-            crc = crc_append_byte(crc, c);
-        }
-    }
- return crc;
-}
-
-void TransmitBit(_Bool b)
-{
- if (b)
- {
-  do { LATAbits.LATA4 = 1; } while(0);
- }
- else
- {
-  do { LATAbits.LATA4 = 0; } while(0);
- }
-
-
-    _delay((unsigned long)((((1000 / 50) / 2) * 1000)*(4000000/4000000.0)));
-
-
-
-
-
-}
-
-void TransmitByte(char byte)
-{
-# 186 "main.c"
-    TransmitBit(0);
-
- for (int i = 0; i < 7; i++)
- {
-  TransmitBit((byte >> i) & 1);
- }
-
- TransmitBit(1);
- TransmitBit(1);
-}
-
-void TransmitString(char* message)
-{
-
-
-
- for (int i = 0, counti = strlen(message); i < counti; i++)
- {
-  TransmitByte(message[i]);
- }
-
-
-
-}
-# 605 "main.c"
-int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len)
-{
-    I2C_MESSAGE_STATUS status = 0;
-    I2C_MasterWrite(&reg_addr, 1, dev_id, &status);
-    if (status == 0)
-    {
-        I2C_MasterRead(data, len, dev_id, &status);
-        if (status != 0)
-        {
-            status = -4;
-        }
+        i2c_state = S_MASTER_SEND_STOP;
     }
     else
     {
-        status = -4;
+        i2c_state = S_MASTER_RESTART;
     }
-    return status;
-}
-int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
-{
-    I2C_MESSAGE_STATUS status = 0;
-    uint8_t local_address = reg_addr;
-    while (local_address - reg_addr < len)
-    {
-        I2C_MasterWrite(&local_address, 1, dev_id, &status);
-        if (status == 0)
-        {
-            I2C_MasterWrite(reg_data, 1, dev_id, &status);
-            if (status != 0)
-            {
-                return -4;
-            }
-        }
-        else
-        {
-            return -4;
-        }
-        local_address++;
-    }
-    return 0;
+
 }
 
-
-char checksum[6] = {'\0'};
-
-void main(void)
+void I2C_Stop(I2C_MESSAGE_STATUS completion_code)
 {
 
-    SYSTEM_Initialize();
-    (INTCONbits.GIE = 1);
-    TMR0_SetInterruptHandler(TimerISR);
+    SSP1CON2bits.PEN = 1;
 
 
-    struct bme280_dev env_sensor;
-    int8_t env_sensor_status = 0;
-
-    env_sensor.dev_id = 0x76;
-    env_sensor.intf = BME280_I2C_INTF;
-    env_sensor.read = ReadEnvSensor;
-    env_sensor.write = WriteEnvSensor;
-    env_sensor.delay_ms = Sleep;
-
-    env_sensor_status = bme280_init(&env_sensor);
-
-
-
-
-
-    int id = 0;
-    while (1)
+    if (p_i2c_current->pTrFlag != ((void*)0))
     {
 
-        ClearString(messages[0]);
-        ClearString(messages[1]);
-
-        if (
-
-
-
-            1
-
-        )
-        {
-
-            struct bme280_data sensor_data;
-            bme280_get_sensor_data(0x07, &sensor_data, &env_sensor);
-# 715 "main.c"
-        }
-        else
-        {
-
-            FlashError();
-        }
-
-        for (int i = 0; i < 1000; i++)
-        {
-            _delay((unsigned long)((5)*(4000000/4000.0)));
-        }
+        *(p_i2c_current->pTrFlag) = completion_code;
     }
+
+
+    i2c_state = S_MASTER_IDLE;
+
+}
+
+void I2C_MasterWrite(
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address,
+                                I2C_MESSAGE_STATUS *pflag)
+{
+    static I2C_TRANSACTION_REQUEST_BLOCK trBlock;
+
+
+    if (i2c_object.trStatus.s.full != 1)
+    {
+        I2C_MasterWriteTRBBuild(&trBlock, pdata, length, address);
+        I2C_MasterTRBInsert(1, &trBlock, pflag);
+    }
+    else
+    {
+        *pflag = I2C_MESSAGE_FAIL;
+    }
+
+}
+
+void I2C_MasterRead(
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address,
+                                I2C_MESSAGE_STATUS *pflag)
+{
+    static I2C_TRANSACTION_REQUEST_BLOCK trBlock;
+
+
+
+    if (i2c_object.trStatus.s.full != 1)
+    {
+        I2C_MasterReadTRBBuild(&trBlock, pdata, length, address);
+        I2C_MasterTRBInsert(1, &trBlock, pflag);
+    }
+    else
+    {
+        *pflag = I2C_MESSAGE_FAIL;
+    }
+
+}
+
+
+__attribute__((inline)) void I2C_WaitForLastPacketToComplete()
+{
+    while(i2c_state != S_MASTER_IDLE)
+    {
+
+
+
+    }
+}
+
+void I2C_MasterTRBInsert(
+                                uint8_t count,
+                                I2C_TRANSACTION_REQUEST_BLOCK *ptrb_list,
+                                I2C_MESSAGE_STATUS *pflag)
+{
+
+
+    if (i2c_object.trStatus.s.full != 1)
+    {
+        *pflag = I2C_MESSAGE_PENDING;
+
+        i2c_object.pTrTail->ptrb_list = ptrb_list;
+        i2c_object.pTrTail->count = count;
+        i2c_object.pTrTail->pTrFlag = pflag;
+        i2c_object.pTrTail++;
+
+
+        if (i2c_object.pTrTail == (i2c_tr_queue + 1))
+        {
+
+            i2c_object.pTrTail = i2c_tr_queue;
+        }
+
+
+
+        i2c_object.trStatus.s.empty = 0;
+
+
+        if (i2c_object.pTrHead == i2c_object.pTrTail)
+        {
+
+            i2c_object.trStatus.s.full = 1;
+        }
+
+    }
+    else
+    {
+        *pflag = I2C_MESSAGE_FAIL;
+    }
+
+
+    if (*pflag == I2C_MESSAGE_PENDING)
+    {
+        I2C_WaitForLastPacketToComplete();
+
+
+
+
+        PIR1bits.SSP1IF = 1;
+
+    }
+
+}
+
+void I2C_MasterReadTRBBuild(
+                                I2C_TRANSACTION_REQUEST_BLOCK *ptrb,
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address)
+{
+    ptrb->address = address << 1;
+
+    ptrb->address |= 0x01;
+    ptrb->length = length;
+    ptrb->pbuffer = pdata;
+}
+
+void I2C_MasterWriteTRBBuild(
+                                I2C_TRANSACTION_REQUEST_BLOCK *ptrb,
+                                uint8_t *pdata,
+                                uint8_t length,
+                                uint16_t address)
+{
+    ptrb->address = address << 1;
+    ptrb->length = length;
+    ptrb->pbuffer = pdata;
+}
+
+_Bool I2C_MasterQueueIsEmpty(void)
+{
+    return(i2c_object.trStatus.s.empty);
+}
+
+_Bool I2C_MasterQueueIsFull(void)
+{
+    return(i2c_object.trStatus.s.full);
+}
+
+void I2C_BusCollisionISR( void )
+{
+
+ PIR2bits.BCL1IF = 0;
 }

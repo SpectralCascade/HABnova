@@ -11,109 +11,83 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\2013b\AppData\Local\Temp\s7vk.o
+$C:\Users\2013b\AppData\Local\Temp\s9us.o
 reset_vec CODE 0 0 0 2 2
-end_init CODE 0 D D 2 2
+end_init CODE 0 23 23 2 2
 config CONFIG 0 8007 8007 3 2
 $dist/default/production\HABnova.production.o
-cinit CODE 0 F F 5A 2
-text1 CODE 0 16BA 16BA 16 2
-text2 CODE 0 1797 1797 1E 2
-text3 CODE 0 949 949 2D 2
-text4 CODE 0 AFF AFF 6E 2
-text5 CODE 0 9A5 9A5 31 2
-text6 CODE 0 849 849 28 2
-text7 CODE 0 91C 91C 2D 2
-text8 CODE 0 7EF 7EF 11 2
-text9 CODE 0 AAD AAD 52 2
-text10 CODE 0 822 822 27 2
-text11 CODE 0 1692 1692 12 2
-text12 CODE 0 B6D B6D 92 2
-text13 CODE 0 1665 1665 C 2
-text14 CODE 0 16A4 16A4 16 2
-text15 CODE 0 161E 161E 6 2
-text16 CODE 0 89A 89A 2A 2
-text17 CODE 0 1630 1630 7 2
-text18 CODE 0 165A 165A B 2
-text19 CODE 0 69 69 292 2
-text20 CODE 0 1681 1681 11 2
-text21 CODE 0 976 976 2F 2
-text22 CODE 0 2FB 2FB 252 2
-text23 CODE 0 54D 54D 155 2
-text24 CODE 0 801 801 21 2
-text25 CODE 0 172C 172C 17 2
-text26 CODE 0 1715 1715 17 2
-text27 CODE 0 177A 177A 1D 2
-text28 CODE 0 CA0 CA0 C3 2
-text29 CODE 0 6A2 6A2 14D 2
-text30 CODE 0 A5D A5D 50 2
-text31 CODE 0 17DA 17DA 26 2
-text32 CODE 0 A12 A12 4B 2
-text33 CODE 0 1619 1619 5 2
-text34 CODE 0 163E 163E 8 2
-text35 CODE 0 16FE 16FE 17 2
-text36 CODE 0 E31 E31 DC 2
-text37 CODE 0 F0D F0D F3 2
-text38 CODE 0 BFF BFF A1 2
-text39 CODE 0 175E 175E 1C 2
-text40 CODE 0 16E7 16E7 17 2
-text41 CODE 0 1743 1743 1B 2
-text42 CODE 0 871 871 29 2
-text43 CODE 0 9D6 9D6 3C 2
-text44 CODE 0 1614 1614 5 2
-text45 CODE 0 1650 1650 A 2
-text46 CODE 0 17B5 17B5 25 2
-text47 CODE 0 16D0 16D0 17 2
-text48 CODE 0 8C4 8C4 2C 2
-text50 CODE 0 1671 1671 10 2
-text51 CODE 0 3 3 1 2
-text52 CODE 0 1646 1646 A 2
-nvBANK1 BANK1 1 EC EC 1 1
-nvBANK2 BANK2 1 16B 16B 2 1
-maintext CODE 0 D63 D63 CE 2
-cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 20 20 4D 1
-cstackBANK1 BANK1 1 A0 A0 40 1
-inittext CODE 0 162A 162A 6 2
-stringtext1 STRCODE 0 18DF 18DF 2 2
-stringtext2 STRCODE 0 18E1 18E1 2 2
-stringtext3 STRCODE 0 18E3 18E3 2 2
-stringtext4 STRCODE 0 1800 1800 1A 2
-stringtext5 STRCODE 0 181A 181A 1A 2
-stringtext6 STRCODE 0 1834 1834 1A 2
-stringtext7 STRCODE 0 184E 184E 1A 2
-stringtext8 STRCODE 0 1868 1868 1A 2
-stringtext9 STRCODE 0 1882 1882 1A 2
-intentry CODE 0 4 4 9 2
-bssBANK0 BANK0 1 6D 6D 3 1
-bssBANK1 BANK1 1 E0 E0 8 1
-bssBANK2 BANK2 1 120 120 44 1
-bssBANK3 BANK3 1 1A0 1A0 3D 1
-bssBANK4 BANK4 1 24C 24C 20 1
+cinit CODE 0 25 25 40 2
+text1 CODE 0 1372 1372 67 2
+text2 CODE 0 1218 1218 48 2
+text3 CODE 0 170B 170B F5 2
+text4 CODE 0 14DF 14DF 99 2
+text5 CODE 0 10D4 10D4 39 2
+text6 CODE 0 1578 1578 9E 2
+text7 CODE 0 1042 1042 2D 2
+text8 CODE 0 1260 1260 4A 2
+text9 CODE 0 110D 110D 3A 2
+text10 CODE 0 12AA 12AA 62 2
+text11 CODE 0 60D 60D 12A 2
+text12 CODE 0 1147 1147 42 2
+text13 CODE 0 1F63 1F63 25 2
+text14 CODE 0 109E 109E 36 2
+text15 CODE 0 7D8 7D8 28 2
+text16 CODE 0 1F41 1F41 22 2
+text17 CODE 0 1FAE 1FAE 27 2
+text18 CODE 0 11D0 11D0 48 2
+text19 CODE 0 1E94 1E94 4 2
+text20 CODE 0 1FD5 1FD5 2B 2
+text21 CODE 0 145A 145A 85 2
+text22 CODE 0 31E 31E 1A2 2
+text23 CODE 0 737 737 A1 2
+text24 CODE 0 1189 1189 47 2
+text25 CODE 0 1616 1616 F5 2
+text26 CODE 0 65 65 2B9 2
+text27 CODE 0 106F 106F 2F 2
+text28 CODE 0 13D9 13D9 81 2
+text29 CODE 0 1EC3 1EC3 F 2
+text30 CODE 0 1001 1001 15 2
+text31 CODE 0 1E9C 1E9C 6 2
+text32 CODE 0 800 800 33 2
+text33 CODE 0 1EA8 1EA8 7 2
+text34 CODE 0 1F0A 1F0A 19 2
+text35 CODE 0 1EB8 1EB8 B 2
+text36 CODE 0 1016 1016 2C 2
+text37 CODE 0 1F88 1F88 26 2
+text38 CODE 0 1EF3 1EF3 17 2
+text40 CODE 0 1ED2 1ED2 10 2
+text41 CODE 0 1000 1000 1 2
+text42 CODE 0 1EAF 1EAF 9 2
+text43 CODE 0 4C0 4C0 14D 2
+text44 CODE 0 1F23 1F23 1E 2
+text45 CODE 0 1EE2 1EE2 11 2
+text46 CODE 0 2 2 2 2
+nvBANK2 BANK2 1 167 167 3 1
+maintext CODE 0 130C 130C 66 2
+cstackCOMMON COMMON 1 70 70 9 1
+cstackBANK0 BANK0 1 20 20 50 1
+cstackBANK1 BANK1 1 A0 A0 50 1
+cstackBANK2 BANK2 1 14F 14F 18 1
+cstackBANK3 BANK3 1 1A0 1A0 44 1
+intentry CODE 0 4 4 1F 2
+bssBANK2 BANK2 1 120 120 2F 1
+bssBANK3 BANK3 1 1E4 1E4 8 1
+bssBANK4 BANK4 1 220 220 1A 1
 bssBANK5 BANK5 1 2A0 2A0 46 1
 bssBANK6 BANK6 1 320 320 49 1
-idataBANK1 CODE 0 1610 1610 4 2
-idataBANK2 CODE 0 1637 1637 7 2
-idataBANK4 CODE 0 8F0 8F0 2C 2
-dataBANK1 BANK1 1 E8 E8 4 1
-dataBANK2 BANK2 1 164 164 7 1
-dataBANK4 BANK4 1 220 220 2C 1
-clrtext CODE 0 1624 1624 6 2
-stringtext10 STRCODE 0 189C 189C 17 2
-stringtext11 STRCODE 0 18B3 18B3 12 2
-stringtext12 STRCODE 0 18C5 18C5 E 2
-stringtext13 STRCODE 0 18D3 18D3 7 2
-stringtext14 STRCODE 0 18DA 18DA 5 2
+idataBANK3 CODE 0 1E98 1E98 4 2
+dataBANK3 BANK3 1 1EC 1EC 4 1
+clrtext CODE 0 1EA2 1EA2 6 2
+bssCOMMON COMMON 1 79 79 4 1
+text23_split_1 CODE 0 833 833 7CD 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM ED-EF 1
-RAM 16D-16F 1
-RAM 1DD-1EF 1
-RAM 26C-26F 1
+RAM 16A-16F 1
+RAM 23A-26F 1
 RAM 2E6-2EF 1
 RAM 369-36F 1
 RAM 3A0-3EF 1
@@ -122,23 +96,15 @@ RAM 4A0-4EF 1
 RAM 520-56F 1
 RAM 5A0-5EF 1
 RAM 620-64F 1
-BANK1 ED-EF 1
-BANK2 16D-16F 1
-BANK3 1DD-1EF 1
-BANK4 26C-26F 1
+BANK2 16A-16F 1
+BANK4 23A-26F 1
 BANK5 2E6-2EF 1
 BANK6 369-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 2-2 2
-CONST 800-800 2
-CONST 1000-160F 2
-CONST 18E5-1FFF 2
-ENTRY 2-2 2
-ENTRY 800-800 2
-ENTRY 1000-160F 2
-ENTRY 18E5-1FFF 2
+CONST 1800-1E93 2
+ENTRY 1800-1E93 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -163,10 +129,7 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2229-23EF 1
-CODE 2-2 2
-CODE 800-800 2
-CODE 1000-160F 2
-CODE 18E5-1FFF 2
+CODE 1800-1E93 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -181,14 +144,9 @@ BANK10 520-56F 1
 BANK11 5A0-5EF 1
 BANK12 620-64F 1
 BIGRAM 2000-23EF 1
-STRCODE 2-2 2
-STRCODE 800-800 2
-STRCODE 1000-160F 2
-STRCODE 18E5-1FFF 2
-STRING 2-2 2
-STRING 800-800 2
-STRING 1000-160F 2
-STRING 18E5-1FFF 2
+COMMON 7D-7D 1
+STRCODE 1800-1E93 2
+STRING 1800-1E93 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -203,694 +161,659 @@ STRING 18E5-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\HABnova.production.o
-F cinit CODE >6024:C:\Users\2013b\AppData\Local\Temp\s7vk.
-F cinit CODE >6027:C:\Users\2013b\AppData\Local\Temp\s7vk.
-F cinit CODE >6154:C:\Users\2013b\AppData\Local\Temp\s7vk.
-10 cinit CODE >6155:C:\Users\2013b\AppData\Local\Temp\s7vk.
-11 cinit CODE >6156:C:\Users\2013b\AppData\Local\Temp\s7vk.
-12 cinit CODE >6157:C:\Users\2013b\AppData\Local\Temp\s7vk.
-13 cinit CODE >6158:C:\Users\2013b\AppData\Local\Temp\s7vk.
-14 cinit CODE >6159:C:\Users\2013b\AppData\Local\Temp\s7vk.
-15 cinit CODE >6160:C:\Users\2013b\AppData\Local\Temp\s7vk.
-16 cinit CODE >6161:C:\Users\2013b\AppData\Local\Temp\s7vk.
-17 cinit CODE >6162:C:\Users\2013b\AppData\Local\Temp\s7vk.
-18 cinit CODE >6163:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1B cinit CODE >6167:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1C cinit CODE >6168:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1D cinit CODE >6169:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1E cinit CODE >6170:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1F cinit CODE >6171:C:\Users\2013b\AppData\Local\Temp\s7vk.
-20 cinit CODE >6172:C:\Users\2013b\AppData\Local\Temp\s7vk.
-21 cinit CODE >6173:C:\Users\2013b\AppData\Local\Temp\s7vk.
-22 cinit CODE >6174:C:\Users\2013b\AppData\Local\Temp\s7vk.
-23 cinit CODE >6175:C:\Users\2013b\AppData\Local\Temp\s7vk.
-24 cinit CODE >6176:C:\Users\2013b\AppData\Local\Temp\s7vk.
-27 cinit CODE >6180:C:\Users\2013b\AppData\Local\Temp\s7vk.
-28 cinit CODE >6181:C:\Users\2013b\AppData\Local\Temp\s7vk.
-29 cinit CODE >6182:C:\Users\2013b\AppData\Local\Temp\s7vk.
-2A cinit CODE >6183:C:\Users\2013b\AppData\Local\Temp\s7vk.
-2B cinit CODE >6184:C:\Users\2013b\AppData\Local\Temp\s7vk.
-2C cinit CODE >6185:C:\Users\2013b\AppData\Local\Temp\s7vk.
-2D cinit CODE >6186:C:\Users\2013b\AppData\Local\Temp\s7vk.
-2E cinit CODE >6187:C:\Users\2013b\AppData\Local\Temp\s7vk.
-2F cinit CODE >6188:C:\Users\2013b\AppData\Local\Temp\s7vk.
-30 cinit CODE >6189:C:\Users\2013b\AppData\Local\Temp\s7vk.
-33 cinit CODE >6206:C:\Users\2013b\AppData\Local\Temp\s7vk.
-34 cinit CODE >6207:C:\Users\2013b\AppData\Local\Temp\s7vk.
-35 cinit CODE >6208:C:\Users\2013b\AppData\Local\Temp\s7vk.
-36 cinit CODE >6212:C:\Users\2013b\AppData\Local\Temp\s7vk.
-37 cinit CODE >6213:C:\Users\2013b\AppData\Local\Temp\s7vk.
-38 cinit CODE >6214:C:\Users\2013b\AppData\Local\Temp\s7vk.
-39 cinit CODE >6215:C:\Users\2013b\AppData\Local\Temp\s7vk.
-3A cinit CODE >6216:C:\Users\2013b\AppData\Local\Temp\s7vk.
-3B cinit CODE >6217:C:\Users\2013b\AppData\Local\Temp\s7vk.
-3E cinit CODE >6221:C:\Users\2013b\AppData\Local\Temp\s7vk.
-3F cinit CODE >6222:C:\Users\2013b\AppData\Local\Temp\s7vk.
-40 cinit CODE >6223:C:\Users\2013b\AppData\Local\Temp\s7vk.
-41 cinit CODE >6224:C:\Users\2013b\AppData\Local\Temp\s7vk.
-42 cinit CODE >6225:C:\Users\2013b\AppData\Local\Temp\s7vk.
-43 cinit CODE >6226:C:\Users\2013b\AppData\Local\Temp\s7vk.
-46 cinit CODE >6230:C:\Users\2013b\AppData\Local\Temp\s7vk.
-47 cinit CODE >6231:C:\Users\2013b\AppData\Local\Temp\s7vk.
-48 cinit CODE >6232:C:\Users\2013b\AppData\Local\Temp\s7vk.
-49 cinit CODE >6233:C:\Users\2013b\AppData\Local\Temp\s7vk.
-4A cinit CODE >6234:C:\Users\2013b\AppData\Local\Temp\s7vk.
-4B cinit CODE >6235:C:\Users\2013b\AppData\Local\Temp\s7vk.
-4E cinit CODE >6239:C:\Users\2013b\AppData\Local\Temp\s7vk.
-4F cinit CODE >6240:C:\Users\2013b\AppData\Local\Temp\s7vk.
-50 cinit CODE >6241:C:\Users\2013b\AppData\Local\Temp\s7vk.
-51 cinit CODE >6242:C:\Users\2013b\AppData\Local\Temp\s7vk.
-52 cinit CODE >6243:C:\Users\2013b\AppData\Local\Temp\s7vk.
-53 cinit CODE >6244:C:\Users\2013b\AppData\Local\Temp\s7vk.
-56 cinit CODE >6248:C:\Users\2013b\AppData\Local\Temp\s7vk.
-57 cinit CODE >6249:C:\Users\2013b\AppData\Local\Temp\s7vk.
-58 cinit CODE >6250:C:\Users\2013b\AppData\Local\Temp\s7vk.
-59 cinit CODE >6251:C:\Users\2013b\AppData\Local\Temp\s7vk.
-5A cinit CODE >6252:C:\Users\2013b\AppData\Local\Temp\s7vk.
-5B cinit CODE >6253:C:\Users\2013b\AppData\Local\Temp\s7vk.
-5E cinit CODE >6257:C:\Users\2013b\AppData\Local\Temp\s7vk.
-5F cinit CODE >6258:C:\Users\2013b\AppData\Local\Temp\s7vk.
-60 cinit CODE >6259:C:\Users\2013b\AppData\Local\Temp\s7vk.
-61 cinit CODE >6260:C:\Users\2013b\AppData\Local\Temp\s7vk.
-62 cinit CODE >6261:C:\Users\2013b\AppData\Local\Temp\s7vk.
-63 cinit CODE >6262:C:\Users\2013b\AppData\Local\Temp\s7vk.
-65 cinit CODE >6268:C:\Users\2013b\AppData\Local\Temp\s7vk.
-65 cinit CODE >6270:C:\Users\2013b\AppData\Local\Temp\s7vk.
-66 cinit CODE >6271:C:\Users\2013b\AppData\Local\Temp\s7vk.
-67 cinit CODE >6272:C:\Users\2013b\AppData\Local\Temp\s7vk.
-4 intentry CODE >34:C:\Users\2013b\Git\HABnova\main.c
+25 cinit CODE >6525:C:\Users\2013b\AppData\Local\Temp\s9us.
+25 cinit CODE >6528:C:\Users\2013b\AppData\Local\Temp\s9us.
+25 cinit CODE >6617:C:\Users\2013b\AppData\Local\Temp\s9us.
+26 cinit CODE >6618:C:\Users\2013b\AppData\Local\Temp\s9us.
+29 cinit CODE >6619:C:\Users\2013b\AppData\Local\Temp\s9us.
+2A cinit CODE >6620:C:\Users\2013b\AppData\Local\Temp\s9us.
+2D cinit CODE >6621:C:\Users\2013b\AppData\Local\Temp\s9us.
+2E cinit CODE >6622:C:\Users\2013b\AppData\Local\Temp\s9us.
+31 cinit CODE >6623:C:\Users\2013b\AppData\Local\Temp\s9us.
+32 cinit CODE >6624:C:\Users\2013b\AppData\Local\Temp\s9us.
+35 cinit CODE >6625:C:\Users\2013b\AppData\Local\Temp\s9us.
+36 cinit CODE >6642:C:\Users\2013b\AppData\Local\Temp\s9us.
+37 cinit CODE >6643:C:\Users\2013b\AppData\Local\Temp\s9us.
+38 cinit CODE >6644:C:\Users\2013b\AppData\Local\Temp\s9us.
+39 cinit CODE >6645:C:\Users\2013b\AppData\Local\Temp\s9us.
+3A cinit CODE >6649:C:\Users\2013b\AppData\Local\Temp\s9us.
+3B cinit CODE >6650:C:\Users\2013b\AppData\Local\Temp\s9us.
+3C cinit CODE >6651:C:\Users\2013b\AppData\Local\Temp\s9us.
+3D cinit CODE >6652:C:\Users\2013b\AppData\Local\Temp\s9us.
+3E cinit CODE >6653:C:\Users\2013b\AppData\Local\Temp\s9us.
+3F cinit CODE >6654:C:\Users\2013b\AppData\Local\Temp\s9us.
+42 cinit CODE >6658:C:\Users\2013b\AppData\Local\Temp\s9us.
+43 cinit CODE >6659:C:\Users\2013b\AppData\Local\Temp\s9us.
+44 cinit CODE >6660:C:\Users\2013b\AppData\Local\Temp\s9us.
+45 cinit CODE >6661:C:\Users\2013b\AppData\Local\Temp\s9us.
+46 cinit CODE >6662:C:\Users\2013b\AppData\Local\Temp\s9us.
+47 cinit CODE >6663:C:\Users\2013b\AppData\Local\Temp\s9us.
+4A cinit CODE >6667:C:\Users\2013b\AppData\Local\Temp\s9us.
+4B cinit CODE >6668:C:\Users\2013b\AppData\Local\Temp\s9us.
+4C cinit CODE >6669:C:\Users\2013b\AppData\Local\Temp\s9us.
+4D cinit CODE >6670:C:\Users\2013b\AppData\Local\Temp\s9us.
+4E cinit CODE >6671:C:\Users\2013b\AppData\Local\Temp\s9us.
+4F cinit CODE >6672:C:\Users\2013b\AppData\Local\Temp\s9us.
+52 cinit CODE >6676:C:\Users\2013b\AppData\Local\Temp\s9us.
+53 cinit CODE >6677:C:\Users\2013b\AppData\Local\Temp\s9us.
+54 cinit CODE >6678:C:\Users\2013b\AppData\Local\Temp\s9us.
+55 cinit CODE >6679:C:\Users\2013b\AppData\Local\Temp\s9us.
+56 cinit CODE >6680:C:\Users\2013b\AppData\Local\Temp\s9us.
+57 cinit CODE >6681:C:\Users\2013b\AppData\Local\Temp\s9us.
+5A cinit CODE >6685:C:\Users\2013b\AppData\Local\Temp\s9us.
+5B cinit CODE >6686:C:\Users\2013b\AppData\Local\Temp\s9us.
+5C cinit CODE >6687:C:\Users\2013b\AppData\Local\Temp\s9us.
+5D cinit CODE >6688:C:\Users\2013b\AppData\Local\Temp\s9us.
+5E cinit CODE >6689:C:\Users\2013b\AppData\Local\Temp\s9us.
+5F cinit CODE >6690:C:\Users\2013b\AppData\Local\Temp\s9us.
+61 cinit CODE >6696:C:\Users\2013b\AppData\Local\Temp\s9us.
+61 cinit CODE >6698:C:\Users\2013b\AppData\Local\Temp\s9us.
+62 cinit CODE >6699:C:\Users\2013b\AppData\Local\Temp\s9us.
+63 cinit CODE >6700:C:\Users\2013b\AppData\Local\Temp\s9us.
 4 intentry CODE >52:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
 9 intentry CODE >57:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
-B intentry CODE >63:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
-1646 text52 CODE >9:C:\Users\2013b\Git\HABnova\main.c
-1646 text52 CODE >11:C:\Users\2013b\Git\HABnova\main.c
-164F text52 CODE >12:C:\Users\2013b\Git\HABnova\main.c
-3 text51 CODE >129:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-3 text51 CODE >132:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-1671 text50 CODE >108:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-1671 text50 CODE >112:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-1672 text50 CODE >114:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-1676 text50 CODE >116:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-167B text50 CODE >118:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-1680 text50 CODE >122:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-8C4 text48 CODE >25:C:\Users\2013b\Git\HABnova\main.c
-8C4 text48 CODE >27:C:\Users\2013b\Git\HABnova\main.c
-8C6 text48 CODE >29:C:\Users\2013b\Git\HABnova\main.c
-8C8 text48 CODE >30:C:\Users\2013b\Git\HABnova\main.c
-8D3 text48 CODE >31:C:\Users\2013b\Git\HABnova\main.c
-8D5 text48 CODE >32:C:\Users\2013b\Git\HABnova\main.c
-8E0 text48 CODE >33:C:\Users\2013b\Git\HABnova\main.c
-16D0 text47 CODE >12:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-16D0 text47 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-16D4 text47 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-16DB text47 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-16DF text47 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-16E0 text47 CODE >25:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-16E6 text47 CODE >26:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-17B5 text46 CODE >37:C:\Users\2013b\Git\HABnova\main.c
-17B5 text46 CODE >39:C:\Users\2013b\Git\HABnova\main.c
-17C2 text46 CODE >42:C:\Users\2013b\Git\HABnova\main.c
-17CE text46 CODE >41:C:\Users\2013b\Git\HABnova\main.c
-17D5 text46 CODE >42:C:\Users\2013b\Git\HABnova\main.c
-1650 text45 CODE >93:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1650 text45 CODE >95:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1650 text45 CODE >97:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1653 text45 CODE >100:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1656 text45 CODE >104:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1657 text45 CODE >105:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1658 text45 CODE >108:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1659 text45 CODE >109:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1614 text44 CODE >83:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1614 text44 CODE >85:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1618 text44 CODE >86:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-9D6 text43 CODE >46:C:\Users\2013b\Git\HABnova\main.c
-9D8 text43 CODE >48:C:\Users\2013b\Git\HABnova\main.c
-9DA text43 CODE >49:C:\Users\2013b\Git\HABnova\main.c
-9DC text43 CODE >63:C:\Users\2013b\Git\HABnova\main.c
-9E8 text43 CODE >51:C:\Users\2013b\Git\HABnova\main.c
-9FB text43 CODE >53:C:\Users\2013b\Git\HABnova\main.c
-9FF text43 CODE >54:C:\Users\2013b\Git\HABnova\main.c
-A07 text43 CODE >56:C:\Users\2013b\Git\HABnova\main.c
-A09 text43 CODE >61:C:\Users\2013b\Git\HABnova\main.c
-A0B text43 CODE >63:C:\Users\2013b\Git\HABnova\main.c
-A10 text43 CODE >64:C:\Users\2013b\Git\HABnova\main.c
-A11 text43 CODE >65:C:\Users\2013b\Git\HABnova\main.c
-871 text42 CODE >365:C:\Users\2013b\Git\HABnova\main.c
-871 text42 CODE >367:C:\Users\2013b\Git\HABnova\main.c
-87F text42 CODE >369:C:\Users\2013b\Git\HABnova\main.c
-88B text42 CODE >370:C:\Users\2013b\Git\HABnova\main.c
-88C text42 CODE >374:C:\Users\2013b\Git\HABnova\main.c
-899 text42 CODE >376:C:\Users\2013b\Git\HABnova\main.c
-1743 text41 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul16.c
-1743 text41 CODE >43:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul16.c
-1745 text41 CODE >45:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul16.c
-1747 text41 CODE >46:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul16.c
-174B text41 CODE >47:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul16.c
-1750 text41 CODE >48:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul16.c
-1755 text41 CODE >49:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul16.c
-1759 text41 CODE >52:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul16.c
-175D text41 CODE >53:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul16.c
-16E7 text40 CODE >5:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isdigit.c
-16E7 text40 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isdigit.c
-16FD text40 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isdigit.c
-175E text39 CODE >5:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isspace.c
-175E text39 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isspace.c
-1779 text39 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isspace.c
-BFF text38 CODE >4:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-BFF text38 CODE >6:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-C04 text38 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-C30 text38 CODE >9:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-C34 text38 CODE >11:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-C49 text38 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-C68 text38 CODE >10:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-C6C text38 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-C8B text38 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-C9F text38 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\atoi.c
-F0D text37 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F0D text37 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F0E text37 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F16 text37 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F35 text37 CODE >18:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F37 text37 CODE >20:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F3F text37 CODE >21:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F5E text37 CODE >22:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F62 text37 CODE >24:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F6C text37 CODE >25:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F77 text37 CODE >26:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F79 text37 CODE >27:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F7B text37 CODE >28:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F83 text37 CODE >29:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F87 text37 CODE >27:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F88 text37 CODE >32:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-F90 text37 CODE >33:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-FB0 text37 CODE >34:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-FC0 text37 CODE >35:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-FC1 text37 CODE >37:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-FC9 text37 CODE >38:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-FCD text37 CODE >40:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-FD0 text37 CODE >41:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-FEE text37 CODE >42:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-FFF text37 CODE >43:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-E31 text36 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E31 text36 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E32 text36 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E3A text36 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E59 text36 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E5B text36 CODE >19:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E63 text36 CODE >20:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E82 text36 CODE >21:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E8D text36 CODE >22:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E8F text36 CODE >23:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E91 text36 CODE >24:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E99 text36 CODE >25:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E9D text36 CODE >23:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-E9E text36 CODE >28:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-EBE text36 CODE >29:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-ECE text36 CODE >30:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-ED6 text36 CODE >31:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-EDA text36 CODE >33:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-EDD text36 CODE >34:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-EFB text36 CODE >35:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-F0C text36 CODE >36:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aomod.c
-16FE text35 CODE >1:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\abs.c
-16FE text35 CODE >3:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\abs.c
-163E text34 CODE >111:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-163F text34 CODE >113:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-163F text34 CODE >115:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1642 text34 CODE >117:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1645 text34 CODE >118:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1619 text33 CODE >125:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-161A text33 CODE >127:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-161D text33 CODE >128:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-A12 text32 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-A12 text32 CODE >12:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-A17 text32 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-A1A text32 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-A1B text32 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-A3F text32 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-A53 text32 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-A5C text32 CODE >21:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-17DA text31 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-17DC text31 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-17DE text31 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-17EC text31 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-17FA text31 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-17FF text31 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_fputs.c
-A5D text30 CODE >72:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A5F text30 CODE >77:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A61 text30 CODE >78:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A69 text30 CODE >82:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A73 text30 CODE >83:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A75 text30 CODE >84:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A81 text30 CODE >85:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A8D text30 CODE >86:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A92 text30 CODE >84:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A93 text30 CODE >90:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A96 text30 CODE >91:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-A9E text30 CODE >94:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-AAC text30 CODE >95:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6A2 text29 CODE >274:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6A4 text29 CODE >280:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6B4 text29 CODE >281:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6C6 text29 CODE >282:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6CA text29 CODE >283:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6E8 text29 CODE >284:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6E8 text29 CODE >287:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6EB text29 CODE >288:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6F0 text29 CODE >289:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6F0 text29 CODE >290:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-70C text29 CODE >291:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-714 text29 CODE >292:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-71A text29 CODE >293:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-71E text29 CODE >294:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-71E text29 CODE >297:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-722 text29 CODE >298:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-724 text29 CODE >299:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-74A text29 CODE >300:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-74F text29 CODE >301:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-77E text29 CODE >302:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-782 text29 CODE >303:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-786 text29 CODE >304:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-7B3 text29 CODE >299:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-7B3 text29 CODE >305:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-7BF text29 CODE >308:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-7C6 text29 CODE >309:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-7CA text29 CODE >310:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-7DD text29 CODE >314:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-7EE text29 CODE >315:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CA0 text28 CODE >546:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CA2 text28 CODE >548:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CB0 text28 CODE >552:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CB4 text28 CODE >553:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CB8 text28 CODE >554:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CBC text28 CODE >558:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CC8 text28 CODE >559:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CD0 text28 CODE >560:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CE3 text28 CODE >561:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CE8 text28 CODE >562:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CF0 text28 CODE >565:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CF3 text28 CODE >567:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-CFF text28 CODE >568:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D04 text28 CODE >566:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D10 text28 CODE >573:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D13 text28 CODE >574:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D1F text28 CODE >575:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D32 text28 CODE >576:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D37 text28 CODE >577:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D3B text28 CODE >574:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D3C text28 CODE >581:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D40 text28 CODE >583:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D4C text28 CODE >584:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D51 text28 CODE >582:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D5D text28 CODE >588:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-D62 text28 CODE >589:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-177A text27 CODE >5:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isalpha.c
-177A text27 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isalpha.c
-1796 text27 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isalpha.c
-1715 text26 CODE >5:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isupper.c
-1715 text26 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isupper.c
-172B text26 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\isupper.c
-172C text25 CODE >5:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\islower.c
-172C text25 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\islower.c
-1742 text25 CODE >8:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\islower.c
-801 text24 CODE >4:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\toupper.c
-801 text24 CODE >6:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\toupper.c
-54D text23 CODE >623:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-54F text23 CODE >629:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-552 text23 CODE >630:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-557 text23 CODE >631:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-557 text23 CODE >632:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-573 text23 CODE >633:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-57B text23 CODE >634:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-57D text23 CODE >635:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-581 text23 CODE >639:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-591 text23 CODE >640:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-595 text23 CODE >641:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-597 text23 CODE >642:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-598 text23 CODE >643:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-59D text23 CODE >644:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-5A3 text23 CODE >645:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-5B9 text23 CODE >646:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-5F4 text23 CODE >647:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-600 text23 CODE >649:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-609 text23 CODE >650:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-60D text23 CODE >651:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-611 text23 CODE >652:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-642 text23 CODE >642:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-673 text23 CODE >656:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-676 text23 CODE >657:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-67A text23 CODE >658:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-683 text23 CODE >659:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-687 text23 CODE >660:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-690 text23 CODE >664:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-6A1 text23 CODE >665:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-2FB text22 CODE >670:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-2FD text22 CODE >680:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-30D text22 CODE >681:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-315 text22 CODE >683:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-31B text22 CODE >684:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-320 text22 CODE >688:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-322 text22 CODE >689:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-323 text22 CODE >691:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-323 text22 CODE >692:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-324 text22 CODE >693:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-32C text22 CODE >694:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-32D text22 CODE >695:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-32D text22 CODE >696:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-32F text22 CODE >699:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-32F text22 CODE >700:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-331 text22 CODE >703:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-331 text22 CODE >704:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-333 text22 CODE >707:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-333 text22 CODE >708:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-335 text22 CODE >712:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-33A text22 CODE >689:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-33F text22 CODE >714:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-364 text22 CODE >689:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-365 text22 CODE >716:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-368 text22 CODE >717:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-36C text22 CODE >723:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-37B text22 CODE >724:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-383 text22 CODE >725:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-390 text22 CODE >726:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-392 text22 CODE >727:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-394 text22 CODE >728:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-39B text22 CODE >731:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-3AA text22 CODE >732:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-3AB text22 CODE >733:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-3B4 text22 CODE >732:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-3DE text22 CODE >825:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-3FD text22 CODE >827:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-405 text22 CODE >828:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-421 text22 CODE >830:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-44A text22 CODE >1149:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-459 text22 CODE >1151:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-461 text22 CODE >1152:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-46E text22 CODE >1154:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-47B text22 CODE >1274:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-499 text22 CODE >1276:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-4A9 text22 CODE >1277:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-4B2 text22 CODE >1278:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-4C5 text22 CODE >1280:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-4F4 text22 CODE >1350:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-503 text22 CODE >1351:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-50B text22 CODE >1352:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-517 text22 CODE >1353:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-51D text22 CODE >1357:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-525 text22 CODE >1358:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-528 text22 CODE >1362:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-543 text22 CODE >1363:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-976 text21 CODE >1368:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-978 text21 CODE >1373:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-97C text21 CODE >1374:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-97F text21 CODE >1375:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-987 text21 CODE >1376:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-99B text21 CODE >1375:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-99C text21 CODE >1378:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-9A4 text21 CODE >1382:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\doprnt.c
-1681 text20 CODE >5:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\printf.c
-1681 text20 CODE >9:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\printf.c
-1686 text20 CODE >10:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\printf.c
-1691 text20 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\printf.c
-69 text19 CODE >421:C:\Users\2013b\Git\HABnova\main.c
-69 text19 CODE >423:C:\Users\2013b\Git\HABnova\main.c
-6B text19 CODE >425:C:\Users\2013b\Git\HABnova\main.c
-6D text19 CODE >430:C:\Users\2013b\Git\HABnova\main.c
-76 text19 CODE >433:C:\Users\2013b\Git\HABnova\main.c
-78 text19 CODE >435:C:\Users\2013b\Git\HABnova\main.c
-7A text19 CODE >439:C:\Users\2013b\Git\HABnova\main.c
-85 text19 CODE >441:C:\Users\2013b\Git\HABnova\main.c
-87 text19 CODE >443:C:\Users\2013b\Git\HABnova\main.c
-92 text19 CODE >445:C:\Users\2013b\Git\HABnova\main.c
-99 text19 CODE >446:C:\Users\2013b\Git\HABnova\main.c
-A0 text19 CODE >447:C:\Users\2013b\Git\HABnova\main.c
-A7 text19 CODE >448:C:\Users\2013b\Git\HABnova\main.c
-AE text19 CODE >449:C:\Users\2013b\Git\HABnova\main.c
-B5 text19 CODE >450:C:\Users\2013b\Git\HABnova\main.c
-BC text19 CODE >451:C:\Users\2013b\Git\HABnova\main.c
-C3 text19 CODE >452:C:\Users\2013b\Git\HABnova\main.c
-CA text19 CODE >453:C:\Users\2013b\Git\HABnova\main.c
-D1 text19 CODE >458:C:\Users\2013b\Git\HABnova\main.c
-D9 text19 CODE >460:C:\Users\2013b\Git\HABnova\main.c
-DD text19 CODE >463:C:\Users\2013b\Git\HABnova\main.c
-FC text19 CODE >469:C:\Users\2013b\Git\HABnova\main.c
-102 text19 CODE >471:C:\Users\2013b\Git\HABnova\main.c
-10A text19 CODE >492:C:\Users\2013b\Git\HABnova\main.c
-10C text19 CODE >493:C:\Users\2013b\Git\HABnova\main.c
-10D text19 CODE >495:C:\Users\2013b\Git\HABnova\main.c
-10D text19 CODE >496:C:\Users\2013b\Git\HABnova\main.c
-110 text19 CODE >497:C:\Users\2013b\Git\HABnova\main.c
-112 text19 CODE >501:C:\Users\2013b\Git\HABnova\main.c
-131 text19 CODE >503:C:\Users\2013b\Git\HABnova\main.c
-133 text19 CODE >504:C:\Users\2013b\Git\HABnova\main.c
-13A text19 CODE >506:C:\Users\2013b\Git\HABnova\main.c
-13E text19 CODE >508:C:\Users\2013b\Git\HABnova\main.c
-142 text19 CODE >510:C:\Users\2013b\Git\HABnova\main.c
-144 text19 CODE >511:C:\Users\2013b\Git\HABnova\main.c
-145 text19 CODE >513:C:\Users\2013b\Git\HABnova\main.c
-15B text19 CODE >514:C:\Users\2013b\Git\HABnova\main.c
-15C text19 CODE >516:C:\Users\2013b\Git\HABnova\main.c
-15E text19 CODE >517:C:\Users\2013b\Git\HABnova\main.c
-15F text19 CODE >518:C:\Users\2013b\Git\HABnova\main.c
-173 text19 CODE >519:C:\Users\2013b\Git\HABnova\main.c
-17A text19 CODE >524:C:\Users\2013b\Git\HABnova\main.c
-18E text19 CODE >525:C:\Users\2013b\Git\HABnova\main.c
-18F text19 CODE >528:C:\Users\2013b\Git\HABnova\main.c
-1A3 text19 CODE >529:C:\Users\2013b\Git\HABnova\main.c
-1A4 text19 CODE >531:C:\Users\2013b\Git\HABnova\main.c
-1BA text19 CODE >532:C:\Users\2013b\Git\HABnova\main.c
-1BB text19 CODE >535:C:\Users\2013b\Git\HABnova\main.c
-1CB text19 CODE >536:C:\Users\2013b\Git\HABnova\main.c
-1CC text19 CODE >538:C:\Users\2013b\Git\HABnova\main.c
-1E2 text19 CODE >539:C:\Users\2013b\Git\HABnova\main.c
-1E3 text19 CODE >542:C:\Users\2013b\Git\HABnova\main.c
-1F3 text19 CODE >543:C:\Users\2013b\Git\HABnova\main.c
-1F4 text19 CODE >545:C:\Users\2013b\Git\HABnova\main.c
-208 text19 CODE >546:C:\Users\2013b\Git\HABnova\main.c
-209 text19 CODE >548:C:\Users\2013b\Git\HABnova\main.c
-21D text19 CODE >549:C:\Users\2013b\Git\HABnova\main.c
-21E text19 CODE >551:C:\Users\2013b\Git\HABnova\main.c
-232 text19 CODE >552:C:\Users\2013b\Git\HABnova\main.c
-233 text19 CODE >554:C:\Users\2013b\Git\HABnova\main.c
-247 text19 CODE >555:C:\Users\2013b\Git\HABnova\main.c
-248 text19 CODE >557:C:\Users\2013b\Git\HABnova\main.c
-25C text19 CODE >558:C:\Users\2013b\Git\HABnova\main.c
-25D text19 CODE >560:C:\Users\2013b\Git\HABnova\main.c
-271 text19 CODE >561:C:\Users\2013b\Git\HABnova\main.c
-272 text19 CODE >563:C:\Users\2013b\Git\HABnova\main.c
-286 text19 CODE >564:C:\Users\2013b\Git\HABnova\main.c
-287 text19 CODE >567:C:\Users\2013b\Git\HABnova\main.c
-2B5 text19 CODE >568:C:\Users\2013b\Git\HABnova\main.c
-2BA text19 CODE >572:C:\Users\2013b\Git\HABnova\main.c
-2C1 text19 CODE >574:C:\Users\2013b\Git\HABnova\main.c
-2C8 text19 CODE >575:C:\Users\2013b\Git\HABnova\main.c
-2CF text19 CODE >576:C:\Users\2013b\Git\HABnova\main.c
-2D5 text19 CODE >577:C:\Users\2013b\Git\HABnova\main.c
-2DC text19 CODE >578:C:\Users\2013b\Git\HABnova\main.c
-2E3 text19 CODE >579:C:\Users\2013b\Git\HABnova\main.c
-2E9 text19 CODE >580:C:\Users\2013b\Git\HABnova\main.c
-2F0 text19 CODE >581:C:\Users\2013b\Git\HABnova\main.c
-2F7 text19 CODE >460:C:\Users\2013b\Git\HABnova\main.c
-2F8 text19 CODE >588:C:\Users\2013b\Git\HABnova\main.c
-2FA text19 CODE >589:C:\Users\2013b\Git\HABnova\main.c
-165A text18 CODE >56:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-165A text18 CODE >61:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-165D text18 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-165F text18 CODE >67:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1661 text18 CODE >70:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1663 text18 CODE >73:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1664 text18 CODE >76:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-1630 text17 CODE >58:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-1630 text17 CODE >61:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-1633 text17 CODE >63:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-1634 text17 CODE >65:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-1636 text17 CODE >66:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-89A text16 CODE >57:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-89A text16 CODE >62:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-89C text16 CODE >63:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-89D text16 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-89E text16 CODE >69:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8A1 text16 CODE >70:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8A3 text16 CODE >71:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8A5 text16 CODE >76:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8A8 text16 CODE >77:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8AA text16 CODE >78:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8AC text16 CODE >83:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8AE text16 CODE >84:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8AF text16 CODE >85:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8B0 text16 CODE >86:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8B2 text16 CODE >91:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8B4 text16 CODE >92:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8B5 text16 CODE >93:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8B6 text16 CODE >98:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8B9 text16 CODE >99:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8BB text16 CODE >100:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8BD text16 CODE >109:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8C0 text16 CODE >110:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-8C3 text16 CODE >111:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
-161E text15 CODE >125:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-161E text15 CODE >126:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-1623 text15 CODE >127:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-16A4 text14 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-16A4 text14 CODE >69:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-16A9 text14 CODE >72:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-16AC text14 CODE >75:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-16B1 text14 CODE >78:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-16B2 text14 CODE >81:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-16B3 text14 CODE >84:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-16B9 text14 CODE >85:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
-1665 text13 CODE >50:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-1665 text13 CODE >52:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-1668 text13 CODE >53:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-166B text13 CODE >54:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-166E text13 CODE >55:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-1670 text13 CODE >56:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
-B6D text12 CODE >243:C:\Users\2013b\Git\HABnova\main.c
-B6F text12 CODE >246:C:\Users\2013b\Git\HABnova\main.c
-B7F text12 CODE >249:C:\Users\2013b\Git\HABnova\main.c
-B83 text12 CODE >250:C:\Users\2013b\Git\HABnova\main.c
-B87 text12 CODE >251:C:\Users\2013b\Git\HABnova\main.c
-B8B text12 CODE >252:C:\Users\2013b\Git\HABnova\main.c
-B8D text12 CODE >253:C:\Users\2013b\Git\HABnova\main.c
-B91 text12 CODE >254:C:\Users\2013b\Git\HABnova\main.c
-B92 text12 CODE >255:C:\Users\2013b\Git\HABnova\main.c
-B99 text12 CODE >256:C:\Users\2013b\Git\HABnova\main.c
-BA0 text12 CODE >257:C:\Users\2013b\Git\HABnova\main.c
-BA1 text12 CODE >258:C:\Users\2013b\Git\HABnova\main.c
-BA2 text12 CODE >261:C:\Users\2013b\Git\HABnova\main.c
-BA6 text12 CODE >263:C:\Users\2013b\Git\HABnova\main.c
-BAF text12 CODE >264:C:\Users\2013b\Git\HABnova\main.c
-BB4 text12 CODE >265:C:\Users\2013b\Git\HABnova\main.c
-BBC text12 CODE >271:C:\Users\2013b\Git\HABnova\main.c
-BBD text12 CODE >278:C:\Users\2013b\Git\HABnova\main.c
-BC2 text12 CODE >282:C:\Users\2013b\Git\HABnova\main.c
-BC4 text12 CODE >286:C:\Users\2013b\Git\HABnova\main.c
-BE3 text12 CODE >288:C:\Users\2013b\Git\HABnova\main.c
-BE5 text12 CODE >292:C:\Users\2013b\Git\HABnova\main.c
-BEB text12 CODE >294:C:\Users\2013b\Git\HABnova\main.c
-BF2 text12 CODE >297:C:\Users\2013b\Git\HABnova\main.c
-BFA text12 CODE >298:C:\Users\2013b\Git\HABnova\main.c
-BFE text12 CODE >299:C:\Users\2013b\Git\HABnova\main.c
-1692 text11 CODE >225:C:\Users\2013b\Git\HABnova\main.c
-1693 text11 CODE >227:C:\Users\2013b\Git\HABnova\main.c
-16A3 text11 CODE >228:C:\Users\2013b\Git\HABnova\main.c
-822 text10 CODE >231:C:\Users\2013b\Git\HABnova\main.c
-823 text10 CODE >233:C:\Users\2013b\Git\HABnova\main.c
-82D text10 CODE >236:C:\Users\2013b\Git\HABnova\main.c
-839 text10 CODE >235:C:\Users\2013b\Git\HABnova\main.c
-844 text10 CODE >236:C:\Users\2013b\Git\HABnova\main.c
-AAD text9 CODE >315:C:\Users\2013b\Git\HABnova\main.c
-AAD text9 CODE >317:C:\Users\2013b\Git\HABnova\main.c
-AB1 text9 CODE >319:C:\Users\2013b\Git\HABnova\main.c
-AB3 text9 CODE >320:C:\Users\2013b\Git\HABnova\main.c
-AB7 text9 CODE >321:C:\Users\2013b\Git\HABnova\main.c
-ABF text9 CODE >323:C:\Users\2013b\Git\HABnova\main.c
-AC1 text9 CODE >324:C:\Users\2013b\Git\HABnova\main.c
-ACE text9 CODE >317:C:\Users\2013b\Git\HABnova\main.c
-ACF text9 CODE >326:C:\Users\2013b\Git\HABnova\main.c
-AD0 text9 CODE >329:C:\Users\2013b\Git\HABnova\main.c
-AD7 text9 CODE >330:C:\Users\2013b\Git\HABnova\main.c
-ADF text9 CODE >331:C:\Users\2013b\Git\HABnova\main.c
-AE7 text9 CODE >332:C:\Users\2013b\Git\HABnova\main.c
-AEF text9 CODE >333:C:\Users\2013b\Git\HABnova\main.c
-AF7 text9 CODE >334:C:\Users\2013b\Git\HABnova\main.c
-AFE text9 CODE >335:C:\Users\2013b\Git\HABnova\main.c
-7EF text8 CODE >144:C:\Users\2013b\Git\HABnova\main.c
-7F0 text8 CODE >146:C:\Users\2013b\Git\HABnova\main.c
-7F3 text8 CODE >148:C:\Users\2013b\Git\HABnova\main.c
-7F6 text8 CODE >152:C:\Users\2013b\Git\HABnova\main.c
-7F8 text8 CODE >156:C:\Users\2013b\Git\HABnova\main.c
-7FF text8 CODE >162:C:\Users\2013b\Git\HABnova\main.c
-91C text7 CODE >164:C:\Users\2013b\Git\HABnova\main.c
-91D text7 CODE >175:C:\Users\2013b\Git\HABnova\main.c
-921 text7 CODE >177:C:\Users\2013b\Git\HABnova\main.c
-923 text7 CODE >179:C:\Users\2013b\Git\HABnova\main.c
-932 text7 CODE >180:C:\Users\2013b\Git\HABnova\main.c
-941 text7 CODE >182:C:\Users\2013b\Git\HABnova\main.c
-945 text7 CODE >183:C:\Users\2013b\Git\HABnova\main.c
-948 text7 CODE >184:C:\Users\2013b\Git\HABnova\main.c
-849 text6 CODE >186:C:\Users\2013b\Git\HABnova\main.c
-849 text6 CODE >191:C:\Users\2013b\Git\HABnova\main.c
-856 text6 CODE >194:C:\Users\2013b\Git\HABnova\main.c
-862 text6 CODE >193:C:\Users\2013b\Git\HABnova\main.c
-86C text6 CODE >194:C:\Users\2013b\Git\HABnova\main.c
-9A5 text5 CODE >102:C:\Users\2013b\Git\HABnova\main.c
-9A5 text5 CODE >105:C:\Users\2013b\Git\HABnova\main.c
-9B1 text5 CODE >106:C:\Users\2013b\Git\HABnova\main.c
-9B3 text5 CODE >108:C:\Users\2013b\Git\HABnova\main.c
-9B5 text5 CODE >110:C:\Users\2013b\Git\HABnova\main.c
-9C1 text5 CODE >111:C:\Users\2013b\Git\HABnova\main.c
-9C2 text5 CODE >114:C:\Users\2013b\Git\HABnova\main.c
-9C7 text5 CODE >115:C:\Users\2013b\Git\HABnova\main.c
-9C7 text5 CODE >116:C:\Users\2013b\Git\HABnova\main.c
-AFF text4 CODE >122:C:\Users\2013b\Git\HABnova\main.c
-B01 text4 CODE >128:C:\Users\2013b\Git\HABnova\main.c
-B05 text4 CODE >130:C:\Users\2013b\Git\HABnova\main.c
-B07 text4 CODE >140:C:\Users\2013b\Git\HABnova\main.c
-B13 text4 CODE >132:C:\Users\2013b\Git\HABnova\main.c
-B1E text4 CODE >133:C:\Users\2013b\Git\HABnova\main.c
-B2A text4 CODE >135:C:\Users\2013b\Git\HABnova\main.c
-B3B text4 CODE >139:C:\Users\2013b\Git\HABnova\main.c
-B43 text4 CODE >137:C:\Users\2013b\Git\HABnova\main.c
-B4D text4 CODE >138:C:\Users\2013b\Git\HABnova\main.c
-B5D text4 CODE >139:C:\Users\2013b\Git\HABnova\main.c
-B62 text4 CODE >140:C:\Users\2013b\Git\HABnova\main.c
-B67 text4 CODE >141:C:\Users\2013b\Git\HABnova\main.c
-B6C text4 CODE >142:C:\Users\2013b\Git\HABnova\main.c
-949 text3 CODE >9:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-949 text3 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-94E text3 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-956 text3 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-958 text3 CODE >18:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-95A text3 CODE >19:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-969 text3 CODE >20:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-975 text3 CODE >23:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-1797 text2 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcpy.c
-1797 text2 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcpy.c
-179B text2 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcpy.c
-179F text2 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcpy.c
-16BA text1 CODE >3:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcat.c
-16BA text1 CODE >5:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcat.c
-16CF text1 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcat.c
-D63 maintext CODE >595:C:\Users\2013b\Git\HABnova\main.c
-D63 maintext CODE >597:C:\Users\2013b\Git\HABnova\main.c
-D66 maintext CODE >598:C:\Users\2013b\Git\HABnova\main.c
-D67 maintext CODE >599:C:\Users\2013b\Git\HABnova\main.c
-D6E maintext CODE >601:C:\Users\2013b\Git\HABnova\main.c
-D71 maintext CODE >603:C:\Users\2013b\Git\HABnova\main.c
-D74 maintext CODE >606:C:\Users\2013b\Git\HABnova\main.c
-D7C maintext CODE >607:C:\Users\2013b\Git\HABnova\main.c
-D84 maintext CODE >608:C:\Users\2013b\Git\HABnova\main.c
-D8A maintext CODE >612:C:\Users\2013b\Git\HABnova\main.c
-DAA maintext CODE >616:C:\Users\2013b\Git\HABnova\main.c
-DCE maintext CODE >621:C:\Users\2013b\Git\HABnova\main.c
-DE7 maintext CODE >622:C:\Users\2013b\Git\HABnova\main.c
-DF8 maintext CODE >623:C:\Users\2013b\Git\HABnova\main.c
-DFD maintext CODE >626:C:\Users\2013b\Git\HABnova\main.c
-DFF maintext CODE >627:C:\Users\2013b\Git\HABnova\main.c
-E07 maintext CODE >628:C:\Users\2013b\Git\HABnova\main.c
-E0F maintext CODE >629:C:\Users\2013b\Git\HABnova\main.c
-E12 maintext CODE >634:C:\Users\2013b\Git\HABnova\main.c
-E15 maintext CODE >637:C:\Users\2013b\Git\HABnova\main.c
-E18 maintext CODE >639:C:\Users\2013b\Git\HABnova\main.c
-E20 maintext CODE >640:C:\Users\2013b\Git\HABnova\main.c
-1624 clrtext CODE >6195:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1624 clrtext CODE >6196:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1625 clrtext CODE >6197:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1625 clrtext CODE >6198:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1626 clrtext CODE >6199:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1627 clrtext CODE >6200:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1628 clrtext CODE >6201:C:\Users\2013b\AppData\Local\Temp\s7vk.
-1629 clrtext CODE >6202:C:\Users\2013b\AppData\Local\Temp\s7vk.
-162A inittext CODE >6143:C:\Users\2013b\AppData\Local\Temp\s7vk.
-162A inittext CODE >6144:C:\Users\2013b\AppData\Local\Temp\s7vk.
-162B inittext CODE >6145:C:\Users\2013b\AppData\Local\Temp\s7vk.
-162B inittext CODE >6146:C:\Users\2013b\AppData\Local\Temp\s7vk.
-162C inittext CODE >6147:C:\Users\2013b\AppData\Local\Temp\s7vk.
-162D inittext CODE >6148:C:\Users\2013b\AppData\Local\Temp\s7vk.
-162E inittext CODE >6149:C:\Users\2013b\AppData\Local\Temp\s7vk.
-162F inittext CODE >6150:C:\Users\2013b\AppData\Local\Temp\s7vk.
+C intentry CODE >58:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
+D intentry CODE >59:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
+F intentry CODE >61:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
+15 intentry CODE >63:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
+18 intentry CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
+19 intentry CODE >65:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
+1F intentry CODE >67:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
+21 intentry CODE >78:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
+833 text23_split_1 CODE >1166:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+8B2 text23_split_1 CODE >1167:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+950 text23_split_1 CODE >1168:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+9B7 text23_split_1 CODE >1169:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+B04 text23_split_1 CODE >1171:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+B8D text23_split_1 CODE >1174:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+B97 text23_split_1 CODE >1176:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+BDF text23_split_1 CODE >1177:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+C93 text23_split_1 CODE >1178:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+DE6 text23_split_1 CODE >1179:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+E62 text23_split_1 CODE >1180:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+F28 text23_split_1 CODE >1181:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+FCC text23_split_1 CODE >1182:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+FD7 text23_split_1 CODE >1184:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+FDD text23_split_1 CODE >1186:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+FE8 text23_split_1 CODE >1188:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+FF0 text23_split_1 CODE >1194:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+FF0 text23_split_1 CODE >1196:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+FFF text23_split_1 CODE >1197:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+2 text46 CODE >742:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+2 text46 CODE >745:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+3 text46 CODE >746:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EE2 text45 CODE >565:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EE2 text45 CODE >569:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EE6 text45 CODE >572:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EEB text45 CODE >574:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EEF text45 CODE >575:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EF0 text45 CODE >576:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EF0 text45 CODE >578:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EF2 text45 CODE >581:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F23 text44 CODE >583:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F24 text44 CODE >586:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F26 text44 CODE >589:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F2F text44 CODE >592:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F3E text44 CODE >596:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F40 text44 CODE >598:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4C0 text43 CODE >235:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4C0 text43 CODE >243:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4C1 text43 CODE >247:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4C4 text43 CODE >250:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4C5 text43 CODE >251:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4C7 text43 CODE >252:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4D6 text43 CODE >255:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4D8 text43 CODE >263:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4D8 text43 CODE >265:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4DA text43 CODE >268:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4DE text43 CODE >269:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4E6 text43 CODE >270:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4ED text43 CODE >272:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4F1 text43 CODE >275:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4F5 text43 CODE >278:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4F9 text43 CODE >283:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4FA text43 CODE >286:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4FD text43 CODE >289:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+4FE text43 CODE >293:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+500 text43 CODE >296:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+506 text43 CODE >301:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+507 text43 CODE >313:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+507 text43 CODE >315:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+50A text43 CODE >317:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+50F text43 CODE >318:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+512 text43 CODE >319:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+513 text43 CODE >323:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+51B text43 CODE >326:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+51D text43 CODE >330:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+522 text43 CODE >331:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+523 text43 CODE >335:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+529 text43 CODE >341:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+529 text43 CODE >343:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+52C text43 CODE >345:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+531 text43 CODE >346:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+534 text43 CODE >347:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+535 text43 CODE >348:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+535 text43 CODE >352:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+536 text43 CODE >356:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+53E text43 CODE >359:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+53F text43 CODE >362:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+543 text43 CODE >383:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+546 text43 CODE >386:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+54E text43 CODE >387:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+557 text43 CODE >388:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+55E text43 CODE >414:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+561 text43 CODE >415:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+563 text43 CODE >418:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+568 text43 CODE >419:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+569 text43 CODE >428:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+569 text43 CODE >431:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+56C text43 CODE >434:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+571 text43 CODE >437:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+573 text43 CODE >440:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+576 text43 CODE >442:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+577 text43 CODE >446:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+57D text43 CODE >451:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+581 text43 CODE >454:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+585 text43 CODE >456:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+588 text43 CODE >457:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+589 text43 CODE >458:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+589 text43 CODE >466:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+58C text43 CODE >476:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+599 text43 CODE >481:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+599 text43 CODE >484:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+59C text43 CODE >488:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5A1 text43 CODE >491:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5A4 text43 CODE >494:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5A6 text43 CODE >495:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5A7 text43 CODE >496:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5A7 text43 CODE >498:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5A8 text43 CODE >499:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5AE text43 CODE >508:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5B2 text43 CODE >511:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5B4 text43 CODE >513:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5B5 text43 CODE >518:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5C1 text43 CODE >521:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5C5 text43 CODE >528:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5C7 text43 CODE >531:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5CC text43 CODE >532:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5CD text43 CODE >533:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5CD text43 CODE >538:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5CF text43 CODE >540:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5D1 text43 CODE >544:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5D3 text43 CODE >545:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5D4 text43 CODE >551:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5D7 text43 CODE >552:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5D8 text43 CODE >558:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5DC text43 CODE >559:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5DF text43 CODE >560:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+5E0 text43 CODE >562:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+60C text43 CODE >563:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EAF text42 CODE >10:C:\Users\2013b\Git\HABnova\main.c
+1EAF text42 CODE >12:C:\Users\2013b\Git\HABnova\main.c
+1EB7 text42 CODE >13:C:\Users\2013b\Git\HABnova\main.c
+1000 text41 CODE >129:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1000 text41 CODE >132:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1ED2 text40 CODE >108:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1ED2 text40 CODE >112:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1ED3 text40 CODE >114:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1ED7 text40 CODE >116:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1EDC text40 CODE >118:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1EE1 text40 CODE >122:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1EF3 text38 CODE >12:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+1EF3 text38 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+1EF7 text38 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+1EFE text38 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+1F02 text38 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+1F03 text38 CODE >25:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+1F09 text38 CODE >26:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+1F88 text37 CODE >39:C:\Users\2013b\Git\HABnova\main.c
+1F88 text37 CODE >41:C:\Users\2013b\Git\HABnova\main.c
+1F95 text37 CODE >44:C:\Users\2013b\Git\HABnova\main.c
+1FA1 text37 CODE >43:C:\Users\2013b\Git\HABnova\main.c
+1FA9 text37 CODE >44:C:\Users\2013b\Git\HABnova\main.c
+1016 text36 CODE >27:C:\Users\2013b\Git\HABnova\main.c
+1016 text36 CODE >29:C:\Users\2013b\Git\HABnova\main.c
+1018 text36 CODE >31:C:\Users\2013b\Git\HABnova\main.c
+101A text36 CODE >32:C:\Users\2013b\Git\HABnova\main.c
+1025 text36 CODE >33:C:\Users\2013b\Git\HABnova\main.c
+1027 text36 CODE >34:C:\Users\2013b\Git\HABnova\main.c
+1032 text36 CODE >35:C:\Users\2013b\Git\HABnova\main.c
+1EB8 text35 CODE >56:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
+1EB8 text35 CODE >61:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
+1EBB text35 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
+1EBD text35 CODE >67:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
+1EBF text35 CODE >70:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
+1EC1 text35 CODE >73:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
+1EC2 text35 CODE >76:C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
+1F0A text34 CODE >198:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F0A text34 CODE >200:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F0E text34 CODE >201:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F12 text34 CODE >202:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F13 text34 CODE >203:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F14 text34 CODE >205:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F15 text34 CODE >208:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F17 text34 CODE >210:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F19 text34 CODE >212:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F1A text34 CODE >214:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F1C text34 CODE >217:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F1E text34 CODE >218:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F1F text34 CODE >221:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F21 text34 CODE >222:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F22 text34 CODE >224:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1EA8 text33 CODE >59:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1EA8 text33 CODE >62:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1EAB text33 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1EAC text33 CODE >66:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1EAE text33 CODE >67:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+800 text32 CODE >57:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+800 text32 CODE >62:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+802 text32 CODE >63:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+803 text32 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+804 text32 CODE >69:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+807 text32 CODE >70:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+809 text32 CODE >71:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+80B text32 CODE >76:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+80E text32 CODE >77:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+810 text32 CODE >78:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+812 text32 CODE >83:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+814 text32 CODE >84:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+815 text32 CODE >85:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+816 text32 CODE >86:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+818 text32 CODE >91:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+81A text32 CODE >92:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+81B text32 CODE >93:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+81C text32 CODE >98:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+81F text32 CODE >99:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+821 text32 CODE >100:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+823 text32 CODE >109:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+826 text32 CODE >110:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+828 text32 CODE >111:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+82B text32 CODE >112:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+82D text32 CODE >113:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+82F text32 CODE >114:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+832 text32 CODE >115:C:\Users\2013b\Git\HABnova\mcc_generated_files/pin_manager.c
+1E9C text31 CODE >125:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1E9C text31 CODE >126:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1EA1 text31 CODE >127:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1001 text30 CODE >64:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1001 text30 CODE >69:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1005 text30 CODE >72:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1008 text30 CODE >75:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+100D text30 CODE >78:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+100E text30 CODE >81:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+100F text30 CODE >84:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1015 text30 CODE >85:C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
+1EC3 text29 CODE >50:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1EC3 text29 CODE >52:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1EC6 text29 CODE >53:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1EC9 text29 CODE >54:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1ECC text29 CODE >55:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1ECF text29 CODE >56:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+1ED1 text29 CODE >57:C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
+13D9 text28 CODE >5:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+13D9 text28 CODE >13:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+13DA text28 CODE >14:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+13DC text28 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+13E7 text28 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+13E9 text28 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+13E9 text28 CODE >18:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+13EB text28 CODE >19:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+13F6 text28 CODE >20:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+13FA text28 CODE >22:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1402 text28 CODE >23:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1408 text28 CODE >24:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+140A text28 CODE >25:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+140C text28 CODE >26:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1413 text28 CODE >27:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1417 text28 CODE >25:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1418 text28 CODE >30:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+141F text28 CODE >31:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+142F text28 CODE >32:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1437 text28 CODE >33:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1438 text28 CODE >35:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+143F text28 CODE >36:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1443 text28 CODE >38:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1446 text28 CODE >39:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1451 text28 CODE >40:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+1459 text28 CODE >41:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
+106F text27 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
+106F text27 CODE >119:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
+1077 text27 CODE >121:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
+1079 text27 CODE >122:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
+1081 text27 CODE >123:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
+1088 text27 CODE >124:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
+108F text27 CODE >125:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
+1095 text27 CODE >128:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
+109D text27 CODE >129:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
+65 text26 CODE >1263:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+67 text26 CODE >1274:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+80 text26 CODE >1275:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+9C text26 CODE >1276:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+BA text26 CODE >1277:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+DF text26 CODE >1278:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+125 text26 CODE >1279:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+158 text26 CODE >1280:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+190 text26 CODE >1281:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1C6 text26 CODE >1282:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+20E text26 CODE >1283:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+229 text26 CODE >1284:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+285 text26 CODE >1285:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+2C9 text26 CODE >1286:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+2D3 text26 CODE >1287:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+2E7 text26 CODE >1288:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+302 text26 CODE >1289:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+30D text26 CODE >1291:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+315 text26 CODE >1292:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+315 text26 CODE >1294:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+31D text26 CODE >1295:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1616 text25 CODE >7:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1616 text25 CODE >15:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1617 text25 CODE >16:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+161F text25 CODE >17:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+163E text25 CODE >18:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1641 text25 CODE >20:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1649 text25 CODE >21:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1668 text25 CODE >22:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+166D text25 CODE >24:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1677 text25 CODE >25:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1682 text25 CODE >26:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1684 text25 CODE >27:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1686 text25 CODE >28:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+168E text25 CODE >29:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1692 text25 CODE >27:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1693 text25 CODE >32:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+169B text25 CODE >33:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+16BB text25 CODE >34:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+16CB text25 CODE >35:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+16CC text25 CODE >37:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+16D4 text25 CODE >38:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+16D8 text25 CODE >40:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+16DB text25 CODE >41:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+16F9 text25 CODE >42:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+170A text25 CODE >43:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
+1189 text24 CODE >91:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
+1189 text24 CODE >333:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
+1193 text24 CODE >335:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
+1195 text24 CODE >336:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
+11A5 text24 CODE >337:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
+11AD text24 CODE >338:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
+11B5 text24 CODE >339:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
+11BF text24 CODE >353:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
+11CF text24 CODE >354:K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
+737 text23 CODE >1154:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+738 text23 CODE >1163:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+740 text23 CODE >1165:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+79C text23 CODE >1166:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+31E text22 CODE >1121:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+320 text22 CODE >1128:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+328 text22 CODE >1130:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+361 text22 CODE >1131:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+399 text22 CODE >1132:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+3CB text22 CODE >1133:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+431 text22 CODE >1134:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+44A text22 CODE >1135:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+48D text22 CODE >1136:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+499 text22 CODE >1138:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+4A1 text22 CODE >1140:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+4AF text22 CODE >1142:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+4B7 text22 CODE >1143:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+4B7 text22 CODE >1145:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+4BF text22 CODE >1146:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+145A text21 CODE >729:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+145C text21 CODE >734:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+145D text21 CODE >736:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1466 text21 CODE >739:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1471 text21 CODE >740:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+147A text21 CODE >741:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1485 text21 CODE >744:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1489 text21 CODE >747:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14A2 text21 CODE >749:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14A5 text21 CODE >752:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14BD text21 CODE >754:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14C0 text21 CODE >757:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14DA text21 CODE >760:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14DA text21 CODE >762:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14DC text21 CODE >765:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14DE text21 CODE >766:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1FD5 text20 CODE >708:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FD5 text20 CODE >709:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FD6 text20 CODE >714:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FE4 text20 CODE >716:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FED text20 CODE >717:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FF6 text20 CODE >718:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FFF text20 CODE >719:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1E94 text19 CODE >644:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1E94 text19 CODE >646:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11D0 text18 CODE >654:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11D0 text18 CODE >655:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11D1 text18 CODE >661:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11D4 text18 CODE >663:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11DB text18 CODE >665:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11E3 text18 CODE >666:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11EB text18 CODE >667:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11F4 text18 CODE >668:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11F8 text18 CODE >671:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+11FC text18 CODE >674:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1200 text18 CODE >679:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1201 text18 CODE >682:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1205 text18 CODE >685:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1207 text18 CODE >691:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+120C text18 CODE >695:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1213 text18 CODE >697:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1215 text18 CODE >702:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1217 text18 CODE >706:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FAE text17 CODE >621:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FAE text17 CODE >631:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FB1 text17 CODE >633:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FC2 text17 CODE >634:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FCD text17 CODE >635:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FCE text17 CODE >638:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1FD4 text17 CODE >641:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F41 text16 CODE >721:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F41 text16 CODE >722:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F42 text16 CODE >727:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F50 text16 CODE >728:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F59 text16 CODE >729:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+1F62 text16 CODE >730:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+7D8 text15 CODE >600:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+7D8 text15 CODE >601:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+7D9 text15 CODE >609:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+7DC text15 CODE >611:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+7ED text15 CODE >612:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+7F8 text15 CODE >613:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+7F9 text15 CODE >616:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+7FF text15 CODE >619:C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
+109E text14 CODE >605:C:\Users\2013b\Git\HABnova\main.c
+109E text14 CODE >607:C:\Users\2013b\Git\HABnova\main.c
+109F text14 CODE >608:C:\Users\2013b\Git\HABnova\main.c
+10B0 text14 CODE >609:C:\Users\2013b\Git\HABnova\main.c
+10B4 text14 CODE >611:C:\Users\2013b\Git\HABnova\main.c
+10CA text14 CODE >612:C:\Users\2013b\Git\HABnova\main.c
+10CE text14 CODE >614:C:\Users\2013b\Git\HABnova\main.c
+10D2 text14 CODE >620:C:\Users\2013b\Git\HABnova\main.c
+10D2 text14 CODE >621:C:\Users\2013b\Git\HABnova\main.c
+10D3 text14 CODE >622:C:\Users\2013b\Git\HABnova\main.c
+1F63 text13 CODE >1421:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1F64 text13 CODE >1425:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1F82 text13 CODE >1428:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1F84 text13 CODE >1429:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1F85 text13 CODE >1433:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1F86 text13 CODE >1436:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1F87 text13 CODE >1437:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1147 text12 CODE >409:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1148 text12 CODE >414:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1150 text12 CODE >417:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1153 text12 CODE >420:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+115B text12 CODE >422:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1160 text12 CODE >426:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1180 text12 CODE >429:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1183 text12 CODE >431:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1187 text12 CODE >433:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1187 text12 CODE >435:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1188 text12 CODE >436:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+60D text11 CODE >699:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+60F text11 CODE >707:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+627 text11 CODE >708:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+63F text11 CODE >709:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+657 text11 CODE >710:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+67F text11 CODE >713:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+698 text11 CODE >714:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+6B1 text11 CODE >715:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+6C9 text11 CODE >716:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+6F2 text11 CODE >719:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+70B text11 CODE >720:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+71D text11 CODE >721:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+736 text11 CODE >722:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+12AA text10 CODE >660:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+12AC text10 CODE >667:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+12B7 text10 CODE >668:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+12C5 text10 CODE >671:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+12CE text10 CODE >672:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+12D5 text10 CODE >675:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+12ED text10 CODE >676:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+12F0 text10 CODE >679:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+12F9 text10 CODE >684:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+110D text9 CODE >70:C:\Users\2013b\Git\HABnova\main.c
+110D text9 CODE >72:C:\Users\2013b\Git\HABnova\main.c
+111D text9 CODE >73:C:\Users\2013b\Git\HABnova\main.c
+111D text9 CODE >76:C:\Users\2013b\Git\HABnova\main.c
+1142 text9 CODE >75:C:\Users\2013b\Git\HABnova\main.c
+1146 text9 CODE >73:C:\Users\2013b\Git\HABnova\main.c
+1260 text8 CODE >623:C:\Users\2013b\Git\HABnova\main.c
+1260 text8 CODE >625:C:\Users\2013b\Git\HABnova\main.c
+1261 text8 CODE >626:C:\Users\2013b\Git\HABnova\main.c
+1265 text8 CODE >627:C:\Users\2013b\Git\HABnova\main.c
+1265 text8 CODE >643:C:\Users\2013b\Git\HABnova\main.c
+1277 text8 CODE >629:C:\Users\2013b\Git\HABnova\main.c
+1288 text8 CODE >630:C:\Users\2013b\Git\HABnova\main.c
+128C text8 CODE >632:C:\Users\2013b\Git\HABnova\main.c
+129D text8 CODE >633:C:\Users\2013b\Git\HABnova\main.c
+12A1 text8 CODE >635:C:\Users\2013b\Git\HABnova\main.c
+12A3 text8 CODE >642:C:\Users\2013b\Git\HABnova\main.c
+12A7 text8 CODE >627:C:\Users\2013b\Git\HABnova\main.c
+12A8 text8 CODE >644:C:\Users\2013b\Git\HABnova\main.c
+12A9 text8 CODE >645:C:\Users\2013b\Git\HABnova\main.c
+1042 text7 CODE >1338:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1043 text7 CODE >1342:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1045 text7 CODE >1346:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1049 text7 CODE >1344:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+105A text7 CODE >1345:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+106A text7 CODE >1346:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1578 text6 CODE >442:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1579 text6 CODE >447:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+157D text6 CODE >449:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1581 text6 CODE >455:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1589 text6 CODE >458:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1592 text6 CODE >460:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1595 text6 CODE >462:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+159C text6 CODE >465:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+15A4 text6 CODE >467:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+15A5 text6 CODE >470:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+15A9 text6 CODE >469:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+15BA text6 CODE >470:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+15BF text6 CODE >474:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+15C3 text6 CODE >479:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+15D3 text6 CODE >480:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+15DE text6 CODE >484:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+15E5 text6 CODE >486:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1608 text6 CODE >489:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+160B text6 CODE >491:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+160D text6 CODE >496:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1612 text6 CODE >499:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1612 text6 CODE >501:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1614 text6 CODE >504:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1615 text6 CODE >505:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+10D4 text5 CODE >631:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+10D5 text5 CODE >634:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+10D9 text5 CODE >637:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+10DD text5 CODE >640:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+10E5 text5 CODE >643:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+10E8 text5 CODE >646:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+10F9 text5 CODE >649:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+110B text5 CODE >652:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+110C text5 CODE >653:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14DF text4 CODE >1376:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14E0 text4 CODE >1378:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14E5 text4 CODE >1384:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+14F6 text4 CODE >1385:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1503 text4 CODE >1386:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1519 text4 CODE >1387:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1525 text4 CODE >1388:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1534 text4 CODE >1389:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+154A text4 CODE >1390:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+155B text4 CODE >1391:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+156A text4 CODE >1392:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1577 text4 CODE >1393:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+170B text3 CODE >1353:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+170C text3 CODE >1355:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1711 text3 CODE >1357:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1721 text3 CODE >1358:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1734 text3 CODE >1359:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1747 text3 CODE >1360:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+175A text3 CODE >1361:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+176D text3 CODE >1362:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1780 text3 CODE >1363:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1793 text3 CODE >1364:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+17A6 text3 CODE >1365:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+17B9 text3 CODE >1366:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+17CC text3 CODE >1367:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+17DF text3 CODE >1368:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+17F2 text3 CODE >1369:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+17FF text3 CODE >1370:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1218 text2 CODE >1302:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1219 text2 CODE >1308:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1223 text2 CODE >1311:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1236 text2 CODE >1312:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1239 text2 CODE >1317:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1241 text2 CODE >1321:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1254 text2 CODE >1322:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1257 text2 CODE >1327:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+125E text2 CODE >1331:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+125F text2 CODE >1332:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1372 text1 CODE >357:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1374 text1 CODE >362:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1378 text1 CODE >363:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1379 text1 CODE >366:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1381 text1 CODE >369:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1385 text1 CODE >374:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+1398 text1 CODE >377:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+139F text1 CODE >379:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13A7 text1 CODE >382:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13AE text1 CODE >383:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13B1 text1 CODE >386:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13B9 text1 CODE >392:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13CB text1 CODE >393:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13CD text1 CODE >371:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13D0 text1 CODE >397:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13D3 text1 CODE >399:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13D7 text1 CODE >401:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13D7 text1 CODE >403:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+13D8 text1 CODE >404:C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
+130C maintext CODE >650:C:\Users\2013b\Git\HABnova\main.c
+130C maintext CODE >653:C:\Users\2013b\Git\HABnova\main.c
+130F maintext CODE >654:C:\Users\2013b\Git\HABnova\main.c
+1310 maintext CODE >655:C:\Users\2013b\Git\HABnova\main.c
+1317 maintext CODE >661:C:\Users\2013b\Git\HABnova\main.c
+131C maintext CODE >662:C:\Users\2013b\Git\HABnova\main.c
+131E maintext CODE >663:C:\Users\2013b\Git\HABnova\main.c
+1322 maintext CODE >664:C:\Users\2013b\Git\HABnova\main.c
+1326 maintext CODE >665:C:\Users\2013b\Git\HABnova\main.c
+132A maintext CODE >667:C:\Users\2013b\Git\HABnova\main.c
+132E maintext CODE >677:C:\Users\2013b\Git\HABnova\main.c
+1339 maintext CODE >678:C:\Users\2013b\Git\HABnova\main.c
+1344 maintext CODE >690:C:\Users\2013b\Git\HABnova\main.c
+1354 maintext CODE >722:C:\Users\2013b\Git\HABnova\main.c
+1357 maintext CODE >724:C:\Users\2013b\Git\HABnova\main.c
+135F maintext CODE >725:C:\Users\2013b\Git\HABnova\main.c
+1EA2 clrtext CODE >6631:C:\Users\2013b\AppData\Local\Temp\s9us.
+1EA2 clrtext CODE >6632:C:\Users\2013b\AppData\Local\Temp\s9us.
+1EA3 clrtext CODE >6633:C:\Users\2013b\AppData\Local\Temp\s9us.
+1EA3 clrtext CODE >6634:C:\Users\2013b\AppData\Local\Temp\s9us.
+1EA4 clrtext CODE >6635:C:\Users\2013b\AppData\Local\Temp\s9us.
+1EA5 clrtext CODE >6636:C:\Users\2013b\AppData\Local\Temp\s9us.
+1EA6 clrtext CODE >6637:C:\Users\2013b\AppData\Local\Temp\s9us.
+1EA7 clrtext CODE >6638:C:\Users\2013b\AppData\Local\Temp\s9us.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -903,35 +826,38 @@ E20 maintext CODE >640:C:\Users\2013b\Git\HABnova\main.c
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-GPS_HasAcknowledged@i 31 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+compensate_humidity@var1 50 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+compensate_humidity@var2 54 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+compensate_humidity@var3 60 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+compensate_humidity@var4 58 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+compensate_humidity@var5 5C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 ___latbits 2 0 ABS 0 - dist/default/production\HABnova.production.o
-_EUSART_Read 2CA0 0 CODE 0 text45 dist/default/production\HABnova.production.o
-__LdataBANK1 0 0 ABS 0 dataBANK1 -
-__LdataBANK2 0 0 ABS 0 dataBANK2 -
-__LdataBANK4 0 0 ABS 0 dataBANK4 -
-GetNavData@dataFieldType D6 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-_GPS_HasAcknowledged 16DA 0 CODE 0 text12 dist/default/production\HABnova.production.o
-?_crc_append_byte 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+_p_i2c_current 79 0 COMMON 1 bssCOMMON dist/default/production\HABnova.production.o
+__LdataBANK3 0 0 ABS 0 dataBANK3 -
+bme280_set_regs@rslt 52 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __Hspace_0 800A 0 ABS 0 - -
 __Hspace_1 369 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-__HidataBANK1 0 0 ABS 0 idataBANK1 -
-__HidataBANK2 0 0 ABS 0 idataBANK2 -
-__HidataBANK4 0 0 ABS 0 idataBANK4 -
-_setNavFlightMode 220 0 BANK4 1 dataBANK4 dist/default/production\HABnova.production.o
-stoa@F1139 164 0 BANK2 1 dataBANK2 dist/default/production\HABnova.production.o
-__end_of_crc_append_byte 13AC 0 CODE 0 text5 dist/default/production\HABnova.production.o
+_interleave_reg_addr 2084 0 CODE 0 text7 dist/default/production\HABnova.production.o
+WriteEnvSensor@dev_id 2A 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+compensate_pressure@var1 DD 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+compensate_pressure@var2 CD 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+compensate_pressure@var4 D5 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+__HidataBANK3 0 0 ABS 0 idataBANK3 -
+_i2c_tr_queue 14B 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
+__end_of_compensate_pressure 2000 0 CODE 0 text23_split_1 dist/default/production\HABnova.production.o
+__size_of_compensate_temperature 0 0 ABS 0 - dist/default/production\HABnova.production.o
+__size_of_I2C_ISR 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-isalpha@c 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+bme280_get_sensor_data@comp_data EB 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
-_gps_altitude 1D1 0 BANK3 1 bssBANK3 dist/default/production\HABnova.production.o
-__end_of_GetNavData 5F6 0 CODE 0 text19 dist/default/production\HABnova.production.o
-?_abs 73 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-?_pad 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-main@i DE 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+I2C_MasterWrite@pdata 29 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_MasterWrite@pflag 26 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_I2C_FunctionComplete 3DC4 0 CODE 0 text45 dist/default/production\HABnova.production.o
+main@i 1A3 0 BANK3 1 cstackBANK3 dist/default/production\HABnova.production.o
+ReadEnvSensor@reg_addr 2E 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __Hstrings 0 0 ABS 0 strings -
-?_vfprintf 5B 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 _LATA 10C 0 ABS 0 - dist/default/production\HABnova.production.o
 _LATB 10D 0 ABS 0 - dist/default/production\HABnova.production.o
 _LATC 10E 0 ABS 0 - dist/default/production\HABnova.production.o
@@ -939,184 +865,151 @@ _TMR0 15 0 ABS 0 - dist/default/production\HABnova.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\HABnova.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\HABnova.production.o
 _WPUC 20E 0 ABS 0 - dist/default/production\HABnova.production.o
-___sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\s7vk.o
-_atoi 17FE 0 CODE 0 text38 dist/default/production\HABnova.production.o
-_dbuf 24C 0 BANK4 1 bssBANK4 dist/default/production\HABnova.production.o
-_dtoa D44 0 CODE 0 text29 dist/default/production\HABnova.production.o
-_main 1AC6 0 CODE 0 maintext dist/default/production\HABnova.production.o
-_nout 120 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-_prec E6 0 BANK1 1 bssBANK1 dist/default/production\HABnova.production.o
-_stoa 1940 0 CODE 0 text28 dist/default/production\HABnova.production.o
-_xtoa A9A 0 CODE 0 text23 dist/default/production\HABnova.production.o
-abs@a 73 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+___sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\s9us.o
+_main 2618 0 CODE 0 maintext dist/default/production\HABnova.production.o
 btemp 7E 0 ABS 0 - dist/default/production\HABnova.production.o
-pad@i 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-pad@p 25 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-pad@w 2A 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__end_of_ClearString 2FB4 0 CODE 0 text46 dist/default/production\HABnova.production.o
-start 1A 0 CODE 0 init C:\Users\2013b\AppData\Local\Temp\s7vk.o
-___aomod@counter 71 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_EUSART_Write 2C7C 0 CODE 0 text34 dist/default/production\HABnova.production.o
-_TMR0_InterruptHandler 16B 0 BANK2 1 nvBANK2 dist/default/production\HABnova.production.o
+_ReadEnvSensor 213C 0 CODE 0 text14 dist/default/production\HABnova.production.o
+__end_of_ClearString 3F5C 0 CODE 0 text37 dist/default/production\HABnova.production.o
+start 46 0 CODE 0 init C:\Users\2013b\AppData\Local\Temp\s9us.o
+ReadEnvSensor@data 2F 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_TMR0_InterruptHandler 167 0 BANK2 1 nvBANK2 dist/default/production\HABnova.production.o
+__size_of___aldiv 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __size_of___aodiv 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of___aomod 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_atoi 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_dtoa 0 0 ABS 0 - dist/default/production\HABnova.production.o
+bme280_compensate_data@uncomp_data E5 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_stoa 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_xtoa 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__Hstringtext10 0 0 ABS 0 stringtext10 -
-__Hstringtext11 0 0 ABS 0 stringtext11 -
-__Hstringtext12 0 0 ABS 0 stringtext12 -
-__Hstringtext13 0 0 ABS 0 stringtext13 -
-__Hstringtext14 0 0 ABS 0 stringtext14 -
-__Hstringtext15 0 0 ABS 0 stringtext15 -
-__end_of_TMR0_SetInterruptHandler 2C48 0 CODE 0 text15 dist/default/production\HABnova.production.o
-pad@fp 2C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_toupper 1002 0 CODE 0 text24 dist/default/production\HABnova.production.o
-?___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-crc_append_byte@i 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__end_of_WriteEnvSensor 2554 0 CODE 0 text8 dist/default/production\HABnova.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_TMR0_SetInterruptHandler 3D44 0 CODE 0 text31 dist/default/production\HABnova.production.o
+__size_of_null_ptr_check 0 0 ABS 0 - dist/default/production\HABnova.production.o
+__size_of_bme280_get_sensor_data 0 0 ABS 0 - dist/default/production\HABnova.production.o
+?___lmul 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+?___omul 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+?_compensate_humidity 37 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\HABnova.production.o
-isupper@c 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-GPS_HasAcknowledged@ackPacket 25 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__LidataBANK1 0 0 ABS 0 idataBANK1 -
-__LidataBANK2 0 0 ABS 0 idataBANK2 -
-__LidataBANK4 0 0 ABS 0 idataBANK4 -
-__end_of_EUSART_Initialize 2CCA 0 CODE 0 text18 dist/default/production\HABnova.production.o
-__end_of_MESSAGE_INTERVAL 31CA 0 STRCODE 0 stringtext3 dist/default/production\HABnova.production.o
-TransmitBit@b 71 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+_I2C_BusCollisionISR 4 0 CODE 0 text46 dist/default/production\HABnova.production.o
+__end_of_bme280_init 27B2 0 CODE 0 text1 dist/default/production\HABnova.production.o
+bme280_set_regs@dev 37 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_set_regs@len 36 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+compensate_humidity@humidity 4C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__size_of_I2C_Stop 0 0 ABS 0 - dist/default/production\HABnova.production.o
+interleave_reg_addr@temp_buff 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+I2C_MasterRead@length 27 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+interleave_reg_addr@reg_addr 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+interleave_reg_addr@reg_data 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__LidataBANK3 0 0 ABS 0 idataBANK3 -
+__end_of_EUSART_Initialize 3D86 0 CODE 0 text35 dist/default/production\HABnova.production.o
+_parse_temp_press_calib_data 2E16 0 CODE 0 text3 dist/default/production\HABnova.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-__size_of_SetupGPS 0 0 ABS 0 - dist/default/production\HABnova.production.o
-_GPS_SendUBX 1044 0 CODE 0 text10 dist/default/production\HABnova.production.o
-stoa@i 2A 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-stoa@l 33 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-stoa@p 31 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-stoa@s 7A 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-stoa@w 2C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__size_of_FindString 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_vfpfcnvrt A9A 0 CODE 0 text22 dist/default/production\HABnova.production.o
+__end_of_I2C_WaitForLastPacketToComplete 3D30 0 CODE 0 text19 dist/default/production\HABnova.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production\HABnova.production.o
-TMR0_SetInterruptHandler@InterruptHandler 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s7vk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s7vk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s7vk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s7vk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s7vk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s7vk.o
-strcat@dest 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_crc_append_byte 134A 0 CODE 0 text5 dist/default/production\HABnova.production.o
+TMR0_SetInterruptHandler@InterruptHandler 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s9us.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s9us.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s9us.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s9us.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s9us.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s9us.o
+_bme280_parse_sensor_data C1A 0 CODE 0 text11 dist/default/production\HABnova.production.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+compensate_humidity@calib_data 37 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+___aldiv@divisor 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\HABnova.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_RC1STAbits 19D 0 ABS 0 - dist/default/production\HABnova.production.o
-xtoa@c 51 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-xtoa@d 2D 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-xtoa@i 4F 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-xtoa@n 47 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-xtoa@p 43 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-xtoa@w 45 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-xtoa@x 35 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__size_of_EUSART_Write 0 0 ABS 0 - dist/default/production\HABnova.production.o
+WriteEnvSensor@status 34 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+___aldiv@sign 32 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __size_of_TimerISR 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __size_of_FlashError 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-_vfpfcnvrt 5F6 0 CODE 0 text22 dist/default/production\HABnova.production.o
-dtoa@fp 3B 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-xtoa@fp 3E 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-FindString@matching 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 _ANSELA 18C 0 ABS 0 - dist/default/production\HABnova.production.o
 _ANSELB 18D 0 ABS 0 - dist/default/production\HABnova.production.o
 _ANSELC 18E 0 ABS 0 - dist/default/production\HABnova.production.o
-_vfpfcnvrt$691 B5 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-_TMR0_DefaultInterruptHandler 6 0 CODE 0 text51 dist/default/production\HABnova.production.o
+_TMR0_DefaultInterruptHandler 2000 0 CODE 0 text41 dist/default/production\HABnova.production.o
+bme280_compensate_data@sensor_comp EA 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+_bme280_compensate_data 28B4 0 CODE 0 text21 dist/default/production\HABnova.production.o
 _BORCON 116 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_GPS_HasAcknowledged 17FE 0 CODE 0 text12 dist/default/production\HABnova.production.o
-crc16@segments 78 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-?_toupper 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__end_of_EUSART_is_rx_ready 2C32 0 CODE 0 text44 dist/default/production\HABnova.production.o
-__end_of_INTERRUPT_InterruptManager 1A 0 CODE 0 intentry dist/default/production\HABnova.production.o
-__end_of_SafeSetByte 1134 0 CODE 0 text42 dist/default/production\HABnova.production.o
-_messages E8 0 BANK1 1 dataBANK1 dist/default/production\HABnova.production.o
-FindString@i 21 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__end_of___wmul 2EBC 0 CODE 0 text41 dist/default/production\HABnova.production.o
-__end_of_EUSART_Write 2C8C 0 CODE 0 text34 dist/default/production\HABnova.production.o
-_SetupGPS 155A 0 CODE 0 text9 dist/default/production\HABnova.production.o
+_I2C_MasterRead 3F5C 0 CODE 0 text17 dist/default/production\HABnova.production.o
+__end_of_bme280_soft_reset 221A 0 CODE 0 text5 dist/default/production\HABnova.production.o
+__end_of_interleave_reg_addr 20DE 0 CODE 0 text7 dist/default/production\HABnova.production.o
+__end_of_INTERRUPT_InterruptManager 46 0 CODE 0 intentry dist/default/production\HABnova.production.o
+_I2C_Stop 3E46 0 CODE 0 text44 dist/default/production\HABnova.production.o
+ReadEnvSensor@dev_id 2D 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_messages 1EC 0 BANK3 1 dataBANK3 dist/default/production\HABnova.production.o
+__end_of_I2C_ISR C1A 0 CODE 0 text43 dist/default/production\HABnova.production.o
+__end_of___lmul 213C 0 CODE 0 text27 dist/default/production\HABnova.production.o
+__end_of___omul 23A0 0 CODE 0 text24 dist/default/production\HABnova.production.o
+compensate_pressure@pressure_max B9 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+compensate_humidity@uncomp_data 47 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__size_of_sprintf 0 0 ABS 0 - dist/default/production\HABnova.production.o
-?_printf 63 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__LnvBANK1 0 0 ABS 0 nvBANK1 -
+__end_of_I2C_Stop 3E82 0 CODE 0 text44 dist/default/production\HABnova.production.o
 __LnvBANK2 0 0 ABS 0 nvBANK2 -
-_gps_speed_over_ground 136 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-__end_of___aodiv 2000 0 CODE 0 text37 dist/default/production\HABnova.production.o
-__end_of___aomod 1E1A 0 CODE 0 text36 dist/default/production\HABnova.production.o
-crc16@data 22 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__size_of_isalpha 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_isdigit 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_islower 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_SetupGPS 15FE 0 CODE 0 text9 dist/default/production\HABnova.production.o
-__size_of_isspace 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_isupper 0 0 ABS 0 - dist/default/production\HABnova.production.o
-___aodiv@quotient 73 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-?_strlen 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+compensate_temperature@temperature 5A 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__end_of___aldiv 28B4 0 CODE 0 text28 dist/default/production\HABnova.production.o
+__end_of___aodiv 2E16 0 CODE 0 text25 dist/default/production\HABnova.production.o
+__end_of_parse_humidity_calib_data 2AF0 0 CODE 0 text4 dist/default/production\HABnova.production.o
+__size_of_ReadEnvSensor 0 0 ABS 0 - dist/default/production\HABnova.production.o
+_p_i2c_trb_current 7A 0 COMMON 1 bssCOMMON dist/default/production\HABnova.production.o
+___aodiv@quotient 4A 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_compensate_humidity$2396 43 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+?_strlen 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 _OPTION_REG 95 0 ABS 0 - dist/default/production\HABnova.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\s7vk.o
-___stacklo 2229 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\s7vk.o
-___aomod@dividend 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-GPS_HasAcknowledged@startTime 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_EUSART_Initialize 2CB4 0 CODE 0 text18 dist/default/production\HABnova.production.o
-_TimerISR 2C8C 0 CODE 0 text52 dist/default/production\HABnova.production.o
-__size_of_crc16 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_fputc 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_fputs 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_putch 0 0 ABS 0 - dist/default/production\HABnova.production.o
-_EUSART_is_rx_ready 2C28 0 CODE 0 text44 dist/default/production\HABnova.production.o
-_PIN_MANAGER_Initialize 1134 0 CODE 0 text16 dist/default/production\HABnova.production.o
-__Lstringtext10 0 0 ABS 0 stringtext10 -
-__Lstringtext11 0 0 ABS 0 stringtext11 -
-__Lstringtext12 0 0 ABS 0 stringtext12 -
-__Lstringtext13 0 0 ABS 0 stringtext13 -
-__Lstringtext14 0 0 ABS 0 stringtext14 -
-__Lstringtext15 0 0 ABS 0 stringtext15 -
-___aomod@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-start_initialization 1E 0 CODE 0 cinit dist/default/production\HABnova.production.o
-__end_of_TimerISR 2CA0 0 CODE 0 text52 dist/default/production\HABnova.production.o
+__size_of_I2C_MasterReadTRBBuild 0 0 ABS 0 - dist/default/production\HABnova.production.o
+___stackhi 23EF 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\s9us.o
+___stacklo 2229 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\s9us.o
+I2C_MasterWrite@length 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_compensate_data@comp_data E6 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+_compensate_pressure$2393 C1 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+_compensate_pressure$2394 A8 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+_compensate_pressure$2395 B0 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+compensate_temperature@calib_data 37 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_get_regs@rslt 40 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_EUSART_Initialize 3D70 0 CODE 0 text35 dist/default/production\HABnova.production.o
+__end_of_I2C_BusCollisionISR 8 0 CODE 0 text46 dist/default/production\HABnova.production.o
+__size_of_Sleep 0 0 ABS 0 - dist/default/production\HABnova.production.o
+_TimerISR 3D5E 0 CODE 0 text42 dist/default/production\HABnova.production.o
+bme280_parse_sensor_data@data_lsb 2C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_parse_sensor_data@data_msb 30 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_i2c_state 140 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
+bme280_parse_sensor_data@reg_data 34 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__size_of_compensate_humidity 0 0 ABS 0 - dist/default/production\HABnova.production.o
+_PIN_MANAGER_Initialize 1000 0 CODE 0 text32 dist/default/production\HABnova.production.o
+start_initialization 4A 0 CODE 0 cinit dist/default/production\HABnova.production.o
+__end_of_TimerISR 3D70 0 CODE 0 text42 dist/default/production\HABnova.production.o
 _ODCONA 28C 0 ABS 0 - dist/default/production\HABnova.production.o
 _ODCONB 28D 0 ABS 0 - dist/default/production\HABnova.production.o
 _ODCONC 28E 0 ABS 0 - dist/default/production\HABnova.production.o
+__end_of_I2C_MasterRead 3FAA 0 CODE 0 text17 dist/default/production\HABnova.production.o
 _OSCCON 99 0 ABS 0 - dist/default/production\HABnova.production.o
-FindString@srcLen 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-SafeSetByte@data 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-SafeSetByte@dest 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-GetNavData@doParse D5 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-_TransmitBit FDE 0 CODE 0 text8 dist/default/production\HABnova.production.o
-FindString@target 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+Sleep@start 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 _message_start 2A0 0 BANK5 1 bssBANK5 dist/default/production\HABnova.production.o
+bme280_init@dev 65 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+___aldiv@quotient 33 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __size_of_ClearString 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_crc_append_byte 0 0 ABS 0 - dist/default/production\HABnova.production.o
-GPS_SendUBX@length 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__end_of_ReadEnvSensor 21A8 0 CODE 0 text14 dist/default/production\HABnova.production.o
+_RB4PPS E9C 0 ABS 0 - dist/default/production\HABnova.production.o
+_RB6PPS E9E 0 ABS 0 - dist/default/production\HABnova.production.o
 _RB7PPS E9F 0 ABS 0 - dist/default/production\HABnova.production.o
-_RC1REG 199 0 ABS 0 - dist/default/production\HABnova.production.o
 _RC1STA 19D 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_SYSTEM_Initialize 2CE2 0 CODE 0 text13 dist/default/production\HABnova.production.o
-__size_of_GetNavData 0 0 ABS 0 - dist/default/production\HABnova.production.o
-clear_ram0 2C48 0 CODE 0 clrtext dist/default/production\HABnova.production.o
+WriteEnvSensor@len 2D 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__end_of_SYSTEM_Initialize 3DA4 0 CODE 0 text29 dist/default/production\HABnova.production.o
+ReadEnvSensor@status 37 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+clear_ram0 3D44 0 CODE 0 clrtext dist/default/production\HABnova.production.o
+__size_of_bme280_init 0 0 ABS 0 - dist/default/production\HABnova.production.o
 _SPBRGH 19C 0 ABS 0 - dist/default/production\HABnova.production.o
 _SPBRGL 19B 0 ABS 0 - dist/default/production\HABnova.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-__size_of_TransmitString 0 0 ABS 0 - dist/default/production\HABnova.production.o
-_TX1REG 19A 0 ABS 0 - dist/default/production\HABnova.production.o
+__pcstackBANK2 14F 0 BANK2 1 cstackBANK2 dist/default/production\HABnova.production.o
+__pcstackBANK3 1A0 0 BANK3 1 cstackBANK3 dist/default/production\HABnova.production.o
+_I2C_MasterWriteTRBBuild 3E82 0 CODE 0 text16 dist/default/production\HABnova.production.o
 _TX1STA 19E 0 ABS 0 - dist/default/production\HABnova.production.o
-islower@c 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_dtoa$654 3C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__end_of_printf 2D24 0 CODE 0 text20 dist/default/production\HABnova.production.o
-fputc@fp 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-fputs@fp 7A 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\s7vk.o
-__end_of_EUSART_Read 2CB4 0 CODE 0 text45 dist/default/production\HABnova.production.o
-toupper@c 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-vfpfcnvrt@done B3 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+__size_of_bme280_parse_sensor_data 0 0 ABS 0 - dist/default/production\HABnova.production.o
+__end_of_I2C_MasterWriteTRBBuild 3EC6 0 CODE 0 text16 dist/default/production\HABnova.production.o
+_bme280_soft_reset 21A8 0 CODE 0 text5 dist/default/production\HABnova.production.o
+I2C_MasterTRBInsert@count 78 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+I2C_MasterTRBInsert@pflag 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\s9us.o
+_compensate_temperature$2392 45 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_Stop@completion_code 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1127,11 +1020,10 @@ __Hbank6 0 0 ABS 0 bank6 -
 __Hbank7 0 0 ABS 0 bank7 -
 __Hbank8 0 0 ABS 0 bank8 -
 __Hbank9 0 0 ABS 0 bank9 -
-__Hcinit D2 0 CODE 0 cinit -
-__end_of_strcat 2DA0 0 CODE 0 text1 dist/default/production\HABnova.production.o
-__end_of_strcpy 2F6A 0 CODE 0 text2 dist/default/production\HABnova.production.o
-__end_of_strlen 2DCE 0 CODE 0 text47 dist/default/production\HABnova.production.o
+__Hcinit CA 0 CODE 0 cinit -
+__end_of_strlen 3E14 0 CODE 0 text38 dist/default/production\HABnova.production.o
 __Hidloc 0 0 IDLOC 0 idloc -
+_compensate_temperature 63C 0 CODE 0 text22 dist/default/production\HABnova.production.o
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
@@ -1156,6 +1048,8 @@ __Hsfr29 0 0 ABS 0 sfr29 -
 __Hsfr30 0 0 ABS 0 sfr30 -
 __Hsfr31 0 0 ABS 0 sfr31 -
 __Hstack 0 0 STACK 2 stack -
+__size_of_I2C_Initialize 0 0 ABS 0 - dist/default/production\HABnova.production.o
+_compensate_humidity CA 0 CODE 0 text26 dist/default/production\HABnova.production.o
 __Hbank10 0 0 ABS 0 bank10 -
 __Hbank11 0 0 ABS 0 bank11 -
 __Hbank12 0 0 ABS 0 bank12 -
@@ -1178,20 +1072,19 @@ __Hbank28 0 0 BANK28 1 bank28 -
 __Hbank29 0 0 BANK29 1 bank29 -
 __Hbank30 0 0 BANK30 1 bank30 -
 __Hbank31 0 0 BANK31 1 bank31 -
-ClearString@i 79 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+ClearString@i 25 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __Hbigram 0 0 ABS 0 bigram -
+__size_of_parse_humidity_calib_data 0 0 ABS 0 - dist/default/production\HABnova.production.o
+WriteEnvSensor@reg_addr 2B 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+WriteEnvSensor@reg_data 2C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __Hmaintext 0 0 ABS 0 maintext -
 _BAUD1CON 19F 0 ABS 0 - dist/default/production\HABnova.production.o
-_gps_longitude 1B1 0 BANK3 1 bssBANK3 dist/default/production\HABnova.production.o
-TransmitString@counti 79 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__end_of_sprintf 12EC 0 CODE 0 text3 dist/default/production\HABnova.production.o
+__size_of_get_calib_data 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10014 0 CONFIG 0 config -
-crc16@crc 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-crc16@len 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-crc16@str 26 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__end_of_isalpha 2F2E 0 CODE 0 text27 dist/default/production\HABnova.production.o
+__end_of_bme280_get_regs 2312 0 CODE 0 text12 dist/default/production\HABnova.production.o
+___omul@product 30 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -1202,11 +1095,8 @@ __Lbank6 0 0 ABS 0 bank6 -
 __Lbank7 0 0 ABS 0 bank7 -
 __Lbank8 0 0 ABS 0 bank8 -
 __Lbank9 0 0 ABS 0 bank9 -
-__end_of_isdigit 2DFC 0 CODE 0 text40 dist/default/production\HABnova.production.o
-__Lcinit 1E 0 CODE 0 cinit -
+__Lcinit 4A 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
-__end_of_islower 2E86 0 CODE 0 text25 dist/default/production\HABnova.production.o
-__end_of_isspace 2EF4 0 CODE 0 text39 dist/default/production\HABnova.production.o
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
 __Lsfr12 0 0 ABS 0 sfr12 -
@@ -1230,14 +1120,14 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-__end_of_isupper 2E58 0 CODE 0 text26 dist/default/production\HABnova.production.o
-init_ram 2C54 0 CODE 0 inittext dist/default/production\HABnova.production.o
-__Linittext 0 0 ABS 0 inittext -
-GPS_SendUBX@i 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__size_of_I2C_MasterTRBInsert 0 0 ABS 0 - dist/default/production\HABnova.production.o
+I2C_ISR@i2c_10bit_address_restart 13D 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
+_bme280_get_sensor_data 2554 0 CODE 0 text10 dist/default/production\HABnova.production.o
+I2C_ISR@i2c_bytes_left 13E 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
 _INTCONbits B 0 ABS 0 - dist/default/production\HABnova.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 1A 0 CODE 0 init -
+__Hinit 46 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -1251,7 +1141,7 @@ __Hsfr9 0 0 ABS 0 sfr9 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit 1A 0 CODE 0 init -
+__Linit 46 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
@@ -1263,142 +1153,127 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 31BE 0 STRCODE 0 stringtext1 dist/default/production\HABnova.production.o
-__pstringtext2 31C2 0 STRCODE 0 stringtext2 dist/default/production\HABnova.production.o
-__pstringtext3 31C6 0 STRCODE 0 stringtext3 dist/default/production\HABnova.production.o
-__pstringtext4 3000 0 STRCODE 0 stringtext4 dist/default/production\HABnova.production.o
-__pstringtext5 3034 0 STRCODE 0 stringtext5 dist/default/production\HABnova.production.o
-__pstringtext6 3068 0 STRCODE 0 stringtext6 dist/default/production\HABnova.production.o
-__pstringtext7 309C 0 STRCODE 0 stringtext7 dist/default/production\HABnova.production.o
-__pstringtext8 30D0 0 STRCODE 0 stringtext8 dist/default/production\HABnova.production.o
-__pstringtext9 3104 0 STRCODE 0 stringtext9 dist/default/production\HABnova.production.o
-__pnvBANK1 EC 0 BANK1 1 nvBANK1 dist/default/production\HABnova.production.o
-__pnvBANK2 16B 0 BANK2 1 nvBANK2 dist/default/production\HABnova.production.o
-___aodiv@counter 71 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__pstringtext10 3138 0 STRCODE 0 stringtext10 dist/default/production\HABnova.production.o
-__pstringtext11 3166 0 STRCODE 0 stringtext11 dist/default/production\HABnova.production.o
-__pstringtext12 318A 0 STRCODE 0 stringtext12 dist/default/production\HABnova.production.o
-__pstringtext13 31A6 0 STRCODE 0 stringtext13 dist/default/production\HABnova.production.o
-__pstringtext14 31B4 0 STRCODE 0 stringtext14 dist/default/production\HABnova.production.o
-__pstringtext15 0 0 STRCODE 0 stringtext15 dist/default/production\HABnova.production.o
-___wmul 2E86 0 CODE 0 text41 dist/default/production\HABnova.production.o
-___aomod@sign 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__pnvBANK2 167 0 BANK2 1 nvBANK2 dist/default/production\HABnova.production.o
+___aodiv@counter 48 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_SSP1CON1 215 0 ABS 0 - dist/default/production\HABnova.production.o
+_SSP1CON3 217 0 ABS 0 - dist/default/production\HABnova.production.o
+_SSP1STAT 214 0 ABS 0 - dist/default/production\HABnova.production.o
+___lmul 20DE 0 CODE 0 text27 dist/default/production\HABnova.production.o
+___omul 2312 0 CODE 0 text24 dist/default/production\HABnova.production.o
 __CFG_WDTCWS$WDTCWSSW 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
-_toupper$1115 7C 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__LcstackBANK2 0 0 ABS 0 cstackBANK2 -
+__LcstackBANK3 0 0 ABS 0 cstackBANK3 -
+psplit$0 290041 0 ABS 0 - dist/default/production\HABnova.production.o
 int$flags 7E 0 ABS 0 - dist/default/production\HABnova.production.o
-_gps_configured 6F 0 BANK0 1 bssBANK0 dist/default/production\HABnova.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-isspace@c 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 _message_end 320 0 BANK6 1 bssBANK6 dist/default/production\HABnova.production.o
 __size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production\HABnova.production.o
-ClearString@str 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__size_of_SafeSetByte 0 0 ABS 0 - dist/default/production\HABnova.production.o
+ClearString@str 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __S0 800A 0 ABS 0 - -
 __S1 369 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
-_abs 2DFC 0 CODE 0 text35 dist/default/production\HABnova.production.o
-_pad 14BA 0 CODE 0 text30 dist/default/production\HABnova.production.o
 __size_of_TMR0_ISR 0 0 ABS 0 - dist/default/production\HABnova.production.o
+I2C_MasterRead@pdata 25 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_MasterRead@pflag 2A 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __size_of_TMR0_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_GPS_SendUBX 1092 0 CODE 0 text10 dist/default/production\HABnova.production.o
-__end_of_TMR0_DefaultInterruptHandler 8 0 CODE 0 text51 dist/default/production\HABnova.production.o
-TransmitByte@i 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-___aodiv@sign 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__size_of_toupper 0 0 ABS 0 - dist/default/production\HABnova.production.o
-sprintf@fmt BA 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-__end_of_DELAY_MULT 31C2 0 STRCODE 0 stringtext1 dist/default/production\HABnova.production.o
-_SYSTEM_Initialize 2CCA 0 CODE 0 text13 dist/default/production\HABnova.production.o
-__end_of_abs 2E2A 0 CODE 0 text35 dist/default/production\HABnova.production.o
-__end_of_pad 155A 0 CODE 0 text30 dist/default/production\HABnova.production.o
-GPS_HasAcknowledged@data 2F 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+?_compensate_temperature 37 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+parse_temp_press_calib_data@calib_data 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+?_compensate_pressure 52 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_I2C_WaitForLastPacketToComplete 3D28 0 CODE 0 text19 dist/default/production\HABnova.production.o
+__size_of_WriteEnvSensor 0 0 ABS 0 - dist/default/production\HABnova.production.o
+__end_of_bme280_compensate_data 29BE 0 CODE 0 text21 dist/default/production\HABnova.production.o
+interleave_reg_addr@len 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+Sleep@ms 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__end_of_bme280_set_regs 2C2C 0 CODE 0 text6 dist/default/production\HABnova.production.o
+bme280_init@chip_id 63 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__end_of_TMR0_DefaultInterruptHandler 2002 0 CODE 0 text41 dist/default/production\HABnova.production.o
+bme280_set_regs@temp_len 4F 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_soft_reset@reg_addr 59 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_null_ptr_check 3EC6 0 CODE 0 text13 dist/default/production\HABnova.production.o
+___aodiv@sign 49 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_SYSTEM_Initialize 3D86 0 CODE 0 text29 dist/default/production\HABnova.production.o
+___omul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+parse_temp_press_calib_data@dev 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+compensate_pressure@uncomp_data B8 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__HnvBANK1 0 0 ABS 0 nvBANK1 -
+parse_humidity_calib_data@dev 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+_bme280_get_regs 228E 0 CODE 0 text12 dist/default/production\HABnova.production.o
+__end_of_bme280_parse_sensor_data E6E 0 CODE 0 text11 dist/default/production\HABnova.production.o
 __HnvBANK2 0 0 ABS 0 nvBANK2 -
 __Lintentry 8 0 CODE 0 intentry -
-strcpy@d 79 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-strcpy@s 7B 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\2013b\AppData\Local\Temp\s7vk.o
-strlen@a 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-strlen@s 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__pdataBANK1 E8 0 BANK1 1 dataBANK1 dist/default/production\HABnova.production.o
-__pdataBANK2 164 0 BANK2 1 dataBANK2 dist/default/production\HABnova.production.o
-__pdataBANK4 220 0 BANK4 1 dataBANK4 dist/default/production\HABnova.production.o
-__size_of___wmul 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__LbssBANK0 0 0 ABS 0 bssBANK0 -
-__LbssBANK1 0 0 ABS 0 bssBANK1 -
+_I2C_MasterTRBInsert 23A0 0 CODE 0 text18 dist/default/production\HABnova.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\2013b\AppData\Local\Temp\s9us.o
+strlen@a 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+strlen@s 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+get_calib_data@calib_data 43 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__pdataBANK3 1EC 0 BANK3 1 dataBANK3 dist/default/production\HABnova.production.o
+bme280_compensate_data@rslt E9 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+parse_temp_press_calib_data@reg_data 78 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+_i2c_trb_count 13F 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
+__size_of_I2C_FunctionComplete 0 0 ABS 0 - dist/default/production\HABnova.production.o
+__size_of___lmul 0 0 ABS 0 - dist/default/production\HABnova.production.o
+__size_of___omul 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __LbssBANK2 0 0 ABS 0 bssBANK2 -
 __LbssBANK3 0 0 ABS 0 bssBANK3 -
 __LbssBANK4 0 0 ABS 0 bssBANK4 -
 __LbssBANK5 0 0 ABS 0 bssBANK5 -
 __LbssBANK6 0 0 ABS 0 bssBANK6 -
+main@sensor_data 1A5 0 BANK3 1 cstackBANK3 dist/default/production\HABnova.production.o
+_I2C_ISR 980 0 CODE 0 text43 dist/default/production\HABnova.production.o
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__Lstringtext1 0 0 ABS 0 stringtext1 -
-__Lstringtext2 0 0 ABS 0 stringtext2 -
-__Lstringtext3 0 0 ABS 0 stringtext3 -
-__Lstringtext4 0 0 ABS 0 stringtext4 -
-__Lstringtext5 0 0 ABS 0 stringtext5 -
-__Lstringtext6 0 0 ABS 0 stringtext6 -
-__Lstringtext7 0 0 ABS 0 stringtext7 -
-__Lstringtext8 0 0 ABS 0 stringtext8 -
-__Lstringtext9 0 0 ABS 0 stringtext9 -
-vfpfcnvrt@fmt 53 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-vfpfcnvrt@llu A8 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
 _INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/default/production\HABnova.production.o
-pad@buf 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-stoa@nuls 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_TMR0_ISR 2CE2 0 CODE 0 text50 dist/default/production\HABnova.production.o
-__ptext10 1044 0 CODE 0 text10 dist/default/production\HABnova.production.o
-__ptext11 2D24 0 CODE 0 text11 dist/default/production\HABnova.production.o
-__ptext12 16DA 0 CODE 0 text12 dist/default/production\HABnova.production.o
-__ptext13 2CCA 0 CODE 0 text13 dist/default/production\HABnova.production.o
-__ptext14 2D48 0 CODE 0 text14 dist/default/production\HABnova.production.o
-__ptext15 2C3C 0 CODE 0 text15 dist/default/production\HABnova.production.o
-__ptext16 1134 0 CODE 0 text16 dist/default/production\HABnova.production.o
-__ptext17 2C60 0 CODE 0 text17 dist/default/production\HABnova.production.o
-__ptext18 2CB4 0 CODE 0 text18 dist/default/production\HABnova.production.o
-__ptext19 D2 0 CODE 0 text19 dist/default/production\HABnova.production.o
-__ptext20 2D02 0 CODE 0 text20 dist/default/production\HABnova.production.o
-__ptext21 12EC 0 CODE 0 text21 dist/default/production\HABnova.production.o
-__ptext22 5F6 0 CODE 0 text22 dist/default/production\HABnova.production.o
-__ptext23 A9A 0 CODE 0 text23 dist/default/production\HABnova.production.o
-__ptext24 1002 0 CODE 0 text24 dist/default/production\HABnova.production.o
-__ptext25 2E58 0 CODE 0 text25 dist/default/production\HABnova.production.o
-__ptext26 2E2A 0 CODE 0 text26 dist/default/production\HABnova.production.o
-__ptext27 2EF4 0 CODE 0 text27 dist/default/production\HABnova.production.o
-__ptext28 1940 0 CODE 0 text28 dist/default/production\HABnova.production.o
-__ptext29 D44 0 CODE 0 text29 dist/default/production\HABnova.production.o
-__ptext30 14BA 0 CODE 0 text30 dist/default/production\HABnova.production.o
-__ptext31 2FB4 0 CODE 0 text31 dist/default/production\HABnova.production.o
-__ptext32 1424 0 CODE 0 text32 dist/default/production\HABnova.production.o
-__ptext33 2C32 0 CODE 0 text33 dist/default/production\HABnova.production.o
-__ptext34 2C7C 0 CODE 0 text34 dist/default/production\HABnova.production.o
-__ptext35 2DFC 0 CODE 0 text35 dist/default/production\HABnova.production.o
-__ptext36 1C62 0 CODE 0 text36 dist/default/production\HABnova.production.o
-__ptext37 1E1A 0 CODE 0 text37 dist/default/production\HABnova.production.o
-__ptext38 17FE 0 CODE 0 text38 dist/default/production\HABnova.production.o
-__ptext39 2EBC 0 CODE 0 text39 dist/default/production\HABnova.production.o
-__ptext40 2DCE 0 CODE 0 text40 dist/default/production\HABnova.production.o
-__ptext41 2E86 0 CODE 0 text41 dist/default/production\HABnova.production.o
-__ptext42 10E2 0 CODE 0 text42 dist/default/production\HABnova.production.o
-__ptext43 13AC 0 CODE 0 text43 dist/default/production\HABnova.production.o
-__ptext44 2C28 0 CODE 0 text44 dist/default/production\HABnova.production.o
-__ptext45 2CA0 0 CODE 0 text45 dist/default/production\HABnova.production.o
-__ptext46 2F6A 0 CODE 0 text46 dist/default/production\HABnova.production.o
-__ptext47 2DA0 0 CODE 0 text47 dist/default/production\HABnova.production.o
-__ptext48 1188 0 CODE 0 text48 dist/default/production\HABnova.production.o
-__ptext50 2CE2 0 CODE 0 text50 dist/default/production\HABnova.production.o
-__ptext51 6 0 CODE 0 text51 dist/default/production\HABnova.production.o
-__ptext52 2C8C 0 CODE 0 text52 dist/default/production\HABnova.production.o
-GPS_HasAcknowledged@ackByte 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_atoi$988 22 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_atoi$989 26 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_atoi$990 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__end_of_PIN_MANAGER_Initialize 1188 0 CODE 0 text16 dist/default/production\HABnova.production.o
-___aodiv 1E1A 0 CODE 0 text37 dist/default/production\HABnova.production.o
-___aomod 1C62 0 CODE 0 text36 dist/default/production\HABnova.production.o
-__end_of_TMR0_Initialize 2D74 0 CODE 0 text14 dist/default/production\HABnova.production.o
+_PIE1bits 90 0 ABS 0 - dist/default/production\HABnova.production.o
+_PIE2bits 91 0 ABS 0 - dist/default/production\HABnova.production.o
+__size_of_parse_temp_press_calib_data 0 0 ABS 0 - dist/default/production\HABnova.production.o
+___omul@multiplicand 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_set_regs@reg_addr 53 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_set_regs@reg_data 35 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_TMR0_ISR 3DA4 0 CODE 0 text40 dist/default/production\HABnova.production.o
+I2C_MasterReadTRBBuild@length 22 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__ptext10 2554 0 CODE 0 text10 dist/default/production\HABnova.production.o
+__ptext11 C1A 0 CODE 0 text11 dist/default/production\HABnova.production.o
+__ptext12 228E 0 CODE 0 text12 dist/default/production\HABnova.production.o
+__ptext13 3EC6 0 CODE 0 text13 dist/default/production\HABnova.production.o
+__ptext14 213C 0 CODE 0 text14 dist/default/production\HABnova.production.o
+__ptext15 FB0 0 CODE 0 text15 dist/default/production\HABnova.production.o
+__ptext16 3E82 0 CODE 0 text16 dist/default/production\HABnova.production.o
+__ptext17 3F5C 0 CODE 0 text17 dist/default/production\HABnova.production.o
+__ptext18 23A0 0 CODE 0 text18 dist/default/production\HABnova.production.o
+__ptext19 3D28 0 CODE 0 text19 dist/default/production\HABnova.production.o
+__ptext20 3FAA 0 CODE 0 text20 dist/default/production\HABnova.production.o
+__ptext21 28B4 0 CODE 0 text21 dist/default/production\HABnova.production.o
+__ptext22 63C 0 CODE 0 text22 dist/default/production\HABnova.production.o
+__ptext23 E6E 0 CODE 0 text23 dist/default/production\HABnova.production.o
+__ptext24 2312 0 CODE 0 text24 dist/default/production\HABnova.production.o
+__ptext25 2C2C 0 CODE 0 text25 dist/default/production\HABnova.production.o
+__ptext26 CA 0 CODE 0 text26 dist/default/production\HABnova.production.o
+__ptext27 20DE 0 CODE 0 text27 dist/default/production\HABnova.production.o
+__ptext28 27B2 0 CODE 0 text28 dist/default/production\HABnova.production.o
+__ptext29 3D86 0 CODE 0 text29 dist/default/production\HABnova.production.o
+__ptext30 2002 0 CODE 0 text30 dist/default/production\HABnova.production.o
+__ptext31 3D38 0 CODE 0 text31 dist/default/production\HABnova.production.o
+__ptext32 1000 0 CODE 0 text32 dist/default/production\HABnova.production.o
+__ptext33 3D50 0 CODE 0 text33 dist/default/production\HABnova.production.o
+__ptext34 3E14 0 CODE 0 text34 dist/default/production\HABnova.production.o
+__ptext35 3D70 0 CODE 0 text35 dist/default/production\HABnova.production.o
+__ptext36 202C 0 CODE 0 text36 dist/default/production\HABnova.production.o
+__ptext37 3F10 0 CODE 0 text37 dist/default/production\HABnova.production.o
+__ptext38 3DE6 0 CODE 0 text38 dist/default/production\HABnova.production.o
+__ptext40 3DA4 0 CODE 0 text40 dist/default/production\HABnova.production.o
+__ptext41 2000 0 CODE 0 text41 dist/default/production\HABnova.production.o
+__ptext42 3D5E 0 CODE 0 text42 dist/default/production\HABnova.production.o
+__ptext43 980 0 CODE 0 text43 dist/default/production\HABnova.production.o
+__ptext44 3E46 0 CODE 0 text44 dist/default/production\HABnova.production.o
+__ptext45 3DC4 0 CODE 0 text45 dist/default/production\HABnova.production.o
+__ptext46 4 0 CODE 0 text46 dist/default/production\HABnova.production.o
+__end_of_PIN_MANAGER_Initialize 1066 0 CODE 0 text32 dist/default/production\HABnova.production.o
+__end_of_compensate_humidity 63C 0 CODE 0 text26 dist/default/production\HABnova.production.o
+___aldiv 27B2 0 CODE 0 text28 dist/default/production\HABnova.production.o
+___aodiv 2C2C 0 CODE 0 text25 dist/default/production\HABnova.production.o
+__end_of_TMR0_Initialize 202C 0 CODE 0 text30 dist/default/production\HABnova.production.o
+bme280_soft_reset@rslt 58 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -1421,260 +1296,206 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 1AC6 0 CODE 0 maintext dist/default/production\HABnova.production.o
+__pmaintext 2618 0 CODE 0 maintext dist/default/production\HABnova.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\HABnova.production.o
-?_atoi 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-?_dtoa 30 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-?_stoa 7A 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-?_xtoa 2D 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_bme280_set_regs 2AF0 0 CODE 0 text6 dist/default/production\HABnova.production.o
+__end_of_I2C_FunctionComplete 3DE6 0 CODE 0 text45 dist/default/production\HABnova.production.o
+___lmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+interleave_reg_addr@index 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_MasterWrite@trBlock 146 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
-_printf 2D02 0 CODE 0 text20 dist/default/production\HABnova.production.o
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
+_parse_humidity_calib_data 29BE 0 CODE 0 text4 dist/default/production\HABnova.production.o
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_TMR0_ISR 2D02 0 CODE 0 text50 dist/default/production\HABnova.production.o
+__end_of_TMR0_ISR 3DC4 0 CODE 0 text40 dist/default/production\HABnova.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__Hinittext 0 0 ABS 0 inittext -
-___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_LATAbits 10C 0 ABS 0 - dist/default/production\HABnova.production.o
+ReadEnvSensor@len 31 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_MasterWriteTRBBuild@length 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+I2C_ISR@pi2c_buf_ptr 13B 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
 _LATCbits 10E 0 ABS 0 - dist/default/production\HABnova.production.o
-FlashError@i 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-GPS_SendUBX@data 79 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_gps_nav_status 160 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-__size_of_EUSART_is_rx_ready 0 0 ABS 0 - dist/default/production\HABnova.production.o
-_strcat 2D74 0 CODE 0 text1 dist/default/production\HABnova.production.o
-_strcpy 2F2E 0 CODE 0 text2 dist/default/production\HABnova.production.o
-_strlen 2DA0 0 CODE 0 text47 dist/default/production\HABnova.production.o
-_TMR0_SetInterruptHandler 2C3C 0 CODE 0 text15 dist/default/production\HABnova.production.o
-_ClearString 2F6A 0 CODE 0 text46 dist/default/production\HABnova.production.o
-_FindString 13AC 0 CODE 0 text43 dist/default/production\HABnova.production.o
-__size_of_EUSART_Read 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_vfprintf 0 0 ABS 0 - dist/default/production\HABnova.production.o
-stoa@cp 2F 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-stoa@fp 2E 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-crc16@string 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__end_of_null_ptr_check 3F10 0 CODE 0 text13 dist/default/production\HABnova.production.o
+FlashError@i 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+_I2C_MasterReadTRBBuild 3FAA 0 CODE 0 text20 dist/default/production\HABnova.production.o
+__end_of_parse_temp_press_calib_data 3000 0 CODE 0 text3 dist/default/production\HABnova.production.o
+_strlen 3DE6 0 CODE 0 text38 dist/default/production\HABnova.production.o
+_TMR0_SetInterruptHandler 3D38 0 CODE 0 text31 dist/default/production\HABnova.production.o
+_ClearString 3F10 0 CODE 0 text37 dist/default/production\HABnova.production.o
+compensate_pressure@calib_data 52 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_MasterRead@trBlock 141 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
+bme280_soft_reset@dev 5A 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_soft_reset@soft_rst_cmd 57 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__end_of_I2C_MasterWrite 1000 0 CODE 0 text15 dist/default/production\HABnova.production.o
 _OSCTUNE 98 0 ABS 0 - dist/default/production\HABnova.production.o
-strcpy@dest 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-?_vfpfcnvrt 53 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-strcat@src 22 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_get_sensor_data@reg_data 14F 0 BANK2 1 cstackBANK2 dist/default/production\HABnova.production.o
+main@env_sensor 1B1 0 BANK3 1 cstackBANK3 dist/default/production\HABnova.production.o
+_bme280_init 26E4 0 CODE 0 text1 dist/default/production\HABnova.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-main@id DC 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+__pbssCOMMON 79 0 COMMON 1 bssCOMMON dist/default/production\HABnova.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
-GetNavData@startTime CB 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+__HcstackBANK2 0 0 ABS 0 cstackBANK2 -
+__HcstackBANK3 0 0 ABS 0 cstackBANK3 -
+__end_of_compensate_temperature 980 0 CODE 0 text22 dist/default/production\HABnova.production.o
 _PIR1bits 10 0 ABS 0 - dist/default/production\HABnova.production.o
-__Lend_init 1A 0 CODE 0 end_init -
+_PIR2bits 11 0 ABS 0 - dist/default/production\HABnova.production.o
+__Lend_init 46 0 CODE 0 end_init -
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
-___aodiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__end_of_toupper 1044 0 CODE 0 text24 dist/default/production\HABnova.production.o
-___aodiv@dividend 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+___aodiv@divisor 38 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+___aodiv@dividend 40 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_FlashError 1188 0 CODE 0 text48 dist/default/production\HABnova.production.o
-printf@ap 68 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__size_of_compensate_pressure 0 0 ABS 0 - dist/default/production\HABnova.production.o
+I2C_MasterWriteTRBBuild@ptrb 22 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_FlashError 202C 0 CODE 0 text36 dist/default/production\HABnova.production.o
+bme280_get_regs@reg_addr 3F 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_get_regs@reg_data 38 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__size_of_I2C_WaitForLastPacketToComplete 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __CFG_ZCD$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_TransmitBit 1000 0 CODE 0 text8 dist/default/production\HABnova.production.o
-end_of_initialization CA 0 CODE 0 cinit dist/default/production\HABnova.production.o
-_TMR0_Initialize 2D48 0 CODE 0 text14 dist/default/production\HABnova.production.o
-__Hintentry 1A 0 CODE 0 intentry -
-SafeSetByte@length 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+end_of_initialization C2 0 CODE 0 cinit dist/default/production\HABnova.production.o
+_TMR0_Initialize 2002 0 CODE 0 text30 dist/default/production\HABnova.production.o
+null_ptr_check@rslt 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__Hintentry 46 0 CODE 0 intentry -
+__size_of_bme280_get_regs 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_printf 0 0 ABS 0 - dist/default/production\HABnova.production.o
-fputc@c 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-fputs@c 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-fputs@i 21 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-fputs@s 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_TX1STAbits 19E 0 ABS 0 - dist/default/production\HABnova.production.o
-_GetLengthUBX 2D24 0 CODE 0 text11 dist/default/production\HABnova.production.o
+pnum$text23 29 0 ABS 0 - dist/default/production\HABnova.production.o
 __Lstrings 0 0 ABS 0 strings -
-?___aodiv 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-?___aomod 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-SafeSetByte@index 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-vfprintf@fmt 5B 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+?___aldiv 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+?___aodiv 38 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+compensate_pressure@pressure C9 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+compensate_temperature@temperature_max 4D 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
+__end_of_I2C_MasterTRBInsert 2430 0 CODE 0 text18 dist/default/production\HABnova.production.o
 __CFG_WDTCCS$SWC 0 0 ABS 0 - dist/default/production\HABnova.production.o
-_checksum 15A 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-__HbssBANK0 0 0 ABS 0 bssBANK0 -
-__HbssBANK1 0 0 ABS 0 bssBANK1 -
+__size_of_I2C_MasterRead 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __HbssBANK2 0 0 ABS 0 bssBANK2 -
 __HbssBANK3 0 0 ABS 0 bssBANK3 -
 __HbssBANK4 0 0 ABS 0 bssBANK4 -
 __HbssBANK5 0 0 ABS 0 bssBANK5 -
 __HbssBANK6 0 0 ABS 0 bssBANK6 -
-__size_of_strcat 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_strcpy 0 0 ABS 0 - dist/default/production\HABnova.production.o
+_SSPCLKPPS E20 0 ABS 0 - dist/default/production\HABnova.production.o
+__end_of_bme280_get_sensor_data 2618 0 CODE 0 text10 dist/default/production\HABnova.production.o
 __size_of_strlen 0 0 ABS 0 - dist/default/production\HABnova.production.o
-TransmitString@i 7B 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-vfpfcnvrt@ap 54 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-vfpfcnvrt@cp B0 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-vfpfcnvrt@fp B7 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-vfpfcnvrt@ll A0 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-__ptext1 2D74 0 CODE 0 text1 dist/default/production\HABnova.production.o
-__ptext2 2F2E 0 CODE 0 text2 dist/default/production\HABnova.production.o
-__ptext3 1292 0 CODE 0 text3 dist/default/production\HABnova.production.o
-__ptext4 15FE 0 CODE 0 text4 dist/default/production\HABnova.production.o
-__ptext5 134A 0 CODE 0 text5 dist/default/production\HABnova.production.o
-__ptext6 1092 0 CODE 0 text6 dist/default/production\HABnova.production.o
-__ptext7 1238 0 CODE 0 text7 dist/default/production\HABnova.production.o
-__ptext8 FDE 0 CODE 0 text8 dist/default/production\HABnova.production.o
-__ptext9 155A 0 CODE 0 text9 dist/default/production\HABnova.production.o
-GetNavData@byte DA 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-GetNavData@skip D3 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-vfprintf@ap 5D 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-vfprintf@fp 60 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__size_of_GPS_SendUBX 0 0 ABS 0 - dist/default/production\HABnova.production.o
-vfprintf@cfmt 61 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-crc_append_byte@crc 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_sprintf 1292 0 CODE 0 text3 dist/default/production\HABnova.production.o
-_vfprintf 12EC 0 CODE 0 text21 dist/default/production\HABnova.production.o
+_SSPDATPPS E21 0 ABS 0 - dist/default/production\HABnova.production.o
+bme280_compensate_data@calib_data E7 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+__ptext1 26E4 0 CODE 0 text1 dist/default/production\HABnova.production.o
+__ptext2 2430 0 CODE 0 text2 dist/default/production\HABnova.production.o
+__ptext3 2E16 0 CODE 0 text3 dist/default/production\HABnova.production.o
+__ptext4 29BE 0 CODE 0 text4 dist/default/production\HABnova.production.o
+__ptext5 21A8 0 CODE 0 text5 dist/default/production\HABnova.production.o
+__ptext6 2AF0 0 CODE 0 text6 dist/default/production\HABnova.production.o
+__ptext7 2084 0 CODE 0 text7 dist/default/production\HABnova.production.o
+__ptext8 24C0 0 CODE 0 text8 dist/default/production\HABnova.production.o
+__ptext9 221A 0 CODE 0 text9 dist/default/production\HABnova.production.o
+parse_humidity_calib_data@dig_H4_lsb 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+parse_humidity_calib_data@dig_H4_msb 22 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+parse_humidity_calib_data@dig_H5_lsb 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+parse_humidity_calib_data@dig_H5_msb 26 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_parse_sensor_data@data_xlsb 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_get_sensor_data@F273 120 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
+bme280_get_sensor_data@dev EC 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+bme280_get_sensor_data@rslt 158 0 BANK2 1 cstackBANK2 dist/default/production\HABnova.production.o
+_i2c_object 132 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
+___aldiv@dividend 2C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_MasterWrite@address 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_MasterWriteTRBBuild@address 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+bme280_get_regs@dev 3C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_get_regs@len 3A 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_MasterReadTRBBuild@address 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_init@try_count 62 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_FindString 1424 0 CODE 0 text43 dist/default/production\HABnova.production.o
-sprintf@ap 66 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_isalpha 2EF4 0 CODE 0 text27 dist/default/production\HABnova.production.o
-_isdigit 2DCE 0 CODE 0 text40 dist/default/production\HABnova.production.o
-FindString@targetLen 78 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_islower 2E58 0 CODE 0 text25 dist/default/production\HABnova.production.o
-_TransmitByte 1238 0 CODE 0 text7 dist/default/production\HABnova.production.o
-_isspace 2EBC 0 CODE 0 text39 dist/default/production\HABnova.production.o
-_isupper 2E2A 0 CODE 0 text26 dist/default/production\HABnova.production.o
-_TransmitString 1092 0 CODE 0 text6 dist/default/production\HABnova.production.o
-_SafeSetByte 10E2 0 CODE 0 text42 dist/default/production\HABnova.production.o
+_I2C_MasterWrite FB0 0 CODE 0 text15 dist/default/production\HABnova.production.o
+I2C_MasterReadTRBBuild@pdata 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__size_of_bme280_set_regs 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__Hstringtext1 0 0 ABS 0 stringtext1 -
-__Hstringtext2 0 0 ABS 0 stringtext2 -
-__Hstringtext3 0 0 ABS 0 stringtext3 -
-__Hstringtext4 0 0 ABS 0 stringtext4 -
-__Hstringtext5 0 0 ABS 0 stringtext5 -
-__Hstringtext6 0 0 ABS 0 stringtext6 -
-__Hstringtext7 0 0 ABS 0 stringtext7 -
-__Hstringtext8 0 0 ABS 0 stringtext8 -
-__Hstringtext9 0 0 ABS 0 stringtext9 -
+compensate_temperature@var1 51 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+compensate_temperature@var2 56 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+bme280_get_sensor_data@uncomp_data 159 0 BANK2 1 cstackBANK2 dist/default/production\HABnova.production.o
+__size_of_bme280_compensate_data 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __CFG_LPBOR$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_vfprintf 134A 0 CODE 0 text21 dist/default/production\HABnova.production.o
+compensate_temperature@uncomp_data 55 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_compensate_pressure E6E 0 CODE 0 text23 dist/default/production\HABnova.production.o
 __CFG_WDTCPS$WDTCPS1F 0 0 ABS 0 - dist/default/production\HABnova.production.o
 _SLRCONA 30C 0 ABS 0 - dist/default/production\HABnova.production.o
 _SLRCONB 30D 0 ABS 0 - dist/default/production\HABnova.production.o
 _SLRCONC 30E 0 ABS 0 - dist/default/production\HABnova.production.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
-_xtoa$676 3F 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_xtoa$677 41 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-FindString@src 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-EUSART_Write@txData 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-strcpy@src 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__end_of__initialization CA 0 CODE 0 cinit dist/default/production\HABnova.production.o
-__size_of_GetLengthUBX 0 0 ABS 0 - dist/default/production\HABnova.production.o
+I2C_MasterWriteTRBBuild@pdata 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__end_of__initialization C2 0 CODE 0 cinit dist/default/production\HABnova.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-_timer0ReloadVal EC 0 BANK1 1 nvBANK1 dist/default/production\HABnova.production.o
-crc16@c 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-crc16@i 2A 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-?_crc16 78 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__pidataBANK1 2C20 0 CODE 0 idataBANK1 dist/default/production\HABnova.production.o
-__pidataBANK2 2C6E 0 CODE 0 idataBANK2 dist/default/production\HABnova.production.o
-__pidataBANK4 11E0 0 CODE 0 idataBANK4 dist/default/production\HABnova.production.o
-GetLengthUBX@data 73 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__end_of_FlashError 11E0 0 CODE 0 text48 dist/default/production\HABnova.production.o
+I2C_MasterRead@address 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+I2C_ISR@i2c_address 7B 0 COMMON 1 bssCOMMON dist/default/production\HABnova.production.o
+_timer0ReloadVal 169 0 BANK2 1 nvBANK2 dist/default/production\HABnova.production.o
+__pidataBANK3 3D30 0 CODE 0 idataBANK3 dist/default/production\HABnova.production.o
+__end_of_FlashError 2084 0 CODE 0 text36 dist/default/production\HABnova.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
-_isspace$1015 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+_SSP1CON1bits 215 0 ABS 0 - dist/default/production\HABnova.production.o
+I2C_MasterTRBInsert@ptrb_list 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+_SSP1CON2bits 216 0 ABS 0 - dist/default/production\HABnova.production.o
+_I2C_Initialize 3E14 0 CODE 0 text34 dist/default/production\HABnova.production.o
+WriteEnvSensor@local_address 33 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__size_of_I2C_MasterWriteTRBBuild 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __CFG_PLLEN$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
+___lmul@product 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+I2C_MasterReadTRBBuild@ptrb 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 __size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_BAUD_RATE 31C6 0 STRCODE 0 stringtext2 dist/default/production\HABnova.production.o
+get_calib_data@rslt 5E 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+get_calib_data@dev 5F 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+___lmul@multiplicand 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_get_calib_data 2430 0 CODE 0 text2 dist/default/production\HABnova.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_gps_vertical_velocity 122 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-_gps_latitude 1C1 0 BANK3 1 bssBANK3 dist/default/production\HABnova.production.o
-__Hend_init 1E 0 CODE 0 end_init -
-GetNavData@success D4 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+_SSP1ADD 212 0 ABS 0 - dist/default/production\HABnova.production.o
+_SSP1BUF 211 0 ABS 0 - dist/default/production\HABnova.production.o
+__Hend_init 4A 0 CODE 0 end_init -
 __size_of_TMR0_SetInterruptHandler 0 0 ABS 0 - dist/default/production\HABnova.production.o
-GetNavData@dataIndex D8 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-vfpfcnvrt@c B2 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-__size_of_GPS_HasAcknowledged 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_GetLengthUBX 2D48 0 CODE 0 text11 dist/default/production\HABnova.production.o
-sprintf@f 67 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-sprintf@s B8 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-GetNavData@data_type BA 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-putch@txData 71 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__size_of_TransmitByte 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_atoi 1940 0 CODE 0 text38 dist/default/production\HABnova.production.o
-__end_of_dtoa FDE 0 CODE 0 text29 dist/default/production\HABnova.production.o
-__end_of_main 1C62 0 CODE 0 maintext dist/default/production\HABnova.production.o
-__end_of_stoa 1AC6 0 CODE 0 text28 dist/default/production\HABnova.production.o
-__end_of_xtoa D44 0 CODE 0 text23 dist/default/production\HABnova.production.o
-GetNavData@temp_time C1 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-isdigit@c 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_GetNavData D2 0 CODE 0 text19 dist/default/production\HABnova.production.o
-printf@fmt 63 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-__end_of_crc16 16DA 0 CODE 0 text4 dist/default/production\HABnova.production.o
-TransmitString@message 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__end_of_fputc 14BA 0 CODE 0 text32 dist/default/production\HABnova.production.o
-__end_of_fputs 3000 0 CODE 0 text31 dist/default/production\HABnova.production.o
-?_sprintf B8 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
+___aldiv@counter 31 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__end_of_main 26E4 0 CODE 0 maintext dist/default/production\HABnova.production.o
+__size_of_interleave_reg_addr 0 0 ABS 0 - dist/default/production\HABnova.production.o
+__end_of_Sleep 228E 0 CODE 0 text9 dist/default/production\HABnova.production.o
+bme280_set_regs@temp_buff 3B 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 _RXPPS E24 0 ABS 0 - dist/default/production\HABnova.production.o
+_Sleep 221A 0 CODE 0 text9 dist/default/production\HABnova.production.o
 _TRISA 8C 0 ABS 0 - dist/default/production\HABnova.production.o
 _TRISB 8D 0 ABS 0 - dist/default/production\HABnova.production.o
 _TRISC 8E 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_putch 2C3C 0 CODE 0 text33 dist/default/production\HABnova.production.o
 __size_of_TMR0_Initialize 0 0 ABS 0 - dist/default/production\HABnova.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-atoi@neg 20 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_crc16 15FE 0 CODE 0 text4 dist/default/production\HABnova.production.o
-crc_append_byte@data 72 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_flags 6D 0 BANK0 1 bssBANK0 dist/default/production\HABnova.production.o
-_fputc 1424 0 CODE 0 text32 dist/default/production\HABnova.production.o
-_fputs 2FB4 0 CODE 0 text31 dist/default/production\HABnova.production.o
-_putch 2C32 0 CODE 0 text33 dist/default/production\HABnova.production.o
-_ticks E0 0 BANK1 1 bssBANK1 dist/default/production\HABnova.production.o
-_width E4 0 BANK1 1 bssBANK1 dist/default/production\HABnova.production.o
-__end_of_TransmitString 10E2 0 CODE 0 text6 dist/default/production\HABnova.production.o
+bme280_parse_sensor_data@uncomp_data 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+_ticks 137 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
+null_ptr_check@dev 78 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\HABnova.production.o
-?_isalpha 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-?_isdigit 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+bme280_set_regs@reg_addr_cnt 51 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\HABnova.production.o
-?_islower 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-?_isspace 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-?_isupper 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__size_of_abs 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__size_of_pad 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__HdataBANK1 0 0 ABS 0 dataBANK1 -
-__HdataBANK2 0 0 ABS 0 dataBANK2 -
-__HdataBANK4 0 0 ABS 0 dataBANK4 -
-__end_of_OSCILLATOR_Initialize 2C6E 0 CODE 0 text17 dist/default/production\HABnova.production.o
-?_GetLengthUBX 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-_gps_course_over_ground 12C 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-atoi@n 27 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-atoi@s 76 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
+__HdataBANK3 0 0 ABS 0 dataBANK3 -
+__end_of_OSCILLATOR_Initialize 3D5E 0 CODE 0 text33 dist/default/production\HABnova.production.o
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production\HABnova.production.o
-ClearString@counti 77 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-__initialization 1E 0 CODE 0 cinit dist/default/production\HABnova.production.o
+ClearString@counti 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+_WriteEnvSensor 24C0 0 CODE 0 text8 dist/default/production\HABnova.production.o
+bme280_get_sensor_data@sensor_comp 157 0 BANK2 1 cstackBANK2 dist/default/production\HABnova.production.o
+__initialization 4A 0 CODE 0 cinit dist/default/production\HABnova.production.o
+__end_of_I2C_MasterReadTRBBuild 4000 0 CODE 0 text20 dist/default/production\HABnova.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__pbssBANK0 6D 0 BANK0 1 bssBANK0 dist/default/production\HABnova.production.o
-__pbssBANK1 E0 0 BANK1 1 bssBANK1 dist/default/production\HABnova.production.o
 __pbssBANK2 120 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-__pbssBANK3 1A0 0 BANK3 1 bssBANK3 dist/default/production\HABnova.production.o
-__pbssBANK4 24C 0 BANK4 1 bssBANK4 dist/default/production\HABnova.production.o
+__pbssBANK3 1E4 0 BANK3 1 bssBANK3 dist/default/production\HABnova.production.o
+__pbssBANK4 220 0 BANK4 1 bssBANK4 dist/default/production\HABnova.production.o
 __pbssBANK5 2A0 0 BANK5 1 bssBANK5 dist/default/production\HABnova.production.o
 __pbssBANK6 320 0 BANK6 1 bssBANK6 dist/default/production\HABnova.production.o
-TransmitByte@byte 73 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\HABnova.production.o
-__end_of_TransmitByte 1292 0 CODE 0 text7 dist/default/production\HABnova.production.o
-___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
-dtoa@d 30 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-dtoa@i 4C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-dtoa@n 44 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-dtoa@p 3E 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-dtoa@s 42 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-dtoa@w 40 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-GPS_HasAcknowledged@ackByteID 30 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-_gps_hdop 152 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-_gps_time 140 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-_gps_vdop 14A 0 BANK2 1 bssBANK2 dist/default/production\HABnova.production.o
-_GetNavData$534 CF 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-_GetNavData$535 D1 0 BANK1 1 cstackBANK1 dist/default/production\HABnova.production.o
-__size_of_TransmitBit 0 0 ABS 0 - dist/default/production\HABnova.production.o
-_OSCILLATOR_Initialize 2C60 0 CODE 0 text17 dist/default/production\HABnova.production.o
+bme280_init@rslt 64 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__end_of_I2C_Initialize 3E46 0 CODE 0 text34 dist/default/production\HABnova.production.o
+__size_of_bme280_soft_reset 0 0 ABS 0 - dist/default/production\HABnova.production.o
+__size_of_I2C_BusCollisionISR 0 0 ABS 0 - dist/default/production\HABnova.production.o
+parse_humidity_calib_data@reg_data 29 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__size_of_I2C_MasterWrite 0 0 ABS 0 - dist/default/production\HABnova.production.o
+pnum$text23_split_1 41 0 ABS 0 - dist/default/production\HABnova.production.o
+parse_humidity_calib_data@calib_data 28 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
+__end_of_get_calib_data 24C0 0 CODE 0 text2 dist/default/production\HABnova.production.o
+_OSCILLATOR_Initialize 3D50 0 CODE 0 text33 dist/default/production\HABnova.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1683,6 +1504,7 @@ _OSCILLATOR_Initialize 2C60 0 CODE 0 text17 dist/default/production\HABnova.prod
 # split form the top of the parent psect. All splits from a given parent
 # are listed in the order in which they occurred.
 %SPLITSTAB
+text23 text23_split_1
 # %DABS Section
 # This section contains a table of all usuage of the assember
 # directive DABS in the program. Each line has the following format:
@@ -1700,67 +1522,55 @@ _OSCILLATOR_Initialize 2C60 0 CODE 0 text17 dist/default/production\HABnova.prod
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text1 0 16BA 2D74 16 2
-text2 0 1797 2F2E 1E 2
-text3 0 949 1292 2D 2
-text4 0 AFF 15FE 6E 2
-text5 0 9A5 134A 31 2
-text6 0 849 1092 28 2
-text7 0 91C 1238 2D 2
-text9 0 AAD 155A 52 2
-text10 0 822 1044 27 2
-text11 0 1692 2D24 12 2
-text12 0 B6D 16DA 92 2
-text13 0 1665 2CCA C 2
-text14 0 16A4 2D48 16 2
-text15 0 161E 2C3C 6 2
-text16 0 89A 1134 2A 2
-text17 0 1630 2C60 7 2
-text18 0 165A 2CB4 B 2
-text20 0 1681 2D02 11 2
-text21 0 976 12EC 2F 2
-text24 0 801 1002 21 2
-text25 0 172C 2E58 17 2
-text26 0 1715 2E2A 17 2
-text27 0 177A 2EF4 1D 2
-text28 0 CA0 1940 C3 2
-text30 0 A5D 14BA 50 2
-text31 0 17DA 2FB4 26 2
-text32 0 A12 1424 4B 2
-text33 0 1619 2C32 5 2
-text34 0 163E 2C7C 8 2
-text35 0 16FE 2DFC 17 2
-text36 0 E31 1C62 DC 2
-text37 0 F0D 1E1A F3 2
-text38 0 BFF 17FE A1 2
-text39 0 175E 2EBC 1C 2
-text40 0 16E7 2DCE 17 2
-text41 0 1743 2E86 1B 2
-text42 0 871 10E2 29 2
-text43 0 9D6 13AC 3C 2
-text44 0 1614 2C28 5 2
-text45 0 1650 2CA0 A 2
-text46 0 17B5 2F6A 25 2
-text47 0 16D0 2DA0 17 2
-text48 0 8C4 1188 2C 2
-text50 0 1671 2CE2 10 2
-text51 0 3 6 1 2
-text52 0 1646 2C8C A 2
-maintext 0 D63 1AC6 CE 2
-cstackCOMMON 1 70 70 E 1
+text1 0 1372 26E4 67 2
+text2 0 1218 2430 48 2
+text3 0 170B 2E16 F5 2
+text4 0 14DF 29BE 99 2
+text5 0 10D4 21A8 39 2
+text6 0 1578 2AF0 9E 2
+text7 0 1042 2084 2D 2
+text8 0 1260 24C0 4A 2
+text9 0 110D 221A 3A 2
+text10 0 12AA 2554 62 2
+text12 0 1147 228E 42 2
+text13 0 1F63 3EC6 25 2
+text14 0 109E 213C 36 2
+text16 0 1F41 3E82 22 2
+text17 0 1FAE 3F5C 27 2
+text18 0 11D0 23A0 48 2
+text19 0 1E94 3D28 4 2
+text20 0 1FD5 3FAA 2B 2
+text21 0 145A 28B4 85 2
+text24 0 1189 2312 47 2
+text25 0 1616 2C2C F5 2
+text27 0 106F 20DE 2F 2
+text28 0 13D9 27B2 81 2
+text29 0 1EC3 3D86 F 2
+text30 0 1001 2002 15 2
+text31 0 1E9C 3D38 6 2
+text32 0 800 1000 33 2
+text33 0 1EA8 3D50 7 2
+text34 0 1F0A 3E14 19 2
+text35 0 1EB8 3D70 B 2
+text36 0 1016 202C 2C 2
+text37 0 1F88 3F10 26 2
+text38 0 1EF3 3DE6 17 2
+text40 0 1ED2 3DA4 10 2
+text42 0 1EAF 3D5E 9 2
+text44 0 1F23 3E46 1E 2
+text45 0 1EE2 3DC4 11 2
+maintext 0 130C 2618 66 2
+cstackCOMMON 1 70 70 D 1
 cstackBANK0 1 20 20 50 1
-cstackBANK1 1 A0 A0 4D 1
-inittext 0 162A 2C54 6 2
-stringtext4 0 1800 3000 E5 2
+cstackBANK1 1 A0 A0 50 1
+cstackBANK3 1 1A0 1A0 50 1
 intentry 0 4 8 7FC 2
-reset_vec 0 0 0 2 2
-bssBANK2 1 120 120 4D 1
-bssBANK3 1 1A0 1A0 3D 1
+reset_vec 0 0 0 4 2
+bssBANK2 1 120 120 4A 1
+bssBANK4 1 220 220 1A 1
 bssBANK5 1 2A0 2A0 46 1
 bssBANK6 1 320 320 49 1
-idataBANK1 0 1610 2C20 4 2
-idataBANK2 0 1637 2C6E 7 2
-idataBANK4 0 8F0 11E0 2C 2
-dataBANK4 1 220 220 4C 1
-clrtext 0 1624 2C48 6 2
+idataBANK3 0 1E98 3D30 4 2
+clrtext 0 1EA2 3D44 6 2
+text23_split_1 0 833 1066 7CE 2
 config 0 8007 1000E 3 2

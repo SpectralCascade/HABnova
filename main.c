@@ -1,5 +1,6 @@
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
+#include "BME280_driver/bme280.h"
 
 #include <string.h>
 #include <stdio.h>
@@ -15,10 +16,11 @@ void TimerISR()
 
 // I did this to make the code more readable in MPLABx, kinda like #region
 // in VS C# but mostly because I'm too lazy to split the project into more files
-#define RADIO_TRANSMISSION
-#define GPS_MODULE
-#define UBX
 #define MISC
+#define RADIO_TRANSMISSION
+//#define GPS_MODULE
+#define UBX
+#define BME280_SENSOR
 
 #ifdef MISC
 
@@ -64,21 +66,30 @@ bool FindString(char* src, int srcLen, char* target, int targetLen)
     return false;
 }
 
-#endif
 
-#ifdef RADIO_TRANSMISSION
+void Sleep(uint32_t ms)
+{
+    unsigned long start = millis();
+    while (millis() - start < ms)
+    {
+        __delay_ms(1);
+    }
+}
+
 // Constants for transmission code follow.
-
 // Baud rate (bits per second).
-const int BAUD_RATE = 50;
+#define BAUD_RATE 50
 
 // Half the delay time required to match the baud rate in MICRO seconds
 #define HALF_BAUD_DELAY ((1000 / BAUD_RATE) / 2) * 1000
 
 #define HIGH_BAUD_RATE
 
+// Interval multiplier
+#define DELAY_MULT 1000
+
 // How often a message should be sent in seconds
-const int MESSAGE_INTERVAL = 5;
+#define MESSAGE_INTERVAL 5
 
 #ifndef DEBUG_CONSOLE
 // Maximum length of a message, not including appended CRC
@@ -87,6 +98,9 @@ const int MESSAGE_INTERVAL = 5;
 #define MAX_MESSAGE_LENGTH 70
 #endif
 
+#endif// MISC
+
+#ifdef RADIO_TRANSMISSION
 // Transmission is split into two messages because the PIC16F1619
 // microcontroller has limited contiguous memory.
 char message_start[MAX_MESSAGE_LENGTH];
@@ -94,9 +108,6 @@ char message_end[MAX_MESSAGE_LENGTH + 3];
 
 /// Array of message block pointers.
 char* messages[2] = {message_start, message_end};
-
-// Interval multiplier
-const int DELAY_MULT = 1000;
 
 // Adds a byte to the CRC checksum we're calculating
 unsigned short crc_append_byte(uint16_t crc, uint8_t data)
@@ -590,43 +601,117 @@ bool GetNavData()
 
 #endif // GPS_MODULE
 
+#ifdef BME280_SENSOR
+int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len)
+{
+    I2C_MESSAGE_STATUS status = BME280_OK;
+    I2C_MasterWrite(&reg_addr, 1, dev_id, &status);
+    if (status == 0)
+    {
+        I2C_MasterRead(data, len, dev_id, &status);
+        if (status != 0)
+        {
+            status = BME280_E_COMM_FAIL;
+        }
+    }
+    else
+    {
+        status = BME280_E_COMM_FAIL;
+    }
+    return status;
+}
+int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
+{
+    I2C_MESSAGE_STATUS status = 0;
+    uint8_t local_address = reg_addr;
+    while (local_address - reg_addr < len)
+    {
+        I2C_MasterWrite(&local_address, 1, dev_id, &status);
+        if (status == 0)
+        {
+            I2C_MasterWrite(reg_data, 1, dev_id, &status);
+            if (status != 0)
+            {
+                return BME280_E_COMM_FAIL;
+            }
+        }
+        else
+        {
+            return BME280_E_COMM_FAIL;
+        }
+        local_address++;
+    }
+    return BME280_OK;
+}
+#endif// BME280_SENSOR
+
 char checksum[6] = {'\0'};
 
 void main(void)
 {
+    /// Initialise the microcontroller pins, modules and interrupts
     SYSTEM_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     TMR0_SetInterruptHandler(TimerISR);
+    
+    /// Setup the sensor device
+    struct bme280_dev env_sensor;
+    int8_t env_sensor_status = BME280_OK;
 
+    env_sensor.dev_id = BME280_I2C_ADDR_PRIM;
+    env_sensor.intf = BME280_I2C_INTF;
+    env_sensor.read = ReadEnvSensor;
+    env_sensor.write = WriteEnvSensor;
+    env_sensor.delay_ms = Sleep;
+
+    env_sensor_status = bme280_init(&env_sensor);
+
+#ifdef GPS_MODULE
     SetupGPS();
+#endif
 
     int id = 0;
     while (1)
     {
+#ifdef RADIO_TRANSMISSION
         ClearString(messages[0]);
         ClearString(messages[1]);
-        if (GetNavData())
+#endif
+        if (
+#ifdef GPS_MODULE
+            GetNavData()
+#else
+            true
+#endif
+        )
         {
 #ifndef TEST_GPS_NAVDATA
+            struct bme280_data sensor_data;
+            bme280_get_sensor_data(BME280_ALL, &sensor_data, &env_sensor);
+
+#ifdef RADIO_TRANSMISSION
+#ifdef GPS_MODULE
             /// Half the data goes in the first message block
             sprintf(messages[0], "$$TEST,%d,%s,%s,%s,%s,",
                 id, gps_time, gps_latitude, gps_longitude, gps_altitude
             );
             /// The other half goes in the second block
-            sprintf(messages[1], "%s,%s,%s,%s,%s,%s",
+            sprintf(messages[1], "%s,%s,%s,%s,%s,%s,%d,%d,%d",
                     gps_speed_over_ground, gps_course_over_ground,
-                    gps_vertical_velocity, gps_nav_status, gps_hdop, gps_vdop
+                    gps_vertical_velocity, gps_nav_status, gps_hdop, gps_vdop,
+                    sensor_data.temperature, sensor_data.pressure
             );
             /// Calculate and append the CRC16 checksum to the message segments.
             sprintf(checksum, "*%04X\n", crc16(messages, 2));
             strcat(messages[1], checksum);
             id++;
-#endif
-
             TX_LED_SetHigh();
             TransmitString(messages[0]);
             TransmitString(messages[1]);
             TX_LED_SetLow();
+#endif
+#endif
+#endif
         }
         else
         {
