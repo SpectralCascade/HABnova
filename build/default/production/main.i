@@ -17273,7 +17273,7 @@ void TimerISR()
 {
     ticks++;
 }
-# 21 "main.c"
+# 25 "main.c"
 void FlashError()
 {
     for (int i = 0; i < 3; i++)
@@ -17286,6 +17286,39 @@ void FlashError()
 }
 
 
+void ClearString(char* str)
+{
+    for (int i = 0, counti = strlen(str); i < counti; i++)
+    {
+        str[i] = '\0';
+    }
+}
+
+
+_Bool FindString(char* src, int srcLen, char* target, int targetLen)
+{
+    int matching = 0;
+    for (int i = 0; i < srcLen; i++)
+    {
+        if (src[i] == target[matching])
+        {
+            matching++;
+            if (matching == targetLen)
+            {
+                return 1;
+            }
+        }
+        else
+        {
+            matching = 0;
+        }
+    }
+    return 0;
+}
+
+
+
+
 
 
 
@@ -17295,8 +17328,10 @@ const int BAUD_RATE = 50;
 
 
 
+
+
 const int MESSAGE_INTERVAL = 5;
-# 53 "main.c"
+# 92 "main.c"
 char message_start[70];
 char message_end[70 + 3];
 
@@ -17359,13 +17394,19 @@ void TransmitBit(_Bool b)
  {
   do { LATAbits.LATA4 = 0; } while(0);
  }
- _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
- _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
+
+
+    _delay((unsigned long)((((1000 / BAUD_RATE) / 2) * 1000)*(4000000/4000000.0)));
+
+
+
+
+
 }
 
 void TransmitByte(char byte)
 {
-# 130 "main.c"
+# 175 "main.c"
     TransmitBit(0);
 
  for (int i = 0; i < 7; i++)
@@ -17390,13 +17431,7 @@ void TransmitString(char* message)
 
 
 }
-
-
-
-
-
-
-
+# 207 "main.c"
 uint8_t setNavFlightMode[] = {
 
     0xB5, 0x62,
@@ -17497,9 +17532,13 @@ _Bool GPS_HasAcknowledged(uint8_t* data)
 
         }
     }
+
+    return 0;
 }
 
 _Bool gps_configured = 0;
+
+
 
 void SetupGPS()
 {
@@ -17516,7 +17555,7 @@ void SetupGPS()
 
 
     printf("$PUBX,40,GLL,0,0,0,0*5C\r\n");
-    printf("$PUBX,40,ZDA,0,0,0,0*44\r\n");
+    printf("$PUBX,40,GGA,0,0,0,0*5A\r\n");
     printf("$PUBX,40,VTG,0,0,0,0*5E\r\n");
     printf("$PUBX,40,GSV,0,0,0,0*59\r\n");
     printf("$PUBX,40,GSA,0,0,0,0*4E\r\n");
@@ -17524,6 +17563,7 @@ void SetupGPS()
 }
 
 enum FieldTypesPUBX {
+    PUBX_DATA_TYPE = 0,
     PUBX_TIME = 2,
     PUBX_LAT,
     PUBX_NS,
@@ -17531,12 +17571,25 @@ enum FieldTypesPUBX {
     PUBX_EW,
     PUBX_ALT,
     PUBX_NAVSTAT,
-
-
-    PUBX_SOG = 11,
+    PUBX_HDOP,
+    PUBX_VDOP,
+    PUBX_SOG,
     PUBX_COG,
     PUBX_VVEL
 };
+# 365 "main.c"
+void SafeSetByte(char* dest, int length, unsigned int index, char data)
+{
+    if (index < length - 1)
+    {
+        dest[index] = data;
+    }
+    else
+    {
+
+        dest[length - 1] = '\0';
+    }
+}
 
 
 char gps_time[10] = {'\0'};
@@ -17549,12 +17602,16 @@ char gps_altitude[12] = {'\0'};
 
 char gps_nav_status[4] = {'\0'};
 
-char gps_speed_over_ground[8] = {'\0'};
+char gps_speed_over_ground[10] = {'\0'};
 
-char gps_course_over_ground[8] = {'\0'};
+char gps_course_over_ground[10] = {'\0'};
 
-char gps_vertical_velocity[8] = {'\0'};
-# 341 "main.c"
+char gps_vertical_velocity[10] = {'\0'};
+
+char gps_hdop[8] = {'\0'};
+
+char gps_vdop[8] = {'\0'};
+# 421 "main.c"
 _Bool GetNavData()
 {
     _Bool success = 0;
@@ -17571,12 +17628,29 @@ _Bool GetNavData()
 
     int dataFieldType = 0;
 
+    char byte;
+
+    char data_type[7] = {'\0'};
+
+    _Bool doParse = 0;
+
+    char temp_time[10] = {'\0'};
+
+    ClearString(gps_latitude);
+    ClearString(gps_longitude);
+    ClearString(gps_altitude);
+    ClearString(gps_nav_status);
+    ClearString(gps_hdop);
+    ClearString(gps_vdop);
+    ClearString(gps_speed_over_ground);
+    ClearString(gps_course_over_ground);
+    ClearString(gps_vertical_velocity);
+
+    int index = 0;
+
 
     printf("$PUBX,00*33\r\n");
 
-    char byte;
-
-    int index = 0;
     while (!success)
     {
 
@@ -17589,12 +17663,25 @@ _Bool GetNavData()
         if (EUSART_is_rx_ready())
         {
             byte = EUSART_Read();
-# 388 "main.c"
+# 492 "main.c"
             _Bool skip = 1;
             switch (byte)
             {
+            case '$':
+                doParse = 1;
+                skip = 0;
+                dataIndex = 0;
+                break;
             case ',':
-                dataFieldType++;
+                if (dataFieldType == PUBX_DATA_TYPE && !FindString(data_type, strlen(data_type), "PUBX", 4))
+                {
+                    doParse = 0;
+                    ClearString(data_type);
+                }
+                if (doParse)
+                {
+                    dataFieldType++;
+                }
                 dataIndex = 0;
                 break;
             case '\n':
@@ -17604,53 +17691,75 @@ _Bool GetNavData()
                 skip = 0;
                 break;
             }
-
-            if (!skip)
+            if (!skip && doParse)
             {
                 switch (dataFieldType)
                 {
+                case PUBX_DATA_TYPE:
+                    SafeSetByte(data_type, 7, dataIndex, byte);
+                    break;
                 case PUBX_TIME:
 
-                    gps_time[dataIndex] = byte;
+                    SafeSetByte(temp_time, 10, dataIndex, byte);
                     break;
                 case PUBX_LAT:
-                    gps_latitude[dataIndex + 1] = byte;
+                    SafeSetByte(gps_latitude, 16, dataIndex + 1, byte);
                     break;
                 case PUBX_NS:
 
                     gps_latitude[0] = byte == 'N' ? '+' : '-';
                     break;
                 case PUBX_LONG:
-                    gps_longitude[dataIndex + 1] = byte;
+                    SafeSetByte(gps_longitude, 16, dataIndex + 1, byte);
                     break;
                 case PUBX_EW:
 
                     gps_longitude[0] = byte == 'E' ? '+' : '-';
                     break;
                 case PUBX_ALT:
-                    gps_altitude[dataIndex] = byte;
+                    SafeSetByte(gps_altitude, 12, dataIndex, byte);
+                    break;
+                case PUBX_HDOP:
+                    SafeSetByte(gps_hdop, 8, dataIndex, byte);
+                    break;
+                case PUBX_VDOP:
+                    SafeSetByte(gps_vdop, 8, dataIndex, byte);
                     break;
                 case PUBX_NAVSTAT:
-                    gps_nav_status[dataIndex] = byte;
+                    SafeSetByte(gps_nav_status, 4, dataIndex, byte);
                     break;
                 case PUBX_SOG:
-                    gps_speed_over_ground[dataIndex] = byte;
+                    SafeSetByte(gps_speed_over_ground, 10, dataIndex, byte);
                     break;
                 case PUBX_COG:
-                    gps_course_over_ground[dataIndex] = byte;
+                    SafeSetByte(gps_course_over_ground, 10, dataIndex, byte);
                     break;
                 case PUBX_VVEL:
-                    gps_vertical_velocity[dataIndex] = byte;
+                    SafeSetByte(gps_vertical_velocity, 10, dataIndex, byte);
                     break;
                 default:
                     break;
                 }
                 dataIndex++;
             }
-
         }
 
+        ClearString(gps_time);
+
+        gps_time[0] = temp_time[0];
+        gps_time[1] = temp_time[1];
+        gps_time[2] = ':';
+        gps_time[3] = temp_time[2];
+        gps_time[4] = temp_time[3];
+        gps_time[5] = ':';
+        gps_time[6] = temp_time[4];
+        gps_time[7] = temp_time[5];
+
     }
+
+
+
+
     return success;
 }
 
@@ -17669,21 +17778,25 @@ void main(void)
     int id = 0;
     while (1)
     {
+        ClearString(messages[0]);
+        ClearString(messages[1]);
         if (GetNavData())
         {
 
-            sprintf(messages[0], "$$TEST,%d,%s,%s,%s,",
-                id, gps_time, gps_latitude, gps_longitude
+
+            sprintf(messages[0], "$$TEST,%d,%s,%s,%s,%s,",
+                id, gps_time, gps_latitude, gps_longitude, gps_altitude
             );
 
-            sprintf(messages[1], "%s,%s,%s,%s",
-                    gps_altitude, gps_speed_over_ground, gps_course_over_ground,
-                    gps_vertical_velocity
+            sprintf(messages[1], "%s,%s,%s,%s,%s,%s",
+                    gps_speed_over_ground, gps_course_over_ground,
+                    gps_vertical_velocity, gps_nav_status, gps_hdop, gps_vdop
             );
 
             sprintf(checksum, "*%04X\n", crc16(messages, 2));
             strcat(messages[1], checksum);
             id++;
+
 
             do { LATAbits.LATA2 = 1; } while(0);
             TransmitString(messages[0]);

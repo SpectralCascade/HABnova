@@ -17,6 +17,10 @@ void TimerISR()
 // in VS C# but mostly because I'm too lazy to split the project into more files
 #define RADIO_TRANSMISSION
 #define GPS_MODULE
+#define UBX
+#define MISC
+
+#ifdef MISC
 
 void FlashError()
 {
@@ -29,6 +33,39 @@ void FlashError()
     }
 }
 
+/// Nulls every character in a string
+void ClearString(char* str)
+{
+    for (int i = 0, counti = strlen(str); i < counti; i++)
+    {
+        str[i] = '\0';
+    }
+}
+
+/// Returns true if a source string has a matching target string
+bool FindString(char* src, int srcLen, char* target, int targetLen)
+{
+    int matching = 0;
+    for (int i = 0; i < srcLen; i++)
+    {
+        if (src[i] == target[matching])
+        {
+            matching++;
+            if (matching == targetLen)
+            {
+                return true;
+            }
+        }
+        else
+        {
+            matching = 0;
+        }
+    }
+    return false;
+}
+
+#endif
+
 #ifdef RADIO_TRANSMISSION
 // Constants for transmission code follow.
 
@@ -37,6 +74,8 @@ const int BAUD_RATE = 50;
 
 // Half the delay time required to match the baud rate in MICRO seconds
 #define HALF_BAUD_DELAY ((1000 / BAUD_RATE) / 2) * 1000
+
+#define HIGH_BAUD_RATE
 
 // How often a message should be sent in seconds
 const int MESSAGE_INTERVAL = 5;
@@ -112,8 +151,14 @@ void TransmitBit(bool b)
 	{
 		TX_PIN_SetLow();
 	}
+#ifdef HIGH_BAUD_RATE
+    // 100 baud
+    __delay_us(HALF_BAUD_DELAY);
+#else
+    // 50 baud
 	__delay_us(HALF_BAUD_DELAY);
 	__delay_us(HALF_BAUD_DELAY);
+#endif
 }
 
 void TransmitByte(char byte)
@@ -156,6 +201,7 @@ void TransmitString(char* message)
 
 #ifdef GPS_MODULE
 
+#ifdef UBX
 // UBX command which sets the GPS navigation mode to flight mode.
 // See https://www.u-blox.com/en/docs/UBX-13003221 for info on the UBX protocol.
 uint8_t setNavFlightMode[] = {
@@ -258,9 +304,13 @@ bool GPS_HasAcknowledged(uint8_t* data)
 
         }
     }
+    
+    return false;
 }
 
 bool gps_configured = false;
+
+#endif// UBX
 
 void SetupGPS()
 {
@@ -277,7 +327,7 @@ void SetupGPS()
     // Disable all sentences, we will poll the GPS module as necessary.
     // printf() is rerouted to EUSART so we can use that to send NMEA commands.
     printf("$PUBX,40,GLL,0,0,0,0*5C\r\n");
-    printf("$PUBX,40,ZDA,0,0,0,0*44\r\n");
+    printf("$PUBX,40,GGA,0,0,0,0*5A\r\n");
     printf("$PUBX,40,VTG,0,0,0,0*5E\r\n");
     printf("$PUBX,40,GSV,0,0,0,0*59\r\n");
     printf("$PUBX,40,GSA,0,0,0,0*4E\r\n");
@@ -285,6 +335,7 @@ void SetupGPS()
 }
 
 enum FieldTypesPUBX {
+    PUBX_DATA_TYPE = 0,
     PUBX_TIME = 2,
     PUBX_LAT,
     PUBX_NS,
@@ -292,29 +343,58 @@ enum FieldTypesPUBX {
     PUBX_EW,
     PUBX_ALT,
     PUBX_NAVSTAT,
-    // Skip accuracy data estimate
-    // Skip accuracy data estimate
-    PUBX_SOG = 11,
+    PUBX_HDOP,
+    PUBX_VDOP,
+    PUBX_SOG,
     PUBX_COG,
     PUBX_VVEL
 };
 
+#define LEN_DATA_TYPE   7
+#define LEN_TIME        10
+#define LEN_LAT         16
+#define LEN_LONG        16
+#define LEN_ALT         12
+#define LEN_NAVSTAT     4
+#define LEN_SOG         10
+#define LEN_COG         10
+#define LEN_VVEL        10
+#define LEN_HDOP        8
+#define LEN_VDOP        8
+
+void SafeSetByte(char* dest, int length, unsigned int index, char data)
+{
+    if (index < length - 1)
+    {
+        dest[index] = data;
+    }
+    else
+    {
+        // Truncate
+        dest[length - 1] = '\0';
+    }
+}
+
 // World time
-char gps_time[10] = {'\0'};
+char gps_time[LEN_TIME] = {'\0'};
 // Latitude
-char gps_latitude[16] = {'\0'};
+char gps_latitude[LEN_LAT] = {'\0'};
 // Longitude
-char gps_longitude[16] = {'\0'};
+char gps_longitude[LEN_LONG] = {'\0'};
 // Altitude in metres
-char gps_altitude[12] = {'\0'};
+char gps_altitude[LEN_ALT] = {'\0'};
 // Navigation status
-char gps_nav_status[4] = {'\0'};
+char gps_nav_status[LEN_NAVSTAT] = {'\0'};
 // Speed over ground in km/h
-char gps_speed_over_ground[8] = {'\0'};
+char gps_speed_over_ground[LEN_SOG] = {'\0'};
 // Course over ground in degrees
-char gps_course_over_ground[8] = {'\0'};
+char gps_course_over_ground[LEN_COG] = {'\0'};
 // Vertical velocity where positive = downwards, negative = upwards in m/s
-char gps_vertical_velocity[8] = {'\0'};
+char gps_vertical_velocity[LEN_VVEL] = {'\0'};
+// Horizontal dilution
+char gps_hdop[LEN_HDOP] = {'\0'};
+// Vertical dilution
+char gps_vdop[LEN_VDOP] = {'\0'};
 
 #ifdef DEBUG_CONSOLE
 int FakeEusartCounter = 0;
@@ -333,7 +413,7 @@ uint8_t EUSART_Read()
 }
 #endif // DEBUG_CONSOLE
 
-// Enable this to transmit the first 70 bits of GPS data received.
+// Enable this to transmit the first chunk of GPS data received.
 //#define TEST_GPS_NAVDATA
 
 // Polls the GPS module and stores received data. Returns false if there is no
@@ -354,12 +434,29 @@ bool GetNavData()
     // The current data type (e.g. latitude, time, vertical velocity etc.)
     int dataFieldType = 0;
     
+    char byte;
+    
+    char data_type[LEN_DATA_TYPE] = {'\0'};
+    
+    bool doParse = false;
+
+    char temp_time[LEN_TIME] = {'\0'};
+    
+    ClearString(gps_latitude);
+    ClearString(gps_longitude);
+    ClearString(gps_altitude);
+    ClearString(gps_nav_status);
+    ClearString(gps_hdop);
+    ClearString(gps_vdop);
+    ClearString(gps_speed_over_ground);
+    ClearString(gps_course_over_ground);
+    ClearString(gps_vertical_velocity);
+    
+    int index = 0;
+    
     /// Poll the GPS module
     printf("$PUBX,00*33\r\n");
 
-    char byte;
-    
-    int index = 0;
     while (!success)
     {
         // Timeout if no valid response in 3 seconds
@@ -373,23 +470,43 @@ bool GetNavData()
         {
             byte = EUSART_Read();
 #ifdef TEST_GPS_NAVDATA
-            if (index < MAX_MESSAGE_LENGTH - 1)
-            {
-                message_start[index] = byte;
+            if (doParse) {
+                if (index < MAX_MESSAGE_LENGTH - 1)
+                {
+                    message_start[index] = byte;
+                }
+                else if ((index + 1) - MAX_MESSAGE_LENGTH < MAX_MESSAGE_LENGTH)
+                {
+                    message_end[(index + 1) - MAX_MESSAGE_LENGTH] = byte;
+                }
+                else
+                {
+                    message_end[MAX_MESSAGE_LENGTH - 1] = '\n';
+                    return true;
+                }
+
+                index++;
             }
-            else
-            {
-                message_end[0] = '\n';
-                return true;
-            }
+#endif
             
-            index++;
-#else
             bool skip = true;
             switch (byte)
             {
+            case '$':
+                doParse = true;
+                skip = false;
+                dataIndex = 0;
+                break;
             case ',':
-                dataFieldType++;
+                if (dataFieldType == PUBX_DATA_TYPE && !FindString(data_type, strlen(data_type), "PUBX", 4))
+                {
+                    doParse = false;
+                    ClearString(data_type);
+                }
+                if (doParse)
+                {
+                    dataFieldType++;
+                }
                 dataIndex = 0;
                 break;
             case '\n':
@@ -399,53 +516,75 @@ bool GetNavData()
                 skip = false;
                 break;
             }
-
-            if (!skip)
+            if (!skip && doParse)
             {
                 switch (dataFieldType)
                 {
+                case PUBX_DATA_TYPE:
+                    SafeSetByte(data_type, LEN_DATA_TYPE, dataIndex, byte);
+                    break;
                 case PUBX_TIME:
                     // TODO: check supported separator chars
-                    gps_time[dataIndex] = byte;
+                    SafeSetByte(temp_time, LEN_TIME, dataIndex, byte);
                     break;
                 case PUBX_LAT:
-                    gps_latitude[dataIndex + 1] = byte;
+                    SafeSetByte(gps_latitude, LEN_LAT, dataIndex + 1, byte);
                     break;
                 case PUBX_NS:
                     // TODO: check the plus sign doesn't break stuff
                     gps_latitude[0] = byte == 'N' ? '+' : '-';
                     break;
                 case PUBX_LONG:
-                    gps_longitude[dataIndex + 1] = byte;
+                    SafeSetByte(gps_longitude, LEN_LONG, dataIndex + 1, byte);
                     break;
                 case PUBX_EW:
                     // TODO: check the plus sign doesn't break stuff
                     gps_longitude[0] = byte == 'E' ? '+' : '-';
                     break;
                 case PUBX_ALT:
-                    gps_altitude[dataIndex] = byte;
+                    SafeSetByte(gps_altitude, LEN_ALT, dataIndex, byte);
+                    break;
+                case PUBX_HDOP:
+                    SafeSetByte(gps_hdop, LEN_HDOP, dataIndex, byte);
+                    break;
+                case PUBX_VDOP:
+                    SafeSetByte(gps_vdop, LEN_VDOP, dataIndex, byte);
                     break;
                 case PUBX_NAVSTAT:
-                    gps_nav_status[dataIndex] = byte;
+                    SafeSetByte(gps_nav_status, LEN_NAVSTAT, dataIndex, byte);
                     break;
                 case PUBX_SOG:
-                    gps_speed_over_ground[dataIndex] = byte;
+                    SafeSetByte(gps_speed_over_ground, LEN_SOG, dataIndex, byte);
                     break;
                 case PUBX_COG:
-                    gps_course_over_ground[dataIndex] = byte;
+                    SafeSetByte(gps_course_over_ground, LEN_COG, dataIndex, byte);
                     break;
                 case PUBX_VVEL:
-                    gps_vertical_velocity[dataIndex] = byte;
+                    SafeSetByte(gps_vertical_velocity, LEN_VVEL, dataIndex, byte);
                     break;
                 default:
                     break;
                 }
                 dataIndex++;
             }
-#endif
         }
+        
+        ClearString(gps_time);
+        /// Format time
+        gps_time[0] = temp_time[0];
+        gps_time[1] = temp_time[1];
+        gps_time[2] = ':';
+        gps_time[3] = temp_time[2];
+        gps_time[4] = temp_time[3];
+        gps_time[5] = ':';
+        gps_time[6] = temp_time[4];
+        gps_time[7] = temp_time[5];
 
     }
+    
+    // Format time
+    
+    
     return success;
 }
 
@@ -464,21 +603,25 @@ void main(void)
     int id = 0;
     while (1)
     {
+        ClearString(messages[0]);
+        ClearString(messages[1]);
         if (GetNavData())
         {
+#ifndef TEST_GPS_NAVDATA
             /// Half the data goes in the first message block
-            sprintf(messages[0], "$$TEST,%d,%s,%s,%s,",
-                id, gps_time, gps_latitude, gps_longitude
+            sprintf(messages[0], "$$TEST,%d,%s,%s,%s,%s,",
+                id, gps_time, gps_latitude, gps_longitude, gps_altitude
             );
             /// The other half goes in the second block
-            sprintf(messages[1], "%s,%s,%s,%s",
-                    gps_altitude, gps_speed_over_ground, gps_course_over_ground,
-                    gps_vertical_velocity
+            sprintf(messages[1], "%s,%s,%s,%s,%s,%s",
+                    gps_speed_over_ground, gps_course_over_ground,
+                    gps_vertical_velocity, gps_nav_status, gps_hdop, gps_vdop
             );
             /// Calculate and append the CRC16 checksum to the message segments.
             sprintf(checksum, "*%04X\n", crc16(messages, 2));
             strcat(messages[1], checksum);
             id++;
+#endif
 
             TX_LED_SetHigh();
             TransmitString(messages[0]);
