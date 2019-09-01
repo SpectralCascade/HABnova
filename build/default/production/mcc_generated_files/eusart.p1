@@ -1404,7 +1404,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SPBRGH -> -> 0 `i `uc ]
 "76
 [; ;mcc_generated_files/eusart.c: 76: }
-[e :UE 1218 ]
+[e :UE 1216 ]
 }
 "78
 [; ;mcc_generated_files/eusart.c: 78: _Bool EUSART_is_tx_ready(void)
@@ -1417,10 +1417,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "80
 [; ;mcc_generated_files/eusart.c: 80:     return (_Bool)(PIR1bits.TXIF && TX1STAbits.TXEN);
 [e ) -> -> && != -> . . _PIR1bits 0 4 `i -> 0 `i != -> . . _TX1STAbits 0 5 `i -> 0 `i `i `a ]
-[e $UE 1219  ]
+[e $UE 1217  ]
 "81
 [; ;mcc_generated_files/eusart.c: 81: }
-[e :UE 1219 ]
+[e :UE 1217 ]
 }
 "83
 [; ;mcc_generated_files/eusart.c: 83: _Bool EUSART_is_rx_ready(void)
@@ -1433,10 +1433,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "85
 [; ;mcc_generated_files/eusart.c: 85:     return PIR1bits.RCIF;
 [e ) -> . . _PIR1bits 0 5 `a ]
-[e $UE 1220  ]
+[e $UE 1218  ]
 "86
 [; ;mcc_generated_files/eusart.c: 86: }
-[e :UE 1220 ]
+[e :UE 1218 ]
 }
 "88
 [; ;mcc_generated_files/eusart.c: 88: _Bool EUSART_is_tx_done(void)
@@ -1449,10 +1449,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "90
 [; ;mcc_generated_files/eusart.c: 90:     return TX1STAbits.TRMT;
 [e ) -> . . _TX1STAbits 0 1 `a ]
-[e $UE 1221  ]
+[e $UE 1219  ]
 "91
 [; ;mcc_generated_files/eusart.c: 91: }
-[e :UE 1221 ]
+[e :UE 1219 ]
 }
 "93
 [; ;mcc_generated_files/eusart.c: 93: uint8_t EUSART_Read(void)
@@ -1464,22 +1464,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "95
 [; ;mcc_generated_files/eusart.c: 95:     while(!PIR1bits.RCIF)
-[e $U 1223  ]
-[e :U 1224 ]
+[e $U 1221  ]
+[e :U 1222 ]
 "96
 [; ;mcc_generated_files/eusart.c: 96:     {
 {
 "97
 [; ;mcc_generated_files/eusart.c: 97:     }
 }
-[e :U 1223 ]
+[e :U 1221 ]
 "95
 [; ;mcc_generated_files/eusart.c: 95:     while(!PIR1bits.RCIF)
-[e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 1224  ]
-[e :U 1225 ]
+[e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 1222  ]
+[e :U 1223 ]
 "100
 [; ;mcc_generated_files/eusart.c: 100:     if(1 == RC1STAbits.OERR)
-[e $ ! == -> 1 `i -> . . _RC1STAbits 0 1 `i 1226  ]
+[e $ ! == -> 1 `i -> . . _RC1STAbits 0 1 `i 1224  ]
 "101
 [; ;mcc_generated_files/eusart.c: 101:     {
 {
@@ -1492,14 +1492,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "106
 [; ;mcc_generated_files/eusart.c: 106:     }
 }
-[e :U 1226 ]
+[e :U 1224 ]
 "108
 [; ;mcc_generated_files/eusart.c: 108:     return RC1REG;
 [e ) _RC1REG ]
-[e $UE 1222  ]
+[e $UE 1220  ]
 "109
 [; ;mcc_generated_files/eusart.c: 109: }
-[e :UE 1222 ]
+[e :UE 1220 ]
 }
 "111
 [; ;mcc_generated_files/eusart.c: 111: void EUSART_Write(uint8_t txData)
@@ -1516,59 +1516,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "113
 [; ;mcc_generated_files/eusart.c: 113:     while(0 == PIR1bits.TXIF)
-[e $U 1228  ]
-[e :U 1229 ]
+[e $U 1226  ]
+[e :U 1227 ]
 "114
 [; ;mcc_generated_files/eusart.c: 114:     {
 {
 "115
 [; ;mcc_generated_files/eusart.c: 115:     }
 }
-[e :U 1228 ]
+[e :U 1226 ]
 "113
 [; ;mcc_generated_files/eusart.c: 113:     while(0 == PIR1bits.TXIF)
-[e $ == -> 0 `i -> . . _PIR1bits 0 4 `i 1229  ]
-[e :U 1230 ]
+[e $ == -> 0 `i -> . . _PIR1bits 0 4 `i 1227  ]
+[e :U 1228 ]
 "117
 [; ;mcc_generated_files/eusart.c: 117:     TX1REG = txData;
 [e = _TX1REG _txData ]
 "118
 [; ;mcc_generated_files/eusart.c: 118: }
-[e :UE 1227 ]
-}
-"120
-[; ;mcc_generated_files/eusart.c: 120: char getch(void)
-[v _getch `(uc ~T0 @X0 1 ef ]
-"121
-[; ;mcc_generated_files/eusart.c: 121: {
-{
-[e :U _getch ]
-[f ]
-"122
-[; ;mcc_generated_files/eusart.c: 122:     return EUSART_Read();
-[e ) -> ( _EUSART_Read ..  `uc ]
-[e $UE 1231  ]
-"123
-[; ;mcc_generated_files/eusart.c: 123: }
-[e :UE 1231 ]
-}
-"125
-[; ;mcc_generated_files/eusart.c: 125: void putch(char txData)
-[v _putch `(v ~T0 @X0 1 ef1`uc ]
-"126
-[; ;mcc_generated_files/eusart.c: 126: {
-{
-[e :U _putch ]
-"125
-[; ;mcc_generated_files/eusart.c: 125: void putch(char txData)
-[v _txData `uc ~T0 @X0 1 r1 ]
-"126
-[; ;mcc_generated_files/eusart.c: 126: {
-[f ]
-"127
-[; ;mcc_generated_files/eusart.c: 127:     EUSART_Write(txData);
-[e ( _EUSART_Write (1 -> _txData `uc ]
-"128
-[; ;mcc_generated_files/eusart.c: 128: }
-[e :UE 1232 ]
+[e :UE 1225 ]
 }

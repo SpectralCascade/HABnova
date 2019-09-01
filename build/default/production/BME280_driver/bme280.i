@@ -742,7 +742,12 @@ int8_t bme280_compensate_data(uint8_t sensor_comp,
         if (sensor_comp & 1 << 2)
         {
 
-            comp_data->humidity = compensate_humidity(uncomp_data, calib_data);
+
+
+
+
+            comp_data->humidity = 0xFFFF;
+
         }
     }
     else
@@ -983,7 +988,7 @@ static int8_t reload_device_settings(const struct bme280_settings *settings, con
 
     return rslt;
 }
-# 1121 "BME280_driver/bme280.c"
+# 1126 "BME280_driver/bme280.c"
 static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_data,
                                       struct bme280_calib_data *calib_data)
 {
@@ -1061,7 +1066,7 @@ static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data
 
     return pressure;
 }
-# 1263 "BME280_driver/bme280.c"
+# 1268 "BME280_driver/bme280.c"
 static uint32_t compensate_humidity(const struct bme280_uncomp_data *uncomp_data,
                                     const struct bme280_calib_data *calib_data)
 {

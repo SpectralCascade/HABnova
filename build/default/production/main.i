@@ -17118,155 +17118,17 @@ void TMR0_DefaultInterruptHandler(void);
 # 56 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart.h" 1
-# 57 "./mcc_generated_files/eusart.h"
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 10 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 145 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 254 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 407 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 57 "./mcc_generated_files/eusart.h" 2
-# 98 "./mcc_generated_files/eusart.h"
+# 97 "./mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 146 "./mcc_generated_files/eusart.h"
+# 145 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_ready(void);
-# 194 "./mcc_generated_files/eusart.h"
+# 193 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_rx_ready(void);
-# 241 "./mcc_generated_files/eusart.h"
+# 240 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 261 "./mcc_generated_files/eusart.h"
+# 260 "./mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 281 "./mcc_generated_files/eusart.h"
+# 280 "./mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
 # 57 "./mcc_generated_files/mcc.h" 2
 # 72 "./mcc_generated_files/mcc.h"
@@ -17494,14 +17356,15 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 5 "main.c" 2
 
 
-
 unsigned long ticks = 0;
 
 void TimerISR()
 {
     ticks++;
 }
-# 27 "main.c"
+# 28 "main.c"
+int id = 0;
+
 void FlashError()
 {
     for (int i = 0; i < 3; i++)
@@ -17544,6 +17407,164 @@ _Bool FindString(char* src, int srcLen, char* target, int targetLen)
     return 0;
 }
 
+void Insert(char* dest, char src, int index, int destLimit)
+{
+    char temp = '\0';
+    temp = dest[index];
+    dest[index] = src;
+    index++;
+    while (index < destLimit)
+    {
+        char current = dest[index];
+        dest[index] = temp;
+        temp = current;
+        if (current == '\0')
+        {
+            break;
+        }
+        index++;
+    }
+}
+
+void InsertString(char* dest, char* src, int index, int destLimit)
+{
+    for (int i = 0, counti = strlen(src); i < counti && index < destLimit; i++)
+    {
+
+        Insert(dest, src[i], index + i, destLimit);
+    }
+}
+
+
+
+
+void ReverseString(char* str)
+{
+    int counti = strlen(str);
+    for (int i = 0, halfway = counti / 2; i < halfway; i++)
+    {
+        char temp = str[i];
+        char* opposite = str + (counti - 1 - i);
+        str[i] = *opposite;
+        *opposite = temp;
+    }
+    str[counti] = '\0';
+}
+
+
+
+void IntToHexString(int n, char* dest)
+{
+    int i = 0;
+    do {
+
+
+        int remainder = n % 16;
+
+        dest[i++] = remainder + (remainder >= 10 ? 55 : '0');
+
+    } while ((n /= 16) > 0);
+    while (i < 4)
+    {
+        dest[i] = 0;
+        i++;
+    }
+    ReverseString(dest);
+}
+
+
+
+void IntToString(int n, char* dest)
+{
+    int i = 0;
+    _Bool sign = n < 0;
+    if (sign)
+    {
+
+        n = -n;
+    }
+
+    do {
+
+
+        dest[i++] = n % 10 + '0';
+
+    } while ((n /= 10) > 0);
+    if (sign)
+    {
+        dest[i++] = '-';
+    }
+    dest[i] = '\0';
+
+    ReverseString(dest);
+}
+
+
+
+void FloatToString(char* dest, float value, int places) {
+    int fts_digit;
+    float fts_tens = 0.1;
+    int fts_tenscount = 0;
+    int fts_iterator;
+    float fts_tempfloat = value;
+    int fts_index = 0;
+
+
+
+
+    float d = 0.5;
+    if (value < 0) {
+        d *= -1.0;
+    }
+
+    for (fts_iterator = 0; fts_iterator < places; fts_iterator++) {
+        d /= 10.0;
+    }
+
+    fts_tempfloat += d;
+
+
+    if (value < 0) {
+        fts_tempfloat *= -1.0;
+    }
+    while ((fts_tens * 10.0) <= fts_tempfloat) {
+        fts_tens *= 10.0;
+        fts_tenscount += 1;
+    }
+
+
+    if (value < 0) {
+        dest[fts_index++] = '-';
+    }
+
+    if (fts_tenscount == 0) {
+        dest[fts_index++] = '0';
+    }
+
+    for (fts_iterator = 0; fts_iterator < fts_tenscount; fts_iterator++) {
+        fts_digit = (int) (fts_tempfloat/fts_tens);
+        IntToString(fts_digit, &dest[fts_index++]);
+        fts_tempfloat = fts_tempfloat - ((float)fts_digit * fts_tens);
+        fts_tens /= 10.0;
+    }
+
+
+
+    if (places > 0){
+        dest[fts_index++] = '.';
+    }
+
+
+    for (fts_iterator = 0; fts_iterator < places; fts_iterator++) {
+        fts_tempfloat *= 10.0;
+        fts_digit = (int) fts_tempfloat;
+        IntToString(fts_digit, &dest[fts_index++]);
+
+        fts_tempfloat = fts_tempfloat - (float) fts_digit;
+    }
+
+    dest[fts_index++] = '\0';
+}
 
 void Sleep(uint32_t ms)
 {
@@ -17553,12 +17574,14 @@ void Sleep(uint32_t ms)
         _delay((unsigned long)((1)*(4000000/4000.0)));
     }
 }
-# 106 "main.c"
+# 266 "main.c"
 char message_start[70];
 char message_end[70 + 3];
 
 
 char* messages[2] = {message_start, message_end};
+
+
 
 
 unsigned short crc_append_byte(uint16_t crc, uint8_t data)
@@ -17625,7 +17648,7 @@ void TransmitBit(_Bool b)
 
 void TransmitByte(char byte)
 {
-# 186 "main.c"
+# 348 "main.c"
     TransmitBit(0);
 
  for (int i = 0; i < 7; i++)
@@ -17650,7 +17673,349 @@ void TransmitString(char* message)
 
 
 }
-# 605 "main.c"
+
+
+
+
+
+
+void WriteGPS(char* message)
+{
+    for (int i = 0, counti = strlen(message); i <= counti; i++)
+    {
+        EUSART_Write((uint8_t)message[i]);
+    }
+}
+
+
+
+
+uint8_t setNavFlightMode[] = {
+
+    0xB5, 0x62,
+
+    0x06,
+
+    0x24,
+
+    0x24, 0x00,
+
+    0xFF, 0xFF, 0x06, 0x03, 0x00, 0x00, 0x00, 0x00, 0x10, 0x27, 0x00, 0x00,
+    0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00, 0x64, 0x00, 0x2C, 0x01, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+
+    0x16, 0xDC
+};
+
+
+size_t GetLengthUBX(uint8_t* data)
+{
+    return (short)(8 + (short)((short)data[4] + (short)(data[5] << 8)));
+}
+
+
+void GPS_SendUBX(uint8_t* data)
+{
+    for (int i = 0, length = GetLengthUBX(data); i < length; i++)
+    {
+        EUSART_Write(data[i]);
+    }
+}
+
+
+
+
+
+_Bool GPS_HasAcknowledged(uint8_t* data)
+{
+    uint8_t ackPacket[10];
+    unsigned long startTime = ticks;
+
+
+    ackPacket[0] = 0xB5;
+    ackPacket[1] = 0x62;
+    ackPacket[2] = 0x05;
+    ackPacket[3] = 0x01;
+    ackPacket[4] = 0x02;
+    ackPacket[5] = 0x00;
+    ackPacket[6] = data[2];
+    ackPacket[7] = data[3];
+    ackPacket[8] = 0;
+    ackPacket[9] = 0;
+
+
+    for (uint8_t i = 2; i < 8; i++)
+    {
+        ackPacket[8] = ackPacket[8] + ackPacket[i];
+        ackPacket[9] = ackPacket[9] + ackPacket[8];
+    }
+
+
+    uint8_t ackByte;
+
+
+    uint8_t ackByteID = 0;
+
+
+    while (1)
+    {
+
+
+        if (ackByteID > 9)
+        {
+
+
+            return 1;
+        }
+
+
+        if (ticks - startTime > 3000)
+        {
+            return 0;
+        }
+
+
+        if (EUSART_is_rx_ready())
+        {
+            ackByte = EUSART_Read();
+
+
+            if (ackByte == ackPacket[ackByteID]) {
+                ackByteID++;
+            }
+            else {
+                ackByteID = 0;
+
+            }
+
+        }
+    }
+
+    return 0;
+}
+
+_Bool gps_configured = 0;
+
+
+
+void SetupGPS()
+{
+    while (!gps_configured)
+    {
+        do { LATAbits.LATA5 = 0; } while(0);
+        GPS_SendUBX(setNavFlightMode);
+        gps_configured = GPS_HasAcknowledged(setNavFlightMode);
+
+        do { LATAbits.LATA5 = 1; } while(0);
+        _delay((unsigned long)((500)*(4000000/4000.0)));
+    }
+    gps_configured = 0;
+
+
+    WriteGPS("$PUBX,40,GLL,0,0,0,0*5C\r\n");
+    WriteGPS("$PUBX,40,GGA,0,0,0,0*5A\r\n");
+    WriteGPS("$PUBX,40,VTG,0,0,0,0*5E\r\n");
+    WriteGPS("$PUBX,40,GSV,0,0,0,0*59\r\n");
+    WriteGPS("$PUBX,40,GSA,0,0,0,0*4E\r\n");
+    WriteGPS("$PUBX,40,RMC,0,0,0,0*47\r\n");
+}
+
+enum FieldTypesPUBX {
+    PUBX_DATA_TYPE = 0,
+    PUBX_TIME = 2,
+    PUBX_LAT,
+    PUBX_NS,
+    PUBX_LONG,
+    PUBX_EW,
+    PUBX_ALT,
+    PUBX_NAVSTAT,
+    PUBX_HDOP,
+    PUBX_VDOP,
+    PUBX_SOG,
+    PUBX_COG,
+    PUBX_VVEL
+};
+
+
+
+void SafeSetByte(char* dest, int length, unsigned int index, char data)
+{
+    if (index < length - 1)
+    {
+        dest[index] = data;
+    }
+    else
+    {
+
+        dest[length - 1] = '\0';
+    }
+}
+# 572 "main.c"
+_Bool GetNavData()
+{
+    _Bool success = 0;
+
+    do { LATCbits.LATC5 = 1; } while(0);
+
+
+
+
+    unsigned long startTime = ticks;
+
+
+    int dataIndex = 0;
+
+    int dataFieldType = 0;
+
+    char byte;
+
+    char data_type[7] = {'\0'};
+
+    _Bool doParse = 0;
+
+    ClearString(messages[0]);
+    ClearString(messages[1]);
+
+    int index = 0;
+
+    int signInsertIndex = -1;
+
+
+    WriteGPS("$PUBX,00*33\r\n");
+
+    while (!success)
+    {
+
+        if (ticks - startTime > 3000)
+        {
+            break;
+        }
+
+
+        if (EUSART_is_rx_ready())
+        {
+            byte = EUSART_Read();
+# 635 "main.c"
+            _Bool skip = 1;
+            switch (byte)
+            {
+            case '$':
+                doParse = 1;
+                skip = 0;
+                dataIndex = 0;
+                break;
+            case ',':
+                if (dataFieldType == PUBX_DATA_TYPE)
+                {
+                    if (!FindString(data_type, strlen(data_type), "PUBX", 4))
+                    {
+                        doParse = 0;
+                        ClearString(data_type);
+                    }
+                    else
+                    {
+                        messages[0][0] = '$';
+                        messages[0][1] = '$';
+                        InsertString(messages[0], "TEST", 2, 70);
+                        index = strlen(messages[0]);
+                        char strId[12] = {'\0'};
+                        IntToString(id, strId);
+                        InsertString(messages[0], strId, index, 70);
+                        index = strlen(messages[0]);
+                    }
+                }
+                if (doParse)
+                {
+                    dataFieldType++;
+                    messages[dataFieldType > PUBX_ALT ? 1 : 0][index] = ',';
+                    index++;
+                }
+                dataIndex = 0;
+                break;
+            case '\n':
+                success = dataFieldType > 13;
+                break;
+            default:
+                skip = 0;
+                break;
+            }
+            if (!skip && doParse)
+            {
+                switch (dataFieldType)
+                {
+                case PUBX_DATA_TYPE:
+                    SafeSetByte(data_type, 7, dataIndex, byte);
+                    break;
+                case PUBX_TIME:
+                    if (dataIndex < 6)
+                    {
+                        if (dataIndex == 2 || dataIndex == 4)
+                        {
+                            messages[0][index] = ':';
+                            index++;
+                        }
+                        messages[0][index] = byte;
+                    }
+                    break;
+                case PUBX_LAT:
+                    if (dataIndex == 0)
+                    {
+                        signInsertIndex = index;
+                    }
+                    messages[0][index] = byte;
+                    break;
+                case PUBX_NS:
+                    if (byte != 'N')
+                    {
+                        Insert(messages[0], '-', signInsertIndex, 70);
+                    }
+                    break;
+                case PUBX_LONG:
+                    if (dataIndex == 0)
+                    {
+                        signInsertIndex = index;
+                    }
+                    messages[0][index] = byte;
+                    break;
+                case PUBX_EW:
+                    if (byte != 'E')
+                    {
+                        Insert(messages[0], '-', signInsertIndex, 70);
+                    }
+                    break;
+                case PUBX_ALT:
+                    messages[0][index] = byte;
+                    break;
+                case PUBX_HDOP:
+                    if (dataIndex == 0)
+                    {
+                        index = 0;
+                    }
+                case PUBX_VDOP:
+                case PUBX_NAVSTAT:
+                case PUBX_SOG:
+                case PUBX_COG:
+                case PUBX_VVEL:
+                    messages[1][index] = byte;
+                    break;
+                default:
+
+                    index--;
+                    break;
+                }
+                dataIndex++;
+                index++;
+            }
+
+        }
+    }
+
+    return success;
+}
+
+
+
+
 int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len)
 {
     I2C_MESSAGE_STATUS status = 0;
@@ -17716,28 +18081,43 @@ void main(void)
     env_sensor_status = bme280_init(&env_sensor);
 
 
+    SetupGPS();
 
 
-
-    int id = 0;
     while (1)
     {
-
-        ClearString(messages[0]);
-        ClearString(messages[1]);
-
         if (
 
+            GetNavData()
 
 
-            1
 
         )
         {
 
             struct bme280_data sensor_data;
             bme280_get_sensor_data(0x07, &sensor_data, &env_sensor);
-# 715 "main.c"
+
+
+
+            char convertedSensorData[16] = {'\0'};
+            IntToString(sensor_data.temperature, convertedSensorData);
+            strcat(messages[1], convertedSensorData);
+            strcat(messages[1], ",");
+            IntToString(sensor_data.pressure, convertedSensorData);
+            strcat(messages[1], convertedSensorData);
+
+            IntToHexString(crc16(messages, 2), checksum);
+            strcat(messages[1], checksum);
+
+            id++;
+
+            do { LATAbits.LATA2 = 1; } while(0);
+            TransmitString(messages[0]);
+            TransmitString(messages[1]);
+            do { LATAbits.LATA2 = 0; } while(0);
+
+
         }
         else
         {

@@ -3,7 +3,6 @@
 #include "BME280_driver/bme280.h"
 
 #include <string.h>
-#include <stdio.h>
 
 unsigned long ticks = 0;
 
@@ -18,11 +17,15 @@ void TimerISR()
 // in VS C# but mostly because I'm too lazy to split the project into more files
 #define MISC
 #define RADIO_TRANSMISSION
-//#define GPS_MODULE
+#define GPS_MODULE
 #define UBX
 #define BME280_SENSOR
 
+#define CALLSIGN "TEST"
+
 #ifdef MISC
+
+int id = 0;
 
 void FlashError()
 {
@@ -66,6 +69,164 @@ bool FindString(char* src, int srcLen, char* target, int targetLen)
     return false;
 }
 
+void Insert(char* dest, char src, int index, int destLimit)
+{
+    char temp = '\0';
+    temp = dest[index];
+    dest[index] = src;
+    index++;
+    while (index < destLimit)
+    {
+        char current = dest[index];
+        dest[index] = temp;
+        temp = current;
+        if (current == '\0')
+        {
+            break;
+        }
+        index++;
+    }
+}
+
+void InsertString(char* dest, char* src, int index, int destLimit)
+{
+    for (int i = 0, counti = strlen(src); i < counti && index < destLimit; i++)
+    {
+        /// Very inefficient and lazy, but saves valuable program memory.
+        Insert(dest, src[i], index + i, destLimit);
+    }
+}
+
+// For 32-bit integers (max integer value = 2,147,483,647).
+#define MAX_INT_DIGITS 10
+
+void ReverseString(char* str)
+{
+    int counti = strlen(str);
+    for (int i = 0, halfway = counti / 2; i < halfway; i++)
+    {
+        char temp = str[i];
+        char* opposite = str + (counti - 1 - i);
+        str[i] = *opposite;
+        *opposite = temp;
+    }
+    str[counti] = '\0';
+}
+
+/// Warning, unsafe! Destination string MUST have >= 4 bytes allocated
+/// for a 32-bit hex code.
+void IntToHexString(int n, char* dest)
+{
+    int i = 0;
+    do {
+        /// Set the current digit in the string to the ASCII equivalent of 
+        /// the remainder of n / 10.
+        int remainder = n % 16;
+        // If >= 10, then use letters (ASCII 'A' = 65, so 65 - 10 == 55).
+        dest[i++] = remainder + (remainder >= 10 ? 55 : '0');
+        /// Shift all the digits to the right to get the next digit.
+    } while ((n /= 16) > 0);
+    while (i < 4)
+    {
+        dest[i] = 0;
+        i++;
+    }
+    ReverseString(dest);
+}
+
+/// Warning, unsafe! Destination string MUST have >= 12 bytes allocated
+/// to allow maximum 32-bit integer length with a '-' sign.
+void IntToString(int n, char* dest)
+{
+    int i = 0;
+    bool sign = n < 0;
+    if (sign)
+    {
+        /// Make the number positive
+        n = -n;
+    }
+    /// Get digits in reverse order
+    do {
+        /// Set the current digit in the string to the ASCII equivalent of 
+        /// the remainder of n / 10.
+        dest[i++] = n % 10 + '0';
+        /// Shift all the digits to the right to get the next digit.
+    } while ((n /= 10) > 0);
+    if (sign)
+    {
+        dest[i++] = '-';
+    }
+    dest[i] = '\0';
+    /// Reverse the string so things are flipped the right way round
+    ReverseString(dest);
+}
+
+/// Modified from https://github.com/vinceallenvince/floatToString/blob/master/floatToString.h
+/// on 01/09/2019
+void FloatToString(char* dest, float value, int places) {
+    int fts_digit;
+    float fts_tens = 0.1;
+    int fts_tenscount = 0;
+    int fts_iterator;
+    float fts_tempfloat = value;
+    int fts_index = 0;
+    
+    // Make sure we round properly. this could use pow from <math.h>, but doesn't seem worth the import
+    // If this rounding step isn't here, the value  54.321 prints as 54.3209
+    // Rounding term d = 0.5 / pow(10,places)
+    float d = 0.5;
+    if (value < 0) {
+        d *= -1.0;
+    }
+    // Divide by ten for each decimal place
+    for (fts_iterator = 0; fts_iterator < places; fts_iterator++) {
+        d /= 10.0;
+    }
+    // This small addition, combined with truncation will round our values properly
+    fts_tempfloat +=  d;
+
+    // First get value tens to be the large power of ten less than value
+    if (value < 0) {
+        fts_tempfloat *= -1.0;
+    }
+    while ((fts_tens * 10.0) <= fts_tempfloat) {
+        fts_tens *= 10.0;
+        fts_tenscount += 1;
+    }
+
+    // Write out the negative if needed
+    if (value < 0) {
+        dest[fts_index++] = '-';
+    }
+
+    if (fts_tenscount == 0) {
+        dest[fts_index++] = '0';
+    }
+
+    for (fts_iterator = 0; fts_iterator < fts_tenscount; fts_iterator++) {
+        fts_digit = (int) (fts_tempfloat/fts_tens);
+        IntToString(fts_digit, &dest[fts_index++]);
+        fts_tempfloat = fts_tempfloat - ((float)fts_digit * fts_tens);
+        fts_tens /= 10.0;
+    }
+
+    // If no places after decimal, stop now and return
+    // Otherwise, write the point and continue on
+    if (places > 0){
+        dest[fts_index++] = '.';
+    }
+
+    // Now write out each decimal place by shifting digits one by one into the ones place and writing the truncated value
+    for (fts_iterator = 0; fts_iterator < places; fts_iterator++) {
+        fts_tempfloat *= 10.0;
+        fts_digit = (int) fts_tempfloat;
+        IntToString(fts_digit, &dest[fts_index++]);
+        // once written, subtract off that digit
+        fts_tempfloat = fts_tempfloat - (float) fts_digit;
+    }
+
+    dest[fts_index++] = '\0';
+}
 
 void Sleep(uint32_t ms)
 {
@@ -100,7 +261,6 @@ void Sleep(uint32_t ms)
 
 #endif// MISC
 
-#ifdef RADIO_TRANSMISSION
 // Transmission is split into two messages because the PIC16F1619
 // microcontroller has limited contiguous memory.
 char message_start[MAX_MESSAGE_LENGTH];
@@ -109,6 +269,8 @@ char message_end[MAX_MESSAGE_LENGTH + 3];
 /// Array of message block pointers.
 char* messages[2] = {message_start, message_end};
 
+/// Low memory footprint
+#ifdef RADIO_TRANSMISSION
 // Adds a byte to the CRC checksum we're calculating
 unsigned short crc_append_byte(uint16_t crc, uint8_t data)
 {
@@ -210,7 +372,16 @@ void TransmitString(char* message)
 
 #endif // RADIO_TRANSMISSION
 
+/// Large memory footprint
 #ifdef GPS_MODULE
+
+void WriteGPS(char* message)
+{
+    for (int i = 0, counti = strlen(message); i <= counti; i++)
+    {
+        EUSART_Write((uint8_t)message[i]);
+    }
+}
 
 #ifdef UBX
 // UBX command which sets the GPS navigation mode to flight mode.
@@ -337,12 +508,12 @@ void SetupGPS()
     gps_configured = false;
     // Disable all sentences, we will poll the GPS module as necessary.
     // printf() is rerouted to EUSART so we can use that to send NMEA commands.
-    printf("$PUBX,40,GLL,0,0,0,0*5C\r\n");
-    printf("$PUBX,40,GGA,0,0,0,0*5A\r\n");
-    printf("$PUBX,40,VTG,0,0,0,0*5E\r\n");
-    printf("$PUBX,40,GSV,0,0,0,0*59\r\n");
-    printf("$PUBX,40,GSA,0,0,0,0*4E\r\n");
-    printf("$PUBX,40,RMC,0,0,0,0*47\r\n");
+    WriteGPS("$PUBX,40,GLL,0,0,0,0*5C\r\n");
+    WriteGPS("$PUBX,40,GGA,0,0,0,0*5A\r\n");
+    WriteGPS("$PUBX,40,VTG,0,0,0,0*5E\r\n");
+    WriteGPS("$PUBX,40,GSV,0,0,0,0*59\r\n");
+    WriteGPS("$PUBX,40,GSA,0,0,0,0*4E\r\n");
+    WriteGPS("$PUBX,40,RMC,0,0,0,0*47\r\n");
 }
 
 enum FieldTypesPUBX {
@@ -362,16 +533,6 @@ enum FieldTypesPUBX {
 };
 
 #define LEN_DATA_TYPE   7
-#define LEN_TIME        10
-#define LEN_LAT         16
-#define LEN_LONG        16
-#define LEN_ALT         12
-#define LEN_NAVSTAT     4
-#define LEN_SOG         10
-#define LEN_COG         10
-#define LEN_VVEL        10
-#define LEN_HDOP        8
-#define LEN_VDOP        8
 
 void SafeSetByte(char* dest, int length, unsigned int index, char data)
 {
@@ -385,27 +546,6 @@ void SafeSetByte(char* dest, int length, unsigned int index, char data)
         dest[length - 1] = '\0';
     }
 }
-
-// World time
-char gps_time[LEN_TIME] = {'\0'};
-// Latitude
-char gps_latitude[LEN_LAT] = {'\0'};
-// Longitude
-char gps_longitude[LEN_LONG] = {'\0'};
-// Altitude in metres
-char gps_altitude[LEN_ALT] = {'\0'};
-// Navigation status
-char gps_nav_status[LEN_NAVSTAT] = {'\0'};
-// Speed over ground in km/h
-char gps_speed_over_ground[LEN_SOG] = {'\0'};
-// Course over ground in degrees
-char gps_course_over_ground[LEN_COG] = {'\0'};
-// Vertical velocity where positive = downwards, negative = upwards in m/s
-char gps_vertical_velocity[LEN_VVEL] = {'\0'};
-// Horizontal dilution
-char gps_hdop[LEN_HDOP] = {'\0'};
-// Vertical dilution
-char gps_vdop[LEN_VDOP] = {'\0'};
 
 #ifdef DEBUG_CONSOLE
 int FakeEusartCounter = 0;
@@ -437,7 +577,7 @@ bool GetNavData()
 #else
     FakeEusartCounter = 0;
 #endif // DEBUG_CONSOLE
-
+    
     unsigned long startTime = millis();
 
     // The current data index
@@ -450,23 +590,16 @@ bool GetNavData()
     char data_type[LEN_DATA_TYPE] = {'\0'};
     
     bool doParse = false;
-
-    char temp_time[LEN_TIME] = {'\0'};
     
-    ClearString(gps_latitude);
-    ClearString(gps_longitude);
-    ClearString(gps_altitude);
-    ClearString(gps_nav_status);
-    ClearString(gps_hdop);
-    ClearString(gps_vdop);
-    ClearString(gps_speed_over_ground);
-    ClearString(gps_course_over_ground);
-    ClearString(gps_vertical_velocity);
+    ClearString(messages[0]);
+    ClearString(messages[1]);
     
     int index = 0;
     
+    int signInsertIndex = -1;
+    
     /// Poll the GPS module
-    printf("$PUBX,00*33\r\n");
+    WriteGPS("$PUBX,00*33\r\n");
 
     while (!success)
     {
@@ -498,8 +631,7 @@ bool GetNavData()
 
                 index++;
             }
-#endif
-            
+#else
             bool skip = true;
             switch (byte)
             {
@@ -509,14 +641,30 @@ bool GetNavData()
                 dataIndex = 0;
                 break;
             case ',':
-                if (dataFieldType == PUBX_DATA_TYPE && !FindString(data_type, strlen(data_type), "PUBX", 4))
+                if (dataFieldType == PUBX_DATA_TYPE)
                 {
-                    doParse = false;
-                    ClearString(data_type);
+                    if (!FindString(data_type, strlen(data_type), "PUBX", 4))
+                    {
+                        doParse = false;
+                        ClearString(data_type);
+                    }
+                    else
+                    {
+                        messages[0][0] = '$';
+                        messages[0][1] = '$';
+                        InsertString(messages[0], CALLSIGN, 2, MAX_MESSAGE_LENGTH);
+                        index = strlen(messages[0]);
+                        char strId[12] = {'\0'};
+                        IntToString(id, strId);
+                        InsertString(messages[0], strId, index, MAX_MESSAGE_LENGTH);
+                        index = strlen(messages[0]);                        
+                    }
                 }
                 if (doParse)
                 {
                     dataFieldType++;
+                    messages[dataFieldType > PUBX_ALT ? 1 : 0][index] = ',';
+                    index++;
                 }
                 dataIndex = 0;
                 break;
@@ -535,66 +683,68 @@ bool GetNavData()
                     SafeSetByte(data_type, LEN_DATA_TYPE, dataIndex, byte);
                     break;
                 case PUBX_TIME:
-                    // TODO: check supported separator chars
-                    SafeSetByte(temp_time, LEN_TIME, dataIndex, byte);
+                    if (dataIndex < 6)
+                    {
+                        if (dataIndex == 2 || dataIndex == 4)
+                        {
+                            messages[0][index] = ':';
+                            index++;
+                        }
+                        messages[0][index] = byte;
+                    }
                     break;
                 case PUBX_LAT:
-                    SafeSetByte(gps_latitude, LEN_LAT, dataIndex + 1, byte);
+                    if (dataIndex == 0)
+                    {
+                        signInsertIndex = index;
+                    }
+                    messages[0][index] = byte;
                     break;
                 case PUBX_NS:
-                    // TODO: check the plus sign doesn't break stuff
-                    gps_latitude[0] = byte == 'N' ? '+' : '-';
+                    if (byte != 'N')
+                    {
+                        Insert(messages[0], '-',  signInsertIndex, MAX_MESSAGE_LENGTH);
+                    }
                     break;
                 case PUBX_LONG:
-                    SafeSetByte(gps_longitude, LEN_LONG, dataIndex + 1, byte);
+                    if (dataIndex == 0)
+                    {
+                        signInsertIndex = index;
+                    }
+                    messages[0][index] = byte;
                     break;
                 case PUBX_EW:
-                    // TODO: check the plus sign doesn't break stuff
-                    gps_longitude[0] = byte == 'E' ? '+' : '-';
+                    if (byte != 'E')
+                    {
+                        Insert(messages[0], '-', signInsertIndex, MAX_MESSAGE_LENGTH);
+                    }
                     break;
                 case PUBX_ALT:
-                    SafeSetByte(gps_altitude, LEN_ALT, dataIndex, byte);
+                    messages[0][index] = byte;
                     break;
                 case PUBX_HDOP:
-                    SafeSetByte(gps_hdop, LEN_HDOP, dataIndex, byte);
-                    break;
+                    if (dataIndex == 0)
+                    {
+                        index = 0;
+                    }
                 case PUBX_VDOP:
-                    SafeSetByte(gps_vdop, LEN_VDOP, dataIndex, byte);
-                    break;
                 case PUBX_NAVSTAT:
-                    SafeSetByte(gps_nav_status, LEN_NAVSTAT, dataIndex, byte);
-                    break;
                 case PUBX_SOG:
-                    SafeSetByte(gps_speed_over_ground, LEN_SOG, dataIndex, byte);
-                    break;
                 case PUBX_COG:
-                    SafeSetByte(gps_course_over_ground, LEN_COG, dataIndex, byte);
-                    break;
                 case PUBX_VVEL:
-                    SafeSetByte(gps_vertical_velocity, LEN_VVEL, dataIndex, byte);
+                    messages[1][index] = byte;
                     break;
                 default:
+                    // Keep index the same
+                    index--;
                     break;
                 }
                 dataIndex++;
+                index++;
             }
+#endif
         }
-        
-        ClearString(gps_time);
-        /// Format time
-        gps_time[0] = temp_time[0];
-        gps_time[1] = temp_time[1];
-        gps_time[2] = ':';
-        gps_time[3] = temp_time[2];
-        gps_time[4] = temp_time[3];
-        gps_time[5] = ':';
-        gps_time[6] = temp_time[4];
-        gps_time[7] = temp_time[5];
-
     }
-    
-    // Format time
-    
     
     return success;
 }
@@ -670,18 +820,13 @@ void main(void)
     SetupGPS();
 #endif
 
-    int id = 0;
     while (1)
     {
-#ifdef RADIO_TRANSMISSION
-        ClearString(messages[0]);
-        ClearString(messages[1]);
-#endif
         if (
 #ifdef GPS_MODULE
             GetNavData()
 #else
-            true
+            false
 #endif
         )
         {
@@ -691,25 +836,22 @@ void main(void)
 
 #ifdef RADIO_TRANSMISSION
 #ifdef GPS_MODULE
-            /// Half the data goes in the first message block
-            sprintf(messages[0], "$$TEST,%d,%s,%s,%s,%s,",
-                id, gps_time, gps_latitude, gps_longitude, gps_altitude
-            );
-            /// The other half goes in the second block
-            sprintf(messages[1], "%s,%s,%s,%s,%s,%s,%d,%d,%d",
-                    gps_speed_over_ground, gps_course_over_ground,
-                    gps_vertical_velocity, gps_nav_status, gps_hdop, gps_vdop,
-                    sensor_data.temperature, sensor_data.pressure
-            );
-            /// Calculate and append the CRC16 checksum to the message segments.
-            sprintf(checksum, "*%04X\n", crc16(messages, 2));
+            char convertedSensorData[16] = {'\0'};
+            IntToString(sensor_data.temperature, convertedSensorData);
+            strcat(messages[1], convertedSensorData);
+            strcat(messages[1], ",");
+            IntToString(sensor_data.pressure, convertedSensorData);
+            strcat(messages[1], convertedSensorData);
+            
+            IntToHexString(crc16(messages, 2), checksum);
             strcat(messages[1], checksum);
+            
             id++;
+#endif
             TX_LED_SetHigh();
             TransmitString(messages[0]);
             TransmitString(messages[1]);
             TX_LED_SetLow();
-#endif
 #endif
 #endif
         }

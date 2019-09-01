@@ -11,8 +11,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "98 mcc_generated_files/tmr0.h
 [; ;mcc_generated_files/tmr0.h: 98: void TMR0_Initialize(void);
 [v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
-"98 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 98: void EUSART_Initialize(void);
+"97 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 97: void EUSART_Initialize(void);
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "2256 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2256: extern volatile unsigned char OSCCON __attribute__((address(0x099)));
@@ -1374,7 +1374,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _EUSART_Initialize ..  ]
 "57
 [; ;mcc_generated_files/mcc.c: 57: }
-[e :UE 1219 ]
+[e :UE 1217 ]
 }
 "59
 [; ;mcc_generated_files/mcc.c: 59: void OSCILLATOR_Initialize(void)
@@ -1395,5 +1395,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _BORCON -> -> 0 `i `uc ]
 "67
 [; ;mcc_generated_files/mcc.c: 67: }
-[e :UE 1220 ]
+[e :UE 1218 ]
 }

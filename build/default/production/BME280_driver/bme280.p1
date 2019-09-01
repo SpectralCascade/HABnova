@@ -74,9 +74,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "200
 [; ;BME280_driver/bme280.c: 200: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
 [v _compensate_pressure `(ul ~T0 @X0 0 sf2`*CS3`*CS1 ]
-"213
-[; ;BME280_driver/bme280.c: 213: static uint32_t compensate_humidity(const struct bme280_uncomp_data *uncomp_data,
-[v _compensate_humidity `(ul ~T0 @X0 0 sf2`*CS3`*CS1 ]
 "241
 [; ;BME280_driver/bme280.c: 241: static int8_t set_osr_humidity_settings(const struct bme280_settings *settings, const struct bme280_dev *dev);
 [v _set_osr_humidity_settings `(c ~T0 @X0 0 sf2`*CS4`*CS5 ]
@@ -1006,1262 +1003,1262 @@ Version 4.0 HI-TECH Software Intermediate Code
 "755
 [; ;BME280_driver/bme280.c: 755:         {
 {
-"757
-[; ;BME280_driver/bme280.c: 757:             comp_data->humidity = compensate_humidity(uncomp_data, calib_data);
-[e = . *U _comp_data 2 ( _compensate_humidity (2 , _uncomp_data -> _calib_data `*CS1 ]
-"758
-[; ;BME280_driver/bme280.c: 758:         }
+"761
+[; ;BME280_driver/bme280.c: 761:             comp_data->humidity = 0xFFFF;
+[e = . *U _comp_data 2 -> -> 65535 `ui `ul ]
+"763
+[; ;BME280_driver/bme280.c: 763:         }
 }
 [e :U 58 ]
-"759
-[; ;BME280_driver/bme280.c: 759:     }
+"764
+[; ;BME280_driver/bme280.c: 764:     }
 }
 [e $U 59  ]
-"760
-[; ;BME280_driver/bme280.c: 760:     else
+"765
+[; ;BME280_driver/bme280.c: 765:     else
 [e :U 55 ]
-"761
-[; ;BME280_driver/bme280.c: 761:     {
+"766
+[; ;BME280_driver/bme280.c: 766:     {
 {
-"762
-[; ;BME280_driver/bme280.c: 762:         rslt = -1;
+"767
+[; ;BME280_driver/bme280.c: 767:         rslt = -1;
 [e = _rslt -> -U -> 1 `i `c ]
-"763
-[; ;BME280_driver/bme280.c: 763:     }
+"768
+[; ;BME280_driver/bme280.c: 768:     }
 }
 [e :U 59 ]
-"765
-[; ;BME280_driver/bme280.c: 765:     return rslt;
+"770
+[; ;BME280_driver/bme280.c: 770:     return rslt;
 [e ) _rslt ]
 [e $UE 54  ]
-"766
-[; ;BME280_driver/bme280.c: 766: }
+"771
+[; ;BME280_driver/bme280.c: 771: }
 [e :UE 54 ]
 }
-"772
-[; ;BME280_driver/bme280.c: 772: static int8_t set_osr_settings(uint8_t desired_settings,
+"777
+[; ;BME280_driver/bme280.c: 777: static int8_t set_osr_settings(uint8_t desired_settings,
 [v _set_osr_settings `(c ~T0 @X0 1 sf3`uc`*CS4`*CS5 ]
-"775
-[; ;BME280_driver/bme280.c: 775: {
+"780
+[; ;BME280_driver/bme280.c: 780: {
 {
 [e :U _set_osr_settings ]
-"772
-[; ;BME280_driver/bme280.c: 772: static int8_t set_osr_settings(uint8_t desired_settings,
+"777
+[; ;BME280_driver/bme280.c: 777: static int8_t set_osr_settings(uint8_t desired_settings,
 [v _desired_settings `uc ~T0 @X0 1 r1 ]
-"773
-[; ;BME280_driver/bme280.c: 773:                                const struct bme280_settings *settings,
+"778
+[; ;BME280_driver/bme280.c: 778:                                const struct bme280_settings *settings,
 [v _settings `*CS4 ~T0 @X0 1 r2 ]
-"774
-[; ;BME280_driver/bme280.c: 774:                                const struct bme280_dev *dev)
+"779
+[; ;BME280_driver/bme280.c: 779:                                const struct bme280_dev *dev)
 [v _dev `*CS5 ~T0 @X0 1 r3 ]
-"775
-[; ;BME280_driver/bme280.c: 775: {
+"780
+[; ;BME280_driver/bme280.c: 780: {
 [f ]
-"776
-[; ;BME280_driver/bme280.c: 776:     int8_t rslt = 1;
+"781
+[; ;BME280_driver/bme280.c: 781:     int8_t rslt = 1;
 [v _rslt `c ~T0 @X0 1 a ]
 [e = _rslt -> -> 1 `i `c ]
-"778
-[; ;BME280_driver/bme280.c: 778:     if (desired_settings & 1 << 2)
+"783
+[; ;BME280_driver/bme280.c: 783:     if (desired_settings & 1 << 2)
 [e $ ! != & -> _desired_settings `i << -> 1 `i -> 2 `i -> 0 `i 61  ]
-"779
-[; ;BME280_driver/bme280.c: 779:     {
+"784
+[; ;BME280_driver/bme280.c: 784:     {
 {
-"780
-[; ;BME280_driver/bme280.c: 780:         rslt = set_osr_humidity_settings(settings, dev);
+"785
+[; ;BME280_driver/bme280.c: 785:         rslt = set_osr_humidity_settings(settings, dev);
 [e = _rslt ( _set_osr_humidity_settings (2 , _settings _dev ]
-"781
-[; ;BME280_driver/bme280.c: 781:     }
+"786
+[; ;BME280_driver/bme280.c: 786:     }
 }
 [e :U 61 ]
-"782
-[; ;BME280_driver/bme280.c: 782:     if (desired_settings & (1 | 1 << 1))
+"787
+[; ;BME280_driver/bme280.c: 787:     if (desired_settings & (1 | 1 << 1))
 [e $ ! != & -> _desired_settings `i | -> 1 `i << -> 1 `i -> 1 `i -> 0 `i 62  ]
-"783
-[; ;BME280_driver/bme280.c: 783:     {
+"788
+[; ;BME280_driver/bme280.c: 788:     {
 {
-"784
-[; ;BME280_driver/bme280.c: 784:         rslt = set_osr_press_temp_settings(desired_settings, settings, dev);
+"789
+[; ;BME280_driver/bme280.c: 789:         rslt = set_osr_press_temp_settings(desired_settings, settings, dev);
 [e = _rslt ( _set_osr_press_temp_settings (3 , , _desired_settings _settings _dev ]
-"785
-[; ;BME280_driver/bme280.c: 785:     }
+"790
+[; ;BME280_driver/bme280.c: 790:     }
 }
 [e :U 62 ]
-"787
-[; ;BME280_driver/bme280.c: 787:     return rslt;
+"792
+[; ;BME280_driver/bme280.c: 792:     return rslt;
 [e ) _rslt ]
 [e $UE 60  ]
-"788
-[; ;BME280_driver/bme280.c: 788: }
+"793
+[; ;BME280_driver/bme280.c: 793: }
 [e :UE 60 ]
 }
-"793
-[; ;BME280_driver/bme280.c: 793: static int8_t set_osr_humidity_settings(const struct bme280_settings *settings, const struct bme280_dev *dev)
+"798
+[; ;BME280_driver/bme280.c: 798: static int8_t set_osr_humidity_settings(const struct bme280_settings *settings, const struct bme280_dev *dev)
 [v _set_osr_humidity_settings `(c ~T0 @X0 1 sf2`*CS4`*CS5 ]
-"794
-[; ;BME280_driver/bme280.c: 794: {
+"799
+[; ;BME280_driver/bme280.c: 799: {
 {
 [e :U _set_osr_humidity_settings ]
-"793
-[; ;BME280_driver/bme280.c: 793: static int8_t set_osr_humidity_settings(const struct bme280_settings *settings, const struct bme280_dev *dev)
+"798
+[; ;BME280_driver/bme280.c: 798: static int8_t set_osr_humidity_settings(const struct bme280_settings *settings, const struct bme280_dev *dev)
 [v _settings `*CS4 ~T0 @X0 1 r1 ]
 [v _dev `*CS5 ~T0 @X0 1 r2 ]
-"794
-[; ;BME280_driver/bme280.c: 794: {
+"799
+[; ;BME280_driver/bme280.c: 799: {
 [f ]
-"795
-[; ;BME280_driver/bme280.c: 795:     int8_t rslt;
+"800
+[; ;BME280_driver/bme280.c: 800:     int8_t rslt;
 [v _rslt `c ~T0 @X0 1 a ]
-"796
-[; ;BME280_driver/bme280.c: 796:     uint8_t ctrl_hum;
+"801
+[; ;BME280_driver/bme280.c: 801:     uint8_t ctrl_hum;
 [v _ctrl_hum `uc ~T0 @X0 1 a ]
-"797
-[; ;BME280_driver/bme280.c: 797:     uint8_t ctrl_meas;
+"802
+[; ;BME280_driver/bme280.c: 802:     uint8_t ctrl_meas;
 [v _ctrl_meas `uc ~T0 @X0 1 a ]
-"798
-[; ;BME280_driver/bme280.c: 798:     uint8_t reg_addr = 0xF2;
+"803
+[; ;BME280_driver/bme280.c: 803:     uint8_t reg_addr = 0xF2;
 [v _reg_addr `uc ~T0 @X0 1 a ]
 [e = _reg_addr -> -> 242 `i `uc ]
-"800
-[; ;BME280_driver/bme280.c: 800:     ctrl_hum = settings->osr_h & 0x07;
+"805
+[; ;BME280_driver/bme280.c: 805:     ctrl_hum = settings->osr_h & 0x07;
 [e = _ctrl_hum -> & -> . *U _settings 2 `i -> 7 `i `uc ]
-"803
-[; ;BME280_driver/bme280.c: 803:     rslt = bme280_set_regs(&reg_addr, &ctrl_hum, 1, dev);
-[e = _rslt ( _bme280_set_regs (4 , , , &U _reg_addr -> &U _ctrl_hum `*Cuc -> -> 1 `i `uc _dev ]
 "808
-[; ;BME280_driver/bme280.c: 808:     if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 64  ]
-"809
-[; ;BME280_driver/bme280.c: 809:     {
-{
-"810
-[; ;BME280_driver/bme280.c: 810:         reg_addr = 0xF4;
-[e = _reg_addr -> -> 244 `i `uc ]
-"811
-[; ;BME280_driver/bme280.c: 811:         rslt = bme280_get_regs(reg_addr, &ctrl_meas, 1, dev);
-[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _ctrl_meas -> -> 1 `i `us _dev ]
-"812
-[; ;BME280_driver/bme280.c: 812:         if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 65  ]
+[; ;BME280_driver/bme280.c: 808:     rslt = bme280_set_regs(&reg_addr, &ctrl_hum, 1, dev);
+[e = _rslt ( _bme280_set_regs (4 , , , &U _reg_addr -> &U _ctrl_hum `*Cuc -> -> 1 `i `uc _dev ]
 "813
-[; ;BME280_driver/bme280.c: 813:         {
-{
+[; ;BME280_driver/bme280.c: 813:     if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 64  ]
 "814
-[; ;BME280_driver/bme280.c: 814:             rslt = bme280_set_regs(&reg_addr, &ctrl_meas, 1, dev);
-[e = _rslt ( _bme280_set_regs (4 , , , &U _reg_addr -> &U _ctrl_meas `*Cuc -> -> 1 `i `uc _dev ]
+[; ;BME280_driver/bme280.c: 814:     {
+{
 "815
-[; ;BME280_driver/bme280.c: 815:         }
+[; ;BME280_driver/bme280.c: 815:         reg_addr = 0xF4;
+[e = _reg_addr -> -> 244 `i `uc ]
+"816
+[; ;BME280_driver/bme280.c: 816:         rslt = bme280_get_regs(reg_addr, &ctrl_meas, 1, dev);
+[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _ctrl_meas -> -> 1 `i `us _dev ]
+"817
+[; ;BME280_driver/bme280.c: 817:         if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 65  ]
+"818
+[; ;BME280_driver/bme280.c: 818:         {
+{
+"819
+[; ;BME280_driver/bme280.c: 819:             rslt = bme280_set_regs(&reg_addr, &ctrl_meas, 1, dev);
+[e = _rslt ( _bme280_set_regs (4 , , , &U _reg_addr -> &U _ctrl_meas `*Cuc -> -> 1 `i `uc _dev ]
+"820
+[; ;BME280_driver/bme280.c: 820:         }
 }
 [e :U 65 ]
-"816
-[; ;BME280_driver/bme280.c: 816:     }
+"821
+[; ;BME280_driver/bme280.c: 821:     }
 }
 [e :U 64 ]
-"818
-[; ;BME280_driver/bme280.c: 818:     return rslt;
+"823
+[; ;BME280_driver/bme280.c: 823:     return rslt;
 [e ) _rslt ]
 [e $UE 63  ]
-"819
-[; ;BME280_driver/bme280.c: 819: }
+"824
+[; ;BME280_driver/bme280.c: 824: }
 [e :UE 63 ]
 }
-"825
-[; ;BME280_driver/bme280.c: 825: static int8_t set_osr_press_temp_settings(uint8_t desired_settings,
+"830
+[; ;BME280_driver/bme280.c: 830: static int8_t set_osr_press_temp_settings(uint8_t desired_settings,
 [v _set_osr_press_temp_settings `(c ~T0 @X0 1 sf3`uc`*CS4`*CS5 ]
-"828
-[; ;BME280_driver/bme280.c: 828: {
+"833
+[; ;BME280_driver/bme280.c: 833: {
 {
 [e :U _set_osr_press_temp_settings ]
-"825
-[; ;BME280_driver/bme280.c: 825: static int8_t set_osr_press_temp_settings(uint8_t desired_settings,
-[v _desired_settings `uc ~T0 @X0 1 r1 ]
-"826
-[; ;BME280_driver/bme280.c: 826:                                           const struct bme280_settings *settings,
-[v _settings `*CS4 ~T0 @X0 1 r2 ]
-"827
-[; ;BME280_driver/bme280.c: 827:                                           const struct bme280_dev *dev)
-[v _dev `*CS5 ~T0 @X0 1 r3 ]
-"828
-[; ;BME280_driver/bme280.c: 828: {
-[f ]
-"829
-[; ;BME280_driver/bme280.c: 829:     int8_t rslt;
-[v _rslt `c ~T0 @X0 1 a ]
 "830
-[; ;BME280_driver/bme280.c: 830:     uint8_t reg_addr = 0xF4;
+[; ;BME280_driver/bme280.c: 830: static int8_t set_osr_press_temp_settings(uint8_t desired_settings,
+[v _desired_settings `uc ~T0 @X0 1 r1 ]
+"831
+[; ;BME280_driver/bme280.c: 831:                                           const struct bme280_settings *settings,
+[v _settings `*CS4 ~T0 @X0 1 r2 ]
+"832
+[; ;BME280_driver/bme280.c: 832:                                           const struct bme280_dev *dev)
+[v _dev `*CS5 ~T0 @X0 1 r3 ]
+"833
+[; ;BME280_driver/bme280.c: 833: {
+[f ]
+"834
+[; ;BME280_driver/bme280.c: 834:     int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"835
+[; ;BME280_driver/bme280.c: 835:     uint8_t reg_addr = 0xF4;
 [v _reg_addr `uc ~T0 @X0 1 a ]
 [e = _reg_addr -> -> 244 `i `uc ]
-"831
-[; ;BME280_driver/bme280.c: 831:     uint8_t reg_data;
-[v _reg_data `uc ~T0 @X0 1 a ]
-"833
-[; ;BME280_driver/bme280.c: 833:     rslt = bme280_get_regs(reg_addr, &reg_data, 1, dev);
-[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _reg_data -> -> 1 `i `us _dev ]
-"834
-[; ;BME280_driver/bme280.c: 834:     if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 67  ]
-"835
-[; ;BME280_driver/bme280.c: 835:     {
-{
 "836
-[; ;BME280_driver/bme280.c: 836:         if (desired_settings & 1)
-[e $ ! != & -> _desired_settings `i -> 1 `i -> 0 `i 68  ]
-"837
-[; ;BME280_driver/bme280.c: 837:         {
-{
+[; ;BME280_driver/bme280.c: 836:     uint8_t reg_data;
+[v _reg_data `uc ~T0 @X0 1 a ]
 "838
-[; ;BME280_driver/bme280.c: 838:             fill_osr_press_settings(&reg_data, settings);
-[e ( _fill_osr_press_settings (2 , &U _reg_data _settings ]
+[; ;BME280_driver/bme280.c: 838:     rslt = bme280_get_regs(reg_addr, &reg_data, 1, dev);
+[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _reg_data -> -> 1 `i `us _dev ]
 "839
-[; ;BME280_driver/bme280.c: 839:         }
+[; ;BME280_driver/bme280.c: 839:     if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 67  ]
+"840
+[; ;BME280_driver/bme280.c: 840:     {
+{
+"841
+[; ;BME280_driver/bme280.c: 841:         if (desired_settings & 1)
+[e $ ! != & -> _desired_settings `i -> 1 `i -> 0 `i 68  ]
+"842
+[; ;BME280_driver/bme280.c: 842:         {
+{
+"843
+[; ;BME280_driver/bme280.c: 843:             fill_osr_press_settings(&reg_data, settings);
+[e ( _fill_osr_press_settings (2 , &U _reg_data _settings ]
+"844
+[; ;BME280_driver/bme280.c: 844:         }
 }
 [e :U 68 ]
-"840
-[; ;BME280_driver/bme280.c: 840:         if (desired_settings & 1 << 1)
+"845
+[; ;BME280_driver/bme280.c: 845:         if (desired_settings & 1 << 1)
 [e $ ! != & -> _desired_settings `i << -> 1 `i -> 1 `i -> 0 `i 69  ]
-"841
-[; ;BME280_driver/bme280.c: 841:         {
+"846
+[; ;BME280_driver/bme280.c: 846:         {
 {
-"842
-[; ;BME280_driver/bme280.c: 842:             fill_osr_temp_settings(&reg_data, settings);
+"847
+[; ;BME280_driver/bme280.c: 847:             fill_osr_temp_settings(&reg_data, settings);
 [e ( _fill_osr_temp_settings (2 , &U _reg_data _settings ]
-"843
-[; ;BME280_driver/bme280.c: 843:         }
+"848
+[; ;BME280_driver/bme280.c: 848:         }
 }
 [e :U 69 ]
-"846
-[; ;BME280_driver/bme280.c: 846:         rslt = bme280_set_regs(&reg_addr, &reg_data, 1, dev);
+"851
+[; ;BME280_driver/bme280.c: 851:         rslt = bme280_set_regs(&reg_addr, &reg_data, 1, dev);
 [e = _rslt ( _bme280_set_regs (4 , , , &U _reg_addr -> &U _reg_data `*Cuc -> -> 1 `i `uc _dev ]
-"847
-[; ;BME280_driver/bme280.c: 847:     }
+"852
+[; ;BME280_driver/bme280.c: 852:     }
 }
 [e :U 67 ]
-"849
-[; ;BME280_driver/bme280.c: 849:     return rslt;
+"854
+[; ;BME280_driver/bme280.c: 854:     return rslt;
 [e ) _rslt ]
 [e $UE 66  ]
-"850
-[; ;BME280_driver/bme280.c: 850: }
+"855
+[; ;BME280_driver/bme280.c: 855: }
 [e :UE 66 ]
 }
-"856
-[; ;BME280_driver/bme280.c: 856: static int8_t set_filter_standby_settings(uint8_t desired_settings,
+"861
+[; ;BME280_driver/bme280.c: 861: static int8_t set_filter_standby_settings(uint8_t desired_settings,
 [v _set_filter_standby_settings `(c ~T0 @X0 1 sf3`uc`*CS4`*CS5 ]
-"859
-[; ;BME280_driver/bme280.c: 859: {
+"864
+[; ;BME280_driver/bme280.c: 864: {
 {
 [e :U _set_filter_standby_settings ]
-"856
-[; ;BME280_driver/bme280.c: 856: static int8_t set_filter_standby_settings(uint8_t desired_settings,
-[v _desired_settings `uc ~T0 @X0 1 r1 ]
-"857
-[; ;BME280_driver/bme280.c: 857:                                           const struct bme280_settings *settings,
-[v _settings `*CS4 ~T0 @X0 1 r2 ]
-"858
-[; ;BME280_driver/bme280.c: 858:                                           const struct bme280_dev *dev)
-[v _dev `*CS5 ~T0 @X0 1 r3 ]
-"859
-[; ;BME280_driver/bme280.c: 859: {
-[f ]
-"860
-[; ;BME280_driver/bme280.c: 860:     int8_t rslt;
-[v _rslt `c ~T0 @X0 1 a ]
 "861
-[; ;BME280_driver/bme280.c: 861:     uint8_t reg_addr = 0xF5;
+[; ;BME280_driver/bme280.c: 861: static int8_t set_filter_standby_settings(uint8_t desired_settings,
+[v _desired_settings `uc ~T0 @X0 1 r1 ]
+"862
+[; ;BME280_driver/bme280.c: 862:                                           const struct bme280_settings *settings,
+[v _settings `*CS4 ~T0 @X0 1 r2 ]
+"863
+[; ;BME280_driver/bme280.c: 863:                                           const struct bme280_dev *dev)
+[v _dev `*CS5 ~T0 @X0 1 r3 ]
+"864
+[; ;BME280_driver/bme280.c: 864: {
+[f ]
+"865
+[; ;BME280_driver/bme280.c: 865:     int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"866
+[; ;BME280_driver/bme280.c: 866:     uint8_t reg_addr = 0xF5;
 [v _reg_addr `uc ~T0 @X0 1 a ]
 [e = _reg_addr -> -> 245 `i `uc ]
-"862
-[; ;BME280_driver/bme280.c: 862:     uint8_t reg_data;
-[v _reg_data `uc ~T0 @X0 1 a ]
-"864
-[; ;BME280_driver/bme280.c: 864:     rslt = bme280_get_regs(reg_addr, &reg_data, 1, dev);
-[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _reg_data -> -> 1 `i `us _dev ]
-"865
-[; ;BME280_driver/bme280.c: 865:     if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 71  ]
-"866
-[; ;BME280_driver/bme280.c: 866:     {
-{
 "867
-[; ;BME280_driver/bme280.c: 867:         if (desired_settings & 1 << 3)
-[e $ ! != & -> _desired_settings `i << -> 1 `i -> 3 `i -> 0 `i 72  ]
-"868
-[; ;BME280_driver/bme280.c: 868:         {
-{
+[; ;BME280_driver/bme280.c: 867:     uint8_t reg_data;
+[v _reg_data `uc ~T0 @X0 1 a ]
 "869
-[; ;BME280_driver/bme280.c: 869:             fill_filter_settings(&reg_data, settings);
-[e ( _fill_filter_settings (2 , &U _reg_data _settings ]
+[; ;BME280_driver/bme280.c: 869:     rslt = bme280_get_regs(reg_addr, &reg_data, 1, dev);
+[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _reg_data -> -> 1 `i `us _dev ]
 "870
-[; ;BME280_driver/bme280.c: 870:         }
+[; ;BME280_driver/bme280.c: 870:     if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 71  ]
+"871
+[; ;BME280_driver/bme280.c: 871:     {
+{
+"872
+[; ;BME280_driver/bme280.c: 872:         if (desired_settings & 1 << 3)
+[e $ ! != & -> _desired_settings `i << -> 1 `i -> 3 `i -> 0 `i 72  ]
+"873
+[; ;BME280_driver/bme280.c: 873:         {
+{
+"874
+[; ;BME280_driver/bme280.c: 874:             fill_filter_settings(&reg_data, settings);
+[e ( _fill_filter_settings (2 , &U _reg_data _settings ]
+"875
+[; ;BME280_driver/bme280.c: 875:         }
 }
 [e :U 72 ]
-"871
-[; ;BME280_driver/bme280.c: 871:         if (desired_settings & 1 << 4)
+"876
+[; ;BME280_driver/bme280.c: 876:         if (desired_settings & 1 << 4)
 [e $ ! != & -> _desired_settings `i << -> 1 `i -> 4 `i -> 0 `i 73  ]
-"872
-[; ;BME280_driver/bme280.c: 872:         {
+"877
+[; ;BME280_driver/bme280.c: 877:         {
 {
-"873
-[; ;BME280_driver/bme280.c: 873:             fill_standby_settings(&reg_data, settings);
+"878
+[; ;BME280_driver/bme280.c: 878:             fill_standby_settings(&reg_data, settings);
 [e ( _fill_standby_settings (2 , &U _reg_data _settings ]
-"874
-[; ;BME280_driver/bme280.c: 874:         }
+"879
+[; ;BME280_driver/bme280.c: 879:         }
 }
 [e :U 73 ]
-"877
-[; ;BME280_driver/bme280.c: 877:         rslt = bme280_set_regs(&reg_addr, &reg_data, 1, dev);
+"882
+[; ;BME280_driver/bme280.c: 882:         rslt = bme280_set_regs(&reg_addr, &reg_data, 1, dev);
 [e = _rslt ( _bme280_set_regs (4 , , , &U _reg_addr -> &U _reg_data `*Cuc -> -> 1 `i `uc _dev ]
-"878
-[; ;BME280_driver/bme280.c: 878:     }
+"883
+[; ;BME280_driver/bme280.c: 883:     }
 }
 [e :U 71 ]
-"880
-[; ;BME280_driver/bme280.c: 880:     return rslt;
+"885
+[; ;BME280_driver/bme280.c: 885:     return rslt;
 [e ) _rslt ]
 [e $UE 70  ]
-"881
-[; ;BME280_driver/bme280.c: 881: }
+"886
+[; ;BME280_driver/bme280.c: 886: }
 [e :UE 70 ]
 }
-"887
-[; ;BME280_driver/bme280.c: 887: static void fill_filter_settings(uint8_t *reg_data, const struct bme280_settings *settings)
+"892
+[; ;BME280_driver/bme280.c: 892: static void fill_filter_settings(uint8_t *reg_data, const struct bme280_settings *settings)
 [v _fill_filter_settings `(v ~T0 @X0 1 sf2`*uc`*CS4 ]
-"888
-[; ;BME280_driver/bme280.c: 888: {
+"893
+[; ;BME280_driver/bme280.c: 893: {
 {
 [e :U _fill_filter_settings ]
-"887
-[; ;BME280_driver/bme280.c: 887: static void fill_filter_settings(uint8_t *reg_data, const struct bme280_settings *settings)
+"892
+[; ;BME280_driver/bme280.c: 892: static void fill_filter_settings(uint8_t *reg_data, const struct bme280_settings *settings)
 [v _reg_data `*uc ~T0 @X0 1 r1 ]
 [v _settings `*CS4 ~T0 @X0 1 r2 ]
-"888
-[; ;BME280_driver/bme280.c: 888: {
+"893
+[; ;BME280_driver/bme280.c: 893: {
 [f ]
-"889
-[; ;BME280_driver/bme280.c: 889:     *reg_data = ((*reg_data & ~( 0x1C)) | ((settings->filter << 0x02) & 0x1C));
+"894
+[; ;BME280_driver/bme280.c: 894:     *reg_data = ((*reg_data & ~( 0x1C)) | ((settings->filter << 0x02) & 0x1C));
 [e = *U _reg_data -> | & -> *U _reg_data `i ~ -> 28 `i & << -> . *U _settings 3 `i -> 2 `i -> 28 `i `uc ]
-"890
-[; ;BME280_driver/bme280.c: 890: }
+"895
+[; ;BME280_driver/bme280.c: 895: }
 [e :UE 74 ]
 }
-"896
-[; ;BME280_driver/bme280.c: 896: static void fill_standby_settings(uint8_t *reg_data, const struct bme280_settings *settings)
+"901
+[; ;BME280_driver/bme280.c: 901: static void fill_standby_settings(uint8_t *reg_data, const struct bme280_settings *settings)
 [v _fill_standby_settings `(v ~T0 @X0 1 sf2`*uc`*CS4 ]
-"897
-[; ;BME280_driver/bme280.c: 897: {
+"902
+[; ;BME280_driver/bme280.c: 902: {
 {
 [e :U _fill_standby_settings ]
-"896
-[; ;BME280_driver/bme280.c: 896: static void fill_standby_settings(uint8_t *reg_data, const struct bme280_settings *settings)
+"901
+[; ;BME280_driver/bme280.c: 901: static void fill_standby_settings(uint8_t *reg_data, const struct bme280_settings *settings)
 [v _reg_data `*uc ~T0 @X0 1 r1 ]
 [v _settings `*CS4 ~T0 @X0 1 r2 ]
-"897
-[; ;BME280_driver/bme280.c: 897: {
+"902
+[; ;BME280_driver/bme280.c: 902: {
 [f ]
-"898
-[; ;BME280_driver/bme280.c: 898:     *reg_data = ((*reg_data & ~( 0xE0)) | ((settings->standby_time << 0x05) & 0xE0));
+"903
+[; ;BME280_driver/bme280.c: 903:     *reg_data = ((*reg_data & ~( 0xE0)) | ((settings->standby_time << 0x05) & 0xE0));
 [e = *U _reg_data -> | & -> *U _reg_data `i ~ -> 224 `i & << -> . *U _settings 4 `i -> 5 `i -> 224 `i `uc ]
-"899
-[; ;BME280_driver/bme280.c: 899: }
+"904
+[; ;BME280_driver/bme280.c: 904: }
 [e :UE 75 ]
 }
-"905
-[; ;BME280_driver/bme280.c: 905: static void fill_osr_press_settings(uint8_t *reg_data, const struct bme280_settings *settings)
+"910
+[; ;BME280_driver/bme280.c: 910: static void fill_osr_press_settings(uint8_t *reg_data, const struct bme280_settings *settings)
 [v _fill_osr_press_settings `(v ~T0 @X0 1 sf2`*uc`*CS4 ]
-"906
-[; ;BME280_driver/bme280.c: 906: {
+"911
+[; ;BME280_driver/bme280.c: 911: {
 {
 [e :U _fill_osr_press_settings ]
-"905
-[; ;BME280_driver/bme280.c: 905: static void fill_osr_press_settings(uint8_t *reg_data, const struct bme280_settings *settings)
+"910
+[; ;BME280_driver/bme280.c: 910: static void fill_osr_press_settings(uint8_t *reg_data, const struct bme280_settings *settings)
 [v _reg_data `*uc ~T0 @X0 1 r1 ]
 [v _settings `*CS4 ~T0 @X0 1 r2 ]
-"906
-[; ;BME280_driver/bme280.c: 906: {
+"911
+[; ;BME280_driver/bme280.c: 911: {
 [f ]
-"907
-[; ;BME280_driver/bme280.c: 907:     *reg_data = ((*reg_data & ~( 0x1C)) | ((settings->osr_p << 0x02) & 0x1C));
+"912
+[; ;BME280_driver/bme280.c: 912:     *reg_data = ((*reg_data & ~( 0x1C)) | ((settings->osr_p << 0x02) & 0x1C));
 [e = *U _reg_data -> | & -> *U _reg_data `i ~ -> 28 `i & << -> . *U _settings 0 `i -> 2 `i -> 28 `i `uc ]
-"908
-[; ;BME280_driver/bme280.c: 908: }
+"913
+[; ;BME280_driver/bme280.c: 913: }
 [e :UE 76 ]
 }
-"914
-[; ;BME280_driver/bme280.c: 914: static void fill_osr_temp_settings(uint8_t *reg_data, const struct bme280_settings *settings)
+"919
+[; ;BME280_driver/bme280.c: 919: static void fill_osr_temp_settings(uint8_t *reg_data, const struct bme280_settings *settings)
 [v _fill_osr_temp_settings `(v ~T0 @X0 1 sf2`*uc`*CS4 ]
-"915
-[; ;BME280_driver/bme280.c: 915: {
+"920
+[; ;BME280_driver/bme280.c: 920: {
 {
 [e :U _fill_osr_temp_settings ]
-"914
-[; ;BME280_driver/bme280.c: 914: static void fill_osr_temp_settings(uint8_t *reg_data, const struct bme280_settings *settings)
+"919
+[; ;BME280_driver/bme280.c: 919: static void fill_osr_temp_settings(uint8_t *reg_data, const struct bme280_settings *settings)
 [v _reg_data `*uc ~T0 @X0 1 r1 ]
 [v _settings `*CS4 ~T0 @X0 1 r2 ]
-"915
-[; ;BME280_driver/bme280.c: 915: {
+"920
+[; ;BME280_driver/bme280.c: 920: {
 [f ]
-"916
-[; ;BME280_driver/bme280.c: 916:     *reg_data = ((*reg_data & ~( 0xE0)) | ((settings->osr_t << 0x05) & 0xE0));
+"921
+[; ;BME280_driver/bme280.c: 921:     *reg_data = ((*reg_data & ~( 0xE0)) | ((settings->osr_t << 0x05) & 0xE0));
 [e = *U _reg_data -> | & -> *U _reg_data `i ~ -> 224 `i & << -> . *U _settings 1 `i -> 5 `i -> 224 `i `uc ]
-"917
-[; ;BME280_driver/bme280.c: 917: }
+"922
+[; ;BME280_driver/bme280.c: 922: }
 [e :UE 77 ]
 }
-"924
-[; ;BME280_driver/bme280.c: 924: static void parse_device_settings(const uint8_t *reg_data, struct bme280_settings *settings)
+"929
+[; ;BME280_driver/bme280.c: 929: static void parse_device_settings(const uint8_t *reg_data, struct bme280_settings *settings)
 [v _parse_device_settings `(v ~T0 @X0 1 sf2`*Cuc`*S4 ]
-"925
-[; ;BME280_driver/bme280.c: 925: {
+"930
+[; ;BME280_driver/bme280.c: 930: {
 {
 [e :U _parse_device_settings ]
-"924
-[; ;BME280_driver/bme280.c: 924: static void parse_device_settings(const uint8_t *reg_data, struct bme280_settings *settings)
+"929
+[; ;BME280_driver/bme280.c: 929: static void parse_device_settings(const uint8_t *reg_data, struct bme280_settings *settings)
 [v _reg_data `*Cuc ~T0 @X0 1 r1 ]
 [v _settings `*S4 ~T0 @X0 1 r2 ]
-"925
-[; ;BME280_driver/bme280.c: 925: {
-[f ]
-"926
-[; ;BME280_driver/bme280.c: 926:     settings->osr_h = (reg_data[0] & ( 0x07));
-[e = . *U _settings 2 -> & -> *U + _reg_data * -> -> 0 `i `x -> -> # *U _reg_data `i `x `i -> 7 `i `uc ]
-"927
-[; ;BME280_driver/bme280.c: 927:     settings->osr_p = ((reg_data[2] & ( 0x1C)) >> ( 0x02));
-[e = . *U _settings 0 -> >> & -> *U + _reg_data * -> -> 2 `i `x -> -> # *U _reg_data `i `x `i -> 28 `i -> 2 `i `uc ]
-"928
-[; ;BME280_driver/bme280.c: 928:     settings->osr_t = ((reg_data[2] & ( 0xE0)) >> ( 0x05));
-[e = . *U _settings 1 -> >> & -> *U + _reg_data * -> -> 2 `i `x -> -> # *U _reg_data `i `x `i -> 224 `i -> 5 `i `uc ]
-"929
-[; ;BME280_driver/bme280.c: 929:     settings->filter = ((reg_data[3] & ( 0x1C)) >> ( 0x02));
-[e = . *U _settings 3 -> >> & -> *U + _reg_data * -> -> 3 `i `x -> -> # *U _reg_data `i `x `i -> 28 `i -> 2 `i `uc ]
 "930
-[; ;BME280_driver/bme280.c: 930:     settings->standby_time = ((reg_data[3] & ( 0xE0)) >> ( 0x05));
-[e = . *U _settings 4 -> >> & -> *U + _reg_data * -> -> 3 `i `x -> -> # *U _reg_data `i `x `i -> 224 `i -> 5 `i `uc ]
+[; ;BME280_driver/bme280.c: 930: {
+[f ]
 "931
-[; ;BME280_driver/bme280.c: 931: }
+[; ;BME280_driver/bme280.c: 931:     settings->osr_h = (reg_data[0] & ( 0x07));
+[e = . *U _settings 2 -> & -> *U + _reg_data * -> -> 0 `i `x -> -> # *U _reg_data `i `x `i -> 7 `i `uc ]
+"932
+[; ;BME280_driver/bme280.c: 932:     settings->osr_p = ((reg_data[2] & ( 0x1C)) >> ( 0x02));
+[e = . *U _settings 0 -> >> & -> *U + _reg_data * -> -> 2 `i `x -> -> # *U _reg_data `i `x `i -> 28 `i -> 2 `i `uc ]
+"933
+[; ;BME280_driver/bme280.c: 933:     settings->osr_t = ((reg_data[2] & ( 0xE0)) >> ( 0x05));
+[e = . *U _settings 1 -> >> & -> *U + _reg_data * -> -> 2 `i `x -> -> # *U _reg_data `i `x `i -> 224 `i -> 5 `i `uc ]
+"934
+[; ;BME280_driver/bme280.c: 934:     settings->filter = ((reg_data[3] & ( 0x1C)) >> ( 0x02));
+[e = . *U _settings 3 -> >> & -> *U + _reg_data * -> -> 3 `i `x -> -> # *U _reg_data `i `x `i -> 28 `i -> 2 `i `uc ]
+"935
+[; ;BME280_driver/bme280.c: 935:     settings->standby_time = ((reg_data[3] & ( 0xE0)) >> ( 0x05));
+[e = . *U _settings 4 -> >> & -> *U + _reg_data * -> -> 3 `i `x -> -> # *U _reg_data `i `x `i -> 224 `i -> 5 `i `uc ]
+"936
+[; ;BME280_driver/bme280.c: 936: }
 [e :UE 78 ]
 }
-"936
-[; ;BME280_driver/bme280.c: 936: static int8_t write_power_mode(uint8_t sensor_mode, const struct bme280_dev *dev)
+"941
+[; ;BME280_driver/bme280.c: 941: static int8_t write_power_mode(uint8_t sensor_mode, const struct bme280_dev *dev)
 [v _write_power_mode `(c ~T0 @X0 1 sf2`uc`*CS5 ]
-"937
-[; ;BME280_driver/bme280.c: 937: {
+"942
+[; ;BME280_driver/bme280.c: 942: {
 {
 [e :U _write_power_mode ]
-"936
-[; ;BME280_driver/bme280.c: 936: static int8_t write_power_mode(uint8_t sensor_mode, const struct bme280_dev *dev)
+"941
+[; ;BME280_driver/bme280.c: 941: static int8_t write_power_mode(uint8_t sensor_mode, const struct bme280_dev *dev)
 [v _sensor_mode `uc ~T0 @X0 1 r1 ]
 [v _dev `*CS5 ~T0 @X0 1 r2 ]
-"937
-[; ;BME280_driver/bme280.c: 937: {
+"942
+[; ;BME280_driver/bme280.c: 942: {
 [f ]
-"938
-[; ;BME280_driver/bme280.c: 938:     int8_t rslt;
+"943
+[; ;BME280_driver/bme280.c: 943:     int8_t rslt;
 [v _rslt `c ~T0 @X0 1 a ]
-"939
-[; ;BME280_driver/bme280.c: 939:     uint8_t reg_addr = 0xF4;
+"944
+[; ;BME280_driver/bme280.c: 944:     uint8_t reg_addr = 0xF4;
 [v _reg_addr `uc ~T0 @X0 1 a ]
 [e = _reg_addr -> -> 244 `i `uc ]
-"942
-[; ;BME280_driver/bme280.c: 942:     uint8_t sensor_mode_reg_val;
+"947
+[; ;BME280_driver/bme280.c: 947:     uint8_t sensor_mode_reg_val;
 [v _sensor_mode_reg_val `uc ~T0 @X0 1 a ]
-"945
-[; ;BME280_driver/bme280.c: 945:     rslt = bme280_get_regs(reg_addr, &sensor_mode_reg_val, 1, dev);
-[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _sensor_mode_reg_val -> -> 1 `i `us _dev ]
-"948
-[; ;BME280_driver/bme280.c: 948:     if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 80  ]
-"949
-[; ;BME280_driver/bme280.c: 949:     {
-{
 "950
-[; ;BME280_driver/bme280.c: 950:         sensor_mode_reg_val = ((sensor_mode_reg_val & ~( 0x03)) | (sensor_mode & 0x03));
-[e = _sensor_mode_reg_val -> | & -> _sensor_mode_reg_val `i ~ -> 3 `i & -> _sensor_mode `i -> 3 `i `uc ]
+[; ;BME280_driver/bme280.c: 950:     rslt = bme280_get_regs(reg_addr, &sensor_mode_reg_val, 1, dev);
+[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _sensor_mode_reg_val -> -> 1 `i `us _dev ]
 "953
-[; ;BME280_driver/bme280.c: 953:         rslt = bme280_set_regs(&reg_addr, &sensor_mode_reg_val, 1, dev);
-[e = _rslt ( _bme280_set_regs (4 , , , &U _reg_addr -> &U _sensor_mode_reg_val `*Cuc -> -> 1 `i `uc _dev ]
+[; ;BME280_driver/bme280.c: 953:     if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 80  ]
 "954
-[; ;BME280_driver/bme280.c: 954:     }
+[; ;BME280_driver/bme280.c: 954:     {
+{
+"955
+[; ;BME280_driver/bme280.c: 955:         sensor_mode_reg_val = ((sensor_mode_reg_val & ~( 0x03)) | (sensor_mode & 0x03));
+[e = _sensor_mode_reg_val -> | & -> _sensor_mode_reg_val `i ~ -> 3 `i & -> _sensor_mode `i -> 3 `i `uc ]
+"958
+[; ;BME280_driver/bme280.c: 958:         rslt = bme280_set_regs(&reg_addr, &sensor_mode_reg_val, 1, dev);
+[e = _rslt ( _bme280_set_regs (4 , , , &U _reg_addr -> &U _sensor_mode_reg_val `*Cuc -> -> 1 `i `uc _dev ]
+"959
+[; ;BME280_driver/bme280.c: 959:     }
 }
 [e :U 80 ]
-"956
-[; ;BME280_driver/bme280.c: 956:     return rslt;
+"961
+[; ;BME280_driver/bme280.c: 961:     return rslt;
 [e ) _rslt ]
 [e $UE 79  ]
-"957
-[; ;BME280_driver/bme280.c: 957: }
+"962
+[; ;BME280_driver/bme280.c: 962: }
 [e :UE 79 ]
 }
-"962
-[; ;BME280_driver/bme280.c: 962: static int8_t put_device_to_sleep(const struct bme280_dev *dev)
+"967
+[; ;BME280_driver/bme280.c: 967: static int8_t put_device_to_sleep(const struct bme280_dev *dev)
 [v _put_device_to_sleep `(c ~T0 @X0 1 sf1`*CS5 ]
-"963
-[; ;BME280_driver/bme280.c: 963: {
+"968
+[; ;BME280_driver/bme280.c: 968: {
 {
 [e :U _put_device_to_sleep ]
-"962
-[; ;BME280_driver/bme280.c: 962: static int8_t put_device_to_sleep(const struct bme280_dev *dev)
+"967
+[; ;BME280_driver/bme280.c: 967: static int8_t put_device_to_sleep(const struct bme280_dev *dev)
 [v _dev `*CS5 ~T0 @X0 1 r1 ]
-"963
-[; ;BME280_driver/bme280.c: 963: {
-[f ]
-"964
-[; ;BME280_driver/bme280.c: 964:     int8_t rslt;
-[v _rslt `c ~T0 @X0 1 a ]
-"965
-[; ;BME280_driver/bme280.c: 965:     uint8_t reg_data[4];
-[v _reg_data `uc ~T0 @X0 -> 4 `i a ]
-"966
-[; ;BME280_driver/bme280.c: 966:     struct bme280_settings settings;
-[v _settings `S4 ~T0 @X0 1 a ]
 "968
-[; ;BME280_driver/bme280.c: 968:     rslt = bme280_get_regs(0xF2, reg_data, 4, dev);
-[e = _rslt ( _bme280_get_regs (4 , , , -> -> 242 `i `uc &U _reg_data -> -> 4 `i `us _dev ]
+[; ;BME280_driver/bme280.c: 968: {
+[f ]
 "969
-[; ;BME280_driver/bme280.c: 969:     if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 82  ]
+[; ;BME280_driver/bme280.c: 969:     int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
 "970
-[; ;BME280_driver/bme280.c: 970:     {
-{
+[; ;BME280_driver/bme280.c: 970:     uint8_t reg_data[4];
+[v _reg_data `uc ~T0 @X0 -> 4 `i a ]
 "971
-[; ;BME280_driver/bme280.c: 971:         parse_device_settings(reg_data, &settings);
-[e ( _parse_device_settings (2 , -> &U _reg_data `*Cuc &U _settings ]
-"972
-[; ;BME280_driver/bme280.c: 972:         rslt = bme280_soft_reset(dev);
-[e = _rslt ( _bme280_soft_reset (1 _dev ]
+[; ;BME280_driver/bme280.c: 971:     struct bme280_settings settings;
+[v _settings `S4 ~T0 @X0 1 a ]
 "973
-[; ;BME280_driver/bme280.c: 973:         if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 83  ]
+[; ;BME280_driver/bme280.c: 973:     rslt = bme280_get_regs(0xF2, reg_data, 4, dev);
+[e = _rslt ( _bme280_get_regs (4 , , , -> -> 242 `i `uc &U _reg_data -> -> 4 `i `us _dev ]
 "974
-[; ;BME280_driver/bme280.c: 974:         {
-{
+[; ;BME280_driver/bme280.c: 974:     if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 82  ]
 "975
-[; ;BME280_driver/bme280.c: 975:             rslt = reload_device_settings(&settings, dev);
-[e = _rslt ( _reload_device_settings (2 , -> &U _settings `*CS4 _dev ]
+[; ;BME280_driver/bme280.c: 975:     {
+{
 "976
-[; ;BME280_driver/bme280.c: 976:         }
+[; ;BME280_driver/bme280.c: 976:         parse_device_settings(reg_data, &settings);
+[e ( _parse_device_settings (2 , -> &U _reg_data `*Cuc &U _settings ]
+"977
+[; ;BME280_driver/bme280.c: 977:         rslt = bme280_soft_reset(dev);
+[e = _rslt ( _bme280_soft_reset (1 _dev ]
+"978
+[; ;BME280_driver/bme280.c: 978:         if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 83  ]
+"979
+[; ;BME280_driver/bme280.c: 979:         {
+{
+"980
+[; ;BME280_driver/bme280.c: 980:             rslt = reload_device_settings(&settings, dev);
+[e = _rslt ( _reload_device_settings (2 , -> &U _settings `*CS4 _dev ]
+"981
+[; ;BME280_driver/bme280.c: 981:         }
 }
 [e :U 83 ]
-"977
-[; ;BME280_driver/bme280.c: 977:     }
+"982
+[; ;BME280_driver/bme280.c: 982:     }
 }
 [e :U 82 ]
-"979
-[; ;BME280_driver/bme280.c: 979:     return rslt;
+"984
+[; ;BME280_driver/bme280.c: 984:     return rslt;
 [e ) _rslt ]
 [e $UE 81  ]
-"980
-[; ;BME280_driver/bme280.c: 980: }
+"985
+[; ;BME280_driver/bme280.c: 985: }
 [e :UE 81 ]
 }
-"986
-[; ;BME280_driver/bme280.c: 986: static int8_t reload_device_settings(const struct bme280_settings *settings, const struct bme280_dev *dev)
+"991
+[; ;BME280_driver/bme280.c: 991: static int8_t reload_device_settings(const struct bme280_settings *settings, const struct bme280_dev *dev)
 [v _reload_device_settings `(c ~T0 @X0 1 sf2`*CS4`*CS5 ]
-"987
-[; ;BME280_driver/bme280.c: 987: {
+"992
+[; ;BME280_driver/bme280.c: 992: {
 {
 [e :U _reload_device_settings ]
-"986
-[; ;BME280_driver/bme280.c: 986: static int8_t reload_device_settings(const struct bme280_settings *settings, const struct bme280_dev *dev)
+"991
+[; ;BME280_driver/bme280.c: 991: static int8_t reload_device_settings(const struct bme280_settings *settings, const struct bme280_dev *dev)
 [v _settings `*CS4 ~T0 @X0 1 r1 ]
 [v _dev `*CS5 ~T0 @X0 1 r2 ]
-"987
-[; ;BME280_driver/bme280.c: 987: {
-[f ]
-"988
-[; ;BME280_driver/bme280.c: 988:     int8_t rslt;
-[v _rslt `c ~T0 @X0 1 a ]
-"990
-[; ;BME280_driver/bme280.c: 990:     rslt = set_osr_settings(0x1F, settings, dev);
-[e = _rslt ( _set_osr_settings (3 , , -> -> 31 `i `uc _settings _dev ]
-"991
-[; ;BME280_driver/bme280.c: 991:     if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 85  ]
 "992
-[; ;BME280_driver/bme280.c: 992:     {
-{
+[; ;BME280_driver/bme280.c: 992: {
+[f ]
 "993
-[; ;BME280_driver/bme280.c: 993:         rslt = set_filter_standby_settings(0x1F, settings, dev);
+[; ;BME280_driver/bme280.c: 993:     int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"995
+[; ;BME280_driver/bme280.c: 995:     rslt = set_osr_settings(0x1F, settings, dev);
+[e = _rslt ( _set_osr_settings (3 , , -> -> 31 `i `uc _settings _dev ]
+"996
+[; ;BME280_driver/bme280.c: 996:     if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 85  ]
+"997
+[; ;BME280_driver/bme280.c: 997:     {
+{
+"998
+[; ;BME280_driver/bme280.c: 998:         rslt = set_filter_standby_settings(0x1F, settings, dev);
 [e = _rslt ( _set_filter_standby_settings (3 , , -> -> 31 `i `uc _settings _dev ]
-"994
-[; ;BME280_driver/bme280.c: 994:     }
+"999
+[; ;BME280_driver/bme280.c: 999:     }
 }
 [e :U 85 ]
-"996
-[; ;BME280_driver/bme280.c: 996:     return rslt;
+"1001
+[; ;BME280_driver/bme280.c: 1001:     return rslt;
 [e ) _rslt ]
 [e $UE 84  ]
-"997
-[; ;BME280_driver/bme280.c: 997: }
+"1002
+[; ;BME280_driver/bme280.c: 1002: }
 [e :UE 84 ]
 }
-"1121
-[; ;BME280_driver/bme280.c: 1121: static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_data,
+"1126
+[; ;BME280_driver/bme280.c: 1126: static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_data,
 [v _compensate_temperature `(l ~T0 @X0 1 sf2`*CS3`*S1 ]
-"1123
-[; ;BME280_driver/bme280.c: 1123: {
+"1128
+[; ;BME280_driver/bme280.c: 1128: {
 {
 [e :U _compensate_temperature ]
-"1121
-[; ;BME280_driver/bme280.c: 1121: static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_data,
-[v _uncomp_data `*CS3 ~T0 @X0 1 r1 ]
-"1122
-[; ;BME280_driver/bme280.c: 1122:                                       struct bme280_calib_data *calib_data)
-[v _calib_data `*S1 ~T0 @X0 1 r2 ]
-"1123
-[; ;BME280_driver/bme280.c: 1123: {
-[f ]
-"1124
-[; ;BME280_driver/bme280.c: 1124:     int32_t var1;
-[v _var1 `l ~T0 @X0 1 a ]
-"1125
-[; ;BME280_driver/bme280.c: 1125:     int32_t var2;
-[v _var2 `l ~T0 @X0 1 a ]
 "1126
-[; ;BME280_driver/bme280.c: 1126:     int32_t temperature;
-[v _temperature `l ~T0 @X0 1 a ]
+[; ;BME280_driver/bme280.c: 1126: static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_data,
+[v _uncomp_data `*CS3 ~T0 @X0 1 r1 ]
 "1127
-[; ;BME280_driver/bme280.c: 1127:     int32_t temperature_min = -4000;
+[; ;BME280_driver/bme280.c: 1127:                                       struct bme280_calib_data *calib_data)
+[v _calib_data `*S1 ~T0 @X0 1 r2 ]
+"1128
+[; ;BME280_driver/bme280.c: 1128: {
+[f ]
+"1129
+[; ;BME280_driver/bme280.c: 1129:     int32_t var1;
+[v _var1 `l ~T0 @X0 1 a ]
+"1130
+[; ;BME280_driver/bme280.c: 1130:     int32_t var2;
+[v _var2 `l ~T0 @X0 1 a ]
+"1131
+[; ;BME280_driver/bme280.c: 1131:     int32_t temperature;
+[v _temperature `l ~T0 @X0 1 a ]
+"1132
+[; ;BME280_driver/bme280.c: 1132:     int32_t temperature_min = -4000;
 [v _temperature_min `l ~T0 @X0 1 a ]
 [e = _temperature_min -> -U -> 4000 `i `l ]
-"1128
-[; ;BME280_driver/bme280.c: 1128:     int32_t temperature_max = 8500;
+"1133
+[; ;BME280_driver/bme280.c: 1133:     int32_t temperature_max = 8500;
 [v _temperature_max `l ~T0 @X0 1 a ]
 [e = _temperature_max -> -> 8500 `i `l ]
-"1130
-[; ;BME280_driver/bme280.c: 1130:     var1 = (int32_t)((uncomp_data->temperature / 8) - ((int32_t)calib_data->dig_T1 * 2));
-[e = _var1 -> - / . *U _uncomp_data 1 -> -> -> 8 `i `l `ul -> * -> . *U _calib_data 0 `l -> -> 2 `i `l `ul `l ]
-"1131
-[; ;BME280_driver/bme280.c: 1131:     var1 = (var1 * ((int32_t)calib_data->dig_T2)) / 2048;
-[e = _var1 / * _var1 -> . *U _calib_data 1 `l -> -> 2048 `i `l ]
-"1132
-[; ;BME280_driver/bme280.c: 1132:     var2 = (int32_t)((uncomp_data->temperature / 16) - ((int32_t)calib_data->dig_T1));
-[e = _var2 -> - / . *U _uncomp_data 1 -> -> -> 16 `i `l `ul -> -> . *U _calib_data 0 `l `ul `l ]
-"1133
-[; ;BME280_driver/bme280.c: 1133:     var2 = (((var2 * var2) / 4096) * ((int32_t)calib_data->dig_T3)) / 16384;
-[e = _var2 / * / * _var2 _var2 -> -> 4096 `i `l -> . *U _calib_data 2 `l -> -> 16384 `i `l ]
-"1134
-[; ;BME280_driver/bme280.c: 1134:     calib_data->t_fine = var1 + var2;
-[e = . *U _calib_data 18 + _var1 _var2 ]
 "1135
-[; ;BME280_driver/bme280.c: 1135:     temperature = (calib_data->t_fine * 5 + 128) / 256;
-[e = _temperature / + * . *U _calib_data 18 -> -> 5 `i `l -> -> 128 `i `l -> -> 256 `i `l ]
+[; ;BME280_driver/bme280.c: 1135:     var1 = (int32_t)((uncomp_data->temperature / 8) - ((int32_t)calib_data->dig_T1 * 2));
+[e = _var1 -> - / . *U _uncomp_data 1 -> -> -> 8 `i `l `ul -> * -> . *U _calib_data 0 `l -> -> 2 `i `l `ul `l ]
 "1136
-[; ;BME280_driver/bme280.c: 1136:     if (temperature < temperature_min)
-[e $ ! < _temperature _temperature_min 87  ]
+[; ;BME280_driver/bme280.c: 1136:     var1 = (var1 * ((int32_t)calib_data->dig_T2)) / 2048;
+[e = _var1 / * _var1 -> . *U _calib_data 1 `l -> -> 2048 `i `l ]
 "1137
-[; ;BME280_driver/bme280.c: 1137:     {
-{
+[; ;BME280_driver/bme280.c: 1137:     var2 = (int32_t)((uncomp_data->temperature / 16) - ((int32_t)calib_data->dig_T1));
+[e = _var2 -> - / . *U _uncomp_data 1 -> -> -> 16 `i `l `ul -> -> . *U _calib_data 0 `l `ul `l ]
 "1138
-[; ;BME280_driver/bme280.c: 1138:         temperature = temperature_min;
-[e = _temperature _temperature_min ]
+[; ;BME280_driver/bme280.c: 1138:     var2 = (((var2 * var2) / 4096) * ((int32_t)calib_data->dig_T3)) / 16384;
+[e = _var2 / * / * _var2 _var2 -> -> 4096 `i `l -> . *U _calib_data 2 `l -> -> 16384 `i `l ]
 "1139
-[; ;BME280_driver/bme280.c: 1139:     }
+[; ;BME280_driver/bme280.c: 1139:     calib_data->t_fine = var1 + var2;
+[e = . *U _calib_data 18 + _var1 _var2 ]
+"1140
+[; ;BME280_driver/bme280.c: 1140:     temperature = (calib_data->t_fine * 5 + 128) / 256;
+[e = _temperature / + * . *U _calib_data 18 -> -> 5 `i `l -> -> 128 `i `l -> -> 256 `i `l ]
+"1141
+[; ;BME280_driver/bme280.c: 1141:     if (temperature < temperature_min)
+[e $ ! < _temperature _temperature_min 87  ]
+"1142
+[; ;BME280_driver/bme280.c: 1142:     {
+{
+"1143
+[; ;BME280_driver/bme280.c: 1143:         temperature = temperature_min;
+[e = _temperature _temperature_min ]
+"1144
+[; ;BME280_driver/bme280.c: 1144:     }
 }
 [e $U 88  ]
-"1140
-[; ;BME280_driver/bme280.c: 1140:     else if (temperature > temperature_max)
+"1145
+[; ;BME280_driver/bme280.c: 1145:     else if (temperature > temperature_max)
 [e :U 87 ]
 [e $ ! > _temperature _temperature_max 89  ]
-"1141
-[; ;BME280_driver/bme280.c: 1141:     {
+"1146
+[; ;BME280_driver/bme280.c: 1146:     {
 {
-"1142
-[; ;BME280_driver/bme280.c: 1142:         temperature = temperature_max;
+"1147
+[; ;BME280_driver/bme280.c: 1147:         temperature = temperature_max;
 [e = _temperature _temperature_max ]
-"1143
-[; ;BME280_driver/bme280.c: 1143:     }
+"1148
+[; ;BME280_driver/bme280.c: 1148:     }
 }
 [e :U 89 ]
 [e :U 88 ]
-"1145
-[; ;BME280_driver/bme280.c: 1145:     return temperature;
+"1150
+[; ;BME280_driver/bme280.c: 1150:     return temperature;
 [e ) _temperature ]
 [e $UE 86  ]
-"1146
-[; ;BME280_driver/bme280.c: 1146: }
+"1151
+[; ;BME280_driver/bme280.c: 1151: }
 [e :UE 86 ]
 }
-"1154
-[; ;BME280_driver/bme280.c: 1154: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
+"1159
+[; ;BME280_driver/bme280.c: 1159: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
 [v _compensate_pressure `(ul ~T0 @X0 1 sf2`*CS3`*CS1 ]
-"1156
-[; ;BME280_driver/bme280.c: 1156: {
+"1161
+[; ;BME280_driver/bme280.c: 1161: {
 {
 [e :U _compensate_pressure ]
-"1154
-[; ;BME280_driver/bme280.c: 1154: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
-[v _uncomp_data `*CS3 ~T0 @X0 1 r1 ]
-"1155
-[; ;BME280_driver/bme280.c: 1155:                                     const struct bme280_calib_data *calib_data)
-[v _calib_data `*CS1 ~T0 @X0 1 r2 ]
-"1156
-[; ;BME280_driver/bme280.c: 1156: {
-[f ]
-"1157
-[; ;BME280_driver/bme280.c: 1157:     int64_t var1;
-[v _var1 `o ~T0 @X0 1 a ]
-"1158
-[; ;BME280_driver/bme280.c: 1158:     int64_t var2;
-[v _var2 `o ~T0 @X0 1 a ]
 "1159
-[; ;BME280_driver/bme280.c: 1159:     int64_t var3;
-[v _var3 `o ~T0 @X0 1 a ]
+[; ;BME280_driver/bme280.c: 1159: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
+[v _uncomp_data `*CS3 ~T0 @X0 1 r1 ]
 "1160
-[; ;BME280_driver/bme280.c: 1160:     int64_t var4;
-[v _var4 `o ~T0 @X0 1 a ]
+[; ;BME280_driver/bme280.c: 1160:                                     const struct bme280_calib_data *calib_data)
+[v _calib_data `*CS1 ~T0 @X0 1 r2 ]
 "1161
-[; ;BME280_driver/bme280.c: 1161:     uint32_t pressure;
-[v _pressure `ul ~T0 @X0 1 a ]
+[; ;BME280_driver/bme280.c: 1161: {
+[f ]
 "1162
-[; ;BME280_driver/bme280.c: 1162:     uint32_t pressure_min = 3000000;
+[; ;BME280_driver/bme280.c: 1162:     int64_t var1;
+[v _var1 `o ~T0 @X0 1 a ]
+"1163
+[; ;BME280_driver/bme280.c: 1163:     int64_t var2;
+[v _var2 `o ~T0 @X0 1 a ]
+"1164
+[; ;BME280_driver/bme280.c: 1164:     int64_t var3;
+[v _var3 `o ~T0 @X0 1 a ]
+"1165
+[; ;BME280_driver/bme280.c: 1165:     int64_t var4;
+[v _var4 `o ~T0 @X0 1 a ]
+"1166
+[; ;BME280_driver/bme280.c: 1166:     uint32_t pressure;
+[v _pressure `ul ~T0 @X0 1 a ]
+"1167
+[; ;BME280_driver/bme280.c: 1167:     uint32_t pressure_min = 3000000;
 [v _pressure_min `ul ~T0 @X0 1 a ]
 [e = _pressure_min -> -> 3000000 `l `ul ]
-"1163
-[; ;BME280_driver/bme280.c: 1163:     uint32_t pressure_max = 11000000;
+"1168
+[; ;BME280_driver/bme280.c: 1168:     uint32_t pressure_max = 11000000;
 [v _pressure_max `ul ~T0 @X0 1 a ]
 [e = _pressure_max -> -> 11000000 `l `ul ]
-"1165
-[; ;BME280_driver/bme280.c: 1165:     var1 = ((int64_t)calib_data->t_fine) - 128000;
-[e = _var1 - -> . *U _calib_data 18 `o -> -> 128000 `l `o ]
-"1166
-[; ;BME280_driver/bme280.c: 1166:     var2 = var1 * var1 * (int64_t)calib_data->dig_P6;
-[e = _var2 * * _var1 _var1 -> . *U _calib_data 8 `o ]
-"1167
-[; ;BME280_driver/bme280.c: 1167:     var2 = var2 + ((var1 * (int64_t)calib_data->dig_P5) * 131072);
-[e = _var2 + _var2 * * _var1 -> . *U _calib_data 7 `o -> -> 131072 `l `o ]
-"1168
-[; ;BME280_driver/bme280.c: 1168:     var2 = var2 + (((int64_t)calib_data->dig_P4) * 34359738368);
-[e = _var2 + _var2 * -> . *U _calib_data 6 `o -> 34359738368 `o ]
-"1169
-[; ;BME280_driver/bme280.c: 1169:     var1 = ((var1 * var1 * (int64_t)calib_data->dig_P3) / 256) + ((var1 * ((int64_t)calib_data->dig_P2) * 4096));
-[e = _var1 + / * * _var1 _var1 -> . *U _calib_data 5 `o -> -> 256 `i `o * * _var1 -> . *U _calib_data 4 `o -> -> 4096 `i `o ]
 "1170
-[; ;BME280_driver/bme280.c: 1170:     var3 = ((int64_t)1) * 140737488355328;
-[e = _var3 * -> -> 1 `i `o -> 140737488355328 `o ]
+[; ;BME280_driver/bme280.c: 1170:     var1 = ((int64_t)calib_data->t_fine) - 128000;
+[e = _var1 - -> . *U _calib_data 18 `o -> -> 128000 `l `o ]
 "1171
-[; ;BME280_driver/bme280.c: 1171:     var1 = (var3 + var1) * ((int64_t)calib_data->dig_P1) / 8589934592;
-[e = _var1 / * + _var3 _var1 -> . *U _calib_data 3 `o -> 8589934592 `o ]
+[; ;BME280_driver/bme280.c: 1171:     var2 = var1 * var1 * (int64_t)calib_data->dig_P6;
+[e = _var2 * * _var1 _var1 -> . *U _calib_data 8 `o ]
+"1172
+[; ;BME280_driver/bme280.c: 1172:     var2 = var2 + ((var1 * (int64_t)calib_data->dig_P5) * 131072);
+[e = _var2 + _var2 * * _var1 -> . *U _calib_data 7 `o -> -> 131072 `l `o ]
+"1173
+[; ;BME280_driver/bme280.c: 1173:     var2 = var2 + (((int64_t)calib_data->dig_P4) * 34359738368);
+[e = _var2 + _var2 * -> . *U _calib_data 6 `o -> 34359738368 `o ]
 "1174
-[; ;BME280_driver/bme280.c: 1174:     if (var1 != 0)
-[e $ ! != _var1 -> -> 0 `i `o 91  ]
+[; ;BME280_driver/bme280.c: 1174:     var1 = ((var1 * var1 * (int64_t)calib_data->dig_P3) / 256) + ((var1 * ((int64_t)calib_data->dig_P2) * 4096));
+[e = _var1 + / * * _var1 _var1 -> . *U _calib_data 5 `o -> -> 256 `i `o * * _var1 -> . *U _calib_data 4 `o -> -> 4096 `i `o ]
 "1175
-[; ;BME280_driver/bme280.c: 1175:     {
-{
+[; ;BME280_driver/bme280.c: 1175:     var3 = ((int64_t)1) * 140737488355328;
+[e = _var3 * -> -> 1 `i `o -> 140737488355328 `o ]
 "1176
-[; ;BME280_driver/bme280.c: 1176:         var4 = 1048576 - uncomp_data->pressure;
-[e = _var4 -> - -> -> 1048576 `l `ul . *U _uncomp_data 0 `o ]
-"1177
-[; ;BME280_driver/bme280.c: 1177:         var4 = (((var4 * 2147483648LL) - var2) * 3125) / var1;
-[e = _var4 / * - * _var4 -> 2147483648 `o _var2 -> -> 3125 `i `o _var1 ]
-"1178
-[; ;BME280_driver/bme280.c: 1178:         var1 = (((int64_t)calib_data->dig_P9) * (var4 / 8192) * (var4 / 8192)) / 33554432;
-[e = _var1 / * * -> . *U _calib_data 11 `o / _var4 -> -> 8192 `i `o / _var4 -> -> 8192 `i `o -> -> 33554432 `l `o ]
+[; ;BME280_driver/bme280.c: 1176:     var1 = (var3 + var1) * ((int64_t)calib_data->dig_P1) / 8589934592;
+[e = _var1 / * + _var3 _var1 -> . *U _calib_data 3 `o -> 8589934592 `o ]
 "1179
-[; ;BME280_driver/bme280.c: 1179:         var2 = (((int64_t)calib_data->dig_P8) * var4) / 524288;
-[e = _var2 / * -> . *U _calib_data 10 `o _var4 -> -> 524288 `l `o ]
+[; ;BME280_driver/bme280.c: 1179:     if (var1 != 0)
+[e $ ! != _var1 -> -> 0 `i `o 91  ]
 "1180
-[; ;BME280_driver/bme280.c: 1180:         var4 = ((var4 + var1 + var2) / 256) + (((int64_t)calib_data->dig_P7) * 16);
-[e = _var4 + / + + _var4 _var1 _var2 -> -> 256 `i `o * -> . *U _calib_data 9 `o -> -> 16 `i `o ]
-"1181
-[; ;BME280_driver/bme280.c: 1181:         pressure = (uint32_t)(((var4 / 2) * 100) / 128);
-[e = _pressure -> / * / _var4 -> -> 2 `i `o -> -> 100 `i `o -> -> 128 `i `o `ul ]
-"1182
-[; ;BME280_driver/bme280.c: 1182:         if (pressure < pressure_min)
-[e $ ! < _pressure _pressure_min 92  ]
-"1183
-[; ;BME280_driver/bme280.c: 1183:         {
+[; ;BME280_driver/bme280.c: 1180:     {
 {
+"1181
+[; ;BME280_driver/bme280.c: 1181:         var4 = 1048576 - uncomp_data->pressure;
+[e = _var4 -> - -> -> 1048576 `l `ul . *U _uncomp_data 0 `o ]
+"1182
+[; ;BME280_driver/bme280.c: 1182:         var4 = (((var4 * 2147483648LL) - var2) * 3125) / var1;
+[e = _var4 / * - * _var4 -> 2147483648 `o _var2 -> -> 3125 `i `o _var1 ]
+"1183
+[; ;BME280_driver/bme280.c: 1183:         var1 = (((int64_t)calib_data->dig_P9) * (var4 / 8192) * (var4 / 8192)) / 33554432;
+[e = _var1 / * * -> . *U _calib_data 11 `o / _var4 -> -> 8192 `i `o / _var4 -> -> 8192 `i `o -> -> 33554432 `l `o ]
 "1184
-[; ;BME280_driver/bme280.c: 1184:             pressure = pressure_min;
-[e = _pressure _pressure_min ]
+[; ;BME280_driver/bme280.c: 1184:         var2 = (((int64_t)calib_data->dig_P8) * var4) / 524288;
+[e = _var2 / * -> . *U _calib_data 10 `o _var4 -> -> 524288 `l `o ]
 "1185
-[; ;BME280_driver/bme280.c: 1185:         }
+[; ;BME280_driver/bme280.c: 1185:         var4 = ((var4 + var1 + var2) / 256) + (((int64_t)calib_data->dig_P7) * 16);
+[e = _var4 + / + + _var4 _var1 _var2 -> -> 256 `i `o * -> . *U _calib_data 9 `o -> -> 16 `i `o ]
+"1186
+[; ;BME280_driver/bme280.c: 1186:         pressure = (uint32_t)(((var4 / 2) * 100) / 128);
+[e = _pressure -> / * / _var4 -> -> 2 `i `o -> -> 100 `i `o -> -> 128 `i `o `ul ]
+"1187
+[; ;BME280_driver/bme280.c: 1187:         if (pressure < pressure_min)
+[e $ ! < _pressure _pressure_min 92  ]
+"1188
+[; ;BME280_driver/bme280.c: 1188:         {
+{
+"1189
+[; ;BME280_driver/bme280.c: 1189:             pressure = pressure_min;
+[e = _pressure _pressure_min ]
+"1190
+[; ;BME280_driver/bme280.c: 1190:         }
 }
 [e $U 93  ]
-"1186
-[; ;BME280_driver/bme280.c: 1186:         else if (pressure > pressure_max)
+"1191
+[; ;BME280_driver/bme280.c: 1191:         else if (pressure > pressure_max)
 [e :U 92 ]
 [e $ ! > _pressure _pressure_max 94  ]
-"1187
-[; ;BME280_driver/bme280.c: 1187:         {
+"1192
+[; ;BME280_driver/bme280.c: 1192:         {
 {
-"1188
-[; ;BME280_driver/bme280.c: 1188:             pressure = pressure_max;
+"1193
+[; ;BME280_driver/bme280.c: 1193:             pressure = pressure_max;
 [e = _pressure _pressure_max ]
-"1189
-[; ;BME280_driver/bme280.c: 1189:         }
+"1194
+[; ;BME280_driver/bme280.c: 1194:         }
 }
 [e :U 94 ]
 [e :U 93 ]
-"1190
-[; ;BME280_driver/bme280.c: 1190:     }
+"1195
+[; ;BME280_driver/bme280.c: 1195:     }
 }
 [e $U 95  ]
-"1191
-[; ;BME280_driver/bme280.c: 1191:     else
+"1196
+[; ;BME280_driver/bme280.c: 1196:     else
 [e :U 91 ]
-"1192
-[; ;BME280_driver/bme280.c: 1192:     {
+"1197
+[; ;BME280_driver/bme280.c: 1197:     {
 {
-"1193
-[; ;BME280_driver/bme280.c: 1193:         pressure = pressure_min;
+"1198
+[; ;BME280_driver/bme280.c: 1198:         pressure = pressure_min;
 [e = _pressure _pressure_min ]
-"1194
-[; ;BME280_driver/bme280.c: 1194:     }
+"1199
+[; ;BME280_driver/bme280.c: 1199:     }
 }
 [e :U 95 ]
-"1196
-[; ;BME280_driver/bme280.c: 1196:     return pressure;
+"1201
+[; ;BME280_driver/bme280.c: 1201:     return pressure;
 [e ) _pressure ]
 [e $UE 90  ]
-"1197
-[; ;BME280_driver/bme280.c: 1197: }
+"1202
+[; ;BME280_driver/bme280.c: 1202: }
 [e :UE 90 ]
 }
-"1263
-[; ;BME280_driver/bme280.c: 1263: static uint32_t compensate_humidity(const struct bme280_uncomp_data *uncomp_data,
+"1268
+[; ;BME280_driver/bme280.c: 1268: static uint32_t compensate_humidity(const struct bme280_uncomp_data *uncomp_data,
 [v _compensate_humidity `(ul ~T0 @X0 1 sf2`*CS3`*CS1 ]
-"1265
-[; ;BME280_driver/bme280.c: 1265: {
+"1270
+[; ;BME280_driver/bme280.c: 1270: {
 {
 [e :U _compensate_humidity ]
-"1263
-[; ;BME280_driver/bme280.c: 1263: static uint32_t compensate_humidity(const struct bme280_uncomp_data *uncomp_data,
-[v _uncomp_data `*CS3 ~T0 @X0 1 r1 ]
-"1264
-[; ;BME280_driver/bme280.c: 1264:                                     const struct bme280_calib_data *calib_data)
-[v _calib_data `*CS1 ~T0 @X0 1 r2 ]
-"1265
-[; ;BME280_driver/bme280.c: 1265: {
-[f ]
-"1266
-[; ;BME280_driver/bme280.c: 1266:     int32_t var1;
-[v _var1 `l ~T0 @X0 1 a ]
-"1267
-[; ;BME280_driver/bme280.c: 1267:     int32_t var2;
-[v _var2 `l ~T0 @X0 1 a ]
 "1268
-[; ;BME280_driver/bme280.c: 1268:     int32_t var3;
-[v _var3 `l ~T0 @X0 1 a ]
+[; ;BME280_driver/bme280.c: 1268: static uint32_t compensate_humidity(const struct bme280_uncomp_data *uncomp_data,
+[v _uncomp_data `*CS3 ~T0 @X0 1 r1 ]
 "1269
-[; ;BME280_driver/bme280.c: 1269:     int32_t var4;
-[v _var4 `l ~T0 @X0 1 a ]
+[; ;BME280_driver/bme280.c: 1269:                                     const struct bme280_calib_data *calib_data)
+[v _calib_data `*CS1 ~T0 @X0 1 r2 ]
 "1270
-[; ;BME280_driver/bme280.c: 1270:     int32_t var5;
-[v _var5 `l ~T0 @X0 1 a ]
+[; ;BME280_driver/bme280.c: 1270: {
+[f ]
 "1271
-[; ;BME280_driver/bme280.c: 1271:     uint32_t humidity;
-[v _humidity `ul ~T0 @X0 1 a ]
+[; ;BME280_driver/bme280.c: 1271:     int32_t var1;
+[v _var1 `l ~T0 @X0 1 a ]
 "1272
-[; ;BME280_driver/bme280.c: 1272:     uint32_t humidity_max = 102400;
+[; ;BME280_driver/bme280.c: 1272:     int32_t var2;
+[v _var2 `l ~T0 @X0 1 a ]
+"1273
+[; ;BME280_driver/bme280.c: 1273:     int32_t var3;
+[v _var3 `l ~T0 @X0 1 a ]
+"1274
+[; ;BME280_driver/bme280.c: 1274:     int32_t var4;
+[v _var4 `l ~T0 @X0 1 a ]
+"1275
+[; ;BME280_driver/bme280.c: 1275:     int32_t var5;
+[v _var5 `l ~T0 @X0 1 a ]
+"1276
+[; ;BME280_driver/bme280.c: 1276:     uint32_t humidity;
+[v _humidity `ul ~T0 @X0 1 a ]
+"1277
+[; ;BME280_driver/bme280.c: 1277:     uint32_t humidity_max = 102400;
 [v _humidity_max `ul ~T0 @X0 1 a ]
 [e = _humidity_max -> -> 102400 `l `ul ]
-"1274
-[; ;BME280_driver/bme280.c: 1274:     var1 = calib_data->t_fine - ((int32_t)76800);
-[e = _var1 - . *U _calib_data 18 -> 76800 `l ]
-"1275
-[; ;BME280_driver/bme280.c: 1275:     var2 = (int32_t)(uncomp_data->humidity * 16384);
-[e = _var2 -> * . *U _uncomp_data 2 -> -> -> 16384 `i `l `ul `l ]
-"1276
-[; ;BME280_driver/bme280.c: 1276:     var3 = (int32_t)(((int32_t)calib_data->dig_H4) * 1048576);
-[e = _var3 * -> . *U _calib_data 15 `l -> 1048576 `l ]
-"1277
-[; ;BME280_driver/bme280.c: 1277:     var4 = ((int32_t)calib_data->dig_H5) * var1;
-[e = _var4 * -> . *U _calib_data 16 `l _var1 ]
-"1278
-[; ;BME280_driver/bme280.c: 1278:     var5 = (((var2 - var3) - var4) + (int32_t)16384) / 32768;
-[e = _var5 / + - - _var2 _var3 _var4 -> -> 16384 `i `l -> 32768 `l ]
 "1279
-[; ;BME280_driver/bme280.c: 1279:     var2 = (var1 * ((int32_t)calib_data->dig_H6)) / 1024;
-[e = _var2 / * _var1 -> . *U _calib_data 17 `l -> -> 1024 `i `l ]
+[; ;BME280_driver/bme280.c: 1279:     var1 = calib_data->t_fine - ((int32_t)76800);
+[e = _var1 - . *U _calib_data 18 -> 76800 `l ]
 "1280
-[; ;BME280_driver/bme280.c: 1280:     var3 = (var1 * ((int32_t)calib_data->dig_H3)) / 2048;
-[e = _var3 / * _var1 -> . *U _calib_data 14 `l -> -> 2048 `i `l ]
+[; ;BME280_driver/bme280.c: 1280:     var2 = (int32_t)(uncomp_data->humidity * 16384);
+[e = _var2 -> * . *U _uncomp_data 2 -> -> -> 16384 `i `l `ul `l ]
 "1281
-[; ;BME280_driver/bme280.c: 1281:     var4 = ((var2 * (var3 + (int32_t)32768)) / 1024) + (int32_t)2097152;
-[e = _var4 + / * _var2 + _var3 -> 32768 `l -> -> 1024 `i `l -> 2097152 `l ]
+[; ;BME280_driver/bme280.c: 1281:     var3 = (int32_t)(((int32_t)calib_data->dig_H4) * 1048576);
+[e = _var3 * -> . *U _calib_data 15 `l -> 1048576 `l ]
 "1282
-[; ;BME280_driver/bme280.c: 1282:     var2 = ((var4 * ((int32_t)calib_data->dig_H2)) + 8192) / 16384;
-[e = _var2 / + * _var4 -> . *U _calib_data 13 `l -> -> 8192 `i `l -> -> 16384 `i `l ]
+[; ;BME280_driver/bme280.c: 1282:     var4 = ((int32_t)calib_data->dig_H5) * var1;
+[e = _var4 * -> . *U _calib_data 16 `l _var1 ]
 "1283
-[; ;BME280_driver/bme280.c: 1283:     var3 = var5 * var2;
-[e = _var3 * _var5 _var2 ]
+[; ;BME280_driver/bme280.c: 1283:     var5 = (((var2 - var3) - var4) + (int32_t)16384) / 32768;
+[e = _var5 / + - - _var2 _var3 _var4 -> -> 16384 `i `l -> 32768 `l ]
 "1284
-[; ;BME280_driver/bme280.c: 1284:     var4 = ((var3 / 32768) * (var3 / 32768)) / 128;
-[e = _var4 / * / _var3 -> 32768 `l / _var3 -> 32768 `l -> -> 128 `i `l ]
+[; ;BME280_driver/bme280.c: 1284:     var2 = (var1 * ((int32_t)calib_data->dig_H6)) / 1024;
+[e = _var2 / * _var1 -> . *U _calib_data 17 `l -> -> 1024 `i `l ]
 "1285
-[; ;BME280_driver/bme280.c: 1285:     var5 = var3 - ((var4 * ((int32_t)calib_data->dig_H1)) / 16);
-[e = _var5 - _var3 / * _var4 -> . *U _calib_data 12 `l -> -> 16 `i `l ]
+[; ;BME280_driver/bme280.c: 1285:     var3 = (var1 * ((int32_t)calib_data->dig_H3)) / 2048;
+[e = _var3 / * _var1 -> . *U _calib_data 14 `l -> -> 2048 `i `l ]
 "1286
-[; ;BME280_driver/bme280.c: 1286:     var5 = (var5 < 0 ? 0 : var5);
-[e = _var5 ? < _var5 -> -> 0 `i `l : -> -> 0 `i `l _var5 ]
+[; ;BME280_driver/bme280.c: 1286:     var4 = ((var2 * (var3 + (int32_t)32768)) / 1024) + (int32_t)2097152;
+[e = _var4 + / * _var2 + _var3 -> 32768 `l -> -> 1024 `i `l -> 2097152 `l ]
 "1287
-[; ;BME280_driver/bme280.c: 1287:     var5 = (var5 > 419430400 ? 419430400 : var5);
-[e = _var5 ? > _var5 -> 419430400 `l : -> 419430400 `l _var5 ]
+[; ;BME280_driver/bme280.c: 1287:     var2 = ((var4 * ((int32_t)calib_data->dig_H2)) + 8192) / 16384;
+[e = _var2 / + * _var4 -> . *U _calib_data 13 `l -> -> 8192 `i `l -> -> 16384 `i `l ]
 "1288
-[; ;BME280_driver/bme280.c: 1288:     humidity = (uint32_t)(var5 / 4096);
-[e = _humidity -> / _var5 -> -> 4096 `i `l `ul ]
+[; ;BME280_driver/bme280.c: 1288:     var3 = var5 * var2;
+[e = _var3 * _var5 _var2 ]
 "1289
-[; ;BME280_driver/bme280.c: 1289:     if (humidity > humidity_max)
-[e $ ! > _humidity _humidity_max 97  ]
+[; ;BME280_driver/bme280.c: 1289:     var4 = ((var3 / 32768) * (var3 / 32768)) / 128;
+[e = _var4 / * / _var3 -> 32768 `l / _var3 -> 32768 `l -> -> 128 `i `l ]
 "1290
-[; ;BME280_driver/bme280.c: 1290:     {
-{
+[; ;BME280_driver/bme280.c: 1290:     var5 = var3 - ((var4 * ((int32_t)calib_data->dig_H1)) / 16);
+[e = _var5 - _var3 / * _var4 -> . *U _calib_data 12 `l -> -> 16 `i `l ]
 "1291
-[; ;BME280_driver/bme280.c: 1291:         humidity = humidity_max;
-[e = _humidity _humidity_max ]
+[; ;BME280_driver/bme280.c: 1291:     var5 = (var5 < 0 ? 0 : var5);
+[e = _var5 ? < _var5 -> -> 0 `i `l : -> -> 0 `i `l _var5 ]
 "1292
-[; ;BME280_driver/bme280.c: 1292:     }
+[; ;BME280_driver/bme280.c: 1292:     var5 = (var5 > 419430400 ? 419430400 : var5);
+[e = _var5 ? > _var5 -> 419430400 `l : -> 419430400 `l _var5 ]
+"1293
+[; ;BME280_driver/bme280.c: 1293:     humidity = (uint32_t)(var5 / 4096);
+[e = _humidity -> / _var5 -> -> 4096 `i `l `ul ]
+"1294
+[; ;BME280_driver/bme280.c: 1294:     if (humidity > humidity_max)
+[e $ ! > _humidity _humidity_max 97  ]
+"1295
+[; ;BME280_driver/bme280.c: 1295:     {
+{
+"1296
+[; ;BME280_driver/bme280.c: 1296:         humidity = humidity_max;
+[e = _humidity _humidity_max ]
+"1297
+[; ;BME280_driver/bme280.c: 1297:     }
 }
 [e :U 97 ]
-"1294
-[; ;BME280_driver/bme280.c: 1294:     return humidity;
+"1299
+[; ;BME280_driver/bme280.c: 1299:     return humidity;
 [e ) _humidity ]
 [e $UE 96  ]
-"1295
-[; ;BME280_driver/bme280.c: 1295: }
+"1300
+[; ;BME280_driver/bme280.c: 1300: }
 [e :UE 96 ]
 }
-"1302
-[; ;BME280_driver/bme280.c: 1302: static int8_t get_calib_data(struct bme280_dev *dev)
+"1307
+[; ;BME280_driver/bme280.c: 1307: static int8_t get_calib_data(struct bme280_dev *dev)
 [v _get_calib_data `(c ~T0 @X0 1 sf1`*S5 ]
-"1303
-[; ;BME280_driver/bme280.c: 1303: {
+"1308
+[; ;BME280_driver/bme280.c: 1308: {
 {
 [e :U _get_calib_data ]
-"1302
-[; ;BME280_driver/bme280.c: 1302: static int8_t get_calib_data(struct bme280_dev *dev)
+"1307
+[; ;BME280_driver/bme280.c: 1307: static int8_t get_calib_data(struct bme280_dev *dev)
 [v _dev `*S5 ~T0 @X0 1 r1 ]
-"1303
-[; ;BME280_driver/bme280.c: 1303: {
+"1308
+[; ;BME280_driver/bme280.c: 1308: {
 [f ]
-"1304
-[; ;BME280_driver/bme280.c: 1304:     int8_t rslt;
+"1309
+[; ;BME280_driver/bme280.c: 1309:     int8_t rslt;
 [v _rslt `c ~T0 @X0 1 a ]
-"1305
-[; ;BME280_driver/bme280.c: 1305:     uint8_t reg_addr = 0x88;
+"1310
+[; ;BME280_driver/bme280.c: 1310:     uint8_t reg_addr = 0x88;
 [v _reg_addr `uc ~T0 @X0 1 a ]
 [e = _reg_addr -> -> 136 `i `uc ]
 [v F375 `uc ~T0 @X0 -> 26 `i s ]
 [i F375
 :U ..
-"1308
-[; ;BME280_driver/bme280.c: 1308:     uint8_t calib_data[26] = { 0 };
+"1313
+[; ;BME280_driver/bme280.c: 1313:     uint8_t calib_data[26] = { 0 };
 -> -> 0 `i `uc
 ..
 ]
 [v _calib_data `uc ~T0 @X0 -> 26 `i a ]
 [e = _calib_data F375 ]
-"1311
-[; ;BME280_driver/bme280.c: 1311:     rslt = bme280_get_regs(reg_addr, calib_data, 26, dev);
+"1316
+[; ;BME280_driver/bme280.c: 1316:     rslt = bme280_get_regs(reg_addr, calib_data, 26, dev);
 [e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _calib_data -> -> 26 `i `us -> _dev `*CS5 ]
-"1312
-[; ;BME280_driver/bme280.c: 1312:     if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 99  ]
-"1313
-[; ;BME280_driver/bme280.c: 1313:     {
-{
 "1317
-[; ;BME280_driver/bme280.c: 1317:         parse_temp_press_calib_data(calib_data, dev);
-[e ( _parse_temp_press_calib_data (2 , -> &U _calib_data `*Cuc _dev ]
+[; ;BME280_driver/bme280.c: 1317:     if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 99  ]
 "1318
-[; ;BME280_driver/bme280.c: 1318:         reg_addr = 0xE1;
-[e = _reg_addr -> -> 225 `i `uc ]
-"1321
-[; ;BME280_driver/bme280.c: 1321:         rslt = bme280_get_regs(reg_addr, calib_data, 7, dev);
-[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _calib_data -> -> 7 `i `us -> _dev `*CS5 ]
-"1322
-[; ;BME280_driver/bme280.c: 1322:         if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 100  ]
-"1323
-[; ;BME280_driver/bme280.c: 1323:         {
+[; ;BME280_driver/bme280.c: 1318:     {
 {
+"1322
+[; ;BME280_driver/bme280.c: 1322:         parse_temp_press_calib_data(calib_data, dev);
+[e ( _parse_temp_press_calib_data (2 , -> &U _calib_data `*Cuc _dev ]
+"1323
+[; ;BME280_driver/bme280.c: 1323:         reg_addr = 0xE1;
+[e = _reg_addr -> -> 225 `i `uc ]
+"1326
+[; ;BME280_driver/bme280.c: 1326:         rslt = bme280_get_regs(reg_addr, calib_data, 7, dev);
+[e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _calib_data -> -> 7 `i `us -> _dev `*CS5 ]
 "1327
-[; ;BME280_driver/bme280.c: 1327:             parse_humidity_calib_data(calib_data, dev);
-[e ( _parse_humidity_calib_data (2 , -> &U _calib_data `*Cuc _dev ]
+[; ;BME280_driver/bme280.c: 1327:         if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 100  ]
 "1328
-[; ;BME280_driver/bme280.c: 1328:         }
+[; ;BME280_driver/bme280.c: 1328:         {
+{
+"1332
+[; ;BME280_driver/bme280.c: 1332:             parse_humidity_calib_data(calib_data, dev);
+[e ( _parse_humidity_calib_data (2 , -> &U _calib_data `*Cuc _dev ]
+"1333
+[; ;BME280_driver/bme280.c: 1333:         }
 }
 [e :U 100 ]
-"1329
-[; ;BME280_driver/bme280.c: 1329:     }
+"1334
+[; ;BME280_driver/bme280.c: 1334:     }
 }
 [e :U 99 ]
-"1331
-[; ;BME280_driver/bme280.c: 1331:     return rslt;
+"1336
+[; ;BME280_driver/bme280.c: 1336:     return rslt;
 [e ) _rslt ]
 [e $UE 98  ]
-"1332
-[; ;BME280_driver/bme280.c: 1332: }
+"1337
+[; ;BME280_driver/bme280.c: 1337: }
 [e :UE 98 ]
 }
-"1338
-[; ;BME280_driver/bme280.c: 1338: static void interleave_reg_addr(const uint8_t *reg_addr, uint8_t *temp_buff, const uint8_t *reg_data, uint8_t len)
+"1343
+[; ;BME280_driver/bme280.c: 1343: static void interleave_reg_addr(const uint8_t *reg_addr, uint8_t *temp_buff, const uint8_t *reg_data, uint8_t len)
 [v _interleave_reg_addr `(v ~T0 @X0 1 sf4`*Cuc`*uc`*Cuc`uc ]
-"1339
-[; ;BME280_driver/bme280.c: 1339: {
+"1344
+[; ;BME280_driver/bme280.c: 1344: {
 {
 [e :U _interleave_reg_addr ]
-"1338
-[; ;BME280_driver/bme280.c: 1338: static void interleave_reg_addr(const uint8_t *reg_addr, uint8_t *temp_buff, const uint8_t *reg_data, uint8_t len)
+"1343
+[; ;BME280_driver/bme280.c: 1343: static void interleave_reg_addr(const uint8_t *reg_addr, uint8_t *temp_buff, const uint8_t *reg_data, uint8_t len)
 [v _reg_addr `*Cuc ~T0 @X0 1 r1 ]
 [v _temp_buff `*uc ~T0 @X0 1 r2 ]
 [v _reg_data `*Cuc ~T0 @X0 1 r3 ]
 [v _len `uc ~T0 @X0 1 r4 ]
-"1339
-[; ;BME280_driver/bme280.c: 1339: {
+"1344
+[; ;BME280_driver/bme280.c: 1344: {
 [f ]
-"1340
-[; ;BME280_driver/bme280.c: 1340:     uint8_t index;
+"1345
+[; ;BME280_driver/bme280.c: 1345:     uint8_t index;
 [v _index `uc ~T0 @X0 1 a ]
-"1342
-[; ;BME280_driver/bme280.c: 1342:     for (index = 1; index < len; index++)
+"1347
+[; ;BME280_driver/bme280.c: 1347:     for (index = 1; index < len; index++)
 {
 [e = _index -> -> 1 `i `uc ]
 [e $U 105  ]
 [e :U 102 ]
-"1343
-[; ;BME280_driver/bme280.c: 1343:     {
+"1348
+[; ;BME280_driver/bme280.c: 1348:     {
 {
-"1344
-[; ;BME280_driver/bme280.c: 1344:         temp_buff[(index * 2) - 1] = reg_addr[index];
+"1349
+[; ;BME280_driver/bme280.c: 1349:         temp_buff[(index * 2) - 1] = reg_addr[index];
 [e = *U + _temp_buff * -> - * -> _index `i -> 2 `i -> 1 `i `x -> -> # *U _temp_buff `i `x *U + _reg_addr * -> _index `ux -> -> # *U _reg_addr `ui `ux ]
-"1345
-[; ;BME280_driver/bme280.c: 1345:         temp_buff[index * 2] = reg_data[index];
+"1350
+[; ;BME280_driver/bme280.c: 1350:         temp_buff[index * 2] = reg_data[index];
 [e = *U + _temp_buff * -> * -> _index `i -> 2 `i `x -> -> # *U _temp_buff `i `x *U + _reg_data * -> _index `ux -> -> # *U _reg_data `ui `ux ]
-"1346
-[; ;BME280_driver/bme280.c: 1346:     }
+"1351
+[; ;BME280_driver/bme280.c: 1351:     }
 }
 [e ++ _index -> -> 1 `i `uc ]
 [e :U 105 ]
 [e $ < -> _index `i -> _len `i 102  ]
 [e :U 103 ]
 }
-"1347
-[; ;BME280_driver/bme280.c: 1347: }
+"1352
+[; ;BME280_driver/bme280.c: 1352: }
 [e :UE 101 ]
 }
-"1353
-[; ;BME280_driver/bme280.c: 1353: static void parse_temp_press_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
+"1358
+[; ;BME280_driver/bme280.c: 1358: static void parse_temp_press_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
 [v _parse_temp_press_calib_data `(v ~T0 @X0 1 sf2`*Cuc`*S5 ]
-"1354
-[; ;BME280_driver/bme280.c: 1354: {
+"1359
+[; ;BME280_driver/bme280.c: 1359: {
 {
 [e :U _parse_temp_press_calib_data ]
-"1353
-[; ;BME280_driver/bme280.c: 1353: static void parse_temp_press_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
+"1358
+[; ;BME280_driver/bme280.c: 1358: static void parse_temp_press_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
 [v _reg_data `*Cuc ~T0 @X0 1 r1 ]
 [v _dev `*S5 ~T0 @X0 1 r2 ]
-"1354
-[; ;BME280_driver/bme280.c: 1354: {
+"1359
+[; ;BME280_driver/bme280.c: 1359: {
 [f ]
-"1355
-[; ;BME280_driver/bme280.c: 1355:     struct bme280_calib_data *calib_data = &dev->calib_data;
+"1360
+[; ;BME280_driver/bme280.c: 1360:     struct bme280_calib_data *calib_data = &dev->calib_data;
 [v _calib_data `*S1 ~T0 @X0 1 a ]
 [e = _calib_data &U . *U _dev 6 ]
-"1357
-[; ;BME280_driver/bme280.c: 1357:     calib_data->dig_T1 = (((uint16_t)reg_data[1] << 8) | (uint16_t)reg_data[0]);
-[e = . *U _calib_data 0 -> | << -> -> *U + _reg_data * -> -> 1 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 0 `i `x -> -> # *U _reg_data `i `x `us `ui `us ]
-"1358
-[; ;BME280_driver/bme280.c: 1358:     calib_data->dig_T2 = (int16_t)(((uint16_t)reg_data[3] << 8) | (uint16_t)reg_data[2]);
-[e = . *U _calib_data 1 -> | << -> -> *U + _reg_data * -> -> 3 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 2 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
-"1359
-[; ;BME280_driver/bme280.c: 1359:     calib_data->dig_T3 = (int16_t)(((uint16_t)reg_data[5] << 8) | (uint16_t)reg_data[4]);
-[e = . *U _calib_data 2 -> | << -> -> *U + _reg_data * -> -> 5 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 4 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
-"1360
-[; ;BME280_driver/bme280.c: 1360:     calib_data->dig_P1 = (((uint16_t)reg_data[7] << 8) | (uint16_t)reg_data[6]);
-[e = . *U _calib_data 3 -> | << -> -> *U + _reg_data * -> -> 7 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 6 `i `x -> -> # *U _reg_data `i `x `us `ui `us ]
-"1361
-[; ;BME280_driver/bme280.c: 1361:     calib_data->dig_P2 = (int16_t)(((uint16_t)reg_data[9] << 8) | (uint16_t)reg_data[8]);
-[e = . *U _calib_data 4 -> | << -> -> *U + _reg_data * -> -> 9 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 8 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
 "1362
-[; ;BME280_driver/bme280.c: 1362:     calib_data->dig_P3 = (int16_t)(((uint16_t)reg_data[11] << 8) | (uint16_t)reg_data[10]);
-[e = . *U _calib_data 5 -> | << -> -> *U + _reg_data * -> -> 11 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 10 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+[; ;BME280_driver/bme280.c: 1362:     calib_data->dig_T1 = (((uint16_t)reg_data[1] << 8) | (uint16_t)reg_data[0]);
+[e = . *U _calib_data 0 -> | << -> -> *U + _reg_data * -> -> 1 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 0 `i `x -> -> # *U _reg_data `i `x `us `ui `us ]
 "1363
-[; ;BME280_driver/bme280.c: 1363:     calib_data->dig_P4 = (int16_t)(((uint16_t)reg_data[13] << 8) | (uint16_t)reg_data[12]);
-[e = . *U _calib_data 6 -> | << -> -> *U + _reg_data * -> -> 13 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 12 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+[; ;BME280_driver/bme280.c: 1363:     calib_data->dig_T2 = (int16_t)(((uint16_t)reg_data[3] << 8) | (uint16_t)reg_data[2]);
+[e = . *U _calib_data 1 -> | << -> -> *U + _reg_data * -> -> 3 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 2 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
 "1364
-[; ;BME280_driver/bme280.c: 1364:     calib_data->dig_P5 = (int16_t)(((uint16_t)reg_data[15] << 8) | (uint16_t)reg_data[14]);
-[e = . *U _calib_data 7 -> | << -> -> *U + _reg_data * -> -> 15 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 14 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+[; ;BME280_driver/bme280.c: 1364:     calib_data->dig_T3 = (int16_t)(((uint16_t)reg_data[5] << 8) | (uint16_t)reg_data[4]);
+[e = . *U _calib_data 2 -> | << -> -> *U + _reg_data * -> -> 5 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 4 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
 "1365
-[; ;BME280_driver/bme280.c: 1365:     calib_data->dig_P6 = (int16_t)(((uint16_t)reg_data[17] << 8) | (uint16_t)reg_data[16]);
-[e = . *U _calib_data 8 -> | << -> -> *U + _reg_data * -> -> 17 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 16 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+[; ;BME280_driver/bme280.c: 1365:     calib_data->dig_P1 = (((uint16_t)reg_data[7] << 8) | (uint16_t)reg_data[6]);
+[e = . *U _calib_data 3 -> | << -> -> *U + _reg_data * -> -> 7 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 6 `i `x -> -> # *U _reg_data `i `x `us `ui `us ]
 "1366
-[; ;BME280_driver/bme280.c: 1366:     calib_data->dig_P7 = (int16_t)(((uint16_t)reg_data[19] << 8) | (uint16_t)reg_data[18]);
-[e = . *U _calib_data 9 -> | << -> -> *U + _reg_data * -> -> 19 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 18 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+[; ;BME280_driver/bme280.c: 1366:     calib_data->dig_P2 = (int16_t)(((uint16_t)reg_data[9] << 8) | (uint16_t)reg_data[8]);
+[e = . *U _calib_data 4 -> | << -> -> *U + _reg_data * -> -> 9 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 8 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
 "1367
-[; ;BME280_driver/bme280.c: 1367:     calib_data->dig_P8 = (int16_t)(((uint16_t)reg_data[21] << 8) | (uint16_t)reg_data[20]);
-[e = . *U _calib_data 10 -> | << -> -> *U + _reg_data * -> -> 21 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 20 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+[; ;BME280_driver/bme280.c: 1367:     calib_data->dig_P3 = (int16_t)(((uint16_t)reg_data[11] << 8) | (uint16_t)reg_data[10]);
+[e = . *U _calib_data 5 -> | << -> -> *U + _reg_data * -> -> 11 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 10 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
 "1368
-[; ;BME280_driver/bme280.c: 1368:     calib_data->dig_P9 = (int16_t)(((uint16_t)reg_data[23] << 8) | (uint16_t)reg_data[22]);
-[e = . *U _calib_data 11 -> | << -> -> *U + _reg_data * -> -> 23 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 22 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+[; ;BME280_driver/bme280.c: 1368:     calib_data->dig_P4 = (int16_t)(((uint16_t)reg_data[13] << 8) | (uint16_t)reg_data[12]);
+[e = . *U _calib_data 6 -> | << -> -> *U + _reg_data * -> -> 13 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 12 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
 "1369
-[; ;BME280_driver/bme280.c: 1369:     calib_data->dig_H1 = reg_data[25];
-[e = . *U _calib_data 12 *U + _reg_data * -> -> 25 `i `x -> -> # *U _reg_data `i `x ]
+[; ;BME280_driver/bme280.c: 1369:     calib_data->dig_P5 = (int16_t)(((uint16_t)reg_data[15] << 8) | (uint16_t)reg_data[14]);
+[e = . *U _calib_data 7 -> | << -> -> *U + _reg_data * -> -> 15 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 14 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
 "1370
-[; ;BME280_driver/bme280.c: 1370: }
+[; ;BME280_driver/bme280.c: 1370:     calib_data->dig_P6 = (int16_t)(((uint16_t)reg_data[17] << 8) | (uint16_t)reg_data[16]);
+[e = . *U _calib_data 8 -> | << -> -> *U + _reg_data * -> -> 17 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 16 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+"1371
+[; ;BME280_driver/bme280.c: 1371:     calib_data->dig_P7 = (int16_t)(((uint16_t)reg_data[19] << 8) | (uint16_t)reg_data[18]);
+[e = . *U _calib_data 9 -> | << -> -> *U + _reg_data * -> -> 19 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 18 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+"1372
+[; ;BME280_driver/bme280.c: 1372:     calib_data->dig_P8 = (int16_t)(((uint16_t)reg_data[21] << 8) | (uint16_t)reg_data[20]);
+[e = . *U _calib_data 10 -> | << -> -> *U + _reg_data * -> -> 21 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 20 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+"1373
+[; ;BME280_driver/bme280.c: 1373:     calib_data->dig_P9 = (int16_t)(((uint16_t)reg_data[23] << 8) | (uint16_t)reg_data[22]);
+[e = . *U _calib_data 11 -> | << -> -> *U + _reg_data * -> -> 23 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 22 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+"1374
+[; ;BME280_driver/bme280.c: 1374:     calib_data->dig_H1 = reg_data[25];
+[e = . *U _calib_data 12 *U + _reg_data * -> -> 25 `i `x -> -> # *U _reg_data `i `x ]
+"1375
+[; ;BME280_driver/bme280.c: 1375: }
 [e :UE 106 ]
 }
-"1376
-[; ;BME280_driver/bme280.c: 1376: static void parse_humidity_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
+"1381
+[; ;BME280_driver/bme280.c: 1381: static void parse_humidity_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
 [v _parse_humidity_calib_data `(v ~T0 @X0 1 sf2`*Cuc`*S5 ]
-"1377
-[; ;BME280_driver/bme280.c: 1377: {
+"1382
+[; ;BME280_driver/bme280.c: 1382: {
 {
 [e :U _parse_humidity_calib_data ]
-"1376
-[; ;BME280_driver/bme280.c: 1376: static void parse_humidity_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
+"1381
+[; ;BME280_driver/bme280.c: 1381: static void parse_humidity_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
 [v _reg_data `*Cuc ~T0 @X0 1 r1 ]
 [v _dev `*S5 ~T0 @X0 1 r2 ]
-"1377
-[; ;BME280_driver/bme280.c: 1377: {
+"1382
+[; ;BME280_driver/bme280.c: 1382: {
 [f ]
-"1378
-[; ;BME280_driver/bme280.c: 1378:     struct bme280_calib_data *calib_data = &dev->calib_data;
+"1383
+[; ;BME280_driver/bme280.c: 1383:     struct bme280_calib_data *calib_data = &dev->calib_data;
 [v _calib_data `*S1 ~T0 @X0 1 a ]
 [e = _calib_data &U . *U _dev 6 ]
-"1379
-[; ;BME280_driver/bme280.c: 1379:     int16_t dig_H4_lsb;
-[v _dig_H4_lsb `s ~T0 @X0 1 a ]
-"1380
-[; ;BME280_driver/bme280.c: 1380:     int16_t dig_H4_msb;
-[v _dig_H4_msb `s ~T0 @X0 1 a ]
-"1381
-[; ;BME280_driver/bme280.c: 1381:     int16_t dig_H5_lsb;
-[v _dig_H5_lsb `s ~T0 @X0 1 a ]
-"1382
-[; ;BME280_driver/bme280.c: 1382:     int16_t dig_H5_msb;
-[v _dig_H5_msb `s ~T0 @X0 1 a ]
 "1384
-[; ;BME280_driver/bme280.c: 1384:     calib_data->dig_H2 = (int16_t)(((uint16_t)reg_data[1] << 8) | (uint16_t)reg_data[0]);
-[e = . *U _calib_data 13 -> | << -> -> *U + _reg_data * -> -> 1 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 0 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
+[; ;BME280_driver/bme280.c: 1384:     int16_t dig_H4_lsb;
+[v _dig_H4_lsb `s ~T0 @X0 1 a ]
 "1385
-[; ;BME280_driver/bme280.c: 1385:     calib_data->dig_H3 = reg_data[2];
-[e = . *U _calib_data 14 *U + _reg_data * -> -> 2 `i `x -> -> # *U _reg_data `i `x ]
+[; ;BME280_driver/bme280.c: 1385:     int16_t dig_H4_msb;
+[v _dig_H4_msb `s ~T0 @X0 1 a ]
 "1386
-[; ;BME280_driver/bme280.c: 1386:     dig_H4_msb = (int16_t)(int8_t)reg_data[3] * 16;
-[e = _dig_H4_msb -> * -> -> -> *U + _reg_data * -> -> 3 `i `x -> -> # *U _reg_data `i `x `c `s `i -> 16 `i `s ]
+[; ;BME280_driver/bme280.c: 1386:     int16_t dig_H5_lsb;
+[v _dig_H5_lsb `s ~T0 @X0 1 a ]
 "1387
-[; ;BME280_driver/bme280.c: 1387:     dig_H4_lsb = (int16_t)(reg_data[4] & 0x0F);
-[e = _dig_H4_lsb -> & -> *U + _reg_data * -> -> 4 `i `x -> -> # *U _reg_data `i `x `i -> 15 `i `s ]
-"1388
-[; ;BME280_driver/bme280.c: 1388:     calib_data->dig_H4 = dig_H4_msb | dig_H4_lsb;
-[e = . *U _calib_data 15 -> | -> _dig_H4_msb `i -> _dig_H4_lsb `i `s ]
+[; ;BME280_driver/bme280.c: 1387:     int16_t dig_H5_msb;
+[v _dig_H5_msb `s ~T0 @X0 1 a ]
 "1389
-[; ;BME280_driver/bme280.c: 1389:     dig_H5_msb = (int16_t)(int8_t)reg_data[5] * 16;
-[e = _dig_H5_msb -> * -> -> -> *U + _reg_data * -> -> 5 `i `x -> -> # *U _reg_data `i `x `c `s `i -> 16 `i `s ]
+[; ;BME280_driver/bme280.c: 1389:     calib_data->dig_H2 = (int16_t)(((uint16_t)reg_data[1] << 8) | (uint16_t)reg_data[0]);
+[e = . *U _calib_data 13 -> | << -> -> *U + _reg_data * -> -> 1 `i `x -> -> # *U _reg_data `i `x `us `ui -> 8 `i -> -> *U + _reg_data * -> -> 0 `i `x -> -> # *U _reg_data `i `x `us `ui `s ]
 "1390
-[; ;BME280_driver/bme280.c: 1390:     dig_H5_lsb = (int16_t)(reg_data[4] >> 4);
-[e = _dig_H5_lsb -> >> -> *U + _reg_data * -> -> 4 `i `x -> -> # *U _reg_data `i `x `i -> 4 `i `s ]
+[; ;BME280_driver/bme280.c: 1390:     calib_data->dig_H3 = reg_data[2];
+[e = . *U _calib_data 14 *U + _reg_data * -> -> 2 `i `x -> -> # *U _reg_data `i `x ]
 "1391
-[; ;BME280_driver/bme280.c: 1391:     calib_data->dig_H5 = dig_H5_msb | dig_H5_lsb;
-[e = . *U _calib_data 16 -> | -> _dig_H5_msb `i -> _dig_H5_lsb `i `s ]
+[; ;BME280_driver/bme280.c: 1391:     dig_H4_msb = (int16_t)(int8_t)reg_data[3] * 16;
+[e = _dig_H4_msb -> * -> -> -> *U + _reg_data * -> -> 3 `i `x -> -> # *U _reg_data `i `x `c `s `i -> 16 `i `s ]
 "1392
-[; ;BME280_driver/bme280.c: 1392:     calib_data->dig_H6 = (int8_t)reg_data[6];
-[e = . *U _calib_data 17 -> *U + _reg_data * -> -> 6 `i `x -> -> # *U _reg_data `i `x `c ]
+[; ;BME280_driver/bme280.c: 1392:     dig_H4_lsb = (int16_t)(reg_data[4] & 0x0F);
+[e = _dig_H4_lsb -> & -> *U + _reg_data * -> -> 4 `i `x -> -> # *U _reg_data `i `x `i -> 15 `i `s ]
 "1393
-[; ;BME280_driver/bme280.c: 1393: }
+[; ;BME280_driver/bme280.c: 1393:     calib_data->dig_H4 = dig_H4_msb | dig_H4_lsb;
+[e = . *U _calib_data 15 -> | -> _dig_H4_msb `i -> _dig_H4_lsb `i `s ]
+"1394
+[; ;BME280_driver/bme280.c: 1394:     dig_H5_msb = (int16_t)(int8_t)reg_data[5] * 16;
+[e = _dig_H5_msb -> * -> -> -> *U + _reg_data * -> -> 5 `i `x -> -> # *U _reg_data `i `x `c `s `i -> 16 `i `s ]
+"1395
+[; ;BME280_driver/bme280.c: 1395:     dig_H5_lsb = (int16_t)(reg_data[4] >> 4);
+[e = _dig_H5_lsb -> >> -> *U + _reg_data * -> -> 4 `i `x -> -> # *U _reg_data `i `x `i -> 4 `i `s ]
+"1396
+[; ;BME280_driver/bme280.c: 1396:     calib_data->dig_H5 = dig_H5_msb | dig_H5_lsb;
+[e = . *U _calib_data 16 -> | -> _dig_H5_msb `i -> _dig_H5_lsb `i `s ]
+"1397
+[; ;BME280_driver/bme280.c: 1397:     calib_data->dig_H6 = (int8_t)reg_data[6];
+[e = . *U _calib_data 17 -> *U + _reg_data * -> -> 6 `i `x -> -> # *U _reg_data `i `x `c ]
+"1398
+[; ;BME280_driver/bme280.c: 1398: }
 [e :UE 107 ]
 }
-"1399
-[; ;BME280_driver/bme280.c: 1399: static uint8_t are_settings_changed(uint8_t sub_settings, uint8_t desired_settings)
+"1404
+[; ;BME280_driver/bme280.c: 1404: static uint8_t are_settings_changed(uint8_t sub_settings, uint8_t desired_settings)
 [v _are_settings_changed `(uc ~T0 @X0 1 sf2`uc`uc ]
-"1400
-[; ;BME280_driver/bme280.c: 1400: {
+"1405
+[; ;BME280_driver/bme280.c: 1405: {
 {
 [e :U _are_settings_changed ]
-"1399
-[; ;BME280_driver/bme280.c: 1399: static uint8_t are_settings_changed(uint8_t sub_settings, uint8_t desired_settings)
+"1404
+[; ;BME280_driver/bme280.c: 1404: static uint8_t are_settings_changed(uint8_t sub_settings, uint8_t desired_settings)
 [v _sub_settings `uc ~T0 @X0 1 r1 ]
 [v _desired_settings `uc ~T0 @X0 1 r2 ]
-"1400
-[; ;BME280_driver/bme280.c: 1400: {
+"1405
+[; ;BME280_driver/bme280.c: 1405: {
 [f ]
-"1401
-[; ;BME280_driver/bme280.c: 1401:     uint8_t settings_changed = 0;
+"1406
+[; ;BME280_driver/bme280.c: 1406:     uint8_t settings_changed = 0;
 [v _settings_changed `uc ~T0 @X0 1 a ]
 [e = _settings_changed -> -> 0 `i `uc ]
-"1403
-[; ;BME280_driver/bme280.c: 1403:     if (sub_settings & desired_settings)
-[e $ ! != & -> _sub_settings `i -> _desired_settings `i -> 0 `i 109  ]
-"1404
-[; ;BME280_driver/bme280.c: 1404:     {
-{
-"1406
-[; ;BME280_driver/bme280.c: 1406:         settings_changed = 1;
-[e = _settings_changed -> -> 1 `i `uc ]
-"1407
-[; ;BME280_driver/bme280.c: 1407:     }
-}
-[e $U 110  ]
 "1408
-[; ;BME280_driver/bme280.c: 1408:     else
-[e :U 109 ]
+[; ;BME280_driver/bme280.c: 1408:     if (sub_settings & desired_settings)
+[e $ ! != & -> _sub_settings `i -> _desired_settings `i -> 0 `i 109  ]
 "1409
 [; ;BME280_driver/bme280.c: 1409:     {
 {
 "1411
-[; ;BME280_driver/bme280.c: 1411:         settings_changed = 0;
-[e = _settings_changed -> -> 0 `i `uc ]
+[; ;BME280_driver/bme280.c: 1411:         settings_changed = 1;
+[e = _settings_changed -> -> 1 `i `uc ]
 "1412
 [; ;BME280_driver/bme280.c: 1412:     }
 }
-[e :U 110 ]
+[e $U 110  ]
+"1413
+[; ;BME280_driver/bme280.c: 1413:     else
+[e :U 109 ]
 "1414
-[; ;BME280_driver/bme280.c: 1414:     return settings_changed;
+[; ;BME280_driver/bme280.c: 1414:     {
+{
+"1416
+[; ;BME280_driver/bme280.c: 1416:         settings_changed = 0;
+[e = _settings_changed -> -> 0 `i `uc ]
+"1417
+[; ;BME280_driver/bme280.c: 1417:     }
+}
+[e :U 110 ]
+"1419
+[; ;BME280_driver/bme280.c: 1419:     return settings_changed;
 [e ) _settings_changed ]
 [e $UE 108  ]
-"1415
-[; ;BME280_driver/bme280.c: 1415: }
+"1420
+[; ;BME280_driver/bme280.c: 1420: }
 [e :UE 108 ]
 }
-"1421
-[; ;BME280_driver/bme280.c: 1421: static int8_t null_ptr_check(const struct bme280_dev *dev)
+"1426
+[; ;BME280_driver/bme280.c: 1426: static int8_t null_ptr_check(const struct bme280_dev *dev)
 [v _null_ptr_check `(c ~T0 @X0 1 sf1`*CS5 ]
-"1422
-[; ;BME280_driver/bme280.c: 1422: {
+"1427
+[; ;BME280_driver/bme280.c: 1427: {
 {
 [e :U _null_ptr_check ]
-"1421
-[; ;BME280_driver/bme280.c: 1421: static int8_t null_ptr_check(const struct bme280_dev *dev)
-[v _dev `*CS5 ~T0 @X0 1 r1 ]
-"1422
-[; ;BME280_driver/bme280.c: 1422: {
-[f ]
-"1423
-[; ;BME280_driver/bme280.c: 1423:     int8_t rslt;
-[v _rslt `c ~T0 @X0 1 a ]
-"1425
-[; ;BME280_driver/bme280.c: 1425:     if ((dev == ((void*)0)) || (dev->read == ((void*)0)) || (dev->write == ((void*)0)) || (dev->delay_ms == ((void*)0)))
-[e $ ! || || || == _dev -> -> -> 0 `i `*v `*CS5 == . *U _dev 3 -> -> -> 0 `i `*v `*F408 == . *U _dev 4 -> -> -> 0 `i `*v `*F419 == . *U _dev 5 -> -> -> 0 `i `*v `*F427 112  ]
 "1426
-[; ;BME280_driver/bme280.c: 1426:     {
-{
+[; ;BME280_driver/bme280.c: 1426: static int8_t null_ptr_check(const struct bme280_dev *dev)
+[v _dev `*CS5 ~T0 @X0 1 r1 ]
+"1427
+[; ;BME280_driver/bme280.c: 1427: {
+[f ]
 "1428
-[; ;BME280_driver/bme280.c: 1428:         rslt = -1;
-[e = _rslt -> -U -> 1 `i `c ]
-"1429
-[; ;BME280_driver/bme280.c: 1429:     }
-}
-[e $U 113  ]
+[; ;BME280_driver/bme280.c: 1428:     int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
 "1430
-[; ;BME280_driver/bme280.c: 1430:     else
-[e :U 112 ]
+[; ;BME280_driver/bme280.c: 1430:     if ((dev == ((void*)0)) || (dev->read == ((void*)0)) || (dev->write == ((void*)0)) || (dev->delay_ms == ((void*)0)))
+[e $ ! || || || == _dev -> -> -> 0 `i `*v `*CS5 == . *U _dev 3 -> -> -> 0 `i `*v `*F408 == . *U _dev 4 -> -> -> 0 `i `*v `*F419 == . *U _dev 5 -> -> -> 0 `i `*v `*F427 112  ]
 "1431
 [; ;BME280_driver/bme280.c: 1431:     {
 {
 "1433
-[; ;BME280_driver/bme280.c: 1433:         rslt = 0;
-[e = _rslt -> -> 0 `i `c ]
+[; ;BME280_driver/bme280.c: 1433:         rslt = -1;
+[e = _rslt -> -U -> 1 `i `c ]
 "1434
 [; ;BME280_driver/bme280.c: 1434:     }
 }
-[e :U 113 ]
+[e $U 113  ]
+"1435
+[; ;BME280_driver/bme280.c: 1435:     else
+[e :U 112 ]
 "1436
-[; ;BME280_driver/bme280.c: 1436:     return rslt;
+[; ;BME280_driver/bme280.c: 1436:     {
+{
+"1438
+[; ;BME280_driver/bme280.c: 1438:         rslt = 0;
+[e = _rslt -> -> 0 `i `c ]
+"1439
+[; ;BME280_driver/bme280.c: 1439:     }
+}
+[e :U 113 ]
+"1441
+[; ;BME280_driver/bme280.c: 1441:     return rslt;
 [e ) _rslt ]
 [e $UE 111  ]
-"1437
-[; ;BME280_driver/bme280.c: 1437: }
+"1442
+[; ;BME280_driver/bme280.c: 1442: }
 [e :UE 111 ]
 }
