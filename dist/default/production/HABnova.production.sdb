@@ -33,8 +33,8 @@ S_MASTER_NOACK_STOP 9
 S_MASTER_SEND_ADDR_10BIT_LSB 10
 S_MASTER_10BIT_RESTART 11
 ]
-"644 C:\Users\2013b\Git\HABnova\main.c
-[e E10075 FieldTypesPUBX `uc
+"652 C:\Users\2013b\Git\HABnova\main.c
+[e E10077 FieldTypesPUBX `uc
 PUBX_DATA_TYPE 0
 PUBX_TIME 2
 PUBX_LAT 3
@@ -49,7 +49,7 @@ PUBX_SOG 11
 PUBX_COG 12
 PUBX_VVEL 13
 ]
-"757
+"767
 [e E9633 . `uc
 I2C_MESSAGE_COMPLETE 0
 I2C_MESSAGE_FAIL 1
@@ -59,7 +59,7 @@ I2C_MESSAGE_ADDRESS_NO_ACK 4
 I2C_DATA_NO_ACK 5
 I2C_LOST_STATE 6
 ]
-"808
+"818
 [e E9698 bme280_intf `uc
 BME280_SPI_INTF 0
 BME280_I2C_INTF 1
@@ -140,10 +140,6 @@ BME280_I2C_INTF 1
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"3 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcat.c
-[v _strcat strcat `(*.7uc  1 e 1 0 ]
-"7 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcpy.c
-[v _strcpy strcpy `(*.7uc  1 e 1 0 ]
 "12 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 "15 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
@@ -163,46 +159,44 @@ BME280_I2C_INTF 1
 "51
 [v _FindString FindString `(a  1 e 1 0 ]
 "72
-[v _Insert Insert `(v  1 e 1 0 ]
-"91
-[v _InsertString InsertString `(v  1 e 1 0 ]
-"103
+[v _Insert Insert `(i  1 e 2 0 ]
+"97
+[v _InsertString InsertString `(i  1 e 2 0 ]
+"110
 [v _ReverseString ReverseString `(v  1 e 1 0 ]
-"118
-[v _IntToHexString IntToHexString `(v  1 e 1 0 ]
-"139
+"123
+[v _UIntToHexString UIntToHexString `(v  1 e 1 0 ]
+"165
 [v _IntToString IntToString `(v  1 e 1 0 ]
-"231
+"257
 [v _Sleep Sleep `(v  1 e 1 0 ]
-"275
-[v _crc_append_byte crc_append_byte `(us  1 e 2 0 ]
-"295
+"304
+[v _crc16_update crc16_update `(us  1 e 2 0 ]
+"315
 [v _crc16 crc16 `(us  1 e 2 0 ]
-"317
+"325
 [v _TransmitBit TransmitBit `(v  1 e 1 0 ]
-"337
+"345
 [v _TransmitByte TransmitByte `(v  1 e 1 0 ]
-"359
+"367
 [v _TransmitString TransmitString `(v  1 e 1 0 ]
-"378
+"386
 [v _WriteGPS WriteGPS `(v  1 e 1 0 ]
-"407
+"415
 [v _GetLengthUBX GetLengthUBX `(ui  1 e 2 0 ]
-"413
+"421
 [v _GPS_SendUBX GPS_SendUBX `(v  1 e 1 0 ]
-"425
+"433
 [v _GPS_HasAcknowledged GPS_HasAcknowledged `(a  1 e 1 0 ]
-"497
+"505
 [v _SetupGPS SetupGPS `(v  1 e 1 0 ]
-"537
+"545
 [v _SafeSetByte SafeSetByte `(v  1 e 1 0 ]
-"572
-[v _GetNavData GetNavData `(a  1 e 1 0 ]
-"755
+"765
 [v _ReadEnvSensor ReadEnvSensor `(c  1 e 1 0 ]
-"773
+"783
 [v _WriteEnvSensor WriteEnvSensor `(c  1 e 1 0 ]
-"800
+"810
 [v _main main `(v  1 e 1 0 ]
 "56 C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -478,17 +472,17 @@ BME280_I2C_INTF 1
 [v _ticks ticks `ul  1 e 4 0 ]
 "28
 [v _id id `i  1 e 2 0 ]
-"266
+"292
 [v _message_start message_start `[70]uc  1 e 70 0 ]
-"267
+"293
 [v _message_end message_end `[73]uc  1 e 73 0 ]
-"270
+"296
 [v _messages messages `[2]*.7uc  1 e 2 0 ]
-"389
+"397
 [v _setNavFlightMode setNavFlightMode `[44]uc  1 e 44 0 ]
-"493
+"501
 [v _gps_configured gps_configured `a  1 e 1 0 ]
-"798
+"808
 [v _checksum checksum `[6]uc  1 e 6 0 ]
 [s S1297 . 5 `us 1 address 2 0 `uc 1 length 1 2 `*.39uc 1 pbuffer 2 3 ]
 "185 C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
@@ -514,80 +508,54 @@ BME280_I2C_INTF 1
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "59
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"800 C:\Users\2013b\Git\HABnova\main.c
+"810 C:\Users\2013b\Git\HABnova\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"864
-[v main@i i `i  1 a 2 41 ]
-"839
-[v main@convertedSensorData convertedSensorData `[16]uc  1 a 16 24 ]
+"897
+[v main@i i `i  1 a 2 46 ]
+"855
+[v main@convertedNumber convertedNumber `[16]uc  1 a 16 27 ]
 [s S155 bme280_data 12 `ul 1 pressure 4 0 `l 1 temperature 4 4 `ul 1 humidity 4 8 ]
-"834
-[v main@sensor_data sensor_data `S155  1 a 12 43 ]
+"849
+[v main@sensor_data sensor_data `S155  1 a 12 48 ]
+"858
+[v main@index index `i  1 a 2 60 ]
+"864
+[v main@end end `i  1 a 2 44 ]
 [s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-"808
+"818
 [s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
 [v main@env_sensor env_sensor `S54  1 a 51 0 ]
-"869
+"902
 } 0
-"3 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcat.c
-[v _strcat strcat `(*.7uc  1 e 1 0 ]
-{
-[v strcat@dest dest `*.7uc  1 a 1 wreg ]
-[v strcat@dest dest `*.7uc  1 a 1 wreg ]
-[v strcat@src src `*.26DCuc  1 p 2 10 ]
-"5
-[v strcat@dest dest `*.7uc  1 a 1 8 ]
-"7
-} 0
-"7 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcpy.c
-[v _strcpy strcpy `(*.7uc  1 e 1 0 ]
-{
-[v strcpy@dest dest `*.7uc  1 a 1 wreg ]
-"13
-[v strcpy@s s `*.26DCuc  1 a 2 6 ]
-"14
-[v strcpy@d d `*.7uc  1 a 1 8 ]
-"7
-[v strcpy@dest dest `*.7uc  1 a 1 wreg ]
-[v strcpy@src src `*.26DCuc  1 p 2 2 ]
-"13
-[v strcpy@dest dest `*.7uc  1 a 1 9 ]
-"18
-} 0
-"295 C:\Users\2013b\Git\HABnova\main.c
+"315
 [v _crc16 crc16 `(us  1 e 2 0 ]
 {
-[v crc16@data data `*.1*.7uc  1 a 1 wreg ]
-"306
-[v crc16@len len `ui  1 a 2 9 ]
-"305
-[v crc16@string string `*.7uc  1 a 1 17 ]
-"303
-[v crc16@str str `i  1 a 2 15 ]
-"297
-[v crc16@i i `ui  1 a 2 18 ]
-"298
-[v crc16@crc crc `us  1 a 2 13 ]
-"299
-[v crc16@c c `uc  1 a 1 12 ]
-"295
-[v crc16@data data `*.1*.7uc  1 a 1 wreg ]
-[v crc16@segments segments `i  1 p 2 5 ]
-"301
-[v crc16@data data `*.1*.7uc  1 a 1 11 ]
+[v crc16@data data `*.5*.7uc  1 a 1 wreg ]
+"318
+[v crc16@i i `i  1 a 2 18 ]
+"317
+[v crc16@crc crc `us  1 a 2 16 ]
 "315
+[v crc16@data data `*.5*.7uc  1 a 1 wreg ]
+[v crc16@segments segments `i  1 p 2 11 ]
+"317
+[v crc16@data data `*.5*.7uc  1 a 1 15 ]
+"323
 } 0
-"275
-[v _crc_append_byte crc_append_byte `(us  1 e 2 0 ]
+"304
+[v _crc16_update crc16_update `(us  1 e 2 0 ]
 {
-"277
-[v crc_append_byte@i i `i  1 a 2 3 ]
-"275
-[v crc_append_byte@crc crc `us  1 p 2 5 ]
-[v crc_append_byte@data data `uc  1 p 1 7 ]
-"292
+[v crc16_update@pData pData `*.7uc  1 a 1 wreg ]
+"306
+[v crc16_update@i i `uc  1 a 1 10 ]
+"304
+[v crc16_update@pData pData `*.7uc  1 a 1 wreg ]
+[v crc16_update@length length `i  1 p 2 2 ]
+[v crc16_update@wCrc wCrc `us  1 p 2 4 ]
+[v crc16_update@pData pData `*.7uc  1 a 1 9 ]
+"313
 } 0
 "357 C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
 [v _bme280_init bme280_init `(c  1 e 1 0 ]
@@ -724,28 +692,28 @@ BME280_I2C_INTF 1
 [v interleave_reg_addr@reg_addr reg_addr `*.4DCuc  1 a 1 3 ]
 "1352
 } 0
-"773 C:\Users\2013b\Git\HABnova\main.c
+"783 C:\Users\2013b\Git\HABnova\main.c
 [v _WriteEnvSensor WriteEnvSensor `(c  1 e 1 0 ]
 {
-"775
+"785
 [v WriteEnvSensor@status status `E9633  1 a 1 20 ]
-"776
+"786
 [v WriteEnvSensor@local_address local_address `uc  1 a 1 19 ]
-"773
+"783
 [v WriteEnvSensor@dev_id dev_id `uc  1 p 1 10 ]
 [v WriteEnvSensor@reg_addr reg_addr `uc  1 p 1 11 ]
 [v WriteEnvSensor@reg_data reg_data `*.4uc  1 p 1 12 ]
 [v WriteEnvSensor@len len `us  1 p 2 13 ]
-"795
+"805
 } 0
-"231
+"257
 [v _Sleep Sleep `(v  1 e 1 0 ]
 {
-"233
+"259
 [v Sleep@start start `ul  1 a 4 4 ]
-"231
+"257
 [v Sleep@ms ms `ul  1 p 4 5 ]
-"238
+"264
 } 0
 "660 C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
 [v _bme280_get_sensor_data bme280_get_sensor_data `(c  1 e 1 0 ]
@@ -823,17 +791,17 @@ BME280_I2C_INTF 1
 [v null_ptr_check@dev dev `*.5DCS54  1 a 1 8 ]
 "1442
 } 0
-"755 C:\Users\2013b\Git\HABnova\main.c
+"765 C:\Users\2013b\Git\HABnova\main.c
 [v _ReadEnvSensor ReadEnvSensor `(c  1 e 1 0 ]
 {
-"757
+"767
 [v ReadEnvSensor@status status `E9633  1 a 1 23 ]
-"755
+"765
 [v ReadEnvSensor@dev_id dev_id `uc  1 p 1 13 ]
 [v ReadEnvSensor@reg_addr reg_addr `uc  1 p 1 14 ]
 [v ReadEnvSensor@data data `*.39uc  1 p 2 15 ]
 [v ReadEnvSensor@len len `us  1 p 2 17 ]
-"772
+"782
 } 0
 "600 C:\Users\2013b\Git\HABnova\mcc_generated_files/i2c.c
 [v _I2C_MasterWrite I2C_MasterWrite `(v  1 e 1 0 ]
@@ -1041,86 +1009,126 @@ BME280_I2C_INTF 1
 [v ___aodiv@dividend dividend `o  1 p 8 32 ]
 "43
 } 0
-"359 C:\Users\2013b\Git\HABnova\main.c
+"123 C:\Users\2013b\Git\HABnova\main.c
+[v _UIntToHexString UIntToHexString `(v  1 e 1 0 ]
+{
+"129
+[v UIntToHexString@remainder remainder `ul  1 a 4 31 ]
+"125
+[v UIntToHexString@i i `ul  1 a 4 35 ]
+"123
+[v UIntToHexString@n n `ul  1 p 4 20 ]
+[v UIntToHexString@dest dest `*.5uc  1 p 1 24 ]
+"140
+} 0
+"367
 [v _TransmitString TransmitString `(v  1 e 1 0 ]
 {
 [v TransmitString@message message `*.7uc  1 a 1 wreg ]
-"364
+"372
 [v TransmitString@i i `i  1 a 2 5 ]
 [v TransmitString@counti counti `i  1 a 2 3 ]
-"359
+"367
 [v TransmitString@message message `*.7uc  1 a 1 wreg ]
-"364
+"372
 [v TransmitString@message message `*.7uc  1 a 1 7 ]
-"371
+"379
 } 0
-"337
+"345
 [v _TransmitByte TransmitByte `(v  1 e 1 0 ]
 {
 [v TransmitByte@byte byte `uc  1 a 1 wreg ]
-"350
+"358
 [v TransmitByte@i i `i  1 a 2 1 ]
-"337
+"345
 [v TransmitByte@byte byte `uc  1 a 1 wreg ]
-"348
+"356
 [v TransmitByte@byte byte `uc  1 a 1 0 ]
-"357
+"365
 } 0
-"317
+"325
 [v _TransmitBit TransmitBit `(v  1 e 1 0 ]
 {
 [v TransmitBit@b b `a  1 a 1 wreg ]
 [v TransmitBit@b b `a  1 a 1 wreg ]
-"319
+"327
 [v TransmitBit@b b `a  1 a 1 6 ]
-"335
+"343
 } 0
-"497
+"505
 [v _SetupGPS SetupGPS `(v  1 e 1 0 ]
 {
-"517
+"525
 } 0
-"413
+"386
+[v _WriteGPS WriteGPS `(v  1 e 1 0 ]
+{
+"388
+[v WriteGPS@i i `i  1 a 2 6 ]
+[v WriteGPS@counti counti `i  1 a 2 4 ]
+"386
+[v WriteGPS@message message `*.25uc  1 p 2 2 ]
+"392
+} 0
+"421
 [v _GPS_SendUBX GPS_SendUBX `(v  1 e 1 0 ]
 {
 [v GPS_SendUBX@data data `*.6uc  1 a 1 wreg ]
-"415
+"423
 [v GPS_SendUBX@i i `i  1 a 2 4 ]
 [v GPS_SendUBX@length length `i  1 a 2 1 ]
-"413
+"421
 [v GPS_SendUBX@data data `*.6uc  1 a 1 wreg ]
-"415
+"423
 [v GPS_SendUBX@data data `*.6uc  1 a 1 3 ]
-"419
+"427
 } 0
-"407
+"415
 [v _GetLengthUBX GetLengthUBX `(ui  1 e 2 0 ]
 {
 [v GetLengthUBX@data data `*.6uc  1 a 1 wreg ]
 [v GetLengthUBX@data data `*.6uc  1 a 1 wreg ]
-"409
+"417
 [v GetLengthUBX@data data `*.6uc  1 a 1 8 ]
-"410
+"418
 } 0
-"425
+"111 C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 5 ]
+"118
+} 0
+"433 C:\Users\2013b\Git\HABnova\main.c
 [v _GPS_HasAcknowledged GPS_HasAcknowledged `(a  1 e 1 0 ]
 {
 [v GPS_HasAcknowledged@data data `*.6uc  1 a 1 wreg ]
-"443
+"451
 [v GPS_HasAcknowledged@i i `uc  1 a 1 17 ]
-"427
+"435
 [v GPS_HasAcknowledged@ackPacket ackPacket `[10]uc  1 a 10 5 ]
-"428
+"436
 [v GPS_HasAcknowledged@startTime startTime `ul  1 a 4 0 ]
-"453
+"461
 [v GPS_HasAcknowledged@ackByteID ackByteID `uc  1 a 1 16 ]
-"450
+"458
 [v GPS_HasAcknowledged@ackByte ackByte `uc  1 a 1 4 ]
-"425
+"433
 [v GPS_HasAcknowledged@data data `*.6uc  1 a 1 wreg ]
-"428
+"436
 [v GPS_HasAcknowledged@data data `*.6uc  1 a 1 15 ]
-"491
+"499
+} 0
+"83 C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
+{
+"86
+} 0
+"93
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"109
 } 0
 "50 C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -1158,86 +1166,17 @@ BME280_I2C_INTF 1
 {
 "76
 } 0
-"118 C:\Users\2013b\Git\HABnova\main.c
-[v _IntToHexString IntToHexString `(v  1 e 1 0 ]
-{
-"124
-[v IntToHexString@remainder remainder `i  1 a 2 27 ]
-"120
-[v IntToHexString@i i `i  1 a 2 29 ]
-"118
-[v IntToHexString@n n `i  1 p 2 20 ]
-[v IntToHexString@dest dest `*.5uc  1 p 1 22 ]
-"135
-} 0
-"572
-[v _GetNavData GetNavData `(a  1 e 1 0 ]
-{
-"657
-[v GetNavData@strId strId `[12]uc  1 a 12 34 ]
-"635
-[v GetNavData@skip skip `a  1 a 1 57 ]
-"590
-[v GetNavData@data_type data_type `[7]uc  1 a 7 46 ]
-"581
-[v GetNavData@startTime startTime `ul  1 a 4 53 ]
-"597
-[v GetNavData@index index `i  1 a 2 67 ]
-"584
-[v GetNavData@dataIndex dataIndex `i  1 a 2 64 ]
-"586
-[v GetNavData@dataFieldType dataFieldType `i  1 a 2 62 ]
-"599
-[v GetNavData@signInsertIndex signInsertIndex `i  1 a 2 59 ]
-"588
-[v GetNavData@byte byte `uc  1 a 1 66 ]
-"592
-[v GetNavData@doParse doParse `a  1 a 1 61 ]
-"574
-[v GetNavData@success success `a  1 a 1 58 ]
-"750
-} 0
-"378
-[v _WriteGPS WriteGPS `(v  1 e 1 0 ]
-{
-"380
-[v WriteGPS@i i `i  1 a 2 6 ]
-[v WriteGPS@counti counti `i  1 a 2 4 ]
-"378
-[v WriteGPS@message message `*.25uc  1 p 2 2 ]
-"384
-} 0
-"111 C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
-{
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 5 ]
-"118
-} 0
-"537 C:\Users\2013b\Git\HABnova\main.c
-[v _SafeSetByte SafeSetByte `(v  1 e 1 0 ]
-{
-[v SafeSetByte@dest dest `*.4uc  1 a 1 wreg ]
-[v SafeSetByte@dest dest `*.4uc  1 a 1 wreg ]
-[v SafeSetByte@length length `i  1 p 2 0 ]
-[v SafeSetByte@index index `ui  1 p 2 2 ]
-[v SafeSetByte@data data `uc  1 p 1 4 ]
-"539
-[v SafeSetByte@dest dest `*.4uc  1 a 1 7 ]
-"548
-} 0
-"139
+"165 C:\Users\2013b\Git\HABnova\main.c
 [v _IntToString IntToString `(v  1 e 1 0 ]
 {
-"141
+"167
 [v IntToString@i i `i  1 a 2 28 ]
-"142
+"168
 [v IntToString@sign sign `a  1 a 1 27 ]
-"139
+"165
 [v IntToString@n n `i  1 p 2 20 ]
 [v IntToString@dest dest `*.39uc  1 p 2 22 ]
-"162
+"188
 } 0
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -1250,21 +1189,21 @@ BME280_I2C_INTF 1
 [v ___awmod@dividend dividend `i  1 p 2 7 ]
 "34
 } 0
-"103 C:\Users\2013b\Git\HABnova\main.c
+"110 C:\Users\2013b\Git\HABnova\main.c
 [v _ReverseString ReverseString `(v  1 e 1 0 ]
 {
-"109
+"116
 [v ReverseString@opposite opposite `*.39uc  1 a 2 14 ]
-"108
+"115
 [v ReverseString@temp temp `uc  1 a 1 13 ]
-"106
+"113
 [v ReverseString@i i `i  1 a 2 18 ]
 [v ReverseString@halfway halfway `i  1 a 2 11 ]
-"105
+"112
 [v ReverseString@counti counti `i  1 a 2 16 ]
-"103
+"110
 [v ReverseString@str str `*.39uc  1 p 2 5 ]
-"114
+"121
 } 0
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -1279,27 +1218,27 @@ BME280_I2C_INTF 1
 [v ___awdiv@dividend dividend `i  1 p 2 7 ]
 "41
 } 0
-"91 C:\Users\2013b\Git\HABnova\main.c
-[v _InsertString InsertString `(v  1 e 1 0 ]
+"97 C:\Users\2013b\Git\HABnova\main.c
+[v _InsertString InsertString `(i  1 e 2 0 ]
 {
 [v InsertString@dest dest `*.7uc  1 a 1 wreg ]
-"93
-[v InsertString@i i `i  1 a 2 17 ]
+"99
+[v InsertString@i i `i  1 a 2 16 ]
 [v InsertString@counti counti `i  1 a 2 14 ]
-"91
+"97
 [v InsertString@dest dest `*.7uc  1 a 1 wreg ]
 [v InsertString@src src `*.26uc  1 p 2 8 ]
 [v InsertString@index index `i  1 p 2 10 ]
 [v InsertString@destLimit destLimit `i  1 p 2 12 ]
-"93
-[v InsertString@dest dest `*.7uc  1 a 1 16 ]
-"98
+"99
+[v InsertString@dest dest `*.7uc  1 a 1 18 ]
+"105
 } 0
 "72
-[v _Insert Insert `(v  1 e 1 0 ]
+[v _Insert Insert `(i  1 e 2 0 ]
 {
 [v Insert@dest dest `*.7uc  1 a 1 wreg ]
-"80
+"84
 [v Insert@current current `uc  1 a 1 6 ]
 "74
 [v Insert@temp temp `uc  1 a 1 5 ]
@@ -1309,36 +1248,16 @@ BME280_I2C_INTF 1
 [v Insert@index index `i  1 p 2 1 ]
 [v Insert@destLimit destLimit `i  1 p 2 3 ]
 [v Insert@dest dest `*.7uc  1 a 1 7 ]
-"89
+"95
 } 0
-"51
-[v _FindString FindString `(a  1 e 1 0 ]
+"30
+[v _FlashError FlashError `(v  1 e 1 0 ]
 {
-[v FindString@src src `*.4uc  1 a 1 wreg ]
-"54
-[v FindString@i i `i  1 a 2 11 ]
-"53
-[v FindString@matching matching `i  1 a 2 13 ]
-"51
-[v FindString@src src `*.4uc  1 a 1 wreg ]
-[v FindString@srcLen srcLen `i  1 p 2 2 ]
-[v FindString@target target `*.25uc  1 p 2 4 ]
-[v FindString@targetLen targetLen `i  1 p 2 6 ]
-"53
-[v FindString@src src `*.4uc  1 a 1 10 ]
-"70
+"32
+[v FlashError@i i `i  1 a 2 7 ]
+"39
 } 0
-"83 C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
-[v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
-{
-"86
-} 0
-"93
-[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
-{
-"109
-} 0
-"42 C:\Users\2013b\Git\HABnova\main.c
+"42
 [v _ClearString ClearString `(v  1 e 1 0 ]
 {
 "44
@@ -1356,13 +1275,6 @@ BME280_I2C_INTF 1
 "12
 [v strlen@s s `*.26DCuc  1 p 2 5 ]
 "26
-} 0
-"30 C:\Users\2013b\Git\HABnova\main.c
-[v _FlashError FlashError `(v  1 e 1 0 ]
-{
-"32
-[v FlashError@i i `i  1 a 2 7 ]
-"39
 } 0
 "52 C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

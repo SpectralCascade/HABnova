@@ -17407,32 +17407,39 @@ _Bool FindString(char* src, int srcLen, char* target, int targetLen)
     return 0;
 }
 
-void Insert(char* dest, char src, int index, int destLimit)
+int Insert(char* dest, char src, int index, int destLimit)
 {
     char temp = '\0';
     temp = dest[index];
     dest[index] = src;
+    if (dest[index + 1] == '\0')
+    {
+        return index + 1;
+    }
     index++;
     while (index < destLimit)
     {
         char current = dest[index];
         dest[index] = temp;
         temp = current;
+        index++;
         if (current == '\0')
         {
+            dest[index] = current;
             break;
         }
-        index++;
     }
+    return index;
 }
 
-void InsertString(char* dest, char* src, int index, int destLimit)
+int InsertString(char* dest, char* src, int index, int destLimit)
 {
     for (int i = 0, counti = strlen(src); i < counti && index < destLimit; i++)
     {
 
-        Insert(dest, src[i], index + i, destLimit);
+        Insert(dest, src[i], index++, destLimit);
     }
+    return index;
 }
 
 
@@ -17451,6 +17458,25 @@ void ReverseString(char* str)
     str[counti] = '\0';
 }
 
+void UIntToHexString(uint32_t n, char* dest)
+{
+    uint32_t i = 0;
+    do {
+
+
+        uint32_t remainder = n % 16;
+
+        dest[i++] = remainder + (remainder >= 10 ? 55 : '0');
+
+    } while ((n /= 16) > 0);
+    while (i < 4)
+    {
+        dest[i] = '0';
+        i++;
+    }
+    ReverseString(dest);
+}
+
 
 
 void IntToHexString(int n, char* dest)
@@ -17466,7 +17492,7 @@ void IntToHexString(int n, char* dest)
     } while ((n /= 16) > 0);
     while (i < 4)
     {
-        dest[i] = 0;
+        dest[i] = '0';
         i++;
     }
     ReverseString(dest);
@@ -17574,7 +17600,7 @@ void Sleep(uint32_t ms)
         _delay((unsigned long)((1)*(4000000/4000.0)));
     }
 }
-# 266 "main.c"
+# 292 "main.c"
 char message_start[70];
 char message_end[70 + 3];
 
@@ -17584,46 +17610,28 @@ char* messages[2] = {message_start, message_end};
 
 
 
-unsigned short crc_append_byte(uint16_t crc, uint8_t data)
-{
-    int i;
-    crc = crc ^ ((uint16_t)data << 8);
-    for (i = 0; i < 8; i++)
-    {
-        if (crc & 0x8000)
-        {
-            crc = (crc << 1) ^ 0x1021;
-        }
-        else
-        {
-            crc <<= 1;
-        }
-    }
 
-    return crc;
+
+
+uint16_t crc16_update(char* pData, int length, uint16_t wCrc)
+{
+    uint8_t i;
+    while (length--) {
+        wCrc ^= *(unsigned char *)pData++ << 8;
+        for (i=0; i < 8; i++)
+            wCrc = wCrc & 0x8000 ? (wCrc << 1) ^ 0x1021 : wCrc << 1;
+    }
+    return wCrc;
 }
 
-
-unsigned short crc16(char** data, int segments)
+uint16_t crc16(char** data, int segments)
 {
-    size_t i;
- uint16_t crc;
- uint8_t c;
-
- crc = 0xFFFF;
-
-    for (int str = 0; str < segments; str++)
+    uint16_t crc = 0xFFFF;
+    for (int i = 0; i < segments; i++)
     {
-        char* string = data[str];
-        size_t len = strlen(string);
-
-        for (i = (string[i] == '$' ? 2 : 0); i < len; i++)
-        {
-            c = string[i];
-            crc = crc_append_byte(crc, c);
-        }
+        crc = crc16_update(data[i], strlen(data[i]), crc);
     }
- return crc;
+    return crc & 0xFFFF;
 }
 
 void TransmitBit(_Bool b)
@@ -17638,17 +17646,17 @@ void TransmitBit(_Bool b)
  }
 
 
-    _delay((unsigned long)((((1000 / 50) / 2) * 1000)*(4000000/4000000.0)));
 
 
 
-
+ _delay((unsigned long)((((1000 / 50) / 2) * 1000)*(4000000/4000000.0)));
+ _delay((unsigned long)((((1000 / 50) / 2) * 1000)*(4000000/4000000.0)));
 
 }
 
 void TransmitByte(char byte)
 {
-# 348 "main.c"
+# 356 "main.c"
     TransmitBit(0);
 
  for (int i = 0; i < 7; i++)
@@ -17850,7 +17858,7 @@ void SafeSetByte(char* dest, int length, unsigned int index, char data)
         dest[length - 1] = '\0';
     }
 }
-# 572 "main.c"
+# 580 "main.c"
 _Bool GetNavData()
 {
     _Bool success = 0;
@@ -17895,7 +17903,7 @@ _Bool GetNavData()
         if (EUSART_is_rx_ready())
         {
             byte = EUSART_Read();
-# 635 "main.c"
+# 643 "main.c"
             _Bool skip = 1;
             switch (byte)
             {
@@ -17918,6 +17926,8 @@ _Bool GetNavData()
                         messages[0][1] = '$';
                         InsertString(messages[0], "TEST", 2, 70);
                         index = strlen(messages[0]);
+                        messages[0][index] = ',';
+                        index++;
                         char strId[12] = {'\0'};
                         IntToString(id, strId);
                         InsertString(messages[0], strId, index, 70);
@@ -18072,11 +18082,14 @@ void main(void)
     struct bme280_dev env_sensor;
     int8_t env_sensor_status = 0;
 
-    env_sensor.dev_id = 0x76;
+    env_sensor.dev_id = 0x77;
     env_sensor.intf = BME280_I2C_INTF;
     env_sensor.read = ReadEnvSensor;
     env_sensor.write = WriteEnvSensor;
     env_sensor.delay_ms = Sleep;
+
+    ClearString(messages[0]);
+    ClearString(messages[1]);
 
     env_sensor_status = bme280_init(&env_sensor);
 
@@ -18086,9 +18099,11 @@ void main(void)
 
     while (1)
     {
+
         if (
 
-            GetNavData()
+
+                1
 
 
 
@@ -18097,18 +18112,36 @@ void main(void)
 
             struct bme280_data sensor_data;
             bme280_get_sensor_data(0x07, &sensor_data, &env_sensor);
+            ClearString(messages[0]);
+            ClearString(messages[1]);
 
 
+            char convertedNumber[16] = {'\0'};
 
-            char convertedSensorData[16] = {'\0'};
-            IntToString(sensor_data.temperature, convertedSensorData);
-            strcat(messages[1], convertedSensorData);
-            strcat(messages[1], ",");
-            IntToString(sensor_data.pressure, convertedSensorData);
-            strcat(messages[1], convertedSensorData);
+            IntToString(sensor_data.temperature, convertedNumber);
+            int index = strlen(messages[1]);
+            index = InsertString(messages[1], convertedNumber, index, 70);
+            index = Insert(messages[1], ',', index, 70);
+            ClearString(convertedNumber);
+            IntToString(sensor_data.pressure, convertedNumber);
+            index = InsertString(messages[1], convertedNumber, index, 70);
+            int end = index;
 
-            IntToHexString(crc16(messages, 2), checksum);
-            strcat(messages[1], checksum);
+
+            index = InsertString(messages[0], "TEST,", 0, 70);
+            ClearString(convertedNumber);
+            IntToString(id, convertedNumber);
+            index = InsertString(messages[0], convertedNumber, index, 70);
+            Insert(messages[0], ',', index, 70);
+
+            UIntToHexString(crc16(messages, 2), checksum);
+
+
+            InsertString(messages[0], "$$", 0, 70);
+
+            index = Insert(messages[1], '*', end, 70);
+            index = InsertString(messages[1], checksum, index, 70);
+            index = Insert(messages[1], '\n', index, 70);
 
             id++;
 

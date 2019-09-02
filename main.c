@@ -69,32 +69,39 @@ bool FindString(char* src, int srcLen, char* target, int targetLen)
     return false;
 }
 
-void Insert(char* dest, char src, int index, int destLimit)
+int Insert(char* dest, char src, int index, int destLimit)
 {
     char temp = '\0';
     temp = dest[index];
     dest[index] = src;
+    if (dest[index + 1] == '\0')
+    {
+        return index + 1;
+    }
     index++;
     while (index < destLimit)
     {
         char current = dest[index];
         dest[index] = temp;
         temp = current;
+        index++;
         if (current == '\0')
         {
+            dest[index] = current;
             break;
         }
-        index++;
     }
+    return index;
 }
 
-void InsertString(char* dest, char* src, int index, int destLimit)
+int InsertString(char* dest, char* src, int index, int destLimit)
 {
     for (int i = 0, counti = strlen(src); i < counti && index < destLimit; i++)
     {
         /// Very inefficient and lazy, but saves valuable program memory.
-        Insert(dest, src[i], index + i, destLimit);
+        Insert(dest, src[i], index++, destLimit);
     }
+    return index;
 }
 
 // For 32-bit integers (max integer value = 2,147,483,647).
@@ -113,6 +120,25 @@ void ReverseString(char* str)
     str[counti] = '\0';
 }
 
+void UIntToHexString(uint32_t n, char* dest)
+{
+    uint32_t i = 0;
+    do {
+        /// Set the current digit in the string to the ASCII equivalent of 
+        /// the remainder of n / 10.
+        uint32_t remainder = n % 16;
+        // If >= 10, then use letters (ASCII 'A' = 65, so 65 - 10 == 55).
+        dest[i++] = remainder + (remainder >= 10 ? 55 : '0');
+        /// Shift all the digits to the right to get the next digit.
+    } while ((n /= 16) > 0);
+    while (i < 4)
+    {
+        dest[i] = '0';
+        i++;
+    }
+    ReverseString(dest);
+}
+
 /// Warning, unsafe! Destination string MUST have >= 4 bytes allocated
 /// for a 32-bit hex code.
 void IntToHexString(int n, char* dest)
@@ -128,7 +154,7 @@ void IntToHexString(int n, char* dest)
     } while ((n /= 16) > 0);
     while (i < 4)
     {
-        dest[i] = 0;
+        dest[i] = '0';
         i++;
     }
     ReverseString(dest);
@@ -244,7 +270,7 @@ void Sleep(uint32_t ms)
 // Half the delay time required to match the baud rate in MICRO seconds
 #define HALF_BAUD_DELAY ((1000 / BAUD_RATE) / 2) * 1000
 
-#define HIGH_BAUD_RATE
+//#define HIGH_BAUD_RATE
 
 // Interval multiplier
 #define DELAY_MULT 1000
@@ -271,47 +297,29 @@ char* messages[2] = {message_start, message_end};
 
 /// Low memory footprint
 #ifdef RADIO_TRANSMISSION
-// Adds a byte to the CRC checksum we're calculating
-unsigned short crc_append_byte(uint16_t crc, uint8_t data)
-{
-    int i;
-    crc = crc ^ ((uint16_t)data << 8);
-    for (i = 0; i < 8; i++)
-    {
-        if (crc & 0x8000)
-        {
-            crc = (crc << 1) ^ 0x1021;
-        }
-        else
-        {
-            crc <<= 1;
-        }
-    }
 
-    return crc;
+// Modified from https://gist.github.com/tijnkooijmans/10981093
+// Takes any number of strings in array form and computes the CRC using the
+// CRC16_CCITT_FALSE algorithm with polynomial 0x1021.
+uint16_t crc16_update(char* pData, int length, uint16_t wCrc)
+{
+    uint8_t i;
+    while (length--) {
+        wCrc ^= *(unsigned char *)pData++ << 8;
+        for (i=0; i < 8; i++)
+            wCrc = wCrc & 0x8000 ? (wCrc << 1) ^ 0x1021 : wCrc << 1;
+    }
+    return wCrc;
 }
 
-// Takes any number of strings in array form and computes the CRC.
-unsigned short crc16(char** data, int segments)
+uint16_t crc16(char** data, int segments)
 {
-    size_t i;
-	uint16_t crc;
-	uint8_t c;
-
-	crc = 0xFFFF;
-
-    for (int str = 0; str < segments; str++)
+    uint16_t crc = 0xFFFF;
+    for (int i = 0; i < segments; i++)
     {
-        char* string = data[str];
-        size_t len = strlen(string);
-        // Calculate checksum ignoring the first two $s
-        for (i = (string[i] == '$' ? 2 : 0); i < len; i++)
-        {
-            c = string[i];
-            crc = crc_append_byte(crc, c);
-        }
+        crc = crc16_update(data[i], strlen(data[i]), crc);
     }
-	return crc;
+    return crc & 0xFFFF;
 }
 
 void TransmitBit(bool b)
@@ -654,6 +662,8 @@ bool GetNavData()
                         messages[0][1] = '$';
                         InsertString(messages[0], CALLSIGN, 2, MAX_MESSAGE_LENGTH);
                         index = strlen(messages[0]);
+                        messages[0][index] = ',';
+                        index++;
                         char strId[12] = {'\0'};
                         IntToString(id, strId);
                         InsertString(messages[0], strId, index, MAX_MESSAGE_LENGTH);
@@ -808,11 +818,14 @@ void main(void)
     struct bme280_dev env_sensor;
     int8_t env_sensor_status = BME280_OK;
 
-    env_sensor.dev_id = BME280_I2C_ADDR_PRIM;
+    env_sensor.dev_id = BME280_I2C_ADDR_SEC;
     env_sensor.intf = BME280_I2C_INTF;
     env_sensor.read = ReadEnvSensor;
     env_sensor.write = WriteEnvSensor;
     env_sensor.delay_ms = Sleep;
+    
+    ClearString(messages[0]);
+    ClearString(messages[1]);
 
     env_sensor_status = bme280_init(&env_sensor);
 
@@ -822,29 +835,49 @@ void main(void)
 
     while (1)
     {
+        /// Get GPS nav data and parse it into string
         if (
 #ifdef GPS_MODULE
-            GetNavData()
+            //GetNavData()
+                true
 #else
-            false
+            true
 #endif
         )
         {
 #ifndef TEST_GPS_NAVDATA
             struct bme280_data sensor_data;
             bme280_get_sensor_data(BME280_ALL, &sensor_data, &env_sensor);
-
+            ClearString(messages[0]);
+            ClearString(messages[1]);
 #ifdef RADIO_TRANSMISSION
 #ifdef GPS_MODULE
-            char convertedSensorData[16] = {'\0'};
-            IntToString(sensor_data.temperature, convertedSensorData);
-            strcat(messages[1], convertedSensorData);
-            strcat(messages[1], ",");
-            IntToString(sensor_data.pressure, convertedSensorData);
-            strcat(messages[1], convertedSensorData);
+            char convertedNumber[16] = {'\0'};
+            /// Add sensor data
+            IntToString(sensor_data.temperature, convertedNumber);
+            int index = strlen(messages[1]);//InsertString(messages[1], convertedSensorData, strlen(messages[1]), MAX_MESSAGE_LENGTH);
+            index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);
+            index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
+            ClearString(convertedNumber);
+            IntToString(sensor_data.pressure, convertedNumber);
+            index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);    
+            int end = index;
+
+            /// Add the call sign and id.
+            index = InsertString(messages[0], "TEST,", 0, MAX_MESSAGE_LENGTH);
+            ClearString(convertedNumber);
+            IntToString(id, convertedNumber);
+            index = InsertString(messages[0], convertedNumber, index, MAX_MESSAGE_LENGTH);
+            Insert(messages[0], ',', index, MAX_MESSAGE_LENGTH);
             
-            IntToHexString(crc16(messages, 2), checksum);
-            strcat(messages[1], checksum);
+            UIntToHexString(crc16(messages, 2), checksum);
+            
+            /// Finally, add the 2 start characters and the checksum.
+            InsertString(messages[0], "$$", 0, MAX_MESSAGE_LENGTH);     
+            
+            index = Insert(messages[1], '*', end, MAX_MESSAGE_LENGTH);
+            index = InsertString(messages[1], checksum, index, MAX_MESSAGE_LENGTH);
+            index = Insert(messages[1], '\n', index, MAX_MESSAGE_LENGTH);
             
             id++;
 #endif
