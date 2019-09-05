@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>HABnova</name>
+            <name>Wisp-1</name>
             <creation-uuid>eebd209c-3c3e-4658-bba2-24d1f102dc44</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

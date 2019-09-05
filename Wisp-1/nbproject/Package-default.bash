@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/HABnova.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=HABnova.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=habnova/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Wisp-1.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=Wisp-1.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=wisp-1/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/habnova/bin
+makeDirectory ${TMPDIR}/wisp-1/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/habnova.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/wisp-1.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/habnova.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/wisp-1.tar *
 checkReturnCode
 
 # Cleanup
