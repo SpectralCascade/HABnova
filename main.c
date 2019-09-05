@@ -762,48 +762,87 @@ bool GetNavData()
 #endif // GPS_MODULE
 
 #ifdef BME280_SENSOR
+uint8_t WriteI2C(uint8_t* data, size_t length, uint8_t dev_id, I2C_MESSAGE_STATUS* status)
+{
+    return 0;
+}
+
+#define __global_timeout __g_timeout_start
+
+#ifdef __global_timeout
+
+unsigned long __global_timeout;
+
+#define await_timeout(condition, wait_time, timeout_ret_val)                        \
+        __global_timeout = millis();                                                \
+        while (!condition)                                                          \
+        {                                                                           \
+            if (millis() - __global_timeout > wait_time)                            \
+            {                                                                       \
+                return timeout_ret_val;                                             \
+            }                                                                       \
+        }
+#else
+#warning "__global_timeout has not been defined, so await_timeout() will not work!"
+#define await_timeout(dummya, dummyb, dummyc)
+#endif
+
 int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len)
 {
-    I2C_MESSAGE_STATUS status = BME280_OK;
+    I2C_MESSAGE_STATUS status = I2C_MESSAGE_PENDING;
+    
+    int startTime = millis();
     I2C_MasterWrite(&reg_addr, 1, dev_id, &status);
-    if (status == 0)
+    await_timeout(!(status == I2C_MESSAGE_PENDING), 10000, BME280_E_COMM_FAIL);
+    if (status == I2C_MESSAGE_COMPLETE)
     {
+        status = I2C_MESSAGE_PENDING;
         I2C_MasterRead(data, len, dev_id, &status);
-        if (status != 0)
+        await_timeout(!(status == I2C_MESSAGE_PENDING), 10000, BME280_E_COMM_FAIL);
+        if (status != I2C_MESSAGE_COMPLETE)
         {
-            status = BME280_E_COMM_FAIL;
+//            FlashError();
+            return BME280_E_COMM_FAIL;
         }
     }
     else
     {
-        status = BME280_E_COMM_FAIL;
-    }
-    return status;
-}
-int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
-{
-    I2C_MESSAGE_STATUS status = 0;
-    uint8_t local_address = reg_addr;
-    while (local_address - reg_addr < len)
-    {
-        I2C_MasterWrite(&local_address, 1, dev_id, &status);
-        if (status == 0)
-        {
-            I2C_MasterWrite(reg_data, 1, dev_id, &status);
-            if (status != 0)
-            {
-                return BME280_E_COMM_FAIL;
-            }
-        }
-        else
-        {
-            return BME280_E_COMM_FAIL;
-        }
-        local_address++;
+        FlashError();
+        return BME280_E_COMM_FAIL;
     }
     return BME280_OK;
 }
-#endif// BME280_SENSOR
+
+int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
+{
+    I2C_MESSAGE_STATUS status = I2C_MESSAGE_PENDING;
+    
+    static I2C_TRANSACTION_REQUEST_BLOCK trb[24];
+    if (len > 24 / 2)
+    {
+        while (1)
+        {
+//            FlashError();
+        }
+    }
+        
+    uint8_t local_address = reg_addr;
+    for (uint8_t i = 0, j = 0; i < len; i++, j += 2)
+    {
+        I2C_MasterWriteTRBBuild(&trb[j], &local_address, 1, dev_id);
+        I2C_MasterWriteTRBBuild(&trb[j + 1], &reg_data[i], 1, dev_id);
+        local_address++;
+    }
+    I2C_MasterTRBInsert(1, trb, &status);
+    await_timeout(!(status == I2C_MESSAGE_PENDING), 10000, BME280_E_COMM_FAIL);
+    if (status != I2C_MESSAGE_COMPLETE)
+    {
+//        FlashError();
+        return BME280_E_COMM_FAIL;
+    }
+    return BME280_OK;
+}
+#endif // BME280_SENSOR
 
 char checksum[6] = {'\0'};
 
@@ -818,7 +857,7 @@ void main(void)
     struct bme280_dev env_sensor;
     int8_t env_sensor_status = BME280_OK;
 
-    env_sensor.dev_id = BME280_I2C_ADDR_SEC;
+    env_sensor.dev_id = BME280_I2C_ADDR_PRIM;
     env_sensor.intf = BME280_I2C_INTF;
     env_sensor.read = ReadEnvSensor;
     env_sensor.write = WriteEnvSensor;
@@ -830,7 +869,7 @@ void main(void)
     env_sensor_status = bme280_init(&env_sensor);
 
 #ifdef GPS_MODULE
-    SetupGPS();
+    //SetupGPS();
 #endif
 
     while (1)

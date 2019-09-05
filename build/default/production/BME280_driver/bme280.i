@@ -4,7 +4,7 @@
 # 288 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\language_support.h" 1 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "BME280_driver/bme280.c" 2
 # 51 "BME280_driver/bme280.c"
@@ -12,19 +12,19 @@
 # 65 "BME280_driver/bme280.h"
 # 1 "BME280_driver/bme280_defs.h" 1
 # 66 "BME280_driver/bme280_defs.h"
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 1 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 1 3
 
 
 
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-# 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/musl_xc8.h" 1 3
+# 5 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 2 3
+# 22 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 1 3
+# 127 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef unsigned long uintptr_t;
-# 150 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+# 142 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef long intptr_t;
-# 166 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+# 158 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
@@ -47,7 +47,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 196 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+# 188 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -76,10 +76,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 237 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
+# 229 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-
+# 23 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 2 3
 
 typedef int8_t int_fast8_t;
 
@@ -109,26 +108,25 @@ typedef uint24_t uint_least24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/stdint.h" 1 3
+# 139 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/stdint.h" 1 3
 typedef int32_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-# 66 "BME280_driver/bme280_defs.h" 2
-
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stddef.h" 3
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int wchar_t;
-# 127 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 140 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ptrdiff_t;
-# 19 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stddef.h" 2 3
+# 140 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 2 3
 # 67 "BME280_driver/bme280_defs.h" 2
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/stddef.h" 1 3
+# 19 "/opt/microchip/xc8/v2.10/pic/include/c99/stddef.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 1 3
+# 18 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
+typedef long int wchar_t;
+# 122 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
+typedef unsigned size_t;
+# 132 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
+typedef long ptrdiff_t;
+# 20 "/opt/microchip/xc8/v2.10/pic/include/c99/stddef.h" 2 3
+# 68 "BME280_driver/bme280_defs.h" 2
 # 243 "BME280_driver/bme280_defs.h"
 enum bme280_intf {
 
@@ -257,7 +255,7 @@ struct bme280_dev
 
     struct bme280_settings settings;
 };
-# 65 "BME280_driver/bme280.h" 2
+# 66 "BME280_driver/bme280.h" 2
 # 76 "BME280_driver/bme280.h"
 int8_t bme280_init(struct bme280_dev *dev);
 # 91 "BME280_driver/bme280.h"
@@ -283,7 +281,7 @@ int8_t bme280_compensate_data(uint8_t sensor_comp,
                               const struct bme280_uncomp_data *uncomp_data,
                               struct bme280_data *comp_data,
                               struct bme280_calib_data *calib_data);
-# 51 "BME280_driver/bme280.c" 2
+# 52 "BME280_driver/bme280.c" 2
 # 68 "BME280_driver/bme280.c"
 static int8_t put_device_to_sleep(const struct bme280_dev *dev);
 # 79 "BME280_driver/bme280.c"
@@ -746,8 +744,6 @@ int8_t bme280_compensate_data(uint8_t sensor_comp,
 
 
 
-            comp_data->humidity = 0xFFFF;
-
         }
     }
     else
@@ -988,7 +984,7 @@ static int8_t reload_device_settings(const struct bme280_settings *settings, con
 
     return rslt;
 }
-# 1126 "BME280_driver/bme280.c"
+# 1124 "BME280_driver/bme280.c"
 static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_data,
                                       struct bme280_calib_data *calib_data)
 {
@@ -1015,41 +1011,44 @@ static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_da
 
     return temperature;
 }
-
-
-
-
-
-
-
+# 1207 "BME280_driver/bme280.c"
 static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
                                     const struct bme280_calib_data *calib_data)
 {
-    int64_t var1;
-    int64_t var2;
-    int64_t var3;
-    int64_t var4;
+    int32_t var1;
+    int32_t var2;
+    int32_t var3;
+    int32_t var4;
+    uint32_t var5;
     uint32_t pressure;
-    uint32_t pressure_min = 3000000;
-    uint32_t pressure_max = 11000000;
+    uint32_t pressure_min = 30000;
+    uint32_t pressure_max = 110000;
 
-    var1 = ((int64_t)calib_data->t_fine) - 128000;
-    var2 = var1 * var1 * (int64_t)calib_data->dig_P6;
-    var2 = var2 + ((var1 * (int64_t)calib_data->dig_P5) * 131072);
-    var2 = var2 + (((int64_t)calib_data->dig_P4) * 34359738368);
-    var1 = ((var1 * var1 * (int64_t)calib_data->dig_P3) / 256) + ((var1 * ((int64_t)calib_data->dig_P2) * 4096));
-    var3 = ((int64_t)1) * 140737488355328;
-    var1 = (var3 + var1) * ((int64_t)calib_data->dig_P1) / 8589934592;
+    var1 = (((int32_t)calib_data->t_fine) / 2) - (int32_t)64000;
+    var2 = (((var1 / 4) * (var1 / 4)) / 2048) * ((int32_t)calib_data->dig_P6);
+    var2 = var2 + ((var1 * ((int32_t)calib_data->dig_P5)) * 2);
+    var2 = (var2 / 4) + (((int32_t)calib_data->dig_P4) * 65536);
+    var3 = (calib_data->dig_P3 * (((var1 / 4) * (var1 / 4)) / 8192)) / 8;
+    var4 = (((int32_t)calib_data->dig_P2) * var1) / 2;
+    var1 = (var3 + var4) / 262144;
+    var1 = (((32768 + var1)) * ((int32_t)calib_data->dig_P1)) / 32768;
 
 
-    if (var1 != 0)
+    if (var1)
     {
-        var4 = 1048576 - uncomp_data->pressure;
-        var4 = (((var4 * 2147483648LL) - var2) * 3125) / var1;
-        var1 = (((int64_t)calib_data->dig_P9) * (var4 / 8192) * (var4 / 8192)) / 33554432;
-        var2 = (((int64_t)calib_data->dig_P8) * var4) / 524288;
-        var4 = ((var4 + var1 + var2) / 256) + (((int64_t)calib_data->dig_P7) * 16);
-        pressure = (uint32_t)(((var4 / 2) * 100) / 128);
+        var5 = (uint32_t)((uint32_t)1048576) - uncomp_data->pressure;
+        pressure = ((uint32_t)(var5 - (uint32_t)(var2 / 4096))) * 3125;
+        if (pressure < 0x80000000)
+        {
+            pressure = (pressure << 1) / ((uint32_t)var1);
+        }
+        else
+        {
+            pressure = (pressure / (uint32_t)var1) * 2;
+        }
+        var1 = (((int32_t)calib_data->dig_P9) * ((int32_t)(((pressure / 8) * (pressure / 8)) / 8192))) / 4096;
+        var2 = (((int32_t)(pressure / 4)) * ((int32_t)calib_data->dig_P8)) / 8192;
+        pressure = (uint32_t)((int32_t)pressure + ((var1 + var2 + calib_data->dig_P7) / 16));
         if (pressure < pressure_min)
         {
             pressure = pressure_min;
@@ -1066,7 +1065,12 @@ static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data
 
     return pressure;
 }
-# 1268 "BME280_driver/bme280.c"
+
+
+
+
+
+
 static uint32_t compensate_humidity(const struct bme280_uncomp_data *uncomp_data,
                                     const struct bme280_calib_data *calib_data)
 {
