@@ -1,4 +1,11 @@
-# HABnova
-The source code for my first High Altitude Balloon system, designed for the PIC16F1619 (PDIP20) microcontroller. Source code developed in C using Microchip MPLABX IDE.
+# Wisp-1
+The source code for my first High-Altitude Balloon payload tracker and data logger system, originally designed for the PIC16F1619 but soon to be upgraded to the PIC16F18446 (both 8-bit, PDIP20 microcontrollers). Developed in C using Microchip MPLAB X IDE with the XC-8 compiler and Microchip Code Configurator.
 
-Requires the BME280 sensor driver (clone https://github.com/BoschSensortec/BME280_driver into the repo)
+## Features:
+- UBlox Max-M8C GPS configured in flight-mode over EUSART (UART)
+- BME280 environment sensor measuring temperature, pressure and humidity
+- RTTY transmission complying with the [UKHAS protocol](https://ukhas.org.uk/communication:protocol)
+
+## Coming soon (should time allow):
+- Data logging to micro-SD card with FatFs (or possibly Petit FatFs)
+- Minature TTL serial JPEG camera image capture at 640x480 resolution
