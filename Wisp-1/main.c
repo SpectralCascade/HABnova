@@ -15,7 +15,7 @@
 #define UBX
 #define BME280_SENSOR
 
-#define CALLSIGN "TEST"
+#define CALLSIGN "Wisp-1"
 
 #ifdef MISC
 
@@ -714,7 +714,8 @@ void main(void)
             int end = index;
 
             /// Add the call sign and id.
-            index = InsertString(messages[0], "TEST,", 0, MAX_MESSAGE_LENGTH);
+            index = InsertString(messages[0], CALLSIGN, 0, MAX_MESSAGE_LENGTH);
+            index = Insert(messages[0], ',', index, MAX_MESSAGE_LENGTH);
             ClearString(convertedNumber);
             IntToString(id, convertedNumber);
             index = InsertString(messages[0], convertedNumber, index, MAX_MESSAGE_LENGTH);

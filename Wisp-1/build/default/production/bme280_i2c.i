@@ -162,7 +162,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 2 "bme280_i2c.c" 2
+# 1 "bme280_i2c.c" 2
+
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 1 3
 # 18 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -17061,7 +17062,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 2 3
-# 3 "bme280_i2c.c" 2
+# 2 "bme280_i2c.c" 2
+
 # 1 "./BME280_driver/bme280.h" 1
 # 65 "./BME280_driver/bme280.h"
 # 1 "./BME280_driver/bme280_defs.h" 1
@@ -17312,7 +17314,8 @@ int8_t bme280_compensate_data(uint8_t sensor_comp,
                               const struct bme280_uncomp_data *uncomp_data,
                               struct bme280_data *comp_data,
                               struct bme280_calib_data *calib_data);
-# 4 "bme280_i2c.c" 2
+# 3 "bme280_i2c.c" 2
+
 # 1 "./bme280_i2c.h" 1
 # 48 "./bme280_i2c.h"
 typedef enum
@@ -17335,7 +17338,8 @@ extern struct bme280_dev EnvSensor;
 void BME280_Init(void);
 int8_t ReadEnvSensor(uint8_t i2c_addr, uint8_t reg_addr, uint8_t *reg_data, uint16_t len);
 int8_t WriteEnvSensor(uint8_t i2c_addr, uint8_t reg_addr, uint8_t *reg_data, uint16_t len);
-# 5 "bme280_i2c.c" 2
+# 4 "bme280_i2c.c" 2
+
 # 1 "./timing.h" 1
 extern unsigned long ticks;
 
@@ -17352,11 +17356,12 @@ void Sleep(uint32_t ms);
 
 
 extern unsigned long __g_timeout_start;
-# 6 "bme280_i2c.c" 2
+# 5 "bme280_i2c.c" 2
+
 # 1 "./debug.h" 1
 
 void DebugAlert(unsigned int delay_high, unsigned int delay_low, uint8_t num_flashes);
-# 7 "bme280_i2c.c" 2
+# 6 "bme280_i2c.c" 2
 # 16 "bme280_i2c.c"
 void I2C_Init(void)
 {

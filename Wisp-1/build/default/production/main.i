@@ -17644,7 +17644,8 @@ void main(void)
             int end = index;
 
 
-            index = InsertString(messages[0], "TEST,", 0, 70);
+            index = InsertString(messages[0], "Wisp-1", 0, 70);
+            index = Insert(messages[0], ',', index, 70);
             ClearString(convertedNumber);
             IntToString(id, convertedNumber);
             index = InsertString(messages[0], convertedNumber, index, 70);

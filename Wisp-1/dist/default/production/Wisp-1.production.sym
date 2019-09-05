@@ -16,7 +16,7 @@ __S0 800A 0 ABS 0
 write_power_mode@sensor_mode 5E 0 BANK0 1
 __S1 369 0 ABS 0
 __S2 0 0 ABS 0
-_fill_filter_settings 1AA0 0 CODE 0
+_fill_filter_settings 1A7B 0 CODE 0
 __end_of_WriteEnvSensor 1494 0 CODE 0
 _I2C_ReadByte 16DC 0 CODE 0
 __Hintentry D 0 CODE 0
@@ -25,12 +25,12 @@ __Lintentry 4 0 CODE 0
 __CFG_BOREN$ON 0 0 ABS 0
 __pintentry 4 0 CODE 0
 __end_of___awdiv 1136 0 CODE 0
-_are_settings_changed 19FA 0 CODE 0
+_are_settings_changed 19E1 0 CODE 0
 WriteEnvSensor@rslt 38 0 BANK0 1
 _TMR0_DefaultInterruptHandler 3 0 CODE 0
 bme280_init@chip_id 68 0 BANK0 1
 _TMR0 15 0 ABS 0
-__end_of_fill_filter_settings 1ABC 0 CODE 0
+__end_of_fill_filter_settings 1A97 0 CODE 0
 _bme280_soft_reset 1D2F 0 CODE 0
 __size_of_bme280_compensate_data 0 0 ABS 0
 __end_of_parse_device_settings 1233 0 CODE 0
@@ -45,7 +45,7 @@ crc16@crc 26 0 BANK0 1
 __end_of_PIN_MANAGER_Initialize 1BB6 0 CODE 0
 compensate_pressure@calib_data 2E 0 BANK0 1
 _parse_humidity_calib_data 1767 0 CODE 0
-_main AD8 0 CODE 0
+_main ABE 0 CODE 0
 bme280_compensate_data@comp_data 5C 0 BANK0 1
 fill_standby_settings@settings 70 0 COMMON 1
 ___sp 0 0 STACK 2
@@ -68,13 +68,13 @@ _TRISA 8C 0 ABS 0
 _TRISB 8D 0 ABS 0
 _TRISC 8E 0 ABS 0
 reset_vec 0 0 CODE 0
-_ClearString 802 0 CODE 0
+_ClearString 1B17 0 CODE 0
 __end_of_compensate_humidity 1000 0 CODE 0
 wtemp0 7E 0 ABS 0
-__end_of_fill_osr_temp_settings 1AF4 0 CODE 0
+__end_of_fill_osr_temp_settings 1ACF 0 CODE 0
 _RXPPS E24 0 ABS 0
 compensate_temperature@var2 4D 0 BANK0 1
-__end_of_fill_standby_settings 1AD8 0 CODE 0
+__end_of_fill_standby_settings 1AB3 0 CODE 0
 __Hconfig 800A 0 CONFIG 0
 __Lconfig 8007 0 CONFIG 0
 _bme280_get_sensor_data 1233 0 CODE 0
@@ -91,7 +91,7 @@ ReadEnvSensor@reg_data 31 0 BANK0 1
 fill_standby_settings@reg_data 75 0 COMMON 1
 __Hbigram 0 0 ABS 0
 __Lbigram 0 0 ABS 0
-__end_of_TMR0_SetInterruptHandler 19DB 0 CODE 0
+__end_of_TMR0_SetInterruptHandler 19C2 0 CODE 0
 ReadEnvSensor@reg_addr 30 0 BANK0 1
 __Hram 0 0 ABS 0
 null_ptr_check@rslt 72 0 COMMON 1
@@ -104,11 +104,11 @@ __size_of_Sleep 0 0 ABS 0
 set_filter_standby_settings@reg_data 63 0 BANK0 1
 _WriteEnvSensor 142B 0 CODE 0
 bme280_soft_reset@rslt 5E 0 BANK0 1
-_TransmitBit 1A6D 0 CODE 0
+_TransmitBit 1A48 0 CODE 0
 set_filter_standby_settings@reg_addr 62 0 BANK0 1
 bme280_get_sensor_data@F273 142 0 BANK2 1
 int$flags 7E 0 ABS 0
-_I2C_Init 1A2C 0 CODE 0
+_I2C_Init 1A07 0 CODE 0
 __CFG_WDTCPS$WDTCPS1F 0 0 ABS 0
 set_filter_standby_settings@settings 5A 0 BANK0 1
 __Hfunctab 0 0 ENTRY 0
@@ -125,7 +125,7 @@ __Hcommon 0 0 ABS 0
 __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
-_reload_device_settings 1AF4 0 CODE 0
+_reload_device_settings 1ACF 0 CODE 0
 _PIR1bits 10 0 ABS 0
 _bme280_set_sensor_mode 1CF7 0 CODE 0
 __size_of_crc16_update 0 0 ABS 0
@@ -147,15 +147,15 @@ _RC1STA 19D 0 ABS 0
 _ODCONC 28E 0 ABS 0
 __end_of_bme280_get_regs 1EA4 0 CODE 0
 _checksum 158 0 BANK2 1
-__end_of_bme280_set_regs 8C5 0 CODE 0
+__end_of_bme280_set_regs 8AB 0 CODE 0
 _UIntToString 1188 0 CODE 0
 ?___awdiv 70 0 COMMON 1
 _TX1STA 19E 0 ABS 0
 parse_temp_press_calib_data@reg_data 73 0 COMMON 1
-__end_of_strlen 1A6D 0 CODE 0
+__end_of_strlen 1A48 0 CODE 0
 interleave_reg_addr@reg_addr 76 0 COMMON 1
 _SPBRGH 19C 0 ABS 0
-__end_of_reload_device_settings 1B17 0 CODE 0
+__end_of_reload_device_settings 1AF2 0 CODE 0
 bme280_compensate_data@rslt 5F 0 BANK0 1
 _SPBRGL 19B 0 ABS 0
 __size_of_EUSART_Initialize 0 0 ABS 0
@@ -200,7 +200,7 @@ __size_of_TransmitString 0 0 ABS 0
 _I2C_WriteByte 1F28 0 CODE 0
 crc16@i 28 0 BANK0 1
 write_power_mode@dev 5A 0 BANK0 1
-__end_of_fill_osr_press_settings 1AA0 0 CODE 0
+__end_of_fill_osr_press_settings 1A7B 0 CODE 0
 __end_of_BME280_Init 13C3 0 CODE 0
 compensate_pressure@pressure C5 0 BANK1 1
 reload_device_settings@dev 6B 0 BANK0 1
@@ -223,14 +223,14 @@ __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
 bme280_set_regs@rslt 58 0 BANK0 1
 set_osr_settings@dev 66 0 BANK0 1
-__end_of_InitTiming 19F0 0 CODE 0
+__end_of_InitTiming 19D7 0 CODE 0
 ?_compensate_pressure 2E 0 BANK0 1
 DebugAlert@i 25 0 BANK0 1
 __HcstackBANK0 0 0 ABS 0
 __LcstackBANK0 0 0 ABS 0
 __pcstackBANK0 20 0 BANK0 1
 _compensate_pressure$2263 B9 0 BANK1 1
-_strlen 1A56 0 CODE 0
+_strlen 1A31 0 CODE 0
 ___awmod@sign 76 0 COMMON 1
 __Hstringtext2 0 0 ABS 0
 __Lstringtext2 0 0 ABS 0
@@ -239,7 +239,7 @@ _compensate_pressure$2264 AC 0 BANK1 1
 WriteEnvSensor@reg_data 31 0 BANK0 1
 __Hinit D 0 CODE 0
 __Linit D 0 CODE 0
-__pstringtext2 1806 0 STRCODE 0
+__pstringtext2 1807 0 STRCODE 0
 __end_of_main D41 0 CODE 0
 bme280_soft_reset@reg_addr 5F 0 BANK0 1
 _compensate_pressure$2265 B0 0 BANK1 1
@@ -308,7 +308,7 @@ __Lsfr24 0 0 ABS 0
 __Hsfr15 0 0 ABS 0
 __size_of_interleave_reg_addr 0 0 ABS 0
 __Lsfr15 0 0 ABS 0
-_null_ptr_check 1B17 0 CODE 0
+_null_ptr_check 1AF2 0 CODE 0
 __Hsfr25 0 0 ABS 0
 __HnvBANK2 0 0 ABS 0
 __Lsfr25 0 0 ABS 0
@@ -344,7 +344,7 @@ _SLRCONA 30C 0 ABS 0
 _SLRCONB 30D 0 ABS 0
 _SLRCONC 30E 0 ABS 0
 _SSP1BUF 211 0 ABS 0
-_SYSTEM_Initialize 1A10 0 CODE 0
+_SYSTEM_Initialize 801 0 CODE 0
 I2C_ReadByte@rcvdata 2C 0 BANK0 1
 compensate_pressure@var1 C9 0 BANK1 1
 compensate_pressure@var2 C1 0 BANK1 1
@@ -355,7 +355,7 @@ __size_of_strlen 0 0 ABS 0
 _OSCTUNE 98 0 ABS 0
 compensate_pressure@var3 A0 0 BANK1 1
 __pdataBANK2 15E 0 BANK2 1
-_EUSART_Initialize 1A05 0 CODE 0
+_EUSART_Initialize 19EC 0 CODE 0
 compensate_pressure@var4 A4 0 BANK1 1
 _ReverseString 1290 0 CODE 0
 compensate_pressure@var5 A8 0 BANK1 1
@@ -368,9 +368,9 @@ __Lbank1 0 0 ABS 0
 ReadEnvSensor@i 39 0 BANK0 1
 __Hbank2 0 0 ABS 0
 __Lbank2 0 0 ABS 0
-_bme280_set_regs 827 0 CODE 0
+_bme280_set_regs 80D 0 CODE 0
 are_settings_changed@sub_settings 71 0 COMMON 1
-_TMR0_SetInterruptHandler 19D5 0 CODE 0
+_TMR0_SetInterruptHandler 19BC 0 CODE 0
 __Hbank3 0 0 ABS 0
 __Lbank3 0 0 ABS 0
 ___latbits 2 0 ABS 0
@@ -379,7 +379,7 @@ __Lbank4 0 0 ABS 0
 bme280_parse_sensor_data@uncomp_data 70 0 COMMON 1
 _write_power_mode 1CC0 0 CODE 0
 __end_of___lmul 1CC0 0 CODE 0
-__end_of_TimerISR 19FA 0 CODE 0
+__end_of_TimerISR 19E1 0 CODE 0
 __Hbank5 0 0 ABS 0
 __Lbank5 0 0 ABS 0
 __end_of_compensate_pressure 59B 0 CODE 0
@@ -407,14 +407,14 @@ __ptext2 1DA6 0 CODE 0
 compensate_humidity@humidity 43 0 BANK0 1
 __ptext3 1233 0 CODE 0
 ?_compensate_humidity 2E 0 BANK0 1
-__ptext4 9BA 0 CODE 0
+__ptext4 9A0 0 CODE 0
 __ptext5 156E 0 CODE 0
 __ptext6 59B 0 CODE 0
 parse_humidity_calib_data@dig_H5_lsb 78 0 COMMON 1
 parse_humidity_calib_data@dig_H5_msb 7A 0 COMMON 1
 __end_of_set_filter_standby_settings 1EE6 0 CODE 0
 __ptext7 53 0 CODE 0
-__end_of_EUSART_Initialize 1A10 0 CODE 0
+__end_of_EUSART_Initialize 19F7 0 CODE 0
 __HcstackBANK1 0 0 ABS 0
 WriteEnvSensor@dev_id 2F 0 BANK0 1
 __LcstackBANK1 0 0 ABS 0
@@ -445,19 +445,19 @@ crc16_update@length 77 0 COMMON 1
 __size_of_ReadEnvSensor 0 0 ABS 0
 ?_compensate_temperature 2E 0 BANK0 1
 __size_of_parse_device_settings 0 0 ABS 0
-_fill_osr_press_settings 1A85 0 CODE 0
+_fill_osr_press_settings 1A60 0 CODE 0
 __end_of_set_osr_press_temp_settings 1E62 0 CODE 0
 Insert@index 73 0 COMMON 1
 UIntToString@n 29 0 BANK0 1
 __end_of_set_osr_humidity_settings 1094 0 CODE 0
 __end_of_I2C_Stop 1E21 0 CODE 0
-_InitTiming 19E8 0 CODE 0
+_InitTiming 19CF 0 CODE 0
 __end_of_InsertString 10E5 0 CODE 0
 __end_of_I2C_WriteByte 1F70 0 CODE 0
 __size_of_TMR0_DefaultInterruptHandler 0 0 ABS 0
 strlen@s 70 0 COMMON 1
 main@end 130 0 BANK2 1
-_TMR0_Initialize 1A40 0 CODE 0
+_TMR0_Initialize 1A1B 0 CODE 0
 crc16_update@i 20 0 BANK0 1
 get_calib_data@rslt 62 0 BANK0 1
 set_osr_humidity_settings@rslt 62 0 BANK0 1
@@ -498,23 +498,23 @@ __Hcinit 53 0 CODE 0
 __Lcinit F 0 CODE 0
 ___aldiv 165B 0 CODE 0
 ___lldiv 1136 0 CODE 0
-__end_of_TransmitBit 1A85 0 CODE 0
+__end_of_TransmitBit 1A60 0 CODE 0
 ___awdiv 10E5 0 CODE 0
 __size_of_I2C_WriteByte 0 0 ABS 0
 __Hspace_3 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
 ?_Insert 70 0 COMMON 1
-_fill_standby_settings 1ABC 0 CODE 0
+_fill_standby_settings 1A97 0 CODE 0
 __end_of_INTERRUPT_InterruptManager D 0 CODE 0
 ReverseString@temp 22 0 BANK0 1
 _interleave_reg_addr 1C37 0 CODE 0
-__end_of_I2C_Init 1A40 0 CODE 0
+__end_of_I2C_Init 1A1B 0 CODE 0
 __size_of_I2C_UserAlert 0 0 ABS 0
 __CFG_BORV$LO 0 0 ABS 0
 __size_of_TMR0_Initialize 0 0 ABS 0
 are_settings_changed@desired_settings 70 0 COMMON 1
-_bme280_parse_sensor_data 9BA 0 CODE 0
+_bme280_parse_sensor_data 9A0 0 CODE 0
 _PIN_MANAGER_Initialize 1B8C 0 CODE 0
 __size_of_fill_filter_settings 0 0 ABS 0
 __size_of_compensate_pressure 0 0 ABS 0
@@ -537,15 +537,15 @@ _UIntToHexString 15E4 0 CODE 0
 bme280_set_sensor_settings@desired_settings B1 0 BANK1 1
 compensate_temperature@temperature 51 0 BANK0 1
 __end_of_bme280_init 135B 0 CODE 0
-__end_of_null_ptr_check 1B3C 0 CODE 0
+__end_of_null_ptr_check 1B17 0 CODE 0
 set_osr_humidity_settings@ctrl_hum 60 0 BANK0 1
 __size_of_TimerISR 0 0 ABS 0
 __size_of_parse_temp_press_calib_data 0 0 ABS 0
-clear_ram0 19DB 0 CODE 0
+clear_ram0 19C2 0 CODE 0
 TransmitByte@i 74 0 COMMON 1
 __size_of_SYSTEM_Initialize 0 0 ABS 0
 __end_of_interleave_reg_addr 1C64 0 CODE 0
-_parse_temp_press_calib_data 8C5 0 CODE 0
+_parse_temp_press_calib_data 8AB 0 CODE 0
 UIntToString@i 30 0 BANK0 1
 UIntToString@dest 2D 0 BANK0 1
 _bme280_set_sensor_settings 1494 0 CODE 0
@@ -568,14 +568,14 @@ InsertString@dest 20 0 BANK0 1
 __Hbank21 0 0 BANK21 1
 __Lbank21 0 0 BANK21 1
 __size_of_bme280_get_regs 0 0 ABS 0
-__end_of_OSCILLATOR_Initialize 19E8 0 CODE 0
+__end_of_OSCILLATOR_Initialize 19CF 0 CODE 0
 __size_of_bme280_set_regs 0 0 ABS 0
 __Hbank31 0 0 BANK31 1
 __Hbank12 0 0 ABS 0
 __size_of_DebugAlert 0 0 ABS 0
 __Lbank31 0 0 BANK31 1
 __Lbank12 0 0 ABS 0
-__end_of_SYSTEM_Initialize 1A1C 0 CODE 0
+__end_of_SYSTEM_Initialize 80D 0 CODE 0
 __Hbank22 0 0 BANK22 1
 __Lbank22 0 0 BANK22 1
 __Hbank13 0 0 BANK13 1
@@ -602,23 +602,23 @@ __Hbank25 0 0 BANK25 1
 __Lbank25 0 0 BANK25 1
 bme280_parse_sensor_data@reg_data 2C 0 BANK0 1
 __ptext11 1188 0 CODE 0
-__ptext30 19D5 0 CODE 0
+__ptext30 19BC 0 CODE 0
 __Hbank16 0 0 BANK16 1
 __Lbank16 0 0 BANK16 1
 __size_of_set_filter_standby_settings 0 0 ABS 0
 __size_of_parse_humidity_calib_data 0 0 ABS 0
-__ptext21 19E1 0 CODE 0
+__ptext21 19C8 0 CODE 0
 __ptext40 1B3C 0 CODE 0
 __Hbank26 0 0 BANK26 1
 __Lbank26 0 0 BANK26 1
 __ptext12 1EE6 0 CODE 0
-__ptext31 802 0 CODE 0
+__ptext31 1B17 0 CODE 0
 __ptext50 12F3 0 CODE 0
 __Hbank17 0 0 BANK17 1
 __size_of_WriteEnvSensor 0 0 ABS 0
 __Lbank17 0 0 BANK17 1
 __HbssBANK2 0 0 ABS 0
-__ptext22 1A05 0 CODE 0
+__ptext22 19EC 0 CODE 0
 __ptext41 1E21 0 CODE 0
 __ptext60 1C37 0 CODE 0
 __LbssBANK2 0 0 ABS 0
@@ -626,14 +626,14 @@ __Hbank27 0 0 BANK27 1
 __Lbank27 0 0 BANK27 1
 __CFG_PLLEN$OFF 0 0 ABS 0
 __ptext13 1136 0 CODE 0
-__ptext32 1A56 0 CODE 0
+__ptext32 1A31 0 CODE 0
 __ptext51 1F70 0 CODE 0
 __ptext70 3 0 CODE 0
 __Hbank18 0 0 BANK18 1
 __pbssBANK2 142 0 BANK2 1
 __Lbank18 0 0 BANK18 1
 __ptext23 13C3 0 CODE 0
-__ptext42 1AD8 0 CODE 0
+__ptext42 1AB3 0 CODE 0
 __ptext61 142B 0 CODE 0
 __Hbank28 0 0 BANK28 1
 __size_of___awdiv 0 0 ABS 0
@@ -642,13 +642,13 @@ _message_start 2A0 0 BANK5 1
 set_filter_standby_settings@dev 5C 0 BANK0 1
 __ptext14 15E4 0 CODE 0
 __ptext33 135B 0 CODE 0
-__ptext52 8C5 0 CODE 0
+__ptext52 8AB 0 CODE 0
 InsertString@src 22 0 BANK0 1
-__ptext71 19F0 0 CODE 0
+__ptext71 19D7 0 CODE 0
 __Hbank19 0 0 BANK19 1
 __Lbank19 0 0 BANK19 1
 __ptext24 1001 0 CODE 0
-__ptext43 1A85 0 CODE 0
+__ptext43 1A60 0 CODE 0
 __ptext62 1F28 0 CODE 0
 __Hbank29 0 0 BANK29 1
 __size_of_Insert 0 0 ABS 0
@@ -661,7 +661,7 @@ __ptext44 1046 0 CODE 0
 __ptext63 7FD 0 CODE 0
 __size_of_TransmitBit 0 0 ABS 0
 __ptext16 1C64 0 CODE 0
-__ptext35 19FA 0 CODE 0
+__ptext35 19E1 0 CODE 0
 __ptext54 1E62 0 CODE 0
 fill_osr_press_settings@settings 70 0 COMMON 1
 __HbssBANK3 0 0 ABS 0
@@ -670,49 +670,49 @@ __ptext45 1EA4 0 CODE 0
 __ptext64 1DE2 0 CODE 0
 __LbssBANK3 0 0 ABS 0
 ___llmod@divisor 70 0 COMMON 1
-__ptext17 1A6D 0 CODE 0
+__ptext17 1A48 0 CODE 0
 __ptext36 1CF7 0 CODE 0
 __ptext55 73E 0 CODE 0
 __pbssBANK3 1A0 0 BANK3 1
 ___awmod@divisor 70 0 COMMON 1
 __ptext27 1094 0 CODE 0
-__ptext46 1ABC 0 CODE 0
+__ptext46 1A97 0 CODE 0
 __ptext65 1BE1 0 CODE 0
 bme280_set_regs@reg_addr_cnt 57 0 BANK0 1
 _SSPCLKPPS E20 0 ABS 0
-__ptext18 1A10 0 CODE 0
+__ptext18 801 0 CODE 0
 __ptext37 1CC0 0 CODE 0
 __ptext56 16DC 0 CODE 0
 reload_device_settings@rslt 6F 0 BANK0 1
 __CFG_PWRTE$OFF 0 0 ABS 0
 __ptext28 1501 0 CODE 0
-__ptext47 1AA0 0 CODE 0
+__ptext47 1A7B 0 CODE 0
 __ptext66 1BB6 0 CODE 0
 put_device_to_sleep@reg_data A3 0 BANK1 1
 _SSPDATPPS E21 0 ABS 0
-__ptext19 1A40 0 CODE 0
+__ptext19 1A1B 0 CODE 0
 __ptext38 1D6A 0 CODE 0
 __ptext57 1D2F 0 CODE 0
 bme280_parse_sensor_data@data_xlsb 20 0 BANK0 1
-__ptext29 19E8 0 CODE 0
+__ptext29 19CF 0 CODE 0
 __ptext48 11DB 0 CODE 0
-__ptext67 1A2C 0 CODE 0
+__ptext67 1A07 0 CODE 0
 Insert@destLimit 75 0 COMMON 1
-__ptext39 1AF4 0 CODE 0
-__ptext58 827 0 CODE 0
+__ptext39 1ACF 0 CODE 0
+__ptext58 80D 0 CODE 0
 __HbssBANK4 0 0 ABS 0
 bme280_get_regs@reg_data 3B 0 BANK0 1
 __ptext49 1C0C 0 CODE 0
 __LbssBANK4 0 0 ABS 0
 _timer0ReloadVal 164 0 BANK2 1
 _INTCONbits B 0 ABS 0
-__ptext59 1B17 0 CODE 0
+__ptext59 1AF2 0 CODE 0
 __pbssBANK4 220 0 BANK4 1
 TransmitBit@b 71 0 COMMON 1
 __size_of_I2C_Init 0 0 ABS 0
 _compensate_pressure 53 0 CODE 0
 __CFG_PPS1WAY$ON 0 0 ABS 0
-__ptext69 1A1C 0 CODE 0
+__ptext69 19F7 0 CODE 0
 __Hend_init F 0 CODE 0
 __Lend_init D 0 CODE 0
 IntToString@n 7B 0 COMMON 1
@@ -740,12 +740,12 @@ compensate_temperature@temperature_max 44 0 BANK0 1
 bme280_set_regs@reg_data 3B 0 BANK0 1
 __end_of_I2C_UserAlert 800 0 CODE 0
 __end_of___llmod 1F28 0 CODE 0
-_OSCILLATOR_Initialize 19E1 0 CODE 0
-__end_of_ClearString 827 0 CODE 0
+_OSCILLATOR_Initialize 19C8 0 CODE 0
+__end_of_ClearString 1B3C 0 CODE 0
 __size_of_I2C_ReadByte 0 0 ABS 0
 interleave_reg_addr@reg_data 71 0 COMMON 1
 ReverseString@halfway 20 0 BANK0 1
-_fill_osr_temp_settings 1AD8 0 CODE 0
+_fill_osr_temp_settings 1AB3 0 CODE 0
 __HbssBANK6 0 0 ABS 0
 __LbssBANK6 0 0 ABS 0
 __size_of_TransmitByte 0 0 ABS 0
@@ -758,21 +758,21 @@ fill_filter_settings@settings 70 0 COMMON 1
 __HidataBANK2 0 0 ABS 0
 __LidataBANK2 0 0 ABS 0
 _BAUD1CON 19F 0 ABS 0
-__pidataBANK2 19D1 0 CODE 0
+__pidataBANK2 19B8 0 CODE 0
 _compensate_temperature 59B 0 CODE 0
 __end_of_bme280_set_sensor_settings 1501 0 CODE 0
 bme280_set_regs@temp_len 55 0 BANK0 1
 bme280_set_regs@reg_addr 59 0 BANK0 1
-__end_of_are_settings_changed 1A05 0 CODE 0
+__end_of_are_settings_changed 19EC 0 CODE 0
 _message_end 320 0 BANK6 1
 InsertString@destLimit 26 0 BANK0 1
 Sleep@start 78 0 COMMON 1
 __size_of___aldiv 0 0 ABS 0
-__end_of_bme280_parse_sensor_data AD8 0 CODE 0
+__end_of_bme280_parse_sensor_data ABE 0 CODE 0
 WriteEnvSensor@i 39 0 BANK0 1
 intlevel0 0 0 ENTRY 0
 main@sensor_data 134 0 BANK2 1
-__end_of_TMR0_ISR 1A2C 0 CODE 0
+__end_of_TMR0_ISR 1A07 0 CODE 0
 __CFG_WDTE$OFF 0 0 ABS 0
 __size_of_set_osr_humidity_settings 0 0 ABS 0
 _SSP1STAT 214 0 ABS 0
@@ -795,7 +795,7 @@ __size_of_InsertString 0 0 ABS 0
 bme280_get_sensor_data@sensor_comp D5 0 BANK1 1
 _SSP1CON2bits 216 0 ABS 0
 _TransmitString 1B64 0 CODE 0
-_TMR0_ISR 1A1C 0 CODE 0
+_TMR0_ISR 19F7 0 CODE 0
 compensate_humidity@uncomp_data 3E 0 BANK0 1
 __end_of_bme280_compensate_data 15E4 0 CODE 0
 crc16_update@pData 75 0 COMMON 1
@@ -816,7 +816,7 @@ ___lldiv@quotient 79 0 COMMON 1
 BME280_Init@settings_sel B6 0 BANK1 1
 BME280_Init@rslt B7 0 BANK1 1
 ___awdiv@quotient 77 0 COMMON 1
-_TimerISR 19F0 0 CODE 0
+_TimerISR 19D7 0 CODE 0
 set_osr_press_temp_settings@desired_settings 60 0 BANK0 1
 TMR0_SetInterruptHandler@InterruptHandler 70 0 COMMON 1
 get_calib_data@dev 63 0 BANK0 1
@@ -826,7 +826,7 @@ __size_of_UIntToString 0 0 ABS 0
 parse_temp_press_calib_data@calib_data 72 0 COMMON 1
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
-__pmaintext AD8 0 CODE 0
+__pmaintext ABE 0 CODE 0
 __end_of_ReadEnvSensor 7FD 0 CODE 0
 __CFG_MCLRE$ON 0 0 ABS 0
 compensate_humidity@var1 47 0 BANK0 1
@@ -859,8 +859,8 @@ __CFG_CP$OFF 0 0 ABS 0
 DebugAlert@delay_low 22 0 BANK0 1
 __CFG_FCMEN$ON 0 0 ABS 0
 __size_of_ClearString 0 0 ABS 0
-__end_of_TMR0_Initialize 1A56 0 CODE 0
-__end_of_parse_temp_press_calib_data 9BA 0 CODE 0
+__end_of_TMR0_Initialize 1A31 0 CODE 0
+__end_of_parse_temp_press_calib_data 9A0 0 CODE 0
 __end_of_bme280_soft_reset 1D6A 0 CODE 0
 __CFG_WDTCCS$SWC 0 0 ABS 0
 __end_of_UIntToHexString 165B 0 CODE 0
@@ -883,10 +883,10 @@ bssBANK3 1A0 1E2 BANK3 1A0 1
 cstackBANK2 120 164 BANK2 120 1
 bssBANK4 220 239 BANK4 220 1
 text8 1A82 1FFF CODE 1A82 0
-maintext 15B0 1A81 CODE 15B0 0
-text4 1374 15AF CODE 1374 0
-text52 118A 1373 CODE 118A 0
-text58 104E 1189 CODE 104E 0
+maintext 157C 1A81 CODE 157C 0
+text4 1340 157B CODE 1340 0
+text52 1156 133F CODE 1156 0
+text58 101A 1155 CODE 101A 0
 text53 2ECE 2FFF CODE 2ECE 0
 text56 2DB8 2ECD CODE 2DB8 0
 text10 2CB6 2DB7 CODE 2CB6 0
@@ -929,132 +929,133 @@ text66 376C 37C1 CODE 376C 0
 text20 3718 376B CODE 3718 0
 text15 36C8 3717 CODE 36C8 0
 text40 3678 36C7 CODE 3678 0
-text31 1004 104D CODE 1004 0
-text59 362E 3677 CODE 362E 0
-text39 35E8 362D CODE 35E8 0
-text42 35B0 35E7 CODE 35B0 0
-text46 3578 35AF CODE 3578 0
-text47 3540 3577 CODE 3540 0
-text43 350A 353F CODE 350A 0
-text17 34DA 3509 CODE 34DA 0
-text32 34AC 34D9 CODE 34AC 0
-text19 3480 34AB CODE 3480 0
-text67 3458 347F CODE 3458 0
-text69 3438 3457 CODE 3438 0
-text18 3420 3437 CODE 3420 0
-text22 340A 341F CODE 340A 0
-text35 33F4 3409 CODE 33F4 0
-text71 33E0 33F3 CODE 33E0 0
-text29 33D0 33DF CODE 33D0 0
-text21 33C2 33CF CODE 33C2 0
-stringtext1 3000 3011 STRCODE 3000 0
-clrtext 33B6 33C1 CODE 33B6 0
-text30 33AA 33B5 CODE 33AA 0
-idataBANK2 33A2 33A9 CODE 33A2 0
+text31 362E 3677 CODE 362E 0
+text59 35E4 362D CODE 35E4 0
+text39 359E 35E3 CODE 359E 0
+text42 3566 359D CODE 3566 0
+text46 352E 3565 CODE 352E 0
+text47 34F6 352D CODE 34F6 0
+text43 34C0 34F5 CODE 34C0 0
+text17 3490 34BF CODE 3490 0
+text32 3462 348F CODE 3462 0
+text19 3436 3461 CODE 3436 0
+text67 340E 3435 CODE 340E 0
+text69 33EE 340D CODE 33EE 0
+text18 1002 1019 CODE 1002 0
+text22 33D8 33ED CODE 33D8 0
+text35 33C2 33D7 CODE 33C2 0
+text71 33AE 33C1 CODE 33AE 0
+text29 339E 33AD CODE 339E 0
+stringtext1 3000 3013 STRCODE 3000 0
+text21 3390 339D CODE 3390 0
+clrtext 3384 338F CODE 3384 0
+text30 3378 3383 CODE 3378 0
+idataBANK2 3370 3377 CODE 3370 0
 text70 6 7 CODE 6 0
 %locals
 dist/default/production\Wisp-1.production.o
-C:\Users\2013b\AppData\Local\Temp\s1io.
-9249 F 0 CODE 0
-9252 F 0 CODE 0
-9317 F 0 CODE 0
-9318 10 0 CODE 0
-9319 13 0 CODE 0
-9320 14 0 CODE 0
-9321 17 0 CODE 0
-9322 18 0 CODE 0
-9323 1B 0 CODE 0
-9324 1C 0 CODE 0
-9325 1F 0 CODE 0
-9342 20 0 CODE 0
-9343 21 0 CODE 0
-9344 22 0 CODE 0
-9345 23 0 CODE 0
-9346 24 0 CODE 0
-9347 25 0 CODE 0
-9351 28 0 CODE 0
-9352 29 0 CODE 0
-9353 2A 0 CODE 0
-9354 2B 0 CODE 0
-9355 2C 0 CODE 0
-9356 2D 0 CODE 0
-9360 30 0 CODE 0
-9361 31 0 CODE 0
-9362 32 0 CODE 0
-9363 33 0 CODE 0
-9364 34 0 CODE 0
-9365 35 0 CODE 0
-9369 38 0 CODE 0
-9370 39 0 CODE 0
-9371 3A 0 CODE 0
-9372 3B 0 CODE 0
-9373 3C 0 CODE 0
-9374 3D 0 CODE 0
-9378 40 0 CODE 0
-9379 41 0 CODE 0
-9380 42 0 CODE 0
-9381 43 0 CODE 0
-9382 44 0 CODE 0
-9383 45 0 CODE 0
-9387 48 0 CODE 0
-9388 49 0 CODE 0
-9389 4A 0 CODE 0
-9390 4B 0 CODE 0
-9391 4C 0 CODE 0
-9392 4D 0 CODE 0
-9398 4F 0 CODE 0
-9400 4F 0 CODE 0
-9401 50 0 CODE 0
-9402 51 0 CODE 0
-9331 19DB 0 CODE 0
-9332 19DB 0 CODE 0
-9333 19DC 0 CODE 0
-9334 19DC 0 CODE 0
-9335 19DD 0 CODE 0
-9336 19DE 0 CODE 0
-9337 19DF 0 CODE 0
-9338 19E0 0 CODE 0
+C:\Users\2013b\AppData\Local\Temp\s1g4.
+9250 F 0 CODE 0
+9253 F 0 CODE 0
+9318 F 0 CODE 0
+9319 10 0 CODE 0
+9320 13 0 CODE 0
+9321 14 0 CODE 0
+9322 17 0 CODE 0
+9323 18 0 CODE 0
+9324 1B 0 CODE 0
+9325 1C 0 CODE 0
+9326 1F 0 CODE 0
+9343 20 0 CODE 0
+9344 21 0 CODE 0
+9345 22 0 CODE 0
+9346 23 0 CODE 0
+9347 24 0 CODE 0
+9348 25 0 CODE 0
+9352 28 0 CODE 0
+9353 29 0 CODE 0
+9354 2A 0 CODE 0
+9355 2B 0 CODE 0
+9356 2C 0 CODE 0
+9357 2D 0 CODE 0
+9361 30 0 CODE 0
+9362 31 0 CODE 0
+9363 32 0 CODE 0
+9364 33 0 CODE 0
+9365 34 0 CODE 0
+9366 35 0 CODE 0
+9370 38 0 CODE 0
+9371 39 0 CODE 0
+9372 3A 0 CODE 0
+9373 3B 0 CODE 0
+9374 3C 0 CODE 0
+9375 3D 0 CODE 0
+9379 40 0 CODE 0
+9380 41 0 CODE 0
+9381 42 0 CODE 0
+9382 43 0 CODE 0
+9383 44 0 CODE 0
+9384 45 0 CODE 0
+9388 48 0 CODE 0
+9389 49 0 CODE 0
+9390 4A 0 CODE 0
+9391 4B 0 CODE 0
+9392 4C 0 CODE 0
+9393 4D 0 CODE 0
+9399 4F 0 CODE 0
+9401 4F 0 CODE 0
+9402 50 0 CODE 0
+9403 51 0 CODE 0
+9332 19C2 0 CODE 0
+9333 19C2 0 CODE 0
+9334 19C3 0 CODE 0
+9335 19C3 0 CODE 0
+9336 19C4 0 CODE 0
+9337 19C5 0 CODE 0
+9338 19C6 0 CODE 0
+9339 19C7 0 CODE 0
 main.c
-663 AD8 0 CODE 0
-666 AD8 0 CODE 0
-667 ADB 0 CODE 0
-670 ADE 0 CODE 0
-672 AE1 0 CODE 0
-673 AE9 0 CODE 0
-693 AF1 0 CODE 0
-695 B01 0 CODE 0
-696 B09 0 CODE 0
-698 B11 0 CODE 0
-700 B1C 0 CODE 0
-701 B29 0 CODE 0
-702 B36 0 CODE 0
-703 B57 0 CODE 0
-704 B71 0 CODE 0
-706 B78 0 CODE 0
-707 B91 0 CODE 0
-708 BB3 0 CODE 0
-709 BCD 0 CODE 0
-711 BD4 0 CODE 0
-712 BEB 0 CODE 0
-714 C0D 0 CODE 0
-717 C11 0 CODE 0
-718 C2D 0 CODE 0
-719 C34 0 CODE 0
-720 C41 0 CODE 0
-721 C63 0 CODE 0
-723 C78 0 CODE 0
-726 CA2 0 CODE 0
-728 CB8 0 CODE 0
-729 CD3 0 CODE 0
-730 CF4 0 CODE 0
-732 D0E 0 CODE 0
-734 D12 0 CODE 0
-735 D13 0 CODE 0
-736 D1A 0 CODE 0
-737 D22 0 CODE 0
-746 D24 0 CODE 0
-748 D26 0 CODE 0
-749 D2E 0 CODE 0
+663 ABE 0 CODE 0
+666 ABE 0 CODE 0
+667 AC1 0 CODE 0
+670 AC4 0 CODE 0
+672 AC7 0 CODE 0
+673 ACF 0 CODE 0
+693 AD7 0 CODE 0
+695 AE7 0 CODE 0
+696 AEF 0 CODE 0
+698 AF7 0 CODE 0
+700 B02 0 CODE 0
+701 B0F 0 CODE 0
+702 B1C 0 CODE 0
+703 B3D 0 CODE 0
+704 B57 0 CODE 0
+706 B5E 0 CODE 0
+707 B77 0 CODE 0
+708 B99 0 CODE 0
+709 BB3 0 CODE 0
+711 BBA 0 CODE 0
+712 BD1 0 CODE 0
+714 BF3 0 CODE 0
+717 BF7 0 CODE 0
+718 C13 0 CODE 0
+719 C2D 0 CODE 0
+720 C34 0 CODE 0
+721 C41 0 CODE 0
+722 C63 0 CODE 0
+724 C78 0 CODE 0
+727 CA2 0 CODE 0
+729 CB8 0 CODE 0
+730 CD3 0 CODE 0
+731 CF4 0 CODE 0
+733 D0E 0 CODE 0
+735 D12 0 CODE 0
+736 D13 0 CODE 0
+737 D1A 0 CODE 0
+738 D22 0 CODE 0
+747 D24 0 CODE 0
+749 D26 0 CODE 0
+750 D2E 0 CODE 0
 rtty.c
 21 1FB8 0 CODE 0
 23 1FB9 0 CODE 0
@@ -1081,19 +1082,19 @@ BME280_driver/bme280.c
 676 1272 0 CODE 0
 679 1275 0 CODE 0
 684 127E 0 CODE 0
-699 9BA 0 CODE 0
-707 9BB 0 CODE 0
-708 9D2 0 CODE 0
-709 9E9 0 CODE 0
-710 A00 0 CODE 0
-713 A27 0 CODE 0
-714 A3F 0 CODE 0
-715 A57 0 CODE 0
-716 A6E 0 CODE 0
-719 A96 0 CODE 0
-720 AAE 0 CODE 0
-721 ABF 0 CODE 0
-722 AD7 0 CODE 0
+699 9A0 0 CODE 0
+707 9A1 0 CODE 0
+708 9B8 0 CODE 0
+709 9CF 0 CODE 0
+710 9E6 0 CODE 0
+713 A0D 0 CODE 0
+714 A25 0 CODE 0
+715 A3D 0 CODE 0
+716 A54 0 CODE 0
+719 A7C 0 CODE 0
+720 A94 0 CODE 0
+721 AA5 0 CODE 0
+722 ABD 0 CODE 0
 729 156E 0 CODE 0
 734 1570 0 CODE 0
 736 1571 0 CODE 0
@@ -1276,29 +1277,29 @@ rtty.c
 69 1C89 0 CODE 0
 70 1C8D 0 CODE 0
 71 1C90 0 CODE 0
-31 1A6D 0 CODE 0
-33 1A6E 0 CODE 0
-35 1A71 0 CODE 0
-39 1A74 0 CODE 0
-46 1A76 0 CODE 0
-47 1A7D 0 CODE 0
-49 1A84 0 CODE 0
+31 1A48 0 CODE 0
+33 1A49 0 CODE 0
+35 1A4C 0 CODE 0
+39 1A4F 0 CODE 0
+46 1A51 0 CODE 0
+47 1A58 0 CODE 0
+49 1A5F 0 CODE 0
 mcc_generated_files/mcc.c
-50 1A10 0 CODE 0
-52 1A10 0 CODE 0
-53 1A13 0 CODE 0
-54 1A16 0 CODE 0
-55 1A19 0 CODE 0
-56 1A1B 0 CODE 0
+50 801 0 CODE 0
+52 801 0 CODE 0
+53 804 0 CODE 0
+54 807 0 CODE 0
+55 80A 0 CODE 0
+56 80C 0 CODE 0
 mcc_generated_files/tmr0.c
-64 1A40 0 CODE 0
-69 1A40 0 CODE 0
-72 1A45 0 CODE 0
-75 1A48 0 CODE 0
-78 1A4D 0 CODE 0
-81 1A4E 0 CODE 0
-84 1A4F 0 CODE 0
-85 1A55 0 CODE 0
+64 1A1B 0 CODE 0
+69 1A1B 0 CODE 0
+72 1A20 0 CODE 0
+75 1A23 0 CODE 0
+78 1A28 0 CODE 0
+81 1A29 0 CODE 0
+84 1A2A 0 CODE 0
+85 1A30 0 CODE 0
 mcc_generated_files/pin_manager.c
 57 1B8C 0 CODE 0
 62 1B8C 0 CODE 0
@@ -1324,19 +1325,19 @@ mcc_generated_files/pin_manager.c
 110 1BB2 0 CODE 0
 111 1BB5 0 CODE 0
 mcc_generated_files/mcc.c
-58 19E1 0 CODE 0
-61 19E1 0 CODE 0
-63 19E4 0 CODE 0
-65 19E5 0 CODE 0
-66 19E7 0 CODE 0
+58 19C8 0 CODE 0
+61 19C8 0 CODE 0
+63 19CB 0 CODE 0
+65 19CC 0 CODE 0
+66 19CE 0 CODE 0
 mcc_generated_files/eusart.c
-56 1A05 0 CODE 0
-61 1A05 0 CODE 0
-64 1A08 0 CODE 0
-67 1A0A 0 CODE 0
-70 1A0C 0 CODE 0
-73 1A0E 0 CODE 0
-76 1A0F 0 CODE 0
+56 19EC 0 CODE 0
+61 19EC 0 CODE 0
+64 19EF 0 CODE 0
+67 19F1 0 CODE 0
+70 19F3 0 CODE 0
+73 19F5 0 CODE 0
+76 19F6 0 CODE 0
 main.c
 148 13C3 0 CODE 0
 150 13C3 0 CODE 0
@@ -1434,28 +1435,28 @@ main.c
 77 1569 0 CODE 0
 78 156D 0 CODE 0
 timing.c
-11 19E8 0 CODE 0
-13 19E8 0 CODE 0
-14 19E9 0 CODE 0
-15 19EF 0 CODE 0
+11 19CF 0 CODE 0
+13 19CF 0 CODE 0
+14 19D0 0 CODE 0
+15 19D6 0 CODE 0
 mcc_generated_files/tmr0.c
-125 19D5 0 CODE 0
-126 19D5 0 CODE 0
-127 19DA 0 CODE 0
+125 19BC 0 CODE 0
+126 19BC 0 CODE 0
+127 19C1 0 CODE 0
 main.c
-25 802 0 CODE 0
-27 802 0 CODE 0
-30 80F 0 CODE 0
-29 81B 0 CODE 0
-30 822 0 CODE 0
+25 1B17 0 CODE 0
+27 1B17 0 CODE 0
+30 1B24 0 CODE 0
+29 1B30 0 CODE 0
+30 1B37 0 CODE 0
 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-12 1A56 0 CODE 0
-14 1A56 0 CODE 0
-16 1A5A 0 CODE 0
-17 1A61 0 CODE 0
-16 1A65 0 CODE 0
-25 1A66 0 CODE 0
-26 1A6C 0 CODE 0
+12 1A31 0 CODE 0
+14 1A31 0 CODE 0
+16 1A35 0 CODE 0
+17 1A3C 0 CODE 0
+16 1A40 0 CODE 0
+25 1A41 0 CODE 0
+26 1A47 0 CODE 0
 bme280_i2c.c
 76 135B 0 CODE 0
 78 135B 0 CODE 0
@@ -1495,13 +1496,13 @@ BME280_driver/bme280.c
 542 14EB 0 CODE 0
 547 14FF 0 CODE 0
 548 1500 0 CODE 0
-1404 19FA 0 CODE 0
-1408 19FB 0 CODE 0
-1411 19FF 0 CODE 0
-1412 1A01 0 CODE 0
-1416 1A02 0 CODE 0
-1419 1A03 0 CODE 0
-1420 1A04 0 CODE 0
+1404 19E1 0 CODE 0
+1408 19E2 0 CODE 0
+1411 19E6 0 CODE 0
+1412 19E8 0 CODE 0
+1416 19E9 0 CODE 0
+1419 19EA 0 CODE 0
+1420 19EB 0 CODE 0
 578 1CF7 0 CODE 0
 584 1CF8 0 CODE 0
 585 1D00 0 CODE 0
@@ -1529,12 +1530,12 @@ BME280_driver/bme280.c
 980 1D98 0 CODE 0
 984 1DA4 0 CODE 0
 985 1DA5 0 CODE 0
-991 1AF4 0 CODE 0
-995 1AF5 0 CODE 0
-996 1B04 0 CODE 0
-998 1B07 0 CODE 0
-1001 1B15 0 CODE 0
-1002 1B16 0 CODE 0
+991 1ACF 0 CODE 0
+995 1AD0 0 CODE 0
+996 1ADF 0 CODE 0
+998 1AE2 0 CODE 0
+1001 1AF0 0 CODE 0
+1002 1AF1 0 CODE 0
 777 1B3C 0 CODE 0
 781 1B3E 0 CODE 0
 783 1B40 0 CODE 0
@@ -1555,12 +1556,12 @@ BME280_driver/bme280.c
 851 1E50 0 CODE 0
 854 1E60 0 CODE 0
 855 1E61 0 CODE 0
-919 1AD8 0 CODE 0
-921 1AD9 0 CODE 0
-922 1AF3 0 CODE 0
-910 1A85 0 CODE 0
-912 1A86 0 CODE 0
-913 1A9F 0 CODE 0
+919 1AB3 0 CODE 0
+921 1AB4 0 CODE 0
+922 1ACE 0 CODE 0
+910 1A60 0 CODE 0
+912 1A61 0 CODE 0
+913 1A7A 0 CODE 0
 798 1046 0 CODE 0
 803 1046 0 CODE 0
 805 104A 0 CODE 0
@@ -1584,12 +1585,12 @@ BME280_driver/bme280.c
 882 1ED4 0 CODE 0
 885 1EE4 0 CODE 0
 886 1EE5 0 CODE 0
-901 1ABC 0 CODE 0
-903 1ABD 0 CODE 0
-904 1AD7 0 CODE 0
-892 1AA0 0 CODE 0
-894 1AA1 0 CODE 0
-895 1ABB 0 CODE 0
+901 1A97 0 CODE 0
+903 1A98 0 CODE 0
+904 1AB2 0 CODE 0
+892 1A7B 0 CODE 0
+894 1A7C 0 CODE 0
+895 1A96 0 CODE 0
 929 11DB 0 CODE 0
 931 11DC 0 CODE 0
 932 11E8 0 CODE 0
@@ -1633,22 +1634,22 @@ BME280_driver/bme280.c
 1332 1FAF 0 CODE 0
 1336 1FB6 0 CODE 0
 1337 1FB7 0 CODE 0
-1358 8C5 0 CODE 0
-1360 8C6 0 CODE 0
-1362 8CB 0 CODE 0
-1363 8DB 0 CODE 0
-1364 8EE 0 CODE 0
-1365 901 0 CODE 0
-1366 914 0 CODE 0
-1367 927 0 CODE 0
-1368 93A 0 CODE 0
-1369 94D 0 CODE 0
-1370 960 0 CODE 0
-1371 973 0 CODE 0
-1372 986 0 CODE 0
-1373 999 0 CODE 0
-1374 9AC 0 CODE 0
-1375 9B9 0 CODE 0
+1358 8AB 0 CODE 0
+1360 8AC 0 CODE 0
+1362 8B1 0 CODE 0
+1363 8C1 0 CODE 0
+1364 8D4 0 CODE 0
+1365 8E7 0 CODE 0
+1366 8FA 0 CODE 0
+1367 90D 0 CODE 0
+1368 920 0 CODE 0
+1369 933 0 CODE 0
+1370 946 0 CODE 0
+1371 959 0 CODE 0
+1372 96C 0 CODE 0
+1373 97F 0 CODE 0
+1374 992 0 CODE 0
+1375 99F 0 CODE 0
 1381 1767 0 CODE 0
 1383 1768 0 CODE 0
 1389 176D 0 CODE 0
@@ -1711,37 +1712,37 @@ BME280_driver/bme280.c
 649 1D55 0 CODE 0
 652 1D67 0 CODE 0
 653 1D69 0 CODE 0
-442 827 0 CODE 0
-447 828 0 CODE 0
-449 82C 0 CODE 0
-455 830 0 CODE 0
-458 838 0 CODE 0
-460 841 0 CODE 0
-462 844 0 CODE 0
-465 84B 0 CODE 0
-467 853 0 CODE 0
-470 854 0 CODE 0
-469 858 0 CODE 0
-470 869 0 CODE 0
-474 86E 0 CODE 0
-479 872 0 CODE 0
-480 882 0 CODE 0
-484 88D 0 CODE 0
-486 894 0 CODE 0
-489 8B7 0 CODE 0
-491 8BA 0 CODE 0
-496 8BC 0 CODE 0
-499 8C1 0 CODE 0
-501 8C1 0 CODE 0
-504 8C3 0 CODE 0
-505 8C4 0 CODE 0
-1426 1B17 0 CODE 0
-1430 1B18 0 CODE 0
-1433 1B36 0 CODE 0
-1434 1B38 0 CODE 0
-1438 1B39 0 CODE 0
-1441 1B3A 0 CODE 0
-1442 1B3B 0 CODE 0
+442 80D 0 CODE 0
+447 80E 0 CODE 0
+449 812 0 CODE 0
+455 816 0 CODE 0
+458 81E 0 CODE 0
+460 827 0 CODE 0
+462 82A 0 CODE 0
+465 831 0 CODE 0
+467 839 0 CODE 0
+470 83A 0 CODE 0
+469 83E 0 CODE 0
+470 84F 0 CODE 0
+474 854 0 CODE 0
+479 858 0 CODE 0
+480 868 0 CODE 0
+484 873 0 CODE 0
+486 87A 0 CODE 0
+489 89D 0 CODE 0
+491 8A0 0 CODE 0
+496 8A2 0 CODE 0
+499 8A7 0 CODE 0
+501 8A7 0 CODE 0
+504 8A9 0 CODE 0
+505 8AA 0 CODE 0
+1426 1AF2 0 CODE 0
+1430 1AF3 0 CODE 0
+1433 1B11 0 CODE 0
+1434 1B13 0 CODE 0
+1438 1B14 0 CODE 0
+1441 1B15 0 CODE 0
+1442 1B16 0 CODE 0
 1343 1C37 0 CODE 0
 1347 1C38 0 CODE 0
 1351 1C3A 0 CODE 0
@@ -1793,32 +1794,32 @@ timing.c
 22 1BDC 0 CODE 0
 20 1BE0 0 CODE 0
 bme280_i2c.c
-16 1A2C 0 CODE 0
-18 1A2C 0 CODE 0
-19 1A2F 0 CODE 0
-20 1A31 0 CODE 0
-21 1A34 0 CODE 0
-23 1A36 0 CODE 0
-24 1A39 0 CODE 0
-25 1A3B 0 CODE 0
-26 1A3C 0 CODE 0
-28 1A3E 0 CODE 0
-29 1A3F 0 CODE 0
+16 1A07 0 CODE 0
+18 1A07 0 CODE 0
+19 1A0A 0 CODE 0
+20 1A0C 0 CODE 0
+21 1A0F 0 CODE 0
+23 1A11 0 CODE 0
+24 1A14 0 CODE 0
+25 1A16 0 CODE 0
+26 1A17 0 CODE 0
+28 1A19 0 CODE 0
+29 1A1A 0 CODE 0
 mcc_generated_files/interrupt_manager.c
 52 4 0 CODE 0
 55 6 0 CODE 0
 57 9 0 CODE 0
 63 B 0 CODE 0
 mcc_generated_files/tmr0.c
-108 1A1C 0 CODE 0
-112 1A1C 0 CODE 0
-114 1A1D 0 CODE 0
-116 1A21 0 CODE 0
-118 1A26 0 CODE 0
-122 1A2B 0 CODE 0
+108 19F7 0 CODE 0
+112 19F7 0 CODE 0
+114 19F8 0 CODE 0
+116 19FC 0 CODE 0
+118 1A01 0 CODE 0
+122 1A06 0 CODE 0
 129 3 0 CODE 0
 132 3 0 CODE 0
 timing.c
-6 19F0 0 CODE 0
-8 19F0 0 CODE 0
-9 19F9 0 CODE 0
+6 19D7 0 CODE 0
+8 19D7 0 CODE 0
+9 19E0 0 CODE 0
