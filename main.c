@@ -11,7 +11,7 @@
 // in VS C# but mostly because I'm too lazy to split the project into more files
 #define MISC
 #define RADIO_TRANSMISSION
-#define GPS_MODULE
+//#define GPS_MODULE
 #define UBX
 #define BME280_SENSOR
 
@@ -165,6 +165,23 @@ void IntToString(int n, char* dest)
     {
         dest[i++] = '-';
     }
+    dest[i] = '\0';
+    /// Reverse the string so things are flipped the right way round
+    ReverseString(dest);
+}
+
+/// Warning, unsafe! Destination string MUST have >= 12 bytes allocated
+/// to allow maximum 32-bit integer length with a '-' sign.
+void UIntToString(uint32_t n, char* dest)
+{
+    int i = 0;
+    /// Get digits in reverse order
+    do {
+        /// Set the current digit in the string to the ASCII equivalent of 
+        /// the remainder of n / 10.
+        dest[i++] = n % 10 + '0';
+        /// Shift all the digits to the right to get the next digit.
+    } while ((n /= 10) > 0);
     dest[i] = '\0';
     /// Reverse the string so things are flipped the right way round
     ReverseString(dest);
@@ -677,7 +694,7 @@ void main(void)
 #ifdef RADIO_TRANSMISSION
             ClearString(messages[0]);
             ClearString(messages[1]);
-#ifdef GPS_MODULE
+//#ifdef GPS_MODULE
             char convertedNumber[16] = {'\0'};
             /// Add sensor data
             IntToString(sensor_data.temperature, convertedNumber);
@@ -685,8 +702,12 @@ void main(void)
             index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);
             index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
             ClearString(convertedNumber);
-            IntToString(sensor_data.pressure, convertedNumber);
+            UIntToString(sensor_data.pressure, convertedNumber);
             index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);    
+            index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
+            ClearString(convertedNumber);
+            UIntToString(sensor_data.humidity, convertedNumber);
+            index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);
             int end = index;
 
             /// Add the call sign and id.
@@ -706,7 +727,7 @@ void main(void)
             index = Insert(messages[1], '\n', index, MAX_MESSAGE_LENGTH);
             
             id++;
-#endif
+//#endif
             TX_LED_SetHigh();
             TransmitString(messages[0]);
             TransmitString(messages[1]);

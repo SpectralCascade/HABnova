@@ -743,10 +743,10 @@ int8_t bme280_compensate_data(uint8_t sensor_comp,
         {
 
 
+            comp_data->humidity = compensate_humidity(uncomp_data, calib_data);
 
 
 
-            comp_data->humidity = 0xFFFF;
 
         }
     }
@@ -1015,41 +1015,44 @@ static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_da
 
     return temperature;
 }
-
-
-
-
-
-
-
+# 1209 "BME280_driver/bme280.c"
 static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
                                     const struct bme280_calib_data *calib_data)
 {
-    int64_t var1;
-    int64_t var2;
-    int64_t var3;
-    int64_t var4;
+    int32_t var1;
+    int32_t var2;
+    int32_t var3;
+    int32_t var4;
+    uint32_t var5;
     uint32_t pressure;
-    uint32_t pressure_min = 3000000;
-    uint32_t pressure_max = 11000000;
+    uint32_t pressure_min = 30000;
+    uint32_t pressure_max = 110000;
 
-    var1 = ((int64_t)calib_data->t_fine) - 128000;
-    var2 = var1 * var1 * (int64_t)calib_data->dig_P6;
-    var2 = var2 + ((var1 * (int64_t)calib_data->dig_P5) * 131072);
-    var2 = var2 + (((int64_t)calib_data->dig_P4) * 34359738368);
-    var1 = ((var1 * var1 * (int64_t)calib_data->dig_P3) / 256) + ((var1 * ((int64_t)calib_data->dig_P2) * 4096));
-    var3 = ((int64_t)1) * 140737488355328;
-    var1 = (var3 + var1) * ((int64_t)calib_data->dig_P1) / 8589934592;
+    var1 = (((int32_t)calib_data->t_fine) / 2) - (int32_t)64000;
+    var2 = (((var1 / 4) * (var1 / 4)) / 2048) * ((int32_t)calib_data->dig_P6);
+    var2 = var2 + ((var1 * ((int32_t)calib_data->dig_P5)) * 2);
+    var2 = (var2 / 4) + (((int32_t)calib_data->dig_P4) * 65536);
+    var3 = (calib_data->dig_P3 * (((var1 / 4) * (var1 / 4)) / 8192)) / 8;
+    var4 = (((int32_t)calib_data->dig_P2) * var1) / 2;
+    var1 = (var3 + var4) / 262144;
+    var1 = (((32768 + var1)) * ((int32_t)calib_data->dig_P1)) / 32768;
 
 
-    if (var1 != 0)
+    if (var1)
     {
-        var4 = 1048576 - uncomp_data->pressure;
-        var4 = (((var4 * 2147483648LL) - var2) * 3125) / var1;
-        var1 = (((int64_t)calib_data->dig_P9) * (var4 / 8192) * (var4 / 8192)) / 33554432;
-        var2 = (((int64_t)calib_data->dig_P8) * var4) / 524288;
-        var4 = ((var4 + var1 + var2) / 256) + (((int64_t)calib_data->dig_P7) * 16);
-        pressure = (uint32_t)(((var4 / 2) * 100) / 128);
+        var5 = (uint32_t)((uint32_t)1048576) - uncomp_data->pressure;
+        pressure = ((uint32_t)(var5 - (uint32_t)(var2 / 4096))) * 3125;
+        if (pressure < 0x80000000)
+        {
+            pressure = (pressure << 1) / ((uint32_t)var1);
+        }
+        else
+        {
+            pressure = (pressure / (uint32_t)var1) * 2;
+        }
+        var1 = (((int32_t)calib_data->dig_P9) * ((int32_t)(((pressure / 8) * (pressure / 8)) / 8192))) / 4096;
+        var2 = (((int32_t)(pressure / 4)) * ((int32_t)calib_data->dig_P8)) / 8192;
+        pressure = (uint32_t)((int32_t)pressure + ((var1 + var2 + calib_data->dig_P7) / 16));
         if (pressure < pressure_min)
         {
             pressure = pressure_min;
@@ -1066,7 +1069,12 @@ static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data
 
     return pressure;
 }
-# 1268 "BME280_driver/bme280.c"
+
+
+
+
+
+
 static uint32_t compensate_humidity(const struct bme280_uncomp_data *uncomp_data,
                                     const struct bme280_calib_data *calib_data)
 {

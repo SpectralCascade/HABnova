@@ -17500,6 +17500,23 @@ void IntToString(int n, char* dest)
 
 
 
+void UIntToString(uint32_t n, char* dest)
+{
+    int i = 0;
+
+    do {
+
+
+        dest[i++] = n % 10 + '0';
+
+    } while ((n /= 10) > 0);
+    dest[i] = '\0';
+
+    ReverseString(dest);
+}
+
+
+
 void FloatToString(char* dest, float value, int places) {
     int fts_digit;
     float fts_tens = 0.1;
@@ -17564,354 +17581,13 @@ void FloatToString(char* dest, float value, int places) {
 
     dest[fts_index++] = '\0';
 }
-# 257 "main.c"
+# 274 "main.c"
 char message_start[70];
 char message_end[70 + 3];
 
 
 char* messages[2] = {message_start, message_end};
-
-
-
-
-void WriteGPS(char* message)
-{
-    for (int i = 0, counti = strlen(message); i <= counti; i++)
-    {
-        EUSART_Write((uint8_t)message[i]);
-    }
-}
-
-
-
-
-uint8_t setNavFlightMode[] = {
-
-    0xB5, 0x62,
-
-    0x06,
-
-    0x24,
-
-    0x24, 0x00,
-
-    0xFF, 0xFF, 0x06, 0x03, 0x00, 0x00, 0x00, 0x00, 0x10, 0x27, 0x00, 0x00,
-    0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00, 0x64, 0x00, 0x2C, 0x01, 0x00, 0x00,
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-
-    0x16, 0xDC
-};
-
-
-size_t GetLengthUBX(uint8_t* data)
-{
-    return (short)(8 + (short)((short)data[4] + (short)(data[5] << 8)));
-}
-
-
-void GPS_SendUBX(uint8_t* data)
-{
-    for (int i = 0, length = GetLengthUBX(data); i < length; i++)
-    {
-        EUSART_Write(data[i]);
-    }
-}
-
-
-
-
-
-_Bool GPS_HasAcknowledged(uint8_t* data)
-{
-    uint8_t ackPacket[10];
-    unsigned long startTime = ticks;
-
-
-    ackPacket[0] = 0xB5;
-    ackPacket[1] = 0x62;
-    ackPacket[2] = 0x05;
-    ackPacket[3] = 0x01;
-    ackPacket[4] = 0x02;
-    ackPacket[5] = 0x00;
-    ackPacket[6] = data[2];
-    ackPacket[7] = data[3];
-    ackPacket[8] = 0;
-    ackPacket[9] = 0;
-
-
-    for (uint8_t i = 2; i < 8; i++)
-    {
-        ackPacket[8] = ackPacket[8] + ackPacket[i];
-        ackPacket[9] = ackPacket[9] + ackPacket[8];
-    }
-
-
-    uint8_t ackByte;
-
-
-    uint8_t ackByteID = 0;
-
-
-    while (1)
-    {
-
-
-        if (ackByteID > 9)
-        {
-
-
-            return 1;
-        }
-
-
-        if (ticks - startTime > 3000)
-        {
-            return 0;
-        }
-
-
-        if (EUSART_is_rx_ready())
-        {
-            ackByte = EUSART_Read();
-
-
-            if (ackByte == ackPacket[ackByteID]) {
-                ackByteID++;
-            }
-            else {
-                ackByteID = 0;
-
-            }
-
-        }
-    }
-
-    return 0;
-}
-
-_Bool gps_configured = 0;
-
-
-
-void SetupGPS()
-{
-    while (!gps_configured)
-    {
-        do { LATAbits.LATA5 = 0; } while(0);
-        GPS_SendUBX(setNavFlightMode);
-        gps_configured = GPS_HasAcknowledged(setNavFlightMode);
-
-        do { LATAbits.LATA5 = 1; } while(0);
-        _delay((unsigned long)((500)*(4000000/4000.0)));
-    }
-    gps_configured = 0;
-
-
-    WriteGPS("$PUBX,40,GLL,0,0,0,0*5C\r\n");
-    WriteGPS("$PUBX,40,GGA,0,0,0,0*5A\r\n");
-    WriteGPS("$PUBX,40,VTG,0,0,0,0*5E\r\n");
-    WriteGPS("$PUBX,40,GSV,0,0,0,0*59\r\n");
-    WriteGPS("$PUBX,40,GSA,0,0,0,0*4E\r\n");
-    WriteGPS("$PUBX,40,RMC,0,0,0,0*47\r\n");
-}
-
-enum FieldTypesPUBX {
-    PUBX_DATA_TYPE = 0,
-    PUBX_TIME = 2,
-    PUBX_LAT,
-    PUBX_NS,
-    PUBX_LONG,
-    PUBX_EW,
-    PUBX_ALT,
-    PUBX_NAVSTAT,
-    PUBX_HDOP,
-    PUBX_VDOP,
-    PUBX_SOG,
-    PUBX_COG,
-    PUBX_VVEL
-};
-
-
-
-void SafeSetByte(char* dest, int length, unsigned int index, char data)
-{
-    if (index < length - 1)
-    {
-        dest[index] = data;
-    }
-    else
-    {
-
-        dest[length - 1] = '\0';
-    }
-}
-# 460 "main.c"
-_Bool GetNavData()
-{
-    _Bool success = 0;
-
-    do { LATCbits.LATC5 = 1; } while(0);
-
-
-
-
-    unsigned long startTime = ticks;
-
-
-    int dataIndex = 0;
-
-    int dataFieldType = 0;
-
-    char byte;
-
-    char data_type[7] = {'\0'};
-
-    _Bool doParse = 0;
-
-    ClearString(messages[0]);
-    ClearString(messages[1]);
-
-    int index = 0;
-
-    int signInsertIndex = -1;
-
-
-    WriteGPS("$PUBX,00*33\r\n");
-
-    while (!success)
-    {
-
-        if (ticks - startTime > 3000)
-        {
-            break;
-        }
-
-
-        if (EUSART_is_rx_ready())
-        {
-            byte = EUSART_Read();
-# 523 "main.c"
-            _Bool skip = 1;
-            switch (byte)
-            {
-            case '$':
-                doParse = 1;
-                skip = 0;
-                dataIndex = 0;
-                break;
-            case ',':
-                if (dataFieldType == PUBX_DATA_TYPE)
-                {
-                    if (!FindString(data_type, strlen(data_type), "PUBX", 4))
-                    {
-                        doParse = 0;
-                        ClearString(data_type);
-                    }
-                    else
-                    {
-                        messages[0][0] = '$';
-                        messages[0][1] = '$';
-                        InsertString(messages[0], "TEST", 2, 70);
-                        index = strlen(messages[0]);
-                        messages[0][index] = ',';
-                        index++;
-                        char strId[12] = {'\0'};
-                        IntToString(id, strId);
-                        InsertString(messages[0], strId, index, 70);
-                        index = strlen(messages[0]);
-                    }
-                }
-                if (doParse)
-                {
-                    dataFieldType++;
-                    messages[dataFieldType > PUBX_ALT ? 1 : 0][index] = ',';
-                    index++;
-                }
-                dataIndex = 0;
-                break;
-            case '\n':
-                success = dataFieldType > 13;
-                break;
-            default:
-                skip = 0;
-                break;
-            }
-            if (!skip && doParse)
-            {
-                switch (dataFieldType)
-                {
-                case PUBX_DATA_TYPE:
-                    SafeSetByte(data_type, 7, dataIndex, byte);
-                    break;
-                case PUBX_TIME:
-                    if (dataIndex < 6)
-                    {
-                        if (dataIndex == 2 || dataIndex == 4)
-                        {
-                            messages[0][index] = ':';
-                            index++;
-                        }
-                        messages[0][index] = byte;
-                    }
-                    break;
-                case PUBX_LAT:
-                    if (dataIndex == 0)
-                    {
-                        signInsertIndex = index;
-                    }
-                    messages[0][index] = byte;
-                    break;
-                case PUBX_NS:
-                    if (byte != 'N')
-                    {
-                        Insert(messages[0], '-', signInsertIndex, 70);
-                    }
-                    break;
-                case PUBX_LONG:
-                    if (dataIndex == 0)
-                    {
-                        signInsertIndex = index;
-                    }
-                    messages[0][index] = byte;
-                    break;
-                case PUBX_EW:
-                    if (byte != 'E')
-                    {
-                        Insert(messages[0], '-', signInsertIndex, 70);
-                    }
-                    break;
-                case PUBX_ALT:
-                    messages[0][index] = byte;
-                    break;
-                case PUBX_HDOP:
-                    if (dataIndex == 0)
-                    {
-                        index = 0;
-                    }
-                case PUBX_VDOP:
-                case PUBX_NAVSTAT:
-                case PUBX_SOG:
-                case PUBX_COG:
-                case PUBX_VVEL:
-                    messages[1][index] = byte;
-                    break;
-                default:
-
-                    index--;
-                    break;
-                }
-                dataIndex++;
-                index++;
-            }
-
-        }
-    }
-
-    return success;
-}
-
-
-
+# 661 "main.c"
 char checksum[6] = {'\0'};
 
 void main(void)
@@ -17936,9 +17612,9 @@ void main(void)
         if (
 
 
-                1
 
 
+            1
 
         )
         {
@@ -17956,7 +17632,11 @@ void main(void)
             index = InsertString(messages[1], convertedNumber, index, 70);
             index = Insert(messages[1], ',', index, 70);
             ClearString(convertedNumber);
-            IntToString(sensor_data.pressure, convertedNumber);
+            UIntToString(sensor_data.pressure, convertedNumber);
+            index = InsertString(messages[1], convertedNumber, index, 70);
+            index = Insert(messages[1], ',', index, 70);
+            ClearString(convertedNumber);
+            UIntToString(sensor_data.humidity, convertedNumber);
             index = InsertString(messages[1], convertedNumber, index, 70);
             int end = index;
 

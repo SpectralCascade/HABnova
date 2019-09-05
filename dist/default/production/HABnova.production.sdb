@@ -8,23 +8,7 @@
 BME280_SPI_INTF 0
 BME280_I2C_INTF 1
 ]
-"532 C:\Users\2013b\Git\HABnova\main.c
-[e E10052 FieldTypesPUBX `uc
-PUBX_DATA_TYPE 0
-PUBX_TIME 2
-PUBX_LAT 3
-PUBX_NS 4
-PUBX_LONG 5
-PUBX_EW 6
-PUBX_ALT 7
-PUBX_NAVSTAT 8
-PUBX_HDOP 9
-PUBX_VDOP 10
-PUBX_SOG 11
-PUBX_COG 12
-PUBX_VVEL 13
-]
-"676
+"693 C:\Users\2013b\Git\HABnova\main.c
 [e E9655 bme280_intf `uc
 BME280_SPI_INTF 0
 BME280_I2C_INTF 1
@@ -86,8 +70,10 @@ BME280_I2C_INTF 1
 [v _reload_device_settings reload_device_settings `(c  1 s 1 reload_device_settings ]
 "1126
 [v _compensate_temperature compensate_temperature `(l  1 s 4 compensate_temperature ]
-"1159
+"1209
 [v _compensate_pressure compensate_pressure `(ul  1 s 4 compensate_pressure ]
+"1268
+[v _compensate_humidity compensate_humidity `(ul  1 s 4 compensate_humidity ]
 "1307
 [v _get_calib_data get_calib_data `(c  1 s 1 get_calib_data ]
 "1343
@@ -118,10 +104,10 @@ BME280_I2C_INTF 1
 [v _WriteEnvSensor WriteEnvSensor `(c  1 e 1 0 ]
 "4 C:\Users\2013b\Git\HABnova\debug.c
 [v _DebugAlert DebugAlert `(v  1 e 1 0 ]
+"5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
-"7 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-[v ___aodiv __aodiv `(o  1 e 8 0 ]
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\awmod.c
@@ -130,6 +116,8 @@ BME280_I2C_INTF 1
 [v ___flge __flge `(b  1 e 0 0 ]
 "43 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
+"5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
 "10 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "242
@@ -142,16 +130,12 @@ BME280_I2C_INTF 1
 [v _strlen strlen `(ui  1 e 2 0 ]
 "15 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"91 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
-[v ___omul __omul `(uo  1 e 8 0 ]
 "4 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "10 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "25 C:\Users\2013b\Git\HABnova\main.c
 [v _ClearString ClearString `(v  1 e 1 0 ]
-"34
-[v _FindString FindString `(a  1 e 1 0 ]
 "55
 [v _Insert Insert `(i  1 e 2 0 ]
 "80
@@ -162,26 +146,12 @@ BME280_I2C_INTF 1
 [v _UIntToHexString UIntToHexString `(v  1 e 1 0 ]
 "148
 [v _IntToString IntToString `(v  1 e 1 0 ]
-"266
-[v _WriteGPS WriteGPS `(v  1 e 1 0 ]
-"295
-[v _GetLengthUBX GetLengthUBX `(ui  1 e 2 0 ]
-"301
-[v _GPS_SendUBX GPS_SendUBX `(v  1 e 1 0 ]
-"313
-[v _GPS_HasAcknowledged GPS_HasAcknowledged `(a  1 e 1 0 ]
-"425
-[v _SafeSetByte SafeSetByte `(v  1 e 1 0 ]
-"646
+"175
+[v _UIntToString UIntToString `(v  1 e 1 0 ]
+"663
 [v _main main `(v  1 e 1 0 ]
 "56 C:\Users\2013b\Git\HABnova\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
-"83
-[v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
-"93
-[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
-"111
-[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
 "52 C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 "50 C:\Users\2013b\Git\HABnova\mcc_generated_files/mcc.c
@@ -219,7 +189,7 @@ BME280_I2C_INTF 1
 [s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
 [v _EnvSensor EnvSensor `S54  1 e 51 0 ]
-[s S1082 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S1089 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -229,14 +199,14 @@ BME280_I2C_INTF 1
 `uc 1 GIE 1 0 :1:7 
 ]
 "374 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
-[s S1091 . 1 `uc 1 . 1 0 :2:0 
+[s S1098 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S1096 . 1 `S1082 1 . 1 0 `S1091 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1096  1 e 1 @11 ]
-[s S985 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S1103 . 1 `S1089 1 . 1 0 `S1098 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1103  1 e 1 @11 ]
+[s S992 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -246,8 +216,8 @@ BME280_I2C_INTF 1
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "597
-[u S994 . 1 `S985 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES994  1 e 1 @16 ]
+[u S1001 . 1 `S992 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1001  1 e 1 @16 ]
 "868
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
 "1614
@@ -258,7 +228,7 @@ BME280_I2C_INTF 1
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
 "2053
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
-[s S932 . 1 `uc 1 PS 1 0 :3:0 
+[s S939 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 TMR0SE 1 0 :1:4 
 `uc 1 TMR0CS 1 0 :1:5 
@@ -266,22 +236,22 @@ BME280_I2C_INTF 1
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "2076
-[s S939 . 1 `uc 1 PS0 1 0 :1:0 
+[s S946 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S946 . 1 `S932 1 . 1 0 `S939 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES946  1 e 1 @149 ]
+[u S953 . 1 `S939 1 . 1 0 `S946 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES953  1 e 1 @149 ]
 "2198
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
 "2256
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2625
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1191 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1306 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -289,13 +259,13 @@ BME280_I2C_INTF 1
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2640
-[u S1198 . 1 `S1191 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1198  1 e 1 @268 ]
+[u S1313 . 1 `S1306 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1313  1 e 1 @268 ]
 "2675
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2714
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S1214 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1714 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -305,8 +275,8 @@ BME280_I2C_INTF 1
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2731
-[u S1223 . 1 `S1214 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1223  1 e 1 @270 ]
+[u S1723 . 1 `S1714 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1723  1 e 1 @270 ]
 "3050
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3325
@@ -339,23 +309,23 @@ BME280_I2C_INTF 1
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
 "5570
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S1535 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S1442 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "5603
-[s S1541 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1448 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S1546 . 1 `S1535 1 . 1 0 `S1541 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES1546  1 e 1 @533 ]
+[u S1453 . 1 `S1442 1 . 1 0 `S1448 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES1453  1 e 1 @533 ]
 "5840
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
-[s S1583 . 1 `uc 1 SEN 1 0 :1:0 
+[s S1490 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -365,8 +335,8 @@ BME280_I2C_INTF 1
 `uc 1 GCEN 1 0 :1:7 
 ]
 "5862
-[u S1592 . 1 `S1583 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES1592  1 e 1 @534 ]
+[u S1499 . 1 `S1490 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES1499  1 e 1 @534 ]
 "6084
 [v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
 "6129
@@ -393,13 +363,13 @@ BME280_I2C_INTF 1
 [v _RB7PPS RB7PPS `VEuc  1 e 1 @3743 ]
 "22 C:\Users\2013b\Git\HABnova\main.c
 [v _id id `i  1 e 2 0 ]
-"257
+"274
 [v _message_start message_start `[70]uc  1 e 70 0 ]
-"258
+"275
 [v _message_end message_end `[73]uc  1 e 73 0 ]
-"261
-[v _messages messages `[2]*.7uc  1 e 2 0 ]
-"644
+"278
+[v _messages messages `[2]*.39uc  1 e 4 0 ]
+"661
 [v _checksum checksum `[6]uc  1 e 6 0 ]
 "58 C:\Users\2013b\Git\HABnova\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
@@ -409,48 +379,46 @@ BME280_I2C_INTF 1
 [v _ticks ticks `ul  1 e 4 0 ]
 "27
 [v ___g_timeout_start __g_timeout_start `ul  1 e 4 0 ]
-"646 C:\Users\2013b\Git\HABnova\main.c
+"663 C:\Users\2013b\Git\HABnova\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"722
-[v main@i i `i  1 a 2 40 ]
-"681
-[v main@convertedNumber convertedNumber `[16]uc  1 a 16 22 ]
+"743
+[v main@i i `i  1 a 2 18 ]
+"698
+[v main@convertedNumber convertedNumber `[16]uc  1 a 16 0 ]
 [s S155 bme280_data 12 `ul 1 pressure 4 0 `l 1 temperature 4 4 `ul 1 humidity 4 8 ]
-"675
-[v main@sensor_data sensor_data `S155  1 a 12 42 ]
-"684
-[v main@index index `i  1 a 2 54 ]
-"690
-[v main@end end `i  1 a 2 38 ]
-"727
+"692
+[v main@sensor_data sensor_data `S155  1 a 12 20 ]
+"701
+[v main@index index `i  1 a 2 32 ]
+"711
+[v main@end end `i  1 a 2 16 ]
+"748
 } 0
 "21 C:\Users\2013b\Git\HABnova\rtty.c
 [v _crc16 crc16 `(us  1 e 2 0 ]
 {
-[v crc16@data data `*.5*.7uc  1 a 1 wreg ]
+[v crc16@data data `*.5*.39uc  1 a 1 wreg ]
 "24
-[v crc16@i i `i  1 a 2 7 ]
+[v crc16@i i `i  1 a 2 8 ]
 "23
-[v crc16@crc crc `us  1 a 2 4 ]
+[v crc16@crc crc `us  1 a 2 6 ]
 "21
-[v crc16@data data `*.5*.7uc  1 a 1 wreg ]
-[v crc16@segments segments `i  1 p 2 0 ]
+[v crc16@data data `*.5*.39uc  1 a 1 wreg ]
+[v crc16@segments segments `i  1 p 2 1 ]
 "23
-[v crc16@data data `*.5*.7uc  1 a 1 6 ]
+[v crc16@data data `*.5*.39uc  1 a 1 5 ]
 "29
 } 0
 "10
 [v _crc16_update crc16_update `(us  1 e 2 0 ]
 {
-[v crc16_update@pData pData `*.7uc  1 a 1 wreg ]
 "12
-[v crc16_update@i i `uc  1 a 1 13 ]
+[v crc16_update@i i `uc  1 a 1 0 ]
 "10
-[v crc16_update@pData pData `*.7uc  1 a 1 wreg ]
-[v crc16_update@length length `i  1 p 2 5 ]
-[v crc16_update@wCrc wCrc `us  1 p 2 7 ]
-[v crc16_update@pData pData `*.7uc  1 a 1 12 ]
+[v crc16_update@pData pData `*.39uc  1 p 2 5 ]
+[v crc16_update@length length `i  1 p 2 7 ]
+[v crc16_update@wCrc wCrc `us  1 p 2 9 ]
 "19
 } 0
 "660 C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
@@ -459,28 +427,28 @@ BME280_I2C_INTF 1
 [v bme280_get_sensor_data@sensor_comp sensor_comp `uc  1 a 1 wreg ]
 [s S159 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
 "668
-[v bme280_get_sensor_data@uncomp_data uncomp_data `S159  1 a 12 10 ]
+[v bme280_get_sensor_data@uncomp_data uncomp_data `S159  1 a 12 55 ]
 "667
-[v bme280_get_sensor_data@reg_data reg_data `[8]uc  1 a 8 0 ]
+[v bme280_get_sensor_data@reg_data reg_data `[8]uc  1 a 8 45 ]
 "662
-[v bme280_get_sensor_data@rslt rslt `c  1 a 1 9 ]
+[v bme280_get_sensor_data@rslt rslt `c  1 a 1 54 ]
 "660
 [v bme280_get_sensor_data@sensor_comp sensor_comp `uc  1 a 1 wreg ]
 [s S155 bme280_data 12 `ul 1 pressure 4 0 `l 1 temperature 4 4 `ul 1 humidity 4 8 ]
-[v bme280_get_sensor_data@comp_data comp_data `*.5S155  1 p 1 74 ]
+[v bme280_get_sensor_data@comp_data comp_data `*.5S155  1 p 1 65 ]
 [s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
 [s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_get_sensor_data@dev dev `*.5S54  1 p 1 75 ]
+[v bme280_get_sensor_data@dev dev `*.5S54  1 p 1 66 ]
 "667
 [v bme280_get_sensor_data@F273 F273 `S159  1 s 12 F273 ]
-[v bme280_get_sensor_data@sensor_comp sensor_comp `uc  1 a 1 8 ]
+[v bme280_get_sensor_data@sensor_comp sensor_comp `uc  1 a 1 53 ]
 "693
 } 0
 "699
 [v _bme280_parse_sensor_data bme280_parse_sensor_data `(v  1 e 1 0 ]
 {
-[v bme280_parse_sensor_data@reg_data reg_data `*.5DCuc  1 a 1 wreg ]
+[v bme280_parse_sensor_data@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
 "704
 [v bme280_parse_sensor_data@data_msb data_msb `ul  1 a 4 8 ]
 "703
@@ -488,11 +456,11 @@ BME280_I2C_INTF 1
 "702
 [v bme280_parse_sensor_data@data_xlsb data_xlsb `ul  1 a 4 0 ]
 "699
-[v bme280_parse_sensor_data@reg_data reg_data `*.5DCuc  1 a 1 wreg ]
+[v bme280_parse_sensor_data@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
 [s S159 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
-[v bme280_parse_sensor_data@uncomp_data uncomp_data `*.5S159  1 p 1 0 ]
+[v bme280_parse_sensor_data@uncomp_data uncomp_data `*.4S159  1 p 1 0 ]
 "707
-[v bme280_parse_sensor_data@reg_data reg_data `*.5DCuc  1 a 1 12 ]
+[v bme280_parse_sensor_data@reg_data reg_data `*.4DCuc  1 a 1 12 ]
 "722
 } 0
 "729
@@ -500,27 +468,27 @@ BME280_I2C_INTF 1
 {
 [v bme280_compensate_data@sensor_comp sensor_comp `uc  1 a 1 wreg ]
 "734
-[v bme280_compensate_data@rslt rslt `c  1 a 1 72 ]
+[v bme280_compensate_data@rslt rslt `c  1 a 1 63 ]
 "729
 [v bme280_compensate_data@sensor_comp sensor_comp `uc  1 a 1 wreg ]
 [s S159 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
 "730
-[v bme280_compensate_data@uncomp_data uncomp_data `*.5DCS159  1 p 1 68 ]
+[v bme280_compensate_data@uncomp_data uncomp_data `*.4DCS159  1 p 1 59 ]
 [s S155 bme280_data 12 `ul 1 pressure 4 0 `l 1 temperature 4 4 `ul 1 humidity 4 8 ]
 "731
-[v bme280_compensate_data@comp_data comp_data `*.5S155  1 p 1 69 ]
+[v bme280_compensate_data@comp_data comp_data `*.5S155  1 p 1 60 ]
 [s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
 "732
-[v bme280_compensate_data@calib_data calib_data `*.5S28  1 p 1 70 ]
+[v bme280_compensate_data@calib_data calib_data `*.5S28  1 p 1 61 ]
 "734
-[v bme280_compensate_data@sensor_comp sensor_comp `uc  1 a 1 73 ]
+[v bme280_compensate_data@sensor_comp sensor_comp `uc  1 a 1 64 ]
 "771
 } 0
 "1126
 [v _compensate_temperature compensate_temperature `(l  1 s 4 compensate_temperature ]
 {
 [s S159 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
-[v compensate_temperature@uncomp_data uncomp_data `*.5DCS159  1 a 1 wreg ]
+[v compensate_temperature@uncomp_data uncomp_data `*.4DCS159  1 a 1 wreg ]
 "1131
 [v compensate_temperature@temperature temperature `l  1 a 4 49 ]
 "1130
@@ -530,14 +498,69 @@ BME280_I2C_INTF 1
 "1133
 [v compensate_temperature@temperature_max temperature_max `l  1 a 4 36 ]
 "1126
-[v compensate_temperature@uncomp_data uncomp_data `*.5DCS159  1 a 1 wreg ]
+[v compensate_temperature@uncomp_data uncomp_data `*.4DCS159  1 a 1 wreg ]
 [s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
 "1127
 [v compensate_temperature@calib_data calib_data `*.5S28  1 p 1 14 ]
 "1133
 "1126
-[v compensate_temperature@uncomp_data uncomp_data `*.5DCS159  1 a 1 44 ]
+[v compensate_temperature@uncomp_data uncomp_data `*.4DCS159  1 a 1 44 ]
 "1151
+} 0
+"1209
+[v _compensate_pressure compensate_pressure `(ul  1 s 4 compensate_pressure ]
+{
+[s S159 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
+[v compensate_pressure@uncomp_data uncomp_data `*.4DCS159  1 a 1 wreg ]
+"1212
+[v compensate_pressure@var1 var1 `l  1 a 4 41 ]
+"1217
+[v compensate_pressure@pressure pressure `ul  1 a 4 37 ]
+"1213
+[v compensate_pressure@var2 var2 `l  1 a 4 33 ]
+"1219
+[v compensate_pressure@pressure_max pressure_max `ul  1 a 4 21 ]
+"1216
+[v compensate_pressure@var5 var5 `ul  1 a 4 8 ]
+"1215
+[v compensate_pressure@var4 var4 `l  1 a 4 4 ]
+"1214
+[v compensate_pressure@var3 var3 `l  1 a 4 0 ]
+"1209
+[v compensate_pressure@uncomp_data uncomp_data `*.4DCS159  1 a 1 wreg ]
+[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
+"1210
+[v compensate_pressure@calib_data calib_data `*.5DCS28  1 p 1 14 ]
+"1219
+"1209
+[v compensate_pressure@uncomp_data uncomp_data `*.4DCS159  1 a 1 20 ]
+"1261
+} 0
+"1268
+[v _compensate_humidity compensate_humidity `(ul  1 s 4 compensate_humidity ]
+{
+[s S159 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
+[v compensate_humidity@uncomp_data uncomp_data `*.4DCS159  1 a 1 wreg ]
+"1273
+[v compensate_humidity@var3 var3 `l  1 a 4 55 ]
+"1275
+[v compensate_humidity@var5 var5 `l  1 a 4 51 ]
+"1274
+[v compensate_humidity@var4 var4 `l  1 a 4 47 ]
+"1272
+[v compensate_humidity@var2 var2 `l  1 a 4 43 ]
+"1271
+[v compensate_humidity@var1 var1 `l  1 a 4 39 ]
+"1276
+[v compensate_humidity@humidity humidity `ul  1 a 4 35 ]
+"1268
+[v compensate_humidity@uncomp_data uncomp_data `*.4DCS159  1 a 1 wreg ]
+[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
+"1269
+[v compensate_humidity@calib_data calib_data `*.5DCS28  1 p 1 14 ]
+"1268
+[v compensate_humidity@uncomp_data uncomp_data `*.4DCS159  1 a 1 30 ]
+"1300
 } 0
 "15 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -562,77 +585,58 @@ BME280_I2C_INTF 1
 [v ___aldiv@dividend dividend `l  1 p 4 4 ]
 "41
 } 0
-"1159 C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
-[v _compensate_pressure compensate_pressure `(ul  1 s 4 compensate_pressure ]
+"175 C:\Users\2013b\Git\HABnova\main.c
+[v _UIntToString UIntToString `(v  1 e 1 0 ]
 {
-[s S159 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
-[v compensate_pressure@uncomp_data uncomp_data `*.5DCS159  1 a 1 wreg ]
-"1162
-[v compensate_pressure@var1 var1 `o  1 a 8 61 ]
-"1165
-[v compensate_pressure@var4 var4 `o  1 a 8 53 ]
-"1163
-[v compensate_pressure@var2 var2 `o  1 a 8 45 ]
-"1166
-[v compensate_pressure@pressure pressure `ul  1 a 4 41 ]
-"1168
-[v compensate_pressure@pressure_max pressure_max `ul  1 a 4 25 ]
-"1159
-[v compensate_pressure@uncomp_data uncomp_data `*.5DCS159  1 a 1 wreg ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-"1160
-[v compensate_pressure@calib_data calib_data `*.5DCS28  1 p 1 10 ]
-"1168
-"1159
-[v compensate_pressure@uncomp_data uncomp_data `*.5DCS159  1 a 1 24 ]
-"1202
+"177
+[v UIntToString@i i `i  1 a 2 16 ]
+"175
+[v UIntToString@n n `ul  1 p 4 9 ]
+[v UIntToString@dest dest `*.5uc  1 p 1 13 ]
+"188
 } 0
-"91 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\Umul64.c
-[v ___omul __omul `(uo  1 e 8 0 ]
+"5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
 {
-"93
-[v ___omul@product product `uo  1 a 8 1 ]
-"91
-[v ___omul@multiplier multiplier `uo  1 p 8 0 ]
-[v ___omul@multiplicand multiplicand `uo  1 p 8 8 ]
-"354
+"10
+[v ___llmod@counter counter `uc  1 a 1 9 ]
+"5
+[v ___llmod@divisor divisor `ul  1 p 4 0 ]
+[v ___llmod@dividend dividend `ul  1 p 4 4 ]
+"25
 } 0
-"7 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\aodiv.c
-[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
-"12
-[v ___aodiv@quotient quotient `o  1 a 8 34 ]
-"13
-[v ___aodiv@sign sign `uc  1 a 1 33 ]
-[v ___aodiv@counter counter `uc  1 a 1 32 ]
-"7
-[v ___aodiv@divisor divisor `o  1 p 8 16 ]
-[v ___aodiv@dividend dividend `o  1 p 8 24 ]
-"43
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 0 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
+"30
 } 0
 "106 C:\Users\2013b\Git\HABnova\main.c
 [v _UIntToHexString UIntToHexString `(v  1 e 1 0 ]
 {
 "112
-[v UIntToHexString@remainder remainder `ul  1 a 4 24 ]
+[v UIntToHexString@remainder remainder `ul  1 a 4 21 ]
 "108
-[v UIntToHexString@i i `ul  1 a 4 28 ]
+[v UIntToHexString@i i `ul  1 a 4 25 ]
 "106
-[v UIntToHexString@n n `ul  1 p 4 13 ]
-[v UIntToHexString@dest dest `*.5uc  1 p 1 17 ]
+[v UIntToHexString@n n `ul  1 p 4 10 ]
+[v UIntToHexString@dest dest `*.5uc  1 p 1 14 ]
 "123
 } 0
 "73 C:\Users\2013b\Git\HABnova\rtty.c
 [v _TransmitString TransmitString `(v  1 e 1 0 ]
 {
-[v TransmitString@message message `*.7uc  1 a 1 wreg ]
 "78
-[v TransmitString@i i `i  1 a 2 9 ]
-[v TransmitString@counti counti `i  1 a 2 7 ]
+[v TransmitString@i i `i  1 a 2 11 ]
+[v TransmitString@counti counti `i  1 a 2 9 ]
 "73
-[v TransmitString@message message `*.7uc  1 a 1 wreg ]
-"78
-[v TransmitString@message message `*.7uc  1 a 1 11 ]
+[v TransmitString@message message `*.39uc  1 p 2 6 ]
 "85
 } 0
 "51
@@ -685,12 +689,12 @@ BME280_I2C_INTF 1
 [v _IntToString IntToString `(v  1 e 1 0 ]
 {
 "150
-[v IntToString@i i `i  1 a 2 18 ]
+[v IntToString@i i `i  1 a 2 12 ]
 "151
-[v IntToString@sign sign `a  1 a 1 17 ]
+[v IntToString@sign sign `a  1 a 1 11 ]
 "148
-[v IntToString@n n `i  1 p 2 13 ]
-[v IntToString@dest dest `*.39uc  1 p 2 15 ]
+[v IntToString@n n `i  1 p 2 11 ]
+[v IntToString@dest dest `*.5uc  1 p 1 13 ]
 "171
 } 0
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\awmod.c
@@ -707,17 +711,20 @@ BME280_I2C_INTF 1
 "93 C:\Users\2013b\Git\HABnova\main.c
 [v _ReverseString ReverseString `(v  1 e 1 0 ]
 {
+[v ReverseString@str str `*.5uc  1 a 1 wreg ]
 "99
-[v ReverseString@opposite opposite `*.39uc  1 a 2 7 ]
+[v ReverseString@opposite opposite `*.5uc  1 a 1 3 ]
 "98
-[v ReverseString@temp temp `uc  1 a 1 6 ]
+[v ReverseString@temp temp `uc  1 a 1 2 ]
 "96
-[v ReverseString@i i `i  1 a 2 11 ]
-[v ReverseString@halfway halfway `i  1 a 2 4 ]
+[v ReverseString@i i `i  1 a 2 6 ]
+[v ReverseString@halfway halfway `i  1 a 2 0 ]
 "95
-[v ReverseString@counti counti `i  1 a 2 9 ]
+[v ReverseString@counti counti `i  1 a 2 4 ]
 "93
-[v ReverseString@str str `*.39uc  1 p 2 9 ]
+[v ReverseString@str str `*.5uc  1 a 1 wreg ]
+"95
+[v ReverseString@str str `*.5uc  1 a 1 8 ]
 "104
 } 0
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\awdiv.c
@@ -736,33 +743,28 @@ BME280_I2C_INTF 1
 "80 C:\Users\2013b\Git\HABnova\main.c
 [v _InsertString InsertString `(i  1 e 2 0 ]
 {
-[v InsertString@dest dest `*.7uc  1 a 1 wreg ]
 "82
-[v InsertString@i i `i  1 a 2 8 ]
-[v InsertString@counti counti `i  1 a 2 6 ]
+[v InsertString@i i `i  1 a 2 10 ]
+[v InsertString@counti counti `i  1 a 2 8 ]
 "80
-[v InsertString@dest dest `*.7uc  1 a 1 wreg ]
-[v InsertString@src src `*.26uc  1 p 2 0 ]
-[v InsertString@index index `i  1 p 2 2 ]
-[v InsertString@destLimit destLimit `i  1 p 2 4 ]
-"82
-[v InsertString@dest dest `*.7uc  1 a 1 10 ]
+[v InsertString@dest dest `*.39uc  1 p 2 0 ]
+[v InsertString@src src `*.26uc  1 p 2 2 ]
+[v InsertString@index index `i  1 p 2 4 ]
+[v InsertString@destLimit destLimit `i  1 p 2 6 ]
 "88
 } 0
 "55
 [v _Insert Insert `(i  1 e 2 0 ]
 {
-[v Insert@dest dest `*.7uc  1 a 1 wreg ]
 "67
-[v Insert@current current `uc  1 a 1 8 ]
+[v Insert@current current `uc  1 a 1 10 ]
 "57
-[v Insert@temp temp `uc  1 a 1 7 ]
+[v Insert@temp temp `uc  1 a 1 9 ]
 "55
-[v Insert@dest dest `*.7uc  1 a 1 wreg ]
-[v Insert@src src `uc  1 p 1 0 ]
-[v Insert@index index `i  1 p 2 1 ]
-[v Insert@destLimit destLimit `i  1 p 2 3 ]
-[v Insert@dest dest `*.7uc  1 a 1 9 ]
+[v Insert@dest dest `*.39uc  1 p 2 0 ]
+[v Insert@src src `uc  1 p 1 2 ]
+[v Insert@index index `i  1 p 2 3 ]
+[v Insert@destLimit destLimit `i  1 p 2 5 ]
 "78
 } 0
 "11 C:\Users\2013b\Git\HABnova\timing.c
@@ -799,9 +801,9 @@ BME280_I2C_INTF 1
 [v _BME280_Init BME280_Init `(v  1 e 1 0 ]
 {
 "91
-[v BME280_Init@settings_sel settings_sel `uc  1 a 1 21 ]
+[v BME280_Init@settings_sel settings_sel `uc  1 a 1 22 ]
 "80
-[v BME280_Init@rslt rslt `c  1 a 1 22 ]
+[v BME280_Init@rslt rslt `c  1 a 1 23 ]
 "115
 } 0
 "511 C:\Users\2013b\Git\HABnova\BME280_driver/bme280.c
@@ -809,17 +811,17 @@ BME280_I2C_INTF 1
 {
 [v bme280_set_sensor_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
 "513
-[v bme280_set_sensor_settings@rslt rslt `c  1 a 1 18 ]
+[v bme280_set_sensor_settings@rslt rslt `c  1 a 1 19 ]
 "514
-[v bme280_set_sensor_settings@sensor_mode sensor_mode `uc  1 a 1 17 ]
+[v bme280_set_sensor_settings@sensor_mode sensor_mode `uc  1 a 1 18 ]
 "511
 [v bme280_set_sensor_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
 [s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
 [s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_set_sensor_settings@dev dev `*.5DCS54  1 p 1 13 ]
+[v bme280_set_sensor_settings@dev dev `*.5DCS54  1 p 1 14 ]
 "517
-[v bme280_set_sensor_settings@desired_settings desired_settings `uc  1 a 1 16 ]
+[v bme280_set_sensor_settings@desired_settings desired_settings `uc  1 a 1 17 ]
 "548
 } 0
 "1404
@@ -839,17 +841,17 @@ BME280_I2C_INTF 1
 {
 [v bme280_set_sensor_mode@sensor_mode sensor_mode `uc  1 a 1 wreg ]
 "580
-[v bme280_set_sensor_mode@rslt rslt `c  1 a 1 18 ]
+[v bme280_set_sensor_mode@rslt rslt `c  1 a 1 19 ]
 "581
-[v bme280_set_sensor_mode@last_set_mode last_set_mode `uc  1 a 1 17 ]
+[v bme280_set_sensor_mode@last_set_mode last_set_mode `uc  1 a 1 18 ]
 "578
 [v bme280_set_sensor_mode@sensor_mode sensor_mode `uc  1 a 1 wreg ]
 [s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
 [s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_set_sensor_mode@dev dev `*.5DCS54  1 p 1 13 ]
+[v bme280_set_sensor_mode@dev dev `*.5DCS54  1 p 1 14 ]
 "584
-[v bme280_set_sensor_mode@sensor_mode sensor_mode `uc  1 a 1 16 ]
+[v bme280_set_sensor_mode@sensor_mode sensor_mode `uc  1 a 1 17 ]
 "605
 } 0
 "941
@@ -880,16 +882,16 @@ BME280_I2C_INTF 1
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
 [v put_device_to_sleep@dev dev `*.5DCS54  1 a 1 wreg ]
 "971
-[v put_device_to_sleep@settings settings `S48  1 a 5 8 ]
+[v put_device_to_sleep@settings settings `S48  1 a 5 9 ]
 "970
-[v put_device_to_sleep@reg_data reg_data `[4]uc  1 a 4 2 ]
+[v put_device_to_sleep@reg_data reg_data `[4]uc  1 a 4 3 ]
 "969
-[v put_device_to_sleep@rslt rslt `c  1 a 1 6 ]
+[v put_device_to_sleep@rslt rslt `c  1 a 1 7 ]
 "967
 [v put_device_to_sleep@dev dev `*.5DCS54  1 a 1 wreg ]
 "973
 "967
-[v put_device_to_sleep@dev dev `*.5DCS54  1 a 1 7 ]
+[v put_device_to_sleep@dev dev `*.5DCS54  1 a 1 8 ]
 "985
 } 0
 "991
@@ -1059,7 +1061,7 @@ BME280_I2C_INTF 1
 [s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
 [s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_get_sensor_mode@dev dev `*.5DCS54  1 p 1 37 ]
+[v bme280_get_sensor_mode@dev dev `*.5DCS54  1 p 1 36 ]
 "615
 [v bme280_get_sensor_mode@sensor_mode sensor_mode `*.4uc  1 a 1 41 ]
 "626
@@ -1072,16 +1074,16 @@ BME280_I2C_INTF 1
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
 [v bme280_init@dev dev `*.5S54  1 a 1 wreg ]
 "359
-[v bme280_init@rslt rslt `c  1 a 1 72 ]
+[v bme280_init@rslt rslt `c  1 a 1 73 ]
 "363
-[v bme280_init@chip_id chip_id `uc  1 a 1 71 ]
+[v bme280_init@chip_id chip_id `uc  1 a 1 72 ]
 "362
-[v bme280_init@try_count try_count `uc  1 a 1 70 ]
+[v bme280_init@try_count try_count `uc  1 a 1 71 ]
 "357
 [v bme280_init@dev dev `*.5S54  1 a 1 wreg ]
 "362
 "357
-[v bme280_init@dev dev `*.5S54  1 a 1 73 ]
+[v bme280_init@dev dev `*.5S54  1 a 1 74 ]
 "404
 } 0
 "1307
@@ -1145,31 +1147,31 @@ BME280_I2C_INTF 1
 {
 [v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 wreg ]
 "411
-[v bme280_get_regs@rslt rslt `c  1 a 1 36 ]
+[v bme280_get_regs@rslt rslt `c  1 a 1 35 ]
 "409
 [v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 wreg ]
-[v bme280_get_regs@reg_data reg_data `*.39uc  1 p 2 28 ]
-[v bme280_get_regs@len len `us  1 p 2 30 ]
+[v bme280_get_regs@reg_data reg_data `*.4uc  1 p 1 27 ]
+[v bme280_get_regs@len len `us  1 p 2 28 ]
 [s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
 [s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_get_regs@dev dev `*.5DCS54  1 p 1 32 ]
+[v bme280_get_regs@dev dev `*.5DCS54  1 p 1 30 ]
 "414
-[v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 35 ]
+[v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 34 ]
 "436
 } 0
 "117 C:\Users\2013b\Git\HABnova\bme280_i2c.c
 [v _ReadEnvSensor ReadEnvSensor `(c  1 e 1 0 ]
 {
 "141
-[v ReadEnvSensor@i i `i  1 a 2 26 ]
+[v ReadEnvSensor@i i `i  1 a 2 25 ]
 "119
-[v ReadEnvSensor@rslt rslt `c  1 a 1 25 ]
+[v ReadEnvSensor@rslt rslt `c  1 a 1 24 ]
 "117
 [v ReadEnvSensor@dev_id dev_id `uc  1 p 1 15 ]
 [v ReadEnvSensor@reg_addr reg_addr `uc  1 p 1 16 ]
-[v ReadEnvSensor@reg_data reg_data `*.39uc  1 p 2 17 ]
-[v ReadEnvSensor@len len `us  1 p 2 19 ]
+[v ReadEnvSensor@reg_data reg_data `*.4uc  1 p 1 17 ]
+[v ReadEnvSensor@len len `us  1 p 2 18 ]
 "154
 } 0
 "44

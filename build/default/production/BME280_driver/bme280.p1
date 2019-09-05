@@ -74,6 +74,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "200
 [; ;BME280_driver/bme280.c: 200: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
 [v _compensate_pressure `(ul ~T0 @X0 0 sf2`*CS3`*CS1 ]
+"213
+[; ;BME280_driver/bme280.c: 213: static uint32_t compensate_humidity(const struct bme280_uncomp_data *uncomp_data,
+[v _compensate_humidity `(ul ~T0 @X0 0 sf2`*CS3`*CS1 ]
 "241
 [; ;BME280_driver/bme280.c: 241: static int8_t set_osr_humidity_settings(const struct bme280_settings *settings, const struct bme280_dev *dev);
 [v _set_osr_humidity_settings `(c ~T0 @X0 0 sf2`*CS4`*CS5 ]
@@ -101,9 +104,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "132
 [; ;BME280_driver/bme280.c: 132: static void parse_humidity_calib_data(const uint8_t *reg_data, struct bme280_dev *dev);
 [v _parse_humidity_calib_data `(v ~T0 @X0 0 sf2`*Cuc`*S5 ]
-[v F408 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
-[v F419 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
-[v F427 `(v ~T0 @X0 0 tf1`ul ]
+[v F409 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
+[v F420 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
+[v F428 `(v ~T0 @X0 0 tf1`ul ]
 "357 BME280_driver/bme280.c
 [; ;BME280_driver/bme280.c: 357: int8_t bme280_init(struct bme280_dev *dev)
 [v _bme280_init `(c ~T0 @X0 1 ef1`*S5 ]
@@ -1003,9 +1006,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "755
 [; ;BME280_driver/bme280.c: 755:         {
 {
-"761
-[; ;BME280_driver/bme280.c: 761:             comp_data->humidity = 0xFFFF;
-[e = . *U _comp_data 2 -> -> 65535 `ui `ul ]
+"758
+[; ;BME280_driver/bme280.c: 758:             comp_data->humidity = compensate_humidity(uncomp_data, calib_data);
+[e = . *U _comp_data 2 ( _compensate_humidity (2 , _uncomp_data -> _calib_data `*CS1 ]
 "763
 [; ;BME280_driver/bme280.c: 763:         }
 }
@@ -1678,141 +1681,170 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;BME280_driver/bme280.c: 1151: }
 [e :UE 86 ]
 }
-"1159
-[; ;BME280_driver/bme280.c: 1159: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
+"1209
+[; ;BME280_driver/bme280.c: 1209: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
 [v _compensate_pressure `(ul ~T0 @X0 1 sf2`*CS3`*CS1 ]
-"1161
-[; ;BME280_driver/bme280.c: 1161: {
+"1211
+[; ;BME280_driver/bme280.c: 1211: {
 {
 [e :U _compensate_pressure ]
-"1159
-[; ;BME280_driver/bme280.c: 1159: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
+"1209
+[; ;BME280_driver/bme280.c: 1209: static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
 [v _uncomp_data `*CS3 ~T0 @X0 1 r1 ]
-"1160
-[; ;BME280_driver/bme280.c: 1160:                                     const struct bme280_calib_data *calib_data)
+"1210
+[; ;BME280_driver/bme280.c: 1210:                                     const struct bme280_calib_data *calib_data)
 [v _calib_data `*CS1 ~T0 @X0 1 r2 ]
-"1161
-[; ;BME280_driver/bme280.c: 1161: {
+"1211
+[; ;BME280_driver/bme280.c: 1211: {
 [f ]
-"1162
-[; ;BME280_driver/bme280.c: 1162:     int64_t var1;
-[v _var1 `o ~T0 @X0 1 a ]
-"1163
-[; ;BME280_driver/bme280.c: 1163:     int64_t var2;
-[v _var2 `o ~T0 @X0 1 a ]
-"1164
-[; ;BME280_driver/bme280.c: 1164:     int64_t var3;
-[v _var3 `o ~T0 @X0 1 a ]
-"1165
-[; ;BME280_driver/bme280.c: 1165:     int64_t var4;
-[v _var4 `o ~T0 @X0 1 a ]
-"1166
-[; ;BME280_driver/bme280.c: 1166:     uint32_t pressure;
+"1212
+[; ;BME280_driver/bme280.c: 1212:     int32_t var1;
+[v _var1 `l ~T0 @X0 1 a ]
+"1213
+[; ;BME280_driver/bme280.c: 1213:     int32_t var2;
+[v _var2 `l ~T0 @X0 1 a ]
+"1214
+[; ;BME280_driver/bme280.c: 1214:     int32_t var3;
+[v _var3 `l ~T0 @X0 1 a ]
+"1215
+[; ;BME280_driver/bme280.c: 1215:     int32_t var4;
+[v _var4 `l ~T0 @X0 1 a ]
+"1216
+[; ;BME280_driver/bme280.c: 1216:     uint32_t var5;
+[v _var5 `ul ~T0 @X0 1 a ]
+"1217
+[; ;BME280_driver/bme280.c: 1217:     uint32_t pressure;
 [v _pressure `ul ~T0 @X0 1 a ]
-"1167
-[; ;BME280_driver/bme280.c: 1167:     uint32_t pressure_min = 3000000;
+"1218
+[; ;BME280_driver/bme280.c: 1218:     uint32_t pressure_min = 30000;
 [v _pressure_min `ul ~T0 @X0 1 a ]
-[e = _pressure_min -> -> 3000000 `l `ul ]
-"1168
-[; ;BME280_driver/bme280.c: 1168:     uint32_t pressure_max = 11000000;
+[e = _pressure_min -> -> -> 30000 `i `l `ul ]
+"1219
+[; ;BME280_driver/bme280.c: 1219:     uint32_t pressure_max = 110000;
 [v _pressure_max `ul ~T0 @X0 1 a ]
-[e = _pressure_max -> -> 11000000 `l `ul ]
-"1170
-[; ;BME280_driver/bme280.c: 1170:     var1 = ((int64_t)calib_data->t_fine) - 128000;
-[e = _var1 - -> . *U _calib_data 18 `o -> -> 128000 `l `o ]
-"1171
-[; ;BME280_driver/bme280.c: 1171:     var2 = var1 * var1 * (int64_t)calib_data->dig_P6;
-[e = _var2 * * _var1 _var1 -> . *U _calib_data 8 `o ]
-"1172
-[; ;BME280_driver/bme280.c: 1172:     var2 = var2 + ((var1 * (int64_t)calib_data->dig_P5) * 131072);
-[e = _var2 + _var2 * * _var1 -> . *U _calib_data 7 `o -> -> 131072 `l `o ]
-"1173
-[; ;BME280_driver/bme280.c: 1173:     var2 = var2 + (((int64_t)calib_data->dig_P4) * 34359738368);
-[e = _var2 + _var2 * -> . *U _calib_data 6 `o -> 34359738368 `o ]
-"1174
-[; ;BME280_driver/bme280.c: 1174:     var1 = ((var1 * var1 * (int64_t)calib_data->dig_P3) / 256) + ((var1 * ((int64_t)calib_data->dig_P2) * 4096));
-[e = _var1 + / * * _var1 _var1 -> . *U _calib_data 5 `o -> -> 256 `i `o * * _var1 -> . *U _calib_data 4 `o -> -> 4096 `i `o ]
-"1175
-[; ;BME280_driver/bme280.c: 1175:     var3 = ((int64_t)1) * 140737488355328;
-[e = _var3 * -> -> 1 `i `o -> 140737488355328 `o ]
-"1176
-[; ;BME280_driver/bme280.c: 1176:     var1 = (var3 + var1) * ((int64_t)calib_data->dig_P1) / 8589934592;
-[e = _var1 / * + _var3 _var1 -> . *U _calib_data 3 `o -> 8589934592 `o ]
-"1179
-[; ;BME280_driver/bme280.c: 1179:     if (var1 != 0)
-[e $ ! != _var1 -> -> 0 `i `o 91  ]
-"1180
-[; ;BME280_driver/bme280.c: 1180:     {
+[e = _pressure_max -> -> 110000 `l `ul ]
+"1221
+[; ;BME280_driver/bme280.c: 1221:     var1 = (((int32_t)calib_data->t_fine) / 2) - (int32_t)64000;
+[e = _var1 - / . *U _calib_data 18 -> -> 2 `i `l -> 64000 `l ]
+"1222
+[; ;BME280_driver/bme280.c: 1222:     var2 = (((var1 / 4) * (var1 / 4)) / 2048) * ((int32_t)calib_data->dig_P6);
+[e = _var2 * / * / _var1 -> -> 4 `i `l / _var1 -> -> 4 `i `l -> -> 2048 `i `l -> . *U _calib_data 8 `l ]
+"1223
+[; ;BME280_driver/bme280.c: 1223:     var2 = var2 + ((var1 * ((int32_t)calib_data->dig_P5)) * 2);
+[e = _var2 + _var2 * * _var1 -> . *U _calib_data 7 `l -> -> 2 `i `l ]
+"1224
+[; ;BME280_driver/bme280.c: 1224:     var2 = (var2 / 4) + (((int32_t)calib_data->dig_P4) * 65536);
+[e = _var2 + / _var2 -> -> 4 `i `l * -> . *U _calib_data 6 `l -> 65536 `l ]
+"1225
+[; ;BME280_driver/bme280.c: 1225:     var3 = (calib_data->dig_P3 * (((var1 / 4) * (var1 / 4)) / 8192)) / 8;
+[e = _var3 / * -> . *U _calib_data 5 `l / * / _var1 -> -> 4 `i `l / _var1 -> -> 4 `i `l -> -> 8192 `i `l -> -> 8 `i `l ]
+"1226
+[; ;BME280_driver/bme280.c: 1226:     var4 = (((int32_t)calib_data->dig_P2) * var1) / 2;
+[e = _var4 / * -> . *U _calib_data 4 `l _var1 -> -> 2 `i `l ]
+"1227
+[; ;BME280_driver/bme280.c: 1227:     var1 = (var3 + var4) / 262144;
+[e = _var1 / + _var3 _var4 -> 262144 `l ]
+"1228
+[; ;BME280_driver/bme280.c: 1228:     var1 = (((32768 + var1)) * ((int32_t)calib_data->dig_P1)) / 32768;
+[e = _var1 / * + -> 32768 `l _var1 -> . *U _calib_data 3 `l -> 32768 `l ]
+"1231
+[; ;BME280_driver/bme280.c: 1231:     if (var1)
+[e $ ! != _var1 -> -> 0 `i `l 91  ]
+"1232
+[; ;BME280_driver/bme280.c: 1232:     {
 {
-"1181
-[; ;BME280_driver/bme280.c: 1181:         var4 = 1048576 - uncomp_data->pressure;
-[e = _var4 -> - -> -> 1048576 `l `ul . *U _uncomp_data 0 `o ]
-"1182
-[; ;BME280_driver/bme280.c: 1182:         var4 = (((var4 * 2147483648LL) - var2) * 3125) / var1;
-[e = _var4 / * - * _var4 -> 2147483648 `o _var2 -> -> 3125 `i `o _var1 ]
-"1183
-[; ;BME280_driver/bme280.c: 1183:         var1 = (((int64_t)calib_data->dig_P9) * (var4 / 8192) * (var4 / 8192)) / 33554432;
-[e = _var1 / * * -> . *U _calib_data 11 `o / _var4 -> -> 8192 `i `o / _var4 -> -> 8192 `i `o -> -> 33554432 `l `o ]
-"1184
-[; ;BME280_driver/bme280.c: 1184:         var2 = (((int64_t)calib_data->dig_P8) * var4) / 524288;
-[e = _var2 / * -> . *U _calib_data 10 `o _var4 -> -> 524288 `l `o ]
-"1185
-[; ;BME280_driver/bme280.c: 1185:         var4 = ((var4 + var1 + var2) / 256) + (((int64_t)calib_data->dig_P7) * 16);
-[e = _var4 + / + + _var4 _var1 _var2 -> -> 256 `i `o * -> . *U _calib_data 9 `o -> -> 16 `i `o ]
-"1186
-[; ;BME280_driver/bme280.c: 1186:         pressure = (uint32_t)(((var4 / 2) * 100) / 128);
-[e = _pressure -> / * / _var4 -> -> 2 `i `o -> -> 100 `i `o -> -> 128 `i `o `ul ]
-"1187
-[; ;BME280_driver/bme280.c: 1187:         if (pressure < pressure_min)
-[e $ ! < _pressure _pressure_min 92  ]
-"1188
-[; ;BME280_driver/bme280.c: 1188:         {
+"1233
+[; ;BME280_driver/bme280.c: 1233:         var5 = (uint32_t)((uint32_t)1048576) - uncomp_data->pressure;
+[e = _var5 - -> -> 1048576 `l `ul . *U _uncomp_data 0 ]
+"1234
+[; ;BME280_driver/bme280.c: 1234:         pressure = ((uint32_t)(var5 - (uint32_t)(var2 / 4096))) * 3125;
+[e = _pressure * - _var5 -> / _var2 -> -> 4096 `i `l `ul -> -> -> 3125 `i `l `ul ]
+"1235
+[; ;BME280_driver/bme280.c: 1235:         if (pressure < 0x80000000)
+[e $ ! < _pressure -> 2147483648 `ul 92  ]
+"1236
+[; ;BME280_driver/bme280.c: 1236:         {
 {
-"1189
-[; ;BME280_driver/bme280.c: 1189:             pressure = pressure_min;
-[e = _pressure _pressure_min ]
-"1190
-[; ;BME280_driver/bme280.c: 1190:         }
+"1237
+[; ;BME280_driver/bme280.c: 1237:             pressure = (pressure << 1) / ((uint32_t)var1);
+[e = _pressure / << _pressure -> 1 `i -> _var1 `ul ]
+"1238
+[; ;BME280_driver/bme280.c: 1238:         }
 }
 [e $U 93  ]
-"1191
-[; ;BME280_driver/bme280.c: 1191:         else if (pressure > pressure_max)
+"1239
+[; ;BME280_driver/bme280.c: 1239:         else
 [e :U 92 ]
-[e $ ! > _pressure _pressure_max 94  ]
-"1192
-[; ;BME280_driver/bme280.c: 1192:         {
+"1240
+[; ;BME280_driver/bme280.c: 1240:         {
 {
-"1193
-[; ;BME280_driver/bme280.c: 1193:             pressure = pressure_max;
-[e = _pressure _pressure_max ]
-"1194
-[; ;BME280_driver/bme280.c: 1194:         }
+"1241
+[; ;BME280_driver/bme280.c: 1241:             pressure = (pressure / (uint32_t)var1) * 2;
+[e = _pressure * / _pressure -> _var1 `ul -> -> -> 2 `i `l `ul ]
+"1242
+[; ;BME280_driver/bme280.c: 1242:         }
 }
-[e :U 94 ]
 [e :U 93 ]
-"1195
-[; ;BME280_driver/bme280.c: 1195:     }
+"1243
+[; ;BME280_driver/bme280.c: 1243:         var1 = (((int32_t)calib_data->dig_P9) * ((int32_t)(((pressure / 8) * (pressure / 8)) / 8192))) / 4096;
+[e = _var1 / * -> . *U _calib_data 11 `l -> / * / _pressure -> -> -> 8 `i `l `ul / _pressure -> -> -> 8 `i `l `ul -> -> -> 8192 `i `l `ul `l -> -> 4096 `i `l ]
+"1244
+[; ;BME280_driver/bme280.c: 1244:         var2 = (((int32_t)(pressure / 4)) * ((int32_t)calib_data->dig_P8)) / 8192;
+[e = _var2 / * -> / _pressure -> -> -> 4 `i `l `ul `l -> . *U _calib_data 10 `l -> -> 8192 `i `l ]
+"1245
+[; ;BME280_driver/bme280.c: 1245:         pressure = (uint32_t)((int32_t)pressure + ((var1 + var2 + calib_data->dig_P7) / 16));
+[e = _pressure -> + -> _pressure `l / + + _var1 _var2 -> . *U _calib_data 9 `l -> -> 16 `i `l `ul ]
+"1246
+[; ;BME280_driver/bme280.c: 1246:         if (pressure < pressure_min)
+[e $ ! < _pressure _pressure_min 94  ]
+"1247
+[; ;BME280_driver/bme280.c: 1247:         {
+{
+"1248
+[; ;BME280_driver/bme280.c: 1248:             pressure = pressure_min;
+[e = _pressure _pressure_min ]
+"1249
+[; ;BME280_driver/bme280.c: 1249:         }
 }
 [e $U 95  ]
-"1196
-[; ;BME280_driver/bme280.c: 1196:     else
-[e :U 91 ]
-"1197
-[; ;BME280_driver/bme280.c: 1197:     {
+"1250
+[; ;BME280_driver/bme280.c: 1250:         else if (pressure > pressure_max)
+[e :U 94 ]
+[e $ ! > _pressure _pressure_max 96  ]
+"1251
+[; ;BME280_driver/bme280.c: 1251:         {
 {
-"1198
-[; ;BME280_driver/bme280.c: 1198:         pressure = pressure_min;
-[e = _pressure _pressure_min ]
-"1199
-[; ;BME280_driver/bme280.c: 1199:     }
+"1252
+[; ;BME280_driver/bme280.c: 1252:             pressure = pressure_max;
+[e = _pressure _pressure_max ]
+"1253
+[; ;BME280_driver/bme280.c: 1253:         }
 }
+[e :U 96 ]
 [e :U 95 ]
-"1201
-[; ;BME280_driver/bme280.c: 1201:     return pressure;
+"1254
+[; ;BME280_driver/bme280.c: 1254:     }
+}
+[e $U 97  ]
+"1255
+[; ;BME280_driver/bme280.c: 1255:     else
+[e :U 91 ]
+"1256
+[; ;BME280_driver/bme280.c: 1256:     {
+{
+"1257
+[; ;BME280_driver/bme280.c: 1257:         pressure = pressure_min;
+[e = _pressure _pressure_min ]
+"1258
+[; ;BME280_driver/bme280.c: 1258:     }
+}
+[e :U 97 ]
+"1260
+[; ;BME280_driver/bme280.c: 1260:     return pressure;
 [e ) _pressure ]
 [e $UE 90  ]
-"1202
-[; ;BME280_driver/bme280.c: 1202: }
+"1261
+[; ;BME280_driver/bme280.c: 1261: }
 [e :UE 90 ]
 }
 "1268
@@ -1900,7 +1932,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _humidity -> / _var5 -> -> 4096 `i `l `ul ]
 "1294
 [; ;BME280_driver/bme280.c: 1294:     if (humidity > humidity_max)
-[e $ ! > _humidity _humidity_max 97  ]
+[e $ ! > _humidity _humidity_max 99  ]
 "1295
 [; ;BME280_driver/bme280.c: 1295:     {
 {
@@ -1910,14 +1942,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1297
 [; ;BME280_driver/bme280.c: 1297:     }
 }
-[e :U 97 ]
+[e :U 99 ]
 "1299
 [; ;BME280_driver/bme280.c: 1299:     return humidity;
 [e ) _humidity ]
-[e $UE 96  ]
+[e $UE 98  ]
 "1300
 [; ;BME280_driver/bme280.c: 1300: }
-[e :UE 96 ]
+[e :UE 98 ]
 }
 "1307
 [; ;BME280_driver/bme280.c: 1307: static int8_t get_calib_data(struct bme280_dev *dev)
@@ -1939,8 +1971,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;BME280_driver/bme280.c: 1310:     uint8_t reg_addr = 0x88;
 [v _reg_addr `uc ~T0 @X0 1 a ]
 [e = _reg_addr -> -> 136 `i `uc ]
-[v F375 `uc ~T0 @X0 -> 26 `i s ]
-[i F375
+[v F376 `uc ~T0 @X0 -> 26 `i s ]
+[i F376
 :U ..
 "1313
 [; ;BME280_driver/bme280.c: 1313:     uint8_t calib_data[26] = { 0 };
@@ -1948,13 +1980,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _calib_data `uc ~T0 @X0 -> 26 `i a ]
-[e = _calib_data F375 ]
+[e = _calib_data F376 ]
 "1316
 [; ;BME280_driver/bme280.c: 1316:     rslt = bme280_get_regs(reg_addr, calib_data, 26, dev);
 [e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _calib_data -> -> 26 `i `us -> _dev `*CS5 ]
 "1317
 [; ;BME280_driver/bme280.c: 1317:     if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 99  ]
+[e $ ! == -> _rslt `i -> 0 `i 101  ]
 "1318
 [; ;BME280_driver/bme280.c: 1318:     {
 {
@@ -1969,7 +2001,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _rslt ( _bme280_get_regs (4 , , , _reg_addr &U _calib_data -> -> 7 `i `us -> _dev `*CS5 ]
 "1327
 [; ;BME280_driver/bme280.c: 1327:         if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 100  ]
+[e $ ! == -> _rslt `i -> 0 `i 102  ]
 "1328
 [; ;BME280_driver/bme280.c: 1328:         {
 {
@@ -1979,18 +2011,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1333
 [; ;BME280_driver/bme280.c: 1333:         }
 }
-[e :U 100 ]
+[e :U 102 ]
 "1334
 [; ;BME280_driver/bme280.c: 1334:     }
 }
-[e :U 99 ]
+[e :U 101 ]
 "1336
 [; ;BME280_driver/bme280.c: 1336:     return rslt;
 [e ) _rslt ]
-[e $UE 98  ]
+[e $UE 100  ]
 "1337
 [; ;BME280_driver/bme280.c: 1337: }
-[e :UE 98 ]
+[e :UE 100 ]
 }
 "1343
 [; ;BME280_driver/bme280.c: 1343: static void interleave_reg_addr(const uint8_t *reg_addr, uint8_t *temp_buff, const uint8_t *reg_data, uint8_t len)
@@ -2015,8 +2047,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;BME280_driver/bme280.c: 1347:     for (index = 1; index < len; index++)
 {
 [e = _index -> -> 1 `i `uc ]
-[e $U 105  ]
-[e :U 102 ]
+[e $U 107  ]
+[e :U 104 ]
 "1348
 [; ;BME280_driver/bme280.c: 1348:     {
 {
@@ -2030,13 +2062,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;BME280_driver/bme280.c: 1351:     }
 }
 [e ++ _index -> -> 1 `i `uc ]
+[e :U 107 ]
+[e $ < -> _index `i -> _len `i 104  ]
 [e :U 105 ]
-[e $ < -> _index `i -> _len `i 102  ]
-[e :U 103 ]
 }
 "1352
 [; ;BME280_driver/bme280.c: 1352: }
-[e :UE 101 ]
+[e :UE 103 ]
 }
 "1358
 [; ;BME280_driver/bme280.c: 1358: static void parse_temp_press_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
@@ -2097,7 +2129,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U _calib_data 12 *U + _reg_data * -> -> 25 `i `x -> -> # *U _reg_data `i `x ]
 "1375
 [; ;BME280_driver/bme280.c: 1375: }
-[e :UE 106 ]
+[e :UE 108 ]
 }
 "1381
 [; ;BME280_driver/bme280.c: 1381: static void parse_humidity_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
@@ -2158,7 +2190,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U _calib_data 17 -> *U + _reg_data * -> -> 6 `i `x -> -> # *U _reg_data `i `x `c ]
 "1398
 [; ;BME280_driver/bme280.c: 1398: }
-[e :UE 107 ]
+[e :UE 109 ]
 }
 "1404
 [; ;BME280_driver/bme280.c: 1404: static uint8_t are_settings_changed(uint8_t sub_settings, uint8_t desired_settings)
@@ -2180,7 +2212,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _settings_changed -> -> 0 `i `uc ]
 "1408
 [; ;BME280_driver/bme280.c: 1408:     if (sub_settings & desired_settings)
-[e $ ! != & -> _sub_settings `i -> _desired_settings `i -> 0 `i 109  ]
+[e $ ! != & -> _sub_settings `i -> _desired_settings `i -> 0 `i 111  ]
 "1409
 [; ;BME280_driver/bme280.c: 1409:     {
 {
@@ -2190,10 +2222,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1412
 [; ;BME280_driver/bme280.c: 1412:     }
 }
-[e $U 110  ]
+[e $U 112  ]
 "1413
 [; ;BME280_driver/bme280.c: 1413:     else
-[e :U 109 ]
+[e :U 111 ]
 "1414
 [; ;BME280_driver/bme280.c: 1414:     {
 {
@@ -2203,14 +2235,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1417
 [; ;BME280_driver/bme280.c: 1417:     }
 }
-[e :U 110 ]
+[e :U 112 ]
 "1419
 [; ;BME280_driver/bme280.c: 1419:     return settings_changed;
 [e ) _settings_changed ]
-[e $UE 108  ]
+[e $UE 110  ]
 "1420
 [; ;BME280_driver/bme280.c: 1420: }
-[e :UE 108 ]
+[e :UE 110 ]
 }
 "1426
 [; ;BME280_driver/bme280.c: 1426: static int8_t null_ptr_check(const struct bme280_dev *dev)
@@ -2230,7 +2262,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _rslt `c ~T0 @X0 1 a ]
 "1430
 [; ;BME280_driver/bme280.c: 1430:     if ((dev == ((void*)0)) || (dev->read == ((void*)0)) || (dev->write == ((void*)0)) || (dev->delay_ms == ((void*)0)))
-[e $ ! || || || == _dev -> -> -> 0 `i `*v `*CS5 == . *U _dev 3 -> -> -> 0 `i `*v `*F408 == . *U _dev 4 -> -> -> 0 `i `*v `*F419 == . *U _dev 5 -> -> -> 0 `i `*v `*F427 112  ]
+[e $ ! || || || == _dev -> -> -> 0 `i `*v `*CS5 == . *U _dev 3 -> -> -> 0 `i `*v `*F409 == . *U _dev 4 -> -> -> 0 `i `*v `*F420 == . *U _dev 5 -> -> -> 0 `i `*v `*F428 114  ]
 "1431
 [; ;BME280_driver/bme280.c: 1431:     {
 {
@@ -2240,10 +2272,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1434
 [; ;BME280_driver/bme280.c: 1434:     }
 }
-[e $U 113  ]
+[e $U 115  ]
 "1435
 [; ;BME280_driver/bme280.c: 1435:     else
-[e :U 112 ]
+[e :U 114 ]
 "1436
 [; ;BME280_driver/bme280.c: 1436:     {
 {
@@ -2253,12 +2285,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1439
 [; ;BME280_driver/bme280.c: 1439:     }
 }
-[e :U 113 ]
+[e :U 115 ]
 "1441
 [; ;BME280_driver/bme280.c: 1441:     return rslt;
 [e ) _rslt ]
-[e $UE 111  ]
+[e $UE 113  ]
 "1442
 [; ;BME280_driver/bme280.c: 1442: }
-[e :UE 111 ]
+[e :UE 113 ]
 }
