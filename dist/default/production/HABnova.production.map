@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=K:\Programs\MPLABX\XC8 Compiler\pic\dat\en_msgs.txt -cs \
   -h+dist/default/production\HABnova.production.sym \
   --cmf=dist/default/production\HABnova.production.cmf -z -Q16F1619 \
-  -oC:\Users\2013b\AppData\Local\Temp\s79s.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\2013b\AppData\Local\Temp\sbks.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/HABnova.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=02229h-023EFh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -31,7 +31,7 @@ Linker command line:
   -ppowerup=CODE -pcinit=CODE -pfunctab=ENTRY -ACONFIG=08007h-08009h \
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\2013b\AppData\Local\Temp\s79s.o \
+  C:\Users\2013b\AppData\Local\Temp\sbks.o \
   dist/default/production\HABnova.production.o 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 16F1619
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\2013b\AppData\Local\Temp\s79s.o
+C:\Users\2013b\AppData\Local\Temp\sbks.o
                 end_init                              D        D        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        3    1000E       0

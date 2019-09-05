@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Thu Sep 05 16:17:51 2019
+                                                                                               Thu Sep 05 17:08:39 2019
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9 
      1                           	processor	16F1619
@@ -6295,7 +6295,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6275  0B74  00F6               	movwf	ClearString@str+1
   6276  0B75  3188  2002  318A   	fcall	_ClearString
   6277                           
-  6278                           ;main.c: 705:             UIntToString(sensor_data.pressure, convertedNumber);
+  6278                           ;main.c: 706:             UIntToString(sensor_data.pressure, convertedNumber);
   6279  0B78  0022               	movlb	2	; select bank2
   6280  0B79  0837               	movf	(main@sensor_data+3)^(0+256),w
   6281  0B7A  0020               	movlb	0	; select bank0
@@ -6320,7 +6320,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6300  0B8D  00AD               	movwf	UIntToString@dest
   6301  0B8E  3191  2188  318A   	fcall	_UIntToString
   6302                           
-  6303                           ;main.c: 706:             index = InsertString(messages[1], convertedNumber, index, 70);
+  6303                           ;main.c: 707:             index = InsertString(messages[1], convertedNumber, index, 70);
   6304  0B91  0022               	movlb	2	; select bank2
   6305  0B92  0861               	movf	((low ((_messages| (0+256)+2))+1))^0,w
   6306  0B93  0020               	movlb	0	; select bank0
@@ -6354,7 +6354,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6334  0BB1  0022               	movlb	2	; select bank2
   6335  0BB2  00C0               	movwf	main@index^(0+256)
   6336                           
-  6337                           ;main.c: 707:             index = Insert(messages[1], ',', index, 70);
+  6337                           ;main.c: 708:             index = Insert(messages[1], ',', index, 70);
   6338  0BB3  0861               	movf	((low ((_messages| (0+256)+2))+1))^0,w
   6339  0BB4  00F1               	movwf	Insert@dest+1
   6340  0BB5  0860               	movf	(low ((_messages| (0+256)+2)))^0,w
@@ -6380,14 +6380,14 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6360  0BCB  0870               	movf	?_Insert,w
   6361  0BCC  00C0               	movwf	main@index^(0+256)
   6362                           
-  6363                           ;main.c: 708:             ClearString(convertedNumber);
+  6363                           ;main.c: 709:             ClearString(convertedNumber);
   6364  0BCD  3020               	movlw	low main@convertedNumber
   6365  0BCE  00F5               	movwf	ClearString@str
   6366  0BCF  3001               	movlw	high main@convertedNumber
   6367  0BD0  00F6               	movwf	ClearString@str+1
   6368  0BD1  3188  2002  318A   	fcall	_ClearString
   6369                           
-  6370                           ;main.c: 709:             UIntToString(sensor_data.humidity, convertedNumber);
+  6370                           ;main.c: 711:             UIntToString(sensor_data.humidity, convertedNumber);
   6371  0BD4  3008               	movlw	8
   6372  0BD5  3E34               	addlw	(low (main@sensor_data| (0+256)))& (0+255)
   6373  0BD6  0086               	movwf	6
@@ -6410,7 +6410,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6390  0BE7  00AD               	movwf	UIntToString@dest
   6391  0BE8  3191  2188  318A   	fcall	_UIntToString
   6392                           
-  6393                           ;main.c: 710:             index = InsertString(messages[1], convertedNumber, index, 70);
+  6393                           ;main.c: 712:             index = InsertString(messages[1], convertedNumber, index, 70);
   6394  0BEB  0022               	movlb	2	; select bank2
   6395  0BEC  0861               	movf	((low ((_messages| (0+256)+2))+1))^0,w
   6396  0BED  0020               	movlb	0	; select bank0
@@ -6444,13 +6444,13 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6424  0C0B  0022               	movlb	2	; select bank2
   6425  0C0C  00C0               	movwf	main@index^(0+256)
   6426                           
-  6427                           ;main.c: 711:             int end = index;
+  6427                           ;main.c: 714:             int end = index;
   6428  0C0D  0841               	movf	(main@index+1)^(0+256),w
   6429  0C0E  00B1               	movwf	(main@end+1)^(0+256)
   6430  0C0F  0840               	movf	main@index^(0+256),w
   6431  0C10  00B0               	movwf	main@end^(0+256)
   6432                           
-  6433                           ;main.c: 714:             index = InsertString(messages[0], "TEST,", 0, 70);
+  6433                           ;main.c: 717:             index = InsertString(messages[0], "TEST,", 0, 70);
   6434  0C11  085F               	movf	(_messages+1)^(0+256),w
   6435  0C12  0020               	movlb	0	; select bank0
   6436  0C13  00A1               	movwf	InsertString@dest+1
@@ -6478,14 +6478,14 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6458  0C2B  0022               	movlb	2	; select bank2
   6459  0C2C  00C0               	movwf	main@index^(0+256)
   6460                           
-  6461                           ;main.c: 715:             ClearString(convertedNumber);
+  6461                           ;main.c: 718:             ClearString(convertedNumber);
   6462  0C2D  3020               	movlw	low main@convertedNumber
   6463  0C2E  00F5               	movwf	ClearString@str
   6464  0C2F  3001               	movlw	high main@convertedNumber
   6465  0C30  00F6               	movwf	ClearString@str+1
   6466  0C31  3188  2002  318A   	fcall	_ClearString
   6467                           
-  6468                           ;main.c: 716:             IntToString(id, convertedNumber);
+  6468                           ;main.c: 719:             IntToString(id, convertedNumber);
   6469  0C34  0022               	movlb	2	; select bank2
   6470  0C35  0857               	movf	(_id+1)^(0+256),w
   6471  0C36  00FC               	movwf	IntToString@n+1
@@ -6498,7 +6498,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6478  0C3D  00FD               	movwf	IntToString@dest
   6479  0C3E  3193  23C3  318A   	fcall	_IntToString
   6480                           
-  6481                           ;main.c: 717:             index = InsertString(messages[0], convertedNumber, index, 70);
+  6481                           ;main.c: 720:             index = InsertString(messages[0], convertedNumber, index, 70);
   6482  0C41  0022               	movlb	2	; select bank2
   6483  0C42  085F               	movf	(_messages+1)^(0+256),w
   6484  0C43  0020               	movlb	0	; select bank0
@@ -6532,7 +6532,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6512  0C61  0022               	movlb	2	; select bank2
   6513  0C62  00C0               	movwf	main@index^(0+256)
   6514                           
-  6515                           ;main.c: 718:             Insert(messages[0], ',', index, 70);
+  6515                           ;main.c: 721:             Insert(messages[0], ',', index, 70);
   6516  0C63  085F               	movf	(_messages+1)^(0+256),w
   6517  0C64  00F1               	movwf	Insert@dest+1
   6518  0C65  085E               	movf	_messages^(0+256),w
@@ -6553,7 +6553,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6533  0C74  00F6               	movwf	Insert@destLimit+1
   6534  0C75  3195  2501  318A   	fcall	_Insert
   6535                           
-  6536                           ;main.c: 720:             UIntToHexString(crc16(messages, 2), checksum);
+  6536                           ;main.c: 723:             UIntToHexString(crc16(messages, 2), checksum);
   6537  0C78  3002               	movlw	2
   6538  0C79  0020               	movlb	0	; select bank0
   6539  0C7A  00A1               	movwf	crc16@segments
@@ -6593,7 +6593,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6573  0C9E  00AE               	movwf	UIntToHexString@dest
   6574  0C9F  3195  25E4  318A   	fcall	_UIntToHexString
   6575                           
-  6576                           ;main.c: 723:             InsertString(messages[0], "$$", 0, 70);
+  6576                           ;main.c: 726:             InsertString(messages[0], "$$", 0, 70);
   6577  0CA2  0022               	movlb	2	; select bank2
   6578  0CA3  085F               	movf	(_messages+1)^(0+256),w
   6579  0CA4  0020               	movlb	0	; select bank0
@@ -6615,7 +6615,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6595  0CB4  00A7               	movwf	InsertString@destLimit+1
   6596  0CB5  3190  2094  318A   	fcall	_InsertString
   6597                           
-  6598                           ;main.c: 725:             index = Insert(messages[1], '*', end, 70);
+  6598                           ;main.c: 728:             index = Insert(messages[1], '*', end, 70);
   6599  0CB8  0022               	movlb	2	; select bank2
   6600  0CB9  0861               	movf	((low ((_messages| (0+256)+2))+1))^0,w
   6601  0CBA  00F1               	movwf	Insert@dest+1
@@ -6642,7 +6642,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6622  0CD1  0870               	movf	?_Insert,w
   6623  0CD2  00C0               	movwf	main@index^(0+256)
   6624                           
-  6625                           ;main.c: 726:             index = InsertString(messages[1], checksum, index, 70);
+  6625                           ;main.c: 729:             index = InsertString(messages[1], checksum, index, 70);
   6626  0CD3  0861               	movf	((low ((_messages| (0+256)+2))+1))^0,w
   6627  0CD4  0020               	movlb	0	; select bank0
   6628  0CD5  00A1               	movwf	InsertString@dest+1
@@ -6675,7 +6675,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6655  0CF2  0022               	movlb	2	; select bank2
   6656  0CF3  00C0               	movwf	main@index^(0+256)
   6657                           
-  6658                           ;main.c: 727:             index = Insert(messages[1], '\n', index, 70);
+  6658                           ;main.c: 730:             index = Insert(messages[1], '\n', index, 70);
   6659  0CF4  0861               	movf	((low ((_messages| (0+256)+2))+1))^0,w
   6660  0CF5  00F1               	movwf	Insert@dest+1
   6661  0CF6  0860               	movf	(low ((_messages| (0+256)+2)))^0,w
@@ -6701,21 +6701,21 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6681  0D0C  0870               	movf	?_Insert,w
   6682  0D0D  00C0               	movwf	main@index^(0+256)
   6683                           
-  6684                           ;main.c: 729:             id++;
+  6684                           ;main.c: 732:             id++;
   6685  0D0E  3001               	movlw	1
   6686  0D0F  07D6               	addwf	_id^(0+256),f
   6687  0D10  3000               	movlw	0
   6688  0D11  3DD7               	addwfc	(_id+1)^(0+256),f
   6689  0D12  150C               	bsf	12,2	;volatile
   6690                           
-  6691                           ;main.c: 732:             TransmitString(messages[0]);
+  6691                           ;main.c: 735:             TransmitString(messages[0]);
   6692  0D13  085F               	movf	(_messages+1)^(0+256),w
   6693  0D14  00F7               	movwf	TransmitString@message+1
   6694  0D15  085E               	movf	_messages^(0+256),w
   6695  0D16  00F6               	movwf	TransmitString@message
   6696  0D17  319B  2364  318A   	fcall	_TransmitString
   6697                           
-  6698                           ;main.c: 733:             TransmitString(messages[1]);
+  6698                           ;main.c: 736:             TransmitString(messages[1]);
   6699  0D1A  0022               	movlb	2	; select bank2
   6700  0D1B  0861               	movf	((low ((_messages| (0+256)+2))+1))^0,w
   6701  0D1C  00F7               	movwf	TransmitString@message+1
@@ -6725,12 +6725,12 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6705  0D22  0022               	movlb	2	; select bank2
   6706  0D23  110C               	bcf	12,2	;volatile
   6707                           
-  6708                           ;main.c: 743:         for (int i = 0; i < 1000; i++)
+  6708                           ;main.c: 746:         for (int i = 0; i < 1000; i++)
   6709  0D24  01B2               	clrf	main@i^(0+256)
   6710  0D25  01B3               	clrf	(main@i+1)^(0+256)
   6711  0D26                     l4750:	
   6712                           
-  6713                           ;main.c: 744:         {;main.c: 745:             _delay((unsigned long)((5)*(4000000/400
+  6713                           ;main.c: 747:         {;main.c: 748:             _delay((unsigned long)((5)*(4000000/400
       +                          0.0)));
   6714  0D26  3007               	movlw	7
   6715  0D27  0021               	movlb	1	; select bank1
@@ -6742,7 +6742,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9
   6721  0D2C  0BE3               	decfsz	??_main^(0+128),f
   6722  0D2D  2D2A               	goto	u5267
   6723                           
-  6724                           ;main.c: 746:         }
+  6724                           ;main.c: 749:         }
   6725  0D2E  3001               	movlw	1
   6726  0D2F  0022               	movlb	2	; select bank2
   6727  0D30  07B2               	addwf	main@i^(0+256),f
@@ -20245,7 +20245,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Thu Sep 05 16:17:51 2019
+Symbol Table                                                                                   Thu Sep 05 17:08:39 2019
 
                         __end_of_ClearString 0827                                  __CFG_CP$OFF 0000  
            bme280_parse_sensor_data@data_lsb 0024             bme280_parse_sensor_data@data_msb 0028  

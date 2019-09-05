@@ -17632,12 +17632,15 @@ void main(void)
             index = InsertString(messages[1], convertedNumber, index, 70);
             index = Insert(messages[1], ',', index, 70);
             ClearString(convertedNumber);
+
             UIntToString(sensor_data.pressure, convertedNumber);
             index = InsertString(messages[1], convertedNumber, index, 70);
             index = Insert(messages[1], ',', index, 70);
             ClearString(convertedNumber);
+
             UIntToString(sensor_data.humidity, convertedNumber);
             index = InsertString(messages[1], convertedNumber, index, 70);
+
             int end = index;
 
 

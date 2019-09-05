@@ -2242,124 +2242,124 @@ Version 4.0 HI-TECH Software Intermediate Code
 "704
 [; ;main.c: 704:             ClearString(convertedNumber);
 [e ( _ClearString (1 &U _convertedNumber ]
-"705
-[; ;main.c: 705:             UIntToString(sensor_data.pressure, convertedNumber);
-[e ( _UIntToString (2 , . _sensor_data 0 &U _convertedNumber ]
 "706
-[; ;main.c: 706:             index = InsertString(messages[1], convertedNumber, index, 70);
-[e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _convertedNumber _index -> 70 `i ]
+[; ;main.c: 706:             UIntToString(sensor_data.pressure, convertedNumber);
+[e ( _UIntToString (2 , . _sensor_data 0 &U _convertedNumber ]
 "707
-[; ;main.c: 707:             index = Insert(messages[1], ',', index, 70);
-[e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 44 `ui `uc _index -> 70 `i ]
-"708
-[; ;main.c: 708:             ClearString(convertedNumber);
-[e ( _ClearString (1 &U _convertedNumber ]
-"709
-[; ;main.c: 709:             UIntToString(sensor_data.humidity, convertedNumber);
-[e ( _UIntToString (2 , . _sensor_data 2 &U _convertedNumber ]
-"710
-[; ;main.c: 710:             index = InsertString(messages[1], convertedNumber, index, 70);
+[; ;main.c: 707:             index = InsertString(messages[1], convertedNumber, index, 70);
 [e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _convertedNumber _index -> 70 `i ]
+"708
+[; ;main.c: 708:             index = Insert(messages[1], ',', index, 70);
+[e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 44 `ui `uc _index -> 70 `i ]
+"709
+[; ;main.c: 709:             ClearString(convertedNumber);
+[e ( _ClearString (1 &U _convertedNumber ]
 "711
-[; ;main.c: 711:             int end = index;
+[; ;main.c: 711:             UIntToString(sensor_data.humidity, convertedNumber);
+[e ( _UIntToString (2 , . _sensor_data 2 &U _convertedNumber ]
+"712
+[; ;main.c: 712:             index = InsertString(messages[1], convertedNumber, index, 70);
+[e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _convertedNumber _index -> 70 `i ]
+"714
+[; ;main.c: 714:             int end = index;
 [v _end `i ~T0 @X0 1 a ]
 [e = _end _index ]
-"714
-[; ;main.c: 714:             index = InsertString(messages[0], "TEST,", 0, 70);
-[e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 1C -> 0 `i -> 70 `i ]
-"715
-[; ;main.c: 715:             ClearString(convertedNumber);
-[e ( _ClearString (1 &U _convertedNumber ]
-"716
-[; ;main.c: 716:             IntToString(id, convertedNumber);
-[e ( _IntToString (2 , _id &U _convertedNumber ]
 "717
-[; ;main.c: 717:             index = InsertString(messages[0], convertedNumber, index, 70);
-[e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _convertedNumber _index -> 70 `i ]
+[; ;main.c: 717:             index = InsertString(messages[0], "TEST,", 0, 70);
+[e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 1C -> 0 `i -> 70 `i ]
 "718
-[; ;main.c: 718:             Insert(messages[0], ',', index, 70);
-[e ( _Insert (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 44 `ui `uc _index -> 70 `i ]
+[; ;main.c: 718:             ClearString(convertedNumber);
+[e ( _ClearString (1 &U _convertedNumber ]
+"719
+[; ;main.c: 719:             IntToString(id, convertedNumber);
+[e ( _IntToString (2 , _id &U _convertedNumber ]
 "720
-[; ;main.c: 720:             UIntToHexString(crc16(messages, 2), checksum);
-[e ( _UIntToHexString (2 , -> ( _crc16 (2 , &U _messages -> 2 `i `ul &U _checksum ]
+[; ;main.c: 720:             index = InsertString(messages[0], convertedNumber, index, 70);
+[e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _convertedNumber _index -> 70 `i ]
+"721
+[; ;main.c: 721:             Insert(messages[0], ',', index, 70);
+[e ( _Insert (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 44 `ui `uc _index -> 70 `i ]
 "723
-[; ;main.c: 723:             InsertString(messages[0], "$$", 0, 70);
-[e ( _InsertString (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 2C -> 0 `i -> 70 `i ]
-"725
-[; ;main.c: 725:             index = Insert(messages[1], '*', end, 70);
-[e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 42 `ui `uc _end -> 70 `i ]
+[; ;main.c: 723:             UIntToHexString(crc16(messages, 2), checksum);
+[e ( _UIntToHexString (2 , -> ( _crc16 (2 , &U _messages -> 2 `i `ul &U _checksum ]
 "726
-[; ;main.c: 726:             index = InsertString(messages[1], checksum, index, 70);
-[e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _checksum _index -> 70 `i ]
-"727
-[; ;main.c: 727:             index = Insert(messages[1], '\n', index, 70);
-[e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 10 `ui `uc _index -> 70 `i ]
+[; ;main.c: 726:             InsertString(messages[0], "$$", 0, 70);
+[e ( _InsertString (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 2C -> 0 `i -> 70 `i ]
+"728
+[; ;main.c: 728:             index = Insert(messages[1], '*', end, 70);
+[e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 42 `ui `uc _end -> 70 `i ]
 "729
-[; ;main.c: 729:             id++;
+[; ;main.c: 729:             index = InsertString(messages[1], checksum, index, 70);
+[e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _checksum _index -> 70 `i ]
+"730
+[; ;main.c: 730:             index = Insert(messages[1], '\n', index, 70);
+[e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 10 `ui `uc _index -> 70 `i ]
+"732
+[; ;main.c: 732:             id++;
 [e ++ _id -> 1 `i ]
-"731
-[; ;main.c: 731:             do { LATAbits.LATA2 = 1; } while(0);
+"734
+[; ;main.c: 734:             do { LATAbits.LATA2 = 1; } while(0);
 [e :U 1303 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 1302 ]
-"732
-[; ;main.c: 732:             TransmitString(messages[0]);
+"735
+[; ;main.c: 735:             TransmitString(messages[0]);
 [e ( _TransmitString (1 *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-"733
-[; ;main.c: 733:             TransmitString(messages[1]);
+"736
+[; ;main.c: 736:             TransmitString(messages[1]);
 [e ( _TransmitString (1 *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-"734
-[; ;main.c: 734:             do { LATAbits.LATA2 = 0; } while(0);
+"737
+[; ;main.c: 737:             do { LATAbits.LATA2 = 0; } while(0);
 [e :U 1306 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
 [e :U 1305 ]
-"737
-[; ;main.c: 737:         }
+"740
+[; ;main.c: 740:         }
 }
 [e $U 1307  ]
-"738
-[; ;main.c: 738:         else
-[e :U 1300 ]
-"739
-[; ;main.c: 739:         {
-{
 "741
-[; ;main.c: 741:         }
+[; ;main.c: 741:         else
+[e :U 1300 ]
+"742
+[; ;main.c: 742:         {
+{
+"744
+[; ;main.c: 744:         }
 }
 [e :U 1307 ]
-"743
-[; ;main.c: 743:         for (int i = 0; i < 1000; i++)
+"746
+[; ;main.c: 746:         for (int i = 0; i < 1000; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $ < _i -> 1000 `i 1308  ]
 [e $U 1309  ]
 [e :U 1308 ]
-"744
-[; ;main.c: 744:         {
+"747
+[; ;main.c: 747:         {
 {
-"745
-[; ;main.c: 745:             _delay((unsigned long)((5)*(4000000/4000.0)));
+"748
+[; ;main.c: 748:             _delay((unsigned long)((5)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"746
-[; ;main.c: 746:         }
+"749
+[; ;main.c: 749:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 1000 `i 1308  ]
 [e :U 1309 ]
 }
-"747
-[; ;main.c: 747:     }
+"750
+[; ;main.c: 750:     }
 }
 [e :U 1297 ]
 [e $U 1298  ]
 [e :U 1299 ]
-"748
-[; ;main.c: 748: }
+"751
+[; ;main.c: 751: }
 [e :UE 1296 ]
 }
 [a 1C 84 69 83 84 44 0 ]

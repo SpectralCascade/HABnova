@@ -11,10 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\2013b\AppData\Local\Temp\s79s.o
-reset_vec CODE 0 0 0 2 2
-end_init CODE 0 D D 2 2
-config CONFIG 0 8007 8007 3 2
 $dist/default/production\HABnova.production.o
 cinit CODE 0 F F 44 2
 text1 CODE 0 1FB8 1FB8 48 2
@@ -105,6 +101,10 @@ bssBANK6 BANK6 1 320 320 49 1
 idataBANK2 CODE 0 19D1 19D1 4 2
 dataBANK2 BANK2 1 15E 15E 4 1
 clrtext CODE 0 19DB 19DB 6 2
+$C:\Users\2013b\AppData\Local\Temp\sbks.o
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 D D 2 2
+config CONFIG 0 8007 8007 3 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -202,57 +202,57 @@ STRING 1809-19D0 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\HABnova.production.o
-F cinit CODE >9249:C:\Users\2013b\AppData\Local\Temp\s79s.
-F cinit CODE >9252:C:\Users\2013b\AppData\Local\Temp\s79s.
-F cinit CODE >9317:C:\Users\2013b\AppData\Local\Temp\s79s.
-10 cinit CODE >9318:C:\Users\2013b\AppData\Local\Temp\s79s.
-13 cinit CODE >9319:C:\Users\2013b\AppData\Local\Temp\s79s.
-14 cinit CODE >9320:C:\Users\2013b\AppData\Local\Temp\s79s.
-17 cinit CODE >9321:C:\Users\2013b\AppData\Local\Temp\s79s.
-18 cinit CODE >9322:C:\Users\2013b\AppData\Local\Temp\s79s.
-1B cinit CODE >9323:C:\Users\2013b\AppData\Local\Temp\s79s.
-1C cinit CODE >9324:C:\Users\2013b\AppData\Local\Temp\s79s.
-1F cinit CODE >9325:C:\Users\2013b\AppData\Local\Temp\s79s.
-20 cinit CODE >9342:C:\Users\2013b\AppData\Local\Temp\s79s.
-21 cinit CODE >9343:C:\Users\2013b\AppData\Local\Temp\s79s.
-22 cinit CODE >9344:C:\Users\2013b\AppData\Local\Temp\s79s.
-23 cinit CODE >9345:C:\Users\2013b\AppData\Local\Temp\s79s.
-24 cinit CODE >9346:C:\Users\2013b\AppData\Local\Temp\s79s.
-25 cinit CODE >9347:C:\Users\2013b\AppData\Local\Temp\s79s.
-28 cinit CODE >9351:C:\Users\2013b\AppData\Local\Temp\s79s.
-29 cinit CODE >9352:C:\Users\2013b\AppData\Local\Temp\s79s.
-2A cinit CODE >9353:C:\Users\2013b\AppData\Local\Temp\s79s.
-2B cinit CODE >9354:C:\Users\2013b\AppData\Local\Temp\s79s.
-2C cinit CODE >9355:C:\Users\2013b\AppData\Local\Temp\s79s.
-2D cinit CODE >9356:C:\Users\2013b\AppData\Local\Temp\s79s.
-30 cinit CODE >9360:C:\Users\2013b\AppData\Local\Temp\s79s.
-31 cinit CODE >9361:C:\Users\2013b\AppData\Local\Temp\s79s.
-32 cinit CODE >9362:C:\Users\2013b\AppData\Local\Temp\s79s.
-33 cinit CODE >9363:C:\Users\2013b\AppData\Local\Temp\s79s.
-34 cinit CODE >9364:C:\Users\2013b\AppData\Local\Temp\s79s.
-35 cinit CODE >9365:C:\Users\2013b\AppData\Local\Temp\s79s.
-38 cinit CODE >9369:C:\Users\2013b\AppData\Local\Temp\s79s.
-39 cinit CODE >9370:C:\Users\2013b\AppData\Local\Temp\s79s.
-3A cinit CODE >9371:C:\Users\2013b\AppData\Local\Temp\s79s.
-3B cinit CODE >9372:C:\Users\2013b\AppData\Local\Temp\s79s.
-3C cinit CODE >9373:C:\Users\2013b\AppData\Local\Temp\s79s.
-3D cinit CODE >9374:C:\Users\2013b\AppData\Local\Temp\s79s.
-40 cinit CODE >9378:C:\Users\2013b\AppData\Local\Temp\s79s.
-41 cinit CODE >9379:C:\Users\2013b\AppData\Local\Temp\s79s.
-42 cinit CODE >9380:C:\Users\2013b\AppData\Local\Temp\s79s.
-43 cinit CODE >9381:C:\Users\2013b\AppData\Local\Temp\s79s.
-44 cinit CODE >9382:C:\Users\2013b\AppData\Local\Temp\s79s.
-45 cinit CODE >9383:C:\Users\2013b\AppData\Local\Temp\s79s.
-48 cinit CODE >9387:C:\Users\2013b\AppData\Local\Temp\s79s.
-49 cinit CODE >9388:C:\Users\2013b\AppData\Local\Temp\s79s.
-4A cinit CODE >9389:C:\Users\2013b\AppData\Local\Temp\s79s.
-4B cinit CODE >9390:C:\Users\2013b\AppData\Local\Temp\s79s.
-4C cinit CODE >9391:C:\Users\2013b\AppData\Local\Temp\s79s.
-4D cinit CODE >9392:C:\Users\2013b\AppData\Local\Temp\s79s.
-4F cinit CODE >9398:C:\Users\2013b\AppData\Local\Temp\s79s.
-4F cinit CODE >9400:C:\Users\2013b\AppData\Local\Temp\s79s.
-50 cinit CODE >9401:C:\Users\2013b\AppData\Local\Temp\s79s.
-51 cinit CODE >9402:C:\Users\2013b\AppData\Local\Temp\s79s.
+F cinit CODE >9249:C:\Users\2013b\AppData\Local\Temp\sbks.
+F cinit CODE >9252:C:\Users\2013b\AppData\Local\Temp\sbks.
+F cinit CODE >9317:C:\Users\2013b\AppData\Local\Temp\sbks.
+10 cinit CODE >9318:C:\Users\2013b\AppData\Local\Temp\sbks.
+13 cinit CODE >9319:C:\Users\2013b\AppData\Local\Temp\sbks.
+14 cinit CODE >9320:C:\Users\2013b\AppData\Local\Temp\sbks.
+17 cinit CODE >9321:C:\Users\2013b\AppData\Local\Temp\sbks.
+18 cinit CODE >9322:C:\Users\2013b\AppData\Local\Temp\sbks.
+1B cinit CODE >9323:C:\Users\2013b\AppData\Local\Temp\sbks.
+1C cinit CODE >9324:C:\Users\2013b\AppData\Local\Temp\sbks.
+1F cinit CODE >9325:C:\Users\2013b\AppData\Local\Temp\sbks.
+20 cinit CODE >9342:C:\Users\2013b\AppData\Local\Temp\sbks.
+21 cinit CODE >9343:C:\Users\2013b\AppData\Local\Temp\sbks.
+22 cinit CODE >9344:C:\Users\2013b\AppData\Local\Temp\sbks.
+23 cinit CODE >9345:C:\Users\2013b\AppData\Local\Temp\sbks.
+24 cinit CODE >9346:C:\Users\2013b\AppData\Local\Temp\sbks.
+25 cinit CODE >9347:C:\Users\2013b\AppData\Local\Temp\sbks.
+28 cinit CODE >9351:C:\Users\2013b\AppData\Local\Temp\sbks.
+29 cinit CODE >9352:C:\Users\2013b\AppData\Local\Temp\sbks.
+2A cinit CODE >9353:C:\Users\2013b\AppData\Local\Temp\sbks.
+2B cinit CODE >9354:C:\Users\2013b\AppData\Local\Temp\sbks.
+2C cinit CODE >9355:C:\Users\2013b\AppData\Local\Temp\sbks.
+2D cinit CODE >9356:C:\Users\2013b\AppData\Local\Temp\sbks.
+30 cinit CODE >9360:C:\Users\2013b\AppData\Local\Temp\sbks.
+31 cinit CODE >9361:C:\Users\2013b\AppData\Local\Temp\sbks.
+32 cinit CODE >9362:C:\Users\2013b\AppData\Local\Temp\sbks.
+33 cinit CODE >9363:C:\Users\2013b\AppData\Local\Temp\sbks.
+34 cinit CODE >9364:C:\Users\2013b\AppData\Local\Temp\sbks.
+35 cinit CODE >9365:C:\Users\2013b\AppData\Local\Temp\sbks.
+38 cinit CODE >9369:C:\Users\2013b\AppData\Local\Temp\sbks.
+39 cinit CODE >9370:C:\Users\2013b\AppData\Local\Temp\sbks.
+3A cinit CODE >9371:C:\Users\2013b\AppData\Local\Temp\sbks.
+3B cinit CODE >9372:C:\Users\2013b\AppData\Local\Temp\sbks.
+3C cinit CODE >9373:C:\Users\2013b\AppData\Local\Temp\sbks.
+3D cinit CODE >9374:C:\Users\2013b\AppData\Local\Temp\sbks.
+40 cinit CODE >9378:C:\Users\2013b\AppData\Local\Temp\sbks.
+41 cinit CODE >9379:C:\Users\2013b\AppData\Local\Temp\sbks.
+42 cinit CODE >9380:C:\Users\2013b\AppData\Local\Temp\sbks.
+43 cinit CODE >9381:C:\Users\2013b\AppData\Local\Temp\sbks.
+44 cinit CODE >9382:C:\Users\2013b\AppData\Local\Temp\sbks.
+45 cinit CODE >9383:C:\Users\2013b\AppData\Local\Temp\sbks.
+48 cinit CODE >9387:C:\Users\2013b\AppData\Local\Temp\sbks.
+49 cinit CODE >9388:C:\Users\2013b\AppData\Local\Temp\sbks.
+4A cinit CODE >9389:C:\Users\2013b\AppData\Local\Temp\sbks.
+4B cinit CODE >9390:C:\Users\2013b\AppData\Local\Temp\sbks.
+4C cinit CODE >9391:C:\Users\2013b\AppData\Local\Temp\sbks.
+4D cinit CODE >9392:C:\Users\2013b\AppData\Local\Temp\sbks.
+4F cinit CODE >9398:C:\Users\2013b\AppData\Local\Temp\sbks.
+4F cinit CODE >9400:C:\Users\2013b\AppData\Local\Temp\sbks.
+50 cinit CODE >9401:C:\Users\2013b\AppData\Local\Temp\sbks.
+51 cinit CODE >9402:C:\Users\2013b\AppData\Local\Temp\sbks.
 4 intentry CODE >52:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
 9 intentry CODE >57:C:\Users\2013b\Git\HABnova\mcc_generated_files/interrupt_manager.c
@@ -1001,39 +1001,39 @@ B29 maintext CODE >701:C:\Users\2013b\Git\HABnova\main.c
 B36 maintext CODE >702:C:\Users\2013b\Git\HABnova\main.c
 B57 maintext CODE >703:C:\Users\2013b\Git\HABnova\main.c
 B71 maintext CODE >704:C:\Users\2013b\Git\HABnova\main.c
-B78 maintext CODE >705:C:\Users\2013b\Git\HABnova\main.c
-B91 maintext CODE >706:C:\Users\2013b\Git\HABnova\main.c
-BB3 maintext CODE >707:C:\Users\2013b\Git\HABnova\main.c
-BCD maintext CODE >708:C:\Users\2013b\Git\HABnova\main.c
-BD4 maintext CODE >709:C:\Users\2013b\Git\HABnova\main.c
-BEB maintext CODE >710:C:\Users\2013b\Git\HABnova\main.c
-C0D maintext CODE >711:C:\Users\2013b\Git\HABnova\main.c
-C11 maintext CODE >714:C:\Users\2013b\Git\HABnova\main.c
-C2D maintext CODE >715:C:\Users\2013b\Git\HABnova\main.c
-C34 maintext CODE >716:C:\Users\2013b\Git\HABnova\main.c
-C41 maintext CODE >717:C:\Users\2013b\Git\HABnova\main.c
-C63 maintext CODE >718:C:\Users\2013b\Git\HABnova\main.c
-C78 maintext CODE >720:C:\Users\2013b\Git\HABnova\main.c
-CA2 maintext CODE >723:C:\Users\2013b\Git\HABnova\main.c
-CB8 maintext CODE >725:C:\Users\2013b\Git\HABnova\main.c
-CD3 maintext CODE >726:C:\Users\2013b\Git\HABnova\main.c
-CF4 maintext CODE >727:C:\Users\2013b\Git\HABnova\main.c
-D0E maintext CODE >729:C:\Users\2013b\Git\HABnova\main.c
-D12 maintext CODE >731:C:\Users\2013b\Git\HABnova\main.c
-D13 maintext CODE >732:C:\Users\2013b\Git\HABnova\main.c
-D1A maintext CODE >733:C:\Users\2013b\Git\HABnova\main.c
-D22 maintext CODE >734:C:\Users\2013b\Git\HABnova\main.c
-D24 maintext CODE >743:C:\Users\2013b\Git\HABnova\main.c
-D26 maintext CODE >745:C:\Users\2013b\Git\HABnova\main.c
-D2E maintext CODE >746:C:\Users\2013b\Git\HABnova\main.c
-19DB clrtext CODE >9331:C:\Users\2013b\AppData\Local\Temp\s79s.
-19DB clrtext CODE >9332:C:\Users\2013b\AppData\Local\Temp\s79s.
-19DC clrtext CODE >9333:C:\Users\2013b\AppData\Local\Temp\s79s.
-19DC clrtext CODE >9334:C:\Users\2013b\AppData\Local\Temp\s79s.
-19DD clrtext CODE >9335:C:\Users\2013b\AppData\Local\Temp\s79s.
-19DE clrtext CODE >9336:C:\Users\2013b\AppData\Local\Temp\s79s.
-19DF clrtext CODE >9337:C:\Users\2013b\AppData\Local\Temp\s79s.
-19E0 clrtext CODE >9338:C:\Users\2013b\AppData\Local\Temp\s79s.
+B78 maintext CODE >706:C:\Users\2013b\Git\HABnova\main.c
+B91 maintext CODE >707:C:\Users\2013b\Git\HABnova\main.c
+BB3 maintext CODE >708:C:\Users\2013b\Git\HABnova\main.c
+BCD maintext CODE >709:C:\Users\2013b\Git\HABnova\main.c
+BD4 maintext CODE >711:C:\Users\2013b\Git\HABnova\main.c
+BEB maintext CODE >712:C:\Users\2013b\Git\HABnova\main.c
+C0D maintext CODE >714:C:\Users\2013b\Git\HABnova\main.c
+C11 maintext CODE >717:C:\Users\2013b\Git\HABnova\main.c
+C2D maintext CODE >718:C:\Users\2013b\Git\HABnova\main.c
+C34 maintext CODE >719:C:\Users\2013b\Git\HABnova\main.c
+C41 maintext CODE >720:C:\Users\2013b\Git\HABnova\main.c
+C63 maintext CODE >721:C:\Users\2013b\Git\HABnova\main.c
+C78 maintext CODE >723:C:\Users\2013b\Git\HABnova\main.c
+CA2 maintext CODE >726:C:\Users\2013b\Git\HABnova\main.c
+CB8 maintext CODE >728:C:\Users\2013b\Git\HABnova\main.c
+CD3 maintext CODE >729:C:\Users\2013b\Git\HABnova\main.c
+CF4 maintext CODE >730:C:\Users\2013b\Git\HABnova\main.c
+D0E maintext CODE >732:C:\Users\2013b\Git\HABnova\main.c
+D12 maintext CODE >734:C:\Users\2013b\Git\HABnova\main.c
+D13 maintext CODE >735:C:\Users\2013b\Git\HABnova\main.c
+D1A maintext CODE >736:C:\Users\2013b\Git\HABnova\main.c
+D22 maintext CODE >737:C:\Users\2013b\Git\HABnova\main.c
+D24 maintext CODE >746:C:\Users\2013b\Git\HABnova\main.c
+D26 maintext CODE >748:C:\Users\2013b\Git\HABnova\main.c
+D2E maintext CODE >749:C:\Users\2013b\Git\HABnova\main.c
+19DB clrtext CODE >9331:C:\Users\2013b\AppData\Local\Temp\sbks.
+19DB clrtext CODE >9332:C:\Users\2013b\AppData\Local\Temp\sbks.
+19DC clrtext CODE >9333:C:\Users\2013b\AppData\Local\Temp\sbks.
+19DC clrtext CODE >9334:C:\Users\2013b\AppData\Local\Temp\sbks.
+19DD clrtext CODE >9335:C:\Users\2013b\AppData\Local\Temp\sbks.
+19DE clrtext CODE >9336:C:\Users\2013b\AppData\Local\Temp\sbks.
+19DF clrtext CODE >9337:C:\Users\2013b\AppData\Local\Temp\sbks.
+19E0 clrtext CODE >9338:C:\Users\2013b\AppData\Local\Temp\sbks.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1096,12 +1096,12 @@ _TMR0 15 0 ABS 0 - dist/default/production\HABnova.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\HABnova.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\HABnova.production.o
 _WPUC 20E 0 ABS 0 - dist/default/production\HABnova.production.o
-___sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\s79s.o
+___sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\sbks.o
 _main 15B0 0 CODE 0 maintext dist/default/production\HABnova.production.o
 btemp 7E 0 ABS 0 - dist/default/production\HABnova.production.o
 _ReadEnvSensor E7C 0 CODE 0 text55 dist/default/production\HABnova.production.o
 __end_of_ClearString 104E 0 CODE 0 text31 dist/default/production\HABnova.production.o
-start 1A 0 CODE 0 init C:\Users\2013b\AppData\Local\Temp\s79s.o
+start 1A 0 CODE 0 init C:\Users\2013b\AppData\Local\Temp\sbks.o
 ReadEnvSensor@rslt 38 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 _TMR0_InterruptHandler 162 0 BANK2 1 nvBANK2 dist/default/production\HABnova.production.o
 DebugAlert@num_flashes 24 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
@@ -1158,12 +1158,12 @@ __end_of_write_power_mode 39EE 0 CODE 0 text37 dist/default/production\HABnova.p
 _I2C_ReadByte 2DB8 0 CODE 0 text56 dist/default/production\HABnova.production.o
 fill_filter_settings@settings 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 ReverseString@opposite 23 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s79s.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s79s.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s79s.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s79s.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s79s.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\s79s.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\sbks.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\sbks.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\sbks.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\sbks.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\sbks.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\2013b\AppData\Local\Temp\sbks.o
 _bme280_parse_sensor_data 1374 0 CODE 0 text4 dist/default/production\HABnova.production.o
 compensate_humidity@calib_data 2E 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 __end_of_I2C_UserAlert 1000 0 CODE 0 text63 dist/default/production\HABnova.production.o
@@ -1241,8 +1241,8 @@ __size_of_set_filter_standby_settings 0 0 ABS 0 - dist/default/production\HABnov
 fill_standby_settings@reg_data 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 ?_strlen 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 _OPTION_REG 95 0 ABS 0 - dist/default/production\HABnova.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\s79s.o
-___stacklo 2229 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\s79s.o
+___stackhi 23EF 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\sbks.o
+___stacklo 2229 0 ABS 0 - C:\Users\2013b\AppData\Local\Temp\sbks.o
 __size_of_bme280_set_sensor_settings 0 0 ABS 0 - dist/default/production\HABnova.production.o
 _Insert 2A02 0 CODE 0 text28 dist/default/production\HABnova.production.o
 bme280_compensate_data@comp_data 5C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
@@ -1317,7 +1317,7 @@ __size_of_Insert 0 0 ABS 0 - dist/default/production\HABnova.production.o
 _bme280_set_sensor_settings 2928 0 CODE 0 text34 dist/default/production\HABnova.production.o
 are_settings_changed@desired_settings 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 _bme280_soft_reset 3A5E 0 CODE 0 text57 dist/default/production\HABnova.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\s79s.o
+___int_sp 0 0 STACK 2 stack C:\Users\2013b\AppData\Local\Temp\sbks.o
 _compensate_temperature$2262 3C 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
 fill_osr_press_settings@reg_data 75 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -1536,7 +1536,7 @@ ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.prod
 _crc16_update 3B4C 0 CODE 0 text2 dist/default/production\HABnova.production.o
 __end_of_reload_device_settings 362E 0 CODE 0 text39 dist/default/production\HABnova.production.o
 WriteEnvSensor@i 39 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\2013b\AppData\Local\Temp\s79s.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\2013b\AppData\Local\Temp\sbks.o
 strlen@a 73 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 strlen@s 70 0 COMMON 1 cstackCOMMON dist/default/production\HABnova.production.o
 get_calib_data@calib_data 47 0 BANK0 1 cstackBANK0 dist/default/production\HABnova.production.o

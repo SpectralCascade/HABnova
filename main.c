@@ -695,19 +695,22 @@ void main(void)
             ClearString(messages[0]);
             ClearString(messages[1]);
 //#ifdef GPS_MODULE
-            char convertedNumber[16] = {'\0'};
-            /// Add sensor data
+            char convertedNumber[16] = {'\0'};            
+            /// Temperature
             IntToString(sensor_data.temperature, convertedNumber);
             int index = strlen(messages[1]);//InsertString(messages[1], convertedSensorData, strlen(messages[1]), MAX_MESSAGE_LENGTH);
             index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);
             index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
             ClearString(convertedNumber);
+            /// Pressure
             UIntToString(sensor_data.pressure, convertedNumber);
             index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);    
             index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
             ClearString(convertedNumber);
+            /// Humidity
             UIntToString(sensor_data.humidity, convertedNumber);
             index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);
+            
             int end = index;
 
             /// Add the call sign and id.
