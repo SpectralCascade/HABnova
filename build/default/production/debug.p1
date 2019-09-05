@@ -1,24 +1,18 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"357 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 357:     struct {
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
-"367
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 367:     struct {
-[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S32 . . T0IF . T0IE ]
-"356
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 356: typedef union {
-[u S30 `S31 1 `S32 1 ]
-[n S30 . . . ]
-"374
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"219 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 219: void TMR0_ISR(void);
-[v _TMR0_ISR `(v ~T0 @X0 0 ef ]
+"2720 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2720:     struct {
+[s S141 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S141 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"2719
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2719: typedef union {
+[u S140 `S141 1 ]
+[n S140 . . ]
+"2731
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2731: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
+[v _LATCbits `VS140 ~T0 @X0 0 e@270 ]
+"9 ./timing.h
+[; ;./timing.h: 9: void Sleep(uint32_t ms);
+[v _Sleep `(v ~T0 @X0 0 ef1`ul ]
 "54 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1345,39 +1339,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27877
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 27877: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"52 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 52: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"53
-[; ;mcc_generated_files/interrupt_manager.c: 53: {
+"4 debug.c
+[; ;debug.c: 4: void DebugAlert(unsigned int delay_high, unsigned int delay_low, uint8_t num_flashes)
+[v _DebugAlert `(v ~T0 @X0 1 ef3`ui`ui`uc ]
+"5
+[; ;debug.c: 5: {
 {
-[e :U _INTERRUPT_InterruptManager ]
+[e :U _DebugAlert ]
+"4
+[; ;debug.c: 4: void DebugAlert(unsigned int delay_high, unsigned int delay_low, uint8_t num_flashes)
+[v _delay_high `ui ~T0 @X0 1 r1 ]
+[v _delay_low `ui ~T0 @X0 1 r2 ]
+[v _num_flashes `uc ~T0 @X0 1 r3 ]
+"5
+[; ;debug.c: 5: {
 [f ]
-"55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
-[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 1217  ]
-"56
-[; ;mcc_generated_files/interrupt_manager.c: 56:     {
+"7
+[; ;debug.c: 7:     for (int i = 0; i < num_flashes; i++)
 {
-"57
-[; ;mcc_generated_files/interrupt_manager.c: 57:         TMR0_ISR();
-[e ( _TMR0_ISR ..  ]
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58:     }
-}
-[e $U 1218  ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59:     else
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 1220  ]
 [e :U 1217 ]
-"60
-[; ;mcc_generated_files/interrupt_manager.c: 60:     {
+"8
+[; ;debug.c: 8:     {
 {
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:     }
+"9
+[; ;debug.c: 9:         do { LATCbits.LATC5 = 1; } while(0);
+[e :U 1223 ]
+{
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
 }
+[e :U 1222 ]
+"10
+[; ;debug.c: 10:         Sleep(delay_high);
+[e ( _Sleep (1 -> _delay_high `ul ]
+"11
+[; ;debug.c: 11:         do { LATCbits.LATC5 = 0; } while(0);
+[e :U 1226 ]
+{
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 1225 ]
+"12
+[; ;debug.c: 12:         Sleep(delay_low);
+[e ( _Sleep (1 -> _delay_low `ul ]
+"13
+[; ;debug.c: 13:     }
+}
+[e ++ _i -> 1 `i ]
+[e :U 1220 ]
+[e $ < _i -> _num_flashes `i 1217  ]
 [e :U 1218 ]
-"63
-[; ;mcc_generated_files/interrupt_manager.c: 63: }
+}
+"15
+[; ;debug.c: 15: }
 [e :UE 1216 ]
 }

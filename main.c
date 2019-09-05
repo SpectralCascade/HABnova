@@ -1,17 +1,11 @@
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "BME280_driver/bme280.h"
+#include "bme280_i2c.h"
+#include "timing.h"
+#include "rtty.h"
 
 #include <string.h>
-
-unsigned long ticks = 0;
-
-void TimerISR()
-{
-    ticks++;
-}
-
-#define millis() ticks
 
 // I did this to make the code more readable in MPLABx, kinda like #region
 // in VS C# but mostly because I'm too lazy to split the project into more files
@@ -26,17 +20,6 @@ void TimerISR()
 #ifdef MISC
 
 int id = 0;
-
-void FlashError()
-{
-    for (int i = 0; i < 3; i++)
-    {
-        LED_NAV_SetHigh();
-        __delay_ms(250);
-        LED_NAV_SetLow();
-        __delay_ms(250);
-    }
-}
 
 /// Nulls every character in a string
 void ClearString(char* str)
@@ -254,24 +237,6 @@ void FloatToString(char* dest, float value, int places) {
     dest[fts_index++] = '\0';
 }
 
-void Sleep(uint32_t ms)
-{
-    unsigned long start = millis();
-    while (millis() - start < ms)
-    {
-        __delay_ms(1);
-    }
-}
-
-// Constants for transmission code follow.
-// Baud rate (bits per second).
-#define BAUD_RATE 50
-
-// Half the delay time required to match the baud rate in MICRO seconds
-#define HALF_BAUD_DELAY ((1000 / BAUD_RATE) / 2) * 1000
-
-//#define HIGH_BAUD_RATE
-
 // Interval multiplier
 #define DELAY_MULT 1000
 
@@ -294,91 +259,6 @@ char message_end[MAX_MESSAGE_LENGTH + 3];
 
 /// Array of message block pointers.
 char* messages[2] = {message_start, message_end};
-
-/// Low memory footprint
-#ifdef RADIO_TRANSMISSION
-
-// Modified from https://gist.github.com/tijnkooijmans/10981093
-// Takes any number of strings in array form and computes the CRC using the
-// CRC16_CCITT_FALSE algorithm with polynomial 0x1021.
-uint16_t crc16_update(char* pData, int length, uint16_t wCrc)
-{
-    uint8_t i;
-    while (length--) {
-        wCrc ^= *(unsigned char *)pData++ << 8;
-        for (i=0; i < 8; i++)
-            wCrc = wCrc & 0x8000 ? (wCrc << 1) ^ 0x1021 : wCrc << 1;
-    }
-    return wCrc;
-}
-
-uint16_t crc16(char** data, int segments)
-{
-    uint16_t crc = 0xFFFF;
-    for (int i = 0; i < segments; i++)
-    {
-        crc = crc16_update(data[i], strlen(data[i]), crc);
-    }
-    return crc & 0xFFFF;
-}
-
-void TransmitBit(bool b)
-{
-	if (b)
-	{
-		TX_PIN_SetHigh();
-	}
-	else
-	{
-		TX_PIN_SetLow();
-	}
-#ifdef HIGH_BAUD_RATE
-    // 100 baud
-    __delay_us(HALF_BAUD_DELAY);
-#else
-    // 50 baud
-	__delay_us(HALF_BAUD_DELAY);
-	__delay_us(HALF_BAUD_DELAY);
-#endif
-}
-
-void TransmitByte(char byte)
-{
-    /// The protocol used for data transmission is a type of UART (similar to RS-232).
-    /// Here's the breakdown of the protocol used for transmitting the bytes:
-    /// - Order of bits in a byte when transmitting is always LSB first, MSB last.
-    /// - We always send a 0 bit (start bit) before the byte.
-    /// - We always send two 1 bits after the byte (these are called stop bits).
-    /// We can send either 7 or 8 bit characters, but we'll stick to 7-character codes
-    /// so we'll actually be transmitting a bit less than a byte of data... pun intended :P
-
-    /// We always send a single LOW bit as our start bit so the receiver software can sync up.
-    TransmitBit(0);
-    /// ASCII-7 encoding for our string characters.
-	for (int i = 0; i < 7; i++)
-	{
-		TransmitBit((byte >> i) & 1);
-	}
-	/// Two stop bits to ensure the receiver software can sync up with the next start bit.
-	TransmitBit(1);
-	TransmitBit(1);
-}
-
-void TransmitString(char* message)
-{
-#ifdef DEBUG_CONSOLE
-	printf("Attempting to transmit message:\n%s\n", message);
-#endif
-	for (int i = 0, counti = strlen(message); i < counti; i++)
-	{
-		TransmitByte(message[i]);
-	}
-#ifdef DEBUG_CONSOLE
-	printf("\n");
-#endif // DEBUG_CONSOLE
-}
-
-#endif // RADIO_TRANSMISSION
 
 /// Large memory footprint
 #ifdef GPS_MODULE
@@ -581,7 +461,7 @@ bool GetNavData()
 {
     bool success = false;
 #ifndef DEBUG_CONSOLE
-    LED_NAV_SetHigh();
+    LED_DEBUG_SetHigh();
 #else
     FakeEusartCounter = 0;
 #endif // DEBUG_CONSOLE
@@ -761,112 +641,19 @@ bool GetNavData()
 
 #endif // GPS_MODULE
 
-#ifdef BME280_SENSOR
-uint8_t WriteI2C(uint8_t* data, size_t length, uint8_t dev_id, I2C_MESSAGE_STATUS* status)
-{
-    return 0;
-}
-
-#define __global_timeout __g_timeout_start
-
-#ifdef __global_timeout
-
-unsigned long __global_timeout;
-
-#define await_timeout(condition, wait_time, timeout_ret_val)                        \
-        __global_timeout = millis();                                                \
-        while (!condition)                                                          \
-        {                                                                           \
-            if (millis() - __global_timeout > wait_time)                            \
-            {                                                                       \
-                return timeout_ret_val;                                             \
-            }                                                                       \
-        }
-#else
-#warning "__global_timeout has not been defined, so await_timeout() will not work!"
-#define await_timeout(dummya, dummyb, dummyc)
-#endif
-
-int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len)
-{
-    I2C_MESSAGE_STATUS status = I2C_MESSAGE_PENDING;
-    
-    int startTime = millis();
-    I2C_MasterWrite(&reg_addr, 1, dev_id, &status);
-    await_timeout(!(status == I2C_MESSAGE_PENDING), 10000, BME280_E_COMM_FAIL);
-    if (status == I2C_MESSAGE_COMPLETE)
-    {
-        status = I2C_MESSAGE_PENDING;
-        I2C_MasterRead(data, len, dev_id, &status);
-        await_timeout(!(status == I2C_MESSAGE_PENDING), 10000, BME280_E_COMM_FAIL);
-        if (status != I2C_MESSAGE_COMPLETE)
-        {
-//            FlashError();
-            return BME280_E_COMM_FAIL;
-        }
-    }
-    else
-    {
-        FlashError();
-        return BME280_E_COMM_FAIL;
-    }
-    return BME280_OK;
-}
-
-int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
-{
-    I2C_MESSAGE_STATUS status = I2C_MESSAGE_PENDING;
-    
-    static I2C_TRANSACTION_REQUEST_BLOCK trb[24];
-    if (len > 24 / 2)
-    {
-        while (1)
-        {
-//            FlashError();
-        }
-    }
-        
-    uint8_t local_address = reg_addr;
-    for (uint8_t i = 0, j = 0; i < len; i++, j += 2)
-    {
-        I2C_MasterWriteTRBBuild(&trb[j], &local_address, 1, dev_id);
-        I2C_MasterWriteTRBBuild(&trb[j + 1], &reg_data[i], 1, dev_id);
-        local_address++;
-    }
-    I2C_MasterTRBInsert(1, trb, &status);
-    await_timeout(!(status == I2C_MESSAGE_PENDING), 10000, BME280_E_COMM_FAIL);
-    if (status != I2C_MESSAGE_COMPLETE)
-    {
-//        FlashError();
-        return BME280_E_COMM_FAIL;
-    }
-    return BME280_OK;
-}
-#endif // BME280_SENSOR
-
 char checksum[6] = {'\0'};
 
 void main(void)
 {
     /// Initialise the microcontroller pins, modules and interrupts
     SYSTEM_Initialize();
-    INTERRUPT_GlobalInterruptEnable();
-    TMR0_SetInterruptHandler(TimerISR);
+    InitTiming();
     
     /// Setup the sensor device
-    struct bme280_dev env_sensor;
-    int8_t env_sensor_status = BME280_OK;
-
-    env_sensor.dev_id = BME280_I2C_ADDR_PRIM;
-    env_sensor.intf = BME280_I2C_INTF;
-    env_sensor.read = ReadEnvSensor;
-    env_sensor.write = WriteEnvSensor;
-    env_sensor.delay_ms = Sleep;
+    BME280_Init();
     
     ClearString(messages[0]);
     ClearString(messages[1]);
-
-    env_sensor_status = bme280_init(&env_sensor);
 
 #ifdef GPS_MODULE
     //SetupGPS();
@@ -886,10 +673,10 @@ void main(void)
         {
 #ifndef TEST_GPS_NAVDATA
             struct bme280_data sensor_data;
-            bme280_get_sensor_data(BME280_ALL, &sensor_data, &env_sensor);
+            bme280_get_sensor_data(BME280_ALL, &sensor_data, &EnvSensor);
+#ifdef RADIO_TRANSMISSION
             ClearString(messages[0]);
             ClearString(messages[1]);
-#ifdef RADIO_TRANSMISSION
 #ifdef GPS_MODULE
             char convertedNumber[16] = {'\0'};
             /// Add sensor data
@@ -930,7 +717,6 @@ void main(void)
         else
         {
             /// Failed to get GPS data
-            FlashError();
         }
         
         for (int i = 0; i < DELAY_MULT; i++)

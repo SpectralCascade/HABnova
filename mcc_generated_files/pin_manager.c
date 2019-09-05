@@ -107,11 +107,7 @@ void PIN_MANAGER_Initialize(void)
     
 	
     RXPPS = 0x0D;   //RB5->EUSART:RX;    
-    SSPDATPPS = 0x0C;   //RB4->MSSP:SDA;    
-    RB6PPS = 0x10;   //RB6->MSSP:SCL;    
     RB7PPS = 0x12;   //RB7->EUSART:TX;    
-    RB4PPS = 0x11;   //RB4->MSSP:SDA;    
-    SSPCLKPPS = 0x0E;   //RB6->MSSP:SCL;    
 }
   
 void PIN_MANAGER_IOC(void)

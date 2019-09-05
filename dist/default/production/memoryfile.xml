@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production/HABNova.production.hex">
+  <executable name="dist/default/production\HABnova.production.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>
-      <used>6684</used>
-      <free>1508</free>
+      <used>8094</used>
+      <free>98</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>1024</length>
-      <used>688</used>
-      <free>336</free>
+      <used>567</used>
+      <free>457</free>
     </memory>
   </executable>
 </project>

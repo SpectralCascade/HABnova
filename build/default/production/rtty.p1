@@ -1,24 +1,22 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"357 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 357:     struct {
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
-"367
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 367:     struct {
-[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S32 . . T0IF . T0IE ]
-"356
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 356: typedef union {
-[u S30 `S31 1 `S32 1 ]
-[n S30 . . . ]
-"374
-[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"219 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 219: void TMR0_ISR(void);
-[v _TMR0_ISR `(v ~T0 @X0 0 ef ]
+"54 K:\Programs\MPLABX\XC8 Compiler\pic\include\c99\string.h
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\c99\string.h: 54: size_t strlen (const char *);
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+"2631 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2631:     struct {
+[s S137 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S137 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 ]
+"2630
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2630: typedef union {
+[u S136 `S137 1 ]
+[n S136 . . ]
+"2640
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 2640: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
+[v _LATAbits `VS136 ~T0 @X0 0 e@268 ]
+[v F9589 `(v ~T0 @X0 1 tf1`ul ]
+"92 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic.h
+[v __delay `JF9589 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1345,39 +1343,250 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27877
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 27877: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"52 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 52: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"53
-[; ;mcc_generated_files/interrupt_manager.c: 53: {
+"10 rtty.c
+[; ;rtty.c: 10: uint16_t crc16_update(char* pData, int length, uint16_t wCrc)
+[v _crc16_update `(us ~T0 @X0 1 ef3`*uc`i`us ]
+"11
+[; ;rtty.c: 11: {
 {
-[e :U _INTERRUPT_InterruptManager ]
+[e :U _crc16_update ]
+"10
+[; ;rtty.c: 10: uint16_t crc16_update(char* pData, int length, uint16_t wCrc)
+[v _pData `*uc ~T0 @X0 1 r1 ]
+[v _length `i ~T0 @X0 1 r2 ]
+[v _wCrc `us ~T0 @X0 1 r3 ]
+"11
+[; ;rtty.c: 11: {
 [f ]
-"55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
-[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 1217  ]
-"56
-[; ;mcc_generated_files/interrupt_manager.c: 56:     {
-{
-"57
-[; ;mcc_generated_files/interrupt_manager.c: 57:         TMR0_ISR();
-[e ( _TMR0_ISR ..  ]
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58:     }
-}
+"12
+[; ;rtty.c: 12:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"13
+[; ;rtty.c: 13:     while (length--) {
 [e $U 1218  ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59:     else
-[e :U 1217 ]
-"60
-[; ;mcc_generated_files/interrupt_manager.c: 60:     {
+[e :U 1219 ]
 {
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:     }
+"14
+[; ;rtty.c: 14:         wCrc ^= *(unsigned char *)pData++ << 8;
+[e =^ _wCrc -> << -> *U -> ++ _pData * -> -> 1 `i `x -> -> # *U _pData `i `x `*uc `i -> 8 `i `us ]
+"15
+[; ;rtty.c: 15:         for (i=0; i < 8; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 1221  ]
+[e $U 1222  ]
+[e :U 1221 ]
+"16
+[; ;rtty.c: 16:             wCrc = wCrc & 0x8000 ? (wCrc << 1) ^ 0x1021 : wCrc << 1;
+[e = _wCrc -> ? != & -> _wCrc `ui -> 32768 `ui -> -> 0 `i `ui : ^ << -> _wCrc `ui -> 1 `i -> -> 4129 `i `ui << -> _wCrc `ui -> 1 `i `us ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 1221  ]
+[e :U 1222 ]
+}
+"17
+[; ;rtty.c: 17:     }
 }
 [e :U 1218 ]
-"63
-[; ;mcc_generated_files/interrupt_manager.c: 63: }
-[e :UE 1216 ]
+"13
+[; ;rtty.c: 13:     while (length--) {
+[e $ != -- _length -> 1 `i -> 0 `i 1219  ]
+[e :U 1220 ]
+"18
+[; ;rtty.c: 18:     return wCrc;
+[e ) _wCrc ]
+[e $UE 1217  ]
+"19
+[; ;rtty.c: 19: }
+[e :UE 1217 ]
+}
+"21
+[; ;rtty.c: 21: uint16_t crc16(char** data, int segments)
+[v _crc16 `(us ~T0 @X0 1 ef2`**uc`i ]
+"22
+[; ;rtty.c: 22: {
+{
+[e :U _crc16 ]
+"21
+[; ;rtty.c: 21: uint16_t crc16(char** data, int segments)
+[v _data `**uc ~T0 @X0 1 r1 ]
+[v _segments `i ~T0 @X0 1 r2 ]
+"22
+[; ;rtty.c: 22: {
+[f ]
+"23
+[; ;rtty.c: 23:     uint16_t crc = 0xFFFF;
+[v _crc `us ~T0 @X0 1 a ]
+[e = _crc -> -> 65535 `ui `us ]
+"24
+[; ;rtty.c: 24:     for (int i = 0; i < segments; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 1228  ]
+[e :U 1225 ]
+"25
+[; ;rtty.c: 25:     {
+{
+"26
+[; ;rtty.c: 26:         crc = crc16_update(data[i], strlen(data[i]), crc);
+[e = _crc ( _crc16_update (3 , , *U + _data * -> _i `x -> -> # *U _data `i `x -> ( _strlen (1 -> *U + _data * -> _i `x -> -> # *U _data `i `x `*Cuc `i _crc ]
+"27
+[; ;rtty.c: 27:     }
+}
+[e ++ _i -> 1 `i ]
+[e :U 1228 ]
+[e $ < _i _segments 1225  ]
+[e :U 1226 ]
+}
+"28
+[; ;rtty.c: 28:     return crc & 0xFFFF;
+[e ) -> & -> _crc `ui -> 65535 `ui `us ]
+[e $UE 1224  ]
+"29
+[; ;rtty.c: 29: }
+[e :UE 1224 ]
+}
+"31
+[; ;rtty.c: 31: void TransmitBit(_Bool b)
+[v _TransmitBit `(v ~T0 @X0 1 ef1`a ]
+"32
+[; ;rtty.c: 32: {
+{
+[e :U _TransmitBit ]
+"31
+[; ;rtty.c: 31: void TransmitBit(_Bool b)
+[v _b `a ~T0 @X0 1 r1 ]
+"32
+[; ;rtty.c: 32: {
+[f ]
+"33
+[; ;rtty.c: 33:  if (b)
+[e $ ! != -> _b `i -> 0 `i 1230  ]
+"34
+[; ;rtty.c: 34:  {
+{
+"35
+[; ;rtty.c: 35:   do { LATAbits.LATA4 = 1; } while(0);
+[e :U 1233 ]
+{
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
+}
+[e :U 1232 ]
+"36
+[; ;rtty.c: 36:  }
+}
+[e $U 1234  ]
+"37
+[; ;rtty.c: 37:  else
+[e :U 1230 ]
+"38
+[; ;rtty.c: 38:  {
+{
+"39
+[; ;rtty.c: 39:   do { LATAbits.LATA4 = 0; } while(0);
+[e :U 1237 ]
+{
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 1236 ]
+"40
+[; ;rtty.c: 40:  }
+}
+[e :U 1234 ]
+"46
+[; ;rtty.c: 46:  _delay((unsigned long)((((1000 / 50) / 2) * 1000)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> * / / -> 1000 `i -> 50 `i -> 2 `i -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"47
+[; ;rtty.c: 47:  _delay((unsigned long)((((1000 / 50) / 2) * 1000)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> * / / -> 1000 `i -> 50 `i -> 2 `i -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"49
+[; ;rtty.c: 49: }
+[e :UE 1229 ]
+}
+"51
+[; ;rtty.c: 51: void TransmitByte(char byte)
+[v _TransmitByte `(v ~T0 @X0 1 ef1`uc ]
+"52
+[; ;rtty.c: 52: {
+{
+[e :U _TransmitByte ]
+"51
+[; ;rtty.c: 51: void TransmitByte(char byte)
+[v _byte `uc ~T0 @X0 1 r1 ]
+"52
+[; ;rtty.c: 52: {
+[f ]
+"62
+[; ;rtty.c: 62:     TransmitBit(0);
+[e ( _TransmitBit (1 -> -> 0 `i `a ]
+"64
+[; ;rtty.c: 64:  for (int i = 0; i < 7; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 7 `i 1239  ]
+[e $U 1240  ]
+[e :U 1239 ]
+"65
+[; ;rtty.c: 65:  {
+{
+"66
+[; ;rtty.c: 66:   TransmitBit((byte >> i) & 1);
+[e ( _TransmitBit (1 -> & >> -> _byte `i _i -> 1 `i `a ]
+"67
+[; ;rtty.c: 67:  }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 7 `i 1239  ]
+[e :U 1240 ]
+}
+"69
+[; ;rtty.c: 69:  TransmitBit(1);
+[e ( _TransmitBit (1 -> -> 1 `i `a ]
+"70
+[; ;rtty.c: 70:  TransmitBit(1);
+[e ( _TransmitBit (1 -> -> 1 `i `a ]
+"71
+[; ;rtty.c: 71: }
+[e :UE 1238 ]
+}
+"73
+[; ;rtty.c: 73: void TransmitString(char* message)
+[v _TransmitString `(v ~T0 @X0 1 ef1`*uc ]
+"74
+[; ;rtty.c: 74: {
+{
+[e :U _TransmitString ]
+"73
+[; ;rtty.c: 73: void TransmitString(char* message)
+[v _message `*uc ~T0 @X0 1 r1 ]
+"74
+[; ;rtty.c: 74: {
+[f ]
+"78
+[; ;rtty.c: 78:  for (int i = 0, counti = strlen(message); i < counti; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[v _counti `i ~T0 @X0 1 a ]
+[e = _counti -> ( _strlen (1 -> _message `*Cuc `i ]
+[e $U 1246  ]
+[e :U 1243 ]
+"79
+[; ;rtty.c: 79:  {
+{
+"80
+[; ;rtty.c: 80:   TransmitByte(message[i]);
+[e ( _TransmitByte (1 *U + _message * -> _i `x -> -> # *U _message `i `x ]
+"81
+[; ;rtty.c: 81:  }
+}
+[e ++ _i -> 1 `i ]
+[e :U 1246 ]
+[e $ < _i _counti 1243  ]
+[e :U 1244 ]
+}
+"85
+[; ;rtty.c: 85: }
+[e :UE 1242 ]
 }

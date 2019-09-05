@@ -1,6 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
 "357 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 357:     struct {
 [s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -16,9 +14,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"219 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 219: void TMR0_ISR(void);
-[v _TMR0_ISR `(v ~T0 @X0 0 ef ]
+[v F9639 `(v ~T0 @X0 0 tf ]
+"238 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 238:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F9639 ]
+[v F9589 `(v ~T0 @X0 1 tf1`ul ]
+"92 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic.h
+[v __delay `JF9589 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1345,39 +1348,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27877
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 27877: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"52 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 52: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"53
-[; ;mcc_generated_files/interrupt_manager.c: 53: {
+"4 timing.c
+[; ;timing.c: 4: unsigned long ticks = 0;
+[v _ticks `ul ~T0 @X0 1 e ]
+[i _ticks
+-> -> -> 0 `i `l `ul
+]
+"6
+[; ;timing.c: 6: void TimerISR()
+[v _TimerISR `(v ~T0 @X0 1 ef ]
+"7
+[; ;timing.c: 7: {
 {
-[e :U _INTERRUPT_InterruptManager ]
+[e :U _TimerISR ]
 [f ]
-"55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
-[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 1217  ]
-"56
-[; ;mcc_generated_files/interrupt_manager.c: 56:     {
-{
-"57
-[; ;mcc_generated_files/interrupt_manager.c: 57:         TMR0_ISR();
-[e ( _TMR0_ISR ..  ]
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58:     }
-}
-[e $U 1218  ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59:     else
-[e :U 1217 ]
-"60
-[; ;mcc_generated_files/interrupt_manager.c: 60:     {
-{
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:     }
-}
-[e :U 1218 ]
-"63
-[; ;mcc_generated_files/interrupt_manager.c: 63: }
+"8
+[; ;timing.c: 8:     ticks++;
+[e ++ _ticks -> -> -> 1 `i `l `ul ]
+"9
+[; ;timing.c: 9: }
 [e :UE 1216 ]
 }
+"11
+[; ;timing.c: 11: void InitTiming()
+[v _InitTiming `(v ~T0 @X0 1 ef ]
+"12
+[; ;timing.c: 12: {
+{
+[e :U _InitTiming ]
+[f ]
+"13
+[; ;timing.c: 13:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"14
+[; ;timing.c: 14:     TMR0_SetInterruptHandler(TimerISR);
+[e ( _TMR0_SetInterruptHandler (1 &U _TimerISR ]
+"15
+[; ;timing.c: 15: }
+[e :UE 1217 ]
+}
+"17
+[; ;timing.c: 17: void Sleep(uint32_t ms)
+[v _Sleep `(v ~T0 @X0 1 ef1`ul ]
+"18
+[; ;timing.c: 18: {
+{
+[e :U _Sleep ]
+"17
+[; ;timing.c: 17: void Sleep(uint32_t ms)
+[v _ms `ul ~T0 @X0 1 r1 ]
+"18
+[; ;timing.c: 18: {
+[f ]
+"19
+[; ;timing.c: 19:     unsigned long start = ticks;
+[v _start `ul ~T0 @X0 1 a ]
+[e = _start _ticks ]
+"20
+[; ;timing.c: 20:     while (ticks - start < ms)
+[e $U 1219  ]
+[e :U 1220 ]
+"21
+[; ;timing.c: 21:     {
+{
+"22
+[; ;timing.c: 22:         _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"23
+[; ;timing.c: 23:     }
+}
+[e :U 1219 ]
+"20
+[; ;timing.c: 20:     while (ticks - start < ms)
+[e $ < - _ticks _start _ms 1220  ]
+[e :U 1221 ]
+"24
+[; ;timing.c: 24: }
+[e :UE 1218 ]
+}
+"27
+[; ;timing.c: 27: unsigned long __g_timeout_start;
+[v ___g_timeout_start `ul ~T0 @X0 1 e ]

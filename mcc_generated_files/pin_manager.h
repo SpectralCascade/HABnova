@@ -180,22 +180,22 @@
 #define RB7_SetAnalogMode()         do { ANSELBbits.ANSB7 = 1; } while(0)
 #define RB7_SetDigitalMode()        do { ANSELBbits.ANSB7 = 0; } while(0)
 
-// get/set LED_NAV aliases
-#define LED_NAV_TRIS                 TRISCbits.TRISC5
-#define LED_NAV_LAT                  LATCbits.LATC5
-#define LED_NAV_PORT                 PORTCbits.RC5
-#define LED_NAV_WPU                  WPUCbits.WPUC5
-#define LED_NAV_OD                   ODCONCbits.ODC5
-#define LED_NAV_SetHigh()            do { LATCbits.LATC5 = 1; } while(0)
-#define LED_NAV_SetLow()             do { LATCbits.LATC5 = 0; } while(0)
-#define LED_NAV_Toggle()             do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0)
-#define LED_NAV_GetValue()           PORTCbits.RC5
-#define LED_NAV_SetDigitalInput()    do { TRISCbits.TRISC5 = 1; } while(0)
-#define LED_NAV_SetDigitalOutput()   do { TRISCbits.TRISC5 = 0; } while(0)
-#define LED_NAV_SetPullup()          do { WPUCbits.WPUC5 = 1; } while(0)
-#define LED_NAV_ResetPullup()        do { WPUCbits.WPUC5 = 0; } while(0)
-#define LED_NAV_SetPushPull()        do { ODCONCbits.ODC5 = 0; } while(0)
-#define LED_NAV_SetOpenDrain()       do { ODCONCbits.ODC5 = 1; } while(0)
+// get/set LED_DEBUG aliases
+#define LED_DEBUG_TRIS                 TRISCbits.TRISC5
+#define LED_DEBUG_LAT                  LATCbits.LATC5
+#define LED_DEBUG_PORT                 PORTCbits.RC5
+#define LED_DEBUG_WPU                  WPUCbits.WPUC5
+#define LED_DEBUG_OD                   ODCONCbits.ODC5
+#define LED_DEBUG_SetHigh()            do { LATCbits.LATC5 = 1; } while(0)
+#define LED_DEBUG_SetLow()             do { LATCbits.LATC5 = 0; } while(0)
+#define LED_DEBUG_Toggle()             do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0)
+#define LED_DEBUG_GetValue()           PORTCbits.RC5
+#define LED_DEBUG_SetDigitalInput()    do { TRISCbits.TRISC5 = 1; } while(0)
+#define LED_DEBUG_SetDigitalOutput()   do { TRISCbits.TRISC5 = 0; } while(0)
+#define LED_DEBUG_SetPullup()          do { WPUCbits.WPUC5 = 1; } while(0)
+#define LED_DEBUG_ResetPullup()        do { WPUCbits.WPUC5 = 0; } while(0)
+#define LED_DEBUG_SetPushPull()        do { ODCONCbits.ODC5 = 0; } while(0)
+#define LED_DEBUG_SetOpenDrain()       do { ODCONCbits.ODC5 = 1; } while(0)
 
 /**
    @Param

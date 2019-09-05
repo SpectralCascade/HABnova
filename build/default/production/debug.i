@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/eusart.c"
+# 1 "debug.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/eusart.c" 2
-# 50 "mcc_generated_files/eusart.c"
-# 1 "mcc_generated_files/eusart.h" 1
-# 54 "mcc_generated_files/eusart.h"
+# 1 "debug.c" 2
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 1 3
 # 18 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -16927,10 +16926,17 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/eusart.h" 2
+# 49 "./mcc_generated_files/mcc.h" 2
 
-# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
-# 55 "mcc_generated_files/eusart.h" 2
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 210 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 222 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "./mcc_generated_files/mcc.h" 2
 
 # 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 3
@@ -17015,86 +17021,81 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdint.h" 2 3
-# 56 "mcc_generated_files/eusart.h" 2
-# 97 "mcc_generated_files/eusart.h"
+# 52 "./mcc_generated_files/mcc.h" 2
+
+# 1 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\c99\\stdbool.h" 1 3
+# 53 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 98 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 168 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 219 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 238 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 274 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/eusart.h" 1
+# 97 "./mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 145 "mcc_generated_files/eusart.h"
+# 145 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_ready(void);
-# 193 "mcc_generated_files/eusart.h"
+# 193 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_rx_ready(void);
-# 240 "mcc_generated_files/eusart.h"
+# 240 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 260 "mcc_generated_files/eusart.h"
+# 260 "./mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 280 "mcc_generated_files/eusart.h"
+# 280 "./mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 50 "mcc_generated_files/eusart.c" 2
+# 56 "./mcc_generated_files/mcc.h" 2
+# 71 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 84 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 1 "debug.c" 2
+
+# 1 "./timing.h" 1
+extern unsigned long ticks;
+
+void TimerISR(void);
+
+
+
+void InitTiming(void);
+
+void Sleep(uint32_t ms);
 
 
 
 
 
+extern unsigned long __g_timeout_start;
+# 2 "debug.c" 2
 
-void EUSART_Initialize(void)
+
+void DebugAlert(unsigned int delay_high, unsigned int delay_low, uint8_t num_flashes)
 {
 
-
-
-    BAUD1CON = 0x08;
-
-
-    RC1STA = 0x90;
-
-
-    TX1STA = 0x24;
-
-
-    SPBRGL = 0x67;
-
-
-    SPBRGH = 0x00;
-
-
-}
-
-_Bool EUSART_is_tx_ready(void)
-{
-    return (_Bool)(PIR1bits.TXIF && TX1STAbits.TXEN);
-}
-
-_Bool EUSART_is_rx_ready(void)
-{
-    return PIR1bits.RCIF;
-}
-
-_Bool EUSART_is_tx_done(void)
-{
-    return TX1STAbits.TRMT;
-}
-
-uint8_t EUSART_Read(void)
-{
-    while(!PIR1bits.RCIF)
+    for (int i = 0; i < num_flashes; i++)
     {
+        do { LATCbits.LATC5 = 1; } while(0);
+        Sleep(delay_high);
+        do { LATCbits.LATC5 = 0; } while(0);
+        Sleep(delay_low);
     }
 
-
-    if(1 == RC1STAbits.OERR)
-    {
-
-
-        RC1STAbits.CREN = 0;
-        RC1STAbits.CREN = 1;
-    }
-
-    return RC1REG;
-}
-
-void EUSART_Write(uint8_t txData)
-{
-    while(0 == PIR1bits.TXIF)
-    {
-    }
-
-    TX1REG = txData;
 }
