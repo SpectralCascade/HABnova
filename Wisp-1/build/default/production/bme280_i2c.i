@@ -17317,7 +17317,7 @@ int8_t bme280_compensate_data(uint8_t sensor_comp,
 # 3 "bme280_i2c.c" 2
 
 # 1 "./bme280_i2c.h" 1
-# 48 "./bme280_i2c.h"
+# 20 "./bme280_i2c.h"
 typedef enum
 {
     I2C_ERROR_NOTHING,
@@ -17325,6 +17325,9 @@ typedef enum
     I2C_ERROR_COLISION
 } I2C_ERROR;
 
+
+
+void I2C_Wait_SSPIF(void);
 
 void I2C_Init(void);
 void I2C_WriteByte(uint8_t data);
@@ -17341,7 +17344,7 @@ int8_t WriteEnvSensor(uint8_t i2c_addr, uint8_t reg_addr, uint8_t *reg_data, uin
 # 4 "bme280_i2c.c" 2
 
 # 1 "./timing.h" 1
-extern unsigned long ticks;
+extern uint32_t ticks;
 
 void TimerISR(void);
 
@@ -17355,7 +17358,7 @@ void Sleep(uint32_t ms);
 
 
 
-extern unsigned long __g_timeout_start;
+extern uint32_t __g_timeout_start;
 # 5 "bme280_i2c.c" 2
 
 # 1 "./debug.h" 1
@@ -17363,6 +17366,12 @@ extern unsigned long __g_timeout_start;
 void DebugAlert(unsigned int delay_high, unsigned int delay_low, uint8_t num_flashes);
 # 6 "bme280_i2c.c" 2
 # 16 "bme280_i2c.c"
+void I2C_Wait_SSPIF()
+{
+    __g_timeout_start = ticks; while (!(PIR1bits.SSP1IF != 0)) { if (ticks - __g_timeout_start > 1000) { DebugAlert(200, 200, 3);; break; } };
+    PIR1bits.SSP1IF = 0;
+}
+
 void I2C_Init(void)
 {
     SSPCLKPPS = 0x0E;
@@ -17381,7 +17390,7 @@ void I2C_Init(void)
 void I2C_WriteByte(uint8_t data)
 {
     SSP1BUF = data;
-    __g_timeout_start = ticks; while (!(PIR1bits.SSP1IF != 0)) { if (ticks - __g_timeout_start > 3000) { DebugAlert(200, 200, 3);; break; } }; PIR1bits.SSP1IF = 0;;
+    I2C_Wait_SSPIF();
 
 
     if(SSP1CON2bits.ACKSTAT!=0){
@@ -17396,14 +17405,14 @@ uint8_t I2C_ReadByte(uint8_t ackbit)
     uint8_t rcvdata;
 
     SSP1CON2bits.RCEN = 1;
-    __g_timeout_start = ticks; while (!(PIR1bits.SSP1IF != 0)) { if (ticks - __g_timeout_start > 3000) { DebugAlert(200, 200, 3);; break; } }; PIR1bits.SSP1IF = 0;;
+    I2C_Wait_SSPIF();
 
     rcvdata = SSP1BUF;
 
 
     SSP1CON2bits.ACKDT=ackbit;
     SSP1CON2bits.ACKEN = 1;
-    __g_timeout_start = ticks; while (!(PIR1bits.SSP1IF != 0)) { if (ticks - __g_timeout_start > 3000) { DebugAlert(200, 200, 3);; break; } }; PIR1bits.SSP1IF = 0;;
+    I2C_Wait_SSPIF();
 
     return (rcvdata);
 }
@@ -17411,7 +17420,7 @@ uint8_t I2C_ReadByte(uint8_t ackbit)
 void I2C_Stop(void)
 {
     SSP1CON2bits.PEN = 1;
-    __g_timeout_start = ticks; while (!(PIR1bits.SSP1IF != 0)) { if (ticks - __g_timeout_start > 3000) { DebugAlert(200, 200, 3);; break; } }; PIR1bits.SSP1IF = 0;;
+    I2C_Wait_SSPIF();
 }
 
 void I2C_UserAlert(I2C_ERROR status)
@@ -17472,7 +17481,7 @@ int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16
 
 
     SSP1CON2bits.SEN = 1;
-    __g_timeout_start = ticks; while (!(PIR1bits.SSP1IF != 0)) { if (ticks - __g_timeout_start > 3000) { DebugAlert(200, 200, 3);; break; } }; PIR1bits.SSP1IF = 0;;
+    I2C_Wait_SSPIF();
 
 
     I2C_WriteByte(dev_id << 1);
@@ -17482,7 +17491,7 @@ int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16
 
 
     SSP1CON2bits.RSEN = 1;
-    __g_timeout_start = ticks; while (!(PIR1bits.SSP1IF != 0)) { if (ticks - __g_timeout_start > 3000) { DebugAlert(200, 200, 3);; break; } }; PIR1bits.SSP1IF = 0;;
+    I2C_Wait_SSPIF();
 
 
     I2C_WriteByte((dev_id << 1) | 0x01);
@@ -17511,10 +17520,10 @@ int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint1
 
 
     SSP1CON2bits.SEN = 1;
-    __g_timeout_start = ticks; while (!(PIR1bits.SSP1IF != 0)) { if (ticks - __g_timeout_start > 3000) { DebugAlert(200, 200, 3);; break; } }; PIR1bits.SSP1IF = 0;;
+    I2C_Wait_SSPIF();
 
 
-    I2C_WriteByte(dev_id<<1);
+    I2C_WriteByte(dev_id << 1);
 
 
     I2C_WriteByte(reg_addr);

@@ -17069,7 +17069,7 @@ void OSCILLATOR_Initialize(void);
 # 1 "timing.c" 2
 
 # 1 "./timing.h" 1
-extern unsigned long ticks;
+extern uint32_t ticks;
 
 void TimerISR(void);
 
@@ -17083,11 +17083,11 @@ void Sleep(uint32_t ms);
 
 
 
-extern unsigned long __g_timeout_start;
+extern uint32_t __g_timeout_start;
 # 2 "timing.c" 2
 
 
-unsigned long ticks = 0;
+uint32_t ticks = 0;
 
 void TimerISR()
 {
@@ -17102,7 +17102,7 @@ void InitTiming()
 
 void Sleep(uint32_t ms)
 {
-    unsigned long start = ticks;
+    uint32_t start = ticks;
     while (ticks - start < ms)
     {
         _delay((unsigned long)((1)*(4000000/4000.0)));
@@ -17110,4 +17110,4 @@ void Sleep(uint32_t ms)
 }
 
 
-unsigned long __g_timeout_start;
+uint32_t __g_timeout_start;

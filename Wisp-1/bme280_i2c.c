@@ -5,13 +5,19 @@
 #include "timing.h"
 #include "debug.h"
 
+///
+/// This file is modified from https://github.com/KenDfun/BME280_PIC16F1619/blob/master/BME280_PIC16F1619.X/I2C_user.c
+///
+
 #ifdef I2C_FUNCS
 
-#define I2C_TIMEOUT 3000
+#define I2C_TIMEOUT 1000
 
-#define I2C_WAIT_SSPIF()                                                        \
-    await_timeout(PIR1bits.SSP1IF != 0, I2C_TIMEOUT, FlashError);               \
+void I2C_Wait_SSPIF()
+{
+    await_timeout(PIR1bits.SSP1IF != 0, I2C_TIMEOUT, FlashError);
     PIR1bits.SSP1IF = 0;
+}
 
 void I2C_Init(void)
 {
@@ -31,7 +37,7 @@ void I2C_Init(void)
 void I2C_WriteByte(uint8_t data)
 {
     SSP1BUF = data; // write data
-    I2C_WAIT_SSPIF();
+    I2C_Wait_SSPIF();
     
     // ACK check
     if(SSP1CON2bits.ACKSTAT!=0){
@@ -46,14 +52,14 @@ uint8_t I2C_ReadByte(uint8_t ackbit)
     uint8_t rcvdata;
     
     SSP1CON2bits.RCEN = 1; // Receive enable
-    I2C_WAIT_SSPIF();
+    I2C_Wait_SSPIF();
     
     rcvdata = SSP1BUF;
     
     // send ack or nak
     SSP1CON2bits.ACKDT=ackbit;
     SSP1CON2bits.ACKEN = 1;
-    I2C_WAIT_SSPIF();    
+    I2C_Wait_SSPIF();    
     
     return (rcvdata);
 }
@@ -61,7 +67,7 @@ uint8_t I2C_ReadByte(uint8_t ackbit)
 void I2C_Stop(void)
 {
     SSP1CON2bits.PEN = 1;
-    I2C_WAIT_SSPIF();
+    I2C_Wait_SSPIF();
 }
 
 void I2C_UserAlert(I2C_ERROR status)
@@ -122,7 +128,7 @@ int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16
     
     // set start condition
     SSP1CON2bits.SEN = 1;
-    I2C_WAIT_SSPIF();
+    I2C_Wait_SSPIF();
     
     // send device address
     I2C_WriteByte(dev_id << 1); // write
@@ -132,7 +138,7 @@ int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16
     
     // set repeat start condition
     SSP1CON2bits.RSEN = 1;
-    I2C_WAIT_SSPIF();
+    I2C_Wait_SSPIF();
     
     //send device address
     I2C_WriteByte((dev_id << 1) | 0x01); // read
@@ -161,10 +167,10 @@ int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint1
     
     // set start condition
     SSP1CON2bits.SEN = 1;
-    I2C_WAIT_SSPIF();
+    I2C_Wait_SSPIF();
     
     // send device address
-    I2C_WriteByte(dev_id<<1); // write
+    I2C_WriteByte(dev_id << 1); // write
     
     // send data
     I2C_WriteByte(reg_addr);

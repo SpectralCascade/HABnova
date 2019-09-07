@@ -1349,7 +1349,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f1619.h: 27877: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "4 timing.c
-[; ;timing.c: 4: unsigned long ticks = 0;
+[; ;timing.c: 4: uint32_t ticks = 0;
 [v _ticks `ul ~T0 @X0 1 e ]
 [i _ticks
 -> -> -> 0 `i `l `ul
@@ -1401,7 +1401,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timing.c: 18: {
 [f ]
 "19
-[; ;timing.c: 19:     unsigned long start = ticks;
+[; ;timing.c: 19:     uint32_t start = ticks;
 [v _start `ul ~T0 @X0 1 a ]
 [e = _start _ticks ]
 "20
@@ -1427,5 +1427,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1218 ]
 }
 "27
-[; ;timing.c: 27: unsigned long __g_timeout_start;
+[; ;timing.c: 27: uint32_t __g_timeout_start;
 [v ___g_timeout_start `ul ~T0 @X0 1 e ]

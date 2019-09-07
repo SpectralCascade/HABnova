@@ -17237,7 +17237,7 @@ int8_t bme280_compensate_data(uint8_t sensor_comp,
 # 3 "main.c" 2
 
 # 1 "./bme280_i2c.h" 1
-# 48 "./bme280_i2c.h"
+# 20 "./bme280_i2c.h"
 typedef enum
 {
     I2C_ERROR_NOTHING,
@@ -17245,6 +17245,9 @@ typedef enum
     I2C_ERROR_COLISION
 } I2C_ERROR;
 
+
+
+void I2C_Wait_SSPIF(void);
 
 void I2C_Init(void);
 void I2C_WriteByte(uint8_t data);
@@ -17261,7 +17264,7 @@ int8_t WriteEnvSensor(uint8_t i2c_addr, uint8_t reg_addr, uint8_t *reg_data, uin
 # 4 "main.c" 2
 
 # 1 "./timing.h" 1
-extern unsigned long ticks;
+extern uint32_t ticks;
 
 void TimerISR(void);
 
@@ -17275,7 +17278,7 @@ void Sleep(uint32_t ms);
 
 
 
-extern unsigned long __g_timeout_start;
+extern uint32_t __g_timeout_start;
 # 5 "main.c" 2
 
 # 1 "./rtty.h" 1
@@ -17587,7 +17590,13 @@ char message_end[70 + 3];
 
 
 char* messages[2] = {message_start, message_end};
-# 661 "main.c"
+
+void ClearMessages()
+{
+    ClearString(messages[0]);
+    ClearString(messages[1]);
+}
+# 614 "main.c"
 char checksum[6] = {'\0'};
 
 void main(void)
@@ -17599,8 +17608,7 @@ void main(void)
 
     BME280_Init();
 
-    ClearString(messages[0]);
-    ClearString(messages[1]);
+    ClearMessages();
 
 
 
@@ -17609,23 +17617,23 @@ void main(void)
     while (1)
     {
 
-        if (
 
 
 
+        if (1)
 
-            1
-
-        )
         {
 
             struct bme280_data sensor_data;
             bme280_get_sensor_data(0x07, &sensor_data, &EnvSensor);
 
-            ClearString(messages[0]);
-            ClearString(messages[1]);
 
-            char convertedNumber[16] = {'\0'};
+            ClearMessages();
+
+
+            char convertedNumber[16];
+            convertedNumber[15] = '\0';
+            ClearString(convertedNumber);
 
             IntToString(sensor_data.temperature, convertedNumber);
             int index = strlen(messages[1]);

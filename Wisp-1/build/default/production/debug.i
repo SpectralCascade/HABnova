@@ -17069,7 +17069,7 @@ void OSCILLATOR_Initialize(void);
 # 1 "debug.c" 2
 
 # 1 "./timing.h" 1
-extern unsigned long ticks;
+extern uint32_t ticks;
 
 void TimerISR(void);
 
@@ -17083,7 +17083,7 @@ void Sleep(uint32_t ms);
 
 
 
-extern unsigned long __g_timeout_start;
+extern uint32_t __g_timeout_start;
 # 2 "debug.c" 2
 
 

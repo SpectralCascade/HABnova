@@ -31,7 +31,7 @@ void ClearString(char* str)
 }
 
 /// Returns true if a source string has a matching target string
-bool FindString(char* src, int srcLen, char* target, int targetLen)
+bool FindString(char* src, int srcLen, char* target, int targetLen) // 90 words
 {
     int matching = 0;
     for (int i = 0; i < srcLen; i++)
@@ -277,6 +277,12 @@ char message_end[MAX_MESSAGE_LENGTH + 3];
 /// Array of message block pointers.
 char* messages[2] = {message_start, message_end};
 
+void ClearMessages()
+{
+    ClearString(messages[0]);
+    ClearString(messages[1]);
+}
+
 /// Large memory footprint
 #ifdef GPS_MODULE
 
@@ -330,7 +336,7 @@ void GPS_SendUBX(uint8_t* data)
 bool GPS_HasAcknowledged(uint8_t* data)
 {
     uint8_t ackPacket[10];
-    unsigned long startTime = millis();
+    uint32_t startTime = millis();
 
     // This is the ACK data packet we expect to receive from the GPS module.
     ackPacket[0] = 0xB5;	// header
@@ -399,7 +405,7 @@ bool gps_configured = false;
 
 #endif// UBX
 
-void SetupGPS()
+void SetupGPS() // 281 words
 {
     while (!gps_configured)
     {
@@ -412,13 +418,12 @@ void SetupGPS()
     }
     gps_configured = false;
     // Disable all sentences, we will poll the GPS module as necessary.
-    // printf() is rerouted to EUSART so we can use that to send NMEA commands.
-    WriteGPS("$PUBX,40,GLL,0,0,0,0*5C\r\n");
+    /*WriteGPS("$PUBX,40,GLL,0,0,0,0*5C\r\n");
     WriteGPS("$PUBX,40,GGA,0,0,0,0*5A\r\n");
     WriteGPS("$PUBX,40,VTG,0,0,0,0*5E\r\n");
     WriteGPS("$PUBX,40,GSV,0,0,0,0*59\r\n");
     WriteGPS("$PUBX,40,GSA,0,0,0,0*4E\r\n");
-    WriteGPS("$PUBX,40,RMC,0,0,0,0*47\r\n");
+    WriteGPS("$PUBX,40,RMC,0,0,0,0*47\r\n");*/
 }
 
 enum FieldTypesPUBX {
@@ -438,19 +443,6 @@ enum FieldTypesPUBX {
 };
 
 #define LEN_DATA_TYPE   7
-
-void SafeSetByte(char* dest, int length, unsigned int index, char data)
-{
-    if (index < length - 1)
-    {
-        dest[index] = data;
-    }
-    else
-    {
-        // Truncate
-        dest[length - 1] = '\0';
-    }
-}
 
 #ifdef DEBUG_CONSOLE
 int FakeEusartCounter = 0;
@@ -472,19 +464,11 @@ uint8_t EUSART_Read()
 // Enable this to transmit the first chunk of GPS data received.
 //#define TEST_GPS_NAVDATA
 
-// Polls the GPS module and stores received data. Returns false if there is no
-// response after 3 seconds.
-bool GetNavData()
+bool PollGPS()
 {
     bool success = false;
-#ifndef DEBUG_CONSOLE
-    LED_DEBUG_SetHigh();
-#else
-    FakeEusartCounter = 0;
-#endif // DEBUG_CONSOLE
+    uint32_t startTime = millis();
     
-    unsigned long startTime = millis();
-
     // The current data index
     int dataIndex = 0;
     // The current data type (e.g. latitude, time, vertical velocity etc.)
@@ -492,12 +476,13 @@ bool GetNavData()
     
     char byte;
     
-    char data_type[LEN_DATA_TYPE] = {'\0'};
+    char data_type[LEN_DATA_TYPE];// = {'\0'};
+    // More efficient to do this than clear the whole string as we insert anyway.
+    data_type[0] = '\0';
     
     bool doParse = false;
     
-    ClearString(messages[0]);
-    ClearString(messages[1]);
+    ClearMessages();
     
     int index = 0;
     
@@ -505,66 +490,33 @@ bool GetNavData()
     
     /// Poll the GPS module
     WriteGPS("$PUBX,00*33\r\n");
-
+    
     while (!success)
     {
         // Timeout if no valid response in 3 seconds
-        if (millis() - startTime > 3000)
+        if (millis() - startTime > 3000) /// WARNING: MASSIVE memory usage (54 words!) due to data sizes
         {
             break;
         }
-
         // Make sure data is available to read
         if (EUSART_is_rx_ready())
         {
             byte = EUSART_Read();
-#ifdef TEST_GPS_NAVDATA
-            if (doParse) {
-                if (index < MAX_MESSAGE_LENGTH - 1)
-                {
-                    message_start[index] = byte;
-                }
-                else if ((index + 1) - MAX_MESSAGE_LENGTH < MAX_MESSAGE_LENGTH)
-                {
-                    message_end[(index + 1) - MAX_MESSAGE_LENGTH] = byte;
-                }
-                else
-                {
-                    message_end[MAX_MESSAGE_LENGTH - 1] = '\n';
-                    return true;
-                }
-
-                index++;
-            }
-#else
+            
             bool skip = true;
             switch (byte)
             {
             case '$':
                 doParse = true;
-                skip = false;
                 dataIndex = 0;
                 break;
             case ',':
                 if (dataFieldType == PUBX_DATA_TYPE)
                 {
-                    if (!FindString(data_type, strlen(data_type), "PUBX", 4))
+                    if (strcmp(data_type, "PUBX") != 0)
                     {
                         doParse = false;
                         ClearString(data_type);
-                    }
-                    else
-                    {
-                        messages[0][0] = '$';
-                        messages[0][1] = '$';
-                        InsertString(messages[0], CALLSIGN, 2, MAX_MESSAGE_LENGTH);
-                        index = strlen(messages[0]);
-                        messages[0][index] = ',';
-                        index++;
-                        char strId[12] = {'\0'};
-                        IntToString(id, strId);
-                        InsertString(messages[0], strId, index, MAX_MESSAGE_LENGTH);
-                        index = strlen(messages[0]);                        
                     }
                 }
                 if (doParse)
@@ -582,12 +534,13 @@ bool GetNavData()
                 skip = false;
                 break;
             }
+            
             if (!skip && doParse)
             {
                 switch (dataFieldType)
                 {
                 case PUBX_DATA_TYPE:
-                    SafeSetByte(data_type, LEN_DATA_TYPE, dataIndex, byte);
+                    Insert(data_type, byte, dataIndex, LEN_DATA_TYPE);
                     break;
                 case PUBX_TIME:
                     if (dataIndex < 6)
@@ -649,7 +602,7 @@ bool GetNavData()
                 dataIndex++;
                 index++;
             }
-#endif
+            
         }
     }
     
@@ -669,36 +622,35 @@ void main(void)
     /// Setup the sensor device
     BME280_Init();
     
-    ClearString(messages[0]);
-    ClearString(messages[1]);
+    ClearMessages();
 
 #ifdef GPS_MODULE
-    //SetupGPS();
+    SetupGPS();
 #endif
 
     while (1)
     {
         /// Get GPS nav data and parse it into string
-        if (
 #ifdef GPS_MODULE
-            //GetNavData()
-                true
+        if (PollGPS())
 #else
-            true
+        if (true)
 #endif
-        )
         {
 #ifndef TEST_GPS_NAVDATA
             struct bme280_data sensor_data;
             bme280_get_sensor_data(BME280_ALL, &sensor_data, &EnvSensor);
 #ifdef RADIO_TRANSMISSION
-            ClearString(messages[0]);
-            ClearString(messages[1]);
+#ifndef GPS_MODULE
+            ClearMessages();
+#endif
 //#ifdef GPS_MODULE
-            char convertedNumber[16] = {'\0'};            
+            char convertedNumber[16];
+            convertedNumber[15] = '\0';
+            ClearString(convertedNumber);
             /// Temperature
             IntToString(sensor_data.temperature, convertedNumber);
-            int index = strlen(messages[1]);//InsertString(messages[1], convertedSensorData, strlen(messages[1]), MAX_MESSAGE_LENGTH);
+            int index = strlen(messages[1]);
             index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);
             index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
             ClearString(convertedNumber);

@@ -1,7 +1,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "timing.h"
 
-unsigned long ticks = 0;
+uint32_t ticks = 0;
 
 void TimerISR()
 {
@@ -16,7 +16,7 @@ void InitTiming()
 
 void Sleep(uint32_t ms)
 {
-    unsigned long start = millis();
+    uint32_t start = millis();
     while (millis() - start < ms)
     {
         __delay_ms(1);
@@ -24,5 +24,5 @@ void Sleep(uint32_t ms)
 }
 
 #ifdef __global_timeout
-unsigned long __global_timeout;
+uint32_t __global_timeout;
 #endif // __global_timeout

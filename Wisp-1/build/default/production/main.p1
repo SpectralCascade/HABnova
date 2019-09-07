@@ -9,15 +9,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./timing.h
 [; ;./timing.h: 7: void InitTiming(void);
 [v _InitTiming `(v ~T0 @X0 0 ef ]
-"65 ./bme280_i2c.h
-[; ;./bme280_i2c.h: 65: void BME280_Init(void);
+"40 ./bme280_i2c.h
+[; ;./bme280_i2c.h: 40: void BME280_Init(void);
 [v _BME280_Init `(v ~T0 @X0 0 ef ]
 "308 ./BME280_driver/bme280_defs.h
 [; ;./BME280_driver/bme280_defs.h: 308: {
 [s S1217 `ul 1 `l 1 `ul 1 ]
 [n S1217 bme280_data pressure temperature humidity ]
-"693 main.c
-[; ;main.c: 693:             bme280_get_sensor_data(0x07, &sensor_data, &EnvSensor);
+"642 main.c
+[; ;main.c: 642:             bme280_get_sensor_data(0x07, &sensor_data, &EnvSensor);
 [c E9655 0 1 .. ]
 [n E9655 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
 [v F9706 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
@@ -38,8 +38,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "207 ./BME280_driver/bme280.h
 [; ;./BME280_driver/bme280.h: 207: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
 [v _bme280_get_sensor_data `(c ~T0 @X0 0 ef3`uc`*S1217`*S1220 ]
-"63 ./bme280_i2c.h
-[; ;./bme280_i2c.h: 63: extern struct bme280_dev EnvSensor;
+"38 ./bme280_i2c.h
+[; ;./bme280_i2c.h: 38: extern struct bme280_dev EnvSensor;
 [v _EnvSensor `S1220 ~T0 @X0 0 e ]
 "18 ./rtty.h
 [; ;./rtty.h: 18: uint16_t crc16(char** data, int segments);
@@ -2160,8 +2160,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 &U _message_end
 ..
 ]
-"661
-[; ;main.c: 661: char checksum[6] = {'\0'};
+"280
+[; ;main.c: 280: void ClearMessages()
+[v _ClearMessages `(v ~T0 @X0 1 ef ]
+"281
+[; ;main.c: 281: {
+{
+[e :U _ClearMessages ]
+[f ]
+"282
+[; ;main.c: 282:     ClearString(messages[0]);
+[e ( _ClearString (1 *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
+"283
+[; ;main.c: 283:     ClearString(messages[1]);
+[e ( _ClearString (1 *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
+"284
+[; ;main.c: 284: }
+[e :UE 1296 ]
+}
+"614
+[; ;main.c: 614: char checksum[6] = {'\0'};
 [v _checksum `uc ~T0 @X0 -> 6 `i e ]
 [i _checksum
 :U ..
@@ -2169,201 +2187,194 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"663
-[; ;main.c: 663: void main(void)
+"616
+[; ;main.c: 616: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"664
-[; ;main.c: 664: {
+"617
+[; ;main.c: 617: {
 {
 [e :U _main ]
 [f ]
-"666
-[; ;main.c: 666:     SYSTEM_Initialize();
+"619
+[; ;main.c: 619:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"667
-[; ;main.c: 667:     InitTiming();
+"620
+[; ;main.c: 620:     InitTiming();
 [e ( _InitTiming ..  ]
-"670
-[; ;main.c: 670:     BME280_Init();
+"623
+[; ;main.c: 623:     BME280_Init();
 [e ( _BME280_Init ..  ]
-"672
-[; ;main.c: 672:     ClearString(messages[0]);
-[e ( _ClearString (1 *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-"673
-[; ;main.c: 673:     ClearString(messages[1]);
-[e ( _ClearString (1 *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-"679
-[; ;main.c: 679:     while (1)
-[e :U 1298 ]
-"680
-[; ;main.c: 680:     {
+"625
+[; ;main.c: 625:     ClearMessages();
+[e ( _ClearMessages ..  ]
+"631
+[; ;main.c: 631:     while (1)
+[e :U 1299 ]
+"632
+[; ;main.c: 632:     {
 {
-"682
-[; ;main.c: 682:         if (
-[e $ ! != -> 1 `i -> 0 `i 1300  ]
-"690
-[; ;main.c: 690:         {
+"637
+[; ;main.c: 637:         if (1)
+[e $ ! != -> 1 `i -> 0 `i 1301  ]
+"639
+[; ;main.c: 639:         {
 {
-"692
-[; ;main.c: 692:             struct bme280_data sensor_data;
+"641
+[; ;main.c: 641:             struct bme280_data sensor_data;
 [v _sensor_data `S1217 ~T0 @X0 1 a ]
-"693
-[; ;main.c: 693:             bme280_get_sensor_data(0x07, &sensor_data, &EnvSensor);
+"642
+[; ;main.c: 642:             bme280_get_sensor_data(0x07, &sensor_data, &EnvSensor);
 [e ( _bme280_get_sensor_data (3 , , -> -> 7 `i `uc &U _sensor_data &U _EnvSensor ]
-"695
-[; ;main.c: 695:             ClearString(messages[0]);
-[e ( _ClearString (1 *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-"696
-[; ;main.c: 696:             ClearString(messages[1]);
-[e ( _ClearString (1 *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-[v F10039 `uc ~T0 @X0 -> 16 `i s ]
-[i F10039
-:U ..
-"698
-[; ;main.c: 698:             char convertedNumber[16] = {'\0'};
--> -> 0 `ui `uc
-..
-]
+"645
+[; ;main.c: 645:             ClearMessages();
+[e ( _ClearMessages ..  ]
+"648
+[; ;main.c: 648:             char convertedNumber[16];
 [v _convertedNumber `uc ~T0 @X0 -> 16 `i a ]
-[e = _convertedNumber F10039 ]
-"700
-[; ;main.c: 700:             IntToString(sensor_data.temperature, convertedNumber);
+"649
+[; ;main.c: 649:             convertedNumber[15] = '\0';
+[e = *U + &U _convertedNumber * -> -> -> 15 `i `ui `ux -> -> # *U &U _convertedNumber `ui `ux -> -> 0 `ui `uc ]
+"650
+[; ;main.c: 650:             ClearString(convertedNumber);
+[e ( _ClearString (1 &U _convertedNumber ]
+"652
+[; ;main.c: 652:             IntToString(sensor_data.temperature, convertedNumber);
 [e ( _IntToString (2 , -> . _sensor_data 1 `i &U _convertedNumber ]
-"701
-[; ;main.c: 701:             int index = strlen(messages[1]);
+"653
+[; ;main.c: 653:             int index = strlen(messages[1]);
 [v _index `i ~T0 @X0 1 a ]
 [e = _index -> ( _strlen (1 -> *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux `*Cuc `i ]
-"702
-[; ;main.c: 702:             index = InsertString(messages[1], convertedNumber, index, 70);
+"654
+[; ;main.c: 654:             index = InsertString(messages[1], convertedNumber, index, 70);
 [e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _convertedNumber _index -> 70 `i ]
-"703
-[; ;main.c: 703:             index = Insert(messages[1], ',', index, 70);
+"655
+[; ;main.c: 655:             index = Insert(messages[1], ',', index, 70);
 [e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 44 `ui `uc _index -> 70 `i ]
-"704
-[; ;main.c: 704:             ClearString(convertedNumber);
+"656
+[; ;main.c: 656:             ClearString(convertedNumber);
 [e ( _ClearString (1 &U _convertedNumber ]
-"706
-[; ;main.c: 706:             UIntToString(sensor_data.pressure, convertedNumber);
+"658
+[; ;main.c: 658:             UIntToString(sensor_data.pressure, convertedNumber);
 [e ( _UIntToString (2 , . _sensor_data 0 &U _convertedNumber ]
-"707
-[; ;main.c: 707:             index = InsertString(messages[1], convertedNumber, index, 70);
+"659
+[; ;main.c: 659:             index = InsertString(messages[1], convertedNumber, index, 70);
 [e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _convertedNumber _index -> 70 `i ]
-"708
-[; ;main.c: 708:             index = Insert(messages[1], ',', index, 70);
+"660
+[; ;main.c: 660:             index = Insert(messages[1], ',', index, 70);
 [e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 44 `ui `uc _index -> 70 `i ]
-"709
-[; ;main.c: 709:             ClearString(convertedNumber);
+"661
+[; ;main.c: 661:             ClearString(convertedNumber);
 [e ( _ClearString (1 &U _convertedNumber ]
-"711
-[; ;main.c: 711:             UIntToString(sensor_data.humidity, convertedNumber);
+"663
+[; ;main.c: 663:             UIntToString(sensor_data.humidity, convertedNumber);
 [e ( _UIntToString (2 , . _sensor_data 2 &U _convertedNumber ]
-"712
-[; ;main.c: 712:             index = InsertString(messages[1], convertedNumber, index, 70);
+"664
+[; ;main.c: 664:             index = InsertString(messages[1], convertedNumber, index, 70);
 [e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _convertedNumber _index -> 70 `i ]
-"714
-[; ;main.c: 714:             int end = index;
+"666
+[; ;main.c: 666:             int end = index;
 [v _end `i ~T0 @X0 1 a ]
 [e = _end _index ]
-"717
-[; ;main.c: 717:             index = InsertString(messages[0], "Wisp-1", 0, 70);
+"669
+[; ;main.c: 669:             index = InsertString(messages[0], "Wisp-1", 0, 70);
 [e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 1C -> 0 `i -> 70 `i ]
-"718
-[; ;main.c: 718:             index = Insert(messages[0], ',', index, 70);
+"670
+[; ;main.c: 670:             index = Insert(messages[0], ',', index, 70);
 [e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 44 `ui `uc _index -> 70 `i ]
-"719
-[; ;main.c: 719:             ClearString(convertedNumber);
+"671
+[; ;main.c: 671:             ClearString(convertedNumber);
 [e ( _ClearString (1 &U _convertedNumber ]
-"720
-[; ;main.c: 720:             IntToString(id, convertedNumber);
+"672
+[; ;main.c: 672:             IntToString(id, convertedNumber);
 [e ( _IntToString (2 , _id &U _convertedNumber ]
-"721
-[; ;main.c: 721:             index = InsertString(messages[0], convertedNumber, index, 70);
+"673
+[; ;main.c: 673:             index = InsertString(messages[0], convertedNumber, index, 70);
 [e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _convertedNumber _index -> 70 `i ]
-"722
-[; ;main.c: 722:             Insert(messages[0], ',', index, 70);
+"674
+[; ;main.c: 674:             Insert(messages[0], ',', index, 70);
 [e ( _Insert (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 44 `ui `uc _index -> 70 `i ]
-"724
-[; ;main.c: 724:             UIntToHexString(crc16(messages, 2), checksum);
+"676
+[; ;main.c: 676:             UIntToHexString(crc16(messages, 2), checksum);
 [e ( _UIntToHexString (2 , -> ( _crc16 (2 , &U _messages -> 2 `i `ul &U _checksum ]
-"727
-[; ;main.c: 727:             InsertString(messages[0], "$$", 0, 70);
+"679
+[; ;main.c: 679:             InsertString(messages[0], "$$", 0, 70);
 [e ( _InsertString (4 , , , *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux :s 2C -> 0 `i -> 70 `i ]
-"729
-[; ;main.c: 729:             index = Insert(messages[1], '*', end, 70);
+"681
+[; ;main.c: 681:             index = Insert(messages[1], '*', end, 70);
 [e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 42 `ui `uc _end -> 70 `i ]
-"730
-[; ;main.c: 730:             index = InsertString(messages[1], checksum, index, 70);
+"682
+[; ;main.c: 682:             index = InsertString(messages[1], checksum, index, 70);
 [e = _index ( _InsertString (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux &U _checksum _index -> 70 `i ]
-"731
-[; ;main.c: 731:             index = Insert(messages[1], '\n', index, 70);
+"683
+[; ;main.c: 683:             index = Insert(messages[1], '\n', index, 70);
 [e = _index ( _Insert (4 , , , *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux -> -> 10 `ui `uc _index -> 70 `i ]
-"733
-[; ;main.c: 733:             id++;
+"685
+[; ;main.c: 685:             id++;
 [e ++ _id -> 1 `i ]
-"735
-[; ;main.c: 735:             do { LATAbits.LATA2 = 1; } while(0);
-[e :U 1303 ]
+"687
+[; ;main.c: 687:             do { LATAbits.LATA2 = 1; } while(0);
+[e :U 1304 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 1302 ]
-"736
-[; ;main.c: 736:             TransmitString(messages[0]);
+[e :U 1303 ]
+"688
+[; ;main.c: 688:             TransmitString(messages[0]);
 [e ( _TransmitString (1 *U + &U _messages * -> -> -> 0 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-"737
-[; ;main.c: 737:             TransmitString(messages[1]);
+"689
+[; ;main.c: 689:             TransmitString(messages[1]);
 [e ( _TransmitString (1 *U + &U _messages * -> -> -> 1 `i `ui `ux -> -> # *U &U _messages `ui `ux ]
-"738
-[; ;main.c: 738:             do { LATAbits.LATA2 = 0; } while(0);
-[e :U 1306 ]
+"690
+[; ;main.c: 690:             do { LATAbits.LATA2 = 0; } while(0);
+[e :U 1307 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1305 ]
-"741
-[; ;main.c: 741:         }
+[e :U 1306 ]
+"693
+[; ;main.c: 693:         }
 }
-[e $U 1307  ]
-"742
-[; ;main.c: 742:         else
-[e :U 1300 ]
-"743
-[; ;main.c: 743:         {
+[e $U 1308  ]
+"694
+[; ;main.c: 694:         else
+[e :U 1301 ]
+"695
+[; ;main.c: 695:         {
 {
-"745
-[; ;main.c: 745:         }
+"697
+[; ;main.c: 697:         }
 }
-[e :U 1307 ]
-"747
-[; ;main.c: 747:         for (int i = 0; i < 1000; i++)
+[e :U 1308 ]
+"699
+[; ;main.c: 699:         for (int i = 0; i < 1000; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 1000 `i 1308  ]
-[e $U 1309  ]
-[e :U 1308 ]
-"748
-[; ;main.c: 748:         {
+[e $ < _i -> 1000 `i 1309  ]
+[e $U 1310  ]
+[e :U 1309 ]
+"700
+[; ;main.c: 700:         {
 {
-"749
-[; ;main.c: 749:             _delay((unsigned long)((5)*(4000000/4000.0)));
+"701
+[; ;main.c: 701:             _delay((unsigned long)((5)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"750
-[; ;main.c: 750:         }
+"702
+[; ;main.c: 702:         }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 1000 `i 1308  ]
-[e :U 1309 ]
+[e $ < _i -> 1000 `i 1309  ]
+[e :U 1310 ]
 }
-"751
-[; ;main.c: 751:     }
+"703
+[; ;main.c: 703:     }
 }
-[e :U 1297 ]
-[e $U 1298  ]
-[e :U 1299 ]
-"752
-[; ;main.c: 752: }
-[e :UE 1296 ]
+[e :U 1298 ]
+[e $U 1299  ]
+[e :U 1300 ]
+"704
+[; ;main.c: 704: }
+[e :UE 1297 ]
 }
 [a 1C 87 105 115 112 45 49 0 ]
 [a 2C 36 36 0 ]

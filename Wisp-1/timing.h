@@ -1,4 +1,4 @@
-extern unsigned long ticks;
+extern uint32_t ticks;
 
 void TimerISR(void);
 
@@ -12,7 +12,7 @@ void Sleep(uint32_t ms);
 
 #ifdef __global_timeout
 
-extern unsigned long __global_timeout;
+extern uint32_t __global_timeout;
 
 #define await_timeout(condition, wait_time, on_timeout)                             \
         __global_timeout = millis();                                                \
