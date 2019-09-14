@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\Wisp-1.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>16384</length>
+      <used>3447</used>
+      <free>12937</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>2048</length>
+      <used>579</used>
+      <free>1469</free>
+    </memory>
+  </executable>
+</project>
