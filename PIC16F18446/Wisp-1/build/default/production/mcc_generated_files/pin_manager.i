@@ -18050,9 +18050,9 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "K:\\Programs\\MPLABX\\XC8 Compiler\\pic\\include\\xc.h" 2 3
 # 54 "mcc_generated_files/pin_manager.h" 2
-# 222 "mcc_generated_files/pin_manager.h"
+# 182 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 234 "mcc_generated_files/pin_manager.h"
+# 194 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
@@ -18081,7 +18081,7 @@ void PIN_MANAGER_Initialize(void)
 
 
     ANSELC = 0xFF;
-    ANSELB = 0x80;
+    ANSELB = 0xD0;
     ANSELA = 0x37;
 
 

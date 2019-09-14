@@ -606,7 +606,7 @@ void main(void)
     InitTiming();
     
     /// Setup the sensor device
-    //BME280_Init();
+    BME280_Init();
     
 #ifdef GPS_MODULE
     SetupGPS();

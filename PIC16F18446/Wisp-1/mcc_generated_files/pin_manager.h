@@ -125,26 +125,6 @@
 #define LED_ACK_SetAnalogMode()      do { ANSELAbits.ANSA5 = 1; } while(0)
 #define LED_ACK_SetDigitalMode()     do { ANSELAbits.ANSA5 = 0; } while(0)
 
-// get/set SDA aliases
-#define SDA_TRIS                 TRISBbits.TRISB4
-#define SDA_LAT                  LATBbits.LATB4
-#define SDA_PORT                 PORTBbits.RB4
-#define SDA_WPU                  WPUBbits.WPUB4
-#define SDA_OD                   ODCONBbits.ODCB4
-#define SDA_ANS                  ANSELBbits.ANSB4
-#define SDA_SetHigh()            do { LATBbits.LATB4 = 1; } while(0)
-#define SDA_SetLow()             do { LATBbits.LATB4 = 0; } while(0)
-#define SDA_Toggle()             do { LATBbits.LATB4 = ~LATBbits.LATB4; } while(0)
-#define SDA_GetValue()           PORTBbits.RB4
-#define SDA_SetDigitalInput()    do { TRISBbits.TRISB4 = 1; } while(0)
-#define SDA_SetDigitalOutput()   do { TRISBbits.TRISB4 = 0; } while(0)
-#define SDA_SetPullup()          do { WPUBbits.WPUB4 = 1; } while(0)
-#define SDA_ResetPullup()        do { WPUBbits.WPUB4 = 0; } while(0)
-#define SDA_SetPushPull()        do { ODCONBbits.ODCB4 = 0; } while(0)
-#define SDA_SetOpenDrain()       do { ODCONBbits.ODCB4 = 1; } while(0)
-#define SDA_SetAnalogMode()      do { ANSELBbits.ANSB4 = 1; } while(0)
-#define SDA_SetDigitalMode()     do { ANSELBbits.ANSB4 = 0; } while(0)
-
 // get/set RB5 procedures
 #define RB5_SetHigh()            do { LATBbits.LATB5 = 1; } while(0)
 #define RB5_SetLow()             do { LATBbits.LATB5 = 0; } while(0)
@@ -156,26 +136,6 @@
 #define RB5_ResetPullup()           do { WPUBbits.WPUB5 = 0; } while(0)
 #define RB5_SetAnalogMode()         do { ANSELBbits.ANSB5 = 1; } while(0)
 #define RB5_SetDigitalMode()        do { ANSELBbits.ANSB5 = 0; } while(0)
-
-// get/set SCL aliases
-#define SCL_TRIS                 TRISBbits.TRISB6
-#define SCL_LAT                  LATBbits.LATB6
-#define SCL_PORT                 PORTBbits.RB6
-#define SCL_WPU                  WPUBbits.WPUB6
-#define SCL_OD                   ODCONBbits.ODCB6
-#define SCL_ANS                  ANSELBbits.ANSB6
-#define SCL_SetHigh()            do { LATBbits.LATB6 = 1; } while(0)
-#define SCL_SetLow()             do { LATBbits.LATB6 = 0; } while(0)
-#define SCL_Toggle()             do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0)
-#define SCL_GetValue()           PORTBbits.RB6
-#define SCL_SetDigitalInput()    do { TRISBbits.TRISB6 = 1; } while(0)
-#define SCL_SetDigitalOutput()   do { TRISBbits.TRISB6 = 0; } while(0)
-#define SCL_SetPullup()          do { WPUBbits.WPUB6 = 1; } while(0)
-#define SCL_ResetPullup()        do { WPUBbits.WPUB6 = 0; } while(0)
-#define SCL_SetPushPull()        do { ODCONBbits.ODCB6 = 0; } while(0)
-#define SCL_SetOpenDrain()       do { ODCONBbits.ODCB6 = 1; } while(0)
-#define SCL_SetAnalogMode()      do { ANSELBbits.ANSB6 = 1; } while(0)
-#define SCL_SetDigitalMode()     do { ANSELBbits.ANSB6 = 0; } while(0)
 
 // get/set RB7 procedures
 #define RB7_SetHigh()            do { LATBbits.LATB7 = 1; } while(0)
