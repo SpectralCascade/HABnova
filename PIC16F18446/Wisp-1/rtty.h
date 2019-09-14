@@ -16,7 +16,7 @@ const unsigned int HALF_BAUD_DELAY = ((1000 / BAUD_RATE) / 2);
 
 /// CRC-16 checksum functions
 uint16_t crc16_update(char* pData, int length, uint16_t wCrc);
-uint16_t crc16(char** data, int segments);
+uint16_t crc16(char* data);
 
 /// Transmit data over RTTY device
 void TransmitBit(bool b);

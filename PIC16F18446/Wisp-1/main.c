@@ -53,38 +53,60 @@ bool FindString(char* src, int srcLen, char* target, int targetLen) // 90 words
     return false;
 }
 
+void ClearStringn(char* str, int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        str[i] = '\0';
+    }
+}
+
+char csvField[20];
+
+/// Returns the value of a specified column in a CSV row.
+char* GetAtRowCSV(char* src, int column)
+{
+    ClearStringn(csvField, 20);
+    int col = 0;
+    int index = 0;
+    for (int i = 0, counti = strlen(src); i < counti; i++)
+    {
+        if (col == column)
+        {
+            if (src[i] == ',')
+            {
+                break;
+            }
+            csvField[index] = src[i];
+            index++;
+        }
+        if (src[i] == ',')
+        {
+            col++;
+        }
+    }
+    return csvField;
+}
+
 /// Attempts to insert a character;
 /// returns the index + 1 on success, returns index on failure.
 int Insert(char* dest, char src, int index, int destLimit)
 {
-    // Cache current value at index
-    char temp = dest[index];
-    // Set new value
-    dest[index] = src;
-    index++;
-    if (temp == '\0')
+    int length = strlen(dest);
+    if (length < destLimit - 1)
     {
-        dest[index] = temp;
+        dest[length + 1] = '\0';
+        for (int i = length; i > index; i--)
+        {
+            dest[i] = dest[i - 1];
+        }
+        dest[index] = src;
     }
-    if (dest[index] == '\0')
+    else
     {
         return index;
     }
-    int i = index;
-    // Shift all characters along by 1
-    while (i < destLimit)
-    {
-        char current = dest[i];
-        dest[i] = temp;
-        i++;
-        if (current == '\0')
-        {
-            dest[i] = current;
-            break;
-        }
-        temp = current;
-    }
-    return index;
+    return index + 1;
 }
 
 int InsertString(char* dest, char* src, int index, int destLimit)
@@ -267,29 +289,19 @@ void FloatToString(char* dest, float value, int places) {
 // How often a message should be sent in seconds
 #define MESSAGE_INTERVAL 5000
 
-#ifndef DEBUG_CONSOLE
 // Maximum length of a message, not including appended CRC
-#define MAX_MESSAGE_LENGTH 70
-#else
-#define MAX_MESSAGE_LENGTH 70
-#endif
+#define MAX_MESSAGE_LENGTH 140
 
 #endif// MISC
 
-// Transmission is split into two messages because the PIC16F1619
-// microcontroller has limited contiguous memory.
-char message_start[MAX_MESSAGE_LENGTH];
-char message_end[MAX_MESSAGE_LENGTH];
-
 /// Array of message block pointers.
-char* messages[2] = {message_start, message_end};
+char txdata[MAX_MESSAGE_LENGTH];
 
-void ClearMessages()
+void ClearTxData()
 {
     for (int i = 0; i < MAX_MESSAGE_LENGTH; i++)
     {
-        message_start[i] = '\0';
-        message_end[i] = '\0';
+        txdata[i] = '\0';
     }
 }
 
@@ -447,7 +459,8 @@ enum FieldTypesPUBX {
     PUBX_VDOP,
     PUBX_SOG,
     PUBX_COG,
-    PUBX_VVEL
+    PUBX_VVEL,
+    PUBX_MAX_FIELDS
 };
 
 #define LEN_DATA_TYPE   7
@@ -472,179 +485,111 @@ uint8_t EUSART1_Read()
 // Enable this to transmit the first chunk of GPS data received.
 //#define TEST_GPS_NAVDATA
 
+char nmea_data[MAX_MESSAGE_LENGTH];
+
+void ClearNMEA()
+{
+    for (int i = 0; i < MAX_MESSAGE_LENGTH; i++)
+    {
+        nmea_data[i] = '\0';
+    }
+}
+
+int InsertTxData(int index, int field)
+{
+    index = InsertString(txdata, GetAtRowCSV(nmea_data, field), index, MAX_MESSAGE_LENGTH);
+    return InsertTxDataSep(index);
+}
+
+int InsertTxDataSep(int index)
+{
+    return Insert(txdata, ',', index, MAX_MESSAGE_LENGTH);
+}
+
 bool PollGPS()
 {
     bool success = false;
     uint32_t startTime = millis();
     
-    // The current data index
-    int dataIndex = 0;
-    // The current data type (e.g. latitude, time, vertical velocity etc.)
-    int dataFieldType = 0;
-    // The current byte value received
-    char byte;
-    // The current data type being received. Also used for nav status.
-    char data_type[LEN_DATA_TYPE] = {'\0'};
-    // Whether or not to parse the current byte
-    bool doParse = false;
+    /// Clear the raw NMEA data string
+    ClearNMEA();
     
-    // Clear all message data
-    ClearMessages();
-
     // Start at index 0
     int index = 0;
-
-    // Stores the index that a sign should be inserted at for lat and long
-    int signInsertIndex = -1;
     
+    /// Have we read all the EUSART data?
+    bool eusart_complete = false;
+
     /// Poll the GPS module
     WriteGPS("$PUBX,00*33\r\n");
-    
-    while (!success)
+        
+    // Timeout if no valid response in 3 seconds
+    while (millis() - startTime < 3000)
     {
-        // Timeout if no valid response in 3 seconds
-        if (millis() - startTime > 3000) /// WARNING: MASSIVE memory usage (54 words!) due to data sizes
+        
+        if (eusart_complete)
         {
-            break;
-        }
-        // Make sure data is available to read
-        if (EUSART1_is_rx_ready())
-        {
-            byte = EUSART1_Read();
-            
-#ifdef TEST_GPS_NAVDATA
-            
-            if (byte == '$')
+            index = strlen(txdata);
+            /// Time
+            for (int i = 0, counti = strlen(GetAtRowCSV(nmea_data, PUBX_TIME)); i < counti; i++)
             {
-                doParse = true;
+                if (i < 6)
+                {
+                    if (i == 2 || i == 4)
+                    {
+                        index = Insert(txdata, ':', index, MAX_MESSAGE_LENGTH);
+                    }
+                    index = Insert(txdata, csvField[i], index, MAX_MESSAGE_LENGTH);
+                }
             }
-            if (doParse && byte != '\0')
+            index = InsertTxDataSep(index);
+            /// Latitude
+            if (strcmp(GetAtRowCSV(nmea_data, PUBX_NS), 'S') == 0)
             {
-                if (index >= MAX_MESSAGE_LENGTH - 1)
-                {
-                    messages[1][(index - MAX_MESSAGE_LENGTH) + 1] = byte;
-                }
-                else
-                {
-                    messages[0][index] = byte;
-                }
-                index++;
+                index = Insert(txdata, '-', index, MAX_MESSAGE_LENGTH);
+            }
+            index = InsertString(txdata, GetAtRowCSV(nmea_data, PUBX_LAT), index, MAX_MESSAGE_LENGTH);
+            index = InsertTxDataSep(index);
+            /// Longitude
+            if (strcmp(GetAtRowCSV(nmea_data, PUBX_EW), 'S') == 0)
+            {
+                index = Insert(txdata, '-', index, MAX_MESSAGE_LENGTH);
+            }
+            index = InsertString(txdata, GetAtRowCSV(nmea_data, PUBX_LONG), index, MAX_MESSAGE_LENGTH);
+            index = InsertTxDataSep(index);
+            /// All other fields
+            index = InsertTxData(index, PUBX_ALT);
+            index = InsertTxData(index, PUBX_HDOP);
+            index = InsertTxData(index, PUBX_VDOP);
+            index = InsertTxData(index, PUBX_SOG);
+            index = InsertTxData(index, PUBX_COG);
+            index = InsertTxData(index, PUBX_VVEL);
+            index = InsertTxData(index, PUBX_NAVSTAT);
+            return true;
+        }
+        else
+        {
+            // Make sure data is available to read
+            if (EUSART1_is_rx_ready())
+            {
+                char byte = EUSART1_Read();
+
+#ifdef TEST_GPS_NAVDATA
+                txdata[index] = byte;
+#endif
+                nmea_data[index] = byte;
+                
                 if (byte == '\n')
                 {
+                    eusart_complete = true;
+#ifdef TEST_GPS_NAVDATA
                     return true;
-                }
-            }
-            continue;
-            
-#else
-            
-            bool skip = true;
-            switch (byte)
-            {
-            case '$':
-                doParse = true;
-                dataIndex = 0;
-                break;
-            case '\n':
-                success = doParse && dataFieldType != PUBX_DATA_TYPE;
-                break;
-            case ',':
-                if (dataFieldType == PUBX_DATA_TYPE && strcmp(data_type, "PUBX") != 0)
-                {
-                    doParse = false;
-                    ClearString(data_type);
-                }
-                if (doParse)
-                {
-                    dataFieldType++;
-                    if (dataFieldType > PUBX_TIME && dataFieldType != PUBX_NS && dataFieldType != PUBX_EW && dataFieldType != PUBX_NAVSTAT && dataFieldType != PUBX_COG && dataFieldType <= 13)
-                    {
-                        index = Insert(messages[dataFieldType > PUBX_NAVSTAT ? 1 : 0], ',', index, MAX_MESSAGE_LENGTH);
-                    }
-                    dataIndex = 0;
-                }
-                break;
-            default:
-                skip = false;
-                break;
-            }
-            
-            if (!skip && doParse)
-            {
-                switch (dataFieldType)
-                {
-                case PUBX_DATA_TYPE:
-                    Insert(data_type, byte, dataIndex, LEN_DATA_TYPE);
-                    break;
-                case PUBX_TIME:
-                    if (dataIndex < 6)
-                    {
-                        if (dataIndex == 2 || dataIndex == 4)
-                        {
-                            index = Insert(messages[0], ':', index, MAX_MESSAGE_LENGTH);
-                        }
-                        index = Insert(messages[0], byte, index, MAX_MESSAGE_LENGTH);
-                    }
-                    break;
-                case PUBX_LAT:
-                    if (dataIndex == 0)
-                    {
-                        signInsertIndex = index;
-                    }
-                    index = Insert(messages[0], byte, index, MAX_MESSAGE_LENGTH);
-                    break;
-                case PUBX_NS:
-                    if (byte != 'N' && signInsertIndex > 0)
-                    {
-                        index = Insert(messages[0], '-', signInsertIndex, MAX_MESSAGE_LENGTH);
-                    }
-                    break;
-                case PUBX_LONG:
-                    if (dataIndex == 0)
-                    {
-                        signInsertIndex = index;
-                    }
-                    index = Insert(messages[0], byte, index, MAX_MESSAGE_LENGTH);
-                    break;
-                case PUBX_EW:
-                    if (byte != 'E' && signInsertIndex > 0)
-                    {
-                        index = Insert(messages[0], '-', signInsertIndex, MAX_MESSAGE_LENGTH);
-                    }
-                    break;
-                case PUBX_ALT:
-                    index = Insert(messages[0], byte, index, MAX_MESSAGE_LENGTH);
-                    break;
-                case PUBX_COG:
-                    /// Don't do course over ground as it seems to introduce inconsistencies.
-                    break;
-                case PUBX_NAVSTAT:
-                    if (dataIndex == 0)
-                    {
-                        ClearString(data_type);
-                        index = 0;
-                    }
-                    data_type[dataIndex] = byte;
-                    break;
-                case PUBX_HDOP:
-                case PUBX_VDOP:
-                case PUBX_SOG:
-                case PUBX_VVEL:
-                    index = Insert(messages[1], byte, index, MAX_MESSAGE_LENGTH);
-                    break;
-                }
-                dataIndex++;
-            }
 #endif
-            
+                }
+                index++;
+            }
         }
-    }
-    
-    if (success)
-    {
-        /// Insert nav status and comma
-        index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
-        index = InsertString(messages[1], data_type, index, MAX_MESSAGE_LENGTH);
+        
     }
     
     return success;
@@ -661,14 +606,28 @@ void main(void)
     InitTiming();
     
     /// Setup the sensor device
-    BME280_Init();
+    //BME280_Init();
     
 #ifdef GPS_MODULE
     SetupGPS();
 #endif
 
     while (1)
-    {        
+    {
+        int index = 0;
+        char convertedNumber[16] = {'\0'};
+
+        // Clear all message data
+        ClearTxData();
+
+        /// Add the call sign and id.
+        index = InsertString(txdata, CALLSIGN, index, MAX_MESSAGE_LENGTH);
+        index = Insert(txdata, ',', index, MAX_MESSAGE_LENGTH);
+        ClearString(convertedNumber);
+        IntToString(id, convertedNumber);
+        index = InsertString(txdata, convertedNumber, index, MAX_MESSAGE_LENGTH);
+        index = Insert(txdata, ',', index, MAX_MESSAGE_LENGTH);
+        
         /// Get GPS nav data and parse it into string
 #ifdef GPS_MODULE
         if (PollGPS())
@@ -677,54 +636,39 @@ void main(void)
 #endif
         {
             struct bme280_data sensor_data;
-            bme280_get_sensor_data(BME280_ALL, &sensor_data, &EnvSensor);
+            //bme280_get_sensor_data(BME280_ALL, &sensor_data, &EnvSensor);
 #ifdef RADIO_TRANSMISSION
 #ifdef GPS_MODULE
-            int index = strlen(messages[1]);
-            index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
-            
-            char convertedNumber[16];
-            convertedNumber[15] = '\0';
-            ClearString(convertedNumber);
+            index = strlen(txdata);
             
             /// Temperature
             IntToString(sensor_data.temperature, convertedNumber);
-            index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);
-            index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
+            index = InsertString(txdata, convertedNumber, index, MAX_MESSAGE_LENGTH);
+            index = Insert(txdata, ',', index, MAX_MESSAGE_LENGTH);
             ClearString(convertedNumber);
             /// Pressure
             UIntToString(sensor_data.pressure, convertedNumber);
-            index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);    
-            index = Insert(messages[1], ',', index, MAX_MESSAGE_LENGTH);
+            index = InsertString(txdata, convertedNumber, index, MAX_MESSAGE_LENGTH);    
+            index = Insert(txdata, ',', index, MAX_MESSAGE_LENGTH);
             ClearString(convertedNumber);
             /// Humidity
             UIntToString(sensor_data.humidity, convertedNumber);
-            index = InsertString(messages[1], convertedNumber, index, MAX_MESSAGE_LENGTH);
+            index = InsertString(txdata, convertedNumber, index, MAX_MESSAGE_LENGTH);
             
             int end = index;
 
-            /// Add the call sign and id.
-            index = InsertString(messages[0], CALLSIGN, 0, MAX_MESSAGE_LENGTH);
-            index = Insert(messages[0], ',', index, MAX_MESSAGE_LENGTH);
-            ClearString(convertedNumber);
-            IntToString(id, convertedNumber);
-            index = InsertString(messages[0], convertedNumber, index, MAX_MESSAGE_LENGTH);
-            Insert(messages[0], ',', index, MAX_MESSAGE_LENGTH);
+            /// Add the checksum
+            UIntToHexString(crc16(txdata), checksum);
             
-            UIntToHexString(crc16(messages, 2), checksum);
+            index = Insert(txdata, '*', end, MAX_MESSAGE_LENGTH);
+            index = InsertString(txdata, checksum, index, MAX_MESSAGE_LENGTH);
+            index = Insert(txdata, '\n', index, MAX_MESSAGE_LENGTH);
             
-            /// Finally, add the 2 start characters and the checksum.
-            InsertString(messages[0], "$$", 0, MAX_MESSAGE_LENGTH);
-            
-            index = Insert(messages[1], '*', end, MAX_MESSAGE_LENGTH);
-            index = InsertString(messages[1], checksum, index, MAX_MESSAGE_LENGTH);
-            index = Insert(messages[1], '\n', index, MAX_MESSAGE_LENGTH);
-            
-            id++;
 #endif
+            id++;
             TX_LED_SetHigh();
-            TransmitString(messages[0]);
-            TransmitString(messages[1]);
+            TransmitString("$$");
+            TransmitString(txdata);
             TX_LED_SetLow();
 #endif
         }

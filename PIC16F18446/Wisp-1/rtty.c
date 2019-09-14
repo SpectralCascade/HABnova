@@ -19,13 +19,10 @@ uint16_t crc16_update(char* pData, int length, uint16_t wCrc)
     return wCrc;
 }
 
-uint16_t crc16(char** data, int segments)
+uint16_t crc16(char* data)
 {
     uint16_t crc = 0xFFFF;
-    for (int i = 0; i < segments; i++)
-    {
-        crc = crc16_update(data[i], strlen(data[i]), crc);
-    }
+    crc = crc16_update(data, strlen(data), crc);
     return crc & 0xFFFF;
 }
 
