@@ -495,15 +495,15 @@ void ClearNMEA()
     }
 }
 
+int InsertTxDataSep(int index)
+{
+    return Insert(txdata, ',', index, MAX_MESSAGE_LENGTH);
+}
+
 int InsertTxData(int index, int field)
 {
     index = InsertString(txdata, GetAtRowCSV(nmea_data, field), index, MAX_MESSAGE_LENGTH);
     return InsertTxDataSep(index);
-}
-
-int InsertTxDataSep(int index)
-{
-    return Insert(txdata, ',', index, MAX_MESSAGE_LENGTH);
 }
 
 bool PollGPS()
@@ -544,14 +544,14 @@ bool PollGPS()
             }
             index = InsertTxDataSep(index);
             /// Latitude
-            if (strcmp(GetAtRowCSV(nmea_data, PUBX_NS), 'S') == 0)
+            if (strcmp(GetAtRowCSV(nmea_data, PUBX_NS), "S") == 0)
             {
                 index = Insert(txdata, '-', index, MAX_MESSAGE_LENGTH);
             }
             index = InsertString(txdata, GetAtRowCSV(nmea_data, PUBX_LAT), index, MAX_MESSAGE_LENGTH);
             index = InsertTxDataSep(index);
             /// Longitude
-            if (strcmp(GetAtRowCSV(nmea_data, PUBX_EW), 'S') == 0)
+            if (strcmp(GetAtRowCSV(nmea_data, PUBX_EW), "W") == 0)
             {
                 index = Insert(txdata, '-', index, MAX_MESSAGE_LENGTH);
             }
@@ -606,7 +606,7 @@ void main(void)
     InitTiming();
     
     /// Setup the sensor device
-    BME280_Init();
+    //BME280_Init();
     
 #ifdef GPS_MODULE
     SetupGPS();

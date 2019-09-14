@@ -28,10 +28,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9 ./timing.h
 [; ;./timing.h: 9: void Sleep(uint32_t ms);
 [v _Sleep `(v ~T0 @X0 0 ef1`ul ]
-"501 main.c
-[; ;main.c: 501:     return InsertTxDataSep(index);
-[v _InsertTxDataSep `(i ~T0 @X0 0 e? ]
-"534
+"534 main.c
 [; ;main.c: 534:             for (int i = 0, counti = strlen(GetAtRowCSV(nmea_data, PUBX_TIME)); i < counti; i++)
 [c E11334 0 2 3 4 5 6 7 8 9 10 11 12 13 14 .. ]
 [n E11334 FieldTypesPUBX PUBX_DATA_TYPE PUBX_TIME PUBX_LAT PUBX_NS PUBX_LONG PUBX_EW PUBX_ALT PUBX_NAVSTAT PUBX_HDOP PUBX_VDOP PUBX_SOG PUBX_COG PUBX_VVEL PUBX_MAX_FIELDS  ]
@@ -45,9 +42,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./timing.h
 [; ;./timing.h: 7: void InitTiming(void);
 [v _InitTiming `(v ~T0 @X0 0 ef ]
-"40 ./bme280_i2c.h
-[; ;./bme280_i2c.h: 40: void BME280_Init(void);
-[v _BME280_Init `(v ~T0 @X0 0 ef ]
 "308 ./BME280_driver/bme280_defs.h
 [; ;./BME280_driver/bme280_defs.h: 308: {
 [s S1516 `ul 1 `l 1 `ul 1 ]
@@ -2773,46 +2767,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1646 ]
 }
 "498
-[; ;main.c: 498: int InsertTxData(int index, int field)
-[v _InsertTxData `(i ~T0 @X0 1 ef2`i`i ]
+[; ;main.c: 498: int InsertTxDataSep(int index)
+[v _InsertTxDataSep `(i ~T0 @X0 1 ef1`i ]
 "499
 [; ;main.c: 499: {
 {
-[e :U _InsertTxData ]
+[e :U _InsertTxDataSep ]
 "498
-[; ;main.c: 498: int InsertTxData(int index, int field)
+[; ;main.c: 498: int InsertTxDataSep(int index)
 [v _index `i ~T0 @X0 1 r1 ]
-[v _field `i ~T0 @X0 1 r2 ]
 "499
 [; ;main.c: 499: {
 [f ]
 "500
-[; ;main.c: 500:     index = InsertString(txdata, GetAtRowCSV(nmea_data, field), index, 140);
-[e = _index ( _InsertString (4 , , , &U _txdata ( _GetAtRowCSV (2 , &U _nmea_data _field _index -> 140 `i ]
-"501
-[; ;main.c: 501:     return InsertTxDataSep(index);
-[e ) ( _InsertTxDataSep _index ]
+[; ;main.c: 500:     return Insert(txdata, ',', index, 140);
+[e ) ( _Insert (4 , , , &U _txdata -> -> 44 `ui `uc _index -> 140 `i ]
 [e $UE 1650  ]
-"502
-[; ;main.c: 502: }
+"501
+[; ;main.c: 501: }
 [e :UE 1650 ]
 }
+"503
+[; ;main.c: 503: int InsertTxData(int index, int field)
+[v _InsertTxData `(i ~T0 @X0 1 ef2`i`i ]
 "504
-[; ;main.c: 504: int InsertTxDataSep(int index)
-[v _InsertTxDataSep `(i ~T0 @X0 1 ef1`i ]
-"505
-[; ;main.c: 505: {
+[; ;main.c: 504: {
 {
-[e :U _InsertTxDataSep ]
-"504
-[; ;main.c: 504: int InsertTxDataSep(int index)
+[e :U _InsertTxData ]
+"503
+[; ;main.c: 503: int InsertTxData(int index, int field)
 [v _index `i ~T0 @X0 1 r1 ]
-"505
-[; ;main.c: 505: {
+[v _field `i ~T0 @X0 1 r2 ]
+"504
+[; ;main.c: 504: {
 [f ]
+"505
+[; ;main.c: 505:     index = InsertString(txdata, GetAtRowCSV(nmea_data, field), index, 140);
+[e = _index ( _InsertString (4 , , , &U _txdata ( _GetAtRowCSV (2 , &U _nmea_data _field _index -> 140 `i ]
 "506
-[; ;main.c: 506:     return Insert(txdata, ',', index, 140);
-[e ) ( _Insert (4 , , , &U _txdata -> -> 44 `ui `uc _index -> 140 `i ]
+[; ;main.c: 506:     return InsertTxDataSep(index);
+[e ) ( _InsertTxDataSep (1 _index ]
 [e $UE 1651  ]
 "507
 [; ;main.c: 507: }
@@ -2914,8 +2908,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 545:             index = InsertTxDataSep(index);
 [e = _index ( _InsertTxDataSep (1 _index ]
 "547
-[; ;main.c: 547:             if (strcmp(GetAtRowCSV(nmea_data, PUBX_NS), 'S') == 0)
-[e $ ! == ( _strcmp (2 , -> ( _GetAtRowCSV (2 , &U _nmea_data . `E11334 3 `*Cuc -> -> 83 `ui `*Cuc -> 0 `i 1663  ]
+[; ;main.c: 547:             if (strcmp(GetAtRowCSV(nmea_data, PUBX_NS), "S") == 0)
+[e $ ! == ( _strcmp (2 , -> ( _GetAtRowCSV (2 , &U _nmea_data . `E11334 3 `*Cuc :s 8C -> 0 `i 1663  ]
 "548
 [; ;main.c: 548:             {
 {
@@ -2933,8 +2927,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 552:             index = InsertTxDataSep(index);
 [e = _index ( _InsertTxDataSep (1 _index ]
 "554
-[; ;main.c: 554:             if (strcmp(GetAtRowCSV(nmea_data, PUBX_EW), 'S') == 0)
-[e $ ! == ( _strcmp (2 , -> ( _GetAtRowCSV (2 , &U _nmea_data . `E11334 5 `*Cuc -> -> 83 `ui `*Cuc -> 0 `i 1664  ]
+[; ;main.c: 554:             if (strcmp(GetAtRowCSV(nmea_data, PUBX_EW), "W") == 0)
+[e $ ! == ( _strcmp (2 , -> ( _GetAtRowCSV (2 , &U _nmea_data . `E11334 5 `*Cuc :s 9C -> 0 `i 1664  ]
 "555
 [; ;main.c: 555:             {
 {
@@ -3062,9 +3056,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "606
 [; ;main.c: 606:     InitTiming();
 [e ( _InitTiming ..  ]
-"609
-[; ;main.c: 609:     BME280_Init();
-[e ( _BME280_Init ..  ]
 "612
 [; ;main.c: 612:     SetupGPS();
 [e ( _SetupGPS ..  ]
@@ -3078,8 +3069,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 617:         int index = 0;
 [v _index `i ~T0 @X0 1 a ]
 [e = _index -> 0 `i ]
-[v F11370 `uc ~T0 @X0 -> 16 `i s ]
-[i F11370
+[v F11368 `uc ~T0 @X0 -> 16 `i s ]
+[i F11368
 :U ..
 "618
 [; ;main.c: 618:         char convertedNumber[16] = {'\0'};
@@ -3087,13 +3078,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _convertedNumber `uc ~T0 @X0 -> 16 `i a ]
-[e = _convertedNumber F11370 ]
+[e = _convertedNumber F11368 ]
 "621
 [; ;main.c: 621:         ClearTxData();
 [e ( _ClearTxData ..  ]
 "624
 [; ;main.c: 624:         index = InsertString(txdata, "Wisp-1", index, 140);
-[e = _index ( _InsertString (4 , , , &U _txdata :s 8C _index -> 140 `i ]
+[e = _index ( _InsertString (4 , , , &U _txdata :s 10C _index -> 140 `i ]
 "625
 [; ;main.c: 625:         index = Insert(txdata, ',', index, 140);
 [e = _index ( _Insert (4 , , , &U _txdata -> -> 44 `ui `uc _index -> 140 `i ]
@@ -3179,7 +3170,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1674 ]
 "670
 [; ;main.c: 670:             TransmitString("$$");
-[e ( _TransmitString (1 :s 9C ]
+[e ( _TransmitString (1 :s 11C ]
 "671
 [; ;main.c: 671:             TransmitString(txdata);
 [e ( _TransmitString (1 &U _txdata ]
@@ -3220,8 +3211,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 683: }
 [e :UE 1668 ]
 }
-[a 8C 87 105 115 112 45 49 0 ]
-[a 9C 36 36 0 ]
+[a 9C 87 0 ]
+[a 8C 83 0 ]
+[a 10C 87 105 115 112 45 49 0 ]
+[a 11C 36 36 0 ]
 [a 3C 36 80 85 66 88 44 52 48 44 86 84 71 44 48 44 48 44 48 44 48 42 53 69 13 10 0 ]
 [a 5C 36 80 85 66 88 44 52 48 44 71 83 65 44 48 44 48 44 48 44 48 42 52 69 13 10 0 ]
 [a 1C 36 80 85 66 88 44 52 48 44 71 76 76 44 48 44 48 44 48 44 48 42 53 67 13 10 0 ]

@@ -108,8 +108,6 @@ PUBX_MAX_FIELDS 14
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
 "76
 [v _I2C_UserAlert I2C_UserAlert `(v  1 e 1 0 ]
-"85
-[v _BME280_Init BME280_Init `(v  1 e 1 0 ]
 "127
 [v _ReadEnvSensor ReadEnvSensor `(c  1 e 1 0 ]
 "169
@@ -157,7 +155,7 @@ PUBX_MAX_FIELDS 14
 "56
 [v _ClearStringn ClearStringn `(v  1 e 1 0 ]
 "67
-[v _GetAtRowCSV GetAtRowCSV `(*.5uc  1 e 1 0 ]
+[v _GetAtRowCSV GetAtRowCSV `(*.4uc  1 e 1 0 ]
 "93
 [v _Insert Insert `(i  1 e 2 0 ]
 "112
@@ -185,9 +183,9 @@ PUBX_MAX_FIELDS 14
 "490
 [v _ClearNMEA ClearNMEA `(v  1 e 1 0 ]
 "498
-[v _InsertTxData InsertTxData `(i  1 e 2 0 ]
-"504
 [v _InsertTxDataSep InsertTxDataSep `(i  1 e 2 0 ]
+"503
+[v _InsertTxData InsertTxData `(i  1 e 2 0 ]
 "509
 [v _PollGPS PollGPS `(a  1 e 1 0 ]
 "602
@@ -251,14 +249,14 @@ PUBX_MAX_FIELDS 14
 [s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 [s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
 [v _EnvSensor EnvSensor `S54  1 e 51 0 ]
-[s S1902 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S1898 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "426 K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f18446.h
-[u S1907 . 1 `S1902 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1907  1 e 1 @11 ]
+[u S1903 . 1 `S1898 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1903  1 e 1 @11 ]
 "597
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
 "647
@@ -564,13 +562,13 @@ PUBX_MAX_FIELDS 14
 {
 [s S155 bme280_data 12 `ul 1 pressure 4 0 `l 1 temperature 4 4 `ul 1 humidity 4 8 ]
 "638
-[v main@sensor_data sensor_data `S155  1 a 12 18 ]
+[v main@sensor_data sensor_data `S155  1 a 12 66 ]
 "658
-[v main@end end `i  1 a 2 16 ]
+[v main@end end `i  1 a 2 64 ]
 "618
-[v main@convertedNumber convertedNumber `[16]uc  1 a 16 0 ]
+[v main@convertedNumber convertedNumber `[16]uc  1 a 16 48 ]
 "617
-[v main@index index `i  1 a 2 30 ]
+[v main@index index `i  1 a 2 78 ]
 "683
 } 0
 "22 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\rtty.c
@@ -597,10 +595,10 @@ PUBX_MAX_FIELDS 14
 [v _UIntToString UIntToString `(v  1 e 1 0 ]
 {
 "209
-[v UIntToString@i i `i  1 a 2 20 ]
+[v UIntToString@i i `i  1 a 2 16 ]
 "207
-[v UIntToString@n n `ul  1 p 4 13 ]
-[v UIntToString@dest dest `*.6uc  1 p 1 17 ]
+[v UIntToString@n n `ul  1 p 4 9 ]
+[v UIntToString@dest dest `*.4uc  1 p 1 13 ]
 "220
 } 0
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\llmod.c
@@ -629,12 +627,12 @@ PUBX_MAX_FIELDS 14
 [v _UIntToHexString UIntToHexString `(v  1 e 1 0 ]
 {
 "144
-[v UIntToHexString@remainder remainder `ul  1 a 4 24 ]
+[v UIntToHexString@remainder remainder `ul  1 a 4 20 ]
 "140
-[v UIntToHexString@i i `ul  1 a 4 28 ]
+[v UIntToHexString@i i `ul  1 a 4 24 ]
 "138
-[v UIntToHexString@n n `ul  1 p 4 13 ]
-[v UIntToHexString@dest dest `*.4uc  1 p 1 17 ]
+[v UIntToHexString@n n `ul  1 p 4 9 ]
+[v UIntToHexString@dest dest `*.4uc  1 p 1 13 ]
 "155
 } 0
 "71 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\rtty.c
@@ -676,29 +674,29 @@ PUBX_MAX_FIELDS 14
 "345
 [v _GPS_SendUBX GPS_SendUBX `(v  1 e 1 0 ]
 {
-[v GPS_SendUBX@data data `*.6uc  1 a 1 wreg ]
+[v GPS_SendUBX@data data `*.5uc  1 a 1 wreg ]
 "347
-[v GPS_SendUBX@i i `i  1 a 2 8 ]
+[v GPS_SendUBX@i i `i  1 a 2 7 ]
 [v GPS_SendUBX@length length `i  1 a 2 5 ]
 "345
-[v GPS_SendUBX@data data `*.6uc  1 a 1 wreg ]
+[v GPS_SendUBX@data data `*.5uc  1 a 1 wreg ]
 "347
-[v GPS_SendUBX@data data `*.6uc  1 a 1 7 ]
+[v GPS_SendUBX@data data `*.5uc  1 a 1 9 ]
 "351
 } 0
 "339
 [v _GetLengthUBX GetLengthUBX `(ui  1 e 2 0 ]
 {
-[v GetLengthUBX@data data `*.6uc  1 a 1 wreg ]
-[v GetLengthUBX@data data `*.6uc  1 a 1 wreg ]
+[v GetLengthUBX@data data `*.5uc  1 a 1 wreg ]
+[v GetLengthUBX@data data `*.5uc  1 a 1 wreg ]
 "341
-[v GetLengthUBX@data data `*.6uc  1 a 1 3 ]
+[v GetLengthUBX@data data `*.5uc  1 a 1 3 ]
 "342
 } 0
 "357
 [v _GPS_HasAcknowledged GPS_HasAcknowledged `(a  1 e 1 0 ]
 {
-[v GPS_HasAcknowledged@data data `*.6uc  1 a 1 wreg ]
+[v GPS_HasAcknowledged@data data `*.5uc  1 a 1 wreg ]
 "375
 [v GPS_HasAcknowledged@i i `uc  1 a 1 17 ]
 "359
@@ -710,9 +708,9 @@ PUBX_MAX_FIELDS 14
 "382
 [v GPS_HasAcknowledged@ackByte ackByte `uc  1 a 1 4 ]
 "357
-[v GPS_HasAcknowledged@data data `*.6uc  1 a 1 wreg ]
+[v GPS_HasAcknowledged@data data `*.5uc  1 a 1 wreg ]
 "360
-[v GPS_HasAcknowledged@data data `*.6uc  1 a 1 15 ]
+[v GPS_HasAcknowledged@data data `*.5uc  1 a 1 15 ]
 "423
 } 0
 "50 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\mcc_generated_files/mcc.c
@@ -784,10 +782,10 @@ PUBX_MAX_FIELDS 14
 "3 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strcmp.c
 [v _strcmp strcmp `(i  1 e 2 0 ]
 {
-[v strcmp@l l `*.5DCuc  1 a 1 wreg ]
-[v strcmp@l l `*.5DCuc  1 a 1 wreg ]
+[v strcmp@l l `*.4DCuc  1 a 1 wreg ]
+[v strcmp@l l `*.4DCuc  1 a 1 wreg ]
 [v strcmp@r r `*.25DCuc  1 p 2 11 ]
-[v strcmp@l l `*.5DCuc  1 a 1 8 ]
+[v strcmp@l l `*.4DCuc  1 a 1 8 ]
 "7
 } 0
 "310 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\main.c
@@ -808,18 +806,18 @@ PUBX_MAX_FIELDS 14
 [v EUSART1_Write@txData txData `uc  1 a 1 0 ]
 "139
 } 0
-"498 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\main.c
+"503 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\main.c
 [v _InsertTxData InsertTxData `(i  1 e 2 0 ]
 {
 [v InsertTxData@index index `i  1 p 2 21 ]
 [v InsertTxData@field field `i  1 p 2 23 ]
-"502
+"507
 } 0
-"504
+"498
 [v _InsertTxDataSep InsertTxDataSep `(i  1 e 2 0 ]
 {
 [v InsertTxDataSep@index index `i  1 p 2 12 ]
-"507
+"501
 } 0
 "112
 [v _InsertString InsertString `(i  1 e 2 0 ]
@@ -849,7 +847,7 @@ PUBX_MAX_FIELDS 14
 "110
 } 0
 "67
-[v _GetAtRowCSV GetAtRowCSV `(*.5uc  1 e 1 0 ]
+[v _GetAtRowCSV GetAtRowCSV `(*.4uc  1 e 1 0 ]
 {
 "72
 [v GetAtRowCSV@i i `i  1 a 2 6 ]
@@ -866,14 +864,14 @@ PUBX_MAX_FIELDS 14
 "56
 [v _ClearStringn ClearStringn `(v  1 e 1 0 ]
 {
-[v ClearStringn@str str `*.5uc  1 a 1 wreg ]
+[v ClearStringn@str str `*.4uc  1 a 1 wreg ]
 "58
 [v ClearStringn@i i `i  1 a 2 4 ]
 "56
-[v ClearStringn@str str `*.5uc  1 a 1 wreg ]
+[v ClearStringn@str str `*.4uc  1 a 1 wreg ]
 [v ClearStringn@length length `i  1 p 2 0 ]
 "58
-[v ClearStringn@str str `*.5uc  1 a 1 3 ]
+[v ClearStringn@str str `*.4uc  1 a 1 3 ]
 "62
 } 0
 "99 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\mcc_generated_files/eusart1.c
@@ -897,12 +895,12 @@ PUBX_MAX_FIELDS 14
 [v _IntToString IntToString `(v  1 e 1 0 ]
 {
 "182
-[v IntToString@i i `i  1 a 2 16 ]
+[v IntToString@i i `i  1 a 2 12 ]
 "183
-[v IntToString@sign sign `a  1 a 1 15 ]
+[v IntToString@sign sign `a  1 a 1 11 ]
 "180
 [v IntToString@n n `i  1 p 2 11 ]
-[v IntToString@dest dest `*.6uc  1 p 1 13 ]
+[v IntToString@dest dest `*.4uc  1 p 1 13 ]
 "203
 } 0
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\awmod.c
@@ -919,17 +917,20 @@ PUBX_MAX_FIELDS 14
 "125 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\main.c
 [v _ReverseString ReverseString `(v  1 e 1 0 ]
 {
+[v ReverseString@str str `*.4uc  1 a 1 wreg ]
 "131
-[v ReverseString@opposite opposite `*.39uc  1 a 2 7 ]
+[v ReverseString@opposite opposite `*.4uc  1 a 1 3 ]
 "130
-[v ReverseString@temp temp `uc  1 a 1 6 ]
+[v ReverseString@temp temp `uc  1 a 1 2 ]
 "128
-[v ReverseString@i i `i  1 a 2 11 ]
-[v ReverseString@halfway halfway `i  1 a 2 4 ]
+[v ReverseString@i i `i  1 a 2 6 ]
+[v ReverseString@halfway halfway `i  1 a 2 0 ]
 "127
-[v ReverseString@counti counti `i  1 a 2 9 ]
+[v ReverseString@counti counti `i  1 a 2 4 ]
 "125
-[v ReverseString@str str `*.39uc  1 p 2 9 ]
+[v ReverseString@str str `*.4uc  1 a 1 wreg ]
+"127
+[v ReverseString@str str `*.4uc  1 a 1 8 ]
 "136
 } 0
 "5 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\awdiv.c
@@ -956,537 +957,6 @@ PUBX_MAX_FIELDS 14
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "136
 } 0
-"300 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\main.c
-[v _ClearTxData ClearTxData `(v  1 e 1 0 ]
-{
-"302
-[v ClearTxData@i i `i  1 a 2 2 ]
-"306
-} 0
-"26
-[v _ClearString ClearString `(v  1 e 1 0 ]
-{
-[v ClearString@str str `*.6uc  1 a 1 wreg ]
-"28
-[v ClearString@i i `i  1 a 2 8 ]
-[v ClearString@counti counti `i  1 a 2 6 ]
-"26
-[v ClearString@str str `*.6uc  1 a 1 wreg ]
-"28
-[v ClearString@str str `*.6uc  1 a 1 10 ]
-"32
-} 0
-"12 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
-{
-"14
-[v strlen@a a `*.26DCuc  1 a 2 3 ]
-"12
-[v strlen@s s `*.26DCuc  1 p 2 0 ]
-"26
-} 0
-"85 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\bme280_i2c.c
-[v _BME280_Init BME280_Init `(v  1 e 1 0 ]
-{
-"101
-[v BME280_Init@settings_sel settings_sel `uc  1 a 1 16 ]
-"89
-[v BME280_Init@rslt rslt `c  1 a 1 17 ]
-"125
-} 0
-"511 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\BME280_driver/bme280.c
-[v _bme280_set_sensor_settings bme280_set_sensor_settings `(c  1 e 1 0 ]
-{
-[v bme280_set_sensor_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-"513
-[v bme280_set_sensor_settings@rslt rslt `c  1 a 1 13 ]
-"514
-[v bme280_set_sensor_settings@sensor_mode sensor_mode `uc  1 a 1 12 ]
-"511
-[v bme280_set_sensor_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_set_sensor_settings@dev dev `*.5DCS54  1 p 1 76 ]
-"517
-[v bme280_set_sensor_settings@desired_settings desired_settings `uc  1 a 1 11 ]
-"548
-} 0
-"1404
-[v _are_settings_changed are_settings_changed `(uc  1 s 1 are_settings_changed ]
-{
-[v are_settings_changed@sub_settings sub_settings `uc  1 a 1 wreg ]
-"1406
-[v are_settings_changed@settings_changed settings_changed `uc  1 a 1 2 ]
-"1404
-[v are_settings_changed@sub_settings sub_settings `uc  1 a 1 wreg ]
-[v are_settings_changed@desired_settings desired_settings `uc  1 p 1 0 ]
-[v are_settings_changed@sub_settings sub_settings `uc  1 a 1 1 ]
-"1420
-} 0
-"578
-[v _bme280_set_sensor_mode bme280_set_sensor_mode `(c  1 e 1 0 ]
-{
-[v bme280_set_sensor_mode@sensor_mode sensor_mode `uc  1 a 1 wreg ]
-"580
-[v bme280_set_sensor_mode@rslt rslt `c  1 a 1 13 ]
-"581
-[v bme280_set_sensor_mode@last_set_mode last_set_mode `uc  1 a 1 12 ]
-"578
-[v bme280_set_sensor_mode@sensor_mode sensor_mode `uc  1 a 1 wreg ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_set_sensor_mode@dev dev `*.5DCS54  1 p 1 76 ]
-"584
-[v bme280_set_sensor_mode@sensor_mode sensor_mode `uc  1 a 1 11 ]
-"605
-} 0
-"941
-[v _write_power_mode write_power_mode `(c  1 s 1 write_power_mode ]
-{
-[v write_power_mode@sensor_mode sensor_mode `uc  1 a 1 wreg ]
-"947
-[v write_power_mode@sensor_mode_reg_val sensor_mode_reg_val `uc  1 a 1 58 ]
-"944
-[v write_power_mode@reg_addr reg_addr `uc  1 a 1 57 ]
-"943
-[v write_power_mode@rslt rslt `c  1 a 1 56 ]
-"941
-[v write_power_mode@sensor_mode sensor_mode `uc  1 a 1 wreg ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v write_power_mode@dev dev `*.5DCS54  1 p 1 51 ]
-"944
-[v write_power_mode@sensor_mode sensor_mode `uc  1 a 1 55 ]
-"962
-} 0
-"967
-[v _put_device_to_sleep put_device_to_sleep `(c  1 s 1 put_device_to_sleep ]
-{
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v put_device_to_sleep@dev dev `*.5DCS54  1 a 1 wreg ]
-"971
-[v put_device_to_sleep@settings settings `S48  1 a 5 6 ]
-"970
-[v put_device_to_sleep@reg_data reg_data `[4]uc  1 a 4 0 ]
-"969
-[v put_device_to_sleep@rslt rslt `c  1 a 1 5 ]
-"967
-[v put_device_to_sleep@dev dev `*.5DCS54  1 a 1 wreg ]
-"973
-"967
-[v put_device_to_sleep@dev dev `*.5DCS54  1 a 1 4 ]
-"985
-} 0
-"991
-[v _reload_device_settings reload_device_settings `(c  1 s 1 reload_device_settings ]
-{
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v reload_device_settings@settings settings `*.4DCS48  1 a 1 wreg ]
-"993
-[v reload_device_settings@rslt rslt `c  1 a 1 72 ]
-"991
-[v reload_device_settings@settings settings `*.4DCS48  1 a 1 wreg ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v reload_device_settings@dev dev `*.5DCS54  1 p 1 68 ]
-"995
-"991
-[v reload_device_settings@settings settings `*.4DCS48  1 a 1 71 ]
-"1002
-} 0
-"777
-[v _set_osr_settings set_osr_settings `(c  1 s 1 set_osr_settings ]
-{
-[v set_osr_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-"781
-[v set_osr_settings@rslt rslt `c  1 a 1 66 ]
-"777
-[v set_osr_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-"778
-[v set_osr_settings@settings settings `*.39DCS48  1 p 2 61 ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-"779
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v set_osr_settings@dev dev `*.5DCS54  1 p 1 63 ]
-"781
-[v set_osr_settings@desired_settings desired_settings `uc  1 a 1 67 ]
-"793
-} 0
-"830
-[v _set_osr_press_temp_settings set_osr_press_temp_settings `(c  1 s 1 set_osr_press_temp_settings ]
-{
-[v set_osr_press_temp_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-"836
-[v set_osr_press_temp_settings@reg_data reg_data `uc  1 a 1 60 ]
-"835
-[v set_osr_press_temp_settings@reg_addr reg_addr `uc  1 a 1 59 ]
-"834
-[v set_osr_press_temp_settings@rslt rslt `c  1 a 1 58 ]
-"830
-[v set_osr_press_temp_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-"831
-[v set_osr_press_temp_settings@settings settings `*.39DCS48  1 p 2 51 ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-"832
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v set_osr_press_temp_settings@dev dev `*.5DCS54  1 p 1 53 ]
-"835
-[v set_osr_press_temp_settings@desired_settings desired_settings `uc  1 a 1 57 ]
-"855
-} 0
-"919
-[v _fill_osr_temp_settings fill_osr_temp_settings `(v  1 s 1 fill_osr_temp_settings ]
-{
-[v fill_osr_temp_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[v fill_osr_temp_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v fill_osr_temp_settings@settings settings `*.39DCS48  1 p 2 0 ]
-"921
-[v fill_osr_temp_settings@reg_data reg_data `*.4uc  1 a 1 5 ]
-"922
-} 0
-"910
-[v _fill_osr_press_settings fill_osr_press_settings `(v  1 s 1 fill_osr_press_settings ]
-{
-[v fill_osr_press_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[v fill_osr_press_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v fill_osr_press_settings@settings settings `*.39DCS48  1 p 2 0 ]
-"912
-[v fill_osr_press_settings@reg_data reg_data `*.4uc  1 a 1 5 ]
-"913
-} 0
-"798
-[v _set_osr_humidity_settings set_osr_humidity_settings `(c  1 s 1 set_osr_humidity_settings ]
-{
-"803
-[v set_osr_humidity_settings@reg_addr reg_addr `uc  1 a 1 60 ]
-"800
-[v set_osr_humidity_settings@rslt rslt `c  1 a 1 59 ]
-"802
-[v set_osr_humidity_settings@ctrl_meas ctrl_meas `uc  1 a 1 58 ]
-"801
-[v set_osr_humidity_settings@ctrl_hum ctrl_hum `uc  1 a 1 57 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-"798
-[v set_osr_humidity_settings@settings settings `*.39DCS48  1 p 2 51 ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v set_osr_humidity_settings@dev dev `*.5DCS54  1 p 1 53 ]
-"824
-} 0
-"861
-[v _set_filter_standby_settings set_filter_standby_settings `(c  1 s 1 set_filter_standby_settings ]
-{
-[v set_filter_standby_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-"867
-[v set_filter_standby_settings@reg_data reg_data `uc  1 a 1 60 ]
-"866
-[v set_filter_standby_settings@reg_addr reg_addr `uc  1 a 1 59 ]
-"865
-[v set_filter_standby_settings@rslt rslt `c  1 a 1 58 ]
-"861
-[v set_filter_standby_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-"862
-[v set_filter_standby_settings@settings settings `*.39DCS48  1 p 2 51 ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-"863
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v set_filter_standby_settings@dev dev `*.5DCS54  1 p 1 53 ]
-"866
-[v set_filter_standby_settings@desired_settings desired_settings `uc  1 a 1 57 ]
-"886
-} 0
-"901
-[v _fill_standby_settings fill_standby_settings `(v  1 s 1 fill_standby_settings ]
-{
-[v fill_standby_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[v fill_standby_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v fill_standby_settings@settings settings `*.39DCS48  1 p 2 0 ]
-"903
-[v fill_standby_settings@reg_data reg_data `*.4uc  1 a 1 5 ]
-"904
-} 0
-"892
-[v _fill_filter_settings fill_filter_settings `(v  1 s 1 fill_filter_settings ]
-{
-[v fill_filter_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[v fill_filter_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v fill_filter_settings@settings settings `*.39DCS48  1 p 2 0 ]
-"894
-[v fill_filter_settings@reg_data reg_data `*.4uc  1 a 1 5 ]
-"895
-} 0
-"929
-[v _parse_device_settings parse_device_settings `(v  1 s 1 parse_device_settings ]
-{
-[v parse_device_settings@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
-[v parse_device_settings@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v parse_device_settings@settings settings `*.4S48  1 p 1 0 ]
-"931
-[v parse_device_settings@reg_data reg_data `*.4DCuc  1 a 1 3 ]
-"936
-} 0
-"610
-[v _bme280_get_sensor_mode bme280_get_sensor_mode `(c  1 e 1 0 ]
-{
-[v bme280_get_sensor_mode@sensor_mode sensor_mode `*.4uc  1 a 1 wreg ]
-"612
-[v bme280_get_sensor_mode@rslt rslt `c  1 a 1 36 ]
-"610
-[v bme280_get_sensor_mode@sensor_mode sensor_mode `*.4uc  1 a 1 wreg ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_get_sensor_mode@dev dev `*.5DCS54  1 p 1 32 ]
-"615
-[v bme280_get_sensor_mode@sensor_mode sensor_mode `*.4uc  1 a 1 37 ]
-"626
-} 0
-"357
-[v _bme280_init bme280_init `(c  1 e 1 0 ]
-{
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_init@dev dev `*.5S54  1 a 1 wreg ]
-"359
-[v bme280_init@rslt rslt `c  1 a 1 69 ]
-"363
-[v bme280_init@chip_id chip_id `uc  1 a 1 68 ]
-"362
-[v bme280_init@try_count try_count `uc  1 a 1 67 ]
-"357
-[v bme280_init@dev dev `*.5S54  1 a 1 wreg ]
-"362
-"357
-[v bme280_init@dev dev `*.5S54  1 a 1 70 ]
-"404
-} 0
-"1307
-[v _get_calib_data get_calib_data `(c  1 s 1 get_calib_data ]
-{
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v get_calib_data@dev dev `*.5S54  1 a 1 wreg ]
-"1313
-[v get_calib_data@calib_data calib_data `[26]uc  1 a 26 35 ]
-"1309
-[v get_calib_data@rslt rslt `c  1 a 1 62 ]
-"1307
-[v get_calib_data@dev dev `*.5S54  1 a 1 wreg ]
-[v get_calib_data@dev dev `*.5S54  1 a 1 63 ]
-"1337
-} 0
-"1358
-[v _parse_temp_press_calib_data parse_temp_press_calib_data `(v  1 s 1 parse_temp_press_calib_data ]
-{
-[v parse_temp_press_calib_data@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-"1360
-[v parse_temp_press_calib_data@calib_data calib_data `*.5S28  1 a 1 2 ]
-"1358
-[v parse_temp_press_calib_data@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v parse_temp_press_calib_data@dev dev `*.5S54  1 p 1 0 ]
-"1360
-[v parse_temp_press_calib_data@reg_data reg_data `*.4DCuc  1 a 1 3 ]
-"1375
-} 0
-"1381
-[v _parse_humidity_calib_data parse_humidity_calib_data `(v  1 s 1 parse_humidity_calib_data ]
-{
-[v parse_humidity_calib_data@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
-"1387
-[v parse_humidity_calib_data@dig_H5_msb dig_H5_msb `s  1 a 2 10 ]
-"1386
-[v parse_humidity_calib_data@dig_H5_lsb dig_H5_lsb `s  1 a 2 8 ]
-"1385
-[v parse_humidity_calib_data@dig_H4_msb dig_H4_msb `s  1 a 2 6 ]
-"1384
-[v parse_humidity_calib_data@dig_H4_lsb dig_H4_lsb `s  1 a 2 4 ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-"1383
-[v parse_humidity_calib_data@calib_data calib_data `*.5S28  1 a 1 12 ]
-"1381
-[v parse_humidity_calib_data@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v parse_humidity_calib_data@dev dev `*.5S54  1 p 1 0 ]
-"1383
-[v parse_humidity_calib_data@reg_data reg_data `*.4DCuc  1 a 1 13 ]
-"1398
-} 0
-"409
-[v _bme280_get_regs bme280_get_regs `(c  1 e 1 0 ]
-{
-[v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 wreg ]
-"411
-[v bme280_get_regs@rslt rslt `c  1 a 1 31 ]
-"409
-[v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 wreg ]
-[v bme280_get_regs@reg_data reg_data `*.4uc  1 p 1 23 ]
-[v bme280_get_regs@len len `us  1 p 2 24 ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_get_regs@dev dev `*.5DCS54  1 p 1 26 ]
-"414
-[v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 30 ]
-"436
-} 0
-"127 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\bme280_i2c.c
-[v _ReadEnvSensor ReadEnvSensor `(c  1 e 1 0 ]
-{
-"151
-[v ReadEnvSensor@i i `i  1 a 2 21 ]
-"129
-[v ReadEnvSensor@rslt rslt `c  1 a 1 20 ]
-"127
-[v ReadEnvSensor@dev_id dev_id `uc  1 p 1 13 ]
-[v ReadEnvSensor@reg_addr reg_addr `uc  1 p 1 14 ]
-[v ReadEnvSensor@reg_data reg_data `*.4uc  1 p 1 15 ]
-[v ReadEnvSensor@len len `us  1 p 2 16 ]
-"167
-} 0
-"53
-[v _I2C_ReadByte I2C_ReadByte `(uc  1 e 1 0 ]
-{
-[v I2C_ReadByte@ackbit ackbit `uc  1 a 1 wreg ]
-"55
-[v I2C_ReadByte@rcvdata rcvdata `uc  1 a 1 12 ]
-"53
-[v I2C_ReadByte@ackbit ackbit `uc  1 a 1 wreg ]
-"57
-[v I2C_ReadByte@ackbit ackbit `uc  1 a 1 11 ]
-"68
-} 0
-"631 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\BME280_driver/bme280.c
-[v _bme280_soft_reset bme280_soft_reset `(c  1 e 1 0 ]
-{
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_soft_reset@dev dev `*.5DCS54  1 a 1 wreg ]
-"634
-[v bme280_soft_reset@reg_addr reg_addr `uc  1 a 1 56 ]
-"633
-[v bme280_soft_reset@rslt rslt `c  1 a 1 55 ]
-"637
-[v bme280_soft_reset@soft_rst_cmd soft_rst_cmd `uc  1 a 1 54 ]
-"631
-[v bme280_soft_reset@dev dev `*.5DCS54  1 a 1 wreg ]
-"634
-"631
-[v bme280_soft_reset@dev dev `*.5DCS54  1 a 1 57 ]
-"653
-} 0
-"442
-[v _bme280_set_regs bme280_set_regs `(c  1 e 1 0 ]
-{
-[v bme280_set_regs@reg_addr reg_addr `*.4uc  1 a 1 wreg ]
-"445
-[v bme280_set_regs@temp_buff temp_buff `[20]uc  1 a 20 26 ]
-"451
-[v bme280_set_regs@temp_len temp_len `us  1 a 2 46 ]
-"444
-[v bme280_set_regs@rslt rslt `c  1 a 1 49 ]
-"452
-[v bme280_set_regs@reg_addr_cnt reg_addr_cnt `uc  1 a 1 48 ]
-"442
-[v bme280_set_regs@reg_addr reg_addr `*.4uc  1 a 1 wreg ]
-[v bme280_set_regs@reg_data reg_data `*.4DCuc  1 p 1 20 ]
-[v bme280_set_regs@len len `uc  1 p 1 21 ]
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v bme280_set_regs@dev dev `*.5DCS54  1 p 1 22 ]
-"447
-[v bme280_set_regs@reg_addr reg_addr `*.4uc  1 a 1 50 ]
-"505
-} 0
-"1426
-[v _null_ptr_check null_ptr_check `(c  1 s 1 null_ptr_check ]
-{
-[s S28 bme280_calib_data 37 `us 1 dig_T1 2 0 `s 1 dig_T2 2 2 `s 1 dig_T3 2 4 `us 1 dig_P1 2 6 `s 1 dig_P2 2 8 `s 1 dig_P3 2 10 `s 1 dig_P4 2 12 `s 1 dig_P5 2 14 `s 1 dig_P6 2 16 `s 1 dig_P7 2 18 `s 1 dig_P8 2 20 `s 1 dig_P9 2 22 `uc 1 dig_H1 1 24 `s 1 dig_H2 2 25 `uc 1 dig_H3 1 27 `s 1 dig_H4 2 28 `s 1 dig_H5 2 30 `c 1 dig_H6 1 32 `l 1 t_fine 4 33 ]
-[s S48 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[s S54 bme280_dev 51 `uc 1 chip_id 1 0 `uc 1 dev_id 1 1 `E37 1 intf 1 2 `*.37(c 1 read 2 3 `*.37(c 1 write 2 5 `*.37(v 1 delay_ms 2 7 `S28 1 calib_data 37 9 `S48 1 settings 5 46 ]
-[v null_ptr_check@dev dev `*.5DCS54  1 a 1 wreg ]
-"1428
-[v null_ptr_check@rslt rslt `c  1 a 1 2 ]
-"1426
-[v null_ptr_check@dev dev `*.5DCS54  1 a 1 wreg ]
-"1430
-"1426
-[v null_ptr_check@dev dev `*.5DCS54  1 a 1 3 ]
-"1442
-} 0
-"1343
-[v _interleave_reg_addr interleave_reg_addr `(v  1 s 1 interleave_reg_addr ]
-{
-[v interleave_reg_addr@reg_addr reg_addr `*.4DCuc  1 a 1 wreg ]
-"1345
-[v interleave_reg_addr@index index `uc  1 a 1 7 ]
-"1343
-[v interleave_reg_addr@reg_addr reg_addr `*.4DCuc  1 a 1 wreg ]
-[v interleave_reg_addr@temp_buff temp_buff `*.4uc  1 p 1 0 ]
-[v interleave_reg_addr@reg_data reg_data `*.4DCuc  1 p 1 1 ]
-[v interleave_reg_addr@len len `uc  1 p 1 2 ]
-"1347
-[v interleave_reg_addr@reg_addr reg_addr `*.4DCuc  1 a 1 6 ]
-"1352
-} 0
-"169 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\bme280_i2c.c
-[v _WriteEnvSensor WriteEnvSensor `(c  1 e 1 0 ]
-{
-"185
-[v WriteEnvSensor@i i `i  1 a 2 18 ]
-"171
-[v WriteEnvSensor@rslt rslt `c  1 a 1 17 ]
-"169
-[v WriteEnvSensor@dev_id dev_id `uc  1 p 1 11 ]
-[v WriteEnvSensor@reg_addr reg_addr `uc  1 p 1 12 ]
-[v WriteEnvSensor@reg_data reg_data `*.4uc  1 p 1 13 ]
-[v WriteEnvSensor@len len `us  1 p 2 14 ]
-"193
-} 0
-"39
-[v _I2C_WriteByte I2C_WriteByte `(v  1 e 1 0 ]
-{
-[v I2C_WriteByte@data data `uc  1 a 1 wreg ]
-[v I2C_WriteByte@data data `uc  1 a 1 wreg ]
-"41
-[v I2C_WriteByte@data data `uc  1 a 1 13 ]
-"51
-} 0
-"76
-[v _I2C_UserAlert I2C_UserAlert `(v  1 e 1 0 ]
-{
-"79
-} 0
-"70
-[v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
-{
-"74
-} 0
-"16
-[v _I2C_Wait_SSPIF I2C_Wait_SSPIF `(v  1 e 1 0 ]
-{
-"20
-} 0
 "4 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\debug.c
 [v _DebugAlert DebugAlert `(v  1 e 1 0 ]
 {
@@ -1507,10 +977,34 @@ PUBX_MAX_FIELDS 14
 [v Sleep@ms ms `ul  1 p 4 0 ]
 "24
 } 0
-"22 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\bme280_i2c.c
-[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+"300 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\main.c
+[v _ClearTxData ClearTxData `(v  1 e 1 0 ]
 {
-"37
+"302
+[v ClearTxData@i i `i  1 a 2 2 ]
+"306
+} 0
+"26
+[v _ClearString ClearString `(v  1 e 1 0 ]
+{
+[v ClearString@str str `*.4uc  1 a 1 wreg ]
+"28
+[v ClearString@i i `i  1 a 2 8 ]
+[v ClearString@counti counti `i  1 a 2 6 ]
+"26
+[v ClearString@str str `*.4uc  1 a 1 wreg ]
+"28
+[v ClearString@str str `*.4uc  1 a 1 10 ]
+"32
+} 0
+"12 K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"14
+[v strlen@a a `*.26DCuc  1 a 2 3 ]
+"12
+[v strlen@s s `*.26DCuc  1 p 2 0 ]
+"26
 } 0
 "52 C:\Users\2013b\Git\Wisp-1\PIC16F18446\Wisp-1\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

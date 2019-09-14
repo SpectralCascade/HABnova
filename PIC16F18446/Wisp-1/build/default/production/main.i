@@ -18950,15 +18950,15 @@ void ClearNMEA()
     }
 }
 
+int InsertTxDataSep(int index)
+{
+    return Insert(txdata, ',', index, 140);
+}
+
 int InsertTxData(int index, int field)
 {
     index = InsertString(txdata, GetAtRowCSV(nmea_data, field), index, 140);
     return InsertTxDataSep(index);
-}
-
-int InsertTxDataSep(int index)
-{
-    return Insert(txdata, ',', index, 140);
 }
 
 _Bool PollGPS()
@@ -18999,14 +18999,14 @@ _Bool PollGPS()
             }
             index = InsertTxDataSep(index);
 
-            if (strcmp(GetAtRowCSV(nmea_data, PUBX_NS), 'S') == 0)
+            if (strcmp(GetAtRowCSV(nmea_data, PUBX_NS), "S") == 0)
             {
                 index = Insert(txdata, '-', index, 140);
             }
             index = InsertString(txdata, GetAtRowCSV(nmea_data, PUBX_LAT), index, 140);
             index = InsertTxDataSep(index);
 
-            if (strcmp(GetAtRowCSV(nmea_data, PUBX_EW), 'S') == 0)
+            if (strcmp(GetAtRowCSV(nmea_data, PUBX_EW), "W") == 0)
             {
                 index = Insert(txdata, '-', index, 140);
             }
@@ -19061,7 +19061,7 @@ void main(void)
     InitTiming();
 
 
-    BME280_Init();
+
 
 
     SetupGPS();
