@@ -1,5 +1,5 @@
 # Wisp-1
-The source code for my first High-Altitude Balloon payload tracker and data logger system, originally designed for the PIC16F1619 but soon to be upgraded to the PIC16F18446 (both 8-bit, PDIP20 microcontrollers). Developed in C using Microchip MPLAB X IDE with the XC-8 compiler and Microchip Code Configurator.
+The source code for my first High-Altitude Balloon payload tracker and data logger system, designed for the PIC16F18446 (PDIP20) microcontroller. Developed in C using Microchip MPLAB X IDE with the XC-8 compiler and Microchip Code Configurator.
 
 ## Features:
 - UBlox Max-M8C GPS configured in flight-mode over EUSART (UART)
