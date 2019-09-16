@@ -29,6 +29,7 @@ void I2C_Init(void)
 
     SSP1STAT = 0x80; // standard
     SSP1CON1 = 0x28;
+    SSP1CON2 = 0x00;
     SSP1CON3 = 0x00;
     SSP1ADD = 0x03;
     
@@ -133,7 +134,7 @@ int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16
     // set start condition
     SSP1CON2bits.SEN = 1;
     I2C_Wait_SSPIF();
-    
+        
     // send device address
     I2C_WriteByte(dev_id << 1); // write
     
@@ -165,7 +166,7 @@ int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16
      
     return rslt;
 }
- 
+
 int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
 {
     int8_t rslt = 0;

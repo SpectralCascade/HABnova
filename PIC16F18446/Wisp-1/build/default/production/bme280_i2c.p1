@@ -37,6 +37,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6375
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f18446.h: 6375: extern volatile unsigned char SSP1CON1 __attribute__((address(0x190)));
 [v _SSP1CON1 `Vuc ~T0 @X0 0 e@400 ]
+"6495
+[; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f18446.h: 6495: extern volatile unsigned char SSP1CON2 __attribute__((address(0x191)));
+[v _SSP1CON2 `Vuc ~T0 @X0 0 e@401 ]
 "6682
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f18446.h: 6682: extern volatile unsigned char SSP1CON3 __attribute__((address(0x192)));
 [v _SSP1CON3 `Vuc ~T0 @X0 0 e@402 ]
@@ -92,15 +95,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6542
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f18446.h: 6542: extern volatile SSP1CON2bits_t SSP1CON2bits __attribute__((address(0x191)));
 [v _SSP1CON2bits `VS292 ~T0 @X0 0 e@401 ]
-"47 bme280_i2c.c
-[; ;bme280_i2c.c: 47:         I2C_UserAlert(I2C_ERROR_WRITE_NO_ACK);
+"48 bme280_i2c.c
+[; ;bme280_i2c.c: 48:         I2C_UserAlert(I2C_ERROR_WRITE_NO_ACK);
 [c E11288 0 1 2 .. ]
 [n E11288 . I2C_ERROR_NOTHING I2C_ERROR_WRITE_NO_ACK I2C_ERROR_COLISION  ]
 "35 ./bme280_i2c.h
 [; ;./bme280_i2c.h: 35: void I2C_UserAlert(I2C_ERROR status);
 [v _I2C_UserAlert `(v ~T0 @X0 0 ef1`E11288 ]
-"83 bme280_i2c.c
-[; ;bme280_i2c.c: 83: struct bme280_dev EnvSensor;
+"84 bme280_i2c.c
+[; ;bme280_i2c.c: 84: struct bme280_dev EnvSensor;
 [c E11184 0 1 .. ]
 [n E11184 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
 [v F11235 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
@@ -1556,405 +1559,408 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;bme280_i2c.c: 31:     SSP1CON1 = 0x28;
 [e = _SSP1CON1 -> -> 40 `i `uc ]
 "32
-[; ;bme280_i2c.c: 32:     SSP1CON3 = 0x00;
-[e = _SSP1CON3 -> -> 0 `i `uc ]
+[; ;bme280_i2c.c: 32:     SSP1CON2 = 0x00;
+[e = _SSP1CON2 -> -> 0 `i `uc ]
 "33
-[; ;bme280_i2c.c: 33:     SSP1ADD = 0x03;
+[; ;bme280_i2c.c: 33:     SSP1CON3 = 0x00;
+[e = _SSP1CON3 -> -> 0 `i `uc ]
+"34
+[; ;bme280_i2c.c: 34:     SSP1ADD = 0x03;
 [e = _SSP1ADD -> -> 3 `i `uc ]
-"36
-[; ;bme280_i2c.c: 36:     SSP1CON1bits.SSPEN = 1;
-[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
 "37
-[; ;bme280_i2c.c: 37: }
+[; ;bme280_i2c.c: 37:     SSP1CON1bits.SSPEN = 1;
+[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
+"38
+[; ;bme280_i2c.c: 38: }
 [e :UE 1525 ]
 }
-"39
-[; ;bme280_i2c.c: 39: void I2C_WriteByte(uint8_t data)
-[v _I2C_WriteByte `(v ~T0 @X0 1 ef1`uc ]
 "40
-[; ;bme280_i2c.c: 40: {
+[; ;bme280_i2c.c: 40: void I2C_WriteByte(uint8_t data)
+[v _I2C_WriteByte `(v ~T0 @X0 1 ef1`uc ]
+"41
+[; ;bme280_i2c.c: 41: {
 {
 [e :U _I2C_WriteByte ]
-"39
-[; ;bme280_i2c.c: 39: void I2C_WriteByte(uint8_t data)
-[v _data `uc ~T0 @X0 1 r1 ]
 "40
-[; ;bme280_i2c.c: 40: {
-[f ]
+[; ;bme280_i2c.c: 40: void I2C_WriteByte(uint8_t data)
+[v _data `uc ~T0 @X0 1 r1 ]
 "41
-[; ;bme280_i2c.c: 41:     SSP1BUF = data;
-[e = _SSP1BUF _data ]
+[; ;bme280_i2c.c: 41: {
+[f ]
 "42
-[; ;bme280_i2c.c: 42:     I2C_Wait_SSPIF();
+[; ;bme280_i2c.c: 42:     SSP1BUF = data;
+[e = _SSP1BUF _data ]
+"43
+[; ;bme280_i2c.c: 43:     I2C_Wait_SSPIF();
 [e ( _I2C_Wait_SSPIF ..  ]
-"45
-[; ;bme280_i2c.c: 45:     if (SSP1CON2bits.ACKSTAT != 0)
-[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> 0 `i 1527  ]
 "46
-[; ;bme280_i2c.c: 46:     {
-{
+[; ;bme280_i2c.c: 46:     if (SSP1CON2bits.ACKSTAT != 0)
+[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> 0 `i 1527  ]
 "47
-[; ;bme280_i2c.c: 47:         I2C_UserAlert(I2C_ERROR_WRITE_NO_ACK);
-[e ( _I2C_UserAlert (1 . `E11288 1 ]
+[; ;bme280_i2c.c: 47:     {
+{
 "48
-[; ;bme280_i2c.c: 48:     }
+[; ;bme280_i2c.c: 48:         I2C_UserAlert(I2C_ERROR_WRITE_NO_ACK);
+[e ( _I2C_UserAlert (1 . `E11288 1 ]
+"49
+[; ;bme280_i2c.c: 49:     }
 }
 [e :U 1527 ]
-"50
-[; ;bme280_i2c.c: 50:     return;
-[e $UE 1526  ]
 "51
-[; ;bme280_i2c.c: 51: }
+[; ;bme280_i2c.c: 51:     return;
+[e $UE 1526  ]
+"52
+[; ;bme280_i2c.c: 52: }
 [e :UE 1526 ]
 }
-"53
-[; ;bme280_i2c.c: 53: uint8_t I2C_ReadByte(uint8_t ackbit)
-[v _I2C_ReadByte `(uc ~T0 @X0 1 ef1`uc ]
 "54
-[; ;bme280_i2c.c: 54: {
+[; ;bme280_i2c.c: 54: uint8_t I2C_ReadByte(uint8_t ackbit)
+[v _I2C_ReadByte `(uc ~T0 @X0 1 ef1`uc ]
+"55
+[; ;bme280_i2c.c: 55: {
 {
 [e :U _I2C_ReadByte ]
-"53
-[; ;bme280_i2c.c: 53: uint8_t I2C_ReadByte(uint8_t ackbit)
-[v _ackbit `uc ~T0 @X0 1 r1 ]
 "54
-[; ;bme280_i2c.c: 54: {
-[f ]
+[; ;bme280_i2c.c: 54: uint8_t I2C_ReadByte(uint8_t ackbit)
+[v _ackbit `uc ~T0 @X0 1 r1 ]
 "55
-[; ;bme280_i2c.c: 55:     uint8_t rcvdata;
+[; ;bme280_i2c.c: 55: {
+[f ]
+"56
+[; ;bme280_i2c.c: 56:     uint8_t rcvdata;
 [v _rcvdata `uc ~T0 @X0 1 a ]
-"57
-[; ;bme280_i2c.c: 57:     SSP1CON2bits.RCEN = 1;
-[e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
 "58
-[; ;bme280_i2c.c: 58:     I2C_Wait_SSPIF();
+[; ;bme280_i2c.c: 58:     SSP1CON2bits.RCEN = 1;
+[e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
+"59
+[; ;bme280_i2c.c: 59:     I2C_Wait_SSPIF();
 [e ( _I2C_Wait_SSPIF ..  ]
-"60
-[; ;bme280_i2c.c: 60:     rcvdata = SSP1BUF;
+"61
+[; ;bme280_i2c.c: 61:     rcvdata = SSP1BUF;
 [e = _rcvdata _SSP1BUF ]
-"63
-[; ;bme280_i2c.c: 63:     SSP1CON2bits.ACKDT = ackbit;
-[e = . . _SSP1CON2bits 0 5 _ackbit ]
 "64
-[; ;bme280_i2c.c: 64:     SSP1CON2bits.ACKEN = 1;
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
+[; ;bme280_i2c.c: 64:     SSP1CON2bits.ACKDT = ackbit;
+[e = . . _SSP1CON2bits 0 5 _ackbit ]
 "65
-[; ;bme280_i2c.c: 65:     I2C_Wait_SSPIF();
+[; ;bme280_i2c.c: 65:     SSP1CON2bits.ACKEN = 1;
+[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
+"66
+[; ;bme280_i2c.c: 66:     I2C_Wait_SSPIF();
 [e ( _I2C_Wait_SSPIF ..  ]
-"67
-[; ;bme280_i2c.c: 67:     return (rcvdata);
+"68
+[; ;bme280_i2c.c: 68:     return (rcvdata);
 [e ) _rcvdata ]
 [e $UE 1528  ]
-"68
-[; ;bme280_i2c.c: 68: }
+"69
+[; ;bme280_i2c.c: 69: }
 [e :UE 1528 ]
 }
-"70
-[; ;bme280_i2c.c: 70: void I2C_Stop(void)
-[v _I2C_Stop `(v ~T0 @X0 1 ef ]
 "71
-[; ;bme280_i2c.c: 71: {
+[; ;bme280_i2c.c: 71: void I2C_Stop(void)
+[v _I2C_Stop `(v ~T0 @X0 1 ef ]
+"72
+[; ;bme280_i2c.c: 72: {
 {
 [e :U _I2C_Stop ]
 [f ]
-"72
-[; ;bme280_i2c.c: 72:     SSP1CON2bits.PEN = 1;
-[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
 "73
-[; ;bme280_i2c.c: 73:     I2C_Wait_SSPIF();
-[e ( _I2C_Wait_SSPIF ..  ]
+[; ;bme280_i2c.c: 73:     SSP1CON2bits.PEN = 1;
+[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
 "74
-[; ;bme280_i2c.c: 74: }
+[; ;bme280_i2c.c: 74:     I2C_Wait_SSPIF();
+[e ( _I2C_Wait_SSPIF ..  ]
+"75
+[; ;bme280_i2c.c: 75: }
 [e :UE 1529 ]
 }
-"76
-[; ;bme280_i2c.c: 76: void I2C_UserAlert(I2C_ERROR status)
-[v _I2C_UserAlert `(v ~T0 @X0 1 ef1`E11288 ]
 "77
-[; ;bme280_i2c.c: 77: {
+[; ;bme280_i2c.c: 77: void I2C_UserAlert(I2C_ERROR status)
+[v _I2C_UserAlert `(v ~T0 @X0 1 ef1`E11288 ]
+"78
+[; ;bme280_i2c.c: 78: {
 {
 [e :U _I2C_UserAlert ]
-"76
-[; ;bme280_i2c.c: 76: void I2C_UserAlert(I2C_ERROR status)
-[v _status `E11288 ~T0 @X0 1 r1 ]
 "77
-[; ;bme280_i2c.c: 77: {
-[f ]
+[; ;bme280_i2c.c: 77: void I2C_UserAlert(I2C_ERROR status)
+[v _status `E11288 ~T0 @X0 1 r1 ]
 "78
-[; ;bme280_i2c.c: 78:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
+[; ;bme280_i2c.c: 78: {
+[f ]
 "79
-[; ;bme280_i2c.c: 79: }
+[; ;bme280_i2c.c: 79:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"80
+[; ;bme280_i2c.c: 80: }
 [e :UE 1530 ]
 }
-"83
-[; ;bme280_i2c.c: 83: struct bme280_dev EnvSensor;
+"84
+[; ;bme280_i2c.c: 84: struct bme280_dev EnvSensor;
 [v _EnvSensor `S1519 ~T0 @X0 1 e ]
-"85
-[; ;bme280_i2c.c: 85: void BME280_Init()
-[v _BME280_Init `(v ~T0 @X0 1 ef ]
 "86
-[; ;bme280_i2c.c: 86: {
+[; ;bme280_i2c.c: 86: void BME280_Init()
+[v _BME280_Init `(v ~T0 @X0 1 ef ]
+"87
+[; ;bme280_i2c.c: 87: {
 {
 [e :U _BME280_Init ]
 [f ]
-"87
-[; ;bme280_i2c.c: 87:     I2C_Init();
+"88
+[; ;bme280_i2c.c: 88:     I2C_Init();
 [e ( _I2C_Init ..  ]
-"89
-[; ;bme280_i2c.c: 89:     int8_t rslt = 0;
+"90
+[; ;bme280_i2c.c: 90:     int8_t rslt = 0;
 [v _rslt `c ~T0 @X0 1 a ]
 [e = _rslt -> -> 0 `i `c ]
-"91
-[; ;bme280_i2c.c: 91:     EnvSensor.dev_id = 0x76;
-[e = . _EnvSensor 1 -> -> 118 `i `uc ]
 "92
-[; ;bme280_i2c.c: 92:     EnvSensor.intf = BME280_I2C_INTF;
-[e = . _EnvSensor 2 . `E11184 1 ]
+[; ;bme280_i2c.c: 92:     EnvSensor.dev_id = 0x76;
+[e = . _EnvSensor 1 -> -> 118 `i `uc ]
 "93
-[; ;bme280_i2c.c: 93:     EnvSensor.read = ReadEnvSensor;
-[e = . _EnvSensor 3 &U _ReadEnvSensor ]
+[; ;bme280_i2c.c: 93:     EnvSensor.intf = BME280_I2C_INTF;
+[e = . _EnvSensor 2 . `E11184 1 ]
 "94
-[; ;bme280_i2c.c: 94:     EnvSensor.write = WriteEnvSensor;
-[e = . _EnvSensor 4 &U _WriteEnvSensor ]
+[; ;bme280_i2c.c: 94:     EnvSensor.read = ReadEnvSensor;
+[e = . _EnvSensor 3 &U _ReadEnvSensor ]
 "95
-[; ;bme280_i2c.c: 95:     EnvSensor.delay_ms = Sleep;
+[; ;bme280_i2c.c: 95:     EnvSensor.write = WriteEnvSensor;
+[e = . _EnvSensor 4 &U _WriteEnvSensor ]
+"96
+[; ;bme280_i2c.c: 96:     EnvSensor.delay_ms = Sleep;
 [e = . _EnvSensor 5 &U _Sleep ]
-"97
-[; ;bme280_i2c.c: 97:     rslt = bme280_init(&EnvSensor);
+"98
+[; ;bme280_i2c.c: 98:     rslt = bme280_init(&EnvSensor);
 [e = _rslt ( _bme280_init (1 &U _EnvSensor ]
-"99
-[; ;bme280_i2c.c: 99:     if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 1532  ]
 "100
-[; ;bme280_i2c.c: 100:     {
-{
+[; ;bme280_i2c.c: 100:     if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1532  ]
 "101
-[; ;bme280_i2c.c: 101:         uint8_t settings_sel;
-[v _settings_sel `uc ~T0 @X0 1 a ]
-"104
-[; ;bme280_i2c.c: 104:         EnvSensor.settings.osr_h = 0x01;
-[e = . . _EnvSensor 7 2 -> -> 1 `i `uc ]
-"105
-[; ;bme280_i2c.c: 105:         EnvSensor.settings.osr_p = 0x05;
-[e = . . _EnvSensor 7 0 -> -> 5 `i `uc ]
-"106
-[; ;bme280_i2c.c: 106:         EnvSensor.settings.osr_t = 0x02;
-[e = . . _EnvSensor 7 1 -> -> 2 `i `uc ]
-"107
-[; ;bme280_i2c.c: 107:         EnvSensor.settings.filter = (0x04);
-[e = . . _EnvSensor 7 3 -> -> 4 `i `uc ]
-"108
-[; ;bme280_i2c.c: 108:         EnvSensor.settings.standby_time = (0x01);
-[e = . . _EnvSensor 7 4 -> -> 1 `i `uc ]
-"110
-[; ;bme280_i2c.c: 110:         settings_sel = 1;
-[e = _settings_sel -> -> 1 `i `uc ]
-"111
-[; ;bme280_i2c.c: 111:         settings_sel |= 1 << 1;
-[e =| _settings_sel -> << -> 1 `i -> 1 `i `uc ]
-"112
-[; ;bme280_i2c.c: 112:         settings_sel |= 1 << 2;
-[e =| _settings_sel -> << -> 1 `i -> 2 `i `uc ]
-"113
-[; ;bme280_i2c.c: 113:         settings_sel |= 1 << 4;
-[e =| _settings_sel -> << -> 1 `i -> 4 `i `uc ]
-"114
-[; ;bme280_i2c.c: 114:         settings_sel |= 1 << 3;
-[e =| _settings_sel -> << -> 1 `i -> 3 `i `uc ]
-"115
-[; ;bme280_i2c.c: 115:         rslt = bme280_set_sensor_settings(settings_sel, &EnvSensor);
-[e = _rslt ( _bme280_set_sensor_settings (2 , _settings_sel -> &U _EnvSensor `*CS1519 ]
-"116
-[; ;bme280_i2c.c: 116:         rslt = bme280_set_sensor_mode(0x03, &EnvSensor);
-[e = _rslt ( _bme280_set_sensor_mode (2 , -> -> 3 `i `uc -> &U _EnvSensor `*CS1519 ]
-"118
-[; ;bme280_i2c.c: 118:         if (rslt == 0)
-[e $ ! == -> _rslt `i -> 0 `i 1533  ]
-"119
-[; ;bme280_i2c.c: 119:         {
+[; ;bme280_i2c.c: 101:     {
 {
+"102
+[; ;bme280_i2c.c: 102:         uint8_t settings_sel;
+[v _settings_sel `uc ~T0 @X0 1 a ]
+"105
+[; ;bme280_i2c.c: 105:         EnvSensor.settings.osr_h = 0x01;
+[e = . . _EnvSensor 7 2 -> -> 1 `i `uc ]
+"106
+[; ;bme280_i2c.c: 106:         EnvSensor.settings.osr_p = 0x05;
+[e = . . _EnvSensor 7 0 -> -> 5 `i `uc ]
+"107
+[; ;bme280_i2c.c: 107:         EnvSensor.settings.osr_t = 0x02;
+[e = . . _EnvSensor 7 1 -> -> 2 `i `uc ]
+"108
+[; ;bme280_i2c.c: 108:         EnvSensor.settings.filter = (0x04);
+[e = . . _EnvSensor 7 3 -> -> 4 `i `uc ]
+"109
+[; ;bme280_i2c.c: 109:         EnvSensor.settings.standby_time = (0x01);
+[e = . . _EnvSensor 7 4 -> -> 1 `i `uc ]
+"111
+[; ;bme280_i2c.c: 111:         settings_sel = 1;
+[e = _settings_sel -> -> 1 `i `uc ]
+"112
+[; ;bme280_i2c.c: 112:         settings_sel |= 1 << 1;
+[e =| _settings_sel -> << -> 1 `i -> 1 `i `uc ]
+"113
+[; ;bme280_i2c.c: 113:         settings_sel |= 1 << 2;
+[e =| _settings_sel -> << -> 1 `i -> 2 `i `uc ]
+"114
+[; ;bme280_i2c.c: 114:         settings_sel |= 1 << 4;
+[e =| _settings_sel -> << -> 1 `i -> 4 `i `uc ]
+"115
+[; ;bme280_i2c.c: 115:         settings_sel |= 1 << 3;
+[e =| _settings_sel -> << -> 1 `i -> 3 `i `uc ]
+"116
+[; ;bme280_i2c.c: 116:         rslt = bme280_set_sensor_settings(settings_sel, &EnvSensor);
+[e = _rslt ( _bme280_set_sensor_settings (2 , _settings_sel -> &U _EnvSensor `*CS1519 ]
+"117
+[; ;bme280_i2c.c: 117:         rslt = bme280_set_sensor_mode(0x03, &EnvSensor);
+[e = _rslt ( _bme280_set_sensor_mode (2 , -> -> 3 `i `uc -> &U _EnvSensor `*CS1519 ]
+"119
+[; ;bme280_i2c.c: 119:         if (rslt == 0)
+[e $ ! == -> _rslt `i -> 0 `i 1533  ]
 "120
-[; ;bme280_i2c.c: 120:             return;
-[e $UE 1531  ]
+[; ;bme280_i2c.c: 120:         {
+{
 "121
-[; ;bme280_i2c.c: 121:         }
+[; ;bme280_i2c.c: 121:             return;
+[e $UE 1531  ]
+"122
+[; ;bme280_i2c.c: 122:         }
 }
 [e :U 1533 ]
-"122
-[; ;bme280_i2c.c: 122:     }
+"123
+[; ;bme280_i2c.c: 123:     }
 }
 [e :U 1532 ]
-"124
-[; ;bme280_i2c.c: 124:     DebugAlert(200, 200, 3);;
-[e ( _DebugAlert (3 , , -> -> 200 `i `ui -> -> 200 `i `ui -> -> 3 `i `uc ]
 "125
-[; ;bme280_i2c.c: 125: }
+[; ;bme280_i2c.c: 125:     DebugAlert(200, 200, 3);;
+[e ( _DebugAlert (3 , , -> -> 200 `i `ui -> -> 200 `i `ui -> -> 3 `i `uc ]
+"126
+[; ;bme280_i2c.c: 126: }
 [e :UE 1531 ]
 }
-"127
-[; ;bme280_i2c.c: 127: int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
-[v _ReadEnvSensor `(c ~T0 @X0 1 ef4`uc`uc`*uc`us ]
 "128
-[; ;bme280_i2c.c: 128: {
+[; ;bme280_i2c.c: 128: int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
+[v _ReadEnvSensor `(c ~T0 @X0 1 ef4`uc`uc`*uc`us ]
+"129
+[; ;bme280_i2c.c: 129: {
 {
 [e :U _ReadEnvSensor ]
-"127
-[; ;bme280_i2c.c: 127: int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
+"128
+[; ;bme280_i2c.c: 128: int8_t ReadEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
 [v _dev_id `uc ~T0 @X0 1 r1 ]
 [v _reg_addr `uc ~T0 @X0 1 r2 ]
 [v _reg_data `*uc ~T0 @X0 1 r3 ]
 [v _len `us ~T0 @X0 1 r4 ]
-"128
-[; ;bme280_i2c.c: 128: {
-[f ]
 "129
-[; ;bme280_i2c.c: 129:     int8_t rslt = 0;
+[; ;bme280_i2c.c: 129: {
+[f ]
+"130
+[; ;bme280_i2c.c: 130:     int8_t rslt = 0;
 [v _rslt `c ~T0 @X0 1 a ]
 [e = _rslt -> -> 0 `i `c ]
-"131
-[; ;bme280_i2c.c: 131:     PIR3bits.SSP1IF = 0;
+"132
+[; ;bme280_i2c.c: 132:     PIR3bits.SSP1IF = 0;
 [e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-"134
-[; ;bme280_i2c.c: 134:     SSP1CON2bits.SEN = 1;
-[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
 "135
-[; ;bme280_i2c.c: 135:     I2C_Wait_SSPIF();
+[; ;bme280_i2c.c: 135:     SSP1CON2bits.SEN = 1;
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+"136
+[; ;bme280_i2c.c: 136:     I2C_Wait_SSPIF();
 [e ( _I2C_Wait_SSPIF ..  ]
-"138
-[; ;bme280_i2c.c: 138:     I2C_WriteByte(dev_id << 1);
+"139
+[; ;bme280_i2c.c: 139:     I2C_WriteByte(dev_id << 1);
 [e ( _I2C_WriteByte (1 -> << -> _dev_id `i -> 1 `i `uc ]
-"141
-[; ;bme280_i2c.c: 141:     I2C_WriteByte(reg_addr);
+"142
+[; ;bme280_i2c.c: 142:     I2C_WriteByte(reg_addr);
 [e ( _I2C_WriteByte (1 _reg_addr ]
-"144
-[; ;bme280_i2c.c: 144:     SSP1CON2bits.RSEN = 1;
-[e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
 "145
-[; ;bme280_i2c.c: 145:     I2C_Wait_SSPIF();
+[; ;bme280_i2c.c: 145:     SSP1CON2bits.RSEN = 1;
+[e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
+"146
+[; ;bme280_i2c.c: 146:     I2C_Wait_SSPIF();
 [e ( _I2C_Wait_SSPIF ..  ]
-"148
-[; ;bme280_i2c.c: 148:     I2C_WriteByte((dev_id << 1) | 0x01);
+"149
+[; ;bme280_i2c.c: 149:     I2C_WriteByte((dev_id << 1) | 0x01);
 [e ( _I2C_WriteByte (1 -> | << -> _dev_id `i -> 1 `i -> 1 `i `uc ]
-"151
-[; ;bme280_i2c.c: 151:     for (int i = 0; i < len; i++)
+"152
+[; ;bme280_i2c.c: 152:     for (int i = 0; i < len; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 1538  ]
 [e :U 1535 ]
-"152
-[; ;bme280_i2c.c: 152:     {
-{
 "153
-[; ;bme280_i2c.c: 153:         if (i == len - 1)
-[e $ ! == -> _i `ui - -> _len `ui -> -> 1 `i `ui 1539  ]
-"154
-[; ;bme280_i2c.c: 154:         {
+[; ;bme280_i2c.c: 153:     {
 {
+"154
+[; ;bme280_i2c.c: 154:         if (i == len - 1)
+[e $ ! == -> _i `ui - -> _len `ui -> -> 1 `i `ui 1539  ]
 "155
-[; ;bme280_i2c.c: 155:             reg_data[i] = I2C_ReadByte(1);
-[e = *U + _reg_data * -> _i `x -> -> # *U _reg_data `i `x ( _I2C_ReadByte (1 -> -> 1 `i `uc ]
+[; ;bme280_i2c.c: 155:         {
+{
 "156
-[; ;bme280_i2c.c: 156:         }
+[; ;bme280_i2c.c: 156:             reg_data[i] = I2C_ReadByte(1);
+[e = *U + _reg_data * -> _i `x -> -> # *U _reg_data `i `x ( _I2C_ReadByte (1 -> -> 1 `i `uc ]
+"157
+[; ;bme280_i2c.c: 157:         }
 }
 [e $U 1540  ]
-"157
-[; ;bme280_i2c.c: 157:         else
-[e :U 1539 ]
 "158
-[; ;bme280_i2c.c: 158:         {
-{
+[; ;bme280_i2c.c: 158:         else
+[e :U 1539 ]
 "159
-[; ;bme280_i2c.c: 159:             reg_data[i]=I2C_ReadByte(0);
-[e = *U + _reg_data * -> _i `x -> -> # *U _reg_data `i `x ( _I2C_ReadByte (1 -> -> 0 `i `uc ]
+[; ;bme280_i2c.c: 159:         {
+{
 "160
-[; ;bme280_i2c.c: 160:         }
+[; ;bme280_i2c.c: 160:             reg_data[i]=I2C_ReadByte(0);
+[e = *U + _reg_data * -> _i `x -> -> # *U _reg_data `i `x ( _I2C_ReadByte (1 -> -> 0 `i `uc ]
+"161
+[; ;bme280_i2c.c: 161:         }
 }
 [e :U 1540 ]
-"161
-[; ;bme280_i2c.c: 161:     }
+"162
+[; ;bme280_i2c.c: 162:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 1538 ]
 [e $ < -> _i `ui -> _len `ui 1535  ]
 [e :U 1536 ]
 }
-"164
-[; ;bme280_i2c.c: 164:     I2C_Stop();
+"165
+[; ;bme280_i2c.c: 165:     I2C_Stop();
 [e ( _I2C_Stop ..  ]
-"166
-[; ;bme280_i2c.c: 166:     return rslt;
+"167
+[; ;bme280_i2c.c: 167:     return rslt;
 [e ) _rslt ]
 [e $UE 1534  ]
-"167
-[; ;bme280_i2c.c: 167: }
+"168
+[; ;bme280_i2c.c: 168: }
 [e :UE 1534 ]
 }
-"169
-[; ;bme280_i2c.c: 169: int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
-[v _WriteEnvSensor `(c ~T0 @X0 1 ef4`uc`uc`*uc`us ]
 "170
-[; ;bme280_i2c.c: 170: {
+[; ;bme280_i2c.c: 170: int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
+[v _WriteEnvSensor `(c ~T0 @X0 1 ef4`uc`uc`*uc`us ]
+"171
+[; ;bme280_i2c.c: 171: {
 {
 [e :U _WriteEnvSensor ]
-"169
-[; ;bme280_i2c.c: 169: int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
+"170
+[; ;bme280_i2c.c: 170: int8_t WriteEnvSensor(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data, uint16_t len)
 [v _dev_id `uc ~T0 @X0 1 r1 ]
 [v _reg_addr `uc ~T0 @X0 1 r2 ]
 [v _reg_data `*uc ~T0 @X0 1 r3 ]
 [v _len `us ~T0 @X0 1 r4 ]
-"170
-[; ;bme280_i2c.c: 170: {
-[f ]
 "171
-[; ;bme280_i2c.c: 171:     int8_t rslt = 0;
+[; ;bme280_i2c.c: 171: {
+[f ]
+"172
+[; ;bme280_i2c.c: 172:     int8_t rslt = 0;
 [v _rslt `c ~T0 @X0 1 a ]
 [e = _rslt -> -> 0 `i `c ]
-"173
-[; ;bme280_i2c.c: 173:     PIR3bits.SSP1IF = 0;
+"174
+[; ;bme280_i2c.c: 174:     PIR3bits.SSP1IF = 0;
 [e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-"176
-[; ;bme280_i2c.c: 176:     SSP1CON2bits.SEN = 1;
-[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
 "177
-[; ;bme280_i2c.c: 177:     I2C_Wait_SSPIF();
+[; ;bme280_i2c.c: 177:     SSP1CON2bits.SEN = 1;
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+"178
+[; ;bme280_i2c.c: 178:     I2C_Wait_SSPIF();
 [e ( _I2C_Wait_SSPIF ..  ]
-"180
-[; ;bme280_i2c.c: 180:     I2C_WriteByte(dev_id << 1);
+"181
+[; ;bme280_i2c.c: 181:     I2C_WriteByte(dev_id << 1);
 [e ( _I2C_WriteByte (1 -> << -> _dev_id `i -> 1 `i `uc ]
-"183
-[; ;bme280_i2c.c: 183:     I2C_WriteByte(reg_addr);
+"184
+[; ;bme280_i2c.c: 184:     I2C_WriteByte(reg_addr);
 [e ( _I2C_WriteByte (1 _reg_addr ]
-"185
-[; ;bme280_i2c.c: 185:     for(int i = 0; i < len; i++)
+"186
+[; ;bme280_i2c.c: 186:     for(int i = 0; i < len; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 1545  ]
 [e :U 1542 ]
-"186
-[; ;bme280_i2c.c: 186:     {
-{
 "187
-[; ;bme280_i2c.c: 187:         I2C_WriteByte(reg_data[i]);
-[e ( _I2C_WriteByte (1 *U + _reg_data * -> _i `x -> -> # *U _reg_data `i `x ]
+[; ;bme280_i2c.c: 187:     {
+{
 "188
-[; ;bme280_i2c.c: 188:     }
+[; ;bme280_i2c.c: 188:         I2C_WriteByte(reg_data[i]);
+[e ( _I2C_WriteByte (1 *U + _reg_data * -> _i `x -> -> # *U _reg_data `i `x ]
+"189
+[; ;bme280_i2c.c: 189:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 1545 ]
 [e $ < -> _i `ui -> _len `ui 1542  ]
 [e :U 1543 ]
 }
-"190
-[; ;bme280_i2c.c: 190:     I2C_Stop();
+"191
+[; ;bme280_i2c.c: 191:     I2C_Stop();
 [e ( _I2C_Stop ..  ]
-"192
-[; ;bme280_i2c.c: 192:     return rslt;
+"193
+[; ;bme280_i2c.c: 193:     return rslt;
 [e ) _rslt ]
 [e $UE 1541  ]
-"193
-[; ;bme280_i2c.c: 193: }
+"194
+[; ;bme280_i2c.c: 194: }
 [e :UE 1541 ]
 }

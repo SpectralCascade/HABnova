@@ -606,7 +606,7 @@ void main(void)
     InitTiming();
     
     /// Setup the sensor device
-    //BME280_Init();
+    BME280_Init();
     
 #ifdef GPS_MODULE
     SetupGPS();
@@ -636,7 +636,7 @@ void main(void)
 #endif
         {
             struct bme280_data sensor_data;
-            //bme280_get_sensor_data(BME280_ALL, &sensor_data, &EnvSensor);
+            bme280_get_sensor_data(BME280_ALL, &sensor_data, &EnvSensor);
 #ifdef RADIO_TRANSMISSION
 #ifdef GPS_MODULE
             index = strlen(txdata);

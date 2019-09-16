@@ -42,10 +42,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./timing.h
 [; ;./timing.h: 7: void InitTiming(void);
 [v _InitTiming `(v ~T0 @X0 0 ef ]
+"40 ./bme280_i2c.h
+[; ;./bme280_i2c.h: 40: void BME280_Init(void);
+[v _BME280_Init `(v ~T0 @X0 0 ef ]
 "308 ./BME280_driver/bme280_defs.h
 [; ;./BME280_driver/bme280_defs.h: 308: {
 [s S1516 `ul 1 `l 1 `ul 1 ]
 [n S1516 bme280_data pressure temperature humidity ]
+"639 main.c
+[; ;main.c: 639:             bme280_get_sensor_data(0x07, &sensor_data, &EnvSensor);
+[c E10916 0 1 .. ]
+[n E10916 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
+[v F10967 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
+[v F10973 `(c ~T0 @X0 0 tf4`uc`uc`*uc`us ]
+[v F10979 `(v ~T0 @X0 0 tf1`ul ]
+"261 ./BME280_driver/bme280_defs.h
+[; ;./BME280_driver/bme280_defs.h: 261: {
+[s S1515 `us 1 `s 1 `s 1 `us 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `uc 1 `s 1 `uc 1 `s 1 `s 1 `c 1 `l 1 ]
+[n S1515 bme280_calib_data dig_T1 dig_T2 dig_T3 dig_P1 dig_P2 dig_P3 dig_P4 dig_P5 dig_P6 dig_P7 dig_P8 dig_P9 dig_H1 dig_H2 dig_H3 dig_H4 dig_H5 dig_H6 t_fine ]
+"341
+[; ;./BME280_driver/bme280_defs.h: 341: {
+[s S1518 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1518 bme280_settings osr_p osr_t osr_h filter standby_time ]
+"362
+[; ;./BME280_driver/bme280_defs.h: 362: {
+[s S1519 `uc 1 `uc 1 `E10916 1 `*F10967 1 `*F10973 1 `*F10979 1 `S1515 1 `S1518 1 ]
+[n S1519 bme280_dev chip_id dev_id intf read write delay_ms calib_data settings ]
+"207 ./BME280_driver/bme280.h
+[; ;./BME280_driver/bme280.h: 207: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
+[v _bme280_get_sensor_data `(c ~T0 @X0 0 ef3`uc`*S1516`*S1519 ]
+"38 ./bme280_i2c.h
+[; ;./bme280_i2c.h: 38: extern struct bme280_dev EnvSensor;
+[v _EnvSensor `S1519 ~T0 @X0 0 e ]
 "19 ./rtty.h
 [; ;./rtty.h: 19: uint16_t crc16(char* data);
 [v _crc16 `(us ~T0 @X0 0 ef1`*uc ]
@@ -3056,6 +3084,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "606
 [; ;main.c: 606:     InitTiming();
 [e ( _InitTiming ..  ]
+"609
+[; ;main.c: 609:     BME280_Init();
+[e ( _BME280_Init ..  ]
 "612
 [; ;main.c: 612:     SetupGPS();
 [e ( _SetupGPS ..  ]
@@ -3109,6 +3140,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "638
 [; ;main.c: 638:             struct bme280_data sensor_data;
 [v _sensor_data `S1516 ~T0 @X0 1 a ]
+"639
+[; ;main.c: 639:             bme280_get_sensor_data(0x07, &sensor_data, &EnvSensor);
+[e ( _bme280_get_sensor_data (3 , , -> -> 7 `i `uc &U _sensor_data &U _EnvSensor ]
 "642
 [; ;main.c: 642:             index = strlen(txdata);
 [e = _index -> ( _strlen (1 -> &U _txdata `*Cuc `i ]

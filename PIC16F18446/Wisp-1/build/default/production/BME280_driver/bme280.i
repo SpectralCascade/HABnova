@@ -361,7 +361,6 @@ int8_t bme280_init(struct bme280_dev *dev)
 
             rslt = bme280_get_regs(0xD0, &chip_id, 1, dev);
 
-
             if ((rslt == 0) && (chip_id == 0x60))
             {
                 dev->chip_id = chip_id;
@@ -988,7 +987,7 @@ static int8_t reload_device_settings(const struct bme280_settings *settings, con
 
     return rslt;
 }
-# 1126 "BME280_driver/bme280.c"
+# 1125 "BME280_driver/bme280.c"
 static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_data,
                                       struct bme280_calib_data *calib_data)
 {
@@ -1015,7 +1014,7 @@ static int32_t compensate_temperature(const struct bme280_uncomp_data *uncomp_da
 
     return temperature;
 }
-# 1209 "BME280_driver/bme280.c"
+# 1208 "BME280_driver/bme280.c"
 static uint32_t compensate_pressure(const struct bme280_uncomp_data *uncomp_data,
                                     const struct bme280_calib_data *calib_data)
 {

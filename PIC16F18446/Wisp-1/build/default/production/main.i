@@ -18054,9 +18054,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 182 "./mcc_generated_files/pin_manager.h"
+# 222 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 194 "./mcc_generated_files/pin_manager.h"
+# 234 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -19061,7 +19061,7 @@ void main(void)
     InitTiming();
 
 
-
+    BME280_Init();
 
 
     SetupGPS();
@@ -19091,7 +19091,7 @@ void main(void)
 
         {
             struct bme280_data sensor_data;
-
+            bme280_get_sensor_data(0x07, &sensor_data, &EnvSensor);
 
 
             index = strlen(txdata);
