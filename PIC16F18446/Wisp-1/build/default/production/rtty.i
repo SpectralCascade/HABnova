@@ -18216,7 +18216,7 @@ void PMD_Initialize(void);
 
 # 1 "./rtty.h" 1
 # 13 "./rtty.h"
-const unsigned int HALF_BAUD_DELAY = ((1000 / 50) / 2);
+const unsigned int HALF_BAUD_DELAY = ((1000 / 100) / 2);
 
 
 

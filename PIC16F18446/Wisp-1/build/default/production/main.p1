@@ -1446,10 +1446,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;K:\Programs\MPLABX\XC8 Compiler\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "13 ./rtty.h
-[; ;./rtty.h: 13: const unsigned int HALF_BAUD_DELAY = ((1000 / 50) / 2);
+[; ;./rtty.h: 13: const unsigned int HALF_BAUD_DELAY = ((1000 / 100) / 2);
 [v _HALF_BAUD_DELAY `Cui ~T0 @X0 1 e ]
 [i _HALF_BAUD_DELAY
--> / / -> 1000 `i -> 50 `i -> 2 `i `ui
+-> / / -> 1000 `i -> 100 `i -> 2 `i `ui
 ]
 "23 main.c
 [; ;main.c: 23: int id = 0;
@@ -3203,7 +3203,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1674 ]
 "670
-[; ;main.c: 670:             TransmitString("$$");
+[; ;main.c: 670:             TransmitString("$$$$");
 [e ( _TransmitString (1 :s 11C ]
 "671
 [; ;main.c: 671:             TransmitString(txdata);
@@ -3248,7 +3248,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 9C 87 0 ]
 [a 8C 83 0 ]
 [a 10C 87 105 115 112 45 49 0 ]
-[a 11C 36 36 0 ]
+[a 11C 36 36 36 36 0 ]
 [a 3C 36 80 85 66 88 44 52 48 44 86 84 71 44 48 44 48 44 48 44 48 42 53 69 13 10 0 ]
 [a 5C 36 80 85 66 88 44 52 48 44 71 83 65 44 48 44 48 44 48 44 48 42 52 69 13 10 0 ]
 [a 1C 36 80 85 66 88 44 52 48 44 71 76 76 44 48 44 48 44 48 44 48 42 53 67 13 10 0 ]

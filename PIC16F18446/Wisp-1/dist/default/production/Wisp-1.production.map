@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=K:\Programs\MPLABX\XC8 Compiler\pic\dat\en_msgs.txt -cs \
   -h+dist/default/production\Wisp-1.production.sym \
   --cmf=dist/default/production\Wisp-1.production.cmf -z -Q16F18446 \
-  -oC:\Users\2013b\AppData\Local\Temp\sepo.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\2013b\AppData\Local\Temp\s6d0.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Wisp-1.production.map -E1 -ver=XC8 --acfsm=1493 \
   -ASTACK=02186h-026D7h -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
@@ -46,7 +46,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=08007h-0800Bh -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\2013b\AppData\Local\Temp\sepo.o \
+  -DENTRY=2 -k C:\Users\2013b\AppData\Local\Temp\s6d0.o \
   dist/default/production\Wisp-1.production.o 
 
 Object code version is 3.11
@@ -56,7 +56,7 @@ Machine type is 16F18446
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\2013b\AppData\Local\Temp\sepo.o
+C:\Users\2013b\AppData\Local\Temp\s6d0.o
                 end_init                              E        E        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5    1000E       0
@@ -166,9 +166,9 @@ dist/default/production\Wisp-1.production.o
                 bssBANK3                            1A0      1A0       47      1A0       1
                 bssBANK2                            120      120       30      120       1
                 bssBANK1                             E8       E8        6       A0       1
-                stringtext12                       28B8     28B8        2     5000       0
-                stringtext11                       28B6     28B6        2     5000       0
-                stringtext10                       28B1     28B1        3     5000       0
+                stringtext12                       28BA     28BA        2     5000       0
+                stringtext11                       28B8     28B8        2     5000       0
+                stringtext10                       28B1     28B1        5     5000       0
                 stringtext9                        28AA     28AA        7     5000       0
                 stringtext8                        289C     289C        E     5000       0
                 stringtext7                        2882     2882       1A     5000       0
@@ -179,7 +179,7 @@ dist/default/production\Wisp-1.production.o
                 stringtext2                        2800     2800       1A     5000       0
                 nvBANK3                             1E7      1E7        6      1A0       1
                 nvBANK1                              EE       EE        2       A0       1
-                stringtext1                        28B4     28B4        2     5000       0
+                stringtext1                        28B6     28B6        2     5000       0
                 idataBANK4                         196C     196C       2C     32D8       0
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -287,9 +287,9 @@ TOTAL           Name                               Link     Load   Length     Sp
                 idataBANK4                         196C     196C       2C         0
 
         CLASS   STRCODE        
-                stringtext12                       28B8     28B8        2         0
-                stringtext11                       28B6     28B6        2         0
-                stringtext10                       28B1     28B1        3         0
+                stringtext12                       28BA     28BA        2         0
+                stringtext11                       28B8     28B8        2         0
+                stringtext10                       28B1     28B1        5         0
                 stringtext9                        28AA     28AA        7         0
                 stringtext8                        289C     289C        E         0
                 stringtext7                        2882     2882       1A         0
@@ -298,7 +298,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 stringtext4                        2834     2834       1A         0
                 stringtext3                        281A     281A       1A         0
                 stringtext2                        2800     2800       1A         0
-                stringtext1                        28B4     28B4        2         0
+                stringtext1                        28B6     28B6        2         0
 
         CLASS   STRING         
 
@@ -700,7 +700,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text79                         002790  000025  0027B5      4F20       0  CODE        2
                 text1                          0027B5  000025  0027DA      4F6A       0  CODE        2
                 text59                         0027DA  000026  002800      4FB4       0  CODE        2
-                stringtext2                    002800  0000BA  0028BA      5000       0  STRCODE     2
+                stringtext2                    002800  0000BC  0028BC      5000       0  STRCODE     2
                 config                         008007  000005  00800C     1000E       0  CONFIG      2
 
 
@@ -732,18 +732,18 @@ UNUSED ADDRESS RANGES
                          00800-00800               1
                          01000-01000               1
                          02000-025AB             5AC
-                         028BA-03FFF             800
+                         028BC-03FFF             800
         CONST            00002-00002               1           2
                          00800-00800               1
                          01000-01000               1
                          02000-025AB             100
-                         028BA-03FFF             100
+                         028BC-03FFF             100
         EEDATA           0F000-0F0FF             100           2
         ENTRY            00002-00002               1           2
                          00800-00800               1
                          01000-01000               1
                          02000-025AB             100
-                         028BA-03FFF             100
+                         028BC-03FFF             100
         IDLOC            08000-08003               4           2
         RAM              0006F-0006F               1           1
                          001ED-001EF               3
@@ -834,12 +834,12 @@ UNUSED ADDRESS RANGES
                          00800-00800               1
                          01000-01000               1
                          02000-025AB             5AC
-                         028BA-03FFF            1746
+                         028BC-03FFF            1744
         STRING           00002-00002               1           2
                          00800-00800               1
                          01000-01000               1
                          02000-025AB             100
-                         028BA-03FFF             100
+                         028BC-03FFF             100
 
                                   Symbol Table
 
@@ -1530,7 +1530,7 @@ __end_of_GPS_HasAcknowledged                    text21       015D1
 __end_of_GPS_SendUBX                            text19       01870
 __end_of_GetAtRowCSV                            text39       0113B
 __end_of_GetLengthUBX                           text20       02664
-__end_of_HALF_BAUD_DELAY                        stringtext1  028B6
+__end_of_HALF_BAUD_DELAY                        stringtext1  028B8
 __end_of_I2C_Init                               text88       026A0
 __end_of_I2C_ReadByte                           text76       026E8
 __end_of_I2C_Stop                               text84       025B4
@@ -1624,10 +1624,10 @@ __pintentry                                     intentry     00004
 __pmaintext                                     maintext     005AC
 __pnvBANK1                                      nvBANK1      000EE
 __pnvBANK3                                      nvBANK3      001E7
-__pstringtext1                                  stringtext1  028B4
+__pstringtext1                                  stringtext1  028B6
 __pstringtext10                                 stringtext10 028B1
-__pstringtext11                                 stringtext11 028B6
-__pstringtext12                                 stringtext12 028B8
+__pstringtext11                                 stringtext11 028B8
+__pstringtext12                                 stringtext12 028BA
 __pstringtext13                                 stringtext13 00000
 __pstringtext2                                  stringtext2  02800
 __pstringtext3                                  stringtext3  0281A
@@ -2603,7 +2603,7 @@ Total ram usage:       19 bytes
 		line 71 in file "rtty.c"
  Parameters:    Size  Location     Type
   message         2    3[BANK0 ] PTR unsigned char 
-		 -> STR_11(3), txdata(140), 
+		 -> STR_11(5), txdata(140), 
  Auto vars:     Size  Location     Type
   i               2    8[BANK0 ] int 
   counti          2    6[BANK0 ] int 
@@ -3835,13 +3835,13 @@ Total ram usage:        6 bytes
 		line 12 in file "K:\Programs\MPLABX\XC8 Compiler\pic\sources\c99\common\strlen.c"
  Parameters:    Size  Location     Type
   s               2    0[COMMON] PTR const unsigned char 
-		 -> STR_11(3), checksum(6), STR_10(7), main@convertedNumber(16), 
+		 -> STR_11(5), checksum(6), STR_10(7), main@convertedNumber(16), 
 		 -> STR_7(14), nmea_data(140), STR_6(26), STR_5(26), 
 		 -> STR_4(26), STR_3(26), STR_2(26), STR_1(26), 
 		 -> txdata(140), csvField(20), 
  Auto vars:     Size  Location     Type
   a               2    3[COMMON] PTR const unsigned char 
-		 -> STR_11(3), checksum(6), STR_10(7), main@convertedNumber(16), 
+		 -> STR_11(5), checksum(6), STR_10(7), main@convertedNumber(16), 
 		 -> STR_7(14), nmea_data(140), STR_6(26), STR_5(26), 
 		 -> STR_4(26), STR_3(26), STR_2(26), STR_1(26), 
 		 -> txdata(140), csvField(20), 

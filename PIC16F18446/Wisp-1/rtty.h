@@ -6,7 +6,7 @@
 
 // Constants for transmission code follow.
 // Baud rate (bits per second).
-#define BAUD_RATE 50
+#define BAUD_RATE 100
 
 // TODO: make constant??
 // Half the delay time required to match the baud rate in milliseconds

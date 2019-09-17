@@ -667,7 +667,7 @@ void main(void)
 #endif
             id++;
             TX_LED_SetHigh();
-            TransmitString("$$");
+            TransmitString("$$$$");
             TransmitString(txdata);
             TX_LED_SetLow();
 #endif

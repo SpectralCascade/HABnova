@@ -18429,7 +18429,7 @@ extern uint32_t __g_timeout_start;
 
 # 1 "./rtty.h" 1
 # 13 "./rtty.h"
-const unsigned int HALF_BAUD_DELAY = ((1000 / 50) / 2);
+const unsigned int HALF_BAUD_DELAY = ((1000 / 100) / 2);
 
 
 
@@ -19122,7 +19122,7 @@ void main(void)
 
             id++;
             do { LATAbits.LATA2 = 1; } while(0);
-            TransmitString("$$");
+            TransmitString("$$$$");
             TransmitString(txdata);
             do { LATAbits.LATA2 = 0; } while(0);
 
